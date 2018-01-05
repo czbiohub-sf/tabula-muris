@@ -27,10 +27,17 @@ tabula_muris/
         figure2a.Rmd
         figure2b.Rmd
         figure2c.ipynb
-    03_figure3/                   # All-cell clustering heatmap with dendrogram.
+    03_figure3/                   # All-cell clustering heatmap with dendrogram
         figure3.Rmd
-    04_figure4/                   # Analysis of all T cells sorted by FACS.
+    04_figure4/                   # Analysis of all T cells sorted by FACS
         figure4{a-d}.Rmd
-    05_figure5/                   # Transcription factor expression analysis.
+    05_figure5/                   # Transcription factor expression analysis
         figure5.Rmd
+    11_supplementary_figure1/     # Histograms of number of genes detected across tissues
+    12_supplementary_figure2/     # FACS vs Microfluidics - # cells expressing a gene
+    13_supplementary_figure3/     # FACS vs Microfluidics - # genes detected per cell
+    14_supplementary_figure4/     # FACS vs Microfluidics - dynamic range
+    15_supplementary_figure5/     # Microfluidics TSNE plots + annotation barplots
+    16_supplementary_figure6/     # Analysis of dissociation-induced genes
+    17_supplementary_figure7/     # Transcription factor enrichment in cell types
 ```
