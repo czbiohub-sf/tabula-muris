@@ -1,0 +1,339 @@
+---
+title: "MACA Notebook"
+output: html_notebook
+---
+
+Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+
+```{r}
+rootdir = "~/Workspace/maca/"
+tissue_of_interest = "Muscle"
+stissue <- "Diaphragm"
+```
+
+Load the requisite packages and some additional helper functions.
+
+```{r}
+library(Seurat)
+library(dplyr)
+library(Matrix)
+```
+
+Load the plate metadata.
+
+```{r}
+plate_metadata <- read.csv(file = paste0(rootdir, "metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
+colnames(plate_metadata)[1] <- "plate.barcode"
+head(plate_metadata)
+```
+
+```{r}
+#Check for available files.
+
+count_files = list.files(paste0(rootdir, "data/"), pattern = "*counts.tab",recursive = FALSE)
+
+downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
+plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
+
+plate_metadata <- subset(plate_metadata, tissue==tissue_of_interest)
+
+plate_metadata <- subset(plate_metadata, subtissue==stissue)
+
+
+head(plate_metadata)
+  
+```
+
+Load the plate data.
+
+```{r}
+tissue_plates = filter(plate_metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
+
+#Load the gene names and set the metadata columns by opening the first file
+
+raw.data = read.csv(file = paste0(rootdir,"data/", tissue_plates$plate.barcode[1], '.counts.tab') ,sep='\t')
+raw.data = data.frame(row.names = rownames(raw.data))
+meta.data = plate_metadata[1,][-1,]
+
+for(i in 1:nrow(tissue_plates)){
+  new.data = read.csv(file = paste0(rootdir,"data/", tissue_plates$plate.barcode[i], '.counts.tab') ,sep='\t')
+  new.metadata = data.frame(row.names = colnames(new.data))
+  new.metadata['plate.barcode'] = tissue_plates$plate.barcode[i]
+  
+  raw.data = cbind(raw.data, new.data)
+  meta.data = rbind(meta.data, new.metadata)
+}
+rnames = row.names(meta.data)
+meta.data <- merge(meta.data, plate_metadata)
+row.names(meta.data) <- rnames
+```
+
+
+```{r}
+
+erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
+percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
+ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
+raw.data <- raw.data[-ercc.index,]
+
+tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, 
+                    min.cells = 5, min.genes = 5)
+
+tiss <- AddMetaData(object = tiss, meta.data)
+tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
+# Change default name for sums of counts from nUMI to nReads
+colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
+```
+
+
+Calculate percent ribosomal genes.
+
+```{r}
+ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
+
+percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
+
+tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
+```
+
+A sanity check: reads vs genes.
+
+```{r}
+GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene")
+GenePlot(object = tiss, gene1 = "Pax7", gene2 = "Pax3")
+GenePlot(object = tiss, gene1 = "Pax7", gene2 = "Myod1")
+```
+
+Filter out cells with few reads and few genes.
+
+```{r}
+tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nReads"), 
+    low.thresholds = c(500, 50000), high.thresholds = c(25000, 2000000))
+```
+
+
+Normalize the data, then regress out correlation with total reads
+```{r}
+tiss <- NormalizeData(object = tiss)
+tiss <- ScaleData(object = tiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+tiss.back <- tiss
+```
+
+```{r}
+#tiss <- tiss.back
+tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
+```
+
+
+Run Principal Component Analysis.
+```{r}
+tiss <- RunPCA(object = tiss, pc.genes = tiss@var.genes, do.print = TRUE, pcs.print = 1:5, 
+    genes.print = 5)
+tiss <- ProjectPCA(object = tiss, do.print = FALSE)
+```
+
+
+```{r, echo=FALSE, fig.height=6, fig.width=8}
+PCHeatmap(object = tiss, pc.use = 1:9, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 16)
+tiss.back <- tiss
+```
+
+```{r}
+PCElbowPlot(object = tiss)
+```
+
+
+```{r}
+n.pcs = 10
+#tiss <- tiss.back
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+    resolution = 1, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
+```
+
+
+```{r}
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, check_duplicates = F, perplexity=30)
+```
+
+```{r}
+pt.size = 0.5
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = tiss, do.label = T, pt.size = pt.size)
+```
+
+Check expression of genes of interest.
+```{r, fig.height=6, fig.width=8}
+genes_to_check = c('Pecam1', 'Ptprc', 'Vcam1', 'Pdgfra')
+
+#FeaturePlot(tiss, genes_to_check, pt.size = 0.5, cols.use=c("yellow", "black"), no.legend = FALSE)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size, no.legend = FALSE)
+```
+
+
+```{r, fig.height=6, fig.width=8}
+# SC - subtypes
+genes_to_check = c('Vcam1', 'Pax7', 'Pax3', 'Myod1', 'Myf5', 'Cd34', 'Itga7', 'Cd44', 'Calcr' #, 'Myog'
+                   )
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size)
+```
+
+```{r, fig.height=6, fig.width=8}
+# CD45 - macrophage subtypes
+genes_to_check = c('Ptprc', 
+                   'Klrb1b', 'Foxp3', # NK-cells
+                   'Cd3d', #T-cell
+                   'Cd19', 'Cd79a', 'Cd79b', #differentiated B cells
+                   'Vpreb3', #naive B-cells
+                   'Itgam', 'Fcer1g', 'C1qa' #macrophages and mast cells
+                   #, 'Ly6g6d', 
+)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size)
+```
+
+
+```{r}
+# CD31 - endothelial subtypes
+genes_to_check = c('Pecam1' #, 'Vegfa', 'Cd34', 'Ptprc', 'Icam1' #, 'Dysf' #'Rapgef3', 'Vim', 'Cspg4'
+)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size)
+```
+
+```{r}
+# FAP -  subtypes
+genes_to_check = c('Atxn1', 'Pdgfra' #'Dysf', 'Vim', 'Cspg4'
+)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size)
+```
+How big are the clusters?
+```{r}
+table(tiss@ident)
+```
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+#TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id", pt.size = pt.size)
+#table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+table(as.character(tiss@ident), as.character(tiss@meta.data$mouse.id))
+```
+
+Find differentially expressed markers.
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
+    thresh.use = 0.25)
+```
+
+Display top 24 markers per cluster.
+```{r}
+tiss.markers %>% group_by(cluster) %>% top_n(24, avg_diff)
+```
+
+
+```{r}
+# To change the y-axis to show raw counts, add use.raw = T.
+genes_to_check = c('Pecam1', 'Ptprc', 'Vcam1', 'Pdgfra', 'Cd19')
+VlnPlot(tiss, genes_to_check #, pt.size = pt.size
+        )
+```
+Assigning cell type identity to clusters
+At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
+0: alpha 1: beta 2: beta 3: exocrine 4: duct 5: delta 6: gamma 7: endothelial 8: immune 9: stellate
+```{r}
+# stash current cluster IDs
+tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+
+# enumerate current cluster IDs and the labels for them
+cluster.ids <- c(0, 1, 2, 3, 4, 5)
+annotation <- c("fibro/adipogenic progenitors", "satellite cells 1", "satellite cells 2", "B cells & T-cells", "endothelial cells", "macrophages")
+
+tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = annotation)
+
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
+```
+```{r}
+tiss = BuildClusterTree(tiss)
+```
+
+```{r}
+# save tiss
+save_dir <- '20171027'
+save_dir <- '20171029'
+dir.create(save_dir)
+save(tiss, file=paste0(save_dir,"/", tissue_of_interest, "_", stissue, "_seurat_tiss.Robj"))
+tiss@meta.data[,'subannotation'] <- tiss@meta.data[,'annotation']
+write.csv(tiss@meta.data[,c('plate.barcode','annotation','subannotation')],file =paste0(save_dir,"/", tissue_of_interest, "_", stissue, "_annotation.csv"))
+#To reload a saved object
+#load(file=paste0(rootdir,"/", save_dir, "/", tissue_of_interest, "_", stissue, "_seurat_tiss.Robj"))
+```
+
+
+## TODO run after this
+
+```{r}
+# Get markers for a particular cluster
+cluster_markers = filter(tiss.markers, cluster == 3)$gene
+
+DotPlot(tiss, genes.plot = cluster_markers[1:12], plot.legend = T)
+
+```
+
+We can repeat the above analysis on a subset of genes, defined using cluster IDs or expression or some other metadata. This is a good way to drill down and find substructure.
+
+```{r}
+# To subset data based on annotation or other metadata, you can explicitly pass cell names
+anno = 'B cells & T-cells'
+cells.to.use = tiss@cell.names[which(tiss@meta.data$annotation == anno)]
+subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
+
+subtiss <- NormalizeData(object = subtiss)
+subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+
+#subtiss@scale.data = subtiss@data
+#subtiss <- ScaleData(object = subtiss)
+```
+
+
+
+```{r}
+subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
+subtiss <- RunPCA(object = subtiss, pcs.compute = 20)
+print("de2")
+subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
+```
+
+
+```{r}
+PCElbowPlot(object = subtiss)
+```
+
+```{r, fig.height=6, fig.width=8}
+PCHeatmap(object = subtiss, pc.use = 1:9, cells.use = 80, do.balanced = TRUE, label.columns = FALSE, num.genes = 18)
+```
+
+
+```{r}
+subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:5, 
+    resolution = 0.5, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
+```
+
+
+```{r}
+subtiss <- RunTSNE(object = subtiss, dims.use = 1:10, seed.use = 10, check_duplicates = F, perplexity=25)
+```
+
+```{r}
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = subtiss, do.label = T)
+```
+
+Check expression of genes of interset.
+```{r}
+genes_to_check = c('Pax7', 'Pax3', 'Myod1', 'Myf5')
+
+FeaturePlot(subtiss, genes_to_check, pt.size = 1)
+```
+
+
+```{r}
+GenePlot(subtiss, 'Pax7', 'Pax3', use.raw = T)
+```
