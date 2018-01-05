@@ -1,8 +1,6 @@
 # tabula-muris
 
-
 ## Folder Organization
-
 
 * FACS = SmartSeq2 on FACS-sorted plates
 * Microfluidic = 10x droplet-based unique molecular identifier (UMI)-barcoded transcripts and cells
@@ -11,14 +9,15 @@
 tabula_muris/
     00_data_ingest/               # How the data was processed from gene-cell tables
         README.md
-        download_robj.Rmd
-        Aorta_FACS.Rmd
-        Brain-Non-microglia_FACS.Rmd
-        Brain-Microglia_FACS.Rmd
-        Colon_FACS.Rmd
-        Heart_FACS.Rmd
-        Heart_Microfluidic.Rmd
-        ... more files ...
+        download_robj.Rmd         # Download R objects for figures using this script
+        tissues/                  # *Generate* R objects for figures yourself
+            Aorta_FACS.Rmd
+            Brain-Non-microglia_FACS.Rmd
+            Brain-Microglia_FACS.Rmd
+            Colon_FACS.Rmd
+            Heart_FACS.Rmd
+            Heart_Microfluidic.Rmd
+            ... more files ...
     01_figure1/                   # Overview + #cell barplots + #gene/#reads horizonplots
         README.md
         figure1{b-g}.ipynb
