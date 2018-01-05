@@ -53,7 +53,7 @@ tabula_muris/
 | Diaphragm           | Yes              | No                          |
 | Fat                 | Yes              | No                          |
 | Heart               | Yes              | Yes                         |
-| Kidney              | Yes              | Yes                         |
+| Kidney              | Yes              | Missing                     |
 | Liver               | Yes              | Yes                         |
 | Lung                | Yes              | Yes                         |
 | Mammary             | Yes              | Yes                         |
@@ -61,8 +61,7 @@ tabula_muris/
 | Muscle              | Yes              | Yes                         |
 | Pancreas            | Yes              | No                          |
 | Skin                | Yes              | No                          |
-| Spleen              | Yes              | Yes                         |
-| Thymus              | Yes              | Yes                         |
+| Spleen              | Yes              | Missing                     |
+| Thymus              | Yes              | Missing                     |
 | Tongue              | Yes              | Yes                         |
 | Trachea             | Yes              | Yes                         |
-
