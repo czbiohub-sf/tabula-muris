@@ -10,7 +10,7 @@ If you want to start from the raw gene-cell counts tables, then first download t
 bash 00_data_ingest/download_data.sh
 ```
 
-This will download two zip files, `droplet_raw_data.zip` and `facs_raw_data.zip` which you'll need to open, e.g. by double-clicking the files. Then you'll have two folders in `00_data_ingest` (the location is important - everything here depends on the folder structure).
+This will download two zip files, `droplet_raw_data.zip` and `facs_raw_data.zip` and unzip them into the folder structure described below. If you wish to proceed manually, you'll need to open the zips, e.g. by double-clicking the files. Then you'll have two folders in `00_data_ingest` (the location is important - everything here depends on the folder structure).
 
 ```
 droplet_raw_data
