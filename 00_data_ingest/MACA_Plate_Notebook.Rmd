@@ -79,7 +79,6 @@ tiss@meta.data[,'annotation'] <- NA
 tiss@meta.data[,'subannotation'] <- NA
 ```
 
-
 Calculate percent ribosomal genes.
 
 ```{r}
