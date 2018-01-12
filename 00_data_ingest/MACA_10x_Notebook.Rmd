@@ -5,65 +5,49 @@ output:
   html_notebook: default
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
-
-```{r}
-rootdir = "~/src/maca"
-tissue_of_interest = "Liver"
-```
-
 Load the requisite packages and some additional helper functions.
 
 ```{r}
 library(Seurat)
 library(dplyr)
+library(stringr)
 library(Matrix)
+library(here)
 ```
 
-Load the 10x metadata. Check which plates have been downloaded.
+Load the count data for one organ and add it to the Seurat object.
 
 ```{r}
-tenx_metadata <- read.csv(file = paste0(rootdir, "/metadata/MACA_10x.csv"), sep=",", header = TRUE)
+organ = "Bladder"
+```
 
-channel_folders = list.dirs(paste0(rootdir, "/data/10x"),recursive = FALSE)
+```{r}
+channel_folders = list.dirs(here("00_data_ingest","droplet_raw_data","droplet"), recursive = FALSE)
+channel_folders = str_subset(channel_folders, organ) 
 
 n = length(strsplit(channel_folders[1],"[/]")[[1]])
-downloaded_channels = lapply(channel_folders, function(x) strsplit(x,"[/]")[[1]][n])
-tenx_metadata = tenx_metadata[tenx_metadata$channel %in% downloaded_channels,]
 
-save_dir = paste0(rootdir, '/save')
-dir.create(save_dir)
+raw.data.list = list()
+channel.list = list()
+for (channel_folder in channel_folders){
+  raw.data <- Read10X(channel_folder)
+  channel = str_split(str_split(channel_folder,"/", simplify = TRUE)[1,n], "-", simplify = TRUE)[1,2]
+  colnames(raw.data) <-  lapply(colnames(raw.data), function(x) paste0(channel, '_', x))
+  #raw.data.list <- list(raw.data.list, list(raw.data))
+  raw.data.list <- append(raw.data.list, raw.data)
+  channel.list <- append(channel.list, rep(channel, length(colnames(raw.data))))
+}
+
+raw.data <- do.call(cbind, raw.data.list)
+cell.channels <- unlist(channel.list)
 ```
-
-Load the plate data.
 
 ```{r}
-selected_metadata = filter(tenx_metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('channel','tissue','mouse.age','mouse.sex')]
-
-#Load the gene names and set the metadata columns by opening the first file
-
-raw.data <- Read10X(data.dir = paste0(rootdir, "/data/10x/", selected_metadata$channel[1]))
-colnames(raw.data) <- lapply(colnames(raw.data), function(x) paste0(selected_metadata$channel[1], '_', x))
-meta.data = data.frame(row.names = colnames(raw.data))
-meta.data['channel'] = downloaded_channels[1]
-
-for(i in 2:nrow(selected_metadata)){
-  print(paste('i:', i))
-  new.data = Read10X(data.dir = paste0(rootdir, "/data/10x/", selected_metadata$channel[i]))
-  colnames(new.data) <- lapply(colnames(new.data), function(x) paste0(selected_metadata$channel[i], '_', x))
-
-  new.metadata = data.frame(row.names = colnames(new.data))
-  new.metadata['channel'] = selected_metadata$channel[i]
-  
-  raw.data = cbind(raw.data, new.data)
-  meta.data = rbind(meta.data, new.metadata)
-}
-rnames = row.names(meta.data)
-meta.data <- merge(meta.data, selected_metadata, sort = F)
-row.names(meta.data) <- rnames
+meta.data <- read.csv(here("00_data_ingest","droplet_raw_data", "metadata_droplet.csv"))
+rownames(meta.data) <- meta.data$channel
+cell.meta.data <- meta.data[cell.channels,]
+rownames(cell.meta.data) <- colnames(raw.data)
 ```
-
-Process the raw data and load it into the Seurat object.
 
 ```{r}
 # Find ERCC's, compute the percent ERCC, and drop them from the raw data.
@@ -71,28 +55,31 @@ erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
 percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
 ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
 raw.data <- raw.data[-ercc.index,]
-
-# Create the Seurat object with all the data
-tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, 
-                    min.cells = 5, min.genes = 5)
-
-tiss <- AddMetaData(object = tiss, meta.data)
-tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
-# Change default name for sums of counts from nUMI to nReads
-# colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
-
-# Create metadata columns for annotations and subannotations
-tiss@meta.data[,'annotation'] <- NA
-tiss@meta.data[,'subannotation'] <- NA
 ```
 
+```{r}
+# Create the Seurat object with all the data
+tiss <- CreateSeuratObject(raw.data = raw.data, min.cells = 5, min.genes = 5)
 
-Calculate percent ribosomal genes.
+tiss <- AddMetaData(object = tiss, cell.meta.data)
+tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
+```
 
 ```{r}
 ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
 percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
 tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
+```
+
+```{r}
+percent.Rn45s <- tiss@raw.data[c('Rn45s'), ]/Matrix::colSums(tiss@raw.data)
+tiss <- AddMetaData(object = tiss, metadata = percent.Rn45s, col.name = "percent.Rn45s")
+```
+
+```{r}
+# Create metadata columns for annotations and subannotations
+tiss@meta.data[,'annotation'] <- NA
+tiss@meta.data[,'subannotation'] <- NA
 ```
 
 A sanity check: genes per cell vs reads per cell.
