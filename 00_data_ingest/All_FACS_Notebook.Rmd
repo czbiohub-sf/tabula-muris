@@ -23,6 +23,7 @@ FACS_files = list.files(here("00_data_ingest","facs_raw_data","FACS"), full.name
 raw.data.list = list()
 for (file in FACS_files){
   raw.data <- read.csv(file, row.names = 1)
+  raw.data <- Matrix(as.matrix(raw.data), sparse = TRUE)
   raw.data.list <- append(raw.data.list, raw.data)
 }
 
