@@ -1,3 +1,8 @@
+# All raw data files are too big
+00_data_ingest/*_raw_data/
+*.Robj
+*.zip
+
 ### --- Python/IPython/Jupyter .gitignore --- ###
 
 # Byte-compiled / optimized / DLL files
