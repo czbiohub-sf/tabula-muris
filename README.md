@@ -1,5 +1,107 @@
 # tabula-muris
 
+## Getting started
+
+### From "raw" gene-cell counts tables
+
+If you want to start from the raw gene-cell counts tables, then first download the data from figshare. You can download manually from the links ([FACS](https://figshare.com/articles/Single-cell_RNA-seq_data_from_Smart-seq2_sequencing_of_FACS_sorted_cells/5715040) and [Droplet](https://figshare.com/articles/Single-cell_RNA-seq_data_from_microfluidic_emulsion/5715025)) or run a script we've prepared:
+
+```
+bash 00_data_ingest/download_data.sh
+```
+
+This will download two zip files, `droplet_raw_data.zip` and `facs_raw_data.zip` which you'll need to open, e.g. by double-clicking the files. Then you'll have two folders in `00_data_ingest` (the location is important - everything here depends on the folder structure).
+
+```
+droplet_raw_data
+├── annotations_droplets.csv
+├── droplet.zip
+└── metadata_droplet.csv
+
+facs_raw_data
+├── FACS.zip
+├── annotations_FACS.csv
+└── metadata_FACS.csv
+```
+
+Now you'll need to unzip and open the `droplet.zip` and `FACS.zip` files which contain the counts matrices. Now your droplet folders should look like this:
+
+```
+droplet_raw_data
+├── annotations_droplets.csv
+├── droplet
+│   ├── Bladder-10X_P4_3
+│   ├── Bladder-10X_P4_4
+│   ├── Bladder-10X_P7_7
+│   ├── Heart-10X_P7_4
+│   ├── Kidney-10X_P4_5
+│   ├── Kidney-10X_P4_6
+│   ├── Kidney-10X_P7_5
+│   ├── Liver-10X_P4_2
+│   ├── Liver-10X_P7_0
+│   ├── Liver-10X_P7_1
+│   ├── Lung-10X_P7_8
+│   ├── Lung-10X_P7_9
+│   ├── Lung-10X_P8_12
+│   ├── Lung-10X_P8_13
+│   ├── Mammary-10X_P7_12
+│   ├── Mammary-10X_P7_13
+│   ├── Marrow-10X_P7_2
+│   ├── Marrow-10X_P7_3
+│   ├── Muscle-10X_P7_14
+│   ├── Muscle-10X_P7_15
+│   ├── Spleen-10X_P4_7
+│   ├── Spleen-10X_P7_6
+│   ├── Thymus-10X_P7_11
+│   ├── Tongue-10X_P4_0
+│   ├── Tongue-10X_P4_1
+│   ├── Tongue-10X_P7_10
+│   ├── Trachea-10X_P8_14
+│   └── Trachea-10X_P8_15
+├── droplet.zip
+└── metadata_droplet.csv
+```
+
+All of the `*-10X_*` folders contain a `barcodes.tsv`, `genes.tsv`, and `matrix.mtx` file as output by cellranger from 10X genomics.
+
+```
+droplet_raw_data/droplet/Bladder-10X_P4_3
+├── barcodes.tsv
+├── genes.tsv
+└── matrix.mtx
+
+```
+
+The FACS folder should look like this:
+
+```
+facs_raw_data/
+├── FACS
+│   ├── Bladder-counts.csv
+│   ├── Brain_Microglia-counts.csv
+│   ├── Brain_Neurons-counts.csv
+│   ├── Colon-counts.csv
+│   ├── Fat-counts.csv
+│   ├── Heart-counts.csv
+│   ├── Kidney-counts.csv
+│   ├── Liver-counts.csv
+│   ├── Lung-counts.csv
+│   ├── Mammary-counts.csv
+│   ├── Marrow-counts.csv
+│   ├── Muscle-counts.csv
+│   ├── Pancreas-counts.csv
+│   ├── Skin-counts.csv
+│   ├── Spleen-counts.csv
+│   ├── Thymus-counts.csv
+│   ├── Tongue-counts.csv
+│   └── Trachea-counts.csv
+├── FACS.zip
+├── annotations_FACS.csv
+└── metadata_FACS.csv
+```
+
+
+
 ## Folder Organization
 
 * FACS = SmartSeq2 on FACS-sorted plates
