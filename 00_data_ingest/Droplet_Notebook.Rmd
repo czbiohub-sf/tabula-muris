@@ -1,8 +1,6 @@
 ---
-title: "MACA Notebook"
-output:
-  html_document: default
-  html_notebook: default
+title: "Tabula Muris: single organ analysis"
+output: html_notebook
 ---
 
 Load the requisite packages and some additional helper functions.
