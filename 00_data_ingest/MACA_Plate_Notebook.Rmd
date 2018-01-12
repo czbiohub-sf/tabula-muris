@@ -1,14 +1,7 @@
 ---
-title: "MACA Notebook"
+title: "Tabula Muris: single organ analysis"
 output: html_notebook
 ---
-
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
-
-```{r}
-rootdir = "~/src/maca"
-tissue_of_interest = "Pancreas"
-```
 
 Load the requisite packages and some additional helper functions.
 
@@ -16,47 +9,28 @@ Load the requisite packages and some additional helper functions.
 library(Seurat)
 library(dplyr)
 library(Matrix)
+library(stringr)
+library(here)
 ```
 
-Load the plate metadata. Check which plates have been downloaded.
+Load the count data for one organ and add it to the Seurat object.
 
 ```{r}
-plate_metadata <- read.csv(file = paste0(rootdir, "/metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
-colnames(plate_metadata)[1] <- "plate.barcode"
-
-count_files = list.files(paste0(rootdir, "/data/plates"), pattern = "*counts.tab",recursive = FALSE)
-downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
-plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
-
-save_dir = paste0(rootdir, '/save')
-dir.create(save_dir)
+organ = "Bladder"
 ```
-
-Load the plate data.
 
 ```{r}
-tissue_plates = filter(plate_metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
-
-#Load the gene names and set the metadata columns by opening the first file
-
-raw.data = read.csv(file = paste0(rootdir,"/data/plates/", tissue_plates$plate.barcode[1], '.counts.tab') ,sep='\t')
-raw.data = data.frame(row.names = rownames(raw.data))
-meta.data = plate_metadata[1,][-1,]
-
-for(i in 1:nrow(tissue_plates)){
-  new.data = read.csv(file = paste0(rootdir,"/data/plates/", tissue_plates$plate.barcode[i], '.counts.tab') ,sep='\t')
-  new.metadata = data.frame(row.names = colnames(new.data))
-  new.metadata['plate.barcode'] = tissue_plates$plate.barcode[i]
-  
-  raw.data = cbind(raw.data, new.data)
-  meta.data = rbind(meta.data, new.metadata)
-}
-rnames = row.names(meta.data)
-meta.data <- merge(meta.data, plate_metadata, sort = F)
-row.names(meta.data) <- rnames
+raw.data <- read.csv(here("00_data_ingest","facs_raw_data", "FACS",paste0(organ,"-counts.csv")),row.names = 1)
+meta.data <- read.csv(here("00_data_ingest","facs_raw_data", "metadata_FACS.csv"))
 ```
 
-Process the raw data and load it into the Seurat object.
+```{r}
+plates <- str_split(colnames(raw.data),"[.]", simplify = TRUE)[,2]
+
+rownames(meta.data) <- meta.data$plate.barcode
+cell.meta.data <- meta.data[plates,]
+rownames(cell.meta.data) <- colnames(raw.data)
+```
 
 ```{r}
 # Find ERCC's, compute the percent ERCC, and drop them from the raw data.
@@ -64,27 +38,27 @@ erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
 percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
 ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
 raw.data <- raw.data[-ercc.index,]
+```
 
+```{r}
 # Create the Seurat object with all the data
-tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, 
-                    min.cells = 5, min.genes = 5)
+tiss <- CreateSeuratObject(raw.data = raw.data, min.cells = 5, min.genes = 5)
 
-tiss <- AddMetaData(object = tiss, meta.data)
+tiss <- AddMetaData(object = tiss, cell.meta.data)
 tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 # Change default name for sums of counts from nUMI to nReads
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
-
-# Create metadata columns for annotations and subannotations
-tiss@meta.data[,'annotation'] <- NA
-tiss@meta.data[,'subannotation'] <- NA
 ```
-
-Calculate percent ribosomal genes.
 
 ```{r}
 ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
 percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
 tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
+```
+
+```{r}
+percent.Rn45s <- Matrix::colSums(tiss@raw.data[c('Rn45s'), ])/Matrix::colSums(tiss@raw.data)
+tiss <- AddMetaData(object = tiss, metadata = percent.Rn45s, col.name = "percent.Rn45s")
 ```
 
 A sanity check: genes per cell vs reads per cell.
