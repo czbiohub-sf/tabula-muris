@@ -1,43 +1,41 @@
 ---
-title: "Tabula Muris: All droplet analysis"
+title: "Tabula Muris: All FACS analysis"
 output: html_notebook
 ---
+
+# Preprocessing
 
 Load the requisite packages and some additional helper functions.
 
 ```{r}
 library(Seurat)
 library(dplyr)
-library(stringr)
 library(Matrix)
+library(stringr)
+library(readr)
 library(here)
 ```
 
-Load the count data for all organ and add it to the Seurat object.
 
 ```{r}
-channel_folders = list.dirs(here("00_data_ingest","droplet_raw_data","droplet"), recursive = FALSE)
-
-n = length(strsplit(channel_folders[1],"[/]")[[1]])
+FACS_files = list.files(here("00_data_ingest","facs_raw_data","FACS"), full.names = TRUE)
 
 raw.data.list = list()
-channel.list = list()
-for (channel_folder in channel_folders){
-  raw.data <- Read10X(channel_folder)
-  channel = str_split(str_split(channel_folder,"/", simplify = TRUE)[1,n], "-", simplify = TRUE)[1,2]
-  colnames(raw.data) <-  lapply(colnames(raw.data), function(x) paste0(channel, '_', x))
+for (file in FACS_files){
+  raw.data <- read.csv(file, row.names = 1)
   raw.data.list <- append(raw.data.list, raw.data)
-  channel.list <- append(channel.list, rep(channel, length(colnames(raw.data))))
 }
 
 raw.data <- do.call(cbind, raw.data.list)
-cell.channels <- unlist(channel.list)
 ```
 
 ```{r}
-meta.data <- read.csv(here("00_data_ingest","droplet_raw_data", "metadata_droplet.csv"))
-rownames(meta.data) <- meta.data$channel
-cell.meta.data <- meta.data[cell.channels,]
+meta.data <- read.csv(here("00_data_ingest","facs_raw_data", "metadata_FACS.csv"))
+
+plates <- str_split(colnames(raw.data),"[.]", simplify = TRUE)[,2]
+
+rownames(meta.data) <- meta.data$plate.barcode
+cell.meta.data <- meta.data[plates,]
 rownames(cell.meta.data) <- colnames(raw.data)
 ```
 
@@ -55,6 +53,8 @@ tiss <- CreateSeuratObject(raw.data = raw.data, min.cells = 5, min.genes = 5)
 
 tiss <- AddMetaData(object = tiss, cell.meta.data)
 tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
+# Change default name for sums of counts from nUMI to nReads
+colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 ```
 
 ```{r}
@@ -64,33 +64,35 @@ tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.
 ```
 
 ```{r}
-percent.Rn45s <- tiss@raw.data[c('Rn45s'), ]/Matrix::colSums(tiss@raw.data)
+percent.Rn45s <- Matrix::colSums(tiss@raw.data[c('Rn45s'), ])/Matrix::colSums(tiss@raw.data)
 tiss <- AddMetaData(object = tiss, metadata = percent.Rn45s, col.name = "percent.Rn45s")
 ```
 
+# Analysis
+
 A sanity check: genes per cell vs reads per cell.
+
 ```{r}
-GenePlot(object = tiss, gene1 = "nUMI", gene2 = "nGene", use.raw=T)
+GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene", use.raw=T)
 ```
 
 Filter out cells with few reads and few genes.
+
 ```{r}
-tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nUMI"), 
-    low.thresholds = c(500, 1000), high.thresholds = c(Inf, Inf))
-dim(tiss@data)
+tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nReads"), 
+    low.thresholds = c(500, 50000), high.thresholds = c(25000, 5000000))
 ```
 
 Normalize the data, then regress out correlation with total reads
 ```{r}
 tiss <- NormalizeData(object = tiss)
-tiss <- ScaleData(object = tiss)
-#tiss <- ScaleData(object = tiss, vars.to.regress = c("nUMI", "percent.ribo","Rn45s"))
+tiss <- ScaleData(object = tiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
 tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
 ```
 
 Run Principal Component Analysis.
 ```{r}
-tiss <- RunPCA(object = tiss, do.print = FALSE, pcs.compute = 50)
+tiss <- RunPCA(object = tiss, do.print = FALSE, pcs.compute = 40)
 tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
@@ -110,7 +112,6 @@ Choose the number of principal components to use.
 n.pcs = 40
 ```
 
-
 The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
 
 For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
@@ -123,36 +124,36 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
     resolution = res.used, print.output = 0, save.SNN = TRUE)
 ```
 
-To visualize
-
+To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30, dim.embed = 2)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+```
+
+# Add in metadata, annotations, and save.
+
+```{r}
+tiss@meta.data['cluster'] <- tiss@ident
+tiss@meta.data['cell'] <- rownames(tiss@meta.data)
 ```
 
 ```{r}
-# note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = tiss, group.by = 'channel', pt.size = 0.1)
+anno = read_csv(here("00_data_ingest", "droplet_raw_data", "annotations_droplets.csv"))
+anno %>% group_by(tissue, cell_ontology_class) %>% summarize(count = n())
 ```
 
 ```{r}
-# note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = tiss, group.by = 'tissue', pt.size = 0.1)
+tissue_colors = read_csv(here("00_data_ingest", "tissue_colors.csv"))
 ```
 
 ```{r}
-# note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = tiss, do.label = T)
-```
+tiss@meta.data <- tiss@meta.data %>% 
+                   left_join(anno_plate, by = 'cell') %>%
+                   left_join(tissue_colors, by = 'tissue')
 
-Check expression of genes of interset.
-
-```{r, echo=FALSE, fig.height=8, fig.width=8}
-genes_to_check = c('Pecam1', 'Alb', 'Actb', 'Ptprc')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 2)
+rownames(tiss@meta.data) <- tiss@meta.data$cell
 ```
 
 ```{r}
-save(tiss, file=paste0(save_dir,"/","droplets_all.Robj"))
+save(tiss, file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
 ```
