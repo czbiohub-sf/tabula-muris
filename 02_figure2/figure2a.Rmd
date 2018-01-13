@@ -1,0 +1,28 @@
+---
+title: "Figure 2a"
+output: html_document
+---
+
+TSNE of all FACS cells
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(Seurat)
+library(viridis)
+```
+
+```{r}
+load(file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
+```
+
+```{r, fig.width = 8, fig.height = 6}
+FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
+  ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
+   scale_color_identity(breaks = tissue_colors$color, 
+                        labels = tissue_colors$tissue, 
+                        guide = "legend") + 
+  guides(colour = guide_legend(override.aes = list(size=2)))
+
+ggsave(here("02_figure2","figure2a.pdf"), width = 14, height = 7, units = "in")
+```
