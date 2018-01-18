@@ -1,0 +1,60 @@
+---
+title: "Supplementary Figure 2"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(Seurat)
+library(scales)
+```
+
+Load the processed and annotated data.
+
+```{r}
+#load(file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
+#load(file=here("00_data_ingest", "global_robj", "droplet_all.Robj"))
+```
+
+```{r}
+plate_v_tenx <- function(tissue_var, annotation_var){
+  
+  cells_plate <- anno_plate %>% filter(annotation == annotation_var & tissue == tissue_var) %>% pull(cell)
+  pct_plate <- Matrix::rowMeans(tiss@raw.data[,cells_plate] > 0)
+  pct_plate
+  cells_tenx <- anno_tenx %>% filter(annotation == annotation_var & tissue == tissue_var) %>% pull(cell)
+  pct_tenx <- Matrix::rowMeans(tissX@raw.data[,cells_tenx] > 0)
+  
+  pct1 = as_data_frame(pct_tenx)
+  pct1['gene'] <- names(pct_tenx)
+  pct1['method'] <- 'tenx'
+  pct1 <- filter(pct1, value > 0.01)
+  
+  pct2 = as_data_frame(pct_plate)
+  pct2['gene'] <- names(pct_plate)
+  pct2['method'] <- 'plate'
+  pct2 <- filter(pct2, value > 0.01)
+  
+  pct <- bind_rows(pct1, pct2)
+  
+  pct  %>% spread(key = method, value = value, fill = 0) %>% 
+    ggplot(aes(x = plate, y = tenx)) + geom_hex() + geom_abline(slope=1, intercept=0)  +
+      scale_fill_continuous(trans = log10_trans())
+}
+```
+
+```{r}
+plate_v_tenx("Liver", "hepatocytes") + ggtitle("Liver hepatocytes")
+ggsave(here("13_supplementary_figure3","sfigure3-hep.pdf"), width = 7, height = 7, units = "in")
+```
+
+```{r}
+plate_v_tenx("Kidney", "fibroblasts") + ggtitle("Kidney fibroblasts")
+ggsave(here("13_supplementary_figure3","sfigure3-fib.pdf"), width = 7, height = 7, units = "in")
+```
+
+```{r}
+plate_v_tenx("Spleen", "b_cells") + ggtitle("Spleen b_cells")
+ggsave(here("13_supplementary_figure3","sfigure3-b.pdf"), width = 7, height = 7, units = "in")
+```

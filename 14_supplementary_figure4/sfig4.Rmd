@@ -1,0 +1,110 @@
+---
+title: "Supplementary Figure 4"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(Seurat)
+```
+
+Load the processed and annotated data.
+
+```{r}
+load(file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
+tiss_FACS_FACS = tiss_FACS
+load(file=here("00_data_ingest", "global_robj", "droplet_all.Robj"))
+tiss_FACS_droplets = tiss_FACS
+```
+
+It's difficult to compare UMI and reads apples to apples. We instead scale FACSs to 10^6, which is more appropriate for showing the low values.
+
+```{r}
+adjust_lognorm = function(x, rescaling) log1p(rescaling*(exp(x)-1))
+```
+
+We choose a cell for each annotation with approximately the median number of genes expressed.
+```{r}
+median_cell <- function(tiss, tissue_name, annotation_name){
+  set.seed(1)
+  med = median(tiss@meta.data %>% filter(tissue == tissue_name, cell_ontology_class == annotation_name) %>% pull(nGene))
+  cell = tiss@meta.data %>% filter(tissue == tissue_name, cell_ontology_class == annotation_name, nGene > med - 20, nGene < med + 20) %>%
+  sample_n(1) %>% pull(cell)
+  
+  cell
+}
+```
+
+Plot 'dynamic range' for 3 different cell types.
+
+```{r, fig.width = 4, fig.height = 8}
+pdf(here("14_supplementary_figure4","sfigure4-hep.pdf"))
+par(mfrow=c(2,1))
+
+tissue_name = "Liver"
+cell_type = "hepatocyte"
+
+droplet_cell = median_cell(tiss_droplet, tissue_name, cell_type)
+FACS_cell = median_cell(tiss_FACS, tissue_name, cell_type)
+
+expr <- tiss_droplet@data[,droplet_cell]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log normalized expression", xlab = "gene index", col = "red")
+title(main = paste0("Hepatocyte - droplet"))
+
+expr <- adjust_lognorm(tiss_FACS@data[,FACS_cell], 100)
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log  normalized expression", xlab = "gene index", col = "green")
+title(main = paste0("Hepatocyte - FACS"))
+
+dev.off()
+```
+
+```{r, fig.width = 4, fig.height = 8}
+pdf(here("14_supplementary_figure4","sfigure4-fib.pdf"))
+
+par(mfrow=c(2,1))
+
+tissue_name = "Kidney"
+cell_type = "fibroblast"
+
+droplet_cell = median_cell(tiss_droplet, tissue_name, cell_type)
+FACS_cell = median_cell(tiss_FACS, tissue_name, cell_type)
+
+expr <- tiss_droplet@data[,droplet_cell]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log normalized expression", xlab = "gene index", col = "red")
+title(main = paste0("Kidney fibroblast - droplet"))
+
+expr <- adjust_lognorm(tiss_FACS@data[,FACS_cell], 100)
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log  normalized expression", xlab = "gene index", col = "green")
+title(main = paste0("Kidney fibroblast - FACS"))
+
+dev.off()
+```
+
+```{r, fig.width = 4, fig.height = 8}
+pdf(here("14_supplementary_figure4","sfigure4-b.pdf"))
+
+par(mfrow=c(2,1))
+
+tissue_name = "Spleen"
+cell_type = "B cell"
+
+droplet_cell = median_cell(tiss_droplet, tissue_name, cell_type)
+FACS_cell = median_cell(tiss_FACS, tissue_name, cell_type)
+
+expr <- tiss_droplet@data[,droplet_cell]
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log normalized expression", xlab = "gene index", col = "red")
+title(main = paste0("Spleen B cell - droplet"))
+
+expr <- adjust_lognorm(tiss_FACS@data[,FACS_cell], 100)
+expr <- expr[expr > 0]
+plot(sort(expr), ylab = "log  normalized expression", xlab = "gene index", col = "green")
+title(main = paste0("Spleen B cell - FACS"))
+
+dev.off()
+```

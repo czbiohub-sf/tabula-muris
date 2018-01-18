@@ -1,0 +1,57 @@
+---
+title: "Supplementary Figure 1"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(Seurat)
+```
+
+Load the processed and annotated data.
+
+```{r}
+#load(file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
+#load(file=here("00_data_ingest", "global_robj", "droplet_all.Robj"))
+```
+
+Gather and merge per-cell metadata from FACS and droplet.
+```{r}
+df_FACS = as_tibble(tiss_FACS@meta.data[c('tissue', 'subtissue', 'percent.ribo', 'percent.Rn45s','nGene', 'plate.barcode', 'nReads')])
+df_FACS <- rownames_to_column(df_FACS, "cell")
+df_FACS['method'] <- 'FACS'
+df_FACS <- rename(df_FACS, run = plate.barcode)
+df_FACS <- rename(df_FACS, nMolecules = nReads)
+
+df_droplet = as_tibble(tiss_droplets@meta.data[c('tissue', 'percent.ribo', 'nGene','channel', 'percent.Rn45s', 'nUMI')])
+df_droplet <- rownames_to_column(df_droplet, "cell")
+df_droplet <- rename(df_droplet, nMolecules = nUMI)
+
+df_droplet['method'] <- 'droplet'
+df_droplet <- rename(df_droplet, run = channel)
+
+df <- bind_rows(df_FACS, df_droplet)
+```
+
+Select the tissues processed using both methods.
+
+```{r}
+common_tissues <- as.character(df %>% 
+                                 group_by(tissue, method) %>% summarize(count = n()) %>% 
+                                 ungroup() %>% group_by(tissue) %>% summarize(count = n()) %>% 
+                                 filter(count > 1) %>% pull(tissue))
+common_tissues
+```
+
+
+Plot the histograms of the number of genes per cell for each tissue and method.
+
+```{r, fig.width = 12, fig.height = 8}
+filter(df, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 300) +
+  facet_wrap(~ tissue, ncol = 4) + 
+  ggtitle("Number of genes expressed")
+
+ggsave(here("11_supplementary_figure1","sfigure1.pdf"), width = 7, height = 7, units = "in")
+```

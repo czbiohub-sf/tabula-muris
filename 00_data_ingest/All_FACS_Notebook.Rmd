@@ -139,7 +139,7 @@ tiss@meta.data['cell'] <- rownames(tiss@meta.data)
 ```
 
 ```{r}
-anno = read_csv(here("00_data_ingest", "droplet_raw_data", "annotations_droplets.csv"))
+anno = read_csv(here("00_data_ingest", "FACS_raw_data", "annotations_FACS.csv"))
 anno %>% group_by(tissue, cell_ontology_class) %>% summarize(count = n())
 ```
 
@@ -149,12 +149,13 @@ tissue_colors = read_csv(here("00_data_ingest", "tissue_colors.csv"))
 
 ```{r}
 tiss@meta.data <- tiss@meta.data %>% 
-                   left_join(anno_plate, by = 'cell') %>%
+                   left_join(anno, by = 'cell') %>%
                    left_join(tissue_colors, by = 'tissue')
 
 rownames(tiss@meta.data) <- tiss@meta.data$cell
 ```
 
 ```{r}
-save(tiss, file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
+tiss_FACS = tiss
+save(tiss_FACS, file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
 ```
