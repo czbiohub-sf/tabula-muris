@@ -1,0 +1,88 @@
+---
+title: "Supplementary Figure 3"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(Seurat)
+library(scales)
+```
+
+Load the processed and annotated data.
+
+```{r}
+#load(file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
+#load(file=here("00_data_ingest", "global_robj", "droplet_all.Robj"))
+```
+
+```{r}
+all_pct <- tibble(value = double(), gene = character(), method = character(), tissue = character(), annotation = character())
+
+for(tissue_name in unique(tiss_FACS@meta.data$tissue)){
+  for(annotation_name in filter(tiss_FACS@meta.data, tissue == tissue_name) %>% pull(cell_ontology_class) %>% unique()){
+    cells_FACS <- tiss_FACS@meta.data %>% filter(cell_ontology_class == annotation_name & tissue == tissue_name) %>% pull(cell)
+    pct_FACS <- Matrix::rowMeans(tiss_FACS@raw.data[,cells_FACS] > 0)
+    
+    pct = as_data_frame(pct_FACS)
+    pct['gene'] <- names(pct_FACS)
+    pct['method'] <- 'FACS'
+    pct['tissue'] <- tissue_name
+    pct['annotation'] <- annotation_name
+    pct <- filter(pct, value > 0.01)
+    
+    all_pct <- bind_rows(all_pct, pct)
+  }
+}
+
+for(tissue_name in unique(tiss_droplet@meta.data$tissue)){
+  for(annotation_name in filter(tiss_droplet@meta.data, tissue == tissue_name) %>% pull(cell_ontology_class) %>% unique()){
+    cells_droplet <- tiss_droplet@meta.data %>% filter(cell_ontology_class == annotation_name & tissue == tissue_name) %>% pull(cell)
+    pct_droplet <- Matrix::rowMeans(tiss_droplet@raw.data[,cells_droplet] > 0)
+    
+    pct = as_data_frame(pct_droplet)
+    pct['gene'] <- names(pct_droplet)
+    pct['method'] <- 'droplet'
+    pct['tissue'] <- tissue_name
+    pct['annotation'] <- annotation_name
+    pct <- filter(pct, value > 0.01)
+    
+    all_pct <- bind_rows(all_pct, pct)
+    }
+}
+```
+
+
+```{r}
+tissue_colors = read_csv(here("00_data_ingest", "tissue_colors.csv"))
+```
+
+```{r}
+all_pct <- all_pct %>% mutate(anno_and_tissue = paste(cell_ontology_class, tissue, sep='-'))
+
+common_anno_tissue <- all_pct %>% group_by(anno_and_tissue, method) %>% summarize(count = n()) %>%
+                        ungroup() %>% group_by(anno_and_tissue) %>% summarize(count = n()) %>%
+                        filter(count > 1) %>% pull(anno_and_tissue)
+
+pct_comparison <- all_pct %>% filter(anno_and_tissue %in% common_anno_tissue)  %>% spread(key = method, value = value, fill = 0) %>%
+        filter(FACS > 0.05 | droplet > 0.05) %>% 
+        mutate(FACS_larger = (FACS>droplet),
+                   FACS_smaller = (FACS < droplet)) %>%
+        group_by(tissue, anno_and_tissue) %>% summarize(FACS_is_larger = sum(FACS_larger),
+                                                        FACS_is_smaller = sum(FACS_smaller),
+                                                        ngene = n())
+
+pct_comparison <- left_join(pct_comparison, tissue_colors, by = 'tissue')
+
+pct_comparison %>% ggplot(aes(FACS_is_larger, FACS_is_smaller, xmin = 0, ymin = 0, xmax = 11000, ymax = 11000)) + geom_abline(intercept = 0, slope = 1) + 
+   geom_point(aes(color = color), size=2) +
+   scale_color_identity(breaks = rtissue_colors$color, 
+                        labels = rtissue_colors$tissue, 
+                        guide = "legend") + 
+  labs(x = 'Genes present more often in FACS', y = 'Genes present more often in droplet') +
+  
+  guides(color = guide_legend(override.aes = list(size=2)))
+
+ggsave('figures/FACS_droplet_comparison.pdf')
+```

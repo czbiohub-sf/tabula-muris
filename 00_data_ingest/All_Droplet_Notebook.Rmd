@@ -153,6 +153,33 @@ genes_to_check = c('Pecam1', 'Alb', 'Actb', 'Ptprc')
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 2)
 ```
 
+# Add in metadata, annotations, and save.
+
 ```{r}
-save(tiss, file=paste0(save_dir,"/","droplets_all.Robj"))
+tiss@meta.data['cluster'] <- tiss@ident
+tiss@meta.data['cell'] <- rownames(tiss@meta.data)
 ```
+
+```{r}
+anno = read_csv(here("00_data_ingest", "droplet_raw_data", "annotations_droplet.csv"))
+anno %>% group_by(tissue, cell_ontology_class) %>% summarize(count = n())
+```
+
+```{r}
+tissue_colors = read_csv(here("00_data_ingest", "tissue_colors.csv"))
+```
+
+```{r}
+tiss@meta.data <- tiss@meta.data %>% 
+                   left_join(anno, by = 'cell') %>%
+                   left_join(tissue_colors, by = 'tissue')
+
+rownames(tiss@meta.data) <- tiss@meta.data$cell
+```
+
+```{r}
+tiss_droplet = tiss
+save(tiss_droplet, file=here("00_data_ingest", "global_robj", "droplet_all.Robj"))
+```
+
+
