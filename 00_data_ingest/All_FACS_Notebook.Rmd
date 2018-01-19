@@ -31,6 +31,19 @@ raw.data <- do.call(cbind, raw.data.list)
 ```
 
 ```{r}
+cell_order_FACS = scan("~/tabula-muris/00_data_ingest/cell_order_FACS.txt", what = character())
+```
+
+```{r}
+raw.data[,cell_order_FACS]
+raw.data = raw.data[,cell_order_FACS]
+str(raw.data)
+```
+
+
+
+
+```{r}
 meta.data <- read.csv(here("00_data_ingest","facs_raw_data", "metadata_FACS.csv"))
 
 plates <- str_split(colnames(raw.data),"[.]", simplify = TRUE)[,2]
@@ -64,8 +77,9 @@ percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tis
 tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
 ```
 
+
 ```{r}
-percent.Rn45s <- Matrix::colSums(tiss@raw.data[c('Rn45s'), ])/Matrix::colSums(tiss@raw.data)
+percent.Rn45s <- tiss@raw.data['Rn45s', ]/Matrix::colSums(tiss@raw.data)
 tiss <- AddMetaData(object = tiss, metadata = percent.Rn45s, col.name = "percent.Rn45s")
 ```
 
@@ -131,6 +145,15 @@ To visualize
 tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```
 
+```{r, fig.width = 8, fig.height = 6}
+FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
+  ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
+   scale_color_identity(breaks = tissue_colors$color, 
+                        labels = tissue_colors$tissue, 
+                        guide = "legend") + 
+  guides(colour = guide_legend(override.aes = list(size=2)))
+```
+
 # Add in metadata, annotations, and save.
 
 ```{r}
@@ -139,7 +162,7 @@ tiss@meta.data['cell'] <- rownames(tiss@meta.data)
 ```
 
 ```{r}
-anno = read_csv(here("00_data_ingest", "FACS_raw_data", "annotations_FACS.csv"))
+anno = read_csv(here("00_data_ingest", "facs_raw_data", "annotations_FACS.csv"))
 anno %>% group_by(tissue, cell_ontology_class) %>% summarize(count = n())
 ```
 
@@ -147,9 +170,10 @@ anno %>% group_by(tissue, cell_ontology_class) %>% summarize(count = n())
 tissue_colors = read_csv(here("00_data_ingest", "tissue_colors.csv"))
 ```
 
+
 ```{r}
 tiss@meta.data <- tiss@meta.data %>% 
-                   left_join(anno, by = 'cell') %>%
+                   left_join(anno %>% select(-tissue), by = 'cell') %>%
                    left_join(tissue_colors, by = 'tissue')
 
 rownames(tiss@meta.data) <- tiss@meta.data$cell
