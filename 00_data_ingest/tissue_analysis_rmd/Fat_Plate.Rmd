@@ -1,61 +1,80 @@
 ---
-title: "MACA Notebook"
-output: html_notebook
+title: "Fat FACS Notebook"
+output:
+  html_document: default
+  html_notebook: default
 ---
 
 Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
-rootdir = "~/maca3m/All_Fat/"
 tissue_of_interest = "Fat"
 ```
 
 Load the requisite packages and some additional helper functions.
 
 ```{r}
+library(here)
+library(useful)
 library(Seurat)
 library(dplyr)
 library(Matrix)
+
+save_dir = here('00_data_ingest', 'tissue_robj')
 ```
 
-Load the plate metadata. Check which plates have been downloaded.
+
 
 ```{r}
-plate_metadata <- read.csv(file = paste0(rootdir, "/metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
+# read the metadata to get the plates we want
+plate_metadata_filename = here('00_data_ingest', 'facs_raw_data', 'metadata_FACS.csv')
+
+plate_metadata <- read.csv(plate_metadata_filename, sep=",", header = TRUE)
 colnames(plate_metadata)[1] <- "plate.barcode"
-
-count_files = list.files(paste0(rootdir, "/data/plates"), pattern = "*counts.tab",recursive = FALSE)
-downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
-plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
-
-save_dir = paste0(rootdir, '/save')
-dir.create(save_dir)
+plate_metadata
 ```
 
-Load the plate data.
+Subset the metadata on the tissue.
 
 ```{r}
-tissue_plates = filter(plate_metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
-
-#Load the gene names and set the metadata columns by opening the first file
-
-raw.data = read.csv(file = paste0(rootdir,"/data/plates/", tissue_plates$plate.barcode[1], '.counts.tab') ,sep='\t')
-raw.data = data.frame(row.names = rownames(raw.data))
-meta.data = plate_metadata[1,][-1,]
-
-for(i in 1:nrow(tissue_plates)){
-  new.data = read.csv(file = paste0(rootdir,"/data/plates/", tissue_plates$plate.barcode[i], '.counts.tab') ,sep='\t')
-  new.metadata = data.frame(row.names = colnames(new.data))
-  new.metadata['plate.barcode'] = tissue_plates$plate.barcode[i]
-  
-  raw.data = cbind(raw.data, new.data)
-  meta.data = rbind(meta.data, new.metadata)
-}
-rnames = row.names(meta.data)
-meta.data <- merge(meta.data, plate_metadata, sort = F)
-row.names(meta.data) <- rnames
+tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
+tissue_plates
 ```
 
+Load the read count data.
+```{r}
+#Load the gene names and set the metadata columns by opening the first file
+filename = here('00_data_ingest', 'facs_raw_data', 'FACS', paste0(tissue_of_interest, '-counts.csv'))
+
+raw.data = read.csv(filename, sep=",", row.names=1)
+# raw.data = data.frame(row.names = rownames(raw.data))
+corner(raw.data)
+```
+Make a vector of plate barcodes for each cell
+
+```{r}
+plate.barcodes = lapply(colnames(raw.data), function(x) strsplit(strsplit(x, "_")[[1]][1], '.', fixed=TRUE)[[1]][2])
+head(plate.barcodes)
+```
+
+Use only the metadata rows corresponding to Bladder plates. Make a plate barcode dataframe to "expand" the per-plate metadata to be per-cell.
+```{r}
+barcode.df = t.data.frame(as.data.frame(plate.barcodes))
+
+rownames(barcode.df) = colnames(raw.data)
+colnames(barcode.df) = c('plate.barcode')
+head(barcode.df)
+
+rnames = row.names(barcode.df)
+meta.data <- merge(barcode.df, plate_metadata, by='plate.barcode', sort = F)
+row.names(meta.data) <- rnames
+
+# Sort cells by plate barcode because that's how the data was originally
+meta.data = meta.data[order(meta.data$plate.barcode), ]
+corner(meta.data)
+raw.data = raw.data[, rownames(meta.data)]
+corner(raw.data)
+```
 Process the raw data and load it into the Seurat object.
 
 ```{r}
@@ -263,9 +282,51 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
-annotation <- c("Multipotent Progenitors","Endothelial","B-cells","Multipotent Progenitors","Multipotent Progenitors","T-cells","Granulocytes","Mono/macro/DCs","Mono/macro/DCs","Neutrophils","Multipotent Progenitors","Granulocytes","NK-cells","Epithelial?","Endothelial?","Muscle?")
+annotation <-
+  c(
+  "mesenchymal stem cell of adipose",
+  "endothelial cell",
+  "B cell",
+  "mesenchymal stem cell of adipose",
+  "mesenchymal stem cell of adipose",
+  "T cell",
+  "granulocyte",
+  "myeloid cell",
+  "myeloid cell",
+  "neutrophil",
+  "mesenchymal stem cell of adipose",
+  "granulocyte",
+  "natural killer cell",
+  "epithelial cell",
+  "endothelial cell",
+  "smooth muscle cell"
+  )
+cell_ontology_id <-
+  c(
+  "CL:0002570",
+  "CL:0000115",
+  "CL:0000236",
+  "CL:0002570",
+  "CL:0002570",
+  "CL:0000084",
+  "CL:0000094",
+  "CL:0000763",
+  "CL:0000763",
+  "CL:0000775",
+  "CL:0002570",
+  "CL:0000094",
+  "CL:0000623",
+  "CL:0000066",
+  "CL:0000115",
+  "CL:0000192"
+  )
 
-tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = annotation)
+
+tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = annotation)
+tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+
+tiss@meta.data[tiss@cell.names,'annotation'] <- as.character(tiss@meta.data$annotation)
+tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
 ```
@@ -285,166 +346,30 @@ Print a table showing the count of cells in each identity category from each pla
 table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 ```
 
-### Save the R object so 1. you can reload without recomputing and 2. anyone else can reproduce your figures.
+
+
+# Save the Robject for later
+When you save the annotated tissue, please give it a name.
 
 ```{r}
-save(tiss, file=paste0(save_dir,"/",tissue_of_interest, "_seurat_tiss.Robj"))
+filename = here('00_data_ingest', 'tissue_seurat_robj', 
+                     paste0(tissue_of_interest, "_seurat_tiss.Robj"))
+print(filename)
+save(tiss, file=filename)
 ```
 
-```{r}
-# To reload a saved object
-# load(file=paste0(rootdir,"/",tissue_of_interest, "_seurat_tiss.Robj")
-```
-
-
-# Subset and iterate
-
-We can repeat the above analysis on a subset of cells, defined using cluster IDs or some other metadata. This is a good way to drill down and find substructure.
-
-## First subset
-
-```{r}
-# Subset data based on cluster id
-subtiss <- SubsetData(object = tiss, ident.use = c(5), do.center = F, do.scale = F, cells.use = )
-
-# To subset data based on annotation or other metadata, you can explicitly pass cell names
-
- anno = 'T-cells'
- cells.to.use = tiss@cell.names[which(tiss@meta.data$annotation == anno)]
- subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
-
-```
-
-```{r}
-subtiss <- NormalizeData(object = subtiss)
-subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
-```
-
-```{r}
-subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.8)
-subtiss <- RunPCA(object = subtiss, pcs.compute = 20)
-subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
-```
-
-
-Run Principal Component Analysis.
-```{r}
-subtiss <- RunPCA(object = subtiss, do.print = FALSE)
-subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
-```
-
-```{r}
-# If this fails for your subset, it may be that cells.use is more cells than you have left! Try reducing it.
-PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 250, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
-```
-
-Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
-
-```{r}
-PCElbowPlot(object = subtiss)
-```
-
-Choose the number of principal components to use.
-```{r}
-# Set number of principal components. 
-sub.n.pcs = 4
-```
-
-
-The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
-
-```{r}
-# Set resolution 
-sub.res.used <- 0.5
-
-subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.used, print.output = 0, save.SNN = TRUE)
-```
-
-To visualize 
-```{r}
-# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-subtiss <- RunTSNE(object = subtiss, dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=20)
-```
-
-```{r}
-# note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = subtiss, do.label = T)
-```
-
-```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_diff)
-```
-
-Check expression of genes of interset.
-```{r}
-genes_to_check = c('Cd4','Cd8a','Cd3g','Ncam1')
-
-FeaturePlot(subtiss, genes_to_check, pt.size = 1)
-```
-
-Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(subtiss, genes_to_check, plot.legend = T)
-```
-
-How big are the clusters?
-```{r}
-table(subtiss@ident)
-```
-
-## Checking for batch effects
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
-TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
-```
-
-Print a table showing the count of cells in each identity category from each plate.
-
-```{r}
-table(as.character(subtiss@ident), as.character(subtiss@meta.data$plate.barcode))
-```
-
-
-
-### Assigning subannotations
-
-For the subsets, we produce subannotations. These will be written back as metadata in the original object, so we can see all subannotations together.
-
-If some of the clusters you find in the subset deserve additional annotation, you can add that right here. Use NA for clusters for which no subannotation is needed.
-
-```{r}
-subcluster.ids <- c(0, 1, 2)
-subannotation <- c("Jun-negative","Jun-positive", NA)
-
-subtiss@meta.data[,'subannotation'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subannotation)
-
-tiss@meta.data[subtiss@cell.names,'subannotation'] <- as.character(subtiss@meta.data$subannotation)
-
-TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subannotation')
-```
-
-When you save the subtissue, please give it a name.
-
-```{r}
-subtiss.name = 'exocrine_pancreas'
-save(subtiss, file=paste0(save_dir,"/",subtiss.name, "_seurat_subtiss.Robj"))
-```
 
 # Export the final metadata
 
 So that Biohub can easily combine all your annotations, please export them as a simple csv.
 
 ```{r}
-write.csv(tiss@meta.data[,c('annotation','subannotation')],file =paste0(save_dir,"/", tissue_of_interest,"_metadata.csv"))
+head(tiss@meta.data)
 ```
 
 
-
+```{r}
+filename = here('00_data_ingest', 'tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_annotation.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode','annotation','cell_ontology_id')], file=filename)
+```

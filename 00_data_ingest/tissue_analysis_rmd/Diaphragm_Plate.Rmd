@@ -1,71 +1,89 @@
 ---
-title: "MACA Notebook"
+title: "Diaphragm FACS Notebook"
 output: html_notebook
 ---
 
 Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
-rootdir = "~/Workspace/maca/"
-tissue_of_interest = "Muscle"
-stissue <- "Diaphragm"
+tissue_of_interest = "Diaphragm"
 ```
 
 Load the requisite packages and some additional helper functions.
 
 ```{r}
+library(here)
+library(useful)
 library(Seurat)
 library(dplyr)
 library(Matrix)
+
+save_dir = here('00_data_ingest', 'tissue_robj')
 ```
 
-Load the plate metadata.
+Load the plate metadata. Check which plates have been downloaded.
 
 ```{r}
-plate_metadata <- read.csv(file = paste0(rootdir, "metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
+plate_metadata_filename = here('00_data_ingest', 'facs_raw_data', 'metadata_FACS.csv')
+
+plate_metadata <- read.csv(plate_metadata_filename, sep=",", header = TRUE)
 colnames(plate_metadata)[1] <- "plate.barcode"
-head(plate_metadata)
+plate_metadata
 ```
 
+"Diaphragm" is a subtissue of "Muscle" and we will have to filter for this.
+
 ```{r}
-#Check for available files.
-
-count_files = list.files(paste0(rootdir, "data/"), pattern = "*counts.tab",recursive = FALSE)
-
-downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
-plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
-
-plate_metadata <- subset(plate_metadata, tissue==tissue_of_interest)
-
-plate_metadata <- subset(plate_metadata, subtissue==stissue)
-
-
-head(plate_metadata)
-  
+tissue_plates = filter(plate_metadata, subtissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
+tissue_plates
 ```
-
-Load the plate data.
-
+Load the read count data. 
 ```{r}
-tissue_plates = filter(plate_metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
-
 #Load the gene names and set the metadata columns by opening the first file
+filename = here('00_data_ingest', 'facs_raw_data', 'FACS', 'Muscle-counts.csv')
 
-raw.data = read.csv(file = paste0(rootdir,"data/", tissue_plates$plate.barcode[1], '.counts.tab') ,sep='\t')
-raw.data = data.frame(row.names = rownames(raw.data))
-meta.data = plate_metadata[1,][-1,]
+raw.data = read.csv(filename, sep=",", row.names=1)
+# raw.data = data.frame(row.names = rownames(raw.data))
+corner(raw.data)
+```
 
-for(i in 1:nrow(tissue_plates)){
-  new.data = read.csv(file = paste0(rootdir,"data/", tissue_plates$plate.barcode[i], '.counts.tab') ,sep='\t')
-  new.metadata = data.frame(row.names = colnames(new.data))
-  new.metadata['plate.barcode'] = tissue_plates$plate.barcode[i]
-  
-  raw.data = cbind(raw.data, new.data)
-  meta.data = rbind(meta.data, new.metadata)
-}
-rnames = row.names(meta.data)
-meta.data <- merge(meta.data, plate_metadata)
+Get the plate barcode of each individual cell
+
+```{r}
+plate.barcodes = lapply(colnames(raw.data), function(x) strsplit(strsplit(x, "_")[[1]][1], '.', fixed=TRUE)[[1]][2])
+meta.data = plate_metadata[plate_metadata$plate.barcode %in% plate.barcodes, ]
+dim(plate_metadata)
+dim(meta.data)
+corner(meta.data)
+```
+Use only cells from "Diaphragm"" plate barcodes.
+
+```{r}
+subtissue.plates = filter(tissue_plates, subtissue == tissue_of_interest)
+subtissue.plates = plate.barcodes %in% subtissue.plates$plate.barcode
+sum(subtissue.plates)
+
+raw.data = raw.data[subtissue.plates]
+```
+
+Create per-cell metadata from plate barcode metadata
+
+```{r}
+barcode.df = t.data.frame(as.data.frame(plate.barcodes[subtissue.plates]))
+head(barcode.df)
+
+rownames(barcode.df) = colnames(raw.data)
+colnames(barcode.df) = c('plate.barcode')
+head(barcode.df)
+
+rnames = row.names(barcode.df)
+meta.data <- merge(barcode.df, plate_metadata, by='plate.barcode', sort = F)
 row.names(meta.data) <- rnames
+
+# Sort cells by plate barcode because that's how the data was originally
+meta.data = meta.data[order(meta.data$plate.barcode), ]
+raw.data = raw.data[, rownames(meta.data)]
+head(raw.data)
 ```
 
 
@@ -244,28 +262,23 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5)
-annotation <- c("fibro/adipogenic progenitors", "satellite cells 1", "satellite cells 2", "B cells & T-cells", "endothelial cells", "macrophages")
+annotation <- c("mesenchymal stem cell", "skeletal muscle satellite stem cell", "skeletal muscle satellite stem cell", "B cell", "endothelial cell", "macrophage")
+cell_ontology_id <- c("CL:0000134", "CL:0008011", "CL:0008011", "CL:0000236", "CL:0000115", "CL:0000235")
 
-tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = annotation)
+tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = annotation)
+tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+
+tiss@meta.data[tiss@cell.names,'annotation'] <- as.character(tiss@meta.data$annotation)
+tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
 ```
+
+
 ```{r}
 tiss = BuildClusterTree(tiss)
 ```
-
-```{r}
-# save tiss
-save_dir <- '20171027'
-save_dir <- '20171029'
-dir.create(save_dir)
-save(tiss, file=paste0(save_dir,"/", tissue_of_interest, "_", stissue, "_seurat_tiss.Robj"))
-tiss@meta.data[,'subannotation'] <- tiss@meta.data[,'annotation']
-write.csv(tiss@meta.data[,c('plate.barcode','annotation','subannotation')],file =paste0(save_dir,"/", tissue_of_interest, "_", stissue, "_annotation.csv"))
-#To reload a saved object
-#load(file=paste0(rootdir,"/", save_dir, "/", tissue_of_interest, "_", stissue, "_seurat_tiss.Robj"))
-```
-
 
 ## TODO run after this
 
@@ -281,7 +294,7 @@ We can repeat the above analysis on a subset of genes, defined using cluster IDs
 
 ```{r}
 # To subset data based on annotation or other metadata, you can explicitly pass cell names
-anno = 'B cells & T-cells'
+anno = 'B cell'
 cells.to.use = tiss@cell.names[which(tiss@meta.data$annotation == anno)]
 subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
 
@@ -337,3 +350,31 @@ FeaturePlot(subtiss, genes_to_check, pt.size = 1)
 ```{r}
 GenePlot(subtiss, 'Pax7', 'Pax3', use.raw = T)
 ```
+
+
+
+When you save the annotated tissue, please give it a name.
+
+```{r}
+filename = here('00_data_ingest', 'tissue_seurat_robj', 
+                     paste0(tissue_of_interest, "_seurat_tiss.Robj"))
+print(filename)
+save(tiss, file=filename)
+```
+
+
+# Export the final metadata
+
+So that Biohub can easily combine all your annotations, please export them as a simple csv.
+
+```{r}
+head(tiss@meta.data)
+```
+
+
+```{r}
+filename = here('00_data_ingest', 'tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_annotation.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode','annotation','cell_ontology_id')], file=filename)
+```
+

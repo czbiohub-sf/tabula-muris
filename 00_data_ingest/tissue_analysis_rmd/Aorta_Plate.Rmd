@@ -1,5 +1,5 @@
 ---
-title: "MACA Notebook"
+title: "Aorta FACS Notebook"
 output: html_notebook
 ---
 
@@ -29,12 +29,6 @@ plate_metadata_filename = here('00_data_ingest', 'facs_raw_data', 'metadata_FACS
 plate_metadata <- read.csv(plate_metadata_filename, sep=",", header = TRUE)
 colnames(plate_metadata)[1] <- "plate.barcode"
 plate_metadata
-# count_files = list.files(paste0(rootdir, "/data/plates"), pattern = "*counts.tab",recursive = FALSE)
-# downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
-# plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
-# 
-# save_dir = paste0(rootdir, '/save')
-# dir.create(save_dir)
 ```
 
 "Aorta" is a subtissue of "Heart" and we will have to filter for this.
@@ -53,51 +47,35 @@ raw.data = read.csv(filename, sep=",", row.names=1)
 corner(raw.data)
 ```
 
-Use only cells from "Aorta"" plate barcodes.
+Get the plate barcode of each individual cell
 
 ```{r}
 plate.barcodes = lapply(colnames(raw.data), function(x) strsplit(strsplit(x, "_")[[1]][1], '.', fixed=TRUE)[[1]][2])
-head(plate.barcodes)
-```
-
-```{r}
-aorta.plates = filter(tissue_plates, subtissue == "Aorta")
-aorta.barcodes = plate.barcodes %in% aorta.plates$plate.barcode
-sum(aorta.barcodes)
-```
-Use only the aorta barcodes
-```{r}
-raw.data = raw.data[aorta.barcodes]
-```
-
-
-```{r}
 meta.data = plate_metadata[plate_metadata$plate.barcode %in% plate.barcodes, ]
 dim(plate_metadata)
 dim(meta.data)
 corner(meta.data)
 ```
+Use only cells from "Aorta"" plate barcodes.
+
+```{r}
+aorta.plates = filter(tissue_plates, subtissue == "Aorta")
+aorta.barcodes = plate.barcodes %in% aorta.plates$plate.barcode
+sum(aorta.barcodes)
+
+raw.data = raw.data[aorta.barcodes]
+```
+
+Create per-cell metadata from plate barcode metadata
 
 ```{r}
 barcode.df = t.data.frame(as.data.frame(plate.barcodes[aorta.barcodes]))
 head(barcode.df)
-```
-```{r}
-dim(raw.data)
-```
 
-
-```{r}
 rownames(barcode.df) = colnames(raw.data)
 colnames(barcode.df) = c('plate.barcode')
 head(barcode.df)
-```
-```{r}
-head(plate_metadata)
-```
 
-
-```{r}
 rnames = row.names(barcode.df)
 meta.data <- merge(barcode.df, plate_metadata, by='plate.barcode', sort = F)
 row.names(meta.data) <- rnames
@@ -268,8 +246,10 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5)
 annotation <- c("heterogenous group of cells", "endothelial cell", "epicardial adipocytes", "endothelial cells", "fibroblasts", "hematopoetic cells")
+cell_ontology_id = c(NA, "CL:0000115", "CL:1000309", "CL:0000115", "CL:0000057", "CL:0000988")
 
 tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = annotation)
+tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_id)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
 ```
@@ -325,15 +305,15 @@ subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
 ```
 
 
-Run Principal Component Analysis.
-```{r}
-subtiss <- RunPCA(object = subtiss, do.print = FALSE)
-subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
-```
+<!-- Run Principal Component Analysis. -->
+<!-- ```{r} -->
+<!-- subtiss <- RunPCA(object = subtiss, do.print = FALSE) -->
+<!-- subtiss <- ProjectPCA(object = subtiss, do.print = FALSE) -->
+<!-- ``` -->
 
 ```{r}
 # If this fails for your subset, it may be that cells.use is more cells than you have left! Try reducing it.
-PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 200, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
+PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 100, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
 ```
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
@@ -345,7 +325,7 @@ PCElbowPlot(object = subtiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-sub.n.pcs = 10
+sub.n.pcs = 5
 ```
 
 
@@ -353,7 +333,7 @@ The clustering is performed based on a nearest neighbors graph. Cells that have 
 
 ```{r}
 # Set resolution 
-sub.res.used <- 1.5
+sub.res.used <- 1
 
 subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
@@ -362,7 +342,7 @@ subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:s
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-subtiss <- RunTSNE(object = subtiss, dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=10)
+subtiss <- RunTSNE(object = subtiss, dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=20)
 ```
 
 ```{r}
@@ -422,12 +402,15 @@ If some of the clusters you find in the subset deserve additional annotation, yo
 ```{r}
 subcluster.ids <- c(0, 1,2)
 subannotation <- c(NA, "epicardial adipocyte", "smooth muscle cell")
+sub_cell_ontology_id = c(NA, "CL:1000309", "CL:0000192")
 
-subtiss@meta.data[,'subannotation'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subannotation)
+subtiss@meta.data[,'annotation'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subannotation)
+subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = sub_cell_ontology_id)
 
-tiss@meta.data[subtiss@cell.names,'subannotation'] <- as.character(subtiss@meta.data$subannotation)
+tiss@meta.data[subtiss@cell.names,'annotation'] <- as.character(subtiss@meta.data$annotation)
+tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
 
-TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subannotation')
+TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
 ```
 
 Save the tissue object with updated annotations
@@ -443,7 +426,9 @@ save(tiss, file=filename)
 So that Biohub can easily combine all your annotations, please export them as a simple csv.
 
 ```{r}
-write.csv(tiss@meta.data[,c('plate.barcode','annotation','subannotation')],file =paste0(save_dir,"/", tissue_of_interest,"_annotation.csv"))
+filename = here('00_data_ingest', 'tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_annotation.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode','annotation','cell_ontology_id')], file=filename)
 ```
 
 
