@@ -1,122 +1,74 @@
 ---
-title: "MACA Notebook"
-output: html_notebook
+title: "Bladder FACS Notebook"
+output:
+  html_document: default
+  html_notebook: default
 ---
 
 Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
-rootdir = "~/Dropbox/akbk/R/maca/Seqwell3mo-new1025"
 tissue_of_interest = "Bladder"
 ```
 
 Load the requisite packages and some additional helper functions.
 
 ```{r}
+library(here)
+library(useful)
 library(Seurat)
 library(dplyr)
 library(Matrix)
-```
-```{r}
-library(R.utils)
-library(dplyr)
 
-# change this to the tissue you want to download
-tissue_to_download <- 'Bladder'
-# change this to the location of your data (same as the MACA_Plate_Notebook location)
-rootdir <- "~/Dropbox/akbk/R/maca/Seqwell3mo-new1025"
-plate_data_dir = paste0(rootdir, '/data/plates')
-dir.create(plate_data_dir)
+save_dir = here('00_data_ingest', 'tissue_robj')
 ```
 
-Load the plate metadata. Check which plates have been downloaded.
-library(R.utils)
-library(dplyr)
-
-```{r}
-# don't change this one
-download_url <- "https://s3.amazonaws.com/czbiohub-maca/gc_table_by_plates_processed_remux_redux_zipped"
-
-```
-```{r}
-# read the metadata to get the plates we want
-metadata <- read.csv(file = paste(rootdir, "metadata/MACA_Metadata.csv", sep='/'), sep=",", header = TRUE)
-colnames(metadata)[1] <- "plate.barcode"
-
-```
-```{r}
-if(tissue_to_download == 'All'){
-  tissue_plates = filter(metadata, mouse.age == 3)[, 'plate.barcode']
-} else{
-  tissue_plates = filter(metadata, tissue == tissue_to_download & mouse.age == 3)[, 'plate.barcode']
-}
-```
-```{r}
-# suppress warning messages for samples that havent been sequenced
-oldw <- getOption("warn")
-options(warn = -1)
-
-for (plate in tissue_plates) {
-  res <- try(dwl.status <- download.file(url=sprintf("%s/%s.zip", download_url, plate),
-                                         destfile=file.path(plate_data_dir, sprintf("%s.zip", plate))),
-             silent=TRUE)
-  if (class(res) != "try-error") {
-    if (dwl.status != 0) {
-      message("\t-> download failed! :(")
-    } else {
-      unzip(zipfile=file.path(plate_data_dir, sprintf("%s.zip", plate)), exdir=file.path(plate_data_dir))
-      file.remove(file.path(plate_data_dir, sprintf("%s.zip", plate)))
-    }
-  }
-}
-
-options(warn = oldw)
-```
-
-```{r}
-# change this to the tissue you want to download
-tissue_to_download <- 'Bladder'
-# change this to the location of your data (same as the MACA_Plate_Notebook location)
-rootdir <- "~/Dropbox/akbk/R/maca/Seqwell3mo-new1025"
-plate_data_dir = paste0(rootdir, '/data/plates')
-dir.create(plate_data_dir)
-```
 
 
 ```{r}
-plate_metadata <- read.csv(file = paste0(rootdir, "/metadata/MACA_Metadata.csv"), sep=",", header = TRUE)
+# read the metadata to get the plates we want
+plate_metadata_filename = here('00_data_ingest', 'facs_raw_data', 'metadata_FACS.csv')
+
+plate_metadata <- read.csv(plate_metadata_filename, sep=",", header = TRUE)
 colnames(plate_metadata)[1] <- "plate.barcode"
-
-count_files = list.files(paste0(rootdir, "/data/plates"), pattern = "*counts.tab",recursive = FALSE)
-downloaded_plates = lapply(count_files, function(x) strsplit(x,"[./]")[[1]][1])
-plate_metadata = plate_metadata[plate_metadata$plate.barcode %in% downloaded_plates,]
-
-save_dir = paste0(rootdir, '/save')
-dir.create(save_dir)
+plate_metadata
 ```
 
-Load the plate data.
+Load the plate data. "Bladder" is one of the tissues studied
 
 ```{r}
-tissue_plates = filter(plate_metadata, tissue == tissue_of_interest & mouse.age == 3)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
+tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
+tissue_plates
+```
 
+Load the read count data.
+```{r}
 #Load the gene names and set the metadata columns by opening the first file
+filename = here('00_data_ingest', 'facs_raw_data', 'FACS', paste0(tissue_of_interest, '-counts.csv'))
 
-raw.data = read.csv(file = paste0(rootdir,"/data/plates/", tissue_plates$plate.barcode[1], '.counts.tab') ,sep='\t')
-raw.data = data.frame(row.names = rownames(raw.data))
-meta.data = plate_metadata[1,][-1,]
+raw.data = read.csv(filename, sep=",", row.names=1)
+# raw.data = data.frame(row.names = rownames(raw.data))
+corner(raw.data)
+```
+Make a vector of plate barcodes for each cell
 
-for(i in 1:nrow(tissue_plates)){
-  new.data = read.csv(file = paste0(rootdir,"/data/plates/", tissue_plates$plate.barcode[i], '.counts.tab') ,sep='\t')
-  new.metadata = data.frame(row.names = colnames(new.data))
-  new.metadata['plate.barcode'] = tissue_plates$plate.barcode[i]
-  
-  raw.data = cbind(raw.data, new.data)
-  meta.data = rbind(meta.data, new.metadata)
-}
-rnames = row.names(meta.data)
-meta.data <- merge(meta.data, plate_metadata, sort = F)
+```{r}
+plate.barcodes = lapply(colnames(raw.data), function(x) strsplit(strsplit(x, "_")[[1]][1], '.', fixed=TRUE)[[1]][2])
+head(plate.barcodes)
+```
+
+Use only the metadata rows corresponding to Bladder plates. Make a plate barcode dataframe to "expand" the per-plate metadata to be per-cell.
+```{r}
+barcode.df = t.data.frame(as.data.frame(plate.barcodes))
+
+rownames(barcode.df) = colnames(raw.data)
+colnames(barcode.df) = c('plate.barcode')
+head(barcode.df)
+
+rnames = row.names(barcode.df)
+meta.data <- merge(barcode.df, plate_metadata, by='plate.barcode', sort = F)
 row.names(meta.data) <- rnames
+head(meta.data)
 ```
 
 Process the raw data and load it into the Seurat object.
@@ -242,6 +194,8 @@ DotPlot(tiss, genes_to_check, plot.legend = T)
 BuildClusterTree(tiss)
 
 ```
+
+
 ```{r}
 # Get markers for a particular cluster
 cluster0_markers = filter(tiss.markers, cluster == 0)$gene
@@ -256,10 +210,6 @@ How big are the clusters?
 table(tiss@ident)
 ```
 
-
-```{r}
-
-```
 
 
 Which markers identify a specific cluster?
@@ -307,9 +257,11 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-annotation <- c("LuminalA2", "LuminalA1", "MesenchymalA1", "MesenchymalA2", "MesenchymalB2", "MesenchymalB1", "Basal", "LuminalB")
+annotation <- c("bladder cell", "bladder cell", "mesenchymal cell", "mesenchymal cell", "mesenchymal cell", "mesenchymal cell", "basal cell of urothelium", "bladder cell")
+cell_ontology_id = c("CL:1001319", "CL:1001319", "CL:0008019", "CL:0008019", "CL:0008019", "CL:0008019", "CL:1000486", "CL:1001319")
 
 tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = annotation)
+tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_id)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
 ```
@@ -319,14 +271,14 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 
 ```
 
-
+Save the Seurat object
 
 ```{r}
 save(tiss, file=paste0(save_dir,"/",tissue_of_interest, "_seurat_tiss.Robj"))
 ```
 
 ```{r}
-write.csv(tiss@meta.data[,c('annotation','subannotation')],file =paste0(save_dir,"/", tissue_of_interest,"_metadata.csv"))
+write.csv(tiss@meta.data[,c('annotation','cell_ontology_id')],file =paste0(save_dir,"/", tissue_of_interest,"_metadata.csv"))
 ```
 
 ## Checking for batch effects
@@ -377,7 +329,7 @@ subtiss <- SubsetData(object = tiss, ident.use = c(2), do.center = F, do.scale =
 
 ```{r}
 subtiss <- NormalizeData(object = subtiss)
-subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nUMI", "percent.ribo","Rn45s"))
+subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
 ```
 
 ```{r}
@@ -434,68 +386,31 @@ VlnPlot(subtiss, genes_to_check)
 
 ```{r}
 clust.markers <- FindMarkers(object = subtiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers 
 ```
 
-
 ```{r}
-#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
-clust.markers %>% group_by(cluster) %>% top_n(10, avg_diff)
-```
-
-
-```{r}
-
-
 clust.markersuro <- FindMarkers(object = subtiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-clust.markersuro %>% group_by(cluster) %>% top_n(10, avg_diff)
+clust.markersuro
 ```
 
 
 ```{r}
-
 GenePlot(subtiss, 'Upk3a', 'Krt14', use.raw = T)
 ```
+
 ```{r}
 BuildClusterTree(subtiss)
-
-
-
 ```
+
 ```{r}
 VlnPlot(subtiss, genes_to_check)
 ```
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
 
-
-
-
-
-
-
-
-
-
-
-
 Check expression of genes of interset.
+
 ```{r}
 genes_to_check = c('Btg2','Sgk1','Jun','Srsf2')
 
@@ -529,36 +444,14 @@ table(as.character(subtiss@ident), as.character(subtiss@meta.data$plate.barcode)
 
 
 
-### Assigning subannotations
-
-For the subsets, we produce subannotations. These will be written back as metadata in the original object, so we can see all subannotations together.
-
-If some of the clusters you find in the subset deserve additional annotation, you can add that right here. Use NA for clusters for which no subannotation is needed.
-
-```{r}
-subcluster.ids <- c(0, 1, 2)
-subannotation <- c("Jun-negative","Jun-positive", NA)
-
-subtiss@meta.data[,'subannotation'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subannotation)
-
-tiss@meta.data[subtiss@cell.names,'subannotation'] <- as.character(subtiss@meta.data$subannotation)
-
-TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subannotation')
-```
-
-When you save the subtissue, please give it a name.
-
-```{r}
-subtiss.name = 'exocrine_pancreas'
-save(subtiss, file=paste0(save_dir,"/",subtiss.name, "_seurat_subtiss.Robj"))
-```
-
 # Export the final metadata
 
 So that Biohub can easily combine all your annotations, please export them as a simple csv.
 
 ```{r}
-write.csv(tiss@meta.data[,c('annotation','subannotation')],file =paste0(save_dir,"/", tissue_of_interest,"_metadata.csv"))
+filename = here('00_data_ingest', 'tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_annotation.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode','annotation','cell_ontology_id')], file=filename)
 ```
 
 
