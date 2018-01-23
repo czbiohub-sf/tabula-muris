@@ -1,5 +1,22 @@
 # tabula-muris
 
+## Installation - Python
+
+To install the Python dependencies, create a `tabula-muris-env` environment by using the `environment.yml` file provided:
+
+```
+conda env create -f environment.yml
+```
+
+Activate the environment and install it to your Jupyter notebook with:
+
+```
+source activate tabula-muris-env
+python -m ipykernel install --user --name $CONDA_DEFAULT_ENV --display-name "Python 3.6 ($CONDA_DEFAULT_ENV)"
+```
+
+## Installation - R
+
 ## Getting started
 
 ### From "raw" gene-cell counts tables
