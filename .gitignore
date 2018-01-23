@@ -1,7 +1,12 @@
 # All raw data files are too big
 00_data_ingest/*_raw_data/
+00_data_ingest/*robj*/
 *.Robj
 *.zip
+
+# Unfinished Rmarkdown generation
+*_files
+
 
 ### --- Python/IPython/Jupyter .gitignore --- ###
 
