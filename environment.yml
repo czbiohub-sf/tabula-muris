@@ -1,101 +1,95 @@
 name: tabula-muris-env
 channels:
-- bioconda
-- r
-- defaults
-- conda-forge
+  - bioconda
+  - r
+  - defaults
+  - conda-forge
 dependencies:
-- bleach=1.4.2=py35_0
-- libffi=3.2.1=1
-- python-dateutil=2.3=py35_0
-- appnope=0.1.0=py35hd172556_0
-- ca-certificates=2017.08.26=ha1e5d58_0
-- certifi=2017.11.5=py35hd00889a_0
-- cycler=0.10.0=py35hb89929e_0
-- dbus=1.10.22=h50d9ad6_0
-- decorator=4.1.2=py35hf37c5b3_0
-- entrypoints=0.2.3=py35h837ec6f_2
-- expat=2.2.5=hb8e80ba_0
-- freetype=2.8=h12048fb_1
-- gettext=0.19.8.1=h15daf44_3
-- glib=2.53.6=h33f6a65_2
-- html5lib=1.0.1=py35h2f9c1c0_0
-- icu=58.2=h4b95b61_1
-- intel-openmp=2018.0.0=h8158457_8
-- ipykernel=4.7.0=py35h2f9c1c0_0
-- ipython=6.2.1=py35h9470683_1
-- ipython_genutils=0.2.0=py35hf129286_0
-- ipywidgets=7.0.5=py35hdb40917_0
-- jedi=0.11.0=py35_2
-- jinja2=2.10=py35h6ff70ae_0
-- jpeg=9b=he5867d9_2
-- jsonschema=2.6.0=py35h2dd9e4b_0
-- jupyter=1.0.0=py35hf3a1ed8_0
-- jupyter_client=5.1.0=py35hfe06ecd_0
-- jupyter_console=5.2.0=py35hd2aa692_1
-- jupyter_core=4.4.0=py35h4ad9194_0
-- libcxx=4.0.1=h579ed51_0
-- libcxxabi=4.0.1=hebd6815_0
-- libedit=3.1=hb4e282d_0
-- libgfortran=3.0.1=h93005f0_2
-- libiconv=1.15=hdd342a3_7
-- libpng=1.6.32=hd1e8b91_4
-- libsodium=1.0.15=hd9e47c5_0
-- markupsafe=1.0=py35h9ba0a7f_1
-- matplotlib=2.1.1=py35h2fb3e9e_0
-- mistune=0.8.1=py35hb94c1e4_0
-- mkl=2018.0.1=hfbd8650_4
-- nbconvert=5.3.1=py35h63fb950_0
-- nbformat=4.4.0=py35h41c2038_0
-- ncurses=6.0=hd04f020_2
-- notebook=5.2.2=py35hdbba414_0
-- numpy=1.13.3=py35hfd7066c_0
-- openssl=1.0.2n=hdbc3d79_0
-- pandas=0.22.0=py35h0a44026_0
-- pandoc=1.19.2.1=ha5e8f32_1
-- pandocfilters=1.4.2=py35hff87490_1
-- parso=0.1.1=py35hbda7c10_0
-- patsy=0.4.1=py35ha57ee9e_0
-- pcre=8.41=hfb6ab37_1
-- pexpect=4.3.0=py35h97d68c3_0
-- pickleshare=0.7.4=py35h9517181_0
-- pip=9.0.1=py35h33ce766_4
-- prompt_toolkit=1.0.15=py35h93950c5_0
-- ptyprocess=0.5.2=py35hfc37984_0
-- pygments=2.2.0=py35h392a662_0
-- pyparsing=2.2.0=py35h31fab04_0
-- pyqt=5.6.0=py35hbd126f6_6
-- python=3.5.4=he720263_23
-- pytz=2017.3=py35heeb7564_0
-- pyzmq=16.0.3=py35hab9903b_0
-- qt=5.6.2=h9975529_14
-- qtconsole=4.3.1=py35hd6d667b_0
-- readline=7.0=hc1231fa_4
-- scipy=1.0.0=py35h8b35106_0
-- seaborn=0.8.1=py35he0bbe96_0
-- setuptools=36.5.0=py35h52cde6a_0
-- simplegeneric=0.8.1=py35h0a3d746_0
-- sip=4.18.1=py35h79e1f92_2
-- six=1.11.0=py35h39a4c60_1
-- sqlite=3.20.1=h7e4c145_2
-- statsmodels=0.8.0=py35ha7c9052_0
-- terminado=0.6=py35hf269ddc_0
-- testpath=0.3.1=py35hf8009f4_0
-- tk=8.6.7=h35a86e2_3
-- tornado=4.5.2=py35h4099233_0
-- traitlets=4.3.2=py35hd3d1486_0
-- wcwidth=0.1.7=py35hdd0c235_0
-- webencodings=0.5.1=py35hcf8ebf9_1
-- wheel=0.30.0=py35h5c0b906_1
-- widgetsnbextension=3.0.8=py35ha19e40c_0
-- xz=5.2.3=h0278029_2
-- zeromq=4.2.2=ha360ad0_2
-- zlib=1.2.11=hf3cbc9b_2
-- pip:
-  - hermione==0.1.0
-  - ipython-genutils==0.2.0
-  - jupyter-client==5.1.0
-  - jupyter-console==5.2.0
-  - jupyter-core==4.4.0
-  - prompt-toolkit==1.0.15
+  - bleach=1.4.2=py36_0
+  - libffi=3.2.1=1
+  - appnope=0.1.0=py36hf537a9a_0
+  - ca-certificates=2017.08.26=ha1e5d58_0
+  - certifi=2017.11.5=py36ha569be9_0
+  - cycler=0.10.0=py36hfc81398_0
+  - dbus=1.10.22=h50d9ad6_0
+  - decorator=4.2.1=py36_0
+  - entrypoints=0.2.3=py36hd81d71f_2
+  - expat=2.2.5=hb8e80ba_0
+  - freetype=2.8=h12048fb_1
+  - gettext=0.19.8.1=h15daf44_3
+  - glib=2.53.6=h33f6a65_2
+  - html5lib=1.0.1=py36h2f9c1c0_0
+  - icu=58.2=h4b95b61_1
+  - intel-openmp=2018.0.0=h8158457_8
+  - ipykernel=4.8.0=py36_0
+  - ipython=6.2.1=py36h3dda519_1
+  - ipython_genutils=0.2.0=py36h241746c_0
+  - ipywidgets=7.1.0=py36_0
+  - jedi=0.11.1=py36_0
+  - jinja2=2.10=py36hd36f9c5_0
+  - jpeg=9b=he5867d9_2
+  - jsonschema=2.6.0=py36hb385e00_0
+  - jupyter=1.0.0=py36h598a6cc_0
+  - jupyter_client=5.2.1=py36_0
+  - jupyter_console=5.2.0=py36hccf5b1c_1
+  - jupyter_core=4.4.0=py36h79cf704_0
+  - libcxx=4.0.1=h579ed51_0
+  - libcxxabi=4.0.1=hebd6815_0
+  - libedit=3.1=hb4e282d_0
+  - libgfortran=3.0.1=h93005f0_2
+  - libiconv=1.15=hdd342a3_7
+  - libpng=1.6.32=hd1e8b91_4
+  - libsodium=1.0.15=hd9e47c5_0
+  - markupsafe=1.0=py36h3a1e703_1
+  - matplotlib=2.1.2=py36h6d6146d_0
+  - mistune=0.8.3=py36_0
+  - mkl=2018.0.1=hfbd8650_4
+  - nbconvert=5.3.1=py36h810822e_0
+  - nbformat=4.4.0=py36h827af21_0
+  - ncurses=6.0=hd04f020_2
+  - notebook=5.3.1=py36_0
+  - numpy=1.14.0=py36h8a80b8c_1
+  - openssl=1.0.2n=hdbc3d79_0
+  - pandas=0.22.0=py36h0a44026_0
+  - pandoc=1.19.2.1=ha5e8f32_1
+  - pandocfilters=1.4.2=py36h3b0b094_1
+  - parso=0.1.1=py36hc90e01c_0
+  - patsy=0.5.0=py36_0
+  - pcre=8.41=hfb6ab37_1
+  - pexpect=4.3.1=py36_0
+  - pickleshare=0.7.4=py36hf512f8e_0
+  - pip=9.0.1=py36h1555ced_4
+  - prompt_toolkit=1.0.15=py36haeda067_0
+  - ptyprocess=0.5.2=py36he6521c3_0
+  - pygments=2.2.0=py36h240cd3f_0
+  - pyparsing=2.2.0=py36hb281f35_0
+  - pyqt=5.6.0=py36he5c6137_6
+  - python=3.6.4=hc167b69_1
+  - python-dateutil=2.6.1=py36h86d2abb_1
+  - pytz=2017.3=py36hf0bf824_0
+  - pyzmq=16.0.3=py36he48b5ad_0
+  - qt=5.6.2=h9975529_14
+  - qtconsole=4.3.1=py36hd96c0ff_0
+  - readline=7.0=hc1231fa_4
+  - scipy=1.0.0=py36h1de22e9_0
+  - seaborn=0.8.1=py36h595ecd9_0
+  - send2trash=1.4.2=py36_0
+  - setuptools=38.4.0=py36_0
+  - simplegeneric=0.8.1=py36he5b5b09_0
+  - sip=4.18.1=py36h2824476_2
+  - six=1.11.0=py36h0e22d5e_1
+  - sqlite=3.20.1=h7e4c145_2
+  - statsmodels=0.8.0=py36h9c68fc9_0
+  - terminado=0.8.1=py36_0
+  - testpath=0.3.1=py36h625a49b_0
+  - tk=8.6.7=h35a86e2_3
+  - tornado=4.5.3=py36_0
+  - traitlets=4.3.2=py36h65bd3ce_0
+  - wcwidth=0.1.7=py36h8c6ec74_0
+  - webencodings=0.5.1=py36h3b9701d_1
+  - wheel=0.30.0=py36h5eb2c71_1
+  - widgetsnbextension=3.1.0=py36_0
+  - xz=5.2.3=h0278029_2
+  - zeromq=4.2.2=ha360ad0_2
+  - zlib=1.2.11=hf3cbc9b_2
 
