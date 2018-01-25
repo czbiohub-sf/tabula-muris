@@ -181,6 +181,6 @@ tabula_muris/
 | Pancreas            | Yes              | No                          |
 | Skin                | Yes              | No                          |
 | Spleen              | Yes              | Missing                     |
-| Thymus              | Yes              | Missing                     |
+| Thymus              | Yes              | Yes                         |
 | Tongue              | Yes              | Yes                         |
 | Trachea             | Yes              | Yes                         |
