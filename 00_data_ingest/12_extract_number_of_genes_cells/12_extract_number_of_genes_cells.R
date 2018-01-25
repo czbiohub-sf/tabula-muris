@@ -27,7 +27,7 @@ facs_robj = c(
   'facs_Heart_seurat_tiss.Robj',
   'facs_Kidney_seurat_tiss.Robj',
   'facs_Liver_seurat_tiss.Robj',
-  'facs_Lung_seurat_tissue.Robj',
+  'facs_Lung_seurat_tiss.Robj',
   'facs_Mammary_seurat_tiss.Robj',
   'facs_Marrow_seurat_tiss.Robj',
   'facs_Muscle_seurat_tiss.Robj',
@@ -63,8 +63,8 @@ for (platform in names(platforms)) {
   for (robject in robjects){
     load(here('00_data_ingest', '10_tissue_robj_downloaded', robject))
     print(ls())
-    tissue_of_interest = strsplit(robject, '_')[[1]][2]
-    print(tissue_of_interest)
+    tissue_of_interest = sub('_seurat_tiss.Robj', '', sub(paste0(platform, "_"), '', robject))
+    print(c("tissue of interest:", tissue_of_interest))
     
     if (platform == 'facs'){
       folder = paste0(here('00_data_ingest', paste0('13_ngenes_ncells_', platform)), .Platform$file.sep)

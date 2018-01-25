@@ -416,7 +416,7 @@ TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
 Save the tissue object with updated annotations
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))))
+                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
