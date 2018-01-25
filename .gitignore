@@ -7,6 +7,10 @@
 # Unfinished Rmarkdown generation
 *_files
 
+# Ignore pdf/png files too
+*.pdf
+*.png
+
 
 ### --- Python/IPython/Jupyter .gitignore --- ###
 
