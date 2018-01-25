@@ -12,7 +12,7 @@ Activate the environment and install it to your Jupyter notebook with:
 
 ```
 source activate tabula-muris-env
-python -m ipykernel install --user --name $CONDA_DEFAULT_ENV --display-name "Python 3.6 ($CONDA_DEFAULT_ENV)"
+python -m ipykernel install --user --name tabula-muris-env --display-name "Python 3.6 (tabula-muris-env)"
 ```
 
 ## Installation - R
