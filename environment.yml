@@ -92,4 +92,6 @@ dependencies:
   - xz=5.2.3=h0278029_2
   - zeromq=4.2.2=ha360ad0_2
   - zlib=1.2.11=hf3cbc9b_2
+  - pip:
+    - hermione==0.1.1
 
