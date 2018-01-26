@@ -130,12 +130,12 @@ tabula_muris/
         README.md
         download_robj.Rmd         # Download R objects for figures using this script
         tissues/                  # *Generate* R objects for figures yourself
-            Aorta_FACS.Rmd
-            Brain-Non-microglia_FACS.Rmd
-            Brain-Microglia_FACS.Rmd
-            Colon_FACS.Rmd
-            Heart_FACS.Rmd
-            Heart_Microfluidic.Rmd
+            Aorta_facs.Rmd
+            Brain-Non-microglia_facs.Rmd
+            Brain-Microglia_facs.Rmd
+            Colon_facs.Rmd
+            Heart_facs.Rmd
+            Heart_droplet.Rmd
             ... more files ...
     01_figure1/                   # Overview + #cell barplots + #gene/#reads horizonplots
         README.md
