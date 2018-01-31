@@ -8,6 +8,7 @@ Heatmap with dendrogram for cluster vs annotation of all FACS cells.
 ```{r}
 library(tidyverse)
 library(stringr)
+library(here)
 library(Seurat)
 library(viridis)
 ```
@@ -17,7 +18,7 @@ load(file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
 ```
 
 ```{r}
-hmap_df <- FetchData(tiss, vars.all = c('cell_ontology_class','tissue', 'cluster')) %>% 
+hmap_df <- FetchData(tiss_FACS, vars.all = c('cell_ontology_class','tissue', 'cluster')) %>% 
   drop_na(cell_ontology_class) %>% 
   mutate(anno_and_tissue = paste0(cell_ontology_class, " (", tissue, ")")) %>% 
   drop_na(anno_and_tissue) %>% 
