@@ -35,9 +35,7 @@ cell_order_FACS = scan("~/tabula-muris/00_data_ingest/cell_order_FACS.txt", what
 ```
 
 ```{r}
-raw.data[,cell_order_FACS]
 raw.data = raw.data[,cell_order_FACS]
-str(raw.data)
 ```
 
 

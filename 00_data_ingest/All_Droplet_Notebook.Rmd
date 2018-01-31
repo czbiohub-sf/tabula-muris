@@ -9,6 +9,7 @@ Load the requisite packages and some additional helper functions.
 library(Seurat)
 library(dplyr)
 library(stringr)
+library(readr)
 library(Matrix)
 library(here)
 ```
@@ -34,9 +35,20 @@ raw.data <- do.call(cbind, raw.data.list)
 cell.channels <- unlist(channel.list)
 ```
 
+Reorder cells to match the order in the paper.
+
+```{r}
+cell_order_droplet = scan("~/tabula-muris/00_data_ingest/cell_order_droplet.txt", what = character())
+raw.data <- raw.data[,cell_order_droplet]
+```
+
 ```{r}
 meta.data <- read.csv(here("00_data_ingest","droplet_raw_data", "metadata_droplet.csv"))
 rownames(meta.data) <- meta.data$channel
+
+channel_regex = "(.*?_.*?_.*?)_"
+cell.channels <- str_match(colnames(raw.data), channel_regex)[,2]
+
 cell.meta.data <- meta.data[cell.channels,]
 rownames(cell.meta.data) <- colnames(raw.data)
 ```
@@ -83,8 +95,7 @@ dim(tiss@data)
 Normalize the data, then regress out correlation with total reads
 ```{r}
 tiss <- NormalizeData(object = tiss)
-tiss <- ScaleData(object = tiss)
-#tiss <- ScaleData(object = tiss, vars.to.regress = c("nUMI", "percent.ribo","Rn45s"))
+tiss <- ScaleData(object = tiss, vars.to.regress = c("nUMI", "percent.ribo","Rn45s"))
 tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
 ```
 
@@ -107,7 +118,7 @@ PCElbowPlot(object = tiss, num.pc = 40)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 40
+n.pcs = 20
 ```
 
 
@@ -161,7 +172,7 @@ tiss@meta.data['cell'] <- rownames(tiss@meta.data)
 ```
 
 ```{r}
-anno = read_csv(here("00_data_ingest", "droplet_raw_data", "annotations_droplet.csv"))
+anno = read_csv(here("00_data_ingest", "droplet_raw_data", "annotations_droplets.csv"))
 anno %>% group_by(tissue, cell_ontology_class) %>% summarize(count = n())
 ```
 
@@ -171,7 +182,7 @@ tissue_colors = read_csv(here("00_data_ingest", "tissue_colors.csv"))
 
 ```{r}
 tiss@meta.data <- tiss@meta.data %>% 
-                   left_join(anno, by = 'cell') %>%
+                   left_join(anno %>% select(-tissue), by = 'cell') %>%
                    left_join(tissue_colors, by = 'tissue')
 
 rownames(tiss@meta.data) <- tiss@meta.data$cell
@@ -179,7 +190,7 @@ rownames(tiss@meta.data) <- tiss@meta.data$cell
 
 ```{r}
 tiss_droplet = tiss
-save(tiss_droplet, file=here("00_data_ingest", "global_robj", "droplet_all.Robj"))
+save(tiss_droplet, file=here("00_data_ingest", "global_robj", "droplet_all2.Robj"))
 ```
 
 
