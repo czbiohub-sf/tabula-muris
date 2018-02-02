@@ -21,14 +21,21 @@ library(ontologyIndex)
 cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
 
 validate_cell_ontology = function(cell_ontology_class){
-  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name))
+  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name) || is.na(x))
   if (!all(in_cell_ontology)) {
     message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology\n')
     stop(message)
   }
 }
+
 convert_to_cell_ontology_id = function(cell_ontology_class){
-  return(sapply(cell_ontology_class, function(x) as.vector(cell_ontology$id[cell_ontology$name == x])[1]))
+  return(sapply(cell_ontology_class, function(x) {
+      if(is.na(x)){
+        x
+      }else{
+        as.vector(cell_ontology$id[cell_ontology$name == x])[1]
+      }
+    }))
 }
 
 save_dir = here('00_data_ingest', 'tissue_robj')
@@ -126,8 +133,7 @@ GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene", use.raw=T)
 Filter out cells with few reads and few genes.
 
 ```{r}
-tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nReads"), 
-    low.thresholds = c(500, 50000))
+tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nReads"), low.thresholds = c(500, 50000))
 ```
 
 
@@ -176,7 +182,7 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
     resolution = res.used, print.output = 0, save.SNN = TRUE)
 ```
 
-To visualize, we use TSNE.
+We use TSNE solely to visualize the data.
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
 tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
@@ -218,12 +224,13 @@ DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + c
 We can also find all differentially expressed genes marking each cluster. This may take some time.
 
 ```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#clust.markers0 <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
 ```
 
 Using the markers above, we can confidentaly label many of the clusters:
@@ -269,9 +276,7 @@ cell_ontology_class <- c(
    "leukocyte", 
    "pancreatic stellate cell")
 
-
-
-cell_ontology_class = validate_cell_ontology(cell_ontology_class)
+validate_cell_ontology(cell_ontology_class)
 cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
 
 tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
@@ -279,6 +284,12 @@ tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@i
 tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
 ```
 
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+```
 
 ## Subcluster
 
@@ -313,25 +324,22 @@ TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
 FeaturePlot(subtiss, genes_to_check)
 ```
 
-```{r, echo=FALSE, fig.height=12, fig.width=12}
-DotPlot(subtiss, genes_to_check)
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(subtiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
 From these genes, it appears that the clusters represent:
 
-0: TKTK
-1:
-2:
-3:
-4:
-5:
-6:
-7:
+0: alpha
+1: alpha
+2: alpha
+3: delta
+4: alpha
+5: delta
+6: gamma
+7: gamma
 
-
-```{r}
-TSNEPlot(object = subtiss, group.by = 'mouse.id', do.label = T, pt.size = 1.2, label.size = 4)
-```
+The multitude of clusters of each type correspond mostly to individual animals/sexes.
 
 ```{r}
 table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
@@ -345,59 +353,20 @@ sub.cell_ontology_class <- c("pancreatic A cell", "pancreatic A cell", "pancreat
 validate_cell_ontology(sub.cell_ontology_class)
 sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = cluster.ids, to = sub.free_annotation))
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
 subtiss@meta.data['cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class)
 subtiss@meta.data['cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id)
 ```
 
-```{r}
-DotPlot(subtiss, genes.plot = genes_to_check_TF, group.by = 'cell_ontology_class')
-```
+## Add subcluster annotations to main annotation
 
 ```{r}
-GenePlot(subtiss, 'Gcg', 'Ppy')
+sub.cells = rownames(subtiss@meta.data)
+
+tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
+tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
+tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
 ```
-
-```{r}
-FetchData(subtiss, c('cell_ontology_class','nReads')) %>% 
-  ggplot(aes(nReads, colour = cell_ontology_class)) + 
-  geom_freqpoly(binwidth = 2e5) 
-```
-
-```{r}
-FetchData(subtiss, c('cell_ontology_class','percent.ribo')) %>% 
-  ggplot(aes(percent.ribo,colour = cell_ontology_class)) + 
-  geom_freqpoly(binwidth = 0.005) 
-```
-
-```{r}
-FetchData(subtiss, c('cell_ontology_class','Rn45s')) %>% 
-  ggplot(aes(Rn45s, colour = cell_ontology_class)) + 
-  geom_freqpoly() 
-```
-
-```{r}
-FetchData(tiss, c('ident','nReads')) %>% 
-  ggplot(aes(nReads, ..density..,colour = ident)) + 
-  facet_wrap(~ident) + 
-  geom_freqpoly() 
-```
-
-
-```{r}
-JoyPlot(object = tiss, features.plot = c("Gcg", "Ppy"), group.by='cell_ontology_id')
-```
-
-
-
-
-```{r}
-GenePlot(tiss, "Gcg","Ppy")
-```
-```{r, fig.width=7}
-DotPlot(tiss, genes_to_check_TF, plot.legend = T)
-```
-
 
 ## Checking for batch effects
 
@@ -413,7 +382,6 @@ table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 ```
 
 # Save the Robject for later
-When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
@@ -430,7 +398,6 @@ save(tiss, file=filename)
 ```
 
 
-
 # Export the final metadata
 
 So that Biohub can easily combine all your annotations, please export them as a simple csv.
@@ -439,9 +406,8 @@ So that Biohub can easily combine all your annotations, please export them as a 
 head(tiss@meta.data)
 ```
 
-
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                      paste0(tissue_of_interest, "_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','annotation','cell_ontology_id')], file=filename)
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
