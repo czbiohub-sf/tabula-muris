@@ -368,6 +368,7 @@ tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_onto
 tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
 ```
 
+
 ## Checking for batch effects
 
 Color by metadata, like plate barcode, to check for batch effects.
