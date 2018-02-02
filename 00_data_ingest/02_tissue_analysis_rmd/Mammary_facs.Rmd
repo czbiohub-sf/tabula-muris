@@ -223,16 +223,6 @@ Display the top markers you computed above.
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-0: alpha
-1: beta
-2: beta
-3: exocrine
-4: duct
-5: delta
-6: gamma
-7: endothelial
-8: immune
-9: stellate
 
 ```{r}
 # stash current cluster IDs
