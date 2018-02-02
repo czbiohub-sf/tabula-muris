@@ -351,7 +351,7 @@ subtiss@meta.data['cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from
 ```
 
 ```{r}
-DotPlot(subtiss, genes.plot = genes_to_check_TF, group.by = 'annotation')
+DotPlot(subtiss, genes.plot = genes_to_check_TF, group.by = 'cell_ontology_class')
 ```
 
 ```{r}
@@ -359,20 +359,20 @@ GenePlot(subtiss, 'Gcg', 'Ppy')
 ```
 
 ```{r}
-FetchData(subtiss, c('annotation','nReads')) %>% 
-  ggplot(aes(nReads, colour = annotation)) + 
+FetchData(subtiss, c('cell_ontology_class','nReads')) %>% 
+  ggplot(aes(nReads, colour = cell_ontology_class)) + 
   geom_freqpoly(binwidth = 2e5) 
 ```
 
 ```{r}
-FetchData(subtiss, c('annotation','percent.ribo')) %>% 
-  ggplot(aes(percent.ribo,colour = annotation)) + 
+FetchData(subtiss, c('cell_ontology_class','percent.ribo')) %>% 
+  ggplot(aes(percent.ribo,colour = cell_ontology_class)) + 
   geom_freqpoly(binwidth = 0.005) 
 ```
 
 ```{r}
-FetchData(subtiss, c('annotation','Rn45s')) %>% 
-  ggplot(aes(Rn45s, colour = annotation)) + 
+FetchData(subtiss, c('cell_ontology_class','Rn45s')) %>% 
+  ggplot(aes(Rn45s, colour = cell_ontology_class)) + 
   geom_freqpoly() 
 ```
 
