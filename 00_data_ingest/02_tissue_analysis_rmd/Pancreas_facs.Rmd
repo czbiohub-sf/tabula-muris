@@ -383,42 +383,9 @@ FetchData(tiss, c('ident','nReads')) %>%
   geom_freqpoly() 
 ```
 
-## Assigning cell type identity to clusters
-
-At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
-
-0: alpha
-1: beta
-2: beta
-3: exocrine
-4: duct
-5: delta
-6: gamma
-7: endothelial
-8: immune
-9: stellate
 
 ```{r}
-# stash current cluster IDs
-tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
-
-# enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-annotation <- c("pancreatic A cell", "type B pancreatic cell", "type B pancreatic cell", "pancreatic acinar cell", "pancreatic ductal cell", "pancreatic D cell", "pancreatic PP cell", "endothelial cell", "leukocyte", "pancreatic stellate cell")
-cell_ontology_id <- c("CL:0000171", "CL:0000169", "CL:0000169", "CL:0002064", "CL:0002079", "CL:0000173", "CL:0002275", "CL:0000115", "CL:0000738", "CL:0002410")
-
-tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = annotation)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
-
-
-tiss@meta.data[tiss@cell.names,'annotation'] <- as.character(tiss@meta.data$annotation)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
-
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 1.2, group.by='annotation')
-```
-
-```{r}
-JoyPlot(object = tiss, features.plot = c("Gcg", "Ppy"), group.by='annotation')
+JoyPlot(object = tiss, features.plot = c("Gcg", "Ppy"), group.by='cell_ontology_id')
 ```
 
 
