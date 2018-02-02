@@ -27,24 +27,45 @@ If you want to start from the raw gene-cell counts tables, then first download t
 bash 00_data_ingest/download_data.sh
 ```
 
-This will download two zip files, `droplet_raw_data.zip` and `facs_raw_data.zip` and unzip them into the folder structure described below. If you wish to proceed manually, you'll need to open the zips, e.g. by double-clicking the files. Then you'll have two folders in `00_data_ingest` (the location is important - everything here depends on the folder structure).
+This will download two zip files,`droplet_raw_data.zip` and `facs_raw_data.zip` and unzip them into the folder structure described below. Then you'll have two folders in `00_data_ingest` (the location is important - everything here depends on the folder structure). 
+
+
+#### FACS
+
+The FACS folder should look like this:
 
 ```
-droplet_raw_data
-├── annotations_droplets.csv
-├── droplet.zip
-└── metadata_droplet.csv
-
-facs_raw_data
+00_facs_raw_data/
+├── FACS
+│   ├── Bladder-counts.csv
+│   ├── Brain_Microglia-counts.csv
+│   ├── Brain_Neurons-counts.csv
+│   ├── Colon-counts.csv
+│   ├── Fat-counts.csv
+│   ├── Heart-counts.csv
+│   ├── Kidney-counts.csv
+│   ├── Liver-counts.csv
+│   ├── Lung-counts.csv
+│   ├── Mammary-counts.csv
+│   ├── Marrow-counts.csv
+│   ├── Muscle-counts.csv
+│   ├── Pancreas-counts.csv
+│   ├── Skin-counts.csv
+│   ├── Spleen-counts.csv
+│   ├── Thymus-counts.csv
+│   ├── Tongue-counts.csv
+│   └── Trachea-counts.csv
 ├── FACS.zip
 ├── annotations_FACS.csv
 └── metadata_FACS.csv
 ```
 
-Now you'll need to unzip and open the `droplet.zip` and `FACS.zip` files which contain the counts matrices. Now your droplet folders should look like this:
+#### Droplet
+
+Now your droplet folders should look like this:
 
 ```
-droplet_raw_data
+01_droplet_raw_data
 ├── annotations_droplets.csv
 ├── droplet
 │   ├── Bladder-10X_P4_3
@@ -82,39 +103,11 @@ droplet_raw_data
 All of the `*-10X_*` folders contain a `barcodes.tsv`, `genes.tsv`, and `matrix.mtx` file as output by cellranger from 10X genomics.
 
 ```
-droplet_raw_data/droplet/Bladder-10X_P4_3
+01_droplet_raw_data/droplet/Bladder-10X_P4_3
 ├── barcodes.tsv
 ├── genes.tsv
 └── matrix.mtx
 
-```
-
-The FACS folder should look like this:
-
-```
-facs_raw_data/
-├── FACS
-│   ├── Bladder-counts.csv
-│   ├── Brain_Microglia-counts.csv
-│   ├── Brain_Neurons-counts.csv
-│   ├── Colon-counts.csv
-│   ├── Fat-counts.csv
-│   ├── Heart-counts.csv
-│   ├── Kidney-counts.csv
-│   ├── Liver-counts.csv
-│   ├── Lung-counts.csv
-│   ├── Mammary-counts.csv
-│   ├── Marrow-counts.csv
-│   ├── Muscle-counts.csv
-│   ├── Pancreas-counts.csv
-│   ├── Skin-counts.csv
-│   ├── Spleen-counts.csv
-│   ├── Thymus-counts.csv
-│   ├── Tongue-counts.csv
-│   └── Trachea-counts.csv
-├── FACS.zip
-├── annotations_FACS.csv
-└── metadata_FACS.csv
 ```
 
 
@@ -129,14 +122,43 @@ tabula_muris/
     00_data_ingest/               # How the data was processed from gene-cell tables
         README.md
         download_robj.Rmd         # Download R objects for figures using this script
-        tissues/                  # *Generate* R objects for figures yourself
+        02_tissue_analysis_rmd/                  # *Generate* R objects for figures yourself
             Aorta_facs.Rmd
             Brain-Non-microglia_facs.Rmd
             Brain-Microglia_facs.Rmd
+            Bladder_facs.Rmd
+            Bladder_droplet.Rmd
             Colon_facs.Rmd
             Heart_facs.Rmd
             Heart_droplet.Rmd
             ... more files ...
+        03_tissue_annotation_csv/
+            Aorta_facs_annotation.csv
+            Brain-Non-microglia_facs_annotation.csv
+            Brain-Microglia_facs_annotation.csv
+            Bladder_facs_annotation.csv
+            Bladder_droplet_annotation.csv
+            Colon_facs_annotation.csv
+            Heart_facs_annotation.csv
+            Heart_droplet_annotation.csv
+            ... more files ...
+        04_tissue_robj_generated/
+        10_tissue_robj_downloaded/
+        11_global_robj/
+        12_extract_number_of_genes_cells/
+        13_ngenes_ncells_facs/
+        14_ngenes_ncells_droplet/
+        15_color_palette/
+        16_genes_for_tissue_tsne/
+        20_dissociation_genes/
+        All_Droplet_Notebook.Rmd
+        All_FACS_Notebook.Rmd
+        Droplet_Notebook.Rmd
+        FACS_Notebook.Rmd
+        README.md
+        cell_order_FACS.txt
+        cell_order_droplets.txt
+        download_data.sh
     01_figure1/                   # Overview + #cell barplots + #gene/#reads horizonplots
         README.md
         figure1{b-g}.ipynb
