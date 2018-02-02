@@ -17,6 +17,19 @@ library(useful)
 library(Seurat)
 library(dplyr)
 library(Matrix)
+library(ontologyIndex)
+cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
+
+validate_cell_ontology = function(cell_ontology_class){
+  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name))
+  if (!all(in_cell_ontology)) {
+    message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology\n')
+    stop(message)
+  }
+}
+convert_to_cell_ontology_id = function(cell_ontology_class){
+  return(sapply(cell_ontology_class, function(x) as.vector(cell_ontology$id[cell_ontology$name == x])[1]))
+}
 
 save_dir = here('00_data_ingest', 'tissue_robj')
 ```
@@ -256,8 +269,14 @@ cell_ontology_class <- c(
    "leukocyte", 
    "pancreatic stellate cell")
 
+
+
+cell_ontology_class = validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+
 tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
 tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
+tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
 ```
 
 
@@ -320,9 +339,15 @@ table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
 
 ```{r}
 sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-sub.annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
+sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
+sub.cell_ontology_class <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
 
-subtiss@meta.data['annotation'] <- plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.annotation)
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = cluster.ids, to = sub.free_annotation))
+subtiss@meta.data['cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class)
+subtiss@meta.data['cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id)
 ```
 
 ```{r}
@@ -385,6 +410,7 @@ cell_ontology_id <- c("CL:0000171", "CL:0000169", "CL:0000169", "CL:0002064", "C
 tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = annotation)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
+
 tiss@meta.data[tiss@cell.names,'annotation'] <- as.character(tiss@meta.data$annotation)
 tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
@@ -400,6 +426,9 @@ JoyPlot(object = tiss, features.plot = c("Gcg", "Ppy"), group.by='annotation')
 
 ```{r}
 GenePlot(tiss, "Gcg","Ppy")
+```
+```{r, fig.width=7}
+DotPlot(tiss, genes_to_check_TF, plot.legend = T)
 ```
 
 
