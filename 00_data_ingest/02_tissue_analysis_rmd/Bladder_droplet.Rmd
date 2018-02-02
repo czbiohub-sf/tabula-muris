@@ -251,16 +251,22 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-annotation <- c("mesenchymal cell", "bladder cell" , "mesenchymal cell", "bladder cell", "basal cell of urothelium", "bladder cell", "mesenchymal cell", "mesenchymal cell", "endothelial cell", "leukocyte")
+free.annotation <- c()
+cell_ontology_class <- c("mesenchymal cell", "bladder cell" , "mesenchymal cell", "bladder cell", "basal cell of urothelium", "bladder cell", "mesenchymal cell", "mesenchymal cell", "endothelial cell", "leukocyte", 'asdf')
+in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name))
+if (!all(in_cell_ontology)) {
+  message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology\n')
+  stop(message)
+}
 cell_ontology_id <- c("CL:0008019", "CL:1001319" , "CL:0008019", "CL:1001319", "CL:1000486", "CL:1001319", "CL:0008019", "CL:0008019", "CL:0000115", "CL:0000738")
 
-tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = annotation)
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
-tiss@meta.data[tiss@cell.names,'annotation'] <- as.character(tiss@meta.data$annotation)
+tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
 tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
 
