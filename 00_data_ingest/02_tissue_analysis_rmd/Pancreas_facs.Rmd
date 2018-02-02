@@ -3,10 +3,17 @@ title: "Pancreas FACS Notebook"
 output: html_notebook
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+Enter the name of the tissue you want to analyze.
 
 ```{r}
 tissue_of_interest = "Pancreas"
+```
+
+Install any packages you're missing.
+```{r}
+#install.packages("useful")
+#install.packages("ontologyIndex")
+#install.packages("here")
 ```
 
 Load the requisite packages and some additional helper functions.
@@ -37,25 +44,16 @@ convert_to_cell_ontology_id = function(cell_ontology_class){
       }
     }))
 }
-
-save_dir = here('00_data_ingest', 'tissue_robj')
 ```
 
 
 ```{r}
-# read the metadata to get the plates we want
+# Load the per-plate metadata
 plate_metadata_filename = here('00_data_ingest', '00_facs_raw_data', 'metadata_FACS.csv')
 
 plate_metadata <- read.csv(plate_metadata_filename, sep=",", header = TRUE)
 colnames(plate_metadata)[1] <- "plate.barcode"
 plate_metadata
-```
-
-Subset the metadata on the tissue.
-
-```{r}
-tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
-tissue_plates
 ```
 
 Load the read count data.
@@ -67,14 +65,15 @@ raw.data = read.csv(filename, sep=",", row.names=1)
 # raw.data = data.frame(row.names = rownames(raw.data))
 corner(raw.data)
 ```
+
 Make a vector of plate barcodes for each cell
 
 ```{r}
 plate.barcodes = lapply(colnames(raw.data), function(x) strsplit(strsplit(x, "_")[[1]][1], '.', fixed=TRUE)[[1]][2])
-head(plate.barcodes)
 ```
 
-Use only the metadata rows corresponding to Bladder plates. Make a plate barcode dataframe to "expand" the per-plate metadata to be per-cell.
+
+Make per-cell metadata, and reorder the raw data by plate for consistency. Make a plate barcode dataframe to "expand" the per-plate metadata to be per-cell.
 ```{r}
 barcode.df = t.data.frame(as.data.frame(plate.barcodes))
 
@@ -83,11 +82,13 @@ colnames(barcode.df) = c('plate.barcode')
 head(barcode.df)
 
 rnames = row.names(barcode.df)
+head(rnames)
 meta.data <- merge(barcode.df, plate_metadata, by='plate.barcode', sort = F)
 row.names(meta.data) <- rnames
+head(meta.data)
 
 # Sort cells by plate barcode because that's how the data was originally
-meta.data = meta.data[order(meta.data$plate.barcode), ]
+meta.data = meta.data[order(rownames(meta.data)), ]
 corner(meta.data)
 raw.data = raw.data[, rownames(meta.data)]
 corner(raw.data)
@@ -284,6 +285,8 @@ tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@i
 tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
 ```
 
+
+
 ## Checking for batch effects
 
 Color by metadata, like plate barcode, to check for batch effects.
@@ -310,7 +313,7 @@ PCElbowPlot(subtiss)
 
 
 ```{r}
-sub.n.pcs = 6
+sub.n.pcs = 7
 sub.res.use = 1
 subtiss <- subtiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
@@ -354,8 +357,8 @@ validate_cell_ontology(sub.cell_ontology_class)
 sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
 subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-subtiss@meta.data['cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class)
-subtiss@meta.data['cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id)
+subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
+subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
 ```
 
 ## Add subcluster annotations to main annotation
@@ -376,10 +379,12 @@ Color by metadata, like plate barcode, to check for batch effects.
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 ```
 
-Print a table showing the count of cells in each identity category from each plate.
+# Final coloring
+
+Color by cell ontology class on the original TSNE.
 
 ```{r}
-table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class")
 ```
 
 # Save the Robject for later
