@@ -112,8 +112,8 @@ tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 # Change default name for sums of counts from nUMI to nReads
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
-# Create metadata columns for annotations and subannotations
-tiss@meta.data[,'free_annotation'] <- NA
+# Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'free_cell_ontology_class'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- NA
 ```
 
@@ -247,14 +247,14 @@ Using the markers above, we can confidentaly label many of the clusters:
 The abundance of Ppy and Gcg in clusters 1 and 2 makes them seem like mixtures of alpha and delta cells. The expression of Sst and Hhex in cluster 5
 indicates that it might contain many gamma cells, but to get a finer resolution, we subset the data and recompute.
 
-We will add those annotations to the dataset.
+We will add those cell_ontology_classs to the dataset.
 
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 
-free_annotation <- c(
+free_cell_ontology_class <- c(
   "beta cell", 
    NA, 
    NA, 
@@ -280,8 +280,11 @@ cell_ontology_class <- c(
 validate_cell_ontology(cell_ontology_class)
 cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
 
+tiss@meta.data['free_cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_cell_ontology_class))
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+
 tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
-tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
 tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
 ```
 
@@ -350,9 +353,13 @@ table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
 
 ```{r}
 sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
+sub.free_cell_ontology_class <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
 sub.cell_ontology_class <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
 
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+
+subtiss@meta.data['free_cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_cell_ontology_class))
 validate_cell_ontology(sub.cell_ontology_class)
 sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
@@ -361,12 +368,12 @@ subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = sub
 subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
 ```
 
-## Add subcluster annotations to main annotation
+## Add subcluster cell_ontology_classs to main cell_ontology_class
 
 ```{r}
 sub.cells = rownames(subtiss@meta.data)
 
-tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
+tiss@meta.data[sub.cells, 'free_cell_ontology_class'] = subtiss@meta.data[,'free_cell_ontology_class']
 tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
 tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
 ```
@@ -406,14 +413,14 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your annotations, please export them as a simple csv.
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
 
 ```{r}
 head(tiss@meta.data)
 ```
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_annotation.csv"))
-write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
+                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_cell_ontology_class', 'tSNE_1', 'tSNE_2')), file=filename)
 ```

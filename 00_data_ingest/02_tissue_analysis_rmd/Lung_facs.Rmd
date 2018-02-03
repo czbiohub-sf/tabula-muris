@@ -250,7 +250,7 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
-annotation <-
+cell_ontology_class <-
   c(
   "Endothelial Cell Type I",
   "Stromal Cell Type I",
@@ -275,9 +275,9 @@ annotation <-
   'Stromal Cell Type V'
   )
 
-tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = annotation)
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
 
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation', no.legend = TRUE, no.axes = TRUE)
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class', no.legend = TRUE, no.axes = TRUE)
 ```
 
 
@@ -347,5 +347,5 @@ TSNEPlot(object = subtiss, do.label = T)
 
 
 ```{r}
-write.csv(tiss@meta.data[,c('annotation')],file =paste0(save_dir,"/", "SmartSeq2_", tissue_of_interest,"_annotation.csv"))
+write.csv(tiss@meta.data[,c('cell_ontology_class')],file =paste0(save_dir,"/", "SmartSeq2_", tissue_of_interest,"_cell_ontology_class.csv"))
 ```
