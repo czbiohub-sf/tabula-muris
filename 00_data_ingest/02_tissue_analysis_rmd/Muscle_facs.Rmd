@@ -105,9 +105,9 @@ tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 # Change default name for sums of counts from nUMI to nReads
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
-# Create metadata columns for annotations and subannotations
-tiss@meta.data[,'annotation'] <- NA
-tiss@meta.data[,'subannotation'] <- NA
+# Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'cell_ontology_class'] <- NA
+tiss@meta.data[,'subcell_ontology_class'] <- NA
 ```
 
 
@@ -249,16 +249,16 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4,5,6)
-annotation <- c("skeletal muscle satellite cell", "mesenchymal stem cell", "skeletal muscle satellite cell","endothelial cell", "B cell","macrophage","T cell")
+cell_ontology_class <- c("skeletal muscle satellite cell", "mesenchymal stem cell", "skeletal muscle satellite cell","endothelial cell", "B cell","macrophage","T cell")
 cell_ontology_id <- c("CL:0000594", "CL:0000134", "CL:0000594","CL:0000115", "CL:0000236","CL:0000235","CL:0000084")
 
-tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = annotation)
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
-tiss@meta.data[tiss@cell.names,'annotation'] <- as.character(tiss@meta.data$annotation)
+tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
 tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
 
@@ -297,7 +297,7 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your annotations, please export them as a simple csv.
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
 
 ```{r}
 head(tiss@meta.data)
@@ -305,7 +305,7 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','annotation','cell_ontology_id')], file=filename)
+filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
+                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
 ```

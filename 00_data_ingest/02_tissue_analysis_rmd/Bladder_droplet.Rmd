@@ -103,9 +103,9 @@ tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest,
 tiss <- AddMetaData(object = tiss, meta.data)
 tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 
-# Create metadata columns for annotations and subannotations
-tiss@meta.data[,'annotation'] <- NA
-tiss@meta.data[,'subannotation'] <- NA
+# Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'cell_ontology_class'] <- NA
+tiss@meta.data[,'subcell_ontology_class'] <- NA
 ```
 
 
@@ -263,7 +263,7 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-free.annotation <- c()
+free.cell_ontology_class <- c()
 cell_ontology_class <- c("mesenchymal cell", "bladder cell" , "mesenchymal cell", "bladder cell", "basal cell of urothelium", "bladder cell", "mesenchymal cell", "mesenchymal cell", "endothelial cell", "leukocyte", 'asdf')
 in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name))
 if (!all(in_cell_ontology)) {
@@ -315,7 +315,7 @@ We can repeat the above analysis on a subset of cells, defined using cluster IDs
 # Subset data based on cluster id
 subtiss <- SubsetData(object = tiss, ident.use = c(3), do.center = F, do.scale = F, cells.use = )
 
-# To subset data based on annotation or other metadata, you can explicitly pass cell names
+# To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
 
 cells.to.use = tiss@cell.names[which(tiss@meta.data$mouse.sex == 'F')]
 subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
@@ -433,7 +433,7 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your annotations, please export them as a simple csv.
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
 
 ```{r}
 head(tiss@meta.data)
@@ -441,8 +441,8 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_droplet_annotation.csv"))
-write.csv(tiss@meta.data[,c('channel','annotation','cell_ontology_id')], file=filename)
+filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
+                    paste0(tissue_of_interest, "_droplet_cell_ontology_class.csv"))
+write.csv(tiss@meta.data[,c('channel','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
 

@@ -11,6 +11,7 @@ tissue_of_interest = "Heart"
 
 Load the requisite packages and some additional helper functions.
 
+```{r}
 library(here)
 library(useful)
 library(Seurat)
@@ -31,6 +32,7 @@ convert_to_cell_ontology_id = function(cell_ontology_class){
   return(sapply(cell_ontology_class, function(x) as.vector(cell_ontology$id[cell_ontology$name == x])[1]))
 }
 save_dir = here('00_data_ingest', '04_tissue_robj_generated')
+```
 
 
 
@@ -102,9 +104,9 @@ tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 # Change default name for sums of counts from nUMI to nReads
 # colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
-# Create metadata columns for annotations and subannotations
-tiss@meta.data[,'annotation'] <- NA
-tiss@meta.data[,'subannotation'] <- NA
+# Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'cell_ontology_class'] <- NA
+tiss@meta.data[,'subcell_ontology_class'] <- NA
 ```
 
 
@@ -246,16 +248,16 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5)
-annotation <- c("endothelial cell", "fibroblast", "Fb_SMC", "cardiac muscle cell", "endocardial cell", "erythrocyte")
+cell_ontology_class <- c("endothelial cell", "fibroblast", "Fb_SMC", "cardiac muscle cell", "endocardial cell", "erythrocyte")
 cell_ontology_id <- c("CL:0000115", "CL:0000057", NA, "CL:0000746", "CL:0002350", "CL:0000232")
 
-tiss@meta.data[,'annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = annotation)
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
-tiss@meta.data[tiss@cell.names,'annotation'] <- as.character(tiss@meta.data$annotation)
+tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
 tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
 
@@ -288,7 +290,7 @@ We can repeat the above analysis on a subset of cells, defined using cluster IDs
 # Subset data based on cluster id
 subtiss <- SubsetData(object = tiss, ident.use = c(2), do.center = F, do.scale = F, cells.use = )
 
-# To subset data based on annotation or other metadata, you can explicitly pass cell names
+# To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
 
 #cells.to.use = tiss@cell.names[which(tiss@meta.data$mouse.sex == 'F')]
 #subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
@@ -388,29 +390,29 @@ table(as.character(subtiss@ident), as.character(subtiss@meta.data$channel))
 
 
 
-### Assigning subannotations
+### Assigning subcell_ontology_classs
 
-For the subsets, we produce subannotations. These will be written back as metadata in the original object, so we can see all subannotations together.
+For the subsets, we produce subcell_ontology_classs. These will be written back as metadata in the original object, so we can see all subcell_ontology_classs together.
 
-If some of the clusters you find in the subset deserve additional annotation, you can add that right here. Use NA for clusters for which no subannotation is needed.
+If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
 ```{r}
 subcluster.ids <- c(0, 1, 2)
-subannotation <- c("fibroblast", "fibroblast", "smooth muscle cell")
+subcell_ontology_class <- c("fibroblast", "fibroblast", "smooth muscle cell")
 subcell_ontology_id = c("CL:0000057", "CL:0000057", "CL:0000192")
 
-subtiss@meta.data[,'annotation'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subannotation)
+subtiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_id)
 
-tiss@meta.data[subtiss@cell.names,'annotation'] <- as.character(subtiss@meta.data$annotation)
+tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss@meta.data$cell_ontology_class)
 tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
 
-TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='annotation')
+TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
-Check the numbers of cells per annotation
+Check the numbers of cells per cell_ontology_class
 ```{r}
-table(tiss@meta.data$annotation)
+table(tiss@meta.data$cell_ontology_class)
 ```
 
 
@@ -435,7 +437,7 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your annotations, please export them as a simple csv.
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
 
 ```{r}
 head(tiss@meta.data)
@@ -443,8 +445,8 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-		  paste0(tissue_of_interest, "_droplet_annotation.csv"))
-write.csv(tiss@meta.data[,c('channel','annotation','cell_ontology_id')], file=filename)
+filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
+		  paste0(tissue_of_interest, "_droplet_cell_ontology_class.csv"))
+write.csv(tiss@meta.data[,c('channel','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
 
