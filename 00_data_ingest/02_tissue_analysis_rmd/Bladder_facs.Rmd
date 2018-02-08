@@ -170,7 +170,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 res.used <- 1
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
-    resolution = res.used, print.output = 0, save.SNN = TRUE)
+    resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
 ```
 
 To visualize 
@@ -188,7 +188,7 @@ TSNEPlot(object = tiss, do.label = T)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Epcam','Upk1b', 'Upk3a','Grhl3', 'Krt5', 'Krt14', 'Dcn', 'Col1a1','Col8a1')
+genes_to_check = c('Epcam','Upk1b', 'Upk3a','Grhl3', 'Krt5', 'Krt14', 'Dcn', 'Col1a1','Col8a1', 'Cdh13', 'Il1r2')
 #genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
@@ -277,6 +277,9 @@ TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_
 
 ```{r}
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
+table(tiss@meta.data$res.1)
+table(tiss@meta.data$mouse.sex)
+table(tiss@meta.data$res.1, tiss@meta.data$mouse.sex)
 
 ```
 
