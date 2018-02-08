@@ -107,6 +107,7 @@ tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
 # Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- NA
 tiss@meta.data[,'subcell_ontology_class'] <- NA
 ```
@@ -285,6 +286,7 @@ cell_ontology_id <-
   "CL:0000232"
   )
 
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
@@ -442,7 +444,8 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 subcluster.ids <- c(0, 1, 2)
-subcell_ontology_class <- c("Myofibroblast","Myofibroblast", "Smooth_Muscle_Cells")
+subfree_annotation <- c()
+cell_ontology_class <-c("Myofibroblast","Myofibroblast", "Smooth_Muscle_Cells")
 
 subtiss@meta.data[,'subcell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 

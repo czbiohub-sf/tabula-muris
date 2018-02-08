@@ -116,6 +116,7 @@ tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
 # Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- NA
 tiss@meta.data[,'subcell_ontology_class'] <- NA
 ```
@@ -259,9 +260,11 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5)
-cell_ontology_class <- c("heterogenous group of cells", "endothelial cell", "epicardial adipocytes", "endothelial cells", "fibroblasts", "hematopoetic cells")
+free_annotation <- c()
+cell_ontology_class <-c("heterogenous group of cells", "endothelial cell", "epicardial adipocytes", "endothelial cells", "fibroblasts", "hematopoetic cells")
 cell_ontology_id = c(NA, "CL:0000115", "CL:1000309", "CL:0000115", "CL:0000057", "CL:0000988")
 
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_id)
 
@@ -415,10 +418,12 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 subcluster.ids <- c(0, 1,2)
-subcell_ontology_class <- c(NA, "epicardial adipocyte", "smooth muscle cell")
+subfree_annotation <- c()
+cell_ontology_class <-c(NA, "epicardial adipocyte", "smooth muscle cell")
 sub_cell_ontology_id = c(NA, "CL:1000309", "CL:0000192")
 
-subtiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
+subtiss@meta.data[,'free_annotation'] <- NA
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = sub_cell_ontology_id)
 
 tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss@meta.data$cell_ontology_class)

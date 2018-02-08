@@ -102,6 +102,7 @@ tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
 # Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- NA
 tiss@meta.data[,'subcell_ontology_class'] <- NA
 ```
@@ -280,6 +281,7 @@ cell_ontology_class <-
   "neuronal stem cell"
   )
   
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
 # Replot TSNE plots 
 title <- "TSNE_plots_gene_expression_plus_cell_ontology_class.pdf"
@@ -458,11 +460,14 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 subcluster.ids <- c(0, 1, 2, 3,4,5)
-subcell_ontology_class <- c("astrocyte of the cerebral cortex","astrocyte of the cerebral cortex","astrocyte of the cerebral cortex",
+subfree_annotation <- c()
+cell_ontology_class <-c("astrocyte of the cerebral cortex","astrocyte of the cerebral cortex","astrocyte of the cerebral cortex",
                    "astrocyte of the cerebral cortex","Bergmann glial cell","oligodendrocyte")
-subtiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
+subtiss@meta.data[,'free_annotation'] <- NA
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 
-subtiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
+subtiss@meta.data[,'free_annotation'] <- NA
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_id)
 
 tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss@meta.data$cell_ontology_class)

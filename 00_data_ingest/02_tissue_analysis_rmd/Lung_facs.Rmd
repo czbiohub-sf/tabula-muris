@@ -275,6 +275,7 @@ cell_ontology_class <-
   'Stromal Cell Type V'
   )
 
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class', no.legend = TRUE, no.axes = TRUE)
