@@ -106,6 +106,7 @@ tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
 # Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- NA
 tiss@meta.data[,'subcell_ontology_class'] <- NA
 ```
@@ -249,9 +250,11 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-cell_ontology_class <- c("stromal cell", "stromal cell", "stromal cell", "epithelial cell", "leukocyte", "epithelial cell", "leukocyte", "endothelial cell")
+free_annotation <- c()
+cell_ontology_class <-c("stromal cell", "stromal cell", "stromal cell", "epithelial cell", "leukocyte", "epithelial cell", "leukocyte", "endothelial cell")
 cell_ontology_id <- c("CL:0000499", "CL:0000499", "CL:0000499", "CL:0000066", "CL:0000738", "CL:0000066", "CL:0000738", "CL:0000115")
 
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
@@ -402,7 +405,8 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 subcluster.ids <- c(0, 1)
-subcell_ontology_class <- c("No Krt5", "Krt5")
+subfree_annotation <- c()
+cell_ontology_class <-c("No Krt5", "Krt5")
 
 subtiss@meta.data[,'subcell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 

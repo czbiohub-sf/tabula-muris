@@ -108,6 +108,7 @@ tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
 # Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- NA
 tiss@meta.data[,'subcell_ontology_class'] <- NA
 ```
@@ -244,9 +245,11 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
-cell_ontology_class <- c("basal cell", "basal cell", "luminal epithelial cell of mammary gland", "basal cell", "stromal cell", "luminal epithelial cell of mammary gland", "stromal cell", "endothelial cell", "basal cell")
+free_annotation <- c()
+cell_ontology_class <-c("basal cell", "basal cell", "luminal epithelial cell of mammary gland", "basal cell", "stromal cell", "luminal epithelial cell of mammary gland", "stromal cell", "endothelial cell", "basal cell")
 cell_ontology_id <- c("CL:0000646", "CL:0000646", "CL:0002326", "CL:0000646", "CL:0000499", "CL:0002326", "CL:0000499", "CL:0000115", "CL:0000646")
 
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
