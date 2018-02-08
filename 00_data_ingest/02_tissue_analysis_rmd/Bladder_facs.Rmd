@@ -145,7 +145,7 @@ tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
-PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCHeatmap(object = tiss, pc.use = 1:10, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
@@ -167,10 +167,10 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 1
+res.used <- 0.75
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
-    resolution = res.used, print.output = 0, save.SNN = TRUE)
+    resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc=TRUE)
 ```
 
 To visualize 
@@ -188,7 +188,7 @@ TSNEPlot(object = tiss, do.label = T)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Epcam','Upk1b', 'Upk3a','Grhl3', 'Krt5', 'Krt14', 'Dcn', 'Col1a1','Col8a1')
+genes_to_check = c('Epcam','Upk1b', 'Upk3a','Grhl3', 'Krt5', 'Krt14', 'Dcn', 'Col1a1','Col8a1', "Car3", "Scara5", "Cdh13")
 #genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
@@ -208,6 +208,16 @@ BuildClusterTree(tiss)
 
 ```
 
+
+
+Check expression of genes of interset.
+
+```{r, echo=FALSE, fig.height=12, fig.width=8}
+genes_to_check = c('Epcam','Upk1b', 'Upk3a','Grhl3', 'Krt5', 'Krt14', 'Dcn', 'Col1a1','Col8a1', "Car3", "Scara5", "Cdh13")
+#genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
+```
 
 
 
