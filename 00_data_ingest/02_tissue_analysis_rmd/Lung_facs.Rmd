@@ -160,7 +160,7 @@ PCElbowPlot(object = tiss)
 
 
 ```{r}
-n.pcs = 20
+n.pcs = 19
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, resolution = 3, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
 ```
 
