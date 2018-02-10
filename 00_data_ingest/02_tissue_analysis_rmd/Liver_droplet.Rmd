@@ -237,7 +237,7 @@ all_genes = c(genes_hep, genes_endo, genes_kuppfer, genes_nk, genes_b)
 
 
 ```{r, echo=FALSE, fig.height=4, fig.width=12}
-FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 5, cols.use = c("grey", "red"))
+FeaturePlot(tiss, genes_hep, pt.size = 1, nCol = 5, cols.use = c("grey", "red"))
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
