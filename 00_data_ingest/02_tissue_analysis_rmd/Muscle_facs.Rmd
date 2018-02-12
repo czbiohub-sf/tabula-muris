@@ -165,7 +165,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 15
+n.pcs = 10
 ```
 
 
@@ -192,20 +192,34 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+```
+
+
 Check expression of genes useful for indicating cell type.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=12}
-genes_to_check = c('Myf5', 'Vcam1', 'Ptprc', 'Pecam1', 'Pdgfra', 'Calcr', 'Pax7', 'Myod1', 'Itgam','Cd3g','Cd4','Cd8a','Cd19')
+genes_muscle_stem = c('Myf5','Calcr', 'Pax7', 'Myod1')
+genes_endo = c('Pecam1', 'Atxn1')
+genes_immune = c('Ptprc', 'Cd3g','Cd4','Cd8a','Cd19', 'Itgam')
+genes_other = c('Vcam1', 'Chodl', 'Acta2', 'Pdgfra')
 
-FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 5, cols.use = c("grey", "blue"))
+genes_to_check = c(genes_muscle_stem, genes_endo, genes_immune, genes_other)
 ```
 
 Dotplots let you see the intensity of expression and the fraction of cells expressing for each of your genes of interest.
 The radius shows you the percent of cells in that cluster with at least one read sequenced from that gene. The color level indicates the average Z-score of gene expression for cells in that cluster, where the scaling is done over all cells in the sample.
 
-```{r, echo=FALSE, fig.height=8, fig.width=10}
+```{r, echo=FALSE, fig.height=3, fig.width=3}
 DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 ```
+
+```{r, echo=FALSE, fig.height=12, fig.width=12}
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 5, cols.use = c("grey", "red"))
+```
+
 
 We can also find all differentially expressed genes marking each cluster. This may take some time.
 
@@ -226,33 +240,25 @@ We will add those cell_ontology_class to the dataset.
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-
-#cell_ontology_class <-c("skeletal muscle satellite cell", "mesenchymal stem cell", "skeletal muscle satellite cell","endothelial cell", "B cell","macrophage","T cell")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
 
 free_annotation <- c(
-  "beta cell", 
-   NA, 
-   NA, 
-   "exocrine cell", 
-   "ductal cell", 
-   NA,
-   "beta cell", 
-   "endothelial cell", 
-   "immune cell", 
-   "stellate cell")
+  "skeletal muscle satellite cell", 
+  "mesenchymal stem cell", 
+  "skeletal muscle satellite cell", 
+  "endothelial cell",
+  "B cell", 
+  "macrophage",
+  "T cell")
 
 cell_ontology_class <-c(
-  "type B pancreatic cell", 
-   NA, 
-   NA, 
-   "pancreatic acinar cell", 
-   "pancreatic ductal cell", 
-   NA, 
-   "type B pancreatic cell", 
-   "endothelial cell", 
-   "leukocyte", 
-   "pancreatic stellate cell")
+  "skeletal muscle satellite cell", 
+  "mesenchymal stem cell", 
+  "skeletal muscle satellite cell", 
+  "endothelial cell",
+  "B cell", 
+  "macrophage",
+  "T cell")
 
 validate_cell_ontology(cell_ontology_class)
 cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
@@ -261,21 +267,14 @@ tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident
 validate_cell_ontology(cell_ontology_class)
 cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
 
-tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
+tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
 tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
-```
-
-## Checking for batch effects
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 ```
 
 ## Subcluster
 
 ```{r}
-subtiss = SubsetData(tiss, ident.use = c(1,2,5))
+subtiss = SubsetData(tiss, ident.use = c(1))
 ```
 
 ```{r}
@@ -291,14 +290,17 @@ PCElbowPlot(subtiss)
 
 
 ```{r}
-sub.n.pcs = 7
+sub.n.pcs = 10
 sub.res.use = 1
 subtiss <- subtiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE, force.recalc = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=20)
 
 TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
+```
 
+```{r}
+TSNEPlot(subtiss, group.by = "mouse.id")
 ```
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
@@ -309,56 +311,35 @@ FeaturePlot(subtiss, genes_to_check)
 DotPlot(subtiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
-From these genes, it appears that the clusters represent:
-
-0: alpha
-1: alpha
-2: alpha
-3: delta
-4: alpha
-5: delta
-6: gamma
-7: gamma
-
-The multitude of clusters of each type correspond mostly to individual animals/sexes.
-
 ```{r}
 table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
 ```
 
 ```{r}
-sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-sub.cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-
-validate_cell_ontology(sub.cell_ontology_class)
-sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-validate_cell_ontology(sub.cell_ontology_class)
-sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
+# sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
+# sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
+# sub.cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
+# 
+# validate_cell_ontology(sub.cell_ontology_class)
+# sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+# 
+# subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+# validate_cell_ontology(sub.cell_ontology_class)
+# sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+# 
+# subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+# subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
+# subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
 ```
 
 ## Add subcluster cell_ontology_class to main cell_ontology_class
 
 ```{r}
-sub.cells = rownames(subtiss@meta.data)
-
-tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
-tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
-tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
-```
-
-
-## Checking for batch effects
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+# sub.cells = rownames(subtiss@meta.data)
+# 
+# tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
+# tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
+# tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
 ```
 
 # Final coloring
@@ -373,7 +354,7 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class")
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -388,7 +369,7 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your cell_ontology_class, please export them as a simple csv.
+So that Biohub can easily combine all your annotations, please export them as a simple csv.
 
 ```{r}
 head(tiss@meta.data)
