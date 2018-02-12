@@ -23,7 +23,7 @@ library(ontologyIndex)
 cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
 
 validate_cell_ontology = function(cell_ontology_class){
-  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name))
+  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name) || is.na(x))
   if (!all(in_cell_ontology)) {
     message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology
 ')
@@ -134,8 +134,8 @@ tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nReads"),
 
 Normalize the data, then regress out correlation with total reads
 ```{r}
-tiss <- NormalizeData(object = tiss)
-tiss <- ScaleData(object = tiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+tiss <- NormalizeData(object = tiss, scale.factor = 1e6)
+tiss <- ScaleData(object = tiss)
 tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.4, x.low.cutoff = 0.75)
 ```
 
@@ -275,6 +275,7 @@ cell_ontology_class <-
   'Stromal Cell Type V'
   )
 
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class', no.legend = TRUE, no.axes = TRUE)
