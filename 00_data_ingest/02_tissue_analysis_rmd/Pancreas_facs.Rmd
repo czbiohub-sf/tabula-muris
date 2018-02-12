@@ -58,11 +58,10 @@ plate_metadata
 
 Load the read count data.
 ```{r}
-#Load the gene names and set the metadata columns by opening the first file
+# Load the gene names and set the metadata columns by opening the first file
 filename = here('00_data_ingest', '00_facs_raw_data', 'FACS', paste0(tissue_of_interest, '-counts.csv'))
 
 raw.data = read.csv(filename, sep=",", row.names=1)
-# raw.data = data.frame(row.names = rownames(raw.data))
 corner(raw.data)
 ```
 
@@ -112,8 +111,7 @@ tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 # Change default name for sums of counts from nUMI to nReads
 colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
-# Create metadata columns for cell_ontology_classs and subcell_ontology_classs
-tiss@meta.data[,'free_annotation'] <- NA
+# Create metadata columns for cell_ontology_class
 tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- NA
 ```
@@ -144,8 +142,6 @@ Normalize the data, then center and scale.
 ```{r}
 tiss <- NormalizeData(object = tiss, scale.factor = 1e6)
 tiss <- ScaleData(object = tiss)
-
-#tiss <- ScaleData(object = tiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
 tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
 ```
 
@@ -186,6 +182,7 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
 ```
 
 We use TSNE solely to visualize the data.
+
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
 tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
@@ -216,9 +213,8 @@ genes_to_check = c('Chga', 'Isl1', 'Ins1', 'Ins2', 'Mafa', 'Nkx6-1', 'Gcg', 'Maf
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 5, cols.use = c("grey", "blue"))
 ```
 
-Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-The radius shows you the percent of cells in that cluster with at least one read sequenced from that gene. The color level indicates the average
-Z-score of gene expression for cells in that cluster, where the scaling is done over taken over all cells in the sample.
+Dotplots let you see the intensity of expression and the fraction of cells expressing for each of your genes of interest.
+The radius shows you the percent of cells in that cluster with at least one read sequenced from that gene. The color level indicates the average Z-score of gene expression for cells in that cluster, where the scaling is done over all cells in the sample.
 
 ```{r, echo=FALSE, fig.height=8, fig.width=10}
 DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
@@ -262,12 +258,12 @@ free_annotation <- c(
    NA, 
    "exocrine cell", 
    "ductal cell", 
-   NA, "beta cell", 
+   NA,
+   "beta cell", 
    "endothelial cell", 
    "immune cell", 
    "stellate cell")
 
-free_annotation <- c()
 cell_ontology_class <-c(
   "type B pancreatic cell", 
    NA, 
@@ -290,8 +286,6 @@ cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
 tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
 tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
 ```
-
-
 
 ## Checking for batch effects
 
@@ -357,8 +351,7 @@ table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
 ```{r}
 sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
 sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-sub.free_annotation <- c()
-cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
+sub.cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
 
 validate_cell_ontology(sub.cell_ontology_class)
 sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
@@ -424,7 +417,7 @@ head(tiss@meta.data)
 ```
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_annotation.csv"))
 write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
