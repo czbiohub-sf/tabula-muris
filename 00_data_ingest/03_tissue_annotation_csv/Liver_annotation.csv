@@ -1,711 +1,715 @@
-"","plate.barcode","annotation","cell_ontology_id"
-"F18.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623"
-"J20.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623"
-"F19.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"J21.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"F20.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"J22.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"G11.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"K9.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"G13.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"K11.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"B6.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"G15.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236"
-"K13.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"K14.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"B7.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"G18.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"K15.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"B8.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"G19.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623"
-"B10.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"H3.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"K17.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236"
-"B14.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"H12.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623"
-"C10.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"K18.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"C13.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"C14.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"H14.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"H16.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"L9.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236"
-"L7.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"C18.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"H17.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"L11.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"H20.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"L12.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"D12.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"I9.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"L13.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236"
-"D15.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"I14.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"L15.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"E14.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"I15.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"F11.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"J12.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"F10.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"I22.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623"
-"F13.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"F15.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"J16.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"F16.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"J17.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"F17.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"J18.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"M2.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"P15.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"M10.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"M15.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623"
-"P17.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"M16.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"P18.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"N4.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"N7.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"P21.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236"
-"P22.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"N11.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"N15.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236"
-"N16.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"N20.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"N21.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"N22.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"O7.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"O9.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"O11.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398"
-"O12.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"O14.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182"
-"O21.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623"
-"O22.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091"
-"A21.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"C1.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"A22.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"C2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"B1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"C3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"B2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"C4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"C5.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"A1.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"B3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A2.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"B4.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"C6.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"A3.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"B5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A4.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"B6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"C8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"B7.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"C9.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"A6.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"B8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"C10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A8.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"B10.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"A7.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"B9.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"C11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"C13.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"A9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"B11.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"C14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"B12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"C15.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"A11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"B13.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"C16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A12.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"B14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"C17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A13.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"B15.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"B16.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"A15.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"B17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A16.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"B18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A17.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"B19.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"A19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"B21.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"A18.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"B20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"A20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"B22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"D1.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"E6.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G19.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"I4.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"J14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"D2.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"E7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G20.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"I7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"J15.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"M2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M1.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"N5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N6.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"E8.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"F13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G21.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"I8.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"J16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L1.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"M3.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"N7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O9.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"P11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"J17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F15.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"G22.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"I9.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"D5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N9.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"O11.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"P13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"E11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D6.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F16.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"H1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"I10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"J19.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"L3.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"M6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"E12.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"N10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"D7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F17.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"E14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"H2.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"I14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"J20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"H3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O13.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"P15.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"I16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D9.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"J21.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"L5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M8.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"N11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"E15.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"O14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"P16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"E16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F19.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"F20.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"H6.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"H5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"I18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K1.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"L6.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"M9.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"N12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"I19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D11.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"E17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F21.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"H7.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"K2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"I20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M10.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"O15.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"P17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D12.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"E18.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"F22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"H9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"I21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M12.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"N15.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"O17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"P19.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"O16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K5.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"L10.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"M13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N16.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"O18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"E19.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"G1.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"H10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"I22.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"E20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P21.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"D15.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"E21.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"H12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G2.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"J2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K7.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"L12.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"H11.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"J1.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"K6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"L11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M15.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"D17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"E22.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"H13.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"K8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L13.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"M16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O21.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"N18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"L14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M17.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"N20.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"O22.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D20.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"F2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G6.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"D18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F1.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"G5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"H14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"J4.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"K9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"C19.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"E2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"G11.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"H20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"J10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K15.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"L19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N1.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"O3.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"P5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M22.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O2.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"P4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"H22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"J11.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"K17.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"L20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O4.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"P6.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"C21.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"C20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"E3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G15.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P7.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"C22.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"E5.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"E4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G18.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"I2.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"F8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G16.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"I1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"J12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N3.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"J13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"N4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"P8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"M18.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"N21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"H15.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"J5.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"K10.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"L15.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"H16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"J7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K11.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"D21.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"F3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"G7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"D22.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"M20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"N22.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236"
-"P2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"F4.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623"
-"G9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"H17.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"J8.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"K13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L17.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182"
-"M21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"O1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"P3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"J9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"K14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"L18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"C18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"E1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398"
-"H18.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091"
-"A1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"C1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"E1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"G4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"A2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"C2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"E2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"F3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"A3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"E3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"F4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"G6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"A4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"C4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"E4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"F5.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"G7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B5.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D5.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"F6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"G8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"F7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"G9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"A6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"C6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"F8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"G11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"C8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"E8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"F9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"F12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"G12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"C9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"E10.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B10.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"C10.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D10.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"E11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"C11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"C12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"D12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"F1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"H4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"H7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"H8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"H11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"H1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"H2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182"
-"B1.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"C1.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"G2.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"G4.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"A3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"B4.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"C4.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"D4.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"B2.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"D2.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"A2.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"B3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"D3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"E3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"F3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"D5.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"E5.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"F5.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"G5.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"C6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"F6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"G6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"E7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"F7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"E8.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"F8.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"F9.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"C10.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"B6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"C7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"A6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"B7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"A7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"B8.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"A9.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"H12.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182"
-"A4.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"B7.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"H8.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"A10.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"D10.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"H11.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"C8.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"C9.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"E9.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"H9.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"H10.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"A11.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"B12.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"C12.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"H12.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"D2.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"H2.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"H1.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"B3.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"C3.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"D3.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"H3.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182"
-"E4.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"E6.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"G7.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"G8.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"G9.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"H1.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"H2.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"H5.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"F4.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"H6.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"F6.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"F5.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"D7.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"H9.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"D12.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"F11.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"E1.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"G1.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"E2.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"G3.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"E3.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"G4.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"B4.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"B11.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"B12.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"C11.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"A12.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"C12.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"D1.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"F9.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"H12.MAA100042.3_9_M.1.1","MAA100042","endothelial cell of hepatic sinusoid","CL:1000398"
-"A7.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"C4.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"C6.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"A6.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"C7.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"A9.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"C9.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182"
-"D12.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E12.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"H12.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"C2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"C3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"C1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"C4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"G9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"H9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"G10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"C11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"G11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"H11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"B9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"A10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"G2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"H3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"G5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"G6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"H6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"G8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"C8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"H1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"H2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"G4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"H5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"C6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"C7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"D7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"E7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"F7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"G7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"H8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182"
-"C1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"D1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"G1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"D2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"G3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"D4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"G4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"D5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"D6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"G6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"D8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"G8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"D10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"F10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"G10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"D11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"G11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"C12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"D12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"E12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"B4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"B5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"B6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"B9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"B12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"B2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"B3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"H12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"A1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
-"B1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182"
+"","plate.barcode","cell_ontology_class","cell_ontology_id","free_annotation","tSNE_1","tSNE_2"
+"A1.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.7097234707628,1.77430740590139
+"A1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",19.5808666463327,18.5670183696203
+"A1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",21.0225245303817,-0.131726835543033
+"A1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.5688730625181,1.00127430123038
+"A10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-12.282079046171,-17.6606156796391
+"A10.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",3.8726828614063,18.4874634724664
+"A10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",5.01363911857143,13.0102174159367
+"A11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.95212266808125,-23.6019590617132
+"A11.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",17.3039519024757,20.8823332260252
+"A11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",5.30352233021868,13.2094471711555
+"A11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",6.83090555744479,-8.81412946881688
+"A12.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.677089112107,6.96928282808181
+"A12.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",14.3272975555247,20.5816363204416
+"A12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",5.76283509811865,-9.28748938523933
+"A13.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-16.1083258309194,8.47440724345386
+"A14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-3.63800076202942,5.22977423057011
+"A15.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.5683655056853,6.43578778740276
+"A16.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.5064041241143,6.86369624993892
+"A17.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.5134750728812,1.22730135178849
+"A18.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.728894077653155,5.02458364163428
+"A19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.88873890331183,-18.2461399104331
+"A2.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-13.4511398401759,19.0181077870032
+"A2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",19.6768537981678,20.6295246641992
+"A2.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",16.8553556726535,22.984973046351
+"A2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",19.2005377360819,0.477219006304781
+"A2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",21.425837118184,-2.31746033410692
+"A20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.54230744936663,-18.6132200778433
+"A21.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.7127792510422,19.6919830889815
+"A22.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.5534171359296,1.4041464120515
+"A3.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.100542591932207,-0.286414117055768
+"A3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",0.538393125159874,1.76330278438842
+"A3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",18.0870431062823,21.4992179709303
+"A3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",17.6714986406983,0.304337294099943
+"A3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",5.2133596494988,12.5329960955699
+"A4.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.2878535590793,19.2383711583795
+"A4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",5.77672497657905,21.2239550075717
+"A4.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",4.47607629243008,18.4678945339315
+"A4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",21.2346845021921,1.22554786912293
+"A4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",19.9046348147029,-2.21070055292749
+"A5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.22932366199966,-17.7917955877115
+"A5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",1.74915895283482,-6.46528640922403
+"A5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",4.9690257880354,-8.55349821957164
+"A6.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.5401248234241,-15.4110909514119
+"A6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",20.9383609714274,20.8124245440504
+"A6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",17.6439610397783,23.7302493093279
+"A6.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",-0.11715465459921,11.0798627890886
+"A6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",24.5564450212656,-1.87652503610007
+"A6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",20.4715408169915,-2.92802750583562
+"A7.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-14.4151647833487,7.90685288898567
+"A7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",0.90496956932331,5.31185206815457
+"A7.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",4.86074092703492,18.4433630675793
+"A7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",23.1813148425674,-1.98511671236285
+"A7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",16.4007049404569,1.03962341869601
+"A8.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.1722815825594,0.0234753277789962
+"A8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",23.1661799408091,-1.58356549440441
+"A8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",6.47869953997889,13.6624573400624
+"A9.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-22.3430306199366,-1.7130836612389
+"A9.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",0.387102104272092,5.6639734241366
+"A9.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",0.348429005366905,6.1316992531565
+"A9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",3.55348280469745,-5.47108407200963
+"A9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",6.07309777400944,-8.70328736866815
+"B1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.27419691209198,-21.0343642628264
+"B1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",19.7929142555949,18.6052403008541
+"B1.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",18.9803834556318,22.6615258380497
+"B1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",21.3314642166384,-0.843984323577095
+"B1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",5.31800775465135,-9.17801846349925
+"B10.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-12.4503756801529,-15.0813555299315
+"B10.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.300471271080807,1.03513808912145
+"B10.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",0.476904264552373,0.833166529237657
+"B10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.12373192526857,-6.92732786031682
+"B11.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-16.409667492114,20.2548517186314
+"B11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",2.78931413627925,17.7795216582202
+"B11.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",14.4753986563552,20.4394871103126
+"B11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.52618124410243,-6.84605987665281
+"B12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.48514773154401,-20.6595252138467
+"B12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",1.74720990138133,16.4265146942439
+"B12.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",3.20716154622925,16.4990873330627
+"B12.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",3.48934608146445,15.1864373657142
+"B12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",2.9150303801572,-8.13197805963894
+"B13.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.6344125039854,6.85814005260359
+"B14.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-16.3552881278032,20.0996749663448
+"B14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.61520884939039,-20.4040424376479
+"B15.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.51598414418522,-23.5927559320543
+"B16.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.454057188421519,0.408584114790768
+"B17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.27499037954735,-25.3084753194283
+"B18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.34449062854981,-27.0451515766643
+"B19.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-15.9879339710946,8.37322147204821
+"B2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.1712938139149,-24.7372713073765
+"B2.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",0.525689794597506,5.14133669130305
+"B2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",20.7703777078198,0.0430375541685279
+"B2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",15.2390116188932,1.57353530338711
+"B20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.43418612326211,-25.3049742317363
+"B21.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.7388225933698,0.483464213804259
+"B22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.646020374950062,7.88595646093967
+"B3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.11475518004491,-25.162022131012
+"B3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",18.6591865109731,21.3962597746409
+"B3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",16.0094815373041,23.8343973883166
+"B3.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",18.2911160123762,19.4358029264485
+"B3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",19.179336825702,-0.218909713150565
+"B3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",3.69783444582729,-9.56571351271254
+"B4.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-12.7449239610417,20.0006360485907
+"B4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",17.1611879929677,22.7256528111913
+"B4.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",18.2670442747169,24.2400146619833
+"B4.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.19728013603716,9.73215561803126
+"B4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",21.7122405701517,0.0485649797300101
+"B4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",17.0338816670183,0.288064177713232
+"B5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.7973262991946,-25.8815623771489
+"B5.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",5.44178932812001,20.8492516194304
+"B5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",18.9136738842115,0.188472298900764
+"B5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",15.4113479813325,4.19409807813043
+"B6.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.0640309739405,-16.3592427307539
+"B6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-11.6111609222761,6.19923202322901
+"B6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",3.28154546039957,18.8078825171302
+"B6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",17.6769122771202,23.4213220978317
+"B6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.63566639501995,-7.29227873120091
+"B6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.1778011556712,1.25754559930678
+"B7.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-15.1884743304036,15.3706973008248
+"B7.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",0.165628359905726,3.9471317369013
+"B7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",0.2086925105695,0.920731811494529
+"B7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",15.1153036066306,23.4734575850351
+"B7.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",19.4383266173045,18.6564882542773
+"B7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",2.7176218961945,-6.48892367031556
+"B8.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-15.2883292866931,15.1680222985096
+"B8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.70112333015099,-27.355504962106
+"B8.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",2.90948355078286,17.1394883894833
+"B8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",18.3820430112557,1.36828363803649
+"B9.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-25.3270821814521,0.144973404109947
+"B9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",-0.590027677886732,6.87916509740118
+"B9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.75485248129722,12.3245741796876
+"B9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",13.6870123015717,3.39082005565217
+"C1.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-11.9532516787936,0.622344231985764
+"C1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",18.9770571270024,21.9230827035193
+"C1.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",0.539973353781646,0.389851616625112
+"C1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",20.0005753931788,0.00808340936360834
+"C1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",18.1713430720533,-1.36220374454211
+"C10.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.00888373149022,-28.5848076053019
+"C10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.15458065488979,-25.1694896726789
+"C10.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",19.3218668271237,21.7328333199403
+"C10.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",18.0199268450382,20.7514730625093
+"C10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.664128211943,1.17259893047737
+"C11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.54864519300261,-14.9589470249611
+"C11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",17.237220085886,23.1018826789654
+"C11.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",3.1356217287637,16.4824123986747
+"C11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",22.9527016663684,-2.22466184755426
+"C11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",19.1881770417774,-1.10253752013196
+"C12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",0.49044961621859,0.538208643119565
+"C12.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",15.447903508476,19.9213952317655
+"C12.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",13.373772922869,22.0589759519043
+"C12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",5.19332336949387,-9.20063362018661
+"C13.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.450874180038,-15.9092177917418
+"C13.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-1.72252082976621,1.27866880761995
+"C14.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-16.7587472651308,8.44364993945999
+"C14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.12070684313341,-18.0300924496164
+"C15.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.8195909740383,7.43312303866707
+"C16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.7908334263826,-16.0998966566672
+"C17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-0.52711866361441,-25.7746210998627
+"C18.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.2881827198456,-28.8119430243626
+"C18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.83737753059499,-19.1927703614964
+"C19.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-1.81655381476215,1.63953323170002
+"C2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.525294129455,-27.2709043365807
+"C2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",18.310260490141,22.0985061576385
+"C2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",21.0463861905773,-0.258818091936323
+"C2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.4748118674146,1.42981031162468
+"C20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.60812153992324,-18.1752572312034
+"C21.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-23.5652637842726,-0.719701716202103
+"C22.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-13.9851913315,21.0492439934171
+"C3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.61986313051066,-25.0599793659538
+"C3.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",2.39098240279324,15.9006682749043
+"C3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",20.7632014028349,0.34940210638848
+"C3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",15.6355090709015,0.428700096939791
+"C4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.00103381677585,-17.9076933611861
+"C4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",-1.83414622973402,5.58193339642618
+"C4.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",17.9404899598554,22.4669103516473
+"C4.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.21348618117947,11.9871522504703
+"C4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",6.15458412266081,13.5527519571257
+"C4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.8101081217003,2.30646064571674
+"C5.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.1381167978682,-0.595591786216094
+"C5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",17.2188924501112,-0.719838562899592
+"C6.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.778248704729,0.447623456151846
+"C6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",18.2470834746117,23.4821711519319
+"C6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",19.2369807629601,21.0831018258643
+"C6.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",2.62747175891294,15.866091588224
+"C6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.46609925383734,-5.94712674398336
+"C6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",6.83765267997337,-8.6180428350821
+"C7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",19.0409675294159,23.1342094884845
+"C7.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",3.14336116148554,15.8594940159388
+"C7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.88373744924592,12.9354501715703
+"C7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",22.360112731699,-1.28476458748091
+"C8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.00171883755216,-21.7870088963281
+"C8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",-1.60250242517822,4.78616884339671
+"C8.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",1.13363808644921,9.72839589938395
+"C8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",22.4476530891243,-2.47052107321033
+"C8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",3.39110682140616,-6.97013634232892
+"C9.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.23220373390795,10.348121161794
+"C9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",16.4503265463404,23.8794146141695
+"C9.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",18.4758357340522,19.7177652603699
+"C9.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",14.1192517975844,20.7479433452579
+"C9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",19.493701467698,-1.65332737553769
+"D1.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.3161559000644,0.491202786482136
+"D1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",20.0185084694607,20.1005437777122
+"D1.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.54544471693609,14.2600519032149
+"D1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",19.4669128046792,1.52502654291769
+"D1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",17.9819298070542,-0.369853348172237
+"D10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.58103516859673,-19.9769944291838
+"D10.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",15.5092000382141,23.5262561364941
+"D10.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",5.61320261590271,20.0995870873745
+"D10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",2.29393328037849,-5.9584414730591
+"D10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",17.4223605330759,0.533594007694734
+"D11.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-23.0047221655331,-1.38357462085363
+"D11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",19.4691058075966,22.4379833703622
+"D11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",22.9008983952193,-1.35450828982437
+"D11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",2.70625708794791,-7.41272978651869
+"D12.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.33656858730762,-29.639214198274
+"D12.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.1812643541354,6.3591915376828
+"D12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",0.765786077185258,0.793970658226959
+"D12.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.03648433948051,-0.0107958996692334
+"D12.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",21.6402637555196,-0.662896658660175
+"D12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",3.78894848780883,-8.14460476549544
+"D13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.06300155852576,-25.0956025352661
+"D14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-12.7026841783485,-15.0793400809931
+"D15.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",0.0889621795224451,0.543572528421936
+"D15.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.9370522461993,20.5381817132081
+"D17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.92161716262132,-27.5474959653418
+"D18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.81669086963591,-24.8072318455587
+"D2.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-13.9878844661999,20.8201623278016
+"D2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",19.5497598325959,21.9666692899101
+"D2.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",-0.369864487624422,2.64158397612325
+"D2.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",4.47035589958416,19.7350577098277
+"D2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",15.1811850576489,1.8934321712816
+"D2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",21.2910861710198,-3.38062620916585
+"D20.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-15.2090076804398,15.27530038171
+"D21.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-13.6724699509609,20.4539442423324
+"D22.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-22.2501020192456,-2.11052559641823
+"D3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",1.04870843509121,4.20687417824139
+"D3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",18.2277699312075,21.8861088290857
+"D3.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",5.29522813662839,19.5405259504824
+"D3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",2.40500251200404,-7.29125983666747
+"D4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.44867455080826,-23.9592170697456
+"D4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",18.9911885084755,21.8770412419045
+"D4.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",19.6162699906648,22.8927046556576
+"D4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",17.6574824699287,0.600652310743107
+"D4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.0959474241195,1.77600248368768
+"D5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.28807908502041,-26.5668244347883
+"D5.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",-0.10673844924469,0.480773833016638
+"D5.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",5.70659823969536,21.0492973235859
+"D5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",14.2247352473882,2.22872990347158
+"D5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.4987097662205,0.482557951039021
+"D6.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-0.0170645153038358,-26.2108309409338
+"D6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",5.21259028330545,20.9824579253067
+"D6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",3.97662149090934,-7.85424878551814
+"D6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",15.6321221389457,1.47817562147654
+"D7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.92824326215851,-23.8147819597189
+"D7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",5.36668303486656,20.5113342966216
+"D7.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.35888873467359,0.824615057436486
+"D7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",2.91923020131474,-6.88139562037531
+"D8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",14.8121261590643,23.425502312019
+"D8.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",5.9330194600989,19.5666435742655
+"D8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",4.04803061571585,-9.42700150025626
+"D9.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-3.36691557878847,-1.25849227535201
+"D9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",5.28813496893815,19.1126111329782
+"D9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.46362035647725,-7.04143259707422
+"E1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.88581057809666,-19.4431214244583
+"E1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",20.1265599987929,20.7455908481473
+"E1.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",2.74428239953713,15.3816112651261
+"E1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",20.0300577540675,0.673840258445256
+"E1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",4.15542374836055,-9.60473361924933
+"E10.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",17.7597436396579,22.5118351493339
+"E10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",23.1190562795526,-1.70742541156805
+"E10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",22.0149944694695,-2.28467521944686
+"E11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.26024751685361,-24.2560249039871
+"E11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",17.5295947756737,23.4511917888849
+"E11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",22.711822128499,-2.46344543331932
+"E11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",22.0080290332057,-0.699137836302463
+"E12.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-15.2240578293119,15.1656032594585
+"E12.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.16706813307825,-7.96075869028504
+"E12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",5.20681228858211,-9.31097019078333
+"E14.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.4198450122301,-27.9698027466038
+"E14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.69845785356457,-26.1288286329678
+"E15.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.3043632871789,0.583562095315883
+"E16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-0.761740577380759,-27.5607227563796
+"E17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.79291502204868,-20.1437996821318
+"E18.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-11.9553478739479,0.60250215170741
+"E19.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-23.6737997647748,-0.75334512085205
+"E2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.41575408351378,-20.2039367422875
+"E2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",20.114118033161,23.5022052599995
+"E2.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.29426347695131,9.6662439029623
+"E2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",20.0182501834897,-1.23198578599984
+"E2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",19.1145457768548,-1.53984971169196
+"E20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.5566906331557,-21.2608797527761
+"E21.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-3.79796810076184,-1.03590561511023
+"E22.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.32301961980461,-26.7027065428115
+"E3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.72096198847736,-23.8013493884569
+"E3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",15.9825893845717,23.2381844999346
+"E3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",5.11975530491897,19.2570790057153
+"E3.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",15.6320322582674,20.0754473730254
+"E3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",6.19246627909238,13.4625155474556
+"E3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",15.5171843796713,4.21266025008628
+"E4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.47309375896842,-23.2962941497094
+"E4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",0.281019458549452,1.15681705303173
+"E4.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",2.66192379160625,13.9095656624924
+"E4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",5.99758355530206,13.2744975450368
+"E4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",15.0772247615326,1.6425530521318
+"E5.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.1371211210305,0.960621418916132
+"E5.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",0.215734793317545,0.327114299411961
+"E5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",20.6014811048998,-0.565602264197658
+"E5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",15.783313832574,1.49236736290687
+"E6.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.33193042047838,-21.0401021123288
+"E6.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.53832065620606,-0.551024569228768
+"E6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",3.06134654894059,-7.31132789931804
+"E6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",7.0528237372002,-8.71048080398876
+"E7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.94268240756397,-20.8886081928593
+"E7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",16.4054614147671,22.2679732913909
+"E7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",2.07515814587242,-6.90757007986169
+"E7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",24.5301218655751,-1.93813862128803
+"E8.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.5357284830562,1.49339259345898
+"E8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",2.64059105397103,17.4819064206861
+"E8.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",0.709366644841726,3.30404987133454
+"E8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",22.9504002183529,-1.23074227169997
+"E8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",6.28192756410187,13.4191370054036
+"E9.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",18.8240803900052,19.4902317571257
+"E9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",1.6660757713925,-6.17644381582006
+"E9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",6.00068667964367,-9.6649357346056
+"F1.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.8618279670966,-0.137274901675348
+"F1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",4.92441045935606,20.3711879334232
+"F1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",14.7583282533559,2.17795864029591
+"F1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",13.3498121545975,2.46836673212112
+"F10.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",1.92368749306622,13.2803563368262
+"F10.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",14.6266925739487,21.7836149615081
+"F10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",2.53820357639477,-7.054857591637
+"F10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",5.72498957951359,-9.67674949723062
+"F11.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",1.24538418671088,12.6242128708086
+"F11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.63957726461227,-27.3557350287113
+"F11.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",4.3538951850877,18.7561881350583
+"F11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",3.18312685875759,-7.24685232960005
+"F12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.1363907727525,-22.9357846283774
+"F12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",3.07840311081514,18.4205921735617
+"F13.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",2.28848216799894,1.84858864162287
+"F13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.00941768319333,-15.2234280302661
+"F15.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",1.62827262976325,6.89730868763321
+"F15.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-23.0494665633957,-1.71061576557628
+"F16.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.49189413005506,-28.0576331983297
+"F16.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-23.6809437033359,-0.135628811023328
+"F17.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-0.444433491635435,5.81473728172696
+"F17.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.3464911563368,0.37251392991604
+"F18.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623","Nk/NKT cells",-23.5596367370039,-0.324063195294519
+"F18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.8228343885749,-21.8786613796697
+"F19.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",1.88454189256416,6.74585215765836
+"F19.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.7111312394143,7.83530352358967
+"F2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.5788926612372,-20.5879792314952
+"F2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",17.7554968049209,1.43997274740185
+"F2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",5.59864528268774,12.7369020944326
+"F20.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",0.208446034842198,-27.4017274863156
+"F20.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",1.14957774307811,12.6009761645324
+"F21.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.626698907013,1.74613521470351
+"F22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.299534736288147,8.78868315018596
+"F3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.7816906775202,-24.3684245457385
+"F3.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",2.276202826084,19.1751172367815
+"F3.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",18.7743368472651,20.7061991314753
+"F3.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",13.7793353794568,21.9192023818358
+"F3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",20.2174407709479,-0.0802716985751704
+"F3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",3.54404068180291,-8.29411998667231
+"F4.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.8826378518586,-0.800483560036275
+"F4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",19.6909343921412,20.2090830515254
+"F4.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",2.30461091253905,14.0436299841713
+"F4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",20.2406974485307,0.38821376550013
+"F4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.7795121366263,1.88568104448632
+"F5.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",18.9937406696977,22.2261298977954
+"F5.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",0.292917010780284,-0.034307306150019
+"F5.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.17360755255272,11.3280151041272
+"F5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",16.9296713948618,0.882864843736103
+"F5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",4.79302707817848,-8.94933595830306
+"F6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-16.1461852891637,7.95481555224496
+"F6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",3.88378952046293,19.0657897971874
+"F6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",3.76667426574111,18.661576017334
+"F6.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.55723075472308,12.7873963320975
+"F6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",18.7640431225714,0.737451097123363
+"F6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.3254383039962,1.75484233871016
+"F7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.70073139966718,-18.0857988906137
+"F7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",2.38331256500533,16.6417769708138
+"F7.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",1.32226305949349,3.76087640798752
+"F7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.88062556404406,12.051879798789
+"F7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",22.678086960495,-2.56993616571982
+"F8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.23933358648258,-20.007333019538
+"F8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",2.58227520263108,15.8629781453802
+"F8.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",2.75111811018044,17.2343137321743
+"F8.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.79191420126507,13.7745776729945
+"F8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",21.8504212577897,-0.639344043974944
+"F8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",6.65299774499578,-9.29692210630146
+"F9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",1.6049337393488,14.9303264830357
+"F9.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",16.0950366527819,22.3947932521425
+"F9.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",3.92053331577984,16.9278922740271
+"F9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",23.2325223181301,-1.37479886732387
+"F9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",17.0890794055009,0.467135806618535
+"G1.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-15.025260899916,20.334003553918
+"G1.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",5.17544554677942,17.7590072100252
+"G1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",13.8852812655046,2.07804973530199
+"G10.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",24.5056186036425,-1.85885002002542
+"G10.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",17.9160568383908,0.275116317188876
+"G11.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.37062838708786,-26.6991958879609
+"G11.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.2536422763759,-0.915266185938266
+"G11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",17.0200687021386,23.5223989900652
+"G11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",6.49667206377072,13.7922007263323
+"G11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",5.4649398901796,-9.72175268114625
+"G12.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",4.78168239074356,19.9032033646127
+"G13.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-0.273871881402178,3.79157972898049
+"G15.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-13.6648555578835,21.0248749466295
+"G15.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.48383994806332,-20.8310923083105
+"G16.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.241587448062436,9.64991425850978
+"G18.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-0.0279871443238825,-1.54968745660475
+"G18.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.2845971822847,20.8115313954098
+"G19.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623","Nk/NKT cells",-23.2775244909814,-0.707943378196941
+"G19.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.0679219007013,0.266326739612585
+"G2.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-15.8971670019695,8.62284637310893
+"G2.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",19.1050963466092,20.2695733402373
+"G2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",19.9241246804339,-0.716371504496466
+"G20.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-22.4383695903357,0.420419197353266
+"G21.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-13.4370298403407,20.6002136059478
+"G22.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.7925024980716,0.696816552222639
+"G3.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",14.2735455318708,21.6674944045407
+"G3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",3.49779176214384,-8.63342610337451
+"G4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.4331066415452,-14.9523319554608
+"G4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",17.0275238962954,22.6744185181028
+"G4.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",16.35241247804,22.7462515150709
+"G4.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",13.4572925171513,21.7842571565522
+"G4.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",14.1402764367101,2.70147455275934
+"G4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",2.97847159821191,-7.67930951452867
+"G5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.06461822609756,-20.3385004632085
+"G5.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",1.57223380230091,15.2113687804696
+"G5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",21.8263505406541,-1.20985082837695
+"G6.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.4655307943373,20.8068463589005
+"G6.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",17.4815957471954,22.7054468383481
+"G6.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",16.9551974270861,22.232003047025
+"G6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",2.64225523969795,-7.97725354423983
+"G6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",17.5839043876293,-0.76473699218469
+"G7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.00688901181994,-22.522023514883
+"G7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",5.03502180799793,20.5099581664797
+"G7.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",15.9355143744229,21.8443157791973
+"G7.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.7191191520224,-6.42810357853801
+"G8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",20.5085572232109,20.2894890338686
+"G8.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",4.5973953010753,18.5800760446407
+"G8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.4692635441895,-8.45578660759031
+"G8.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",21.898657497284,-2.6679505752165
+"G9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.1021771108196,-23.6283626420178
+"G9.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",6.0111462503144,20.9547437602719
+"G9.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",4.06566863808976,17.8715235211345
+"G9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",3.72264115347173,-7.85752047896214
+"H1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.74557982123904,-20.5279200715948
+"H1.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",2.96913957188328,18.4777313902889
+"H1.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",6.2914577765931,19.8298038314892
+"H1.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",0.06017422821862,6.16720036363989
+"H1.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",18.2287674046606,0.878704466076491
+"H1.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",14.7018767221321,0.861148654865093
+"H10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.5714660071372,-15.1949015710828
+"H10.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",17.3638440410668,19.3761360207712
+"H11.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-4.3109129494044,5.82342444315736
+"H11.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",19.8919512924544,21.5965834540059
+"H11.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",14.2277489027982,21.6270593313503
+"H11.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.91402203188032,12.3516401382531
+"H11.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",2.80665504158596,-9.05558860230524
+"H12.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623","Nk/NKT cells",-25.5904100412471,-1.4905964771561
+"H12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.02286446952682,-25.3406013056395
+"H12.MAA100040.3_11_M.1.1","MAA100040","hepatocyte","CL:0000182","hepatocyte",-0.472917451429866,5.41498178353677
+"H12.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",18.887898464381,19.0162567965991
+"H12.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",15.2382754912424,20.3174025498313
+"H12.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",6.75281754724221,13.96575426883
+"H12.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",17.2781990333234,1.17873410702167
+"H13.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",0.723192069690112,5.55594459943988
+"H14.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-12.9310420476663,6.98937014875975
+"H14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.662060806599922,5.71697859268281
+"H15.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-13.4646873931051,20.2667077543646
+"H16.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-11.7533874882365,7.70194539860362
+"H16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.52129422119287,-20.5337514071659
+"H17.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-16.6390585564528,8.95152753559248
+"H17.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.9432707901188,7.79075934625187
+"H18.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-14.1117306524533,7.57363535632453
+"H2.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.8323418886514,6.67662302513416
+"H2.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",0.417093924481819,1.55877954748005
+"H2.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",-1.49050483341427,0.422118372778877
+"H2.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",2.00270802795062,15.0516125791038
+"H2.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",19.4627070893651,0.436612014403244
+"H2.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",5.46996505397282,12.5794028771815
+"H20.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-0.0153348488906413,7.09199324815754
+"H20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.86441897538002,-21.8899142167904
+"H22.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-15.215479337641,15.2442583567542
+"H3.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",1.53291306422991,7.65974308077529
+"H3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.48775541815178,-26.2364245682499
+"H3.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",3.5792333273535,17.2587596151764
+"H3.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",14.3552450769588,1.99842941565743
+"H3.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",16.1631683987811,0.689993567706003
+"H4.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",0.387180935377546,4.91326858535573
+"H4.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",13.8580571873059,1.33535850238142
+"H5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.397401562086,-18.2546304616132
+"H5.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",1.57233704519019,12.6182274128608
+"H5.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",21.4065468212944,-1.6833469122045
+"H5.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",3.90745604998772,-8.21041112276701
+"H6.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",0.21922782871929,8.08293450634905
+"H6.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",12.6316482474849,21.8297579995594
+"H6.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",6.17474254371501,-9.03448753812607
+"H6.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",2.53668144980229,-6.8015920705404
+"H7.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-22.0391316790341,0.446658707716086
+"H7.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",18.7364924537016,23.3070603590628
+"H7.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",2.16953099846479,-8.50268591537317
+"H8.MAA100039.3_11_M.1.1","MAA100039","hepatocyte","CL:0000182","hepatocyte",2.77765040914268,18.2735555172737
+"H8.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",1.7135486663521,2.44132335131467
+"H8.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.78683198954848,-6.79934284877159
+"H9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.75881096764421,-17.4549657166739
+"H9.MAA100041.3_9_M.1.1","MAA100041","hepatocyte","CL:0000182","hepatocyte",19.057974889735,18.8272040573005
+"H9.MAA100042.3_9_M.1.1","MAA100042","hepatocyte","CL:0000182","hepatocyte",3.10143565024424,16.6644381088023
+"H9.MAA100138.3_56_F.1.1","MAA100138","hepatocyte","CL:0000182","hepatocyte",4.56300593523509,-8.85319305982875
+"H9.MAA100140.3_57_F.1.1","MAA100140","hepatocyte","CL:0000182","hepatocyte",18.239054791932,-1.25172587654741
+"I1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.90142688858699,-18.9976908753185
+"I10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.26436531411799,-26.6026346130944
+"I14.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",2.13323924850558,7.69789804380281
+"I14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.75098211943798,-25.5709632512426
+"I15.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.55812563392833,-28.201182005801
+"I16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.46998445660845,-23.642178500953
+"I18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-0.807886520007542,-25.985820990058
+"I19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.34681868293735,-19.7755799161537
+"I2.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.0598591013374,19.7307513929581
+"I20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.87863585810451,-28.3509133911966
+"I21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.78481954739708,-20.356958994588
+"I22.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623","Nk/NKT cells",-24.3841218871067,1.21304253781505
+"I22.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.60325020931032,-17.2635683255908
+"I4.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-15.5225294780384,8.11607154226035
+"I7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.40916693248481,-26.0764103402246
+"I8.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.451136348274495,4.28872780628482
+"I9.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-11.163123452824,5.95965149390982
+"I9.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.621190919711615,-1.23085966977718
+"J1.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-14.768868465937,7.56426032038039
+"J10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.89487047688435,-20.4929356384141
+"J11.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.208522148747542,9.56953380222797
+"J12.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-21.896472913237,-2.74966104793145
+"J12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.5258017771034,-23.9385431320986
+"J13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.34193571577606,-28.0994946529957
+"J14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",1.14722232652511,12.5325278336852
+"J15.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.67611544789656,-22.8823084620698
+"J16.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-13.1786323693126,7.14127717126133
+"J16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.37990813632493,-24.0363802242885
+"J17.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",2.16087781029978,13.6269776237087
+"J17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-0.133512665859376,-27.8369009434993
+"J18.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.2727531129049,-21.5393127651537
+"J19.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.7898079660766,1.50334817297246
+"J2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.9203601255385,-24.6273584112702
+"J20.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623","Nk/NKT cells",-22.2008012523323,0.859956221151902
+"J20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.02059045674559,-24.1815372193538
+"J21.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-13.6340591030908,7.02278073256855
+"J21.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.9491481569782,6.49530482393809
+"J22.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-13.8977469139408,7.38696766383056
+"J4.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-10.91976823234,5.78151585341225
+"J5.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-14.160377514113,7.68652622152106
+"J7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.34104093486302,-23.5362428334646
+"J8.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-15.4640169365439,8.34013057697185
+"J9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-0.52576792745839,-27.1065085952878
+"K1.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-11.5492577146269,6.13421342173792
+"K10.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",0.332427314543691,8.10082463585335
+"K11.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-4.33828179709733,-0.720050638399066
+"K11.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",0.0386956506898106,4.73973998288944
+"K13.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.64563397337243,-29.2078862093874
+"K13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.18176611798393,-22.021694487977
+"K14.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.51120576473936,-22.0730176133626
+"K14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.09147635260559,-25.4695533382282
+"K15.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-0.910114117784451,5.84520264250173
+"K15.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-11.1045259678789,5.96044129706602
+"K17.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-12.7726014608599,20.6118874499354
+"K17.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.9891096474882,20.8814739302722
+"K18.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-0.303256973219893,-28.3986296861374
+"K18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.31437314480501,-25.2798248746448
+"K2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.06310291788963,-25.2460006939943
+"K20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.04229049847022,-21.4417570799569
+"K21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.39217248459678,-20.902743114402
+"K22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",0.00565291856872197,4.50051991181492
+"K3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.84899219453236,-17.869293698157
+"K4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.7072363711194,-24.3440765225094
+"K5.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-14.9706486878004,8.11887408212071
+"K6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.363550521354,7.44437664167471
+"K7.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.7783171529192,20.9414623546333
+"K8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.23864127213111,-22.7355887094342
+"K9.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",0.741494460965451,4.53207879597881
+"K9.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-21.1237720899398,1.36507654004877
+"L1.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.4523849606217,1.72339141360415
+"L10.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.244097822020452,4.5685078976752
+"L11.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",1.93422451403399,7.00524027801351
+"L11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.54731580216569,-17.2711639819071
+"L12.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-16.6741183733774,8.4913901231986
+"L12.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-15.2857012153679,20.1910704222713
+"L13.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-13.179517956226,20.3497688560368
+"L13.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-14.6461625736844,8.08878515319235
+"L14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.71650103350725,-17.2487713880202
+"L15.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-21.7015033099669,-2.38217564327217
+"L15.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-2.86478385812409,-1.40099553627072
+"L16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.82693333130596,-21.680521787927
+"L17.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-16.0303943589169,20.2615110932144
+"L18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.71573146963362,-18.4326255631459
+"L19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.21344164806001,-23.9193604021652
+"L2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.59875123306751,-23.3212586257617
+"L20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.55260880587938,-26.5412235388056
+"L21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.11686028385205,-24.6621121118493
+"L22.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.79222831872178,6.25419329805221
+"L3.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.5021038177398,7.40785601104346
+"L4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.34034118333086,-19.46460005413
+"L5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.5673020658998,-18.9777431599008
+"L6.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.3218780506592,20.3492391041007
+"L7.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-10.296084544022,5.3793063488704
+"L7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.08399423101968,-19.1988738352131
+"L8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.0592788461635,-19.2824346007781
+"L9.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-13.1677854998143,20.9230014923883
+"L9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.38783840665444,-27.1111161342247
+"M1.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-15.6597501826068,20.4261388319127
+"M10.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-12.0275190852274,0.62471757696981
+"M10.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.6496894490793,-0.294759966292877
+"M11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.52700807699627,-26.4389936302009
+"M12.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.423730676698333,2.22004816735547
+"M13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.93585543435056,-19.6270909591879
+"M14.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.965533440505,-14.47713630243
+"M15.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623","Nk/NKT cells",-24.4258101436261,-0.474204298074079
+"M15.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-15.7322935354712,20.4210830369491
+"M16.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",3.36459456404108,12.5906215307441
+"M16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-12.3610467737816,-17.8288385383462
+"M17.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-23.2122097582452,1.66809664294833
+"M18.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-22.7990279847281,0.821629357935296
+"M2.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",0.302054351952711,8.26666393266637
+"M2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.9716524077436,-14.7099562117436
+"M20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.92940196670349,-27.1476953240653
+"M21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.51131769309295,-26.3264775936124
+"M22.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.04331324027668,-24.7558053311417
+"M3.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",0.0424017856552391,2.35856899590671
+"M4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-2.81807803880123,-25.2765100482491
+"M6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.3028830717953,6.44942711494734
+"M7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.8668972839495,-23.8580122321525
+"M8.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-23.5470648620555,1.30810892111688
+"M9.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-15.5114707606306,20.4174205364451
+"N1.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-15.2741947241248,20.7727244421234
+"N10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.35933876008781,-24.1242871654573
+"N11.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",1.77056400984627,13.34161927956
+"N11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.1023674571095,-19.1090590469773
+"N12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.59222910522564,-22.4408418004122
+"N14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",0.553912714708346,7.26089424548237
+"N15.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-13.5136224814828,19.9783342293932
+"N15.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-2.85898917649238,-1.47360968423766
+"N16.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.57974975911244,-26.1418716334584
+"N16.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-23.7955274184487,0.336804381597397
+"N17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.1622516471437,-17.987207309652
+"N18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.36053612222587,-16.5053016494995
+"N19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.35734220715726,-22.3673467446918
+"N2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.74893299909832,-23.8120467438866
+"N20.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-0.254426870681521,7.44333622786665
+"N20.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.4785776801885,1.57952651622773
+"N21.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",0.0398153816135128,-27.9484274001603
+"N21.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.25976372854058,-15.3180292718164
+"N22.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.42940228819725,-25.7136886033536
+"N22.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.6166615248364,21.0937604796106
+"N3.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-15.5265501406325,7.84232135519269
+"N4.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-14.4578084149224,7.89786033262252
+"N4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.33230137274442,-15.9346003231508
+"N5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.25676347476173,-20.9853819145367
+"N6.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.4497851444469,0.423692614770611
+"N7.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-3.6111471930115,-0.559004918357255
+"N7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.08372578370141,-20.202875105534
+"N8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.44695847977578,-19.2001690453008
+"N9.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.2367657959934,0.0486152534150898
+"O1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.21333588791508,-17.0158826274874
+"O11.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.7885739513976,-17.5564356102636
+"O11.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.2184068554612,19.994032182362
+"O12.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-1.53130240044025,0.317951553477275
+"O13.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-14.2010296740368,7.03761550930139
+"O14.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",0.61030386735176,5.16928008597734
+"O14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.0530399931491752,5.37841312942346
+"O15.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-13.514491406933,1.6274166429214
+"O16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.60553253409189,-26.7988332913544
+"O17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.7337335688411,-15.018498716371
+"O18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.0913844217933,-23.1867364108217
+"O19.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.16884928290917,-23.6058346461723
+"O2.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.0947905910655,0.545421541310817
+"O20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.20942399039888,-18.3783125248528
+"O21.MAA000377.3_9_M.1.1","MAA000377","natural killer cell","CL:0000623","Nk/NKT cells",-22.3363536411106,1.08845873437932
+"O21.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.2644874811406,0.528514096811257
+"O22.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-15.3446356090719,7.95192837183066
+"O22.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-1.74486893619794,-29.5103343351036
+"O3.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-12.8083849722,6.38107619321796
+"O4.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-15.5245768765357,8.37255166994633
+"O5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.6607012592956,-15.1444390026749
+"O6.MAA000907.3_11_M.1.1","MAA000907","Kupffer cell","CL:0000091","kuppfer",-11.7020610987526,7.2547295641351
+"O7.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.4653913257448,-17.594478254293
+"O7.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.1679914182986,-16.0774513570011
+"O8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.815192673114,-14.8154739403691
+"O9.MAA000377.3_9_M.1.1","MAA000377","Kupffer cell","CL:0000091","kuppfer",-12.6345151870375,5.88840910799256
+"O9.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-3.55611215123376,-0.834566586928189
+"P1.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.63205551486211,-21.7268130168107
+"P10.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-5.03012168876911,-25.938190032535
+"P11.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-4.15878105357317,-24.1690158042847
+"P12.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.40853353081468,-20.887043766807
+"P13.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.67717035096825,-19.4637675700581
+"P14.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-0.449651207220414,8.1649385237568
+"P15.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",0.683869015819337,6.936446602253
+"P15.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.70514998104709,-21.5479106675899
+"P16.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.203143250595,-16.9577439550326
+"P17.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",0.552262006174746,6.3433068282493
+"P17.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.68742229270752,-18.345963786894
+"P18.MAA000377.3_9_M.1.1","MAA000377","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-0.92433842270216,-28.3075764062283
+"P18.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.5665272410565,-18.2404049999419
+"P19.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",0.357684744157099,-0.433050619150335
+"P2.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-6.01292129074218,-22.0912851267597
+"P20.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-7.94806329117486,-21.7441077926576
+"P21.MAA000377.3_9_M.1.1","MAA000377","B cell","CL:0000236","B cell",-14.3946615340542,20.257268781696
+"P21.MAA000907.3_11_M.1.1","MAA000907","natural killer cell","CL:0000623","Nk/NKT cells",-24.5550699046853,0.920807441229933
+"P22.MAA000377.3_9_M.1.1","MAA000377","hepatocyte","CL:0000182","hepatocyte",-3.48338615342394,5.22324730686968
+"P22.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-15.003051473787,20.0890787549546
+"P3.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-10.2488436701487,-17.5034896916083
+"P4.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-9.62314214275908,-16.5575700228368
+"P5.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-11.9361438988974,-14.7067658467562
+"P6.MAA000907.3_11_M.1.1","MAA000907","B cell","CL:0000236","B cell",-14.4308800159098,19.7884795594753
+"P7.MAA000907.3_11_M.1.1","MAA000907","hepatocyte","CL:0000182","hepatocyte",-3.69257496659834,-1.05238199765092
+"P8.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-8.14709066890852,-18.1695089917684
+"P9.MAA000907.3_11_M.1.1","MAA000907","endothelial cell of hepatic sinusoid","CL:1000398","endothelial cell",-3.36017085563531,-19.5038555837657
