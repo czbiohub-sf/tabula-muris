@@ -21,7 +21,7 @@ library(ontologyIndex)
 cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
 
 validate_cell_ontology = function(cell_ontology_class){
-  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name))
+  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name) || is.na(x))
   if (!all(in_cell_ontology)) {
     message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology
 ')
@@ -111,7 +111,7 @@ tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nUMI"),
 Normalize the data, then regress out correlation with total reads
 ```{r}
 tiss <- NormalizeData(object = tiss)
-tiss <- ScaleData(object = tiss, vars.to.regress = c("nUMI", "percent.ribo","Rn45s"))
+tiss <- ScaleData(object = tiss)
 tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
 ```
 
