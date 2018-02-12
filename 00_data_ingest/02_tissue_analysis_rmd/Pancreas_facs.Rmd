@@ -245,7 +245,7 @@ Using the markers above, we can confidentaly label many of the clusters:
 The abundance of Ppy and Gcg in clusters 1 and 2 makes them seem like mixtures of alpha and delta cells. The expression of Sst and Hhex in cluster 5
 indicates that it might contain many gamma cells, but to get a finer resolution, we subset the data and recompute.
 
-We will add those cell_ontology_classs to the dataset.
+We will add those cell_ontology_class to the dataset.
 
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
@@ -365,7 +365,7 @@ subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = sub
 subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
 ```
 
-## Add subcluster cell_ontology_classs to main cell_ontology_class
+## Add subcluster cell_ontology_class to main cell_ontology_class
 
 ```{r}
 sub.cells = rownames(subtiss@meta.data)
@@ -410,7 +410,7 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
+So that Biohub can easily combine all your cell_ontology_class, please export them as a simple csv.
 
 ```{r}
 head(tiss@meta.data)
