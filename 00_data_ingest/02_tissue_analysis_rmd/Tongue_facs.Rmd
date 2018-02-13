@@ -49,7 +49,7 @@ plate_metadata
 Subset the metadata on the tissue.
 
 ```{r}
-tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
+tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex', 'mouse.id')]
 tissue_plates
 ```
 
@@ -147,8 +147,9 @@ tiss <- RunPCA(object = tiss, do.print = FALSE)
 tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
-```{r, echo=FALSE, fig.height=4, fig.width=8}
-PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 1000, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+```{r, echo=FALSE, fig.height=16, fig.width=8}
+PCHeatmap(object = tiss, pc.use = 1:10, cells.use = 500, do.balanced = TRUE, 
+    label.columns = FALSE, use.full = FALSE)
 ```
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
@@ -170,7 +171,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 0.5
+res.used <- 0.7
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
@@ -179,7 +180,7 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 20, perplexity=40)
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 
@@ -188,15 +189,16 @@ TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 
 Check expression of genes of interset.
 
-```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Krt10', 'Krt5', 'Krt14', 'Krt13','Krt4', 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Krt78', 'Krt10', 'Sbsn', 'Dcn', 'Klf4', 'Krt17', 'Lor')
+```{r, echo=FALSE, fig.height=16, fig.width=10}
+genes_to_check = c('Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Top2a', 'Mt2', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10','Klf4'
+, 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Fabp5', 'Krt32',  'Krt78', 'Vim', 'Hhip', 'Ptch1', 'Gli1','Dsc1', 'Dcn', 'Runx2', 'Sox2', 'Pax9')
 
-FeaturePlot(tiss, genes_to_check, pt.size = 1.5, nCol = 3)
+FeaturePlot(tiss, genes_to_check, pt.size = 1.2, nCol = 4)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r, echo=FALSE, fig.height=4, fig.width=8}
+```{r, echo=FALSE, fig.height=4, fig.width=20}
 # To change the y-axis to show raw counts, add use.raw = T.
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
@@ -210,23 +212,26 @@ table(tiss@ident)
 tiss1=BuildClusterTree(tiss)
 ```
 
-```{r}
-marker10=FindAllMarkersNode(tiss1, 10)
+```{r, echo=FALSE, fig.height=20, fig.width=20}
+# To change the y-axis to show raw counts, add use.raw = T.
+VlnPlot(tiss, genes_to_check)
 ```
-```{r}
-print(x = head(x= marker10, n = 30))
-```
-
-
 
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 5, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#cluster1.markers <- FindMarkers(object = tiss, ident.1 = 1, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
+#cluster2.markers <- FindMarkers(object = tiss, ident.1 = 2, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
+#cluster3.markers <- FindMarkers(object = tiss, ident.1 = 3, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
+#cluster4.markers <- FindMarkers(object = tiss, ident.1 = 4, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
+#cluster5.markers <- FindMarkers(object = tiss, ident.1 = 5, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
+#cluster6.markers <- FindMarkers(object = tiss, ident.1 = 6, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
+cluster7.markers <- FindMarkers(object = tiss, ident.1 = 6, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
+#cluster0.markers <- FindMarkers(object = tiss, ident.1 = 0, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
 ```
 
 ```{r}
-print(x = head(x= clust.markers, n = 30))
+print(x = head(x = cluster6.markers, n = 30))
 ```
 
 You can also compute all markers for all clusters at once. This may take some time.
@@ -236,21 +241,30 @@ tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, t
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster)
+tiss.markers %>% group_by(cluster) %>% top_n(20, avg_logFC)
 ```
 
+## Generate an expression heatmap for given cells and genes. In this case, we are plotting the top 20 markers (or all markers if less than 20) for each cluster.
+
+```{r, echo=FALSE, fig.height=50, fig.width=35}
+#top10 <- tiss.markers %>% group_by(cluster) %>% top_n(10, avg_logFC)
+top20 <- tiss.markers %>% group_by(cluster) %>% top_n(20, avg_logFC)
+# setting slim.col.label to TRUE will print just the cluster IDS instead of
+# every cell name
+DoHeatmap(tiss, genes.use = top20$gene, slim.col.label = TRUE, remove.key = TRUE, cex.row = 20, group.cex = 20 )
+```
 ## Assigning cell type identity to clusters
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-0: Basal/differentiating cells
-1: Basal/differentiating cells
-2: Proliferating cells
-3: Maturing/nonkeratinizing cells
-4: Basal/differentiating cells
-5: Stratified/differentiated keratinocytes
-6: Basal/differentiating cells
-7: Filliform Keratinocytes
+0: basal cell of epidermis (CL:0002187)
+1: basal cell of epidermis (CL:0002187)
+2: proliferating basal cell of epidermis (CL:0002187)
+3: differentiated keratinocytes (CL:0000312)
+4: differentiating basal cell of epidermis (CL:0002187)
+5: suprabasal differentiating keratinocytes  (CL:0000312)
+6: basal cell of epidermis (CL:0002187)
+7: filiform differentiated keratinocytes (CL:0000312)
 
 ```{r}
 # stash current cluster IDs
@@ -258,8 +272,12 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-cell_ontology_class <- c("basal cell of epidermis", "basal cell of epidermis", "keratinocyte", "keratinocyte", "basal cell of epidermis", "keratinocyte", "basal cell of epidermis", "keratinocyte" )
-cell_ontology_id <- c("CL:0000312", "CL:0000312", "CL:0000312", "CL:0000312", "CL:0000312", "CL:0000312", "CL:0000312", "CL:0000312" )
+free_cell_ontology_id <- c("basal cell of epidermis", "basal cell of epidermis", "proliferating basal cell of epidermis", "differentiated keratinocyte", "differentiating basal cell of epidermis", "suprabasal differentiating keratinocytes", "basal cell of epidermis", "filiform differentiated keratinocytes" )
+
+cell_ontology_class <- c("CL:0002187", "CL:0002187", "CL:0002187", "CL:0000312", "CL:0002187", "CL:0000312", "CL:0002187", "CL:0000312" )
+cell_ontology_id <- c("CL:0002187", "CL:0002187", "CL:0002187", "CL:0000312", "CL:0002187", "CL:0000312", "CL:0002187", "CL:0000312" )
+
+cell_ontology_class.subcell_ontology_class = paste0(cell_ontology_class,': ', free_cell_ontology_id)
 
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
@@ -267,9 +285,11 @@ tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cl
 tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
 tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 1, label.size = 3, group.by='cell_ontology_class', do.return = TRUE)
-#dev.copy(png,'annotated_plot-2.png')
-#dev.off()
+tiss@meta.data[,'subcell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = free_cell_ontology_id)
+tiss@meta.data[,'cell_ontology_class.subcell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class.subcell_ontology_class)
+
+
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class.subcell_ontology_class', label.size = 2)
 ```
 
 
@@ -318,9 +338,9 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                      paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
+write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_class.subcell_ontology_class')], file=filename)
 ```
 
 
