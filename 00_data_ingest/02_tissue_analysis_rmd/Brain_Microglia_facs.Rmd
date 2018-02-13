@@ -228,6 +228,11 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
 
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
+```
+
+
 ## Assigning cell type identity to clusters
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
