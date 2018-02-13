@@ -189,7 +189,7 @@ TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Top2a', 'Cdc20', 'Mki67', 'Krt5', 'Krt14', 'Krt15', 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Krt78', 'Krt10', 'Sbsn', 'Dcn')
+genes_to_check = c('Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Krt10', 'Krt5', 'Krt14', 'Krt13','Krt4', 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Krt78', 'Krt10', 'Sbsn', 'Dcn', 'Klf4', 'Krt17', 'Lor')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1.5, nCol = 3)
 ```
@@ -222,7 +222,7 @@ print(x = head(x= marker10, n = 30))
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 2, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers <- FindMarkers(object = tiss, ident.1 = 5, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 ```{r}
