@@ -153,7 +153,7 @@ load_tissue_droplet = function(tissue_of_interest){
   
   tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nUMI"), 
                       low.thresholds = c(500, 1000))
-  tiss <- NormalizeData(object = tiss)
+  tiss <- NormalizeData(object = tiss, scale.factor = 1e4)
   tiss <- ScaleData(object = tiss)
   tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
   tiss <- RunPCA(object = tiss, do.print = FALSE)
