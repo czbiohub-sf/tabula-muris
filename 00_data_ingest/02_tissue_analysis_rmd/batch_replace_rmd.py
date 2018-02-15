@@ -1,4 +1,10 @@
 # coding: utf-8
+
+# How to use:
+# type 'ipython' at the terminal to get to the Interactive Python (IPython) environments
+# Type: 
+# %run batch_replace_rmd.py
+
 import re
 
 methods = 'facs', 'droplet'
@@ -44,9 +50,9 @@ Visualize top genes in principal components
     get_ipython().system(f'diff Bladder_{method}.Rmd Bladder_{method}.Rmd.replaced')
 
             
-replaceds = get_ipython().getoutput('ls *.Rmd.replaced')
-for replaced in replaceds:
-    rmd = replaced.split('.replaced')[0]
-    print(rmd)
-    get_ipython().system(' mv $replaced $rmd')
+# replaceds = get_ipython().getoutput('ls *.Rmd.replaced')
+# for replaced in replaceds:
+#     rmd = replaced.split('.replaced')[0]
+#     print(rmd)
+#     get_ipython().system(' mv $replaced $rmd')
     
