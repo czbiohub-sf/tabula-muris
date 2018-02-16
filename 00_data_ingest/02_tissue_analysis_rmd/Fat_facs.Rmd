@@ -44,8 +44,8 @@ tiss <- RunPCA(object = tiss, do.print = FALSE)
 tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
-```{r, echo=FALSE, fig.height=8, fig.width=8}
-PCHeatmap(object = tiss, pc.use = 1:9, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
@@ -57,7 +57,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 7
+n.pcs = 10
 ```
 
 
@@ -67,7 +67,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 0.4
+res.used <- 0.5
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
@@ -93,41 +93,78 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 Check expression of genes useful for indicating cell type.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=12}
-genes_to_check = c('Nkg7','Gzma','Cd14','Lyz2','C1qa','Emr1','Irf8','Itgam','Cd68','Cd4','Cd8a','Cd3g','Cd19','Ptprc','Kdr','Cdh5','Pecam1','Fabp4','Tek','Pdgfra','Cd34')
+#core markers
+#genes_to_check = c('Pecam1','Atxn1','Ptprc','Cd3g','Cd8a','Cd4','Cd19','Ncam1','Cd68','Itgam','Pdgfra','Cd24a','Fabp2','Tek','Irf8','Emr1','Gzma','C1qa')
+
+#Eosinophil
+#genes_to_check = c('Cd44','Cd69','Il5')
+
+#Neutrophil
+#genes_to_check = c('Fcgr3','Sell','Mpo')
+
+#Baslphil
+genes_to_check = c('Anpep','Lamp1','Cd164')
+
+#Sorted cells
+#genes_to_check = c('Pecam1', 'Atxn1', 'Ptprc')
+
+#Endothelial
+#genes_to_check = c('Pecam1', 'Cd34', 'Cdh5', 'Vcam1', 'Kdr', 'Flt1', 'Tjp1', 'Cldn5')
+
+#T-cells
+#genes_to_check = c('Ptprc', 'Cd3g', 'Cd8a', 'Cd4', 'Thy1')
+
+#B-cells
+#genes_to_check = c('Cd19', 'Il2ra')
+
+#NK cells. Fcgr3a not present
+#genes_to_check = c('Ncam1')
+
+#eosinophils: No Siglec8
+#genes_to_check = c('Siglec8')
+
+#HSCs
+#genes_to_check = c('Ptprc', 'Atxn1', 'Kit', 'Cd38')
+
+#Immune: Monocyte/Macrophage
+#genes_to_check = c('Ptprc', 'Itgam', 'Cd68', 'Emr1', 'Csf1r', 'Ly6c1', 'Il4ra')
+
+#Pdgfra and Atxn1 should label all MPs
+#Cd24a and Fabp2 should label a single cluster
+#Tie2/Tek should overlap endos, MPs
+#genes_to_check = c('Pdgfra', 'Atxn1', 'Cd24a', 'Fabp4', 'Tek', 'Dlk1', 'Acta2')
+
+#dendritic cells (Irf8 [Cd11c]), macrophages (Emr1 [F4/80]), monocytes neg for both. Itgam=Cd11b
+
+#genes_to_check = c('Irf8', 'Emr1', 'Ly6c1', 'Ly6c2', 'Itgam')
+
+#genes_to_check = c('Ucp2')
+
+#genes_to_check = c('Myod1','Mki67')
 ```
 
 Dotplots let you see the intensity of expression and the fraction of cells expressing for each of your genes of interest.
 The radius shows you the percent of cells in that cluster with at least one read sequenced from that gene. The color level indicates the average Z-score of gene expression for cells in that cluster, where the scaling is done over all cells in the sample.
 
-```{r, echo=FALSE, fig.height=4, fig.width=6}
-DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T, x.lab.rot = T) + coord_flip()
+```{r, echo=FALSE, fig.height=3, fig.width=3}
+DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 ```
 
 ```{r, echo=FALSE, fig.height=12, fig.width=12}
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 5, cols.use = c("grey", "red"))
 ```
 
-Which markers identify a specific cluster?
-
-```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 9, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-print(x = head(x= clust.markers, n = 20))
-```
-
 
 We can also find all differentially expressed genes marking each cluster. This may take some time.
 
 ```{r}
-clust.markers0 <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#clust.markers0 <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
 ```
 
 Using the markers above, we can confidentaly label many of the clusters:
@@ -138,33 +175,45 @@ We will add those cell_ontology_class to the dataset.
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
 
 cell_ontology_class <-
   c(
   "mesenchymal stem cell of adipose",
-  "myeloid cell",
   "endothelial cell",
-  "mesenchymal stem cell of adipose",
   "B cell",
-  "lymphocyte",
-  "myeloid cell",
   "mesenchymal stem cell of adipose",
+  "mesenchymal stem cell of adipose",
+  "T cell",
+  "granulocyte",
   "myeloid cell",
-  "keratinocyte stem cell"
+  "myeloid cell",
+  "neutrophil",
+  "mesenchymal stem cell of adipose",
+  "granulocyte",
+  "natural killer cell",
+  "epithelial cell",
+  "endothelial cell",
+  "smooth muscle cell"
   )
 
 free_annotation <- c(
- "mesenchymal stem cell of adipose",
-  "myeloid cell",
+  "mesenchymal stem cell of adipose",
   "endothelial cell",
-  "mesenchymal stem cell of adipose",
   "B cell",
-  "lymphocyte",
-  "myeloid cell",
   "mesenchymal stem cell of adipose",
-  "myeloid",
-  "unknown"
+  "mesenchymal stem cell of adipose",
+  "T cell",
+  "granulocyte",
+  "myeloid cell",
+  "myeloid cell",
+  "neutrophil",
+  "mesenchymal stem cell of adipose",
+  "granulocyte",
+  "natural killer cell",
+  "epithelial cell",
+  "endothelial cell",
+  "smooth muscle cell"
   )
 
 validate_cell_ontology(cell_ontology_class)
@@ -181,7 +230,7 @@ tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@iden
 ## Subcluster
 
 ```{r}
-subtiss = SubsetData(tiss, ident.use = c(5))
+subtiss = SubsetData(tiss, ident.use = c(1))
 ```
 
 ```{r}
@@ -195,14 +244,10 @@ PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, l
 PCElbowPlot(subtiss)
 ```
 
-```{r, echo=FALSE, fig.height=8, fig.width=8}
-PCHeatmap(object = subtiss, pc.use = 1:9, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
-```
-
 
 ```{r}
-sub.n.pcs = 6
-sub.res.use = 1.5
+sub.n.pcs = 10
+sub.res.use = 1
 subtiss <- subtiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE, force.recalc = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=20)
@@ -214,13 +259,12 @@ TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
 TSNEPlot(subtiss, group.by = "mouse.id")
 ```
 
-```{r, echo=FALSE, fig.height=12, fig.width=12}
-subtiss_genes_to_check = c('Nkg7','Gzma','Cd14','Lyz2','C1qa','Emr1','Irf8','Itgam','Cd68','Cd4','Cd8a','Cd3g','Cd19','Ptprc')
-FeaturePlot(subtiss, subtiss_genes_to_check)
+```{r, echo=FALSE, fig.height=12, fig.width=8}
+FeaturePlot(subtiss, genes_to_check)
 ```
 
-```{r, echo=FALSE, fig.height=4, fig.width=6}
-DotPlot(subtiss, subtiss_genes_to_check, plot.legend = T, col.max = 2.5, do.return = T, x.lab.rot = T) + coord_flip()
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(subtiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
 ```{r}
