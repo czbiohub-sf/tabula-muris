@@ -1,0 +1,96 @@
+---
+title: "facs_vs_droplets_celltypes"
+output: html_notebook
+---
+
+```{r}
+library(here)
+library(useful)
+library(tidyverse)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+facs_csv = here('00_data_ingest', '00_facs_raw_data', 'annotations_FACS.csv')
+facs = read_csv(facs_csv)
+head(facs)
+```
+```{r}
+facs_metadata_csv = here('00_data_ingest', '00_facs_raw_data', 'metadata_FACS.csv')
+facs_metadata = read_csv(facs_metadata_csv)
+head(facs_metadata)
+```
+
+Add plate barcode as a column
+```{r}
+facs['plate.barcode'] = str_replace_all(str_extract(facs$cell, ".([A-Z]+[0-9]+)."), '\\.', '')
+head(facs)
+```
+
+
+```{r}
+droplet_csv = here('00_data_ingest', '01_droplet_raw_data', 'annotations_droplets.csv')
+droplet = read_csv(droplet_csv)
+head(droplet)
+```
+```{r}
+facs_metadata %>% group_by(tissue) %>% distinct(FACS.selection)
+```
+
+```{r}
+dplyr::filter(facs_metadata, (tissue == tissue_of_interest) & (FACS.selection == "Viable"))
+```
+
+```{r}
+head(kidney_facs)
+```
+
+
+```{r}
+
+```
+
+
+
+
+```{r}
+celltype_counts = function(metadata, tissue_of_interest){
+  tissue_metadata = dplyr::filter(metadata, tissue == tissue_of_interest)
+  tissue_metadata_counts = tissue_metadata %>% count(cell_ontology_class)
+  tissue_metadata_counts['percentage'] = 100 * tissue_metadata_counts$n/sum(tissue_metadata_counts$n)
+  return(tissue_metadata_counts)
+}
+
+facs_vs_droplet_celltypes = function(tissue_of_interest){
+  # Use only cells from FACS that were filtered for "Viable"
+  tissue_viable = dplyr::filter(facs_metadata, (tissue == tissue_of_interest) & (FACS.selection == "Viable"))
+  facs_viable = dplyr::filter(facs, plate.barcode %in% tissue_viable$plate.barcode)
+  
+  tissue_facs_counts = celltype_counts(facs_viable, tissue_of_interest)
+  tissue_droplet_counts = celltype_counts(droplet, tissue_of_interest)
+  
+  tissue_joined = dplyr::full_join(tissue_droplet_counts, tissue_facs_counts, by='cell_ontology_class', suffix=c('.droplet', '.facs'))
+  return(tissue_joined)
+}
+
+```
+
+Look at Kidney
+
+```{r}
+kidney = facs_vs_droplet_celltypes('Kidney')
+write_csv(kidney, here('00_data_ingest', '017_facs_vs_droplets_celltypes', 'kidney.csv'))
+```
+
+
+```{r}
+spleen = facs_vs_droplet_celltypes('Spleen')
+write_csv(spleen, here('00_data_ingest', '017_facs_vs_droplets_celltypes', 'spleen.csv'))
+```
+
+
