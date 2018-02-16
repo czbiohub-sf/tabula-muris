@@ -13,6 +13,8 @@ tissue_of_interest = "Skin"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd","boilerplate.R"))
 tiss <- load_tissue_facs(tissue_of_interest)
+cells = rownames(tiss@meta.data)[is.na(tiss@meta.data$subtissue)]
+tiss = SubsetData(tiss, cells.use = cells)
 ```
 
 A sanity check: genes per cell vs reads per cell.
@@ -21,8 +23,8 @@ A sanity check: genes per cell vs reads per cell.
 GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene", use.raw=T)
 ```
 
-```{r, echo=FALSE, fig.height=4, fig.width=8}
-PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+```{r, echo=FALSE, fig.height=8, fig.width=8}
+PCHeatmap(object = tiss, pc.use = 1:9, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
@@ -64,7 +66,8 @@ TSNEPlot(object = tiss, do.label = T)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=10, fig.width=10}
-genes_to_check = c('Ptprc','Top2a','Krt14','Krt10','Itga6','Fgf18','Dkk3','Cd34')
+genes_to_check = c('Cd34','Dkk3','Fgf18','Itga6','Krt14','Top2a','Krt10','Lrig1','Ptprc')
+#Plet1 missing
 FeaturePlot(tiss, genes_to_check, pt.size = 0.5, nCol = 3)
 ```
 
@@ -101,7 +104,7 @@ tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, t
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(20, avg_logFC)
+tiss.markers %>% group_by(cluster) %>% top_n(15, avg_logFC)
 ```
 
 ## Assigning cell type identity to clusters
@@ -113,16 +116,15 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-free_annotation <- c("Basal IFE","Outer Bulge","Inner Bulge","Outer Bulge","Intermediate IFE","Inner Bulge","Replicating Basal IFE","Leukocyte")
-cell_ontology_class <-c ("basal cell of epidermis","keratinocyte stem cell","keratinocyte stem cell","keratinocyte stem cell", "epidermal cell","keratinocyte stem cell","stem cell of epidermis","leukocyte")
-cell_ontology_id <-c ("CL:0002187","CL:0002337","CL:0002337","CL:0002337","CL:0000362","CL:0002337","CL:1000428","CL:0000738")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
+free_annotation <- c("Outer Bulge","Basal IFE","Inner Bulge","Intermediate IFE","Outer Bulge","Inner Bulge","Replicating Basal IFE")
+cell_ontology_class <-c ("keratinocyte stem cell","basal cell of epidermis", "keratinocyte stem cell","epidermal cell","keratinocyte stem cell","keratinocyte stem cell","stem cell of epidermis")
+cell_ontology_id <-c ("CL:0002337","CL:0002187","CL:0002337","CL:0000362","CL:0002337","CL:0002337","CL:1000428")
 
-tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation)
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
-tiss@meta.data[tiss@cell.names,'free_annotation'] <- as.character(tiss@meta.data$free_annotation)
 tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
 tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
@@ -178,7 +180,7 @@ When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs", tissue_of_interest, "_telogen_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -203,23 +205,9 @@ head(tiss@meta.data)
 
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+                     paste0(tissue_of_interest, "telogen_cell_ontology_class.csv"))
 write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
 
 
 
-
-
-
-Figures for Supplement
-```{r, echo=FALSE, fig.height=4, fig.width=6}
-DotPlot(tiss, genes_to_check, plot.legend = T, group.by = 'free_annotation', x.lab.rot = T)
-#I'd like the order from top to bottom to be: Outer Bulge, Inner Bulge, Intermediate IFE, Basal IFE, Replicating Basal IFE, Leukocyte
-```
-
-#Not sure how to make this, but a table with free_annotation names as rows, and columns as "Telogen", "Anagen", and "Total"
-
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "subtissue")
-```
