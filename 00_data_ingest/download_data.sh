@@ -3,7 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "Downloading FACS data zip file to $DIR"
-curl https://ndownloader.figshare.com/articles/5829687/versions/1 > $DIR/00_facs_raw_data.zip
+curl https://ndownloader.figshare.com/articles/5829687/versions/2 > $DIR/00_facs_raw_data.zip
 echo "Downloading Droplet data zip file to $DIR"
 curl https://ndownloader.figshare.com/articles/5715025/versions/1 > $DIR/01_droplet_raw_data.zip
 
