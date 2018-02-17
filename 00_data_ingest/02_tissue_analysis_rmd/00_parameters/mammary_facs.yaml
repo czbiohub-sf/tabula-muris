@@ -1,0 +1,7 @@
+# Parameters for Mammary facs
+
+TISSUE: Mammary
+METHOD: facs
+RES: 0.5
+NPCS: 14
+GENES: "'Krt14', 'Krt17', 'Krt5', 'Krt8', 'Krt19', 'Krt18', 'Cd14', 'Ceacam1', 'Itgb3', 'Itga6', 'Elf5', 'Prlr', 'Esr1', 'Pgr', 'Esam', 'Fn1', 'Vim', 'Cdh5', 'Cited1', 'Areg', 'Csn3', 'Cd55'"
