@@ -8,14 +8,10 @@ output:
 Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
-tissue_of_interest = "Heart"
+tissue_of_interest = "Aorta"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 tiss <- load_tissue_facs(tissue_of_interest)
-
-cells = rownames(tiss@meta.data)[tiss@meta.data$subtissue == 'Aorta']
-tiss = SubsetData(tiss, cells.use = cells)
-tiss <- process_tissue(tiss, 1e6)
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
