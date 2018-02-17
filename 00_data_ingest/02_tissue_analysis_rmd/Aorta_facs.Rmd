@@ -29,7 +29,7 @@ n.pcs = 10
 
 ```{r}
 # Set resolution 
-res.used <- 2.5
+res.used <- 2.0
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
