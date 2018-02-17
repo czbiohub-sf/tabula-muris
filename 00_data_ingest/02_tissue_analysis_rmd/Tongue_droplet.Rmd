@@ -171,7 +171,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 0.5
+res.used <- 0.4
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
@@ -185,21 +185,12 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 20, perplexity=35,
 TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 
-# Save the Robject for later
-When you save the annotated tissue, please give it a name.
-
-```{r}
-filename = here('00_data_ingest', '04_tissue_robj_generated', 
-		  paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
-print(filename)
-save(tiss, file=filename)
-```
 
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=16, fig.width=10}
 genes_to_check = c('Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Top2a', 'Mt2', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10','Klf4'
-, 'Krt84', 'Krt36','Krt33b', 'Hoxc13', 'Krt4', 'Krt13', 'Fabp5', 'Krt32',  'Krt78', 'Vim', 'Hhip', 'Ptch1', 'Gli1','Dsc1', 'Dcn', 'Runx2', 'Sox2', 'Pax9')
+, 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Fabp5', 'Krt32',  'Krt78', 'Vim', 'Hhip', 'Ptch1', 'Gli1','Dsc1', 'Dcn', 'Runx2', 'Sox2', 'Pax9')
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 4)
 ```
 
@@ -273,39 +264,71 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 Cluster 0: basal cell of epidermis (CL:0002187)
 Cluster 1: differentiated keratinocytes (CL:0000312)
 Cluster 2: proliferating basal cell of epidermis (CL:0002187)
-Clutser 3: suprabasal differentiating keratinocytes  (CL:0000312)
-Cluster 4: basal cell of epidermis (CL:0002187)
-Cluster 5: suprabasal differentiated keratinocytes (CL:0000312)
-Cluster 6: basal cell of epidermis (CL:0002187)
+Clutser 3: basal cell of epidermis (CL:0002187) 
+Cluster 4: suprabasal differentiating keratinocytes  (CL:0000312)
+Cluster 5: basal cell of epidermis (CL:0002187) 
+Cluster 6: suprabasal differentiated keratinocytes (CL:0000312)
 Cluster 7: basal cell of epidermis (CL:0002187)
-Clutser 8: basal cell of epidermis (CL:0002187)
+Clutser 8: suprabasal differentiated keratinocytes (CL:0000312)
 Cluster 9: filiform differentiated keratinocytes (CL:0000312)
-Cluster 10: Langerhans cells (CL_0000453)
+Cluster 10: Langerhans cells (CL:0000453)
 ```{r}
 # stash current cluster IDs
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-free_cell_ontology_id <- c("basal_cells", "differentiated", "proliferating","suprabasal_differentiating", "basal_cells","suprabasal_differentiated", "basal_cells", "basal_cells", "basal_cells", "filiform_differentiated", "Langerhans cells")
-cell_ontology_class <- c("CL:0002187", "CL:0000312", "CL:0002187", "CL:0000312", "CL:0002187", "CL:0000312", "CL:0002187", "CL:0002187", "CL:0002187", "CL:0000312", 'CL_0000453')
-cell_ontology_id <- c("CL:0002187", "CL:0000312", "CL:0002187", "CL:0000312", "CL:0002187", "CL:0000312", "CL:0002187", "CL:0002187", "CL:0002187", "CL:0000312s", 'CL_0000453')
 
-#subcell_ontology_class = c("differentiating", "differentiating", "differentiating", "proliferating", "differentiating", "differentiating", "differentiating", "differentiating", "Filiform", NA)
+free_annotation <- c(
+ "basal_cells", 
+ "differentiated", 
+ "proliferating", 
+ "basal_cells", 
+ "suprabasal_differentiating", 
+ "basal_cells", 
+ "suprabasal_differentiated", 
+ "basal_cells", 
+ "suprabasal_differentiated", 
+ "filiform_differentiated", 
+ "Langerhans cells"
+ )
+cell_ontology_class <- c(
+"basal cell of epidermis", 
+"keratinocyte", 
+"basal cell of epidermis",
+"basal cell of epidermis",
+"keratinocyte",
+"basal cell of epidermis",
+"keratinocyte",
+"basal cell of epidermis",
+"keratinocyte",
+"keratinocyte",
+ "Langerhans cells"
+ )
 
-cell_ontology_class.subcell_ontology_class = paste0(cell_ontology_class,': ', free_cell_ontology_id)
+cell_ontology_id <- c(
+"CL:0002187",
+"CL:0000312", 
+"CL:0002187", 
+"CL:0002187", 
+"CL:0000312", 
+"CL:0002187", 
+"CL:0000312", 
+"CL:0002187", 
+"CL:0000312", 
+"CL:0000312", 
+"CL:0000453"
+)
 
+tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation)
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
+tiss@meta.data[tiss@cell.names,'free_annotation'] <- as.character(tiss@meta.data$free_annotation)
 tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
 tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
-tiss@meta.data[,'subcell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = free_cell_ontology_id)
-tiss@meta.data[,'cell_ontology_class.subcell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class.subcell_ontology_class)
-
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class.subcell_ontology_class')
 ```
 
 
@@ -339,11 +362,10 @@ save(tiss, file=filename)
 
 ```{r}
 # To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-# load(file=filename)
+filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                      paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
+ load(file=filename)
 ```
-
 
 
 # Export the final metadata
@@ -358,5 +380,5 @@ head(tiss@meta.data)
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
 		  paste0(tissue_of_interest, "_droplet_cell_ontology_class.csv"))
-write.csv(tiss@meta.data[,c('channel','cell_ontology_class','cell_ontology_class.subcell_ontology_class')], file=filename)
+write.csv(FetchData(tiss, c('channel','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```

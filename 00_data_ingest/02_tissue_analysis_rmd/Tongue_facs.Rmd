@@ -180,7 +180,7 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 20, perplexity=40)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 20, perplexity=30)
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 
@@ -191,7 +191,7 @@ Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=16, fig.width=10}
 genes_to_check = c('Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Top2a', 'Mt2', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10','Klf4'
-, 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Fabp5', 'Krt32',  'Krt78', 'Vim', 'Hhip', 'Ptch1', 'Gli1','Dsc1', 'Dcn', 'Runx2', 'Sox2', 'Pax9')
+, 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Fabp5', 'Krt32',  'Krt78', 'Vim', 'Hhip', 'Ptch1', 'Gli1','Dsc1', 'Dcn', 'Runx2', 'Sox2', 'Pax9', 'Chga', 'Dhh')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1.2, nCol = 4)
 ```
