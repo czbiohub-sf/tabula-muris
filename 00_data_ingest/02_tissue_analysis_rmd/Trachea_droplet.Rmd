@@ -215,6 +215,53 @@ How big are the clusters?
 table(tiss@ident)
 ```
 
+```{r}
+VlnPlot(tiss, features.plot = "Pdgfra")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Pdgfrb")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Col1a1")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Col8a1")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Ptprc")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Pecam1")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Epcam")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Cdh1")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Krt5")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Foxj1")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Scgb1a1")
+```
+
+```{r}
+VlnPlot(tiss, features.plot = "Cck")
+```
 
 
 Which markers identify a specific cluster?
@@ -334,14 +381,6 @@ write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology
 
 
 
-
-
-
-
-
-
-
-
 # Subset and iterate
 
 We can repeat the above analysis on a subset of cells, defined using cluster IDs or some other metadata. This is a good way to drill down and find substructure.
@@ -361,7 +400,7 @@ subtiss <- SubsetData(object = tiss, ident.use = c(5), do.center = F, do.scale =
 
 ```{r}
 subtiss <- NormalizeData(object = subtiss)
-subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nUMI", "percent.ribo","Rn45s"))
+subtiss <- ScaleData(object = subtiss)
 ```
 
 Run Principal Component Analysis.
@@ -386,7 +425,7 @@ PCElbowPlot(object = subtiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-sub.n.pcs = 2
+sub.n.pcs = 6
 ```
 
 
@@ -394,10 +433,10 @@ The clustering is performed based on a nearest neighbors graph. Cells that have 
 
 ```{r}
 # Set resolution 
-sub.res.used <- .2
+sub.res.used <- .1
 
 subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.used, force.recalc = TRUE ,print.output = 0, save.SNN = TRUE, temp.file.location = "/home/william/MACA_plate_and_10X_analysis_submitted_11.21.2017/11.13.2017_CZ_10x/maca-master-4/temp")
+    resolution = sub.res.used, force.recalc = TRUE ,print.output = 0, save.SNN = TRUE)
 ```
 
 To visualize 
@@ -412,11 +451,11 @@ TSNEPlot(object = subtiss, do.label = T)
 ```
 
 ```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 ```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_diff)
+#subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_diff)
 ```
 
 Check expression of genes of interset.
@@ -460,11 +499,10 @@ For the subsets, we produce subcell_ontology_classs. These will be written back 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
 ```{r}
-subcluster.ids <- c(0, 1, 2, 3, 4)
-subcell_ontology_class <- c("epithelial cell","epithelial cell", "epithelial cell", 
-                   "basal cell of epithelium of trachea", "ciliated epithelial cell")
+subcluster.ids <- c(0, 1, 2, 3)
+subcell_ontology_class <- c("basal","secretory", "epithelial - other","ciliated")
 subcell_ontology_id <- c("CL:0000066","CL:0000066", "CL:0000066", 
-                   "CL:1000348", "CL:0000067")
+                   "CL:1000348")
 
 subtiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_id)
