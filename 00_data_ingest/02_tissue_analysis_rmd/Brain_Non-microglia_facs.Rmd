@@ -12,7 +12,6 @@ tissue_of_interest = "Brain_Non-microglia"
 Load the requisite packages and some additional helper functions.
 
 ```{r}
-test test
 library(here)
 library(useful)
 library(Seurat)
@@ -169,8 +168,9 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 # Set resolution 
 res.used <- 0.4
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
-    resolution = res.used, print.output = 0, save.SNN = TRUE, k.param = 50, plot.SNN = T)
-table(tiss@meta.data$res.0.4)
+    resolution = res.used, print.output = 0, save.SNN = TRUE, k.param = 50)
+#tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, resolution = res.used, print.output = 0, save.SNN = TRUE)
+#table(tiss@meta.data$res.0.4)
 ```
 
 To visualize 
@@ -185,6 +185,7 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=50)
 TSNEPlot(object = tiss, do.label = T)
 TSNEPlot(object = tiss, group.by='subtissue')
 TSNEPlot(object = tiss, group.by='mouse.id')
+TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 
 Check expression of genes of interset.
@@ -231,14 +232,14 @@ Which markers identify a specific cluster?
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-0: oligodendrocytes- "Mog","Mobp" ,"Mbp
-1: endothelial- "Pecam1", "Cldn5", "Ly6c1"
-2: astrocytes- "Aqp4", "Aldh1l1","Slc1a3"
-3: OPCs- "Pdgfra","Susd5", "Cspg4"
-4: unknown
-5: pericytes- "Pdgfrb","Mcam", "Des"
-6: neurons- "Snap25","Eno2", "Rbfox3"
-7: NPCs- "Ascl1", "Dcx", "Dlx2"
+oligodendrocytes- "Mog","Mobp" ,"Mbp
+endothelial- "Pecam1", "Cldn5", "Ly6c1"
+astrocytes- "Aqp4", "Aldh1l1","Slc1a3"
+OPCs- "Pdgfra","Susd5", "Cspg4"
+unknown
+pericytes- "Pdgfrb","Mcam", "Des"
+neurons- "Snap25","Eno2", "Rbfox3"
+NPCs- "Ascl1", "Dcx", "Dlx2"
 
 
 ```{r}
@@ -247,18 +248,19 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-free_annotation = c("female enriched", "weird", "doublets")
+free_annotation = c("","","","","","","","","mixed population of oligodendrocytes and other cell types","")
 cell_ontology_class <-
   c(
-  "oligodendrocyte",
+    "oligodendrocyte",
+    "astrocyte",
+     "oligodendrocyte",
   "endothelial cell",
-  "astrocyte",
+  "endothelial cell",
+   "neuron",
   "oligodendrocyte precursor cell",
+   "oligodendrocyte",
   NA,
-  "brain pericyte",
-  "neuron",
-  "neuron",
-  "neuronal stem cell"
+  "brain pericyte"
   )
 
 validate_cell_ontology(cell_ontology_class)
@@ -306,8 +308,8 @@ We can repeat the above analysis on a subset of cells, defined using cluster IDs
 
 ```{r}
 # Subset data based on cluster id
-subtiss <- SubsetData(object = tiss, ident.use = c("1","6"), do.center = F, do.scale = F)
-suffix <- "neurons"
+subtiss <- SubsetData(object = tiss, ident.use = c("1"), do.center = F, do.scale = F)
+#suffix <- "neurons"
 
 # To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
 # anno = 'exocrine cells'
@@ -317,8 +319,9 @@ suffix <- "neurons"
 ```
 
 ```{r}
-subtiss <- NormalizeData(object = subtiss)
-subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+tiss <- NormalizeData(object = subtiss, scale.factor = 1e6)
+tiss <- ScaleData(object = subtiss)
+tiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
 ```
 
 ```{r}
@@ -348,7 +351,7 @@ PCElbowPlot(object = subtiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-sub.n.pcs = 15
+sub.n.pcs = 9
 ```
 
 
