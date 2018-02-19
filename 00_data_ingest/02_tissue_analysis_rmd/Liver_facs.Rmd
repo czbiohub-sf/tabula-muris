@@ -196,16 +196,14 @@ TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 Check expression of genes useful for indicating cell type. For the islet cells, the mRNA for their specific secretory molecule is a strong signal.
 
 hepatocyte: Alb, Ttr, Apoa1, and Serpina1c
-pericentral: Cyp2e1+, Glul+, Oat+, Gulo
+pericentral: Cyp2e1, Glul, Oat, Gulo
 midlobular: Ass1, Hamp, Gstp1, Ubb
-periportal: Cyp2f2+, Pck1+, Hal+, Cdh1+
+periportal: Cyp2f2, Pck1, Hal, Cdh1
 
-endothelial cells: Pecam1+, Nrp1+, Kdr+ and Oit3+
-Kuppfer cells: Emr1+, Clec4f+, Cd68+, Irf7+
-NK/NKT cells: Zap70+, Il2rb+, Nkg7+, Cxcr6+, Klr1c+, Gzma+
-B cells: Cd79a+, Cd79b+, Cd74+ and Cd19+
-
-Sexual Dimorphism: Mup20/Darcin, Cyp2c69, Cyp2c40, Cyp2d9, Sult3a1, Sult2a1, Gstp1
+endothelial cells: Pecam1, Nrp1, Kdr+ and Oit3+
+Kuppfer cells: Emr1, Clec4f, Cd68, Irf7
+NK/NKT cells: Zap70, Il2rb, Nkg7, Cxcr6, Klr1c, Gzma
+B cells: Cd79a, Cd79b, Cd74 and Cd19
 
 
 
@@ -217,22 +215,16 @@ genes_hep = c('Alb', 'Ttr', 'Apoa1', 'Serpina1c',
 genes_endo = c('Pecam1', 'Nrp1', 'Kdr','Oit3')
 genes_kuppfer = c('Emr1', 'Clec4f', 'Cd68', 'Irf7')
 genes_nk = c('Zap70', 'Il2rb', 'Nkg7', 'Cxcr6', 'Gzma')
-genes_b = c('Cd79a', 'Cd79b', 'Cd74', 'Cd19')
+genes_b = c('Cd79a', 'Cd79b', 'Cd74')
+
 
 all_genes = c(genes_hep, genes_endo, genes_kuppfer, genes_nk, genes_b)
 ```
 
-
 ```{r, echo=FALSE, fig.height=24, fig.width=12}
 FeaturePlot(tiss, genes_hep, pt.size = 3, nCol = 2, cols.use = c("grey", "red"))
 ```
-```{r, echo=FALSE, fig.height=24, fig.width=12}
 
-genes_to_check_other = c('Pecam1', 'Nrp1', 'Kdr','Oit3','Emr1', 'Clec4f', 'Cd68', 'Irf7')
-#genes_to_check_other = c('Zap70', 'Il2rb', 'Nkg7', 'Cxcr6', 'Klr1c', 'Gzma','Cd79a', 'Cd79b', 'Cd74', 'Cd19')
-
-FeaturePlot(tiss, genes_to_check_other, pt.size = 3, nCol = 2, cols.use = c("grey", "red"))
-```
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 The radius shows you the percent of cells in that cluster with at least one read sequenced from that gene. The color level indicates the average
 Z-score of gene expression for cells in that cluster, where the scaling is done over taken over all cells in the sample.
@@ -308,105 +300,9 @@ Color by metadata, like plate barcode, to check for batch effects.
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
 ```
 
-## Subcluster
 
 ```{r}
-subtiss = SubsetData(tiss, ident.use = c(1,2,3,4,6))
-```
-
-```{r}
-subtiss <- subtiss %>% ScaleData() %>% 
-  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-  RunPCA(do.print = FALSE)
-```
-
-```{r}
-PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 100, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
-PCElbowPlot(subtiss)
-```
-
-
-```{r}
-sub.n.pcs = 7
-sub.res.use = 1
-subtiss <- subtiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-
-TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
-
-```
-
-```{r}
-TSNEPlot(subtiss, group.by = 'mouse.id')
-```
-
-
-```{r}
-TSNEPlot(subtiss, group.by = 'cluster.ids')
-FeaturePlot(subtiss, 'Alb')
-```
-
-
-```{r, echo=FALSE, fig.height=12, fig.width=8}
-FeaturePlot(subtiss, all_genes)
-```
-
-```{r, echo=FALSE, fig.height=8, fig.width=10}
-DotPlot(subtiss, all_genes, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
-```
-
-```{r}
-markers.0 <- FindMarkers(subtiss, ident.1 = 0)
-```
-
-```{r}
-markers.0
-```
-
-```{r}
-VlnPlot(subtiss, "Wdr81")
-```
-
-
-```{r}
-table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
-```
-
-```{r}
-sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-sub.free_annotation <- c()
-cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-
-validate_cell_ontology(sub.cell_ontology_class)
-sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-validate_cell_ontology(sub.cell_ontology_class)
-sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
-```
-
-## Add subcluster cell_ontology_classs to main cell_ontology_class
-
-```{r}
-sub.cells = rownames(subtiss@meta.data)
-
-tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
-tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
-tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
-```
-
-
-## Checking for batch effects
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+table(FetchData(tiss, c('plate.barcode','ident')) %>% droplevels())
 ```
 
 # Final coloring
@@ -425,14 +321,22 @@ filename = here('00_data_ingest', '04_tissue_robj_generated',
 print(filename)
 save(tiss, file=filename)
 ```
+```{r}
+filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                     paste0("facs_", tissue_of_interest, "_seurat_subtiss.Robj"))
+print(filename)
+save(subtiss, file=filename)
+```
 
 ```{r}
 # To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-# load(file=filename)
+filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                      paste0("facs_", tissue_of_interest, "_seurat_subtiss.Robj"))
+load(file=filename)
 ```
-
+```{r}
+BuildClusterTree(tiss) 
+```
 
 # Export the final metadata
 
@@ -446,4 +350,8 @@ head(tiss@meta.data)
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                      paste0(tissue_of_interest, "_annotation.csv"))
 write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+```
+Figures for Supplement
+```{r, echo=FALSE, fig.height=10, fig.width=6}
+DotPlot(tiss, all_genes, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 ```
