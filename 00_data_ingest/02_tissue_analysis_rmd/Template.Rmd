@@ -1,5 +1,5 @@
 ---
-title: "Thymus droplet Notebook"
+title: "{TISSUE} {METHOD} Notebook"
 output:
   html_document: default
   html_notebook: default
@@ -8,17 +8,15 @@ output:
 Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
-tissue_of_interest = "Thymus"
+tissue_of_interest = "{TISSUE}"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-tiss <- load_tissue_droplet(tissue_of_interest)
+tiss <- load_tissue_{METHOD}(tissue_of_interest)
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
-
-
 
 ```{r}
 PCElbowPlot(object = tiss)
@@ -26,12 +24,12 @@ PCElbowPlot(object = tiss)
 
 ```{r}
 # Set number of principal components. 
-n.pcs = 10
+n.pcs = {NPCS}
 ```
 
 ```{r}
 # Set resolution 
-res.used <- 0.5
+res.used <- {RES}
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
@@ -49,13 +47,13 @@ TSNEPlot(object = tiss, do.label = T)
 ```{r}
 # Batch and animal effects
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
 ```
 
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Vim','Krt5','Krt8','Ptprc','Epcam','H2-Ab1','H2-Aa','Cd3e','Cd3d','Cd3g','Cd4','Cd8a','Cd8b1','Ets1','Cd44','Il2ra', 'Top2a')
+genes_to_check = c({GENES})
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
@@ -65,17 +63,6 @@ Dotplots let you see the intensity of expression and the fraction of cells expre
 # To change the y-axis to show raw counts, add use.raw = T.
 DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
-
-```{r}
-VlnPlot(tiss, "Cd3g")
-VlnPlot(tiss, "Krt5") #stromal marker
-VlnPlot(tiss, "Vim") #stromal marker, also mesenchymal
-VlnPlot(tiss, "Pecam1") #fibroblasts
-VlnPlot(tiss, "Pecam1") #fibroblasts
-
-GenePlot(tiss, "Cd3d", "Vim")
-```
-
 
 How big are the clusters?
 ```{r}
@@ -114,7 +101,7 @@ When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("{METHOD}_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -136,7 +123,7 @@ head(tiss@meta.data)
 
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_droplet", "_annotation.csv"))
+                     paste0(tissue_of_interest, "_{METHOD}", "_annotation.csv"))
 write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
 

@@ -84,6 +84,18 @@ load_tissue_facs = function(tissue_of_interest){
   return(tiss)
 }
 
+stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_class){
+  validate_cell_ontology(cell_ontology_class)
+  cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+  
+  tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
+  validate_cell_ontology(cell_ontology_class)
+  cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+  
+  tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
+  tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+}
+
 process_tissue = function(tiss, scale){
   tiss <- NormalizeData(object = tiss, scale.factor = scale)
   tiss <- ScaleData(object = tiss)
