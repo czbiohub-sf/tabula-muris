@@ -1,18 +1,41 @@
----
+
 title: "Brain Non-microglia FACS Notebook"
  output: html_notebook
 ---
 
-Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
 tissue_of_interest = "Brain_Non-microglia"
-library(here)
-source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
 ```
 
-<<<<<<< HEAD
+Load the requisite packages and some additional helper functions.
+
+```{r}
+test test
+library(here)
+library(useful)
+library(Seurat)
+library(dplyr)
+library(Matrix)
+library(ontologyIndex)
+cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
+
+validate_cell_ontology = function(cell_ontology_class){
+  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name) || is.na(x))
+  if (!all(in_cell_ontology)) {
+    message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology
+')
+    stop(message)
+  }
+}
+convert_to_cell_ontology_id = function(cell_ontology_class){
+  return(sapply(cell_ontology_class, function(x) as.vector(cell_ontology$id[cell_ontology$name == x])[1]))
+}
+
+save_dir = here('00_data_ingest', 'tissue_robj')
+```
+
 
 
 ```{r}
@@ -33,11 +56,10 @@ tissue_plates
 
 Load the read count data.
 ```{r}
-#Load the gene names and set the metadata columns by opening the first file
+# Load the gene names and set the metadata columns by opening the first file
 filename = here('00_data_ingest', '00_facs_raw_data', 'FACS', paste0(tissue_of_interest, '-counts.csv'))
 
 raw.data = read.csv(filename, sep=",", row.names=1)
-# raw.data = data.frame(row.names = rownames(raw.data))
 corner(raw.data)
 ```
 Make a vector of plate barcodes for each cell
@@ -121,9 +143,6 @@ Run Principal Component Analysis.
 tiss <- RunPCA(object = tiss, do.print = FALSE)
 tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
-=======
-Visualize top genes in principal components
->>>>>>> master
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
@@ -138,7 +157,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 6
+n.pcs = 7
 ```
 
 
@@ -148,57 +167,40 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 0.5
-
+res.used <- 0.4
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
-    resolution = res.used, print.output = 0, save.SNN = TRUE)
+    resolution = res.used, print.output = 0, save.SNN = TRUE, k.param = 50, plot.SNN = T)
+table(tiss@meta.data$res.0.4)
 ```
 
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
 
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=50)
 ```
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
-folder <- paste(rootdir,"brain/all_cells/",sep="")
-title <- "TSNE_plots_metadata.pdf"
-pdf(paste0(folder,title), 10,10)
 TSNEPlot(object = tiss, do.label = T)
 TSNEPlot(object = tiss, group.by='subtissue')
 TSNEPlot(object = tiss, group.by='mouse.id')
-dev.off()
 ```
 
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-folder <- paste(rootdir,"brain/all_cells/",sep="")
-title <- "TSNE_plots_gene_expression.pdf"
-pdf(paste0(folder,title), 10,10)
-genes_to_check = c("Mbp", "Aqp4", "Aldh1l1", "Snap25","Pdgfra", "Des", "Mki67", "Cd34")
+genes_to_check = c("Mog","Mobp" ,"Mbp", "Pecam1", "Cldn5", "Ly6c1", "Aqp4", "Aldh1l1","Slc1a3", "Snap25","Eno2", "Rbfox3","Pdgfra","Susd5", "Cspg4", "Pdgfrb","Mcam", "Des", "Ascl1", "Dcx", "Dlx2")
 TSNEPlot(object = tiss, do.label = T)
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
-dev.off()
+DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 ```
 
 You can also compute all markers for all clusters at once. This may take some time.
 ```{r}
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(50, avg_diff)
-# Write top 50 genes for each cluster 
-folder <- paste(rootdir,"brain/all_cells/",sep="")
-title <- "Top_genes_per_cluster.csv"
-write.table(top_genes, file=paste0(folder,title))
-# Also save Seurat Object 
-title <- "Seurat_object.RData"
-save(tiss, file=paste0(folder,title))
-# Also calculate cluster averages 
 cluster.averages <- AverageExpression(object = tiss)
-title <- "Cluster_averages.csv"
-write.table(cluster.averages, file=paste0(folder, title))
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -206,10 +208,7 @@ Dotplots let you see the intensity of exppression and the fraction of cells expr
 # To change the y-axis to show raw counts, add use.raw = T.
 top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
 genes_to_check <- top_genes$gene
-title <- "Dot_plot_top5_genes.pdf"
-pdf(paste0(folder,title), 10,10)
-DotPlot(tiss, genes_to_check, plot.legend = T, x.lab.rot = T)
-dev.off()
+
 ```
 
 
@@ -232,15 +231,14 @@ Which markers identify a specific cluster?
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-0: oligodendrocytes
-1: endothelial
-2: astrocytes
-3: OPCs
+0: oligodendrocytes- "Mog","Mobp" ,"Mbp
+1: endothelial- "Pecam1", "Cldn5", "Ly6c1"
+2: astrocytes- "Aqp4", "Aldh1l1","Slc1a3"
+3: OPCs- "Pdgfra","Susd5", "Cspg4"
 4: unknown
-5: pericytes
-6: neurons
-7: neurons
-8: NPCs
+5: pericytes- "Pdgfrb","Mcam", "Des"
+6: neurons- "Snap25","Eno2", "Rbfox3"
+7: NPCs- "Ascl1", "Dcx", "Dlx2"
 
 
 ```{r}
@@ -248,7 +246,8 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+free_annotation = c("female enriched", "weird", "doublets")
 cell_ontology_class <-
   c(
   "oligodendrocyte",
@@ -261,9 +260,14 @@ cell_ontology_class <-
   "neuron",
   "neuronal stem cell"
   )
+
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
   
-tiss@meta.data[,'free_annotation'] <- NA
+tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = free_annotation)
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
+tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_id)
+
 # Replot TSNE plots 
 title <- "TSNE_plots_gene_expression_plus_cell_ontology_class.pdf"
 TSNEPlot(object = tiss, do.label = T)
@@ -302,7 +306,7 @@ We can repeat the above analysis on a subset of cells, defined using cluster IDs
 
 ```{r}
 # Subset data based on cluster id
-subtiss <- SubsetData(object = tiss, ident.use = c(6,7), do.center = F, do.scale = F, cells.use = )
+subtiss <- SubsetData(object = tiss, ident.use = c("1","6"), do.center = F, do.scale = F)
 suffix <- "neurons"
 
 # To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
