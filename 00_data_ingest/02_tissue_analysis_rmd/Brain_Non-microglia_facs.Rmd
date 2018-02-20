@@ -351,7 +351,7 @@ PCElbowPlot(object = subtiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-sub.n.pcs = 9
+sub.n.pcs = 6
 ```
 
 
@@ -373,43 +373,36 @@ subtiss <- RunTSNE(object = subtiss, dims.use = 1:sub.n.pcs, seed.use = 10, perp
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
-suffix <- "astrocytes/"
-folder <- paste(rootdir,"brain/",suffix,sep="")
-dir.create(folder, showWarnings = F)
-# 
-title <- "TSNE_plots_metadata.pdf"
-pdf(paste0(folder,title), 10,10)
 TSNEPlot(object = subtiss, do.label = T)
 TSNEPlot(object = subtiss, group.by="plate.barcode")
+TSNEPlot(object = subtiss, group.by='subtissue')
+TSNEPlot(object = subtiss, group.by='mouse.id')
 
-dev.off()
 ```
 
 ```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#astro subcluster 5 is oligodendrocytes by gene signature and is removed below
+astro_subtiss <- SubsetData(object = subtiss, ident.use = c("0","1","2","3","4"), do.center = F, do.scale = F)
+TSNEPlot(object = astro_subtiss, do.label = T)
+TSNEPlot(object = astro_subtiss, group.by='subtissue')
+
+
 ```
 
 ```{r Write top 50 markers for each subcluster}
+subtiss.markers <- FindAllMarkers(object = astro_subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 top <- subtiss.markers %>% group_by(cluster) %>% top_n(50, avg_diff)
-title <- "Top_genes_per_cluster.csv"
-write.table(top,file=paste0(folder,title))
+write.table(top)
 
 ```
 
 Check expression of genes of interset.
 ```{r}
-# genes_to_check = c("Pdgfrb", "Cspg4", "Anpep","Acta2","Des","Rgs5",
-#                    "Abcc9","Kcnj8", "Cd248","Dlk1")
-genes_to_check = c("Slc1a3", "Fabp7", "S100b" ,"Sept4", "Gfap", "Aldh1l1")
+genes_to_check = c("Slc1a3", "Aldh1l1", "Aqp4","A2m","Nbl1","Gdf10","Naga","Tnfaip2","St6galnac5","Nsdhl")
 #top <- subtiss.markers %>% group_by(cluster) %>% top_n(2, avg_diff)
-title <- "TSNE_plots_gene_expression.pdf"
-pdf(paste0(folder,title), 10,10)
-TSNEPlot(object = subtiss, do.label = T)
-TSNEPlot(object = subtiss, do.label = T, group.by="cell_ontology_class")
-FeaturePlot(subtiss, genes_to_check, pt.size = 1)
-FeaturePlot(subtiss, top$gene, pt.size = 1)
+#FeaturePlot(astro_subtiss, genes_to_check, pt.size = 1)
+DotPlot(astro_subtiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 
-dev.off()
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -421,15 +414,15 @@ DotPlot(subtiss, genes_to_check, plot.legend = T)
 
 How big are the clusters?
 ```{r}
-table(subtiss@ident)
+table(astro_subtiss@ident)
 ```
 
 ## Checking for batch effects
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
-TSNEPlot(object = subtiss, do.return = TRUE, group.by = "res.1")
+TSNEPlot(object = astro_subtiss, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = astro_subtiss, do.return = TRUE, group.by = "res.1")
 ```
 
 Print a table showing the count of cells in each identity category from each plate.
@@ -447,27 +440,30 @@ For the subsets, we produce subcell_ontology_classs. These will be written back 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
 ```{r}
-subcluster.ids <- c(0, 1, 2, 3,4,5)
+subcluster.ids <- c(0, 1, 2, 3,4)
 subfree_annotation <- c()
 cell_ontology_class <-c("astrocyte of the cerebral cortex","astrocyte of the cerebral cortex","astrocyte of the cerebral cortex",
-                   "astrocyte of the cerebral cortex","Bergmann glial cell","oligodendrocyte")
+                   "astrocyte of the cerebral cortex","Bergmann glial cell")
 subtiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 
-subtiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
-subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_id)
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
-tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss@meta.data$cell_ontology_class)
-tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
-TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subcell_ontology_class')
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
+subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
+```
 ```
 
 
 Check the numbers of cells per cell_ontology_class
 ```{r}
 table(tiss@meta.data$cell_ontology_class)
+TSNEPlot(object = astro_subtiss, do.label = T, group.by="cell_ontology_class")
 ```
 
 
