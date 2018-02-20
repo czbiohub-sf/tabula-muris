@@ -24,7 +24,7 @@ PCElbowPlot(object = tiss)
 
 ```{r}
 # Set number of principal components. 
-n.pcs = 14
+n.pcs = 13
 ```
 
 ```{r}
