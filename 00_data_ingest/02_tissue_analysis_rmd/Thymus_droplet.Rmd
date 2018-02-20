@@ -158,7 +158,7 @@ head(tiss@meta.data)
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                      paste0(tissue_of_interest, "_droplet", "_annotation.csv"))
-write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
 
 # Figures for Supplement
