@@ -391,7 +391,7 @@ free_annotation <- c(
   "lung stromal type 2 cell",
   "circulating monocyte",
   "dendritic cell",
-  "endothelial type 3 cell",
+  "lung endothelial type 3 cell",
   "b cell",
   "t cell",
   NA,

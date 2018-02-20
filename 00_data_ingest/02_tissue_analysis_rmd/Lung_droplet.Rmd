@@ -82,79 +82,76 @@ if (length(tissue_metadata$channel) > 1){
 rnames = row.names(meta.data)
 meta.data <- merge(meta.data, tissue_metadata, sort = F)
 row.names(meta.data) <- rnames
-dim(raw.data)
-corner(raw.data)
-head(meta.data)
 ```
 
 Process the raw data and load it into the Seurat object.
 
 ```{r}
 # Find ERCC's, compute the percent ERCC, and drop them from the raw data.
-erccs.10X <- grep(pattern = "^ERCC-", x = rownames(x = raw.data.10X), value = TRUE)
-percent.ercc.10X <- Matrix::colSums(raw.data.10X[erccs.10X, ])/Matrix::colSums(raw.data.10X)
-ercc.index.10X <- grep(pattern = "^ERCC-", x = rownames(x = raw.data.10X), value = FALSE)
-raw.data.10X <- raw.data.10X[-ercc.index.10X,]
+erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
+percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
+ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
+raw.data <- raw.data[-ercc.index,]
 
 # Create the Seurat object with all the data
-tissue.10X <- CreateSeuratObject(raw.data = raw.data.10X, project = tissue_of_interest, 
+tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, 
                     min.cells = 5, min.genes = 5)
 
-tissue.10X <- AddMetaData(object = tissue.10X, meta.data.10X)
-tissue.10X <- AddMetaData(object = tissue.10X, percent.ercc.10X, col.name = "percent.ercc")
+tiss <- AddMetaData(object = tiss, meta.data)
+tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 # Change default name for sums of counts from nUMI to nReads
-# colnames(tissue.10X@meta.data.10X)[colnames(tissue.10X@meta.data.10X) == 'nUMI'] <- 'nReads'
+# colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
 
 # Create metadata columns for cell_ontology_classs and subcell_ontology_classs
-tissue.10X@meta.data[,'cell_ontology_class'] <- NA
-tissue.10X@meta.data[,'subcell_ontology_class'] <- NA
+tiss@meta.data[,'cell_ontology_class'] <- NA
+tiss@meta.data[,'subcell_ontology_class'] <- NA
 ```
 
 
 Calculate percent ribosomal genes.
 
 ```{r}
-ribo.genes.10X <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tissue.10X@data), value = TRUE)
-percent.ribo.10X <- Matrix::colSums(tissue.10X@raw.data[ribo.genes.10X, ])/Matrix::colSums(tissue.10X@raw.data)
-tissue.10X <- AddMetaData(object = tissue.10X, metadata = percent.ribo.10X, col.name = "percent.ribo")
+ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
+percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
+tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
 ```
 
 A sanity check: genes per cell vs reads per cell.
 
 ```{r}
-GenePlot(object = tissue.10X, gene1 = "nUMI", gene2 = "nGene", use.raw=T)
+GenePlot(object = tiss, gene1 = "nUMI", gene2 = "nGene", use.raw=T)
 ```
 
 Filter out cells with few reads and few genes.
 
 ```{r}
-tissue.10X <- FilterCells(object = tissue.10X, subset.names = c("nGene", "nUMI"), 
+tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nUMI"), 
     low.thresholds = c(500, 1000), high.thresholds = c(25000, 5000000))
 ```
 
 
 Normalize the data, then regress out correlation with total reads
 ```{r}
-tissue.10X <- NormalizeData(object = tissue.10X)
-tissue.10X <- ScaleData(object = tissue.10X, vars.to.regress = c("nUMI", "percent.ribo","Rn45s"))
-tissue.10X <- FindVariableGenes(object = tissue.10X, do.plot = TRUE, x.high.cutoff = Inf, x.low.cutoff = 0.5, y.cutoff = 0.5)
+tiss <- NormalizeData(object = tiss)
+tiss <- ScaleData(object = tiss)
+tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, x.low.cutoff = 0.25, y.cutoff = 0.5)
 ```
 
 
 Run Principal Component Analysis.
 ```{r}
-tissue.10X <- RunPCA(object = tissue.10X, do.print = FALSE)
-tissue.10X <- ProjectPCA(object = tissue.10X, do.print = FALSE)
+tiss <- RunPCA(object = tiss, do.print = FALSE)
+tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
-PCHeatmap(object = tissue.10X, pc.use = 15:20, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCHeatmap(object = tiss, pc.use = 10:20, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
 
 ```{r}
-PCElbowPlot(object = tissue.10X)
+PCElbowPlot(object = tiss)
 ```
 
 Choose the number of principal components to use.
@@ -172,7 +169,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 # Set resolution 
 res.used <- 3
 
-tissue.10X <- FindClusters(object = tissue.10X, reduction.type = "pca", dims.use = 1:n.pcs, 
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
 ```
 
@@ -180,38 +177,178 @@ tissue.10X <- FindClusters(object = tissue.10X, reduction.type = "pca", dims.use
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tissue.10X <- RunTSNE(object = tissue.10X, dims.use = 1:n.pcs, seed.use = 10, perplexity=30, dim.embed = 2)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30, dim.embed = 2)
 ```
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = tissue.10X, do.label = T)
+TSNEPlot(object = tiss, do.label = T)
 ```
 
 Check expression of genes of interset.
 
-```{r, echo=FALSE, fig.height=8, fig.width=8}
-genes_to_check = c('Col1a1', 'Ptprc', 'Pecam1', 'Epcam')
+Gross tissue breakdown
+```{r}
+genes_to_check = c('Pecam1', 'Epcam', 'Col1a1', 'Ptprc')
 
-FeaturePlot(tissue.10X, genes_to_check, pt.size = 2, nCol = 2, cols.use = c('grey', 'red'))
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
 ```
 
-```{r, echo=FALSE, fig.height=8, fig.width=8}
-genes_to_check = c('Csf1r', 'Cd68', 'Cd74', 'Itgal')
+```{r}
+genes_to_check = c('Sftpb', 'Foxj1', 'Ager', 'Scgb1a1')
 
-FeaturePlot(tissue.10X, genes_to_check, pt.size = 2, nCol = 2, cols.use = c('grey', 'red'))
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
 ```
 
-Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
+```{r}
+genes_to_check = c('Resp18', 'Scgb3a2', 'Pdpn', 'Wnt3a')
 
-```{r, echo=FALSE, fig.height=4, fig.width=8}
-# To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(tissue.10X, genes_to_check, plot.legend = T)
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
 ```
+
+Seperating Seurat's mess with the epithelial cell types...
+
+```{r}
+if (!require("gplots")) {
+  install.packages("gplots", dependencies = TRUE)
+  library(gplots)
+}
+if (!require("RColorBrewer")) {
+  install.packages("RColorBrewer", dependencies = TRUE)
+  library(RColorBrewer)
+}
+
+my_palette <- colorRampPalette(rev(brewer.pal(n=10,name="RdYlBu")))(25)
+
+gg_color_hue <- function(n) {
+  hues = seq(15, 375, length = n + 1)
+  hcl(h = hues, l = 65, c = 100)[1:n]
+}
+
+heatmap.2(as.matrix(tiss@scale.data[c('Col1a1', 'Epcam', 'Cdh1', 'Etv5', 'Pecam1', 'Ncam1', 'Ptprc', 'Sftpb', 'Sftpd', 'Ager', 'Pdpn', 'Wnt3a', 'Calca', 'Resp18', 'Scgb3a2', 'Scgb1a1', 'Foxj1', 'Krt5', 'Gpx3', 'Foxa3'),WhichCells(tiss, c(23,17,25))]), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'Scaled UPM + 1'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(33)[tiss@ident[WhichCells(tiss, c(23,17,25))]])
+
+ident.tmp = as.numeric(as.character(tiss@ident))
+names(ident.tmp) = names(tiss@ident)
+
+#Club Cell Reassignment
+ident.tmp[names(which(tiss@scale.data['Scgb3a2',WhichCells(tiss, c(23,17,25))] > 9))] = 28
+
+#NE
+ident.tmp[names(which(tiss@scale.data['Calca',WhichCells(tiss, c(23,17,25))] > 6))] = 29
+
+#Ciliated Cells
+ident.tmp[names(which(tiss@scale.data['Foxj1',WhichCells(tiss, c(23,17,25))] > 5))] = 30
+
+#Type I AECs
+ident.tmp[names(which(tiss@scale.data['Ager',WhichCells(tiss, c(23,17,25))] > 5))] = 31
+
+```
+
+
+
+```{r}
+genes_to_check = c('Cd8a', 'Cd79a', 'Klrb1c', 'Cd3e')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('Slc38a5', 'Trpc6', 'Serpinf1', 'Gpx3')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('Myh11', 'Cspg4', 'Msln', 'Acta2')
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('Aplnr', 'Car4', 'Gja5')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('Apln', 'Amigo2', 'Kit', 'Car8')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+heatmap.2(as.matrix(tiss@scale.data[c('Car4', 'Car8', 'Gja5', 'Amigo2', 'Aplnr', 'Pecam1'),WhichCells(tiss, c(14))]), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'Scaled UPM + 1'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(33)[tiss@ident[WhichCells(tiss, c(14))]])
+
+ident.tmp[setdiff(unique(c(names(which(tiss@scale.data['Amigo2',WhichCells(tiss, c(14))] > 0)), names(which(tiss@scale.data['Car8',WhichCells(tiss, c(14))] > 0)), names(which(tiss@scale.data['Gja5',WhichCells(tiss, c(14))] > 0)))), unique(c(names(which(tiss@scale.data['Aplnr',WhichCells(tiss, c(14))] > 0)), names(which(tiss@scale.data['Car4',WhichCells(tiss, c(14))] > 0)))))] = 33
+
+tiss@ident = as.factor(ident.tmp)
+
+
+heatmap.2(cor(as.matrix(tiss@scale.data[tiss@var.genes,WhichCells(tiss, c(14,33))])), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'R'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(33)[tiss@ident[WhichCells(tiss, c(14,33))]])
+
+
+search = tiss@scale.data[tiss@var.genes,WhichCells(tiss,c(14,33))]
+finalResults <- as.numeric(matrix(0,c(length(colnames(search)),1)))
+names(finalResults) <- colnames(search)
+testVector = Matrix::rowMeans(tiss@scale.data[tiss@var.genes,WhichCells(tiss,c(33))])
+finalResults = apply( search , 2 , cor , y = testVector, method = "pearson" )
+ident.tmp[names(finalResults[which(finalResults > 0.7)])] = 33
+
+tiss@ident = as.factor(ident.tmp)
+
+heatmap.2(cor(as.matrix(tiss@scale.data[tiss@var.genes,WhichCells(tiss, c(14,33))])), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'R'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(33)[tiss@ident[WhichCells(tiss, c(14,33))]])
+
+```
+
+
+```{r}
+genes_to_check = c('Csf1r', 'Itgax', 'Ly6c2', 'H2-Aa')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('Marco', 'Itgax', 'Mrc1', 'Entpd2')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('Itgax', 'Cd24a', 'Cd68', 'Marco')
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+
+```{r}
+genes_to_check = c('Cx3cr1', 'Cd14', 'Itgam')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('Il3ra', 'Cd14', 'Cd19', 'Ccr2')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+Sorting out Seurat on the myeloid cells..
+```{r}
+heatmap.2(as.matrix(tiss@scale.data[c('Epcam', 'Cdh1', 'Pecam1', 'Ncam1', 'Ptprc', 'Csf1r', 'Itgax', 'Ly6c2', 'H2-Aa', 'Mrc1', 'Itgam', 'Cx3cr1', 'Cd14'),WhichCells(tiss, c(20,10,15,24))]), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'CPM + 1'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(27)[tiss@ident[WhichCells(tiss, c(20,10,15,24))]])
+
+ident.tmp[intersect(intersect(names(which(tiss@scale.data['Csf1r',WhichCells(tiss, c(20))] > 0)), names(which(tiss@scale.data['Mrc1',WhichCells(tiss, c(20))] > 0))), names(which(tiss@scale.data['Cd14',WhichCells(tiss, c(20))] > 0)))] = 32
+
+
+```
+
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
+```
+
 
 How big are the clusters?
 ```{r}
-table(tissue.10X@ident)
+table(tiss@ident)
 ```
 
 
@@ -219,7 +356,7 @@ table(tissue.10X@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tissue.10X, ident.1 = 2, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+tiss10x.27.markers <- FindMarkers(object = tiss, ident.1 = c(27), only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 
@@ -229,12 +366,28 @@ print(x = head(x= clust.markers, n = 10))
 
 You can also compute all markers for all clusters at once. This may take some time.
 ```{r}
-#tissue.10X.markers <- FindAllMarkers(object = tissue.10X, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 Display the top markers you computed above.
 ```{r}
-#tissue.10X.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+```
+
+But first, "committing" to the new idents...
+```{r}
+#Uncomment to undo this...
+#tiss@ident = old.idents
+
+#old.idents = tiss@ident
+tiss@ident = as.factor(ident.tmp)
+
+```
+
+
+```{r}
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = tiss, do.label = T)
 ```
 
 ## Assigning cell type identity to clusters
@@ -243,42 +396,98 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 
 ```{r}
 # stash current cluster IDs
-tissue.10X <- StashIdent(object = tissue.10X, save.name = "cluster.ids")
+tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+
+cluster.ids <- 0:33
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
-cell_ontology_class <-
-  c(
-  "Endothelial Cell Type I",
-  "B Cells",
-  "T Cells",
-  "Immune Cell Type V",
-  "Natural Killer Cells",
-  "Immune Cell Type II",
-  "Immune Cell Type IV",
-  "Immune Cell Type I",
-  "Stromal Cell Type I",
-  "T Cells",
-  "Immune Cell Type V",
-  "Endothelial Cell Type I and\n Stromal Cell Type II/Endothelial Cell Type V\n Doublets",
-  "Natural Killer Cells",
-  "Immune Cell Type III",
-  "Endothelial Cell Type II",
-  "Endothelial Cell Type IV",
-  "Immune Cell Type I",
-  "Stromal Cell Type II/III & Mesothelial Cells",
-  "Epithelial Cells",
-  "Stromal Cell Type IV",
-  "Immune Cell Type VI"
-  )
 
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+free_annotation <- c(
+  "lung stromal type 2 cell", 
+  "lung stromal type 2 cell", 
+  "natural killer cell", 
+  "lung stromal type 3 cell",
+  "lung stromal type 1 cell",
+  "alveolar macrophage", 
+  "lung stromal type 2 cell", 
+  "t cell", 
+  "lung stromal type 2 cell", 
+  "lung endothelial type 1 cell",
+  "circulating monocyte",
+  "b cell",
+  "natural killer cell",
+  "natural killer cell",
+  "lung endothelial type 1 cell",
+  "invading monocyte",
+  "lung stromal type 4 cell",
+  "lung stromal type 2 cell",
+  "unknown immune cell",
+  "lung stromal type 1 cell",
+  "dendritic cell",
+  "alveolar epithelial type 2 cell",
+  "lung endothelial type 2 cell",
+  "lung epithelial cell",
+  "unknown immune cell",
+  "lung epithelial cell",
+  "natural killer cell",
+  NA,
+  "club cell",
+  "lung neuroendocrine cell",
+  "multiciliated cell",
+  "alveolar epithelial type 1 cell",
+  "interstital macrophage",
+  "lung endothelial type 3 cell")
 
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
-TSNEPlot(object = tissue.10X, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class', no.axes = TRUE, no.legend = TRUE)
+cell_ontology_class <-c(
+  "stromal cell", 
+  "stromal cell", 
+  "natural killer cell", 
+  "stromal cell",
+  "stromal cell",
+  "alveolar macrophage", 
+  "stromal cell", 
+  "T cell", 
+  "stromal cell", 
+  "lung endothelial cell",
+  "non-classical monocyte",
+  "B cell",
+  "natural killer cell",
+  "natural killer cell",
+  "lung endothelial cell",
+  "classical monocyte",
+  "stromal cell",
+  "stromal cell",
+  "leukocyte",
+  "stromal cell",
+  "dendritic cell",
+  "type II pneumocyte",
+  "lung endothelial cell",
+  "epithelial cell of lung",
+  "leukocyte",
+  "epithelial cell of lung",
+  "natural killer cell",
+  NA,
+  "Clara cell",
+  "lung neuroendocrine cell",
+  "ciliated columnar cell of tracheobronchial tree",
+  "type I pneumocyte",
+  "lung macrophage",
+  "lung endothelial cell")
+
+
+tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
+
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+
+tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+
+tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
+
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='free_annotation', no.axes = TRUE, no.legend = TRUE)
+
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class', no.axes = TRUE, no.legend = TRUE)
 ```
 
 
@@ -287,173 +496,15 @@ TSNEPlot(object = tissue.10X, do.label = TRUE, pt.size = 0.5, group.by='cell_ont
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = tissue.10X, do.return = TRUE, group.by = "channel")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
 ```
 
 ```{r}
-TSNEPlot(object = tissue.10X, do.return = TRUE, group.by = "mouse.sex")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
 
 Print a table showing the count of cells in each identity category from each plate.
 
 ```{r}
-table(as.character(tissue.10X@ident), as.character(tissue.10X@meta.data$channel))
+table(as.character(tiss@ident), as.character(tiss@meta.data$channel))
 ```
-
-### Save the R object so 1. you can reload without recomputing and 2. anyone else can reproduce your figures.
-
-```{r}
-save(tissue.10X, file=paste0(save_dir,"/","10x_", tissue_of_interest, "_seurat_tissue.10X.Robj"))
-```
-
-```{r}
-# To reload a saved object
-#load(file=paste0(rootdir,"/","10x_", tissue.10Xue_of_interest, "_seurat_tissue.10X.Robj"))
-```
-
-
-# Subset and iterate
-
-We can repeat the above analysis on a subset of cells, defined using cluster IDs or some other metadata. This is a good way to drill down and find substructure.
-
-## First subset
-
-```{r}
-# Subset data based on cluster id
-#subtissue.10X <- SubsetData(object = tissue.10X, ident.use = c(3), do.center = F, do.scale = F, cells.use = )
-
-# To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
-
-cells.to.use = tissue.10X@cell.names[which(tissue.10X@meta.data.10X$mouse.sex == 'F')]
-subtissue.10X <- SubsetData(object = tissue.10X, cells.use = cells.to.use, do.center = F, do.scale = F)
-```
-
-```{r}
-subtissue.10X <- NormalizeData(object = subtissue.10X)
-subtissue.10X <- ScaleData(object = subtissue.10X, vars.to.regress = c("nUMI", "percent.ribo","Rn45s"))
-```
-
-Run Principal Component Analysis.
-
-```{r}
-subtissue.10X <- FindVariableGenes(object = subtissue.10X, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.8)
-subtissue.10X <- RunPCA(object = subtissue.10X, pcs.compute = 20, weight.by.var = F)
-subtissue.10X <- ProjectPCA(object = subtissue.10X, do.print = FALSE)
-```
-
-```{r}
-# If this fails for your subset, it may be that cells.use is more cells than you have left! Try reducing it.
-PCHeatmap(object = subtissue.10X, pc.use = 1:3, cells.use = 250, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
-```
-
-Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
-
-```{r}
-PCElbowPlot(object = subtissue.10X)
-```
-
-Choose the number of principal components to use.
-```{r}
-# Set number of principal components. 
-sub.n.pcs = 5
-```
-
-
-The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
-
-```{r}
-# Set resolution 
-sub.res.used <- 1
-
-subtissue.10X <- FindClusters(object = subtissue.10X, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.used, ,print.output = 0, save.SNN = TRUE)
-```
-
-To visualize 
-```{r}
-# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-subtissue.10X <- RunTSNE(object = subtissue.10X, dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=20)
-```
-
-```{r}
-# note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = subtissue.10X, do.label = T)
-```
-
-```{r}
-subtissue.10X.markers <- FindAllMarkers(object = subtissue.10X, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtissue.10X.markers %>% group_by(cluster) %>% top_n(6, avg_diff)
-```
-
-Check expression of genes of interset.
-```{r}
-genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp', 'Glul', 'Ass1', 'Axin2', 'Hal', 'Igfbp2')
-
-FeaturePlot(subtissue.10X, genes_to_check, pt.size = 1)
-```
-
-Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(subtissue.10X, genes_to_check, plot.legend = T)
-```
-
-How big are the clusters?
-```{r}
-table(subtissue.10X@ident)
-```
-
-## Checking for batch effects
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
-TSNEPlot(object = subtissue.10X, do.return = TRUE, group.by = "channel")
-```
-
-Print a table showing the count of cells in each identity category from each plate.
-
-```{r}
-table(as.character(subtissue.10X@ident), as.character(subtissue.10X@meta.data.10X$channel))
-```
-
-
-
-### Assigning subcell_ontology_classs
-
-For the subsets, we produce subcell_ontology_classs. These will be written back as metadata in the original object, so we can see all subcell_ontology_classs together.
-
-If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
-
-```{r}
-subcluster.ids <- c(0, 1, 2)
-subcell_ontology_class <- c("Jun-negative","Jun-positive", NA)
-
-subtissue.10X@meta.data.10X[,'subcell_ontology_class'] <- plyr::mapvalues(x = subtissue.10X@ident, from = subcluster.ids, to = subcell_ontology_class)
-
-tissue.10X@meta.data.10X[subtissue.10X@cell.names,'subcell_ontology_class'] <- as.character(subtissue.10X@meta.data.10X$subcell_ontology_class)
-
-TSNEPlot(object = subtissue.10X, do.label = TRUE, pt.size = 0.5, group.by='subcell_ontology_class')
-```
-
-When you save the subtissue.10Xue, please give it a name.
-
-```{r}
-subtissue.10X.name = 'liver_hepatocytes'
-
-save(subtissue.10X, file=paste0(save_dir,"/","10x_",subtissue.10X.name, "_seurat_subtissue.10X.Robj"))
-```
-
-# Export the final metadata
-
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
-
-```{r}
-write.csv(tissue.10X@meta.data[,c('cell_ontology_class')],file =paste0(save_dir,"/", "10x_", tissue_of_interest,"_cell_ontology_class.csv"))
-```
-
-
-
