@@ -49,13 +49,13 @@ TSNEPlot(object = tiss, do.label = T)
 ```{r}
 # Batch and animal effects
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
 ```
 
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Vim','Krt5','Krt8','Ptprc','Epcam','H2-Ab1','H2-Aa','Cd3e','Cd3d','Cd3g','Cd4','Cd8a','Cd8b1','Ets1','Cd44','Il2ra', 'Top2a')
+genes_to_check = c('Vim','Krt5','Krt8','Ptprc','Epcam','H2-Ab1','H2-Aa','Cd3e','Cd3d','Cd3g','Cd4','Cd8a','Cd8b1','Ets1','Cd44','Il2ra', 'Top2a','Cd86','Cd14','Cd19','Itgax','Dntt','Rag1','Rag2','Ptcra','Mki67','Cd69','Cd27')
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
@@ -63,7 +63,8 @@ Dotplots let you see the intensity of expression and the fraction of cells expre
 
 ```{r, echo=FALSE, fig.height=8, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+#DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+VlnPlot(tiss, genes_to_check)
 ```
 
 ```{r}
@@ -97,16 +98,36 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1)
-free_annotation <- c("cell type 1", "cell type 2")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
+free_annotation <- c("DN4-DP in transition Cd69_negative thymocytes",
+                     "DN4-DP transition_Cd69_negative_rapidly dividing thymocytes",
+                     "DN4-DP transition_Cd69_low thymocytes",
+                     "DN4-DP in transition_Cd69_negative_rapidly dividing thymocytes",
+                     "DN4-DP in transition_Cd69_positive thymocytes", 
+                     "DN4-DP in transition_Cd69_negative_thymocytes",
+                     "DN1 thymocytes",
+                     "DN3-DN4 thymocytes",
+                     "antigen presenting cells")
 
-cell_ontology_class <-c("ontology class 1", "ontology class 2")
+cell_ontology_class <-c("immature T cell",
+                        "immature T cell",
+                        "immature T cell",
+                        "immature T cell",
+                        "immature T cell",
+                        "immature T cell",
+                        "DN1 thymic pro-T cell",
+                        "immature T cell",
+                        "professional antigen presenting cell")
+
+tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = free_annotation)
 
 stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
 
 ```{r}
+
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='free_annotation')
+ggsave ("TSNE_thymus2.pdf")
 ```
 
 # Save the Robject for later
