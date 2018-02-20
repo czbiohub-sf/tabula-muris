@@ -214,7 +214,7 @@ gg_color_hue <- function(n) {
   hcl(h = hues, l = 65, c = 100)[1:n]
 }
 
-heatmap.2(as.matrix(tiss@data[c('Epcam', 'Cdh1', 'Etv5', 'Pecam1', 'Ncam1', 'Ptprc', 'Sftpb', 'Sftpb', 'Ager', 'Pdpn', 'Wnt3a', 'Calca', 'Resp18', 'Scgb3a2', 'Scgb1a1', 'Foxj1', 'Krt5'),WhichCells(tiss, c(4,16,22))]), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'CPM + 1'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(23)[tiss@ident[WhichCells(tiss, c(4,16,22))]])
+heatmap.2(as.matrix(tiss@data[c('Epcam', 'Cdh1', 'Etv5', 'Pecam1', 'Ncam1', 'Ptprc', 'Sftpb', 'Sftpd', 'Ager', 'Pdpn', 'Wnt3a', 'Calca', 'Resp18', 'Scgb3a2', 'Scgb1a1', 'Foxj1', 'Krt5', 'Fcer1a', 'Cyp11a1'),WhichCells(tiss, c(4,16,22))]), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'CPM + 1'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(23)[tiss@ident[WhichCells(tiss, c(4,16,22))]])
 
 ident.tmp = as.numeric(as.character(tiss@ident))
 names(ident.tmp) = names(tiss@ident)
@@ -236,6 +236,9 @@ ident.tmp[intersect(names(which(tiss@data['Etv5',WhichCells(tiss, c(4,16,22))] >
 
 #Basal Cells
 ident.tmp[names(which(tiss@data['Krt5',WhichCells(tiss, c(4,16,22))] > 6))] = 29
+
+#Mast Cells
+ident.tmp[names(which(tiss@data['Fcer1a',WhichCells(tiss, c(4,16,22))] > 0))] = 30
 
 ```
 
@@ -306,7 +309,7 @@ Sorting out Seurat on the myeloid cells..
 ```{r}
 heatmap.2(as.matrix(tiss@data[c('Epcam', 'Cdh1', 'Pecam1', 'Ncam1', 'Ptprc', 'Csf1r', 'Itgax', 'Ly6c2', 'H2-Aa', 'Mrc1', 'Itgam', 'Cx3cr1', 'Cd14'),WhichCells(tiss, c(8))]), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'CPM + 1'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(23)[tiss@ident[WhichCells(tiss, c(8))]])
 
-ident.tmp[intersect(names(which(tiss@data['Mrc1',WhichCells(tiss, c(8))] > 0)), names(which(tiss@data['Ly6c2',WhichCells(tiss, c(8))] == 0)))] = 30
+ident.tmp[intersect(names(which(tiss@data['Mrc1',WhichCells(tiss, c(8))] > 0)), names(which(tiss@data['Ly6c2',WhichCells(tiss, c(8))] == 0)))] = 31
 
 ```
 
@@ -360,7 +363,7 @@ But first, "committing" to the new idents...
 #Uncomment to undo this...
 #tiss@ident = old.idents
 
-old.idents = tiss@ident
+#old.idents = tiss@ident
 tiss@ident = as.factor(ident.tmp)
 
 ```
@@ -375,7 +378,7 @@ TSNEPlot(object = tiss, do.label = T, no.axes=T, pt.size = 1)
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
-cluster.ids <- 0:30
+cluster.ids <- 0:31
 
 free_annotation <- c(
   "lung endothelial type 1 cell", 
@@ -408,6 +411,7 @@ free_annotation <- c(
   "alveolar epithelial type 1 cell",
   "alveolar epithelial type 2 cell",
   "basal cell",
+  "mast cell",
   "interstitial macrophage")
 
 cell_ontology_class <-c(
@@ -441,6 +445,7 @@ cell_ontology_class <-c(
   "type I pneumocyte",
   "type II pneumocyte",
   "respiratory basal cell",
+  "mast cell",
   "lung macrophage")
 
 
