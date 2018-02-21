@@ -197,10 +197,11 @@ TSNEPlot(object = tiss, do.label = T)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=8, fig.width=8}
-genes_to_check = c('Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1a1', 'Col8a1', 'Foxj1', 'Pecam1', 'Ptprc', 'Cck', 'Syp')
+genes_to_check = c('Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1a1', 'Col8a1', 'Foxj1', 'Pecam1', 'Ptprc', 'Cck')
 
 
 FeaturePlot(tiss, genes_to_check, pt.size = .1)
+#FIGURE 7
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -217,50 +218,62 @@ table(tiss@ident)
 
 ```{r}
 VlnPlot(tiss, features.plot = "Pdgfra")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Pdgfrb")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Col1a1")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Col8a1")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Ptprc")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Pecam1")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Epcam")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Cdh1")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Krt5")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Foxj1")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Scgb1a1")
+#FIGURE 8
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Cck")
+#FIGURE 8
 ```
 
 
@@ -306,7 +319,7 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
-free_annotation = c("NA","NA","NA","NA","NA","NA","NA")
+free_annotation = c("mesenchymal 2","mesenchymal 1","mesenchymal 3","NA","NA","NA","NA")
 cell_ontology_class <- c("mesenchymal cell","mesenchymal cell","mesenchymal cell","blood cell","endothelial cell","epithelial cell","neuroendocrine cell")
 validate_cell_ontology(cell_ontology_class)
 
@@ -321,6 +334,8 @@ tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.dat
 tiss@meta.data[tiss@cell.names,'free_annotation'] <- as.character(tiss@meta.data$free_annotation)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
+
+# TRACHEA FIGURE 2, WOULD BE NICE TO SHOW FREE_ANNOTATION LABELS
 ```
 
 
@@ -463,6 +478,7 @@ Check expression of genes of interset.
 genes_to_check = c('Krt5', 'Krt14', 'Scgb1a1', 'Foxj1')
 
 FeaturePlot(subtiss, genes_to_check, pt.size = 1)
+#FIGURE 9
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -511,6 +527,7 @@ tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss
 tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
 
 TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
+#FIGURE 10 -- PLEASE CHECK subcell_ontology_id???
 ```
 
 
