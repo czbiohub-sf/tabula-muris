@@ -313,6 +313,7 @@ Color by cell ontology class on the original TSNE.
 TSNEPlot(object = tiss, group.by = "cell_ontology_class")
 ```
 
+
 # Save the Robject for later
 
 ```{r}
@@ -321,19 +322,14 @@ filename = here('00_data_ingest', '04_tissue_robj_generated',
 print(filename)
 save(tiss, file=filename)
 ```
-```{r}
-filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs_", tissue_of_interest, "_seurat_subtiss.Robj"))
-print(filename)
-save(subtiss, file=filename)
-```
 
 ```{r}
 # To reload a saved object
-filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                      paste0("facs_", tissue_of_interest, "_seurat_subtiss.Robj"))
-load(file=filename)
+#filename = here('00_data_ingest', '04_tissue_robj_generated', 
+#                      paste0("facs_", tissue_of_interest, "_seurat_subtiss.Robj"))
+#load(file=filename)
 ```
+
 ```{r}
 BuildClusterTree(tiss) 
 ```
