@@ -195,7 +195,7 @@ genes_to_check = c('Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 
-#FIGURE 3
+#TRACHEA SUPP FIGURE 3
 
 ```
 
@@ -213,57 +213,57 @@ table(tiss@ident)
 
 ```{r}
 VlnPlot(tiss, features.plot = "Pdgfra")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Pdgfrb")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Col1a1")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Col8a1")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Ptprc")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Pecam1")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Epcam")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Cdh1")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Krt5")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Foxj1")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 ```{r}
 VlnPlot(tiss, features.plot = "Scgb1a1")
-#FIGURE 4
+#TRACHEA SUPP FIGURE 4
 ```
 
 
@@ -315,7 +315,7 @@ tiss@meta.data[tiss@cell.names,'free_annotation'] <- as.character(tiss@meta.data
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 
-# TRACHEA FIGURE 1, WOULD BE NICE TO SHOW FREE_ANNOTATION LABELS
+# TRACHEA SUPP FIGURE 1, WOULD BE NICE TO INCLUDE FREE_ANNOTATION LABELS
 ```
 
 
@@ -439,7 +439,7 @@ Check expression of genes of interset.
 genes_to_check = c('Krt5', 'Krt14', 'Scgb1a1', 'Foxj1')
 
 FeaturePlot(subtiss, genes_to_check, pt.size = 1)
-#FIGURE 5
+#TRACHEA SUPP FIGURE 5
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -487,7 +487,7 @@ tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss
 tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
 
 TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
-#FIGURE 6 -- PLEASE CHECK subcell_ontology_id???
+#TRACHEA SUPP FIGURE 6 -- PLEASE CHECK subcell_ontology_id???
 ```
 
 
