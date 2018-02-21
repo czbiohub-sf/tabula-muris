@@ -105,6 +105,7 @@ You can also compute all markers for all clusters at once. This may take some ti
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
+
 Display the top markers you computed above.
 ```{r}
 tiss.markers %>% group_by(cluster) %>% top_n(20, avg_logFC)
@@ -219,9 +220,12 @@ head(tiss@meta.data)
 
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-          paste0(tissue_of_interest, "_facs_cell_ontology_class.csv"))
+          paste0(tissue_of_interest, "_facs_annotation.csv"))
 write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 
 ```
 
+```{r}
+sessionInfo()
+```
 
