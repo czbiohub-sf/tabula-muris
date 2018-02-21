@@ -166,7 +166,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 0.5
+res.used <- 0.4
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc=TRUE)
@@ -179,7 +179,8 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```
 
 ```{r}
-# note that you can set do.label=T to help label individual clusters
+###############Figure1 
+##note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = tiss, do.label = T)
 ```
 
@@ -195,6 +196,10 @@ FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 ```{r}
+
+###############Figure2
+
+
 VlnPlot(tiss, genes_to_check)
 ```
 
@@ -262,15 +267,14 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
+cluster.ids <- c(0, 1, 2, 3, 4, 5)
 
 free_cell_ontology_class <- c(
   "Bladder mesenchymal cell", 
    "Bladder mesenchymal cell", 
    "Luminal bladder epithelial cell", 
    "Luminal bladder epithelial cell", 
-   "Basal bladder epithelial cell", 
-   "Luminal bladder epithelial cell", 
+   "Basal bladder epithelial cell",
   "Bladder mesenchymal cell")
 
 cell_ontology_class <- c(
@@ -279,10 +283,9 @@ cell_ontology_class <- c(
    "bladder urothelial cell", 
    "bladder urothelial cell", 
    "bladder urothelial cell", 
-   "bladder urothelial cell", 
    "bladder cell")
 
-cell_ontology_id = c("CL:1001319", "CL:1001319", "CL_1001428", "CL_1001428", "CL_1001428", "CL_1001428", "CL:1001319")
+cell_ontology_id = c("CL:1001319", "CL:1001319", "CL_1001428", "CL_1001428", "CL_1001428", "CL:1001319")
 
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_id)
@@ -291,6 +294,8 @@ TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_
 ```
 
 ```{r}
+
+###############Figure5
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 
 ```
