@@ -17,6 +17,12 @@ python -m ipykernel install --user --name tabula-muris-env --display-name "Pytho
 
 ## Installation - R
 
+Packages:
+
+```
+install.packages(c("here", "Seurat", "useful", "ontologyIndex", "tidyverse"))
+```
+
 ## Getting started
 
 ### From "raw" gene-cell counts tables
