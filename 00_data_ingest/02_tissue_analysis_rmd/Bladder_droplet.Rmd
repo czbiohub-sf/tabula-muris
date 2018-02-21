@@ -183,6 +183,8 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30,
 ```
 
 ```{r}
+
+###############Figure3
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = tiss, do.label = T)
 ```
@@ -197,6 +199,7 @@ FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 ```{r}
+###############Figure4
 VlnPlot(tiss, genes_to_check)
 ```
 
@@ -298,6 +301,7 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
 ```
 
 ```{r}
+################Figure6
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
 
