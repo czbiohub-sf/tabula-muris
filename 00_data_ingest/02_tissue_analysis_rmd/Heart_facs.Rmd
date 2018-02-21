@@ -9,7 +9,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Heart"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss=load_tissue_facs(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -123,32 +123,32 @@ cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11)
 cell_ontology_class <-
   c(
   "fibroblast",
+  "fibroblast",
   "endothelial cell",
   "fibroblast",
-  "fibroblast",
   "leukocyte",
+  "endothelial cell",
   "endothelial cell",
   "smooth muscle cell",
-  "endothelial cell",
+   "endocardial cell",
   "cardiac muscle cell",
   "leukocyte",
-  "endocardial cell",
-  "erythrocyte"
+  "NA"
   )
 cell_ontology_id <-
   c(
   "CL:0000057",
+  "CL:0000057",
   "CL:0000115",
   "CL:0000057",
-  "CL:0000057",
   "CL:0000738",
+  "CL:0000115",
   "CL:0000115",
   "CL:0000192",
-  "CL:0000115",
+  "CL:0002350",
   "CL:0000746",
   "CL:0000738",
-  "CL:0002350",
-  "CL:0000232"
+  "NA"
   )
 
 tiss@meta.data[,'free_annotation'] <- NA
@@ -192,7 +192,7 @@ We can repeat the above analysis on a subset of cells, defined using cluster IDs
 
 ```{r}
 # Subset data based on cluster id
-subtiss <- SubsetData(object = tiss, ident.use = c(6), do.center = F, do.scale = F, cells.use = )
+subtiss <- SubsetData(object = tiss, ident.use = c(7), do.center = F, do.scale = F, cells.use = )
 
 # To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
 
@@ -308,9 +308,9 @@ For the subsets, we produce subcell_ontology_classs. These will be written back 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
 ```{r}
-subcluster.ids <- c(0, 1, 2)
+subcluster.ids <- c(0, 1, 2, 3)
 subfree_annotation <- c()
-cell_ontology_class <-c("Myofibroblast","Myofibroblast", "Smooth_Muscle_Cells")
+subcell_ontology_class <-c("Myofibroblast","Myofibroblast","Myofibroblast","Smooth_Muscle_Cells")
 
 subtiss@meta.data[,'subcell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 
@@ -340,8 +340,8 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_annotation.csv"))
 write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
 
