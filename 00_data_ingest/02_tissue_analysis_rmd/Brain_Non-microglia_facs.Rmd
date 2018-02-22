@@ -27,7 +27,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 7
+n.pcs = 12
 ```
 
 
@@ -74,13 +74,12 @@ tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, t
 top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(50, avg_diff)
 cluster.averages <- AverageExpression(object = tiss)
 ```
-
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
+
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
 top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
 genes_to_check <- top_genes$gene
-
 ```
 
 
@@ -92,11 +91,11 @@ table(tiss@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-#clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 ```{r}
-#print(x = head(x= clust.markers, n = 10))
+print(x = head(x= clust.markers, n = 10))
 ```
 
 ## Assigning cell type identity to clusters
@@ -112,6 +111,19 @@ pericytes- "Pdgfrb","Mcam", "Des"
 neurons- "Snap25","Eno2", "Rbfox3"
 NPCs- "Ascl1", "Dcx", "Dlx2"
 
+```{r}
+library(tidyverse)
+figshare_annotation = read_csv(here("00_data_ingest","00_facs_raw_data", "annotations_FACS.csv"))
+figshare_annotation = filter(figshare_annotation, tissue == tissue_of_interest)
+tiss@meta.data[, 'figshare_annotation'] <- NA
+tiss@meta.data[as.character(figshare_annotation$cell), 'figshare_annotation'] <- as.character(figshare_annotation$cell_ontology_class)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "figshare_annotation")
+```
+
+```{r}
+table(tiss@meta.data$figshare_annotation, tiss@ident)
+```
+
 
 ```{r}
 # stash current cluster IDs
@@ -121,6 +133,7 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 free_annotation = c(NA,NA,NA,NA,NA,NA,NA,NA,
                     "mixed population of oligodendrocytes and other cell types",NA)
+
 cell_ontology_class <-
   c(
     "oligodendrocyte",
@@ -147,6 +160,12 @@ title <- "TSNE_plots_gene_expression_plus_cell_ontology_class.pdf"
 TSNEPlot(object = tiss, do.label = T)
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
+
+
+
+
+
+
 
 
 Check the numbers of cells per cell_ontology_class
@@ -191,9 +210,9 @@ subtiss <- SubsetData(object = tiss, ident.use = c("1"), do.center = F, do.scale
 ```
 
 ```{r}
-tiss <- NormalizeData(object = subtiss, scale.factor = 1e6)
-tiss <- ScaleData(object = subtiss)
-tiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
+subtiss <- NormalizeData(object = subtiss, scale.factor = 1e6)
+subtiss <- ScaleData(object = subtiss)
+subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
 ```
 
 ```{r}
@@ -263,9 +282,8 @@ TSNEPlot(object = astro_subtiss, group.by='subtissue')
 
 ```{r Write top 50 markers for each subcluster}
 subtiss.markers <- FindAllMarkers(object = astro_subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-top <- subtiss.markers %>% group_by(cluster) %>% top_n(50, avg_diff)
-write.table(top)
-
+top <- subtiss.markers %>% group_by(cluster) %>% top_n(50, avg_logFC)
+# write.table(top)
 ```
 
 Check expression of genes of interset.
@@ -332,6 +350,8 @@ subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtis
 ```
 
 
+
+
 Check the numbers of cells per cell_ontology_class
 ```{r}
 table(tiss@meta.data$cell_ontology_class)
@@ -364,3 +384,4 @@ filename = here('00_data_ingest', '03_tissue_annotation_csv',
                      paste0(tissue_of_interest, "_annotation.csv"))
 write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
+
