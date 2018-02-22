@@ -136,22 +136,6 @@ cell_ontology_class <-
   "mesengial cell",
   "immune cell",
   "natural killer cell"
- 
-  )
-cell_ontology_id <-
-  c(
-  "CL:0000094",
-  "CL:0000576",
-  "CL:0000037",
-  "CL:0000037",
-  "CL:0000037",
-  "CL:0000236",
-  "CL:0000037",
-  "CL:0000094",
-  "CL:0000235",
-  "CL:0000084",
-  "CL:0000232",
-  "CL:0000236"
   )
 
 validate_cell_ontology(cell_ontology_class)
