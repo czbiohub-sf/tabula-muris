@@ -3,8 +3,6 @@
  output: html_notebook
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
-
 ```{r}
 tissue_of_interest = "Liver"
 ```
