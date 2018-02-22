@@ -6,7 +6,7 @@
 Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
-tissue_of_interest = "Marrow"
+tissue_of_interest = 'Kidney'
 ```
 
 Load the requisite packages and some additional helper functions.
@@ -147,7 +147,7 @@ tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
-PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 1500, do.balanced = TRUE, label.columns = FALSE, num.genes = 9)
 ```
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
@@ -190,8 +190,8 @@ TSNEPlot(object = tiss, do.label = T)
 Check expression of genes of interset. Found inconsistensies in gene names. Mme (Cd10), Ly6g6c, Ly6g6e, and Iga2b though present in plate data was not found here and gave an error.
 
 ```{r, echo=FALSE, fig.height=75, fig.width=15}
-genes_to_check = c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Fcgr3', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr4', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Ly6d', 'Cd27', 'Cr2', 'Fcer2a', 'Cd2', 'Cd7', 'Thy1', 'Cd19', 'Ms4a1', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Vpreb1', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ptprc', 'Cd48', 'Tfrc', 'Mki67', 'Eng', 'Itga2', 'Cxcr4', 'Cd44', 'Bpgm', 'Beta-s', 'Hbb-b2')
-
+genes_to_check = c('Nkcc2','Egf','Slc12a1')
+VlnPlot(tiss, genes_to_check,point.size.use = 0.2)
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
@@ -212,7 +212,7 @@ table(tiss@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 2, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers <- FindMarkers(object = tiss, ident.1 = 10, ident.2 = c(11,6), only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 
@@ -227,7 +227,7 @@ tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, t
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+tiss.markers %>% group_by(cluster) %>% top_n(10, avg_logFC)
 ```
 
 ## Assigning cell type identity to clusters
@@ -250,23 +250,22 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
 cell_ontology_class <-
   c(
-  "granulocyte",
-  "monocyte",
-  "hematopoietic stem cell",
-  "hematopoietic stem cell",
-  "hematopoietic stem cell",
-  "B cell",
-  "hematopoietic stem cell",
-  "granulocyte",
+  "thick ascending loop cell",
+  "proximal tube cell",
+  "proximal tube cell",
+  "Endothelial cell",
+  "proximal tube cell",
+  "distal collecting duct cell",
   "macrophage",
-  "T cell",
-  "erythrocyte",
-  "B cell",
-  "Fraction A pre-pro B cell",
-  "hematopoietic stem cell"
+  "distal collecting duct cell 2",
+  "distal collecting duct cell 3",
+  "mesengial cell",
+  "immune cell",
+  "natural killer cell"
+ 
   )
 cell_ontology_id <-
   c(
@@ -281,9 +280,7 @@ cell_ontology_id <-
   "CL:0000235",
   "CL:0000084",
   "CL:0000232",
-  "CL:0000236",
-  "CL:0002045",
-  "CL:0000037"
+  "CL:0000236"
   )
 
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
@@ -301,7 +298,7 @@ TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
 
 ```{r}
