@@ -167,8 +167,7 @@ So that Biohub can easily combine all your cell_ontology_classs, please export t
 ```{r}
 #tiss@meta.data %>% names
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                paste0(tissue_of_interest, "_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 
-                            'free_annotation')], file=filename)
+                     paste0(tissue_of_interest, "_facs_annotation.csv"))
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
 
