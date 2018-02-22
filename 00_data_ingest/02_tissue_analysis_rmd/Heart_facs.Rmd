@@ -135,7 +135,21 @@ free_annotation <-
   "leukocyte",
   "conduction cells"
   )
-cell_ontology_class = c()
+cell_ontology_class  <-
+  c(
+  "fibroblast",
+  "fibroblast",
+  "endothelial cell",
+  "fibroblast",
+  "leukocyte",
+  "endothelial cell",
+  "endothelial cell",
+  "smooth muscle cell",
+   "endocardial cell",
+  "cardiac muscle cell",
+  "leukocyte",
+  "conduction cells"
+  )
 
 validate_cell_ontology(cell_ontology_class)
 cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
