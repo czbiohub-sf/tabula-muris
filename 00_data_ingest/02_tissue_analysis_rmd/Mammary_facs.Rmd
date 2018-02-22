@@ -5,13 +5,149 @@ output:
   html_notebook: default
 ---
 
-Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
 tissue_of_interest = "Mammary"
+```
+
+Load the requisite packages and some additional helper functions.
+
+```{r}
 library(here)
-source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+library(useful)
+library(Seurat)
+library(dplyr)
+library(Matrix)
+library(ontologyIndex)
+cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
+
+validate_cell_ontology = function(cell_ontology_class){
+  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name) || is.na(x))
+  if (!all(in_cell_ontology)) {
+    message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology
+')
+    stop(message)
+  }
+}
+convert_to_cell_ontology_id = function(cell_ontology_class){
+  return(sapply(cell_ontology_class, function(x) as.vector(cell_ontology$id[cell_ontology$name == x])[1]))
+}
+
+save_dir = here('00_data_ingest', 'tissue_robj')
+```
+
+
+
+```{r}
+# read the metadata to get the plates we want
+plate_metadata_filename = here('00_data_ingest', '00_facs_raw_data', 'metadata_FACS.csv')
+
+plate_metadata <- read.csv(plate_metadata_filename, sep=",", header = TRUE)
+colnames(plate_metadata)[1] <- "plate.barcode"
+plate_metadata
+```
+
+Subset the metadata on the tissue.
+
+```{r}
+tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
+tissue_plates
+```
+
+Load the read count data.
+```{r}
+#Load the gene names and set the metadata columns by opening the first file
+filename = here('00_data_ingest', '00_facs_raw_data', 'FACS', paste0(tissue_of_interest, '-counts.csv'))
+
+raw.data = read.csv(filename, sep=",", row.names=1)
+# raw.data = data.frame(row.names = rownames(raw.data))
+corner(raw.data)
+```
+Make a vector of plate barcodes for each cell
+
+```{r}
+plate.barcodes = lapply(colnames(raw.data), function(x) strsplit(strsplit(x, "_")[[1]][1], '.', fixed=TRUE)[[1]][2])
+head(plate.barcodes)
+```
+
+Use only the metadata rows corresponding to Bladder plates. Make a plate barcode dataframe to "expand" the per-plate metadata to be per-cell.
+```{r}
+barcode.df = t.data.frame(as.data.frame(plate.barcodes))
+
+rownames(barcode.df) = colnames(raw.data)
+colnames(barcode.df) = c('plate.barcode')
+head(barcode.df)
+
+rnames = row.names(barcode.df)
+meta.data <- merge(barcode.df, plate_metadata, by='plate.barcode', sort = F)
+row.names(meta.data) <- rnames
+
+# Sort cells by plate barcode because that's how the data was originally
+meta.data = meta.data[order(meta.data$plate.barcode), ]
+corner(meta.data)
+raw.data = raw.data[, rownames(meta.data)]
+corner(raw.data)
+```
+Process the raw data and load it into the Seurat object.
+
+```{r}
+# Find ERCC's, compute the percent ERCC, and drop them from the raw data.
+erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
+percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
+ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
+raw.data <- raw.data[-ercc.index,]
+
+# Create the Seurat object with all the data
+tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, 
+                    min.cells = 5, min.genes = 5)
+
+tiss <- AddMetaData(object = tiss, meta.data)
+tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
+# Change default name for sums of counts from nUMI to nReads
+colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
+
+# Create metadata columns for cell_ontology_classs and subcell_ontology_classs
+tiss@meta.data[,'free_annotation'] <- NA
+tiss@meta.data[,'cell_ontology_class'] <- NA
+tiss@meta.data[,'subcell_ontology_class'] <- NA
+```
+
+
+Calculate percent ribosomal genes.
+
+```{r}
+ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
+percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
+tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
+```
+
+A sanity check: genes per cell vs reads per cell.
+
+```{r}
+GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene", use.raw=T)
+```
+
+Filter out cells with few reads and few genes.
+
+```{r}
+tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nReads"), 
+    low.thresholds = c(500, 50000), high.thresholds = c(25000, 2000000))
+```
+
+
+Normalize the data, then regress out correlation with total reads
+```{r}
+tiss <- NormalizeData(object = tiss, scale.factor = 1e6)
+tiss <- ScaleData(object = tiss)
+tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
+```
+
+
+Run Principal Component Analysis.
+```{r}
+tiss <- RunPCA(object = tiss, do.print = FALSE)
+tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
@@ -27,7 +163,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 14
+n.pcs = 10
 ```
 
 
@@ -57,15 +193,16 @@ TSNEPlot(object = tiss, do.label = T)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Krt14', 'Krt17', 'Krt5', 'Krt8', 'Krt19', 'Krt18', 'Cd14', 'Ceacam1', 'Itgb3', 'Itga6', 'Elf5', 'Prlr', 'Esr1', 'Pgr', 'Esam', 'Fn1', 'Vim', 'Cdh5', 'Cited1', 'Areg', 'Csn3', 'Cd55')
+genes_to_check = c('Krt14', 'Krt17', 'Krt5', 'Krt8', 'Krt18', 'Prlr', 'Lgr5', 'Esr1','Elf5', 'Esam', 'Vim', 'Fn1', 'Cd14', 'Cdh5')
+
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r, echo=FALSE, fig.height=8, fig.width=8}
+```{r, echo=FALSE, fig.height=4, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
 
 How big are the clusters?
@@ -73,6 +210,9 @@ How big are the clusters?
 table(tiss@ident)
 ```
 
+```{r}
+VlnPlot(tiss, genes_to_check)
+```
 
 Which markers identify a specific cluster?
 
@@ -104,33 +244,24 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-free_annotation <- c("basal cell", "luminal progenitor", "basal cell", "basal cell", "stromal cell",
-                     "mature luminal cell", "stromal cell", "endothelial cell", "basal cell", "Krt negative Itgb3+ Vim+")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
+free_annotation <- c()
+cell_ontology_class <-c("basal cell", "basal cell", "luminal epithelial cell of mammary gland", "basal cell", "stromal cell", "luminal epithelial cell of mammary gland", "stromal cell", "endothelial cell", "basal cell")
+cell_ontology_id <- c("CL:0000646", "CL:0000646", "CL:0002326", "CL:0000646", "CL:0000499", "CL:0002326", "CL:0000499", "CL:0000115", "CL:0000646")
 
-cell_ontology_class <-c("basal cell", "luminal epithelial cell of mammary gland", "basal cell", "basal cell", "stromal cell", "luminal epithelial cell of mammary gland", "stromal cell",
-                         "endothelial cell", "basal cell", NA)
-
-
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
-
-tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
-
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
-
-tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation)
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
-```
 
-```{r}
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='free_annotation')
+tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
+tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
 
 ## Checking for batch effects
+
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
@@ -142,135 +273,12 @@ Print a table showing the count of cells in each identity category from each pla
 ```{r}
 table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 ```
-
-
-## Subcluster
-
-```{r}
-subtiss = SubsetData(tiss, ident.use = c(0, 2, 3, 8))
-```
-
-```{r}
-subtiss <- subtiss %>% ScaleData() %>% 
-  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-  RunPCA(do.print = FALSE)
-```
-
-```{r}
-subtiss@hvg.info
-```
-
-
-```{r}
-PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
-PCElbowPlot(subtiss)
-```
-
-```{r}
-PCAPlot(subtiss)
-```
-
-
-```{r}
-sub.n.pcs = 10
-sub.res.use = 1
-subtiss <- subtiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=20)
-
-TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
-
-```
-
-```{r, echo=FALSE}
-FeaturePlot(subtiss, c("Car3"))
-```
-
-```{r, echo=FALSE, fig.height=8, fig.width=10}
-DotPlot(subtiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
-```
-
-```{r}
-#VlnPlot(subtiss, "Procr")
-VlnPlot(subtiss, "Car3")
-```
-
-```{r}
-cluster_8 <- FindMarkers(subtiss, ident.1 = 8, test = "roc")
-```
-```{r}
-cluster_8
-```
-
-```{r}
-clust_8_genes = c('Lgals3', 'Ly6d', 'S100a14', "Smoc2")
-```
-
-```{r}
-GenePlot(subtiss, "Ly6d", "Smoc2")
-```
-
-
-```{r}
-VlnPlot(subtiss, clust_8_genes)
-```
-
-
-From these genes, it appears that the clusters represent:
-
-0: alpha
-1: alpha
-2: alpha
-3: delta
-4: alpha
-5: delta
-6: gamma
-7: gamma
-
-The multitude of clusters of each type correspond mostly to individual animals/sexes.
-
-```{r}
-table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
-```
-
-```{r}
-# sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-# sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-# sub.cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-# 
-# validate_cell_ontology(sub.cell_ontology_class)
-# sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-# 
-# subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-# validate_cell_ontology(sub.cell_ontology_class)
-# sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-# 
-# subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-# subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-# subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
-```
-
-## Add subcluster cell_ontology_class to main cell_ontology_class
-
-```{r}
-# sub.cells = rownames(subtiss@meta.data)
-# 
-# tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
-# tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
-# tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
-```
-
-
-
-
-
-
 # Save the Robject for later
 When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -293,9 +301,8 @@ head(tiss@meta.data)
 ```
 
 
-
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_annotation.csv"))
-write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
+                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
 ```

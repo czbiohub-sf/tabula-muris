@@ -1,5 +1,0 @@
-TISSUE: Aorta
-METHOD: facs
-RES: 0.5
-NPCS: 10
-GENES: "'Vim','Krt5','Krt8','Ptprc','Epcam','H2-Ab1','H2-Aa','Cd34','Cdh5','Cd14','Vwf','Syk','Col1a2','Timp2','Cd74','Laptm5','Selplg','Pecam1','Fabp4','Sox18','Icam1','Tek','Vcam1','Vegfa','Adipor1','Car3','Alas2','Acta2','Dcn','Myocd','Tagln','Myh11','S100a4','Cd3e','Pdgfra','Kit','Gypa','Col6a3'"
