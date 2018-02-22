@@ -72,6 +72,14 @@ Dotplots let you see the intensity of exppression and the fraction of cells expr
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
 
+```{r}
+RidgePlot(tiss, genes_to_check)
+```
+
+```{r}
+RidgePlot(tiss, genes_to_check, group.by='mouse.sex')
+```
+
 How big are the clusters?
 ```{r}
 table(tiss@ident)
