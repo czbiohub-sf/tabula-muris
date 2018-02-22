@@ -28,7 +28,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 7
+n.pcs = 8
 ```
 
 The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
@@ -46,7 +46,7 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=40)
 ```
 
 
@@ -101,9 +101,6 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
 
-```{r}
-table(tiss@ident, tiss@meta.data$mouse.sex)
-```
 
 
 ```{r}
@@ -129,9 +126,31 @@ For the subsets, we produce subcell_ontology_classs. These will be written back 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
 ```{r}
+library(tidyverse)
+figshare_annotation = read_csv(here("00_data_ingest","00_facs_raw_data", "annotations_FACS.csv"))
+figshare_annotation = filter(figshare_annotation, tissue == tissue_of_interest)
+tiss@meta.data[, 'figshare_annotation'] <- NA
+tiss@meta.data[as.character(figshare_annotation$cell), 'figshare_annotation'] <- as.character(figshare_annotation$cell_ontology_class)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "figshare_annotation")
+```
+
+Look at clusters and previous figshare annotation
+```{r}
+table(tiss@meta.data$figshare_annotation, tiss@ident)
+```
+
+
+
+Look at clusters and sex enrichment
+```{r}
+table(tiss@ident, tiss@meta.data$mouse.sex)
+```
+
+
+```{r}
 cluster.ids <- c(0, 1, 2, 3,4,5,6)
-free_annotation <- c("male enriched", "male enriched", "female enriched", "female enriched", 'female enriched', NA, NA)
-cell_ontology_class <-c("microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","macrophage" )
+free_annotation <- c("male enriched", "female enriched", "female enriched", "male enriched", NA, NA, NA)
+cell_ontology_class <-c("microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","macrophage", "microglial cell")
 
 
 validate_cell_ontology(cell_ontology_class)
@@ -170,6 +189,4 @@ filename = here('00_data_ingest', '03_tissue_annotation_csv',
                      paste0(tissue_of_interest, "_facs_annotation.csv"))
 write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
-
-
 
