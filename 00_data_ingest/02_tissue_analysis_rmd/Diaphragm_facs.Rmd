@@ -15,8 +15,9 @@ tiss <- load_tissue_facs(tissue_of_interest)
 Visualize top genes in principal components
 
 ```{r, fig.height=8, fig.width=8}
-PCHeatmap(object = tiss, pc.use = 1:9, cells.use = 500, do.balanced = TRUE, 
-          label.columns = FALSE, num.genes = 16)
+col.use = CustomPalette(low = "blue", high = "red", mid = "white", k = 50)
+PCHeatmap(object = tiss, pc.use = 1:9, cells.use = 500, do.balanced = T, 
+          label.columns = F, col.use = col.use, num.genes = 16)
 ```
 
 Visualize top genes in principal components
@@ -35,32 +36,36 @@ The clustering is performed based on a nearest neighbors graph. Cells that have 
 We use TSNE solely to visualize the data.
 ```{r}
 used.res = 0.3
-tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
-                     resolution = used.res, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, check_duplicates = F, perplexity=30)
+perplexity = 25
 pt.size = 0.5
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+                     resolution = used.res, print.output = 0, save.SNN = T, force.recalc = T)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, check_duplicates = F, 
+                perplexity = perplexity)
 TSNEPlot(object = tiss, do.label = T, pt.size = pt.size)
 ```
 
 Check expression of genes of interest.
 ```{r, fig.height=4, fig.width=6}
-genes_to_check = c('Pecam1', 'Ptprc', 'Vcam1', 'Pdgfra')
+genes_to_check = c('Vcam1', 'Pdgfra', 'Ptprc', 'Pecam1')
 cols.use <- c("grey", "red")
 
 print (genes_to_check)
 FeaturePlot(tiss, genes_to_check, pt.size = pt.size, no.legend = FALSE, cols.use = cols.use, nCol = 2)
-VlnPlot(tiss, genes_to_check, point.size.use = 0.5, nCol = 2)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 2)
 DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
 
 ```
 
-```{r, fig.height=6, fig.width=7}
+```{r, fig.height=8, fig.width=7}
 # SC - subtypes
-genes_to_check = c('Vcam1', 'Calcr', 'Itga7', 'Pax7', 'Pax3', 'Myod1', 'Myf5', 'Cd34', 'Cd44' #, 'Myog'
+genes_to_check = c('Vcam1', 'Itga7', 'Calcr', 
+                   'Pax7', 'Pax3', 'Myod1', 'Myf5', 
+                   'Cxcr4', 'Sdc4', 'Itgb1', 'Cd34', 'Cd44' #, 'Myog'
                    )
 print (genes_to_check)
 FeaturePlot(tiss, genes_to_check, pt.size = pt.size, cols.use = cols.use, nCol = 3)
-VlnPlot(tiss, genes_to_check, point.size.use = 0.5, nCol = 3)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 3)
 DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
 ```
 
@@ -76,7 +81,7 @@ genes_to_check = c('Ptprc',
 )
 print (genes_to_check)
 FeaturePlot(tiss, genes_to_check, pt.size = pt.size, cols.use = cols.use, nCol = 3)
-VlnPlot(tiss, genes_to_check, point.size.use = 0.5, nCol = 3)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 3)
 DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
 ```
 
@@ -87,7 +92,7 @@ genes_to_check = c('Pecam1' #, 'Vegfa', 'Cd34', 'Ptprc', 'Icam1' #, 'Dysf' #'Rap
 )
 print (genes_to_check)
 FeaturePlot(tiss, genes_to_check, pt.size = pt.size, cols.use = cols.use, nCol = 1)
-VlnPlot(tiss, genes_to_check, point.size.use = 0.5, nCol = 1)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 1)
 DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
 ```
 
@@ -97,7 +102,7 @@ genes_to_check = c('Pdgfra' #'Atxn1' 'Dysf', 'Vim', 'Cspg4'
 )
 print (genes_to_check)
 FeaturePlot(tiss, genes_to_check, pt.size = pt.size, cols.use = cols.use, nCol = 1)
-VlnPlot(tiss, genes_to_check, point.size.use = 0.5, nCol = 1)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 1)
 DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
 ```
 How big are the clusters?
@@ -123,15 +128,7 @@ Display top 24 markers per cluster.
 #tiss.markers %>% group_by(cluster) %>% top_n(24, avg_diff)
 ```
 
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-genes_to_check = c('Pecam1', 'Ptprc', 'Vcam1', 'Pdgfra', 'Cd19')
-VlnPlot(tiss, genes_to_check #, pt.size = pt.size
-        )
-```
 Assigning cell type identity to clusters
-At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
-0: alpha 1: beta 2: beta 3: exocrine 4: duct 5: delta 6: gamma 7: endothelial 8: immune 9: stellate
 ```{r}
 # stash current cluster IDs
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
