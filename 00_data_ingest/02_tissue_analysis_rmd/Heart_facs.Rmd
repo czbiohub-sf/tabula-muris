@@ -120,7 +120,7 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11)
-cell_ontology_class <-
+free_annotation <-
   c(
   "fibroblast",
   "fibroblast",
@@ -133,30 +133,19 @@ cell_ontology_class <-
    "endocardial cell",
   "cardiac muscle cell",
   "leukocyte",
-  "NA"
+  "conduction cells"
   )
-cell_ontology_id <-
-  c(
-  "CL:0000057",
-  "CL:0000057",
-  "CL:0000115",
-  "CL:0000057",
-  "CL:0000738",
-  "CL:0000115",
-  "CL:0000115",
-  "CL:0000192",
-  "CL:0002350",
-  "CL:0000746",
-  "CL:0000738",
-  "NA"
-  )
+cell_ontology_class = c()
 
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
 
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+
+tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
+tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
@@ -309,12 +298,19 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 subcluster.ids <- c(0, 1, 2, 3)
-subfree_annotation <- c()
-subcell_ontology_class <-c("Myofibroblast","Myofibroblast","Myofibroblast","Smooth_Muscle_Cells")
+sub.free_annotation <-c("Myofibroblast","Myofibroblast","Myofibroblast","Smooth_Muscle_Cells")
+sub.cell_ontology_class = c()
 
-subtiss@meta.data[,'subcell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
-tiss@meta.data[subtiss@cell.names,'subcell_ontology_class'] <- as.character(subtiss@meta.data$subcell_ontology_class)
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
+subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
 
 TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subcell_ontology_class')
 ```
