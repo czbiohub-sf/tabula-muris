@@ -62,7 +62,8 @@ TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c("Mog","Mobp" ,"Mbp", "Pecam1", "Cldn5", "Ly6c1", "Aqp4", "Aldh1l1","Slc1a3", "Snap25","Eno2", "Rbfox3","Pdgfra","Susd5", "Cspg4", "Pdgfrb","Mcam", "Des", "Ascl1", "Dcx", "Dlx2")
+#genes_to_check = c("Mog","Mobp" ,"Mbp", "Pecam1", "Cldn5", "Ly6c1", "Aqp4", "Aldh1l1","Slc1a3", "Snap25","Eno2", "Rbfox3","Pdgfra","Susd5", "Cspg4", "Pdgfrb","Mcam", "Des", "Ascl1", "Dcx", "Dlx2","Gad1","Reln", "Calb1", "Slc17a7", "Neurod6", "Mab21l1")
+
 TSNEPlot(object = tiss, do.label = T)
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
@@ -106,9 +107,10 @@ oligodendrocytes- "Mog","Mobp" ,"Mbp
 endothelial- "Pecam1", "Cldn5", "Ly6c1"
 astrocytes- "Aqp4", "Aldh1l1","Slc1a3"
 OPCs- "Pdgfra","Susd5", "Cspg4"
-unknown
 pericytes- "Pdgfrb","Mcam", "Des"
-neurons- "Snap25","Eno2", "Rbfox3"
+pan-neuronal markers- "Snap25","Eno2", "Rbfox3"
+inhibitory neurons- "Gad1","Reln", "Calb1", 
+inhibitory neurons- "Slc17a7", "Neurod6", "Mab21l1"
 NPCs- "Ascl1", "Dcx", "Dlx2"
 
 ```{r}
@@ -131,21 +133,21 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-free_annotation = c(NA,NA,NA,NA,NA,NA,NA,NA,
-                    "mixed population of oligodendrocytes and other cell types",NA)
+free_annotation = c(NA,NA,NA,NA,NA,NA,"excitatory neurons and some neuronal stemm cells",NA,
+                    NA,"inhibitory neurons")
 
 cell_ontology_class <-
   c(
     "oligodendrocyte",
+     "endothelial cell",
     "astrocyte",
      "oligodendrocyte",
-  "endothelial cell",
+     "oligodendrocyte precursor cell",
   "endothelial cell",
    "neuron",
-  "oligodendrocyte precursor cell",
    "oligodendrocyte",
-  NA,
-  "brain pericyte"
+  "brain pericyte",
+   "neuron"
   )
 
 validate_cell_ontology(cell_ontology_class)
