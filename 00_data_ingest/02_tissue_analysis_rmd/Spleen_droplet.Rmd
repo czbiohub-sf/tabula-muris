@@ -1,12 +1,12 @@
 ---
- title: "Heart Droplet Notebook"
+ title: "Spleen Droplet Notebook"
  output: html_notebook
 ---
 
 Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
-tissue_of_interest = "Heart"
+tissue_of_interest = "Spleen"
 ```
 
 Load the requisite packages and some additional helper functions.
@@ -190,9 +190,9 @@ TSNEPlot(object = tiss, do.label = T)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=8, fig.width=8}
-genes_to_check = c('Fabp4','Dcn','Myh11','Tnni3','Npr3','C1qa')
+genes_to_check = c('Cd79a','Cd9','Emr1','Cr2','Cd4','Cd8a','Klrk1')
 
-FeaturePlot(tiss, genes_to_check, pt.size = 4, nCol = 2)
+FeaturePlot(tiss, genes_to_check)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -212,7 +212,7 @@ table(tiss@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 2, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers <- FindMarkers(object = tiss, ident.1 = 3, ident.2 = c(4,6), only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 
@@ -227,7 +227,7 @@ tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, t
 
 Display the top markers you computed above.
 ```{r}
-#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+tiss.markers %>% group_by(cluster) %>% top_n(10, avg_logFC)
 ```
 
 ## Assigning cell type identity to clusters
@@ -247,9 +247,20 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5)
-cell_ontology_class <- c("endothelial cell", "fibroblast", "Fb_SMC", "cardiac muscle cell", "endocardial cell", "erythrocyte")
-cell_ontology_id <- c("CL:0000115", "CL:0000057", NA, "CL:0000746", "CL:0002350", "CL:0000232")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+cell_ontology_class <- c(
+  "b cell", 
+  "b cell",
+  "marginal zone b cell",
+  "t cell",
+  't cell',
+  "Macrophage",
+  't cell',
+  "b cell",
+  'NK cell',
+  'proliferative b cell'
+  )
+cell_ontology_id <- c("CL:0000115", "CL:0000057", NA, "CL:0000746", "CL:0002350", "CL:0000232",NA,NA,NA,NA)
 
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
