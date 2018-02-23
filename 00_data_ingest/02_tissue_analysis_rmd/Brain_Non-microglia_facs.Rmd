@@ -273,14 +273,7 @@ TSNEPlot(object = subtiss, group.by='mouse.id')
 
 ```
 
-```{r}
-#astro subcluster 5 is oligodendrocytes by gene signature and is removed below
-astro_subtiss <- SubsetData(object = subtiss, ident.use = c("0","1","2","3","4"), do.center = F, do.scale = F)
-TSNEPlot(object = astro_subtiss, do.label = T)
-TSNEPlot(object = astro_subtiss, group.by='subtissue')
 
-
-```
 
 ```{r Write top 50 markers for each subcluster}
 subtiss.markers <- FindAllMarkers(object = astro_subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
@@ -328,22 +321,22 @@ For the subsets, we produce subcell_ontology_classs. These will be written back 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
 ```{r}
-subcluster.ids <- c(0, 1, 2, 3,4)
-subfree_annotation <- c()
-cell_ontology_class <-c("astrocyte of the cerebral cortex","astrocyte of the cerebral cortex","astrocyte of the cerebral cortex",
+sub.cluster.id <- c(0, 1, 2, 3,4)
+sub.free_annotation <- c(NA,NA,NA,NA,NA)
+sub.cell_ontology_class <-c("astrocyte of the cerebral cortex","astrocyte of the cerebral cortex","astrocyte of the cerebral cortex",
                    "astrocyte of the cerebral cortex","Bergmann glial cell")
 subtiss@meta.data[,'free_annotation'] <- NA
 
 validate_cell_ontology(sub.cell_ontology_class)
 sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.id, to = sub.free_annotation))
 validate_cell_ontology(sub.cell_ontology_class)
 sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.id, to = sub.free_annotation))
+subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.id, to = sub.cell_ontology_class))
+subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.id, to = sub.cell_ontology_id))
 ```
 ```
 
@@ -353,7 +346,7 @@ subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtis
 Check the numbers of cells per cell_ontology_class
 ```{r}
 table(tiss@meta.data$cell_ontology_class)
-TSNEPlot(object = astro_subtiss, do.label = T, group.by="cell_ontology_class")
+TSNEPlot(object = subtiss, do.label = T, group.by="sub.cell_ontology_class")
 ```
 
 
