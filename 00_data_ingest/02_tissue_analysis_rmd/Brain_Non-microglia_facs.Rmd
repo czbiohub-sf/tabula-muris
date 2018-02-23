@@ -201,7 +201,7 @@ We can repeat the above analysis on a subset of cells, defined using cluster IDs
 
 ```{r}
 # Subset data based on cluster id
-subtiss <- SubsetData(object = tiss, ident.use = c("1"), do.center = F, do.scale = F)
+subtiss <- SubsetData(object = tiss, ident.use = c("2"), do.center = F, do.scale = F)
 #suffix <- "neurons"
 
 # To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
@@ -244,7 +244,7 @@ PCElbowPlot(object = subtiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-sub.n.pcs = 6
+sub.n.pcs = 10
 ```
 
 
@@ -255,7 +255,7 @@ The clustering is performed based on a nearest neighbors graph. Cells that have 
 sub.res.used <- 1
 
 subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.used, print.output = 0, save.SNN = TRUE)
+    resolution = sub.res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
 ```
 
 To visualize 
@@ -299,10 +299,6 @@ DotPlot(astro_subtiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(subtiss, genes_to_check, plot.legend = T)
-```
 
 How big are the clusters?
 ```{r}
