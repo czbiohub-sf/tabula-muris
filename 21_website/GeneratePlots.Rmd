@@ -22,7 +22,7 @@ Functions for making figures for genes and for metadata.
 plotgene <- function(tiss, gene, tissue, method){
   gene_R_safe = paste0("`",gene,"`")
   FetchData(tiss, c('tSNE_1', 'tSNE_2', gene)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = gene_R_safe)) + geom_point(size = 0.5) + 
-    scale_colour_gradient(low = "black", high = "red") + coord_fixed()
+    scale_colour_gradient(low = "grey", high = "red") + coord_fixed()
   ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene, ".png")))
 }
 
