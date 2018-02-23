@@ -103,7 +103,7 @@ free_annotation <- c("natural killer cells",
                      "invading monocytes",
                      "lung stromal cells",
                      "lung stromal cells",
-                     "unknown immune",
+                     "unknown immune cells",
                      "alveolar epithelial type 2 cells",
                      "dendritic cells and interstital macrophages",
                      
