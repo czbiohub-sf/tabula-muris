@@ -1,472 +1,272 @@
 ---
-title: "Lung FACS Notebook"
+title: "Lung facs Notebook"
 output:
   html_document: default
   html_notebook: default
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
 tissue_of_interest = "Lung"
-```
-
-Load the requisite packages and some additional helper functions.
-
-```{r}
 library(here)
-library(useful)
-library(Seurat)
-library(dplyr)
-library(Matrix)
-library(ontologyIndex)
-cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
-
-validate_cell_ontology = function(cell_ontology_class){
-  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name) || is.na(x))
-  if (!all(in_cell_ontology)) {
-    message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology
-')
-    stop(message)
-  }
-}
-convert_to_cell_ontology_id = function(cell_ontology_class){
-  return(sapply(cell_ontology_class, function(x) as.vector(cell_ontology$id[cell_ontology$name == x])[1]))
-}
-
-save_dir = here('00_data_ingest', 'tissue_robj')
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+tiss <- load_tissue_facs(tissue_of_interest)
 ```
-
-
-
-```{r}
-# read the metadata to get the plates we want
-plate_metadata_filename = here('00_data_ingest', '00_facs_raw_data', 'metadata_FACS.csv')
-
-plate_metadata <- read.csv(plate_metadata_filename, sep=",", header = TRUE)
-colnames(plate_metadata)[1] <- "plate.barcode"
-plate_metadata
-```
-
-Subset the metadata on the tissue.
-
-```{r}
-tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
-tissue_plates
-```
-
-Load the read count data.
-```{r}
-#Load the gene names and set the metadata columns by opening the first file
-filename = here('00_data_ingest', '00_facs_raw_data', 'FACS', paste0(tissue_of_interest, '-counts.csv'))
-
-raw.data = read.csv(filename, sep=",", row.names=1)
-# raw.data = data.frame(row.names = rownames(raw.data))
-corner(raw.data)
-```
-Make a vector of plate barcodes for each cell
-
-```{r}
-plate.barcodes = lapply(colnames(raw.data), function(x) strsplit(strsplit(x, "_")[[1]][1], '.', fixed=TRUE)[[1]][2])
-head(plate.barcodes)
-```
-
-Use only the metadata rows corresponding to Bladder plates. Make a plate barcode dataframe to "expand" the per-plate metadata to be per-cell.
-```{r}
-barcode.df = t.data.frame(as.data.frame(plate.barcodes))
-
-rownames(barcode.df) = colnames(raw.data)
-colnames(barcode.df) = c('plate.barcode')
-head(barcode.df)
-
-rnames = row.names(barcode.df)
-meta.data <- merge(barcode.df, plate_metadata, by='plate.barcode', sort = F)
-row.names(meta.data) <- rnames
-
-# Sort cells by plate barcode because that's how the data was originally
-meta.data = meta.data[order(meta.data$plate.barcode), ]
-corner(meta.data)
-raw.data = raw.data[, rownames(meta.data)]
-corner(raw.data)
-```
-
-
-
-```{r}
-
-erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
-percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
-ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
-raw.data <- raw.data[-ercc.index,]
-
-tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, min.cells = 5, min.genes = 5)
-
-tiss <- AddMetaData(object = tiss, meta.data)
-tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
-# Change default name for sums of counts from nUMI to nReads
-colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
-```
-
-
-Calculate percent ribosomal genes.
-
-```{r}
-ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
-
-percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
-
-tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
-```
-
-A sanity check: reads vs genes.
-
-```{r}
-GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene")
-```
-
-Filter out cells with few reads and few genes.
-
-```{r}
-tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nReads"), 
-    low.thresholds = c(500, 50000), high.thresholds = c(25000, 2000000))
-```
-
-
-Normalize the data, then regress out correlation with total reads
-```{r}
-tiss <- NormalizeData(object = tiss, scale.factor = 1e6)
-tiss <- ScaleData(object = tiss)
-tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.75, x.low.cutoff = 0.75)
-```
-
-
-
-
-Run Principal Component Analysis.
-```{r}
-tiss <- RunPCA(object = tiss, pc.genes = tiss@var.genes, do.print = TRUE, pcs.print = 1:5, genes.print = 5, pcs.compute = 30)
-```
-
-```{r}
-tiss <- ProjectPCA(object = tiss, do.print = FALSE)
-```
-
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
-PCHeatmap(object = tiss, pc.use = 10:18, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCHeatmap(object = tiss, pc.use = 10:20, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
 
 ```{r}
 PCElbowPlot(object = tiss)
 ```
 
-
 ```{r}
+# Set number of principal components. 
 n.pcs = 20
-tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, resolution = 3, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
 ```
 
+```{r}
+# Set resolution 
+res.used <- 3
+
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+    resolution = res.used, print.output = 0, save.SNN = TRUE)
+```
 
 ```{r}
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, check_duplicates = F)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = tiss, do.label = T, no.axes=T, pt.size = 1)
-```
-
-Gross tissue breakdown
-```{r}
-genes_to_check = c('Pecam1', 'Epcam', 'Col1a1', 'Ptprc')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+TSNEPlot(object = tiss, do.label = T)
 ```
 
 ```{r}
-genes_to_check = c('Sftpb', 'Foxj1', 'Ager', 'Scgb1a1')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-```{r}
-genes_to_check = c('Resp18', 'Scgb3a2', 'Pdpn', 'Wnt3a')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-Seperating Seurat's mess with the epithelial cell types...
-
-```{r}
-if (!require("gplots")) {
-  install.packages("gplots", dependencies = TRUE)
-  library(gplots)
-}
-if (!require("RColorBrewer")) {
-  install.packages("RColorBrewer", dependencies = TRUE)
-  library(RColorBrewer)
-}
-
-my_palette <- colorRampPalette(rev(brewer.pal(n=10,name="RdYlBu")))(25)
-
-gg_color_hue <- function(n) {
-  hues = seq(15, 375, length = n + 1)
-  hcl(h = hues, l = 65, c = 100)[1:n]
-}
-
-heatmap.2(as.matrix(tiss@data[c('Epcam', 'Cdh1', 'Etv5', 'Pecam1', 'Ncam1', 'Ptprc', 'Sftpb', 'Sftpd', 'Ager', 'Pdpn', 'Wnt3a', 'Calca', 'Resp18', 'Scgb3a2', 'Scgb1a1', 'Foxj1', 'Krt5', 'Fcer1a', 'Cyp11a1'),WhichCells(tiss, c(4,16,22))]), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'CPM + 1'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(23)[tiss@ident[WhichCells(tiss, c(4,16,22))]])
-
-ident.tmp = as.numeric(as.character(tiss@ident))
-names(ident.tmp) = names(tiss@ident)
-
-#Club Cell Reassignment
-ident.tmp[intersect(names(which(tiss@data['Scgb1a1',WhichCells(tiss, c(4,16,22))] > 10)), names(which(tiss@data['Scgb3a2',WhichCells(tiss, c(4,16,22))] > 7)))] = 24
-
-#NE
-ident.tmp[names(which(tiss@data['Resp18',WhichCells(tiss, c(4,16,22))] > 6))] = 25
-
-#Ciliated Cells
-ident.tmp[names(which(tiss@data['Foxj1',WhichCells(tiss, c(4,16,22))] > 1))] = 26
-
-#Type I AECs
-ident.tmp[intersect(intersect(names(which(tiss@data['Wnt3a',WhichCells(tiss, c(4,16,22))] > 0)), names(which(tiss@data['Pdpn',WhichCells(tiss, c(4,16,22))] > 0))), names(which(tiss@data['Sftpb',WhichCells(tiss, c(4,16,22))] == 0)))] = 27
-
-#Type II AECs
-ident.tmp[intersect(names(which(tiss@data['Etv5',WhichCells(tiss, c(4,16,22))] > 0)), names(which(tiss@data['Sftpb',WhichCells(tiss, c(4,16,22))] > 0)))] = 28
-
-#Basal Cells
-ident.tmp[names(which(tiss@data['Krt5',WhichCells(tiss, c(4,16,22))] > 6))] = 29
-
-#Mast Cells
-ident.tmp[names(which(tiss@data['Fcer1a',WhichCells(tiss, c(4,16,22))] > 0))] = 30
-
-```
-
-
-
-```{r}
-genes_to_check = c('Cd8a', 'Cd79a', 'Klrb1c', 'Cd3e')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-```{r}
-genes_to_check = c('Slc7a10', 'Trpc6', 'Serpinf1', 'Evc', 'Evc2')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-```{r}
-genes_to_check = c('Myh11', 'Cspg4', 'Msln', 'Chad')
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-```{r}
-genes_to_check = c('Aplnr', 'Car4', 'Gja5', 'Prox1')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-```{r}
-genes_to_check = c('Apln', 'Amigo2', 'Kit', 'Car8')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-
-```{r}
-genes_to_check = c('Csf1r', 'Itgax', 'Ly6c2', 'H2-Aa')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-```{r}
-genes_to_check = c('Marco', 'Itgax', 'Mrc1', 'Gpr133')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-```{r}
-genes_to_check = c('Itgax', 'Cd24a', 'Cd68')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-
-```{r}
-genes_to_check = c('Cx3cr1', 'Cd14', 'Itgam')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-```{r}
-genes_to_check = c('Il3ra', 'Cd14', 'Cd19', 'Ccr2')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
-```
-
-Sorting out Seurat on the myeloid cells..
-```{r}
-heatmap.2(as.matrix(tiss@data[c('Epcam', 'Cdh1', 'Pecam1', 'Ncam1', 'Ptprc', 'Csf1r', 'Itgax', 'Ly6c2', 'H2-Aa', 'Mrc1', 'Itgam', 'Cx3cr1', 'Cd14'),WhichCells(tiss, c(8))]), distfun = function(x) dist(x, method = 'euclidean'), hclustfun = function(x) hclust(x, method = 'ward.D2'), symbreaks = F, symkey = F,  key.title = '', col=my_palette, trace="none", Rowv = T, Colv = T, key.xlab = expression('log'[2] ~ 'CPM + 1'), key.ylab = '', density.info = 'density', denscol = 'black', margins = c(3,6), cexRow = 0.8, ColSideColors = gg_color_hue(23)[tiss@ident[WhichCells(tiss, c(8))]])
-
-ident.tmp[intersect(names(which(tiss@data['Mrc1',WhichCells(tiss, c(8))] > 0)), names(which(tiss@data['Ly6c2',WhichCells(tiss, c(8))] == 0)))] = 31
-
-```
-
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
+# Batch and animal effects
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
 ```
 
-Find differentially expressed markers.
-```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
-    thresh.use = 0.25)
+Check expression of genes of interset.
+
+```{r, echo=FALSE, fig.height=50, fig.width=8}
+genes_to_check = c('Pecam1', 'Epcam', 'Col1a1', 'Ptprc', 'Sftpb', 'Foxj1', 'Ager', 'Scgb1a1', 'Resp18', 'Calca', 'Scgb3a2', 'Pdpn', 'Wnt3a', 'Krt5', 'Cd8a', 'Cd79a', 'Klrb1c', 'Cd3e', 'Csf1r', 'Itgax', 'Ly6c2', 'H2-Aa', 'Marco', 'Itgax', 'Mrc1', 'Itgax', 'Cd24a', 'Cd68', 'Cx3cr1', 'Cd14', 'Itgam', 'Il3ra', 'Cd14', 'Cd19', 'Ccr2', 'Cd200r3')
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 2, cols.use = c('grey', 'red'))
 ```
 
-Display top 4 markers per cluster.
-```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(4, avg_diff)
-```
+Dotplots let you see the intensity of expression and the fraction of cells expressing for each of your genes of interest.
 
-
-```{r}
+```{r, echo=FALSE, fig.height=8, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, genes_to_check)
+DotPlot(tiss, unique(genes_to_check), col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
-
+How big are the clusters?
 ```{r}
 table(tiss@ident)
 ```
 
-
+Which markers identify a specific cluster?
 ```{r}
-tiss = BuildClusterTree(tiss)
+#clust.markers <- FindMarkers(object = tiss, ident.1 = 3, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#print(x = head(x= clust.markers, n = 10))
 ```
 
-Get markers for a particular cluster
-```{r}
-cluster_markers = filter(tiss.markers, cluster == 4)$gene
-
-DotPlot(tiss, genes.plot = cluster_markers[1:10])
-```
 
 
 ## Assigning cell type identity to clusters
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-But first, "committing" to the new idents...
 ```{r}
-#Uncomment to undo this...
-#tiss@ident = old.idents
-
-#old.idents = tiss@ident
-tiss@ident = as.factor(ident.tmp)
-
-```
-
-```{r}
-# note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = tiss, do.label = T, no.axes=T, pt.size = 1)
-
-```
-
-
-```{r}
+# stash current cluster IDs
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
-cluster.ids <- 0:31
+# enumerate current cluster IDs and the labels for them
+cluster.ids <- 0:22
+free_annotation <- c("lung endothelial cells",
+                     "lung endothelial cells",
+                     "lung stromal cells",
+                     "lung endothelial cells",
+                     "lung endothelial cells",
+                     "alveolar epithelial type 1 cells, alveolar epithelial type 2 cells, club cells, and basal cells",
+                     "lung stromal cells",
+                     "invading monocytes",
+                     "dendritic cells, alveolar macrophages, and interstital macrophages",
+                     "lung stromal cells",
+                     "lung endothelial cells",
+                     "circulating monocytes",
+                     "lung endothelial cells",
+                     "b cells",
+                     "t cells",
+                     "lung stromal cells",
+                     "lung stromal cells",
+                     "lung neuroendocrine cells and unknown cells",
+                     "lung endothelial cells",
+                     "natural killer cells",
+                     "mast cells and unknown immune cells",
+                     "lung stromal cells",
+                     "multiciliated cells")
 
-free_annotation <- c(
-  "lung endothelial type 1 cell", 
-  "lung endothelial type 1 cell", 
-  "lung endothelial type 1 cell", 
-  "lung stromal type 1 cell", 
-  "unknown epithelial cell/doublet", 
-  "lung endothelial type 2 cell", 
-  "lung endothelial type 3 cell", 
-  "lung stromal type 2 cell", 
-  "invading monocyte",
-  "lung endothelial type 4 cell",
-  "lung stromal type 2 cell",
-  "circulating monocyte",
-  "dendritic cell",
-  "lung endothelial type 3 cell",
-  "b cell",
-  "t cell",
-  NA,
-  "lung stromal type 1 cell",
-  "lung stromal type 3 cell",
-  "natural killer cell",
-  "lung stromal type 4 cell",
-  "unknown immune cell",
-  "unknown epithelial cell/doublet",
-  "alveolar macrophage",
-  "club cell",
-  "neuroendocrine cell",
-  "multiciliated cell",
-  "alveolar epithelial type 1 cell",
-  "alveolar epithelial type 2 cell",
-  "basal cell",
-  "mast cell",
-  "interstitial macrophage")
+cell_ontology_class <-c("lung endothelial cell",
+                     "lung endothelial cell",
+                     "stromal cell",
+                     "lung endothelial cell",
+                     "lung endothelial cell",
+                     "epithelial cell of lung",
+                     "stromal cell",
+                     "classical monocyte",
+                     "myeloid cell",
+                     "stromal cell",
+                     "lung endothelial cell",
+                     "monocyte",
+                     "lung endothelial cell",
+                     "B cell",
+                     "T cell",
+                     "stromal cell",
+                     "stromal cell",
+                     NA,
+                     "lung endothelial cell",
+                     "natural killer cell",
+                     "leukocyte",
+                     "stromal cell",
+                     "ciliated columnar cell of tracheobronchial tree")
 
-cell_ontology_class <-c(
-  "lung endothelial cell", 
-  "lung endothelial cell", 
-  "lung endothelial cell", 
-  "stromal cell", 
-  "epithelial cell of lung", 
-  "lung endothelial cell", 
-  "lung endothelial cell", 
-  "stromal cell", 
-  "classical monocyte",
-  "lung endothelial cell",
-  "stromal cell",
-  "non-classical monocyte",
-  "dendritic cell",
-  "lung endothelial cell",
-  "B cell",
-  "T cell",
-  NA,
-  "stromal cell",
-  "stromal cell",
-  "natural killer cell",
-  "stromal cell",
-  "leukocyte",
-  "epithelial cell of lung",
-  "alveolar macrophage",
-  "Clara cell",
-  "lung neuroendocrine cell",
-  "ciliated columnar cell of tracheobronchial tree",
-  "type I pneumocyte",
-  "type II pneumocyte",
-  "respiratory basal cell",
-  "mast cell",
-  "lung macrophage")
-
-
-tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
-
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
-
-tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
 
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "free_annotation", do.label = T, no.legend = T)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class", do.label = T, no.legend = T)
+```
 
-## Checking for batch effects
+## Subcluster
+
+```{r}
+subtiss = SubsetData(tiss, ident.use = c(5,17,22))
+```
+
+```{r}
+subtiss <- subtiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE) %>% ProjectPCA(do.print = FALSE)
+```
+
+```{r}
+PCHeatmap(object = subtiss, pc.use = 1:9, cells.use = 100, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtiss)
+```
 
 
 ```{r}
-TSNEPlot(object = tiss, do.return = TRUE, do.label = T, no.legend = T, group.by = "free_annotation")
+sub.n.pcs = 10
+sub.res.use = 1
+subtiss <- subtiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+
+TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
+
 ```
 
-Print a table showing the count of cells in each identity category from each plate.
+
+```{r, echo=FALSE, fig.height=20, fig.width=8}
+
+genes_to_check = c('Pecam1', 'Epcam', 'Col1a1', 'Ptprc', 'Sftpb', 'Foxj1', 'Ager', 'Scgb1a1', 'Resp18', 'Calca', 'Scgb3a2', 'Pdpn', 'Wnt3a')
+
+FeaturePlot(subtiss, genes_to_check, pt.size = 1, nCol = 2, cols.use = c('grey', 'red'))
+
+```
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(subtiss, unique(genes_to_check), col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+Epithelial clusters (besides Type II and Ciliated, where n is sufficently high) do not align with known marker gene expression because of low numbers. Cannot subcluster further!
+
+
+## Subcluster Myeloid cells
 
 ```{r}
-table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+subtiss2 = SubsetData(tiss, ident.use = c(8, 7, 11))
 ```
+
+```{r}
+subtiss2 <- subtiss2 %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 1, x.low.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE) %>% ProjectPCA(do.print = FALSE)
+```
+
+```{r}
+PCHeatmap(object = subtiss2, pc.use = 1:9, cells.use = 100, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtiss2)
+```
+
+
+```{r}
+sub2.n.pcs = 13
+sub2.res.use = 2
+subtiss2 <- subtiss2 %>% FindClusters(reduction.type = "pca", dims.use = 1:sub2.n.pcs, 
+    resolution = sub2.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub2.n.pcs, seed.use = 10, perplexity=30)
+
+TSNEPlot(object = subtiss2, do.label = T, pt.size = 1.2, label.size = 4)
+
+```
+
+
+```{r, echo=FALSE, fig.height=25, fig.width=8}
+
+genes_to_check = c('Pecam1', 'Epcam', 'Col1a1', 'Ptprc', 'Csf1r', 'Itgax', 'Ly6c2', 'H2-Aa', 'Marco', 'Mrc1', 'Cd74', 'Fcgr3', 'Cd24a', 'Cd68', 'Cx3cr1', 'Cd14', 'Itgam', 'Spn', 'Cd19', 'Ccr2', 'Emr1')
+
+FeaturePlot(subtiss2, genes_to_check, pt.size = 1, nCol = 2, cols.use = c('grey', 'red'))
+
+```
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(subtiss, unique(genes_to_check), col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+
+```{r}
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='free_annotation')
+```
+
+Myeloid clusters (besides dendritic and two monocyte clusters, where n is sufficently high) do not align with known marker gene expression because of low numbers. Cannot subcluster further!
+
+
+# Save the Robject for later
+When you save the annotated tissue, please give it a name.
+
+```{r}
+filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+print(filename)
+save(tiss, file=filename)
+```
+
+```{r}
+# To reload a saved object
+# filename = here('00_data_ingest', '04_tissue_robj_generated', 
+#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+# load(file=filename)
+```
+
+# Export the final metadata
+
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
+
+```{r}
+head(tiss@meta.data)
+```
+
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_facs", "_annotation.csv"))
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+```
+
+# Figures for Supplement
