@@ -129,10 +129,10 @@ cell_ontology_class <-
   "leukocyte",
   "endothelial cell",
   "smooth muscle cell",
-  "endothelial cell",
+  "endocardial cell",
   "cardiac muscle cell",
   "leukocyte",
-  "endocardial cell",
+  "endothelial cell",  
   "erythrocyte"
   )
 cell_ontology_id <-
@@ -144,10 +144,10 @@ cell_ontology_id <-
   "CL:0000738",
   "CL:0000115",
   "CL:0000192",
-  "CL:0000115",
+  "CL:0002350",
   "CL:0000746",
   "CL:0000738",
-  "CL:0002350",
+  "CL:0000115",
   "CL:0000232"
   )
 
@@ -310,7 +310,7 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 ```{r}
 subcluster.ids <- c(0, 1, 2)
 subfree_annotation <- c()
-cell_ontology_class <-c("Myofibroblast","Myofibroblast", "Smooth_Muscle_Cells")
+subcell_ontology_class <-c("Myofibroblast","Myofibroblast", "Smooth_Muscle_Cells")
 
 subtiss@meta.data[,'subcell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 
@@ -340,8 +340,8 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_annotation.csv"))
 write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
 
