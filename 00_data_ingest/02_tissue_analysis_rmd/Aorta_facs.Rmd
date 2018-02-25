@@ -24,12 +24,12 @@ PCElbowPlot(object = tiss)
 
 ```{r}
 # Set number of principal components. 
-n.pcs = 13
+n.pcs = 15
 ```
 
 ```{r}
 # Set resolution 
-res.used <- 0.7
+res.used <- 1.5
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
@@ -61,7 +61,9 @@ FeaturePlot(tiss, "H2-Ab1")
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Hbb-b1','Pecam1','Cdh5','Icam1','Fabp4','Cav1','Tek','Vwf','Kdr','Esm1','Aqp7','Ehd3','Vim','Dcn','Acta2','Col1a1','Ddr2','Col3a1','Eln','Fn1','Tagln','Ptprc','H2-Aa','H2-Ab1','Cd14','Cd86','Selplg','Cd3e','Cd19','Cd68','Fap')
+genes_to_check = c('Vim','Krt5','Krt8','Ptprc','Epcam','H2-Ab1','H2-Aa','Cd34','Cdh5','Cd14','Vwf','Syk','Col1a2','Timp2','Cd74',
+                   'Laptm5','Selplg','Pecam1','Fabp4','Sox18','Icam1','Tek','Vcam1','Vegfa','Adipor1','Car3','Alas2','Acta2',
+                   'Dcn','Myocd','Tagln','Myh11','S100a4','Cd3e','Pdgfra','Kit','Gypa','Col6a3','Fap')
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
@@ -93,20 +95,25 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5)
-free_annotation <- c("fibroblast","smooth muscle cell_01","smooth muscle cell_02","B cell", "endothelial cell", "macrophage or dendritic cell")
+cluster.ids <- c(0, 1,2,3)
+free_annotation <- c("", 
+                     "endothelial cells_1",
+                     "endothelial cells_2",
+                     "fibroblasts",
+                     "antigen presenting cells",
+                     "endothelial cells_3")
 
-cell_ontology_class <-c("fibroblast","smooth muscle cell","smooth muscle cell", "B cell", "endothelial cell", "professional antigen presenting cell")
-
-tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = free_annotation)
-
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
+cell_ontology_class <-c("",
+                        "endothelial cell", 
+                        "endothelial cell",
+                        "fibroblast",
+                        "professional antigen presenting cell",
+                        "endothelial cell")
 
 stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
 
 ```{r}
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='free_annotation')
 ```
 
@@ -138,7 +145,7 @@ head(tiss@meta.data)
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                      paste0(tissue_of_interest, "_facs", "_annotation.csv"))
-write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
 
 # Figures for Supplement
