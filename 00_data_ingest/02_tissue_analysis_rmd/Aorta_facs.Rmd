@@ -96,14 +96,14 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1,2,3)
-free_annotation <- c("", 
+free_annotation <- c("red blood cells", 
                      "endothelial cells_1",
                      "endothelial cells_2",
                      "fibroblasts",
                      "antigen presenting cells",
                      "endothelial cells_3")
 
-cell_ontology_class <-c("",
+cell_ontology_class <-c("erythrocytes",
                         "endothelial cell", 
                         "endothelial cell",
                         "fibroblast",
