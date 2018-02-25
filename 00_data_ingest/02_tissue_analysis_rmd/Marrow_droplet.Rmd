@@ -189,15 +189,15 @@ TSNEPlot(object = tiss, do.label = T)
 
 Check expression of genes of interset. Found inconsistensies in gene names. Mme (Cd10), Ly6g6c, Ly6g6e, and Iga2b though present in plate data was not found here and gave an error.
 
-```{r, echo=FALSE, fig.height=75, fig.width=15}
-genes_to_check = c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Fcgr3', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr4', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Ly6d', 'Cd27', 'Cr2', 'Fcer2a', 'Cd2', 'Cd7', 'Thy1', 'Cd19', 'Ms4a1', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Vpreb1', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ptprc', 'Cd48', 'Tfrc', 'Mki67', 'Eng', 'Itga2', 'Cxcr4', 'Cd44', 'Bpgm', 'Beta-s', 'Hbb-b2')
+```{r, echo=FALSE, fig.height=120, fig.width=15}
+genes_to_check = c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Mki67', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr3', 'Cd14', 'Fcgr4', 'Mpl', 'Il3ra', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Cox6a2', 'Cd40', 'Spn', 'Ly6d', 'Irf8', 'Cd27', 'Fcer2a', 'Cd2', 'Cd7', 'Thy1', 'Cd19', 'Ms4a1', 'Cr2', 'Cd22', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Vpreb1', 'Dntt', 'Pax5', 'Rag1', 'Rag2', 'Cxcr5', 'Ccr6', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ptprc', 'Cd48', 'Tfrc', 'Eng', 'Itga2', 'Cxcr4', 'Cd44', 'Bpgm', 'Beta-s', 'Hbb-b2', 'Cpa3', 'Fcer1a', 'Mcpt8', 'Ccl3')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r, echo=FALSE, fig.height=4, fig.width=45}
+```{r, echo=FALSE, fig.height=4, fig.width=57}
 # To change the y-axis to show raw counts, add use.raw = T.
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
@@ -227,7 +227,7 @@ tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, t
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 ```
 
 ## Assigning cell type identity to clusters
@@ -250,40 +250,42 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
 cell_ontology_class <-
   c(
-  "granulocyte",
   "monocyte",
-  "hematopoietic stem cell",
-  "hematopoietic stem cell",
-  "hematopoietic stem cell",
-  "B cell",
-  "hematopoietic stem cell",
   "granulocyte",
+  "hematopoietic precursor cell",
+  "granulocytopoietic cell",
+  "granulocyte",
+  "promonocyte",
+  "proerythroblast",
+  "late pro-B cell",
   "macrophage",
   "T cell",
-  "erythrocyte",
-  "B cell",
-  "Fraction A pre-pro B cell",
-  "hematopoietic stem cell"
+  "erythroblast",
+  "immature B cell",
+  "early pro-B cell",
+  "basophil", 
+  "Fraction A pre-pro B cell"
   )
 cell_ontology_id <-
   c(
-  "CL:0000094",
   "CL:0000576",
-  "CL:0000037",
-  "CL:0000037",
-  "CL:0000037",
-  "CL:0000236",
-  "CL:0000037",
   "CL:0000094",
+  "CL:0008001",
+  "CL:0002191",
+  "CL:0000094",
+  "CL:0000559",
+  "CL:0000547",
+  "CL:0002048",
   "CL:0000235",
   "CL:0000084",
-  "CL:0000232",
-  "CL:0000236",
-  "CL:0002045",
-  "CL:0000037"
+  "CL:0000765",
+  "CL:0000816",
+  "CL:0002046",
+  "CL:0000767", 
+  "CL:0002045"
   )
 
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
