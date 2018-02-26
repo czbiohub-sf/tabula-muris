@@ -1,5 +1,5 @@
 ---
- title: "Marrow Droplet Notebook"
+ title: "Kidney Droplet Notebook"
  output: html_notebook
 ---
 
