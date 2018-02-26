@@ -219,12 +219,12 @@ VlnPlot(tiss, genes_to_check)
 
 ```{r}
 # To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, 'Asxl1')
+VlnPlot(tiss, 'Lgr5')
 ```
 
 ```{r}
 # To get plots of two genes, add use.raw = T.
-GenePlot(tiss, 'Ascl2', 'Asxl1')
+GenePlot(tiss, 'Lgr5', 'Krt20')
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
@@ -326,24 +326,3 @@ filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv',
                      paste0(tissue_of_interest, "_cell_ontology_class.csv"))
 write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
-
-
-# Subset and iterate
-We can repeat the above analysis on a subset of cells, defined using cluster IDs or some other metadata. This is a good way to drill down and find substructure.
-
-## First subset
-```{r}
-# Subset data based on cluster id
-subtiss <- SubsetData(object = tiss, ident.use = c(1,3,4), do.center = F, do.scale = F, cells.use = )
-
-# To subset data based on annotation or other metadata, you can explicitly pass cell names
-
-# anno = 'exocrine cells'
-# cells.to.use = tiss@cell.names[which(tiss@meta.data$annotation == anno)]
-# subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
-```
-
-```{r}
-DoHeatmap(object = subtiss, genes.use = c('Lgr5', 'Asxl1'), cex.col = 0)
-```
-
