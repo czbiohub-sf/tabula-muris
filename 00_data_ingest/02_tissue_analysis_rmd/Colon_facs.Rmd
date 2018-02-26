@@ -343,7 +343,3 @@ subtiss <- SubsetData(object = tiss, ident.use = c(1,3,4), do.center = F, do.sca
 # subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
 ```
 
-```{r}
-DoHeatmap(object = subtiss, genes.use = c('Lgr5', 'Asxl1'), cex.col = 0)
-```
-
