@@ -116,8 +116,8 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5)
-free_annotation <- c("endothelial cell", "fibroblast", "NA", "erythrocyte", "endocardial cell", "cardiac muscle cell")
-cell_ontology_class = c()
+free_annotation <- c("endothelial cell", "fibroblast", NA, "erythrocyte", "endocardial cell", "cardiac muscle cell")
+cell_ontology_class = c("endothelial cell", "fibroblast", NA, "erythrocyte", "endocardial cell", "cardiac muscle cell")
 
 validate_cell_ontology(cell_ontology_class)
 cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
@@ -268,8 +268,8 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 subcluster.ids <- c(0, 1, 2)
-subcell_free_annotation <- c("fibroblast", "fibroblast", "smooth muscle cell")
-subcell_ontology_class <- c("fibroblast", "fibroblast", "smooth muscle cell")
+sub.cell_free_annotation <- c("fibroblast", "fibroblast", "smooth muscle cell")
+sub.cell_ontology_class <- c("fibroblast", "fibroblast", "smooth muscle cell")
 
 validate_cell_ontology(sub.cell_ontology_class)
 sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
@@ -321,6 +321,6 @@ head(tiss@meta.data)
 
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-		  paste0(tissue_of_interest, "_droplet_annotation.csv"))
-write.csv(tiss@meta.data[,c('channel','cell_ontology_class','cell_ontology_id')], file=filename)
+                     paste0(tissue_of_interest, "_droplet_annotation.csv"))
+write.csv(FetchData(tiss, c('channel','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
