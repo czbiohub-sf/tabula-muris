@@ -1,0 +1,218 @@
+---
+title: "Lung FACS Notebook"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+
+```{r}
+tissue_of_interest = "Lung"
+library(here)
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+load_tissue_facs(tissue_of_interest)
+```
+
+Visualize top genes in principal components
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+PCHeatmap(object = tiss, pc.use = 18:30, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+```
+
+```{r}
+PCElbowPlot(object = tiss)
+```
+
+
+```{r}
+n.pcs = 20
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, resolution = 3, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
+```
+
+
+```{r}
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, check_duplicates = F)
+```
+
+```{r}
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = tiss, do.label = T, no.axes=T, pt.size = 1)
+```
+
+Check expression of genes of interset.
+```{r}
+genes_to_check = c('Pecam1', 'Epcam', 'Col1a1', 'Ptprc')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('Calca', 'Resp18', 'Ager', 'Scgb1a1')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('Foxj1', 'Cd79a', 'Klrb1c', 'Cd3e')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+```{r}
+genes_to_check = c('H2-Aa', 'Lgals3', 'Itgal', 'Csf1r', 'Msln', 'Chad')
+
+FeaturePlot(tiss, genes_to_check, pt.size = 1, cols.use = c('grey', 'red'))
+```
+
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+```
+
+Find differentially expressed markers.
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
+    thresh.use = 0.25)
+```
+
+Display top 4 markers per cluster.
+```{r}
+tiss.markers %>% group_by(cluster) %>% top_n(4, avg_diff)
+```
+
+
+```{r}
+# To change the y-axis to show raw counts, add use.raw = T.
+VlnPlot(tiss, genes_to_check)
+```
+
+
+```{r}
+table(tiss@ident)
+```
+
+
+```{r}
+tiss = BuildClusterTree(tiss)
+```
+
+Get markers for a particular cluster
+```{r}
+cluster_markers = filter(tiss.markers, cluster == 4)$gene
+
+DotPlot(tiss, genes.plot = cluster_markers[1:10])
+```
+
+
+## Assigning cell type identity to clusters
+
+At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
+
+```{r}
+# stash current cluster IDs
+tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+
+# enumerate current cluster IDs and the labels for them
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+cell_ontology_class <-
+  c(
+  "Endothelial Cell Type I",
+  "Stromal Cell Type I",
+  "Endothelial Cell Type I",
+  "Stromal Cell Type II &\n Mesothelial Cells",
+  "Endothelial Cell Type I",
+  "Aveolar Epithelial Cell Type II",
+  "Natural Killer & T Cells",
+  "Endothelial Cell Type II",
+  "Immune Cell Type I",
+  "Endothelial Cell Type III",
+  'Immune Cell Type II',
+  'Endothelial Cell Type IV',
+  'Immune Cell Type III',
+  'B cell',
+  'Stromal Cell Type III',
+  'Endothelial Cell Type II',
+  'Stromal Cell Type IV',
+  'Endothelial Cell Type IV',
+  'Ciliated, Club, Neuroendocine,\n and Alveolar Epithelial Type I Cells',
+  'Immune Cell Type IV',
+  'Stromal Cell Type V'
+  )
+
+tiss@meta.data[,'free_annotation'] <- NA
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
+
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class', no.legend = TRUE, no.axes = TRUE)
+```
+
+
+## Checking for batch effects
+
+
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
+```
+
+Print a table showing the count of cells in each identity category from each plate.
+
+```{r}
+table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+```
+
+
+## Subset and iterate
+
+We can repeat the above analysis on a subset of genes, defined using cluster IDs or expression or some other metadata. This is a good way to drill down and find substructure.
+
+```{r}
+# Get subtiss, eg, the endocrine clusters
+subtiss <- SubsetData(object = tiss, ident.use = c(0, 1, 12),
+  do.center = F, do.scale = F)
+
+subtiss <- NormalizeData(object = subtiss)
+subtiss@scale.data = subtiss@data
+#subtiss <- ScaleData(object = subtiss)
+#subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+```
+
+
+
+```{r}
+sub.n.pcs = 20
+subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
+subtiss <- RunPCA(object = subtiss, pcs.compute = sub.n.pcs)
+
+subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
+```
+
+
+```{r}
+PCElbowPlot(object = subtiss)
+```
+
+```{r}
+PCHeatmap(object = subtiss, pc.use = 1:6, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
+```
+
+
+```{r}
+subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = 1.0, print.output = 0, save.SNN = TRUE, force.recalc = T)
+```
+
+
+```{r}
+subtiss <- RunTSNE(object = subtiss, dims.use = 1:sub.n.pcs, seed.use = 10, check_duplicates = F)
+```
+
+```{r}
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = subtiss, do.label = T)
+```
+
+
+```{r}
+write.csv(tiss@meta.data[,c('cell_ontology_class')],file =paste0(save_dir,"/", "SmartSeq2_", tissue_of_interest,"_cell_ontology_class.csv"))
+```

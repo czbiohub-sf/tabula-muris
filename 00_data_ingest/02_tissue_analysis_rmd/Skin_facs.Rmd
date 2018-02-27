@@ -27,7 +27,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 5
+n.pcs = 20
 ```
 
 
@@ -56,19 +56,20 @@ TSNEPlot(object = tiss, do.label = T)
 
 Check expression of genes of interset.
 
-```{r, echo=FALSE, fig.height=10, fig.width=10}
-genes_to_check = c('Ptprc','Top2a','Krt14','Krt10','Itga6','Fgf18','Dkk3','Cd34')
+```{r, echo=FALSE, fig.height=28, fig.width=10}
+genes_to_check = c('Cd34','Itga6','Krt14','Krt15','Lgr5','Lgr6','Sox9','Lrig1','Gli1','Atxn1','Sbsn','Dkk3','Wif1','Fgf18','Sparc','Aspn','Postn','Scd1','Mgst1','Krt10','Lor','Mt4','Cd3g','Ctss','Cd207','Krt6a','Krt6b','Cdh3')
+#Plet1 missing
 FeaturePlot(tiss, genes_to_check, pt.size = 0.5, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r, echo=FALSE, fig.height=4, fig.width=6}
+```{r, echo=FALSE, fig.height=4, fig.width=12}
 # To change the y-axis to show raw counts, add use.raw = T.
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
 
-```{r, echo=FALSE, fig.height=10, fig.width=12}
+```{r, echo=FALSE, fig.height=16, fig.width=12}
 VlnPlot(tiss, genes_to_check, point.size.use = 0.5)
 ```
 
@@ -94,7 +95,7 @@ tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, t
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(20, avg_logFC)
+tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
 ```
 
 ## Assigning cell type identity to clusters
@@ -106,16 +107,15 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-free_annotation <- c("Basal IFE","Outer Bulge","Inner Bulge","Outer Bulge","Intermediate IFE","Inner Bulge","Replicating Basal IFE","Leukocyte")
-cell_ontology_class <-c ("basal cell of epidermis","keratinocyte stem cell","keratinocyte stem cell","keratinocyte stem cell", "epidermal cell","keratinocyte stem cell","stem cell of epidermis","leukocyte")
-cell_ontology_id <-c ("CL:0002187","CL:0002337","CL:0002337","CL:0002337","CL:0000362","CL:0002337","CL:1000428","CL:0000738")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
+free_annotation <- c()
+cell_ontology_class <-c("keratinocyte stem cell", "keratinocyte stem cell", "basal cell of epidermis", "epidermal cell", "epidermal cell", "keratinocyte stem cell", "stem cell of epidermis")
+cell_ontology_id <- c("CL:0002337", "CL:0002337", "CL:0002187", "CL:0000362", "CL:0000362", "CL:0002337", "CL:1000428")
 
-tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation)
+tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
-tiss@meta.data[tiss@cell.names,'free_annotation'] <- as.character(tiss@meta.data$free_annotation)
 tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
 tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
@@ -131,39 +131,10 @@ Color by metadata, like plate barcode, to check for batch effects.
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 ```
 
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
-```
-
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "subtissue")
-```
-
-# Final coloring
-
-Color by cell ontology class on the original TSNE.
-
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class")
-table(tiss@meta.data[["cell_ontology_class"]])
-```
-
 Print a table showing the count of cells in each identity category from each plate.
 
 ```{r}
 table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
-```
-
-```{r}
-table(as.character(tiss@ident), as.character(tiss@meta.data$tissue))
-```
-
-```{r}
-table(as.character(tiss@ident), as.character(tiss@meta.data$subtissue))
-```
-
-```{r}
-table(as.character(tiss@ident), as.character(tiss@meta.data$mouse.sex))
 ```
 
 # Save the Robject for later
@@ -187,7 +158,7 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your cell_ontology_classes, please export them as a simple csv.
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
 
 ```{r}
 head(tiss@meta.data)
@@ -195,7 +166,7 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
                      paste0(tissue_of_interest, "_cell_ontology_class.csv"))
 write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
@@ -203,16 +174,10 @@ write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology
 
 
 
-
-
-Figures for Supplement
-```{r, echo=FALSE, fig.height=4, fig.width=6}
-DotPlot(tiss, genes_to_check, plot.legend = T, group.by = 'free_annotation', x.lab.rot = T)
-#I'd like the order from top to bottom to be: Outer Bulge, Inner Bulge, Intermediate IFE, Basal IFE, Replicating Basal IFE, Leukocyte
-```
-
-#Not sure how to make this, but a table with free_annotation names as rows, and columns as "Telogen", "Anagen", and "Total"
+Write the cell ontology and free annotations to CSV.
 
 ```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "subtissue")
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_facs_annotation.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
 ```

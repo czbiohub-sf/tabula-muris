@@ -1,0 +1,365 @@
+---
+title: "Pancreas FACS Notebook"
+output: html_notebook
+---
+
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+
+```{r}
+tissue_of_interest = "Pancreas"
+
+library(here)
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+load_tissue_facs(tissue_of_interest)
+```
+
+Visualize top genes in principal components
+
+
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+```
+
+Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
+
+```{r}
+PCElbowPlot(object = tiss)
+```
+
+Choose the number of principal components to use.
+```{r}
+# Set number of principal components. 
+n.pcs = 12
+```
+
+
+The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale. Higher resolution will give more clusters, lower resolution will give fewer.
+
+For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
+
+```{r}
+# Set resolution 
+res.used <- 0.5
+
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+    resolution = res.used, print.output = 0, save.SNN = TRUE)
+```
+
+We use TSNE solely to visualize the data.
+
+```{r}
+# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+```
+
+```{r}
+TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
+```
+
+Check expression of genes useful for indicating cell type. For the islet cells, the mRNA for their specific secretory molecule is a strong signal.
+
+general endocrine: Chga, Isl1
+alpha: Gcg, Mafb, Arx, 
+beta: Ins1, Ins2, Mafa, Nkx6-1, Slc2a2, 
+gamma: Ppy
+delta: Sst, Hhex
+epsilon: Ghrl
+ductal: Krt19, Hnf1b
+immune: Ptprc
+stellate: Pdgfra, Pdgfrb
+endothelial: Pecam1, Cdh5, Kdr
+acinar: Amy2b, Cpa1
+other genes of interest: Cpa1, Ptf1a, Neurog3(endocrine progenitor and perhaps adult delta),Pdx1(beta and delta)
+
+```{r, echo=FALSE, fig.height=12, fig.width=12}
+genes_to_check = c('Chga', 'Isl1', 'Gcg', 'Mafb', 'Arx', 'Ins1', 'Ins2', 'Mafa', 'Nkx6-1', 'Slc2a2', 'Sst', 'Hhex', 'Pdx1', 'Ppy','Ghrl', 'Krt19', 'Hnf1b', 'Amy2b', 'Cpa1', 'Ptf1a', 'Pdgfra', 'Pdgfrb', 'Pecam1', 'Cdh5', 'Kdr','Ptprc', 'Neurog3')
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 5, cols.use = c("grey", "blue"))
+```
+
+Dotplots let you see the intensity of expression and the fraction of cells expressing for each of your genes of interest.
+The radius shows you the percent of cells in that cluster with at least one read sequenced from that gene. The color level indicates the average Z-score of gene expression for cells in that cluster, where the scaling is done over all cells in the sample.
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
+```
+
+We can also find all differentially expressed genes marking each cluster. This may take some time.
+
+```{r}
+#clust.markers0 <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
+
+Display the top markers you computed above.
+```{r}
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+```
+
+Using the markers above, we can confidentaly label many of the clusters:
+
+0: beta
+3: acinar
+4: ductal
+6: beta
+7: endothelial
+8: immune
+9: stellate
+
+The abundance of Ppy and Gcg in clusters 1 and 2 makes them seem like mixtures of alpha and gamma cells. The expression of Sst and Hhex in cluster 5
+indicates that it might contain many delta cells, but to get a finer resolution, we subset the data and recompute.
+
+We will add those cell_ontology_class to the dataset.
+
+```{r}
+tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+free_annotation <- c(
+  "beta cell", 
+   NA, 
+   NA, 
+   "acinar cell", 
+   "ductal cell", 
+   NA,
+   "beta cell", 
+   "endothelial cell", 
+   "immune cell", 
+   "stellate cell")
+
+cell_ontology_class <-c(
+  "type B pancreatic cell", 
+   NA, 
+   NA, 
+   "pancreatic acinar cell", 
+   "pancreatic ductal cell", 
+   NA, 
+   "type B pancreatic cell", 
+   "endothelial cell", 
+   "leukocyte", 
+   "pancreatic stellate cell")
+
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+
+tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+
+tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
+tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+```
+
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+```
+
+## Subcluster
+
+```{r}
+subtiss = SubsetData(tiss, ident.use = c(1,2,5))
+```
+
+```{r}
+subtiss <- subtiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+```
+
+```{r}
+PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtiss)
+```
+
+
+```{r}
+sub.n.pcs = 8
+sub.res.use = 1
+subtiss <- subtiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+
+TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
+
+```
+
+```{r, echo=FALSE, fig.height=12, fig.width=8}
+FeaturePlot(subtiss, genes_to_check, nCol = 5, cols.use = c("grey", "blue"))
+```
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(subtiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+
+```{r}
+VlnPlot(subtiss, 'Ppy')
+```
+
+```{r}
+table(subtiss@ident)
+```
+
+Discover new PP marker genes (negative or positive)
+```{r}
+gamma_markers = FindMarkers(subtiss, ident.1 = c(6,7), ident.2 = c(0,1,2,4), test.use = "roc")
+write.csv(gamma_markers, file="~/Desktop/gamma_markers_roc.csv")
+```
+
+```{r}
+gamma_markers = FindMarkers(subtiss, ident.1 = c(6,7), ident.2 = c(0,1,2,4), test.use = "wilcox")
+write.csv(gamma_markers, file="~/Desktop/gamma_markers_wilcox.csv")
+```
+New markers from this test include
+1) negative marker genes, aka. those abscent in PP cells or highly abundant in alpha cells
+'Arg1', 'Mafb', 'Gfra3', 'Slc38a5', 'Dpp10','Ang','Irx1', 
+2) positive marker genes, aka. those abscent in alpha cells or highly abundant in PP cells
+'Cd9', 'Spp1', 'Tspan8', 'Folr1','Vsig1'
+```{r}
+gamma_genes_to_check_neg = c('Arg1', 'Mafb', 'Gfra3', 'Slc38a5', 'Dpp10','Ang','Irx1')
+gamma_genes_to_check_pos = c('Cd9', 'Spp1', 'Tspan8', 'Folr1','Vsig1')
+```
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+FeaturePlot(subtiss, gamma_genes_to_check_neg, nCol = 5, cols.use = c("grey", "blue"))
+```
+
+
+```{r}
+DotPlot(subtiss, gamma_genes_to_check_neg, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+```{r, echo=FALSE, fig.height=2, fig.width=8}
+FeaturePlot(subtiss, gamma_genes_to_check_pos, nCol = 5, cols.use = c("grey", "blue"))
+```
+
+```{r}
+DotPlot(subtiss, gamma_genes_to_check_pos, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+```{r, echo=FALSE, fig.height=6, fig.width=8}
+subtiss_genes_to_check = c('Chga', 'Isl1', 'Gcg', 'Mafb', 'Arx', 'Sst', 'Hhex', 'Pdx1', 'Ppy','Ghrl','Gfra3', 'Slc38a5', 'Dpp10','Ang','Irx1','Cd9', 'Spp1', 'Tspan8', 'Folr1','Vsig1')
+FeaturePlot(subtiss, subtiss_genes_to_check, nCol = 5, cols.use = c("grey", "blue"))
+```
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(subtiss, subtiss_genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+From these genes, it appears that the clusters represent:
+
+0: alpha
+1: alpha
+2: alpha
+3: delta
+4: alpha
+5: delta
+6: gamma
+7: gamma
+
+The multitude of clusters of each type correspond mostly to individual animals/sexes.
+
+```{r}
+table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
+```
+
+```{r}
+sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
+sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
+sub.cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
+
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
+subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
+```
+
+## Add subcluster cell_ontology_class to main cell_ontology_class
+
+```{r}
+sub.cells = rownames(subtiss@meta.data)
+
+tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
+tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
+tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
+```
+
+
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+```
+
+# Final coloring
+
+Color by cell ontology class on the original TSNE.
+
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class")
+table(tiss@meta.data[["cell_ontology_class"]])
+```
+
+# Save the Robject for later
+
+```{r}
+filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+print(filename)
+save(tiss, file=filename)
+```
+
+```{r}
+# To reload a saved object
+# filename = here('00_data_ingest', '04_tissue_robj_generated', 
+#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+# load(file=filename)
+```
+
+
+# Export the final metadata
+
+So that Biohub can easily combine all your cell_ontology_class, please export them as a simple csv.
+
+```{r}
+head(tiss@meta.data)
+```
+
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_annotation.csv"))
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+```
+
+
+# Explore Ppy+ multihormonal cells (to be continued)
+
+
+```{r}
+FetchData(subtiss, c('Ppy', 'Gcg', 'Arx', 'Irx2', 'Mafb', 'mouse.id', 'plate.barcode', 'ident')) %>% 
+  ggplot(aes(x = Ppy, y = Gcg, color = plate.barcode)) + geom_point()
+# It would be interesting to fetch the ids of these cells expressing high Gcg as well as Ppy, and examine their genetic signature.
+```
+
+
+```{r}
+gammatiss <- RunPCA(subtiss, pc.genes = c('Arg1', 'Mafb', 'Gfra3', 'Slc38a5', 'Dpp10','Ang','Irx1', 'Cd9', 'Spp1', 'Tspan8', 'Folr1','Vsig1'), pcs.compute = 3)
+```
+
+```{r}
+PCHeatmap(object = gammatiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+```
+
+```{r}
+GenePlot(subtiss, 'Vsig1', 'Gfra3')
+```

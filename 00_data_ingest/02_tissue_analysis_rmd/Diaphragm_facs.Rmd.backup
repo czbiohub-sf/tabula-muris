@@ -1,0 +1,245 @@
+---
+title: "Diaphragm FACS Notebook"
+output: html_notebook
+---
+
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+
+```{r}
+tissue_of_interest = "Diaphragm"
+library(here)
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+load_tissue_facs(tissue_of_interest)
+```
+
+Visualize top genes in principal components
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+PCHeatmap(object = tiss, pc.use = 1:9, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 16)
+tiss.back <- tiss
+```
+
+```{r}
+PCElbowPlot(object = tiss)
+```
+
+
+```{r}
+n.pcs = 10
+#tiss <- tiss.back
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+    resolution = 1, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
+```
+
+
+```{r}
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, check_duplicates = F, perplexity=30)
+```
+
+```{r}
+pt.size = 0.5
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = tiss, do.label = T, pt.size = pt.size)
+```
+
+Check expression of genes of interest.
+```{r, fig.height=6, fig.width=8}
+genes_to_check = c('Pecam1', 'Ptprc', 'Vcam1', 'Pdgfra')
+
+#FeaturePlot(tiss, genes_to_check, pt.size = 0.5, cols.use=c("yellow", "black"), no.legend = FALSE)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size, no.legend = FALSE)
+```
+
+
+```{r, fig.height=6, fig.width=8}
+# SC - subtypes
+genes_to_check = c('Vcam1', 'Pax7', 'Pax3', 'Myod1', 'Myf5', 'Cd34', 'Itga7', 'Cd44', 'Calcr' #, 'Myog'
+                   )
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size)
+```
+
+```{r, fig.height=6, fig.width=8}
+# CD45 - macrophage subtypes
+genes_to_check = c('Ptprc', 
+                   'Klrb1b', 'Foxp3', # NK-cells
+                   'Cd3d', #T-cell
+                   'Cd19', 'Cd79a', 'Cd79b', #differentiated B cells
+                   'Vpreb3', #naive B-cells
+                   'Itgam', 'Fcer1g', 'C1qa' #macrophages and mast cells
+                   #, 'Ly6g6d', 
+)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size)
+```
+
+
+```{r}
+# CD31 - endothelial subtypes
+genes_to_check = c('Pecam1' #, 'Vegfa', 'Cd34', 'Ptprc', 'Icam1' #, 'Dysf' #'Rapgef3', 'Vim', 'Cspg4'
+)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size)
+```
+
+```{r}
+# FAP -  subtypes
+genes_to_check = c('Atxn1', 'Pdgfra' #'Dysf', 'Vim', 'Cspg4'
+)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size)
+```
+How big are the clusters?
+```{r}
+table(tiss@ident)
+```
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+#TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id", pt.size = pt.size)
+#table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+table(as.character(tiss@ident), as.character(tiss@meta.data$mouse.id))
+```
+
+Find differentially expressed markers.
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
+    thresh.use = 0.25)
+```
+
+Display top 24 markers per cluster.
+```{r}
+tiss.markers %>% group_by(cluster) %>% top_n(24, avg_diff)
+```
+
+
+```{r}
+# To change the y-axis to show raw counts, add use.raw = T.
+genes_to_check = c('Pecam1', 'Ptprc', 'Vcam1', 'Pdgfra', 'Cd19')
+VlnPlot(tiss, genes_to_check #, pt.size = pt.size
+        )
+```
+Assigning cell type identity to clusters
+At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
+0: alpha 1: beta 2: beta 3: exocrine 4: duct 5: delta 6: gamma 7: endothelial 8: immune 9: stellate
+```{r}
+# stash current cluster IDs
+tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+
+# enumerate current cluster IDs and the labels for them
+cluster.ids <- c(0, 1, 2, 3, 4, 5)
+free_annotation <- c()
+cell_ontology_class <-c("mesenchymal stem cell", "skeletal muscle satellite stem cell", "skeletal muscle satellite stem cell", "B cell", "endothelial cell", "macrophage")
+cell_ontology_id <- c("CL:0000134", "CL:0008011", "CL:0008011", "CL:0000236", "CL:0000115", "CL:0000235")
+
+tiss@meta.data[,'free_annotation'] <- NA
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
+tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+
+tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
+tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+
+
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
+```
+
+
+```{r}
+tiss = BuildClusterTree(tiss)
+```
+
+## TODO run after this
+
+```{r}
+# Get markers for a particular cluster
+cluster_markers = filter(tiss.markers, cluster == 3)$gene
+
+DotPlot(tiss, genes.plot = cluster_markers[1:12], plot.legend = T)
+
+```
+
+We can repeat the above analysis on a subset of genes, defined using cluster IDs or expression or some other metadata. This is a good way to drill down and find substructure.
+
+```{r}
+# To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
+anno = 'B cell'
+cells.to.use = tiss@cell.names[which(tiss@meta.data$cell_ontology_class == anno)]
+subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
+
+subtiss <- NormalizeData(object = subtiss)
+subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+
+#subtiss@scale.data = subtiss@data
+#subtiss <- ScaleData(object = subtiss)
+```
+
+
+
+```{r}
+subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
+subtiss <- RunPCA(object = subtiss, pcs.compute = 20)
+print("de2")
+subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
+```
+
+
+```{r}
+PCElbowPlot(object = subtiss)
+```
+
+```{r, fig.height=6, fig.width=8}
+PCHeatmap(object = subtiss, pc.use = 1:9, cells.use = 80, do.balanced = TRUE, label.columns = FALSE, num.genes = 18)
+```
+
+
+```{r}
+subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:5, 
+    resolution = 0.5, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
+```
+
+
+```{r}
+subtiss <- RunTSNE(object = subtiss, dims.use = 1:10, seed.use = 10, check_duplicates = F, perplexity=25)
+```
+
+```{r}
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = subtiss, do.label = T)
+```
+
+Check expression of genes of interset.
+```{r}
+genes_to_check = c('Pax7', 'Pax3', 'Myod1', 'Myf5')
+
+FeaturePlot(subtiss, genes_to_check, pt.size = 1)
+```
+
+
+```{r}
+GenePlot(subtiss, 'Pax7', 'Pax3', use.raw = T)
+```
+
+
+
+When you save the annotated tissue, please give it a name.
+
+```{r}
+filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+print(filename)
+save(tiss, file=filename)
+```
+
+
+# Export the final metadata
+
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
+
+```{r}
+head(tiss@meta.data)
+```
+
+
+```{r}
+filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
+                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
+```
+

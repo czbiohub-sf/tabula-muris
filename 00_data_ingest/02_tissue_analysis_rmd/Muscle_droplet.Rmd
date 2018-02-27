@@ -193,3 +193,11 @@ DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + c
 ```
 ```
 
+
+Write the cell ontology and free annotations to CSV.
+
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_droplet_annotation.csv"))
+write.csv(tiss@meta.data[,c('channel,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+```
