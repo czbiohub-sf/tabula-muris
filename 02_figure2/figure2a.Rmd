@@ -18,7 +18,7 @@ load(file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
 
 ```{r, fig.width = 8, fig.height = 6}
 FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
-  ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
+  ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1)  + coord_fixed() + 
    scale_color_identity(breaks = tissue_colors$color, 
                         labels = tissue_colors$tissue, 
                         guide = "legend") + 
