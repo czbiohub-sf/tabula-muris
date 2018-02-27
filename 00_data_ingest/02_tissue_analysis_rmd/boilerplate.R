@@ -113,7 +113,7 @@ load_tissue_droplet = function(tissue_of_interest){
   droplet_metadata <- read.csv(droplet_metadata_filename, sep=",", header = TRUE)
   colnames(droplet_metadata)[1] <- "channel"
 
-  tissue_metadata = filter(droplet_metadata, tissue == tissue_of_interest)[,c('channel','tissue','subtissue','mouse.sex')]
+  tissue_metadata = filter(droplet_metadata, tissue == tissue_of_interest)[,c('channel','tissue','subtissue','mouse.sex', 'mouse.id')]
   
   subfolder = paste0(tissue_of_interest, '-', tissue_metadata$channel[1])
   raw.data <- Read10X(data.dir = here('00_data_ingest', '01_droplet_raw_data', 'droplet', subfolder))
