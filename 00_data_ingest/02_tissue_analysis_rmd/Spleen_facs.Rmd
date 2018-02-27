@@ -124,7 +124,7 @@ free_annotation <-
   'B cell',
   'myeloid cell'
   )
-cell_ontology_class <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16)
+cell_ontology_class <- c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,NA,NA,NA,NA,NA,NA,NA)
 
 validate_cell_ontology(cell_ontology_class)
 cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
