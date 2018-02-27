@@ -1,5 +1,5 @@
 ---
-title: "Lung facs Notebook"
+title: "Lung FACS Notebook"
 output:
   html_document: default
   html_notebook: default
