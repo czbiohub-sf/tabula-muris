@@ -138,7 +138,7 @@ cluster.ids <- c(0, 1, 2, 3, 4)
 cell_ontology_class <- c("skeletal muscle satellite cell", "mesenchymal stem cell", 
                         "lymphocyte", "endothelial cell", "macrophage")
 free_annotation <- c("skeletal muscle satellite stem cell", "mesenchymal stem cell", 
-                        "B cell", "endothelial cell", "macrophage")
+                        "B and T cell", "endothelial cell", "macrophage")
 
 tiss@meta.data[,'cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
 tiss@meta.data[,'free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
