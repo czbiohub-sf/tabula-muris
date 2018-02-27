@@ -200,7 +200,7 @@ tabula_muris/
 | Diaphragm           | Yes              | No                          |
 | Fat                 | Yes              | No                          |
 | Heart               | Yes              | Yes                         |
-| Kidney              | Yes              | Missing                     |
+| Kidney              | Yes              | Yes                         |
 | Liver               | Yes              | Yes                         |
 | Lung                | Yes              | Yes                         |
 | Mammary             | Yes              | Yes                         |
@@ -208,7 +208,18 @@ tabula_muris/
 | Muscle              | Yes              | Yes                         |
 | Pancreas            | Yes              | No                          |
 | Skin                | Yes              | No                          |
-| Spleen              | Yes              | Missing                     |
+| Spleen              | Yes              | Yes .                       |
 | Thymus              | Yes              | Yes                         |
 | Tongue              | Yes              | Yes                         |
 | Trachea             | Yes              | Yes                         |
+
+
+## Other mouse cell atlas efforts
+
+### "Mouse Cell Atlas"
+
+From Guoji Guo's lab at Zhejiang University School of Medicine in China
+
+- [MCA Data Analysis](https://github.com/ggjlab/mca_data_analysis)
+- [scMCA](https://github.com/ggjlab/scMCA) - An simple R package for large scale data (large DGE) from Mouse Cell Atlas ,to alleviate burdens of our main Server
+
