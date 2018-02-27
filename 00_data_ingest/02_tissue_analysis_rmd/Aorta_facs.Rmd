@@ -110,7 +110,7 @@ cell_ontology_class <-c("erythrocyte",
                         "professional antigen presenting cell",
                         "endothelial cell")
 
-stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+tiss <- stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
 
 ```{r}
