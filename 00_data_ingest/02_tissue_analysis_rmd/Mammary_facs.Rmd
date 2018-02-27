@@ -11,7 +11,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Mammary"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss <- load_tissue_facs(tissue_of_interest)
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
@@ -77,7 +77,7 @@ table(tiss@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 3, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#clust.markers <- FindMarkers(object = tiss, ident.1 = 3, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 ```{r}
@@ -104,12 +104,12 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
 free_annotation <- c("basal cell", "luminal progenitor", "basal cell", "basal cell", "stromal cell",
-                     "mature luminal cell", "stromal cell", "endothelial cell", "basal cell", "Krt negative Itgb3+ Vim+")
+                     "mature luminal cell", "stromal cell", "endothelial cell", "basal cell")
 
 cell_ontology_class <-c("basal cell", "luminal epithelial cell of mammary gland", "basal cell", "basal cell", "stromal cell", "luminal epithelial cell of mammary gland", "stromal cell",
-                         "endothelial cell", "basal cell", NA)
+                         "endothelial cell", "basal cell")
 
 
 validate_cell_ontology(cell_ontology_class)
@@ -145,6 +145,8 @@ table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 
 
 ## Subcluster
+
+Additional subclustering on Basal cells did not turn up definitive subtypes.
 
 ```{r}
 subtiss = SubsetData(tiss, ident.use = c(0, 2, 3, 8))
@@ -191,13 +193,13 @@ DotPlot(subtiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) 
 ```
 
 ```{r}
-#VlnPlot(subtiss, "Procr")
 VlnPlot(subtiss, "Car3")
 ```
 
 ```{r}
 cluster_8 <- FindMarkers(subtiss, ident.1 = 8, test = "roc")
 ```
+
 ```{r}
 cluster_8
 ```
@@ -207,66 +209,10 @@ clust_8_genes = c('Lgals3', 'Ly6d', 'S100a14', "Smoc2")
 ```
 
 ```{r}
-GenePlot(subtiss, "Ly6d", "Smoc2")
-```
-
-
-```{r}
 VlnPlot(subtiss, clust_8_genes)
 ```
 
-
-From these genes, it appears that the clusters represent:
-
-0: alpha
-1: alpha
-2: alpha
-3: delta
-4: alpha
-5: delta
-6: gamma
-7: gamma
-
-The multitude of clusters of each type correspond mostly to individual animals/sexes.
-
-```{r}
-table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
-```
-
-```{r}
-# sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-# sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-# sub.cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-# 
-# validate_cell_ontology(sub.cell_ontology_class)
-# sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-# 
-# subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-# validate_cell_ontology(sub.cell_ontology_class)
-# sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-# 
-# subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-# subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-# subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
-```
-
-## Add subcluster cell_ontology_class to main cell_ontology_class
-
-```{r}
-# sub.cells = rownames(subtiss@meta.data)
-# 
-# tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
-# tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
-# tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
-```
-
-
-
-
-
-
 # Save the Robject for later
-When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
@@ -282,17 +228,11 @@ save(tiss, file=filename)
 # load(file=filename)
 ```
 
-
-
 # Export the final metadata
-
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
 
 ```{r}
 head(tiss@meta.data)
 ```
-
-
 
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
