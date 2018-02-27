@@ -89,7 +89,7 @@ cluster.ids <- c(0, 1, 2, 3, 4, 5, 6,7)
 free_annotation <- c("DN4-DP in transition_Cd69 negative thymocytes", 
                      "DN4-DP in transition_Cd69 positive thymocytes",
                      "DN4-DP in transition_Cd69 positive thymocytes",
-                     "DN4-DP in transition_Cd69 negative _rapidly dividing thymocytes",
+                     "DN4-DP in transition_Cd69 negative rapidly dividing thymocytes",
                      "DN4-DP in transition_Cd69 negative thymocytes",
                      "antigen presenting cell",
                      "DN4-DP in transition_Cd69 negative thyomcytes",
@@ -99,7 +99,7 @@ cell_ontology_class <-c("immature T cell",
                         "immature T cell",
                         "immature T cell",
                         "immature T cell",
-                        "immatur T cell",
+                        "immature T cell",
                         "professional antigen presenting cell",
                         "immature T cell",
                         "DN1 thymic pro-T cell")
@@ -107,16 +107,6 @@ cell_ontology_class <-c("immature T cell",
 tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = free_annotation)
 stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
-
-```{r}
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='free_annotation')
-ggsave ("TSNE_thymus3.pdf")
-```
-
-
-
-
-
 
 ```{r}
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='free_annotation')
@@ -140,8 +130,6 @@ save(tiss, file=filename)
 ```
 
 # Export the final metadata
-
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
 
 ```{r}
 head(tiss@meta.data)
