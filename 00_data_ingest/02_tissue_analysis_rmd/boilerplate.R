@@ -95,6 +95,7 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
   
   tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
   tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+  return(tiss)
 }
 
 process_tissue = function(tiss, scale){
