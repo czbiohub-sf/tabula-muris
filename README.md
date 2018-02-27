@@ -1,5 +1,7 @@
 # tabula-muris
 
+This is the code for annotating the tissues and cells behind the [Transcriptomic characterization of 20 organs and tissues from mouse at single cell resolution creates a Tabula Muris](https://www.biorxiv.org/content/early/2017/12/20/237446) paper.
+
 ## Installation - Python
 
 To install the Python dependencies, create a `tabula-muris-env` environment by using the `environment.yml` file provided:
