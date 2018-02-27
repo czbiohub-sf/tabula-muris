@@ -78,7 +78,7 @@ DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + c
 ```
 
 ```{r, fig.height = 8, fig.width = 8}
-VlnPlot(tiss, "Myf5", use.raw= T, nCol = 2)
+VlnPlot(tiss, "Krt14", use.raw= T, nCol = 2)
 ```
 
 
