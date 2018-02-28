@@ -3,6 +3,7 @@ library(Seurat)
 library(dplyr)
 library(Matrix)
 library(ontologyIndex)
+library(tidyverse)
 
 cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
 
@@ -94,6 +95,7 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
   
   tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
   tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+  return(tiss)
 }
 
 process_tissue = function(tiss, scale){
@@ -112,7 +114,7 @@ load_tissue_droplet = function(tissue_of_interest){
   droplet_metadata <- read.csv(droplet_metadata_filename, sep=",", header = TRUE)
   colnames(droplet_metadata)[1] <- "channel"
 
-  tissue_metadata = filter(droplet_metadata, tissue == tissue_of_interest)[,c('channel','tissue','subtissue','mouse.sex')]
+  tissue_metadata = filter(droplet_metadata, tissue == tissue_of_interest)[,c('channel','tissue','subtissue','mouse.sex', 'mouse.id')]
   
   subfolder = paste0(tissue_of_interest, '-', tissue_metadata$channel[1])
   raw.data <- Read10X(data.dir = here('00_data_ingest', '01_droplet_raw_data', 'droplet', subfolder))

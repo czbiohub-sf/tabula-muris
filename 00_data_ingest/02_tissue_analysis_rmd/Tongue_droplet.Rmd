@@ -3,7 +3,7 @@
  output: html_notebook
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
 tissue_of_interest = "Tongue"
@@ -11,6 +11,8 @@ library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 tiss = load_tissue_droplet(tissue_of_interest)
 ```
+
+Visualize top genes in principal components
 
 
 ```{r, echo=FALSE, fig.height=16, fig.width=8}
@@ -173,16 +175,7 @@ cell_ontology_class <- c(
  "Langerhans cells"
  )
 
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
-
-tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation)
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
-
-tiss@meta.data[tiss@cell.names,'free_annotation'] <- as.character(tiss@meta.data$free_annotation)
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
