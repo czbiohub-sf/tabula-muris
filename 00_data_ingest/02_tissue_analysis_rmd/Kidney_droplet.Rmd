@@ -69,7 +69,7 @@ table(tiss@meta.data[, "previous_annotation"])
 
 
 ```{r}
-table(tiss@meta.data[, "previous_annotation"], tiss@meta.data[, 'ident'])
+table(tiss@meta.data[, "previous_annotation"], tiss@ident)
 ```
 
 
@@ -126,21 +126,23 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
 cell_ontology_class <-
   c(
-  "kidney loop of Henle ascending limb epithelial cell",
-  "kidney proximal straight tubule epithelial cell",
-  "kidney proximal straight tubule epithelial cell",
-  "kidney capillary endothelial cell",
-  "kidney proximal straight tubule epithelial cell",
-  "kidney collecting duct epithelial cell",
-  "macrophage",
-  "kidney collecting duct epithelial cell",
-  "kidney collecting duct epithelial cell",
-  "mesangial cell",
-  "kidney cell",
-  "natural killer cell"
+    "kidney proximal straight tubule epithelial cell", 
+    "kidney capillary endothelial cell",
+    "kidney proximal straight tubule epithelial cell", 
+    "kidney loop of Henle ascending limb epithelial cell", 
+    "kidney proximal straight tubule epithelial cell", 
+    "kidney proximal straight tubule epithelial cell", 
+    "kidney collecting duct epithelial cell", 
+    "kidney loop of Henle ascending limb epithelial cell", 
+    "macrophage", 
+    "kidney collecting duct epithelial cell", 
+    "kidney collecting duct epithelial cell", 
+    "mesangial cell", 
+    "kidney cell", 
+    "natural killer cell"
   )
 
 free_annotation <- rep(NA, max(as.numeric(tiss@ident)))
