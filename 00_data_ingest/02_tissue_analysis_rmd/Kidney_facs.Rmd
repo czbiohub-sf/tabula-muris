@@ -237,17 +237,6 @@ tiss.markers %>% group_by(cluster) %>% top_n(10, avg_logFC)
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-0: alpha
-1: beta
-2: beta
-3: exocrine
-4: duct
-5: delta
-6: gamma
-7: endothelial
-8: immune
-9: stellate
-
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
@@ -257,7 +246,7 @@ cell_ontology_class <- c(
   "endothelial cell", 
    'kidney collecting duct intercalated cell', 
    'epithelial cell of proximal tubule', 
-   "Principal cell", 
+   "kidney collecting duct principal cell", 
    "epithelial cell of proximal tubule", 
    'endothelial cell',
    "kidney proximal straight tubule epithelial cell", 
@@ -265,7 +254,7 @@ cell_ontology_class <- c(
    "macrophage", 
    "natural killer cell")
 
-free_annotation <- c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+free_annotation <- c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 
 
 validate_cell_ontology(cell_ontology_class)
