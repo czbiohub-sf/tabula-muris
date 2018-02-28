@@ -87,37 +87,35 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- 0:28
-free_annotation <- c("natural killer cells",
-                     "lung stromal cells",
-                     "lung stromal cells",
-                     "lung stromal cells",
-                     "lung stromal cells",
-                     "alveolar macrophages",
-                     "lung stromal cells",
-                     "natural killer cells",
-                     "lung stromal cells",
-                     "lung endothelial cells",
-                     "lung stromal cells",
-                     
+free_annotation <- c(NA,
+                     NA,
+                     NA,
+                     NA,
+                     NA,
+                     NA,
+                     NA,
+                     NA,
+                     NA,
+                     NA,
+                     NA,
                      "circulating monocytes",
-                     "b cells",
-                     "t cells",
-                     "lung endothelial cells",
+                     NA,
+                     NA,
+                     NA,
                      "invading monocytes",
-                     "lung stromal cells",
-                     "lung stromal cells",
-                     "unknown immune cells",
+                     NA,
+                     NA,
+                     NA,
                      "alveolar epithelial type 2 cells",
                      "dendritic cells and interstital macrophages",
-                     
-                     "t cells",
-                     "lung endothelial cells",
+                     NA,
+                     NA,
                      "multiciliated cells",
                      "club cells, neuroendocrine cells, alveolar epithelial type 1 cells, and unknown cells",
-                     "alveolar macrophages",
-                     "unknown immune cells",
-                     "mast cells",
-                     "natural killer cells")
+                     NA,
+                     NA,
+                     NA,
+                     NA)
 
 cell_ontology_class <- c("natural killer cell",
                      "stromal cell",
@@ -130,7 +128,6 @@ cell_ontology_class <- c("natural killer cell",
                      "stromal cell",
                      "lung endothelial cell",
                      "stromal cell",
-                     
                      "non-classical monocyte",
                      "B cell",
                      "T cell",
@@ -141,7 +138,6 @@ cell_ontology_class <- c("natural killer cell",
                      "leukocyte",
                      "type II pneumocyte",
                      "myeloid cell",
-                     
                      "T cell",
                      "lung endothelial cell",
                      "ciliated columnar cell of tracheobronchial tree",
@@ -151,8 +147,13 @@ cell_ontology_class <- c("natural killer cell",
                      "mast cell",
                      "natural killer cell")
 
-stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
+
+```{r}
+data.frame(free_annotation, cell_ontology_class)
+```
+
 
 ```{r}
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "free_annotation", do.label = T, no.legend = T)
