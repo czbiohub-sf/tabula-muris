@@ -88,28 +88,28 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- 0:22
-free_annotation <- c("lung endothelial cells",
-                     "lung endothelial cells",
-                     "lung stromal cells",
-                     "lung endothelial cells",
-                     "lung endothelial cells",
+free_annotation <- c(NA,
+                     NA,
+                     NA,
+                     NA,
+                     NA,
                      "alveolar epithelial type 1 cells, alveolar epithelial type 2 cells, club cells, and basal cells",
-                     "lung stromal cells",
+                     NA,
                      "invading monocytes",
                      "dendritic cells, alveolar macrophages, and interstital macrophages",
-                     "lung stromal cells",
-                     "lung endothelial cells",
+                     NA,
+                     NA,
                      "circulating monocytes",
-                     "lung endothelial cells",
-                     "b cells",
-                     "t cells",
-                     "lung stromal cells",
-                     "lung stromal cells",
+                     NA,
+                     NA,
+                     NA,
+                     NA,
+                     NA,
                      "lung neuroendocrine cells and unknown cells",
-                     "lung endothelial cells",
-                     "natural killer cells",
+                     NA,
+                     NA,
                      "mast cells and unknown immune cells",
-                     "lung stromal cells",
+                     NA,
                      "multiciliated cells")
 
 
@@ -137,8 +137,13 @@ cell_ontology_class <-c("lung endothelial cell",
                      "stromal cell",
                      "ciliated columnar cell of tracheobronchial tree")
 
-stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+# tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
+
+```{r}
+data.frame(cell_ontology_class, free_annotation)
+```
+
 
 ```{r}
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "free_annotation", do.label = T, no.legend = T)
