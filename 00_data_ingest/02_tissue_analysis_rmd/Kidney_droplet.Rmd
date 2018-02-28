@@ -9,7 +9,7 @@ Enter the directory of the maca folder on your drive and the name of the tissue 
 tissue_of_interest = 'Kidney'
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-tiss = load_tissue_facs(tissue_of_interest)
+tiss = load_tissue_droplet(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -69,7 +69,7 @@ table(tiss@meta.data[, "previous_annotation"])
 
 
 ```{r}
-table(tiss@meta.data[, "previous_annotation"], tiss@ident)
+table(tiss@meta.data[, "previous_annotation"], tiss@meta.data[, 'ident'])
 ```
 
 
@@ -162,7 +162,7 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
 
 ```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
 ```
 
 Print a table showing the count of cells in each identity category from each plate.
