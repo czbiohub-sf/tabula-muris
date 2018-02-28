@@ -8,7 +8,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 ```{r}
 tissue_of_interest = "Tongue"
 library(here)
-source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R")l
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 tiss = load_tissue_facs(tissue_of_interest)
 ```
 
@@ -57,10 +57,9 @@ TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=16, fig.width=10}
-genes_to_check = c('Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Top2a', 'Mt2', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10','Klf4'
-, 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Fabp5', 'Krt32',  'Krt78', 'Vim', 'Hhip', 'Ptch1', 'Gli1','Dsc1', 'Dcn', 'Runx2', 'Sox2', 'Pax9')
+genes_to_check = c('Top2a', 'Cdc20', 'Mki67', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10', 'Krt4', 'Krt13', 'Krt36', 'Krt84', 'Hoxc13', 'Krt8', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'Ncam1', 'Car4')
 
-FeaturePlot(tiss, genes_to_check, pt.size = 1.2, nCol = 4)
+FeaturePlot(tiss, genes_to_check, pt.size = 1.2, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -70,6 +69,11 @@ Dotplots let you see the intensity of exppression and the fraction of cells expr
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
 
+```{r, echo=FALSE, fig.height=20, fig.width=20}
+# To change the y-axis to show raw counts, add use.raw = T.
+VlnPlot(tiss, genes_to_check)
+```
+
 How big are the clusters?
 ```{r}
 table(tiss@ident)
@@ -77,11 +81,6 @@ table(tiss@ident)
 
 ```{r}
 tiss1=BuildClusterTree(tiss)
-```
-
-```{r, echo=FALSE, fig.height=20, fig.width=20}
-# To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, genes_to_check)
 ```
 
 Which markers identify a specific cluster?
@@ -161,6 +160,16 @@ cell_ontology_class <- c(
   "keratinocyte"
 )
 
+cell_ontology_id <- c(
+  "CL:0002187",
+  "CL:0002187", 
+  "CL:0002187",
+  "CL:0000312",
+  "CL:0002187",
+  "CL:0000312",
+  "CL:0002187",
+  "CL:0000312"
+)
 
 tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation)
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
@@ -169,6 +178,14 @@ tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cl
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 
 ```
+
+## Supplementary Figures 
+
+Fig. suppTongue1. tSNE based on free annotation
+
+Fig. suppTongue2. Expression of genes used for annotation of the clusters. Feature plot from both platforms on: Top2a, Cdc20, Mki67, Krt15, Krt5, Krt14, Sbsn, Krt10, Krt4, Krt13, Krt36, Krt84, Hoxc13
+
+Fig. suppTongue3.  Expression of genes known to be expressed in taste receptor cells.  Violin plot from both platforms on: Krt8, Tas1r1, Tas1r2, Tas1r3, Ncam1, Car4
 
 
 ## Checking for batch effects

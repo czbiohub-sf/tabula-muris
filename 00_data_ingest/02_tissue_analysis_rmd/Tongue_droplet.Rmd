@@ -55,9 +55,8 @@ TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=16, fig.width=10}
-genes_to_check = c('Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Top2a', 'Mt2', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10','Klf4'
-, 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Fabp5', 'Krt32',  'Krt78', 'Vim', 'Hhip', 'Ptch1', 'Gli1','Dsc1', 'Dcn', 'Runx2', 'Sox2', 'Pax9')
-FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 4)
+genes_to_check = c('Top2a', 'Cdc20', 'Mki67', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10', 'Krt4', 'Krt13', 'Krt36', 'Krt84', 'Hoxc13', 'Krt8', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'Ncam1', 'Car4')
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -197,9 +196,17 @@ tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.dat
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
+## Supplementary Figures 
+
+Fig. suppTongue1. tSNE based on free annotation
+
+Fig. suppTongue2. Expression of genes used for annotation of the clusters. Feature plot from both platforms on: Top2a, Cdc20, Mki67, Krt15, Krt5, Krt14, Sbsn, Krt10, Krt4, Krt13, Krt36, Krt84, Hoxc13
+
+Fig. suppTongue3.  Expression of genes known to be expressed in taste receptor cells.  Violin plot from both platforms on: Krt8, Tas1r1, Tas1r2, Tas1r3, Ncam1, Car4
+
+
 
 ## Checking for batch effects
-
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
