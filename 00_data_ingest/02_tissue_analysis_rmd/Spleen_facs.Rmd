@@ -37,7 +37,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 2.5
+res.used <- .5
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
@@ -53,6 +53,26 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=20)
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = tiss, do.label = T)
 ```
+
+Compare to previous annotations
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_facs_annotation.csv"))
+previous_annotation = read_csv(filename)
+tiss@meta.data[, 'previous_annotation'] <- "NA"
+tiss@meta.data[as.character(previous_annotation$X1), 'previous_annotation'] <- as.character(previous_annotation$cell_ontology_class)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
+```
+
+```{r}
+table(tiss@meta.data[, "previous_annotation"])
+```
+
+
+```{r}
+table(tiss@meta.data[, "previous_annotation"], tiss@ident)
+```
+
 
 Check expression of genes of interset.
 
@@ -75,25 +95,25 @@ How big are the clusters?
 table(tiss@ident)
 ```
 
-Which markers identify a specific cluster?
+<!-- Which markers identify a specific cluster? -->
 
-```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 3, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
+<!-- ```{r} -->
+<!-- clust.markers <- FindMarkers(object = tiss, ident.1 = 3, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
+<!-- ``` -->
 
-```{r}
-print(x = head(x= clust.markers, n = 20, avg_diff))
-```
+<!-- ```{r} -->
+<!-- print(x = head(x= clust.markers, n = 20, avg_diff)) -->
+<!-- ``` -->
 
-You can also compute all markers for all clusters at once. This may take some time.
-```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
+<!-- You can also compute all markers for all clusters at once. This may take some time. -->
+<!-- ```{r} -->
+<!-- tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
+<!-- ``` -->
 
-Display the top markers you computed above.
-```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(10, avg_logFC)
-```
+<!-- Display the top markers you computed above. -->
+<!-- ```{r} -->
+<!-- tiss.markers %>% group_by(cluster) %>% top_n(10, avg_logFC) -->
+<!-- ``` -->
 
 ## Assigning cell type identity to clusters
 
@@ -104,27 +124,17 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16)
+cluster.ids <- 0:5
 cell_ontology_class <-
   c(
   "B cell",
-  "B cell",
-  "B cell",
-  "T cell",
   "T cell",
   "B cell",
-  "B cell" ,
   "B cell",
   "B cell",
-  "B cell",
-  "B cell",
-  'T cell',
-  'B cell',
-  'macrophage',
-  'B cell',
-  'B cell',
-  'myeloid cell'
+  "macrophage"
   )
+free_annotation = c(NA, NA, NA, NA, NA, NA)
 
 validate_cell_ontology(cell_ontology_class)
 cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
