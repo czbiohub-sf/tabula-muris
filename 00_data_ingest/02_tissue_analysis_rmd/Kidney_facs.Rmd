@@ -5,7 +5,7 @@ output:
   html_notebook: default
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
 tissue_of_interest = "Kidney"
@@ -29,7 +29,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 7
+n.pcs = 14
 ```
 
 
@@ -128,18 +128,18 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 
 cell_ontology_class <- c(
-  "endothelial cell", 
-   'kidney collecting duct intercalated cell', 
-   'epithelial cell of proximal tubule', 
-   "kidney collecting duct principal cell", 
-   "epithelial cell of proximal tubule", 
-   'endothelial cell',
-   "kidney proximal straight tubule epithelial cell", 
-   "kidney proximal straight tubule epithelial cell", 
-   "macrophage", 
+  "endothelial cell",
+  'kidney collecting duct epithelial cell',
+  "epithelial cell of proximal tubule",
+  "epithelial cell of proximal tubule",
+  'kidney collecting duct epithelial cell',
+  "endothelial cell",
+  "epithelial cell of proximal tubule",
+  "epithelial cell of proximal tubule",
+  "macrophage", 
    "natural killer cell")
 
-free_annotation <- c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+free_annotation <- cell_ontology_class
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
@@ -163,131 +163,12 @@ table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 
 
 
-
-# Subset and iterate
-
-We can repeat the above analysis on a subset of cells, defined using cluster IDs or some other metadata. This is a good way to drill down and find substructure.
-
-## First subset
-
-```{r}
-# Subset data based on cluster id
-subtiss <- SubsetData(object = tiss, ident.use = c(6,4,9,2), do.center = F, do.scale = F, cells.use = )
-
-# To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
-
-# anno = 'exocrine cells'
-# cells.to.use = tiss@cell.names[which(tiss@meta.data$cell_ontology_class == anno)]
-# subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
-
-```
-
-```{r}
-subtiss <- NormalizeData(object = subtiss)
-subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
-```
-
-```{r}
-subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.8)
-subtiss <- RunPCA(object = subtiss, pcs.compute = 20)
-subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
-```
-
-
-Run Principal Component Analysis.
-```{r}
-subtiss <- RunPCA(object = subtiss, do.print = FALSE)
-subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
-```
-
-```{r}
-# If this fails for your subset, it may be that cells.use is more cells than you have left! Try reducing it.
-PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 290, do.balanced = TRUE, label.columns = FALSE, num.genes = 3)
-```
-
-Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
-
-```{r}
-PCElbowPlot(object = subtiss)
-```
-
-Choose the number of principal components to use.
-```{r}
-# Set number of principal components. 
-sub.n.pcs = 10
-```
-
-
-The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
-
-```{r}
-# Set resolution 
-sub.res.used <- 1
-
-subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.used, print.output = 0, save.SNN = TRUE)
-```
-
-To visualize 
-```{r}
-# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-subtiss <- RunTSNE(object = subtiss, dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=10)
-```
-
-```{r}
-# note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = subtiss, do.label = T)
-```
-
-```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(3)
-```
-
-Check expression of genes of interset.
-```{r}
-genes_to_check = c('Lgr5','Fabp5','Marcks','Zfp830','Slc6a8')
-
-FeaturePlot(subtiss, genes_to_check, pt.size = 1)
-```
-
-Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(subtiss, genes_to_check, plot.legend = T)
-```
-
-How big are the clusters?
-```{r}
-table(subtiss@ident)
-```
-
-## Checking for batch effects
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
-TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
-```
-
-Print a table showing the count of cells in each identity category from each plate.
-
-```{r}
-table(as.character(subtiss@ident), as.character(subtiss@meta.data$plate.barcode))
-```
-
-
-
-
 # Save the Robject for later
 When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -308,7 +189,6 @@ So that Biohub can easily combine all your cell_ontology_classs, please export t
 ```{r}
 head(tiss@meta.data)
 ```
-
 
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
