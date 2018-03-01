@@ -148,7 +148,7 @@ cell_ontology_class  <-
    "endocardial cell",
   "cardiac muscle cell",
   "leukocyte",
-  NA
+  "cardiac neuron"
   )
 
 validate_cell_ontology(cell_ontology_class)
