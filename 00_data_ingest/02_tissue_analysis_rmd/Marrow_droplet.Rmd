@@ -136,27 +136,26 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
 cell_ontology_class <-
   c(
   "monocyte",
   "granulocyte",
-  "hematopoietic precursor cell",
+  NA,
   "granulocytopoietic cell",
+  "hematopoietic precursor cell",
   "granulocyte",
-  "promonocyte",
-  "proerythroblast",
   "late pro-B cell",
+  "proerythroblast",
   "macrophage",
   "T cell",
   "erythroblast",
-  "immature B cell",
+  NA,
   "early pro-B cell",
-  "basophil", 
-  "Fraction A pre-pro B cell"
+  "basophil"
   )
 
-free_annotation = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+free_annotation = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
