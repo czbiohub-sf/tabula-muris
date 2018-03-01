@@ -138,6 +138,7 @@ VlnPlot(tiss, features.plot = "Cck")
 ```
 
 
+
 Which markers identify a specific cluster?
 
 ```{r}
@@ -180,7 +181,7 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
-free_annotation = c("mesenchymal 2","mesenchymal 1","mesenchymal 3","NA","NA","NA","NA")
+free_annotation = c("mesenchymal 3","mesenchymal 1","mesenchymal 2","NA","NA","NA","NA")
 cell_ontology_class <- c("mesenchymal cell","mesenchymal cell","mesenchymal cell","blood cell","endothelial cell","epithelial cell","neuroendocrine cell")
 validate_cell_ontology(cell_ontology_class)
 
@@ -292,7 +293,7 @@ PCElbowPlot(object = subtiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-sub.n.pcs = 6
+sub.n.pcs = 2
 ```
 
 
@@ -300,7 +301,7 @@ The clustering is performed based on a nearest neighbors graph. Cells that have 
 
 ```{r}
 # Set resolution 
-sub.res.used <- .1
+sub.res.used <- .2
 
 subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.used, force.recalc = TRUE ,print.output = 0, save.SNN = TRUE)
@@ -367,10 +368,10 @@ For the subsets, we produce subcell_ontology_classs. These will be written back 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
 ```{r}
-subcluster.ids <- c(0, 1, 2, 3)
-subcell_ontology_class <- c("basal","secretory", "epithelial - other","ciliated")
-subcell_ontology_id <- c("CL:0000066","CL:0000066", "CL:0000066", 
-                   "CL:1000348")
+subcluster.ids <- c(0, 1, 2, 3, 4)
+subcell_ontology_class <- c("basal", "epithelial - other", "secretory", "epithelial - other","ciliated")
+subcell_ontology_id <- c("CL:1000348","CL:0000066", "CL_1000272", "CL:0000066", 
+                   "CL:0002145")
 
 subtiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
 subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_id)

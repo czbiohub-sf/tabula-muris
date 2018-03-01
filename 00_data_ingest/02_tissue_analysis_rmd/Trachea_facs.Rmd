@@ -32,7 +32,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 6
+n.pcs = 5
 ```
 
 
@@ -51,7 +51,7 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=15)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```
 
 ```{r}
@@ -62,7 +62,7 @@ TSNEPlot(object = tiss, do.label = T)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1a1', 'Col8a1', 'Foxj1', 'Pecam1', 'Ptprc')
+genes_to_check = c('Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1a1', 'Col8a1', 'Foxj1', 'Pecam1', 'Ptprc','Cck')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 
@@ -136,17 +136,22 @@ VlnPlot(tiss, features.plot = "Foxj1")
 VlnPlot(tiss, features.plot = "Scgb1a1")
 #TRACHEA SUPP FIGURE 4
 ```
+```{r}
+VlnPlot(tiss, features.plot = "Cck")
+#TRACHEA SUPP FIGURE 4
+```
+
 
 
 
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers <- FindMarkers(object = tiss, ident.1 = 6, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 ```{r}
-print(x = head(x= clust.markers, n = 10))
+print(x = head(x= clust.markers, n = 50))
 ```
 
 You can also compute all markers for all clusters at once. This may take some time.
@@ -170,8 +175,8 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-free_annotation = c("mesenchymal 1","NA","NA","mesenchymal 2","mesenchymal 3","NA","NA","NA")
-cell_ontology_class <- c("mesenchymal cell","epithelial cell","blood cell","mesenchymal cell","mesenchymal cell","endothelial cell","blood cell","epithelial cell")
+free_annotation = c("mesenchymal 1","NA","NA","mesenchymal 3","mesenchymal 2","NA","putative neuroendocrine cell","NA")
+cell_ontology_class <- c("mesenchymal cell","epithelial cell","blood cell","mesenchymal cell","mesenchymal cell","endothelial cell","neuroendocrine cell","blood cell")
 validate_cell_ontology(cell_ontology_class)
 
 cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
@@ -260,7 +265,7 @@ subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
 
 ```{r}
 # If this fails for your subset, it may be that cells.use is more cells than you have left! Try reducing it.
-PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 200, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
+PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 313, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
 ```
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
@@ -348,8 +353,8 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 subcluster.ids <- c(0, 1, 2)
-subcell_ontology_class <- c("basal","secretory", "epithelial - other")
-validate_cell_ontology(subcell_ontology_class)
+subcell_ontology_class <- c("epithelial - other","secretory", "basal")
+#validate_cell_ontology(subcell_ontology_class)
 
 subcell_ontology_id = convert_to_cell_ontology_id(subcell_ontology_class)
 
@@ -360,7 +365,7 @@ tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss
 tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
 
 TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
-#TRACHEA SUPP FIGURE 6 -- PLEASE CHECK subcell_ontology_id???
+#TRACHEA SUPP FIGURE 6
 ```
 
 
