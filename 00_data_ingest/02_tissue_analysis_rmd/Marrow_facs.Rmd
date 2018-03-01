@@ -768,7 +768,7 @@ TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
 Color by cell ontology class on the original TSNE.
 
 ```{r}
-TSNEPlot(object = subtiss, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = subtiss, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
 ```
 
 # Save the Robject for later
@@ -923,7 +923,7 @@ TSNEPlot(object = subsubtiss, do.return = TRUE, group.by = "plate.barcode")
 Color by cell ontology class on the original TSNE.
 
 ```{r}
-TSNEPlot(object = subsubtiss, do.return = TRUE, group.by = "cell_ontology_class")
+TSNEPlot(object = subsubtiss, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
 ```
 
 # Save the Robject for later
