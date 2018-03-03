@@ -111,27 +111,27 @@ table(tiss@ident)
 ```
 
 
-<!-- Which markers identify a specific cluster? -->
+Which markers identify a specific cluster?
 
-<!-- ```{r} -->
-<!-- clust.markers <- FindMarkers(object = tiss, ident.1 = 2, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
-<!-- ``` -->
-
-
-<!-- ```{r} -->
-<!-- print(x = head(x= clust.markers, n = 10)) -->
-<!-- ``` -->
-
-<!-- You can also compute all markers for all clusters at once. This may take some time. -->
-<!-- ```{r} -->
-<!-- tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
-<!-- ``` -->
+```{r}
+clust.markers <- FindMarkers(object = tiss, ident.1 = 2, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
 
 
-<!-- Display the top markers you computed above. -->
-<!-- ```{r} -->
-<!-- tiss.markers %>% group_by(cluster) %>% top_n(20, avg_logFC) -->
-<!-- ``` -->
+```{r}
+print(x = head(x= clust.markers, n = 10))
+```
+
+You can also compute all markers for all clusters at once. This may take some time.
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
+
+
+Display the top markers you computed above.
+```{r}
+tiss.markers %>% group_by(cluster) %>% top_n(20, avg_logFC)
+```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
