@@ -181,35 +181,6 @@ subtiss <- subtiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.p
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=20)
 
 TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
-
-```
-
-```{r, echo=FALSE}
-FeaturePlot(subtiss, c("Car3"))
-```
-
-```{r, echo=FALSE, fig.height=8, fig.width=10}
-DotPlot(subtiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
-```
-
-```{r}
-VlnPlot(subtiss, "Car3")
-```
-
-```{r}
-cluster_8 <- FindMarkers(subtiss, ident.1 = 8, test = "roc")
-```
-
-```{r}
-cluster_8
-```
-
-```{r}
-clust_8_genes = c('Lgals3', 'Ly6d', 'S100a14', "Smoc2")
-```
-
-```{r}
-VlnPlot(subtiss, clust_8_genes)
 ```
 
 # Save the Robject for later
