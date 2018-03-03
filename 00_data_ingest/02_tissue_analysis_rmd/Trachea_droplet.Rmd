@@ -369,18 +369,18 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 subcluster.ids <- c(0, 1, 2, 3, 4)
-subcell_ontology_class <- c("basal", "epithelial - other", "secretory", "epithelial - other","ciliated")
-subcell_ontology_id <- c("CL:1000348","CL:0000066", "CL_1000272", "CL:0000066", 
-                   "CL:0002145")
+sub.cell_ontology_class <- c("basal cell", "epithelial cell", "secretory cell", "epithelial cell","ciliated cell")
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
-subtiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
-subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_id)
+subtiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = sub.cell_ontology_class)
+subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = sub.cell_ontology_id)
 
 tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss@meta.data$cell_ontology_class)
 tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
 
 TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
-#TRACHEA SUPP FIGURE 10 -- PLEASE CHECK subcell_ontology_id???
+#TRACHEA SUPP FIGURE 10
 ```
 
 
