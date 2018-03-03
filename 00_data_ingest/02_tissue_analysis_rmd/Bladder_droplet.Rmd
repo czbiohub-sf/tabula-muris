@@ -59,21 +59,30 @@ TSNEPlot(object = tiss, do.label = T)
 Compare to previous annotations
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_droplet_annotation.csv"))
+                     paste0(tissue_of_interest, "_droplet_annotation.csv.backup"))
 previous_annotation = read_csv(filename)
-tiss@meta.data[, 'previous_annotation'] <- "NA"
-tiss@meta.data[as.character(previous_annotation$X1), 'previous_annotation'] <- as.character(previous_annotation$cell_ontology_class)
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
+tiss@meta.data[, 'previous_cell_ontology_class'] <- "NA"
+tiss@meta.data[as.character(previous_annotation$X1), 'previous_cell_ontology_class'] <- as.character(previous_annotation$cell_ontology_class)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
+
+tiss@meta.data[, 'previous_free_annotation'] <- "NA"
+tiss@meta.data[as.character(previous_annotation$X1), 'previous_free_annotation'] <- as.character(previous_annotation$free_annotation)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_free_annotation")
 ```
+
+
 ```{r}
-table(tiss@meta.data[, "previous_annotation"])
+table(tiss@meta.data[, "previous_cell_ontology_class"])
 ```
 
 
 ```{r}
-table(tiss@meta.data[, "previous_annotation"], tiss@ident)
+table(tiss@meta.data[, "previous_cell_ontology_class"], tiss@ident)
 ```
 
+```{r}
+table(tiss@meta.data[, "previous_free_annotation"], tiss@ident)
+```
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
@@ -162,13 +171,21 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
 free_annotation <- c("Bladder mesenchymal cell", 
-                     NA,
-                     
-                     
-                     "Bladder mesenchymal cell", "Basal bladder epithelial cell", "Luminal bladder epithelial cell", "Luminal bladder epithelial cell", "Bladder mesenchymal cell", "Monocyte/Macrophage", "Endothelial cell")
+                     "Basal bladder epithelial cell",
+                     "Bladder mesenchymal cell",
+                     "Luminal bladder epithelial cell",
+                     "Luminal bladder epithelial cell",
+                     "Bladder mesenchymal cell",
+                     "Monocyte/Macrophage",
+                     "endothelial cell")
+
 
 cell_ontology_class <- c("bladder cell", 
                          "bladder urothelial cell",
+                         "bladder cell",
+                         "bladder urothelial cell",
+                         "bladder urothelial cell",
+                         "bladder cell",
                          "leukocyte",
                          "endothelial cell")
 
