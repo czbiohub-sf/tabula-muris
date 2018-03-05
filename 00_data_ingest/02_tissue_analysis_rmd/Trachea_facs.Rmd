@@ -170,7 +170,7 @@ When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -178,7 +178,7 @@ save(tiss, file=filename)
 ```{r}
 # To reload a saved object
 # filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
 
@@ -205,7 +205,8 @@ write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
+
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                     paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
 ```
