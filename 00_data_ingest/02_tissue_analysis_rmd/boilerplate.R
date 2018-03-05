@@ -98,6 +98,20 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
   return(tiss)
 }
 
+stash_annotations_subtiss = function(tiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class, subtiss){
+  validate_cell_ontology(sub.cell_ontology_class)
+  sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+
+  subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+  subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
+  subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
+
+  tiss@meta.data[subtiss@cell.names,'free_annotation'] <- as.character(subtiss@meta.data$free_annotation)
+  tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss@meta.data$cell_ontology_class)
+  tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
+  return(tiss, subtiss)
+}
+
 process_tissue = function(tiss, scale){
   tiss <- NormalizeData(object = tiss, scale.factor = scale)
   tiss <- ScaleData(object = tiss)
