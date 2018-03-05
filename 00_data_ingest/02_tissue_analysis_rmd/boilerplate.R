@@ -98,18 +98,12 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
   return(tiss)
 }
 
-stash_annotations_subtiss = function(tiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class, subtiss){
-  validate_cell_ontology(sub.cell_ontology_class)
-  sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
-  subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-  subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-  subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
-
+stash_subtiss_in_tiss = function(tiss, subtiss){
   tiss@meta.data[subtiss@cell.names,'free_annotation'] <- as.character(subtiss@meta.data$free_annotation)
   tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss@meta.data$cell_ontology_class)
   tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
-  return(tiss, subtiss)
+  return(tiss)
 }
 
 process_tissue = function(tiss, scale){
