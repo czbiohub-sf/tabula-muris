@@ -12,8 +12,8 @@ library(Seurat)
 Load the processed and annotated data.
 
 ```{r}
-#load(file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
-#load(file=here("00_data_ingest", "global_robj", "droplet_all.Robj"))
+#load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
+#load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
 ```
 
 Gather and merge per-cell metadata from FACS and droplet.
@@ -24,7 +24,7 @@ df_FACS['method'] <- 'FACS'
 df_FACS <- rename(df_FACS, run = plate.barcode)
 df_FACS <- rename(df_FACS, nMolecules = nReads)
 
-df_droplet = as_tibble(tiss_droplets@meta.data[c('tissue', 'percent.ribo', 'nGene','channel', 'percent.Rn45s', 'nUMI')])
+df_droplet = as_tibble(tiss_droplet@meta.data[c('tissue', 'percent.ribo', 'nGene','channel', 'percent.Rn45s', 'nUMI')])
 df_droplet <- rownames_to_column(df_droplet, "cell")
 df_droplet <- rename(df_droplet, nMolecules = nUMI)
 

@@ -3,160 +3,16 @@
  output: html_notebook
 ---
 
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+
 ```{r}
 tissue_of_interest = "Liver"
-```
-
-Load the requisite packages and some additional helper functions.
-
-```{r}
 library(here)
-library(useful)
-library(Seurat)
-library(dplyr)
-library(Matrix)
-library(ontologyIndex)
-cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
-
-validate_cell_ontology = function(cell_ontology_class){
-  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name) || is.na(x))
-  if (!all(in_cell_ontology)) {
-    message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology
-')
-    stop(message)
-  }
-}
-convert_to_cell_ontology_id = function(cell_ontology_class){
-  return(sapply(cell_ontology_class, function(x) as.vector(cell_ontology$id[cell_ontology$name == x])[1]))
-}
-save_dir = here('00_data_ingest', '04_tissue_robj_generated')
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+load_tissue_droplet(tissue_of_interest)
 ```
 
-
-
-```{r}
-# read the metadata to get the plates we want
-droplet_metadata_filename = here('00_data_ingest', '01_droplet_raw_data', 'metadata_droplet.csv')
-
-droplet_metadata <- read.csv(droplet_metadata_filename, sep=",", header = TRUE)
-colnames(droplet_metadata)[1] <- "channel"
-droplet_metadata
-```
-
-Subset the metadata on the tissue.
-
-```{r}
-tissue_metadata = filter(droplet_metadata, tissue == tissue_of_interest)[,c('channel','tissue','subtissue','mouse.sex')]
-tissue_metadata
-```
-
-
-Use only the metadata rows corresponding to Bladder plates. Make a plate barcode dataframe to "expand" the per-plate metadata to be per-cell.
-
-```{r}
-# Load the gene names and set the metadata columns by opening the first file
-
-subfolder = paste0(tissue_of_interest, '-', tissue_metadata$channel[1])
-raw.data <- Read10X(data.dir = here('00_data_ingest', '01_droplet_raw_data', 'droplet', subfolder))
-colnames(raw.data) <- lapply(colnames(raw.data), function(x) paste0(tissue_metadata$channel[1], '_', x))
-meta.data = data.frame(row.names = colnames(raw.data))
-meta.data['channel'] = tissue_metadata$channel[1]
-
-if (length(tissue_metadata$channel) > 1){
-  # Some tissues, like Thymus and Heart had only one channel
-  for(i in 2:nrow(tissue_metadata)){
-    subfolder = paste0(tissue_of_interest, '-', tissue_metadata$channel[i])
-    new.data <- Read10X(data.dir = here('00_data_ingest', '01_droplet_raw_data', 'droplet', subfolder))
-    colnames(new.data) <- lapply(colnames(new.data), function(x) paste0(tissue_metadata$channel[i], '_', x))
-    
-    new.metadata = data.frame(row.names = colnames(new.data))
-    new.metadata['channel'] = tissue_metadata$channel[i]
-    
-    raw.data = cbind(raw.data, new.data)
-    meta.data = rbind(meta.data, new.metadata)
-  }
-}
-
-rnames = row.names(meta.data)
-meta.data <- merge(meta.data, tissue_metadata, sort = F)
-row.names(meta.data) <- rnames
-dim(raw.data)
-corner(raw.data)
-head(meta.data)
-```
-
-Order the cells alphabetically to ensure consistency.
-
-```{r}
-ordered_cell_names = order(colnames(raw.data))
-raw.data = raw.data[,ordered_cell_names]
-meta.data = meta.data[ordered_cell_names,]
-
-corner(raw.data)
-head(meta.data)
-```
-
-
-
-Process the raw data and load it into the Seurat object.
-
-```{r}
-# Find ERCC's, compute the percent ERCC, and drop them from the raw data.
-erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
-percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
-ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
-raw.data <- raw.data[-ercc.index,]
-
-# Create the Seurat object with all the data
-tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, 
-                    min.cells = 1, min.genes = 0)
-# Continue from here onwards ! 
-tiss <- AddMetaData(object = tiss, meta.data)
-tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
-# Change default name for sums of counts from nUMI to nReads
-# colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
-
-# Create metadata columns for cell_ontology_classs and subcell_ontology_classs
-tiss@meta.data[,'cell_ontology_class'] <- NA
-tiss@meta.data[,'free_annotation'] <- NA
-```
-
-
-Calculate percent ribosomal genes.
-
-```{r}
-ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
-percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
-tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
-```
-
-A sanity check: genes per cell vs reads per cell.
-
-```{r}
-GenePlot(object = tiss, gene1 = "nUMI", gene2 = "nGene", use.raw=T)
-```
-
-Filter out cells with few reads and few genes.
-
-```{r}
-tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nUMI"), low.thresholds = c(500, 1000))
-```
-
-Normalize the data, then center and scale.
-
-```{r}
-tiss <- NormalizeData(object = tiss, scale.factor = 1e4)
-tiss <- ScaleData(object = tiss)
-
-tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
-```
-
-
-Run Principal Component Analysis.
-```{r}
-tiss <- RunPCA(object = tiss, do.print = FALSE)
-tiss <- ProjectPCA(object = tiss, do.print = FALSE)
-```
+Visualize top genes in principal components
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
@@ -174,146 +30,149 @@ Choose the number of principal components to use.
 n.pcs = 10
 ```
 
-The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale. Higher resolution will give more clusters, lower resolution will give fewer.
+
+The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
 
 For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
 
 ```{r}
 # Set resolution 
-res.used <- 3.5
+res.used <- 0.5
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
-    resolution = res.used, print.output = 0, save.SNN = TRUE)
+    resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
 ```
 
-We use TSNE solely to visualize the data.
+```{r}
+PrintFindClustersParams(object = tiss)
+```
+
+To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30, dim.embed = 2)
 ```
 
 ```{r}
-TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = tiss, do.label = T, label.size = 7)
 ```
-
 ```{r}
-TSNEPlot(tiss, group.by="mouse.sex")
+BuildClusterTree(tiss) 
 ```
 
 
-Significant genes:
-
-hepatocyte: Alb, Ttr, Apoa1, and Serpina1c
-pericentral: Cyp2e1, Glul, Oat, Gulo
-midlobular: Ass1, Hamp, Gstp1, Ubb
-periportal: Cyp2f2, Pck1, Hal, Cdh1
-
-endothelial cells: Pecam1, Nrp1, Kdr+ and Oit3+
-Kuppfer cells: Emr1, Clec4f, Cd68, Irf7
-NK/NKT cells: Zap70, Il2rb, Nkg7, Cxcr6, Klr1c, Gzma
-B cells: Cd79a, Cd79b, Cd74 and Cd19
-Immune cells: Ptprc
-
+How big are the clusters?
 ```{r}
-genes_hep = c('Alb', 'Ttr', 'Apoa1', 'Serpina1c', 
-                   'Cyp2e1', 'Glul', 'Oat', 'Gulo',
-                   'Ass1', 'Hamp', 'Gstp1', 'Ubb',
-                   'Cyp2f2', 'Pck1', 'Hal', 'Cdh1')
-genes_endo = c('Pecam1', 'Nrp1', 'Kdr','Oit3')
-genes_kuppfer = c('Emr1', 'Clec4f', 'Cd68', 'Irf7')
-genes_nk = c('Zap70', 'Il2rb', 'Nkg7', 'Cxcr6', 'Gzma')
-genes_b = c('Cd79a', 'Cd79b', 'Cd74')
-genes_bec = c('Epcam', 'Krt19', 'Krt7')
-genes_immune = 'Ptprc'
+table(tiss@ident)
+```
+Check expression of genes of interest.
 
-all_genes = c(genes_hep, genes_endo, genes_kuppfer, genes_nk, genes_b, genes_bec, genes_immune)
+```{r, echo=FALSE, fig.height=18, fig.width=12}
+genes_to_check = c('Alb',  'Glul','Cyp1a2', 'Cyp2e1', 'Gulo', 'Oat', 'Cyp2f2', 'Pck1' )
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 2)
 ```
 
-
-```{r, echo=FALSE, fig.height=16, fig.width=12}
-FeaturePlot(tiss, c(genes_hep), pt.size = 1, nCol = 4, cols.use = c("grey", "red"))
+```{r, echo=FALSE, fig.height=9, fig.width=9}
+VlnPlot(object = tiss, features.plot = c("Cyp2e1", "Cyp1a2", "Gulo", "Oat", "Cyp2f2", "Pck1", "Alb"), use.raw = F, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-The radius shows you the percent of cells in that cluster with at least one read sequenced from that gene. The color level indicates the average
-Z-score of gene expression for cells in that cluster, where the scaling is done over taken over all cells in the sample.
 
-#We have various immune cell types in the last cluster
-```{r, echo=FALSE, fig.height=4, fig.width=10}
-DotPlot(tiss, c(genes_kuppfer, genes_nk, genes_b, "Ptprc"), plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
-```
-```{r, echo=FALSE, fig.height=8, fig.width=10}
-DotPlot(tiss, all_genes, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+# To change the y-axis to show raw counts, add use.raw = T.
+DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
 
-Using the markers above, we can confidentaly label many of the clusters:
+```{r, echo=FALSE, fig.height=8, fig.width=8}
+genes_to_check = c('Hamp', 'Ass1', 'Igfbp2', 'Asl' )
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 2)
+```
 
-19: endothelial cells
-20: bile duct epithelial cells
-21: immune cells
-rest are hepatocytes
+```{r, echo=FALSE, fig.height=6, fig.width=9}
+VlnPlot(object = tiss, features.plot = c( "Ass1", "Asl", "Hamp", "Igfbp2"), use.raw = F, nCol = 3)
+```
 
-We will add those cell_ontology_classes to the dataset.
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+# To change the y-axis to show raw counts, add use.raw = T.
+#DotPlot(tiss, genes_to_check, plot.legend = T)
+```
+
+```{r, echo=FALSE, fig.height=8, fig.width=8}
+genes_to_check = c('Pecam1', 'Wnt2', 'C1qa', 'Clec4g')
+FeaturePlot(tiss, genes_to_check, pt.size = 2, nCol = 2)
+```
+
+```{r, echo=FALSE, fig.height=9, fig.width=9}
+# Male-female specific genes
+genes_to_check = c('Mup20', 'Mup1','Mup12', 'Mup21', 'Cyp2d9', 'Xist', 'A1bg', 'Cyp2c69')
+FeaturePlot(tiss, genes_to_check, pt.size = 2, nCol = 3)
+```
+
+Which markers identify a specific cluster?
 
 ```{r}
+clust.markers <- FindMarkers(object = tiss, ident.1 = 2, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+print(x = head(x= clust.markers, n = 10))
+#write.csv(x = head(x = clust.markers, n = 10), "clus-markers.csv")
+```
+
+
+```{r}
+# find all markers distinguishing FEMALE vs MALE
+cluster_sex.markers <- FindMarkers(object = tiss, ident.1 = c(0,2, 5), ident.2 = c(1, 3, 4), 
+    min.pct = 0.25)
+print(x = head(x = cluster_sex.markers, n = 20))
+#write.csv(x = head(x = cluster_sex.markers, n = 20), "clus-marker-SEX.csv")
+```
+
+
+You can also compute all markers for all clusters at once. This may take some time.
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
+
+Display the top markers you computed above.
+```{r}
+top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(20, avg_diff)
+print(top_genes)
+```
+
+
+## Assigning cell type identity to clusters
+
+At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
+
+
+```{r}
+# stash current cluster IDs
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
-cluster.ids <- c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21)
+# enumerate current cluster IDs and the labels for them
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
+cell_ontology_class <- c("hepatocyte", "hepatocyte","hepatocyte","hepatocyte","hepatocyte","hepatocyte", "endothelial cell")
+cell_ontology_id <- c("CL:0000182", "CL:0000182","CL:0000182","CL:0000182","CL:0000182","CL:0000182", "CL:0000115")
 
-free_annotation <- c(
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "endothelial cells",
-  "bile duct epithelial cells",
-  "immune cells") 
-  
-cell_ontology_class <- c(
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-   "endothelial cell of hepatic sinusoid", 
-   "duct epithelial cell", 
-   "leukocyte")
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
+tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
+tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
-tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
-tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
-tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
+```
+
+```{r}
+subtiss <- SubsetData(object = tiss, ident.use = c(0,1,2,3,4,5,6), do.center = F, do.scale = F, cells.use = )
+subcluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
+subcell_ontology_class <- c("pericentral_female", "midlobular_male", "periportal_female", "periportal_male", "pericentral_male", "midlobular_female", "endothelial_cells")
+
+subtiss@meta.data[,'subcell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
+
+tiss@meta.data[subtiss@cell.names,'subcell_ontology_class'] <- as.character(subtiss@meta.data$subcell_ontology_class)
+
+TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subcell_ontology_class')
 ```
 
 ## Checking for batch effects
@@ -323,124 +182,158 @@ Color by metadata, like plate barcode, to check for batch effects.
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
 ```
 
-## Subcluster
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
+```
 
-Let's drill down on the hepatocytes.
+Print a table showing the count of cells in each identity category from each plate.
 
 ```{r}
-subtiss = SubsetData(tiss, ident.use = c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18))
+table(as.character(tiss@ident), as.character(tiss@meta.data$channel))
 ```
+
+
+[All 10x data are hepatocytes, subcuster into CV/PV/midlobular done above, no further subclustering needed.]
+
+#Subset and iterate 
+
+
+We can repeat the above analysis on a subset of cells, defined using cluster IDs or some other metadata. This is a good way to drill down and find substructure.
+
+## First subset
 
 ```{r}
-subtiss <- subtiss %>% ScaleData() %>% 
-  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-  RunPCA(do.print = FALSE)
-```
+# Subset data based on cluster id
+### subtiss <- SubsetData(object = tiss, ident.use = c(), do.center = F, do.scale = F, cells.use = )
 
-```{r}
-PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 20, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
-PCElbowPlot(subtiss)
-```
-
-
-```{r}
-sub.n.pcs = 8
-sub.res.use = 0.5
-subtiss <- subtiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=8)
-
-TSNEPlot(object = subtiss, do.label = T, pt.size = .5, label.size = 4)
-```
-
-```{r, echo=FALSE, fig.height=25, fig.width=25}
-FeaturePlot(subtiss, genes_hep,cols.use = c("grey", "red"), pt.size = 4, nCol = 4)
-```
-
-```{r, echo=FALSE, fig.height=8, fig.width=10}
-DotPlot(subtiss, all_genes, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+# To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
+cells.to.use = tiss@cell.names[which(tiss@meta.data$mouse.sex == 'F')]
+### subtiss <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
 ```
 
 ```{r}
-BuildClusterTree(subtiss) 
-```
-```{r, echo=FALSE, fig.height=10, fig.width=8}
-#female genes have lower expression in cluster 6 relative to other female clusters, especally Xist
-FeaturePlot(subtiss,c('Mup20', 'Mup1','Mup12', 'Mup21', 'Cyp2d9', 'Xist', 'A1bg', 'Cyp2c69'),cols.use = c("grey", "red"), pt.size = 3, nCol = 2)
+subtiss <- NormalizeData(object = subtiss)
+subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nUMI", "percent.ribo","Rn45s"))
 ```
 
-
-From these genes, it appears that the clusters represent:
-
-0: midlobular male
-1: pericentral female
-2: periportal female
-3: periportal male
-4: midlobular male
-5: pericentral male
-6: midlobular female
-7: midlobular female
-
-The multitude of clusters of each type correspond mostly to individual animals/sexes.
+Run Principal Component Analysis.
 
 ```{r}
-table(FetchData(subtiss, c('mouse.sex','ident')) %>% droplevels())
+subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.8)
+subtiss <- RunPCA(object = subtiss, pcs.compute = 20, weight.by.var = F)
+subtiss <- ProjectPCA(object = subtiss, do.print = FALSE)
 ```
 
 ```{r}
-sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-sub.free_annotation <- c("midlobular male", "pericentral female", "periportal female", "periportal male", "midlobular male", "pericentral male", "midlobular female", "midlobular female")
-sub.cell_ontology_class <- c("hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte")
-
-validate_cell_ontology(sub.cell_ontology_class)
-sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
+# If this fails for your subset, it may be that cells.use is more cells than you have left! Try reducing it.
+PCHeatmap(object = subtiss, pc.use = 1:3, cells.use = 250, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
 ```
 
-## Add subcluster annotations
+Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
 
 ```{r}
-sub.cells = rownames(subtiss@meta.data)
-
-tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
-tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
-tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
+PCElbowPlot(object = subtiss)
 ```
 
+Choose the number of principal components to use.
+```{r}
+# Set number of principal components. 
+sub.n.pcs = 10
+```
+
+
+The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
+
+```{r}
+# Set resolution 
+sub.res.used <- 0.5
+
+subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.used, ,print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
+```
+
+```{r}
+PrintFindClustersParams(object = subtiss)
+```
+
+To visualize 
+```{r}
+# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
+subtiss <- RunTSNE(object = subtiss, dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=20)
+```
+
+```{r}
+# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
+
+#zonated = c('Alb', 'Ass1','Asl', 'Cyp2f2', 'Cyp2e1', 'Glul', 'Clec4g', 'C1qa')
+#more_zonated = c('Glul', 'Cyp2e1','Cyp2f2',  'Alb', 'Axin2','Oat','Ass1','Asl')
+#subtiss <- RunTSNE(object = subtiss, seed.use = 10, perplexity=20, genes.use = zonated)
+```
+
+```{r}
+# note that you can set do.label=T to help label individual clusters
+TSNEPlot(object = subtiss, do.label = T)
+```
+
+```{r}
+subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
+
+```{r}
+subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_diff)
+```
+
+Check expression of genes of interset.
+```{r}
+genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp', 'Glul', 'Ass1', 'Slc1a2', 'Hal', 'Igfbp2', 'Pecam1', 'C1qa')
+
+FeaturePlot(subtiss, genes_to_check, pt.size = 1)
+```
+
+Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
+
+```{r}
+# To change the y-axis to show raw counts, add use.raw = T.
+DotPlot(subtiss, genes_to_check, plot.legend = T)
+```
+
+How big are the clusters?
+```{r}
+table(subtiss@ident)
+```
 
 ## Checking for batch effects
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtiss, do.return = TRUE, group.by = "mouse.sex")
+TSNEPlot(object = subtiss, do.return = TRUE, group.by = "channel")
 ```
 
-# Final coloring
-
-Color by cell ontology class on the original TSNE.
+Print a table showing the count of cells in each identity category from each plate.
 
 ```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class")
+table(as.character(subtiss@ident), as.character(subtiss@meta.data$channel))
 ```
 
+
+
 # Save the Robject for later
+When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
+		  paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
-save(subtiss, file=filename)
+save(tiss, file=filename)
 ```
 
 ```{r}
 # To reload a saved object
-#filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
-#load(file=filename)
+# filename = here('00_data_ingest', '04_tissue_robj_generated', 
+#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+# load(file=filename)
 ```
+
 
 
 # Export the final metadata
@@ -451,10 +344,20 @@ So that Biohub can easily combine all your cell_ontology_classs, please export t
 head(tiss@meta.data)
 ```
 
+
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_droplet_annotation.csv"))
-write.csv(FetchData(tiss, c('channel','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
+		  paste0(tissue_of_interest, "_droplet_cell_ontology_class.csv"))
+write.csv(tiss@meta.data[,c('channel','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
 
 
+
+
+Write the cell ontology and free annotations to CSV.
+
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_droplet_annotation.csv"))
+write.csv(tiss@meta.data[,c('channel,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+```
