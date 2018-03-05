@@ -3,7 +3,7 @@ title: "Bladder FACS Notebook"
 output: html_notebook
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
 tissue_of_interest = "Bladder"
@@ -181,7 +181,7 @@ cell_ontology_class <- c(
 data.frame(cluster.ids, 
            free_annotation, cell_ontology_class)
 
-# tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```

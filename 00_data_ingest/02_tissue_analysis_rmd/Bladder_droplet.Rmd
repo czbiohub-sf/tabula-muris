@@ -3,7 +3,7 @@
  output: html_notebook
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
 tissue_of_interest = "Bladder"
@@ -11,6 +11,7 @@ library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 tiss = load_tissue_droplet(tissue_of_interest)
 ```
+
 
 Visualize top genes in principal components
 ```{r, echo=FALSE, fig.height=4, fig.width=8}

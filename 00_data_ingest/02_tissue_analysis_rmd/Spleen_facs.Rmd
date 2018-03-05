@@ -3,152 +3,19 @@ title: "Spleen FACS Notebook"
 output: html_notebook
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
 tissue_of_interest = "Spleen"
-```
-
-Load the requisite packages and some additional helper functions.
-
-```{r}
 library(here)
-library(useful)
-library(Seurat)
-library(dplyr)
-library(Matrix)
-library(ontologyIndex)
-cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
-
-validate_cell_ontology = function(cell_ontology_class){
-  in_cell_ontology = sapply(cell_ontology_class, function(x) is.element(x, cell_ontology$name))
-  if (!all(in_cell_ontology)) {
-    message = paste0('"', cell_ontology_class[!in_cell_ontology], '" is not in the cell ontology
-')
-    stop(message)
-  }
-}
-convert_to_cell_ontology_id = function(cell_ontology_class){
-  return(sapply(cell_ontology_class, function(x) as.vector(cell_ontology$id[cell_ontology$name == x])[1]))
-}
-
-save_dir = here('00_data_ingest', 'tissue_robj')
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+tiss = load_tissue_facs(tissue_of_interest)
 ```
 
-
-
-```{r}
-# read the metadata to get the plates we want
-plate_metadata_filename = here('00_data_ingest', '00_facs_raw_data', 'metadata_FACS.csv')
-
-plate_metadata <- read.csv(plate_metadata_filename, sep=",", header = TRUE)
-colnames(plate_metadata)[1] <- "plate.barcode"
-plate_metadata
-```
-
-Subset the metadata on the tissue.
-
-```{r}
-tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
-tissue_plates
-```
-
-Load the read count data.
-```{r}
-#Load the gene names and set the metadata columns by opening the first file
-filename = here('00_data_ingest', '00_facs_raw_data', 'FACS', paste0(tissue_of_interest, '-counts.csv'))
-
-raw.data = read.csv(filename, sep=",", row.names=1)
-# raw.data = data.frame(row.names = rownames(raw.data))
-corner(raw.data)
-```
-Make a vector of plate barcodes for each cell
-
-```{r}
-plate.barcodes = lapply(colnames(raw.data), function(x) strsplit(strsplit(x, "_")[[1]][1], '.', fixed=TRUE)[[1]][2])
-head(plate.barcodes)
-```
-
-Use only the metadata rows corresponding to Bladder plates. Make a plate barcode dataframe to "expand" the per-plate metadata to be per-cell.
-```{r}
-barcode.df = t.data.frame(as.data.frame(plate.barcodes))
-
-rownames(barcode.df) = colnames(raw.data)
-colnames(barcode.df) = c('plate.barcode')
-head(barcode.df)
-
-rnames = row.names(barcode.df)
-meta.data <- merge(barcode.df, plate_metadata, by='plate.barcode', sort = F)
-row.names(meta.data) <- rnames
-
-# Sort cells by plate barcode because that's how the data was originally
-meta.data = meta.data[order(meta.data$plate.barcode), ]
-corner(meta.data)
-raw.data = raw.data[, rownames(meta.data)]
-corner(raw.data)
-```
-Process the raw data and load it into the Seurat object.
-
-```{r}
-# Find ERCC's, compute the percent ERCC, and drop them from the raw data.
-erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
-percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
-ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
-raw.data <- raw.data[-ercc.index,]
-
-# Create the Seurat object with all the data
-tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest, 
-                    min.cells = 5, min.genes = 5)
-
-tiss <- AddMetaData(object = tiss, meta.data)
-tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
-# Change default name for sums of counts from nUMI to nReads
-colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
-
-# Create metadata columns for cell_ontology_classs and subcell_ontology_classs
-tiss@meta.data[,'cell_ontology_class'] <- NA
-tiss@meta.data[,'subcell_ontology_class'] <- NA
-```
-
-
-Calculate percent ribosomal genes.
-
-```{r}
-ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
-percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
-tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
-```
-
-A sanity check: genes per cell vs reads per cell.
-
-```{r}
-GenePlot(object = tiss, gene1 = "nReads", gene2 = "nGene", use.raw=T)
-```
-
-Filter out cells with few reads and few genes.
-
-```{r}
-tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nReads"), 
-    low.thresholds = c(500, 50000), high.thresholds = c(25000, 2000000))
-```
-
-
-Normalize the data, then regress out correlation with total reads
-```{r}
-tiss <- NormalizeData(object = tiss)
-tiss <- ScaleData(object = tiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
-tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.low.cutoff = 0.7 , x.high.cutoff = Inf, y.cutoff = 0.4)
-```
-
-
-Run Principal Component Analysis.
-```{r}
-tiss <- RunPCA(object = tiss, do.print = FALSE)
-tiss <- ProjectPCA(object = tiss, do.print = FALSE)
-```
+Visualize top genes in principal components
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
-PCHeatmap(object = tiss, pc.use = 11:20, cells.use = 700, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCHeatmap(object = tiss, pc.use = 1:7, cells.use = 700, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
 
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
@@ -160,7 +27,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 9
+n.pcs = 7
 ```
 
 
@@ -170,7 +37,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 2.5
+res.used <- .5
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
@@ -187,10 +54,30 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=20)
 TSNEPlot(object = tiss, do.label = T)
 ```
 
+Compare to previous annotations
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_facs_annotation.csv"))
+previous_annotation = read_csv(filename)
+tiss@meta.data[, 'previous_annotation'] <- "NA"
+tiss@meta.data[as.character(previous_annotation$X1), 'previous_annotation'] <- as.character(previous_annotation$cell_ontology_class)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
+```
+
+```{r}
+table(tiss@meta.data[, "previous_annotation"])
+```
+
+
+```{r}
+table(tiss@meta.data[, "previous_annotation"], tiss@ident)
+```
+
+
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=12}
-genes_to_check = c('Cd4', 'Chd6', 'Ly6d', 'Cnn3', 'Cd8a', 'Il2rb', 'Cd5', 'Cd9', 'Vcam1')
+genes_to_check = c('Cd4', 'Cd79a', 'Ccr2', 'Cnn3', 'Cd8a', 'Il2rb', 'Cd5', 'Cd9', 'Vcam1')
 #genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Vegf')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
@@ -208,25 +95,25 @@ How big are the clusters?
 table(tiss@ident)
 ```
 
-Which markers identify a specific cluster?
+<!-- Which markers identify a specific cluster? -->
 
-```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 3, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
+<!-- ```{r} -->
+<!-- clust.markers <- FindMarkers(object = tiss, ident.1 = 3, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
+<!-- ``` -->
 
-```{r}
-print(x = head(x= clust.markers, n = 20, avg_diff))
-```
+<!-- ```{r} -->
+<!-- print(x = head(x= clust.markers, n = 20, avg_diff)) -->
+<!-- ``` -->
 
-You can also compute all markers for all clusters at once. This may take some time.
-```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
+<!-- You can also compute all markers for all clusters at once. This may take some time. -->
+<!-- ```{r} -->
+<!-- tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
+<!-- ``` -->
 
-Display the top markers you computed above.
-```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(10, avg_diff)
-```
+<!-- Display the top markers you computed above. -->
+<!-- ```{r} -->
+<!-- tiss.markers %>% group_by(cluster) %>% top_n(10, avg_logFC) -->
+<!-- ``` -->
 
 ## Assigning cell type identity to clusters
 
@@ -237,53 +124,25 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16)
+cluster.ids <- 0:5
 cell_ontology_class <-
   c(
-  "T cell",
-  "B cell",
-  "B cell",
-  "B cell",
-  "B cell",
-  "B cell",
-  "B cell" ,
-  "T cell",
   "B cell",
   "T cell",
   "B cell",
-  'B cell',
-  'B cell',
-  'B cell',
-  'B cell',
-  'T cell',
-  'myeloid cell'
+  "B cell",
+  "B cell",
+  "macrophage"
   )
-cell_ontology_id <-
-  c(
-  "CL:0000084",
-  "CL:0000236",
-  "CL:0000236",
-  "CL:0000236",
-  "CL:0000236",
-  "CL:0000236",
-  "CL:0000236",
-  "CL:0000084",
-  "CL:0000236",
-  "CL:0000084",
-  "CL:0000236",
-  'CL:0000236',
-  'CL:0000236',
-  'CL:0000236',
-  'CL:0000236',
-  'CL:0000084',
-  'CL:0000763'
-  )
+free_annotation = c(NA, NA, NA, NA, NA, NA)
 
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
 
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
+tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
+tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
@@ -333,9 +192,9 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_facs_annotation.csv"))
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
 
 
