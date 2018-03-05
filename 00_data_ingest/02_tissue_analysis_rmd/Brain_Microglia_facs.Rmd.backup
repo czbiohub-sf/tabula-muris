@@ -1,12 +1,12 @@
 ---
-title: "Colon FACS Notebook"
+title: "Brain Microglia FACS Notebook"
 output: html_notebook
 ---
 
 Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
-tissue_of_interest = "Colon"
+tissue_of_interest = "Brain_Microglia"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 load_tissue_facs(tissue_of_interest)
@@ -27,9 +27,8 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 20
+n.pcs = 10
 ```
-
 
 The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
 
@@ -49,38 +48,23 @@ To visualize
 tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```
 
+
 ```{r}
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = tiss, do.label = T)
 ```
 
+
 Check expression of genes of interset.
 
-```{r}
-#{r, echo=FALSE, fig.height=16, fig.width=12}
-genes_to_check = c('Lgr5', 'Krt20', 'Atoh1', 'Chga', 'Dclk1', 'Mki67')
+```{r, echo=FALSE, fig.height=5, fig.width=8}
+genes_to_check = c("Tmem119","P2ry12","Sall1","H2-Aa", "H2-Eb1", "Cd163")
 #genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
 
-#FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
-FeaturePlot(tiss, genes_to_check, pt.size = 1)
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, genes_to_check)
-```
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, 'Lgr5')
-```
-
-```{r}
-# To get plots of two genes, add use.raw = T.
-GenePlot(tiss, 'Krt20', 'Atoh1')
-```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
@@ -95,63 +79,57 @@ table(tiss@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers <- FindMarkers(object = tiss, ident.1 = 6, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
+
+specific markers for macrophages (cluster 6)
 
 ```{r}
 print(x = head(x= clust.markers, n = 10))
 ```
 
-You can also compute all markers for all clusters at once. This may take some time.
-```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-Display the top markers you computed above.
-```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(10, avg_diff)
-```
-
-## Assigning cell type identity to clusters
-
-At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
-
-```{r}
-# stash current cluster IDs
-tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
-
-# enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
-free_annotation <- c()
-cell_ontology_class <-c("epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "epithelial cell of large intestine", "large intestine goblet cell", "large intestine goblet cell", "epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "large intestine goblet cell", "large intestine goblet cell", "epithelial cell of large intestine", "large intestine goblet cell", "Brush cell of epithelium proper of large intestine", "enteroendocrine cell")
-cell_ontology_id <- c("CL:0002253", "CL:0002071", "CL:0002253", "CL:1000320", "CL:1000320", "CL:0002253", "CL:0002071", "CL:1000320", "CL:1000320", "CL:0002253", "CL:1000320", "CL:0002203", "CL:0000164")
-
-
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
-
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
-
-
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
-```
-
-
 ## Checking for batch effects
-
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 ```
 
-Print a table showing the count of cells in each identity category from each plate.
 
 ```{r}
-table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
+
+## Assigning cell type identity to clusters
+
+At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
+
+0: microglia 
+1: microglia 
+2: microglia
+3: microglia
+4: microglia
+5: microglia
+6: macrophages
+
+### Assigning subcell_ontology_classs
+For the subsets, we produce subcell_ontology_classs. These will be written back as metadata in the original object, so we can see all subcell_ontology_classs together.
+
+If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
+
+```{r}
+cluster.ids <- c(0, 1, 2, 3,4,5,6)
+free_annotation <- c()
+cell_ontology_class <-c("microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","macrophage" )
+cell_ontology_id <- c("CL:0000129","CL:0000129","CL:0000129","CL:0000129","CL:0000129","CL:0000129","CL:0000235" )
+
+tiss@meta.data[,'free_annotation'] <- NA
+tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
+tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
+```
+
 
 
 When you save the annotated tissue, please give it a name.
@@ -163,12 +141,6 @@ print(filename)
 save(tiss, file=filename)
 ```
 
-```{r}
-# To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
-# load(file=filename)
-```
 
 # Export the final metadata
 
@@ -187,11 +159,11 @@ write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology
 
 
 
+
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                     paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
 ```
