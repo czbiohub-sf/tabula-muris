@@ -157,7 +157,7 @@ save(tiss, file=filename)
 ```{r}
 # To reload a saved object
 # filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
 
