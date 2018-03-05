@@ -1,0 +1,46 @@
+---
+title: "Sex breakdown"
+output: html_notebook
+---
+
+```{r}
+plate_metadata_filename = here('00_data_ingest', '00_facs_raw_data', 'metadata_FACS.csv')
+  
+plate_metadata <- read_csv(plate_metadata_filename)
+
+droplet_metadata_filename = here('00_data_ingest', '01_droplet_raw_data', 'metadata_droplet.csv')
+  
+droplet_metadata <- read_csv(droplet_metadata_filename)
+```
+
+```{r}
+plate_metadata
+```
+
+```{r}
+plate_metadata %>% filter(tissue != 'Heart') %>% group_by(tissue, mouse.id) %>% count() %>% 
+  spread(mouse.id, n, fill = 0)
+```
+
+Bladder has 3 males and 3 females. Fat has 3 and 4. Colon has 3 and 4. Kidney has 3 and 3.
+
+That's enough to start to ask about batch and gender effects.
+
+```{r}
+droplet_metadata %>%  group_by(tissue, mouse.sex) %>% count() %>% 
+  spread(mouse.sex, n, fill = 0)
+```
+
+
+Mammary: we have 2 
+```{r}
+old_facs_anno = read_csv(here('00_data_ingest', '00_facs_raw_data', 'annotations_FACS.csv'))
+```
+
+
+
+```{r}
+tcells <- old_facs_anno %>% filter(cell_ontology_class == 'T cell') %>% pull(cell)
+write(tcells, file = "tcells.csv")
+```
+
