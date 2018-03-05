@@ -1,0 +1,38 @@
+---
+title: "{TISSUE} {METHOD} {COLUMN} Supplementary Notebook"
+output: html_notebook
+---
+
+```{r}
+library(useful)
+library(Seurat)
+library(dplyr)
+library(Matrix)
+library(ontologyIndex)
+library(tidyverse)
+library(here)
+
+tissue_of_interest = capitalize('{TISSUE}')
+filename = paste0(method, '_{TISSUE}_seurat_tiss.Robj')
+load(here('00_data_ingest', '10_tissue_robj_downloaded', filename))
+
+annotation = read_csv(here('00_data_ingest', '03_tissue_annotation_csv', '03_tissue_annotation_csv', paste0(tissue_of_interest, '_{METHOD}_annotation.csv')))
+
+for (column in colnames(annotation)){
+  tiss@meta.data[annotation$X, column] = annotation[column]
+}
+
+genes_to_check = sort(c({GENES}))
+```
+
+```{r}
+DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "{COLUMN}")
+```
+
+```{r}
+RidgePlot(tiss, genes_to_check)
+```
