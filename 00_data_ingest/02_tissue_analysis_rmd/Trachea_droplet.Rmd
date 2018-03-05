@@ -27,7 +27,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 5
+n.pcs = 3
 ```
 
 
@@ -37,10 +37,14 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 0.2
+res.used <- 0.1
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+<<<<<<< HEAD
     resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE, temp.file.location = "/home/william/MACA_plate_and_10X_analysis_submitted_11.21.2017/11.13.2017_CZ_10x/maca-master-4/temp")
+=======
+    resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
+>>>>>>> Removed regression, updated annotation
 ```
 
 
@@ -58,9 +62,14 @@ TSNEPlot(object = tiss, do.label = T)
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=8, fig.width=8}
-genes_to_check = c('Epcam', 'Pdgfrb','Pecam1', 'Ptprc', 'Scgb1a1', 'Krt5', 'Foxj1')
+genes_to_check = c('Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1a1', 'Col8a1', 'Foxj1', 'Pecam1', 'Ptprc', 'Cck', 'Syp')
 
+<<<<<<< HEAD
 FeaturePlot(tiss, genes_to_check, pt.size = 1)
+=======
+
+FeaturePlot(tiss, genes_to_check, pt.size = .1)
+>>>>>>> Removed regression, updated annotation
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -107,11 +116,20 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
+<<<<<<< HEAD
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
 cell_ontology_class <- c("stromal cell", "stromal cell", "stromal cell", "endothelial cell", "leukocyte", 
                 "epithelial cell", "neuroendocrine cell", "epithelial cell")
 cell_ontology_id <- c("CL:0000499", "CL:0000499", "CL:0000499", "CL:0000115", "CL:0000738", 
                 "CL:0000066", "CL:0000165", "CL:0000066")
+=======
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
+free_annotation = c("NA","NA","NA","NA","NA","NA","NA")
+cell_ontology_class <- c("mesenchymal cell","mesenchymal cell","mesenchymal cell","blood cell","endothelial cell","epithelial cell","neuroendocrine cell")
+validate_cell_ontology(cell_ontology_class)
+
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+>>>>>>> Removed regression, updated annotation
 
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
@@ -141,6 +159,55 @@ Print a table showing the count of cells in each identity category from each pla
 table(as.character(tiss@ident), as.character(tiss@meta.data$channel))
 ```
 
+<<<<<<< HEAD
+=======
+# Save the Robject for later
+When you save the annotated tissue, please give it a name.
+
+```{r}
+filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                     paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
+print(filename)
+save(tiss, file=filename)
+```
+
+```{r}
+# To reload a saved object
+# filename = here('00_data_ingest', '04_tissue_robj_generated', 
+#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+# load(file=filename)
+```
+
+
+
+# Export the final metadata
+
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
+
+```{r}
+head(tiss@meta.data)
+```
+
+
+```{r}
+filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
+                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_cell_ontology_class', 'tSNE_1', 'tSNE_2')), file=filename)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> Removed regression, updated annotation
 
 # Subset and iterate
 
