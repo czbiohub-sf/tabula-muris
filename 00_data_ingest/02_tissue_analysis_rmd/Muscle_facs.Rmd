@@ -165,8 +165,6 @@ tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@iden
 
 ## Subcluster
 
-We consider the mesenchymal population below. While there are variable genes -- it is not completely homogeneous -- there are not distinct clusters therein.
-
 ```{r}
 subtiss = SubsetData(tiss, ident.use = c(1))
 ```
@@ -275,10 +273,10 @@ filename = here('00_data_ingest', '03_tissue_annotation_csv',
 write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
 
+Write the cell ontology and free annotations to CSV.
 
-# Figures for Supplement. Dot plot above is sufficient and code is copied below.
-
-```{r, echo=FALSE, fig.height=3, fig.width=3}
-DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
-```
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_facs_annotation.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
 ```

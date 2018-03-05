@@ -13,7 +13,7 @@ library(viridis)
 ```
 
 ```{r}
-load(file=here("00_data_ingest", "global_robj", "droplet_all.Robj"))
+load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
 ```
 
 ```{r, fig.width = 8, fig.height = 6}
