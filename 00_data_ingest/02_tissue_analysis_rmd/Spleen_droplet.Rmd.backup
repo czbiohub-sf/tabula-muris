@@ -1,23 +1,17 @@
 ---
-title: "Mammary FACS Notebook"
-output:
-  html_document: default
-  html_notebook: default
+ title: "Spleen Droplet Notebook"
+ output: html_notebook
 ---
 
-Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
-tissue_of_interest = "Mammary"
+tissue_of_interest = "Spleen"
+
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss = load_tissue_droplet(tissue_of_interest)
 ```
-
-
-
-
-
 
 Visualize top genes in principal components
 
@@ -34,7 +28,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 10
+n.pcs = 15
 ```
 
 
@@ -50,82 +44,82 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
     resolution = res.used, print.output = 0, save.SNN = TRUE)
 ```
 
+
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30, dim.embed = 2)
 ```
+
+
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = tiss, do.label = T)
 ```
 
+
 Check expression of genes of interset.
 
-```{r, echo=FALSE, fig.height=12, fig.width=8}
-genes_to_check = c('Krt14', 'Krt17', 'Krt5', 'Krt8', 'Krt18', 'Prlr', 'Lgr5', 'Esr1','Elf5', 'Esam', 'Vim', 'Fn1', 'Cd14', 'Cdh5')
-
-FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
+```{r, echo=FALSE, fig.height=8, fig.width=8}
+genes_to_check = c('Ptprc','Cd74', 'Cd79a', 'Cd79b',  'Cd3g', 'Cd3e', 'Cd4', 'Cd8a', 'Klrk1', 'Klrb1a','Flt3', 'Mpeg1','Ccl6', 'Itgax', 'Hmgn3', 'Cd14', 'Lyz1', 'Ifitm3')
+FeaturePlot(tiss, genes_to_check)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r, echo=FALSE, fig.height=4, fig.width=8}
+```{r, echo=FALSE, fig.height=8, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(tiss, genes_to_check, plot.legend = T)
+DotPlot(tiss, genes_to_check, plot.legend = T, do.return = T) + coord_flip()
 ```
+
+```{r}
+m <- FindMarkers(tiss, ident.1 = 7, logfc.threshold = 1)
+```
+
+```{r}
+m
+```
+
 
 How big are the clusters?
 ```{r}
 table(tiss@ident)
 ```
 
-```{r}
-VlnPlot(tiss, genes_to_check)
-```
-
-Which markers identify a specific cluster?
-
-```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 3, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-print(x = head(x= clust.markers, n = 10))
-```
-
-You can also compute all markers for all clusters at once. This may take some time.
-```{r}
-#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-Display the top markers you computed above.
-```{r}
-#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
-```
-
 ## Assigning cell type identity to clusters
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
-
 
 ```{r}
 # stash current cluster IDs
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
-free_annotation <- c()
-cell_ontology_class <-c("basal cell", "basal cell", "luminal epithelial cell of mammary gland", "basal cell", "stromal cell", "luminal epithelial cell of mammary gland", "stromal cell", "endothelial cell", "basal cell")
-cell_ontology_id <- c("CL:0000646", "CL:0000646", "CL:0002326", "CL:0000646", "CL:0000499", "CL:0002326", "CL:0000499", "CL:0000115", "CL:0000646")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
 
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+cell_ontology_class <- c(
+  "B cell",
+  "B cell", 
+  "B cell",
+  "T cell",
+  "T cell",
+  "B cell",
+  "T cell",
+  "macrophage",
+  "B cell",
+  "B cell",
+  "natural killer cell",
+  "B cell",
+  "T cell",
+  "B cell",
+  "B cell",
+  "dendritic cell"
+  )
 
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+free_annotation <- cell_ontology_class
+
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
@@ -136,20 +130,32 @@ TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
+```
+
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
 
 Print a table showing the count of cells in each identity category from each plate.
 
 ```{r}
-table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+table(as.character(tiss@ident), as.character(tiss@meta.data$channel))
 ```
+
+
+Check the numbers of cells per cell_ontology_class
+```{r}
+table(tiss@meta.data$cell_ontology_class)
+```
+
+
 # Save the Robject for later
 When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+		  paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -157,7 +163,7 @@ save(tiss, file=filename)
 ```{r}
 # To reload a saved object
 # filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
 
@@ -173,16 +179,9 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
-```
-
-Write the cell ontology and free annotations to CSV.
-
-```{r}
-
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+                     paste0(tissue_of_interest, "_droplet_annotation.csv"))
+
+write.csv(FetchData(tiss, c('channel','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
+

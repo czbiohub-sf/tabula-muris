@@ -1,15 +1,15 @@
 ---
-title: "Colon FACS Notebook"
-output: html_notebook
+ title: "Marrow Droplet Notebook"
+ output: html_notebook
 ---
 
 Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
-tissue_of_interest = "Colon"
+tissue_of_interest = "Marrow"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+load_tissue_droplet(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -27,7 +27,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 20
+n.pcs = 10
 ```
 
 
@@ -43,10 +43,11 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
     resolution = res.used, print.output = 0, save.SNN = TRUE)
 ```
 
+
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=273, dim.embed = 2)
 ```
 
 ```{r}
@@ -54,35 +55,17 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 TSNEPlot(object = tiss, do.label = T)
 ```
 
-Check expression of genes of interset.
+Check expression of genes of interset. Found inconsistensies in gene names. Mme (Cd10), Ly6g6c, Ly6g6e, and Iga2b though present in plate data was not found here and gave an error.
 
-```{r}
-#{r, echo=FALSE, fig.height=16, fig.width=12}
-genes_to_check = c('Lgr5', 'Krt20', 'Atoh1', 'Chga', 'Dclk1', 'Mki67')
-#genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
+```{r, echo=FALSE, fig.height=75, fig.width=15}
+genes_to_check = c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Fcgr3', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr4', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Ly6d', 'Cd27', 'Cr2', 'Fcer2a', 'Cd2', 'Cd7', 'Thy1', 'Cd19', 'Ms4a1', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Vpreb1', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ptprc', 'Cd48', 'Tfrc', 'Mki67', 'Eng', 'Itga2', 'Cxcr4', 'Cd44', 'Bpgm', 'Beta-s', 'Hbb-b2')
 
-#FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
-FeaturePlot(tiss, genes_to_check, pt.size = 1)
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, genes_to_check)
-```
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, 'Lgr5')
-```
-
-```{r}
-# To get plots of two genes, add use.raw = T.
-GenePlot(tiss, 'Krt20', 'Atoh1')
-```
-
-```{r, echo=FALSE, fig.height=4, fig.width=8}
+```{r, echo=FALSE, fig.height=4, fig.width=45}
 # To change the y-axis to show raw counts, add use.raw = T.
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
@@ -92,11 +75,14 @@ How big are the clusters?
 table(tiss@ident)
 ```
 
+
+
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers <- FindMarkers(object = tiss, ident.1 = 2, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
+
 
 ```{r}
 print(x = head(x= clust.markers, n = 10))
@@ -109,31 +95,70 @@ tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, t
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(10, avg_diff)
+tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
 ```
 
 ## Assigning cell type identity to clusters
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
+0: alpha
+1: beta
+2: beta
+3: exocrine
+4: duct
+5: delta
+6: gamma
+7: endothelial
+8: immune
+9: stellate
+
 ```{r}
 # stash current cluster IDs
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
-free_annotation <- c()
-cell_ontology_class <-c("epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "epithelial cell of large intestine", "large intestine goblet cell", "large intestine goblet cell", "epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "large intestine goblet cell", "large intestine goblet cell", "epithelial cell of large intestine", "large intestine goblet cell", "Brush cell of epithelium proper of large intestine", "enteroendocrine cell")
-cell_ontology_id <- c("CL:0002253", "CL:0002071", "CL:0002253", "CL:1000320", "CL:1000320", "CL:0002253", "CL:0002071", "CL:1000320", "CL:1000320", "CL:0002253", "CL:1000320", "CL:0002203", "CL:0000164")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+cell_ontology_class <-
+  c(
+  "granulocyte",
+  "monocyte",
+  "hematopoietic stem cell",
+  "hematopoietic stem cell",
+  "hematopoietic stem cell",
+  "B cell",
+  "hematopoietic stem cell",
+  "granulocyte",
+  "macrophage",
+  "T cell",
+  "erythrocyte",
+  "B cell",
+  "Fraction A pre-pro B cell",
+  "hematopoietic stem cell"
+  )
+cell_ontology_id <-
+  c(
+  "CL:0000094",
+  "CL:0000576",
+  "CL:0000037",
+  "CL:0000037",
+  "CL:0000037",
+  "CL:0000236",
+  "CL:0000037",
+  "CL:0000094",
+  "CL:0000235",
+  "CL:0000084",
+  "CL:0000232",
+  "CL:0000236",
+  "CL:0002045",
+  "CL:0000037"
+  )
 
-
-tiss@meta.data[,'free_annotation'] <- NA
 tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
 tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
 
 tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
 tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
-
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
@@ -144,21 +169,26 @@ TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
+```
+
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
 
 Print a table showing the count of cells in each identity category from each plate.
 
 ```{r}
-table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+table(as.character(tiss@ident), as.character(tiss@meta.data$channel))
 ```
 
 
+# Save the Robject for later
 When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+		  paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -166,9 +196,11 @@ save(tiss, file=filename)
 ```{r}
 # To reload a saved object
 # filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+#                      paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
+
+
 
 # Export the final metadata
 
@@ -181,17 +213,15 @@ head(tiss@meta.data)
 
 ```{r}
 filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
+		  paste0(tissue_of_interest, "_droplet_cell_ontology_class.csv"))
+write.csv(tiss@meta.data[,c('channel','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
-
-
 
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
 
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+                    paste0(tissue_of_interest, "_droplet_annotation.csv"))
+write.csv(tiss@meta.data[,c('channel','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
 ```
