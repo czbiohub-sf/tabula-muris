@@ -207,12 +207,10 @@ table(subtiss@ident)
 Discover new PP marker genes (negative or positive)
 ```{r}
 gamma_markers = FindMarkers(subtiss, ident.1 = c(6,7), ident.2 = c(0,1,2,4), test.use = "roc")
-write.csv(gamma_markers, file="~/Desktop/gamma_markers_roc.csv")
 ```
 
 ```{r}
 gamma_markers = FindMarkers(subtiss, ident.1 = c(6,7), ident.2 = c(0,1,2,4), test.use = "wilcox")
-write.csv(gamma_markers, file="~/Desktop/gamma_markers_wilcox.csv")
 ```
 New markers from this test include
 1) negative marker genes, aka. those abscent in PP cells or highly abundant in alpha cells
