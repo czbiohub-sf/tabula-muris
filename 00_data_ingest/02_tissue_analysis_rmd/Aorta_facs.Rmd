@@ -24,12 +24,12 @@ PCElbowPlot(object = tiss)
 
 ```{r}
 # Set number of principal components. 
-n.pcs = 10
+n.pcs = 15
 ```
 
 ```{r}
 # Set resolution 
-res.used <- 2.5
+res.used <- 1.5
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
@@ -63,7 +63,7 @@ Check expression of genes of interset.
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
 genes_to_check = c('Vim','Krt5','Krt8','Ptprc','Epcam','H2-Ab1','H2-Aa','Cd34','Cdh5','Cd14','Vwf','Syk','Col1a2','Timp2','Cd74',
                    'Laptm5','Selplg','Pecam1','Fabp4','Sox18','Icam1','Tek','Vcam1','Vegfa','Adipor1','Car3','Alas2','Acta2',
-                   'Dcn','Myocd','Tagln','Myh11','S100a4','Cd3e','Pdgfra','Kit','Gypa','Col6a3')
+                   'Dcn','Myocd','Tagln','Myh11','S100a4','Cd3e','Pdgfra','Kit','Gypa','Col6a3','Fap')
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
@@ -71,7 +71,8 @@ Dotplots let you see the intensity of expression and the fraction of cells expre
 
 ```{r, echo=FALSE, fig.height=8, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+#DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+VlnPlot(tiss, genes_to_check)
 ```
 
 How big are the clusters?
@@ -94,12 +95,22 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1)
-free_annotation <- c("cell type 1", "cell type 2")
+cluster.ids <- c(0, 1,2,3,4,5)
+free_annotation <- c("red blood cells", 
+                     "endothelial cells_1",
+                     "endothelial cells_2",
+                     "fibroblasts",
+                     "antigen presenting cells",
+                     "endothelial cells_3")
 
-cell_ontology_class <-c("ontology class 1", "ontology class 2")
+cell_ontology_class <-c("erythrocyte",
+                        "endothelial cell", 
+                        "endothelial cell",
+                        "fibroblast",
+                        "professional antigen presenting cell",
+                        "endothelial cell")
 
-stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+tiss <- stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
 
 ```{r}
@@ -119,7 +130,7 @@ save(tiss, file=filename)
 ```{r}
 # To reload a saved object
 # filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
 
@@ -134,8 +145,17 @@ head(tiss@meta.data)
 ```{r}
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                      paste0(tissue_of_interest, "_facs", "_annotation.csv"))
-write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
 ```
 
 # Figures for Supplement
 
+
+Write the cell ontology and free annotations to CSV.
+
+```{r}
+
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_facs_annotation.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+```

@@ -1,0 +1,175 @@
+---
+title: "Diaphragm FACS Notebook"
+output: html_notebook
+---
+
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+
+```{r}
+tissue_of_interest = "Diaphragm"
+library(here)
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+tiss <- load_tissue_facs(tissue_of_interest)
+```
+
+Visualize top genes in principal components
+
+```{r, fig.height=8, fig.width=8}
+col.use = CustomPalette(low = "blue", high = "red", mid = "white", k = 50)
+PCHeatmap(object = tiss, pc.use = 1:9, cells.use = 500, do.balanced = T, 
+          label.columns = F, col.use = col.use, num.genes = 16)
+```
+
+Visualize top genes in principal components
+Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
+```{r}
+PCElbowPlot(object = tiss)
+```
+
+
+Choose the number of principal components to use.
+```{r}
+n.pcs = 10
+```
+
+The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularityâmore connections within the group than between groups. The resolution parameter determines the scale. Higher resolution will give more clusters, lower resolution will give fewer. For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
+We use TSNE solely to visualize the data.
+```{r}
+used.res = 0.3
+perplexity = 25
+pt.size = 0.5
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+                     resolution = used.res, print.output = 0, save.SNN = T, force.recalc = T)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, check_duplicates = F, 
+                perplexity = perplexity)
+TSNEPlot(object = tiss, do.label = T, pt.size = pt.size)
+```
+
+Check expression of genes of interest.
+```{r, fig.height=4, fig.width=6}
+genes_to_check = c('Vcam1', 'Pdgfra', 'Ptprc', 'Pecam1')
+cols.use <- c("grey", "red")
+
+print (genes_to_check)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size, no.legend = FALSE, cols.use = cols.use, nCol = 2)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 2)
+DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
+
+```
+
+```{r, fig.height=8, fig.width=7}
+# SC - subtypes
+genes_to_check = c('Vcam1', 'Itga7', 'Calcr', 
+                   'Pax7', 'Pax3', 'Myod1', 'Myf5', 
+                   'Cxcr4', 'Sdc4', 'Itgb1', 'Cd34', 'Cd44' #, 'Myog'
+                   )
+print (genes_to_check)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size, cols.use = cols.use, nCol = 3)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 3)
+DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
+```
+
+```{r, fig.height=8, fig.width=7}
+# CD45 - blood subtypes
+genes_to_check = c('Ptprc', 
+                   'Cd3d', #T-cell
+                   'Vpreb3', #naive B-cells
+                   'Cd19', 'Cd69', 'Cd79a', 'Cd79b', #differentiated B cells
+                   'Klrb1b', 'Foxp3', # NK-cells
+                   'Itgam', 'Fcer1g', 'C1qa' #macrophages and mast cells
+                   #, 'Ly6g6d', 
+)
+print (genes_to_check)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size, cols.use = cols.use, nCol = 3)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 3)
+DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
+```
+
+
+```{r, fig.height=2, fig.width=2}
+# CD31 - endothelial subtypes
+genes_to_check = c('Pecam1' #, 'Vegfa', 'Cd34', 'Ptprc', 'Icam1' #, 'Dysf' #'Rapgef3', 'Vim', 'Cspg4'
+)
+print (genes_to_check)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size, cols.use = cols.use, nCol = 1)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 1)
+DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
+```
+
+```{r, fig.height=2, fig.width=2}
+# FAP -  subtypes
+genes_to_check = c('Pdgfra' #'Atxn1' 'Dysf', 'Vim', 'Cspg4'
+)
+print (genes_to_check)
+FeaturePlot(tiss, genes_to_check, pt.size = pt.size, cols.use = cols.use, nCol = 1)
+VlnPlot(tiss, genes_to_check, point.size.use = pt.size, nCol = 1)
+DotPlot(tiss, genes_to_check, do.return=T) + coord_flip()
+```
+How big are the clusters?
+```{r}
+sum(table(tiss@ident))
+table(tiss@ident)
+table(as.character(tiss@ident), as.character(tiss@meta.data$mouse.id))
+```
+
+Color by metadata, like plate barcode to check for batch effects.
+```{r}
+tiss@meta.data %>% names
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
+```
+
+Find differentially expressed markers.
+Display top 24 markers per cluster.
+```{r}
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
+#                               thresh.use = 0.25)
+#tiss.markers %>% group_by(cluster) %>% top_n(24, avg_diff)
+```
+
+Assigning cell type identity to clusters
+```{r}
+# stash current cluster IDs
+tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+
+# enumerate current cluster IDs and the labels for them
+cluster.ids <- c(0, 1, 2, 3, 4)
+free_annotation <- c(NA, NA, NA, NA, NA)
+cell_ontology_class <- c("skeletal muscle satellite stem cell", "mesenchymal stem cell", 
+                        "lymphocyte", "endothelial cell", "macrophage")
+
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+
+TSNEPlot(object = tiss, do.label = TRUE, group.by='cell_ontology_class')
+```
+
+```{r}
+tiss = BuildClusterTree(tiss)
+```
+
+When you save the annotated tissue, please give it a name.
+```{r}
+filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+print(filename)
+save(tiss, file=filename)
+```
+
+Export the final metadata
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
+```{r}
+#tiss@meta.data %>% names
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_facs_annotation.csv"))
+write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+```
+
+
+Write the cell ontology and free annotations to CSV.
+
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_facs_annotation.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+```

@@ -9,7 +9,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Heart"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss=load_tissue_facs(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -120,43 +120,46 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11)
-cell_ontology_class <-
+free_annotation <-
   c(
+  "fibroblast",
   "fibroblast",
   "endothelial cell",
   "fibroblast",
-  "fibroblast",
   "leukocyte",
+  "endothelial cell",
   "endothelial cell",
   "smooth muscle cell",
-  "endothelial cell",
+   "endocardial cell",
   "cardiac muscle cell",
   "leukocyte",
-  "endocardial cell",
-  "erythrocyte"
+  "conduction cells"
   )
-cell_ontology_id <-
+cell_ontology_class  <-
   c(
-  "CL:0000057",
-  "CL:0000115",
-  "CL:0000057",
-  "CL:0000057",
-  "CL:0000738",
-  "CL:0000115",
-  "CL:0000192",
-  "CL:0000115",
-  "CL:0000746",
-  "CL:0000738",
-  "CL:0002350",
-  "CL:0000232"
+  "fibroblast",
+  "fibroblast",
+  "endothelial cell",
+  "fibroblast",
+  "leukocyte",
+  "endothelial cell",
+  "endothelial cell",
+  "smooth muscle cell",
+   "endocardial cell",
+  "cardiac muscle cell",
+  "leukocyte",
+  "cardiac neuron"
   )
 
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
 
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
+validate_cell_ontology(cell_ontology_class)
+cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+
+tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
+tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
@@ -192,7 +195,7 @@ We can repeat the above analysis on a subset of cells, defined using cluster IDs
 
 ```{r}
 # Subset data based on cluster id
-subtiss <- SubsetData(object = tiss, ident.use = c(6), do.center = F, do.scale = F, cells.use = )
+subtiss <- SubsetData(object = tiss, ident.use = c(7), do.center = F, do.scale = F, cells.use = )
 
 # To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
 
@@ -308,13 +311,20 @@ For the subsets, we produce subcell_ontology_classs. These will be written back 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
 ```{r}
-subcluster.ids <- c(0, 1, 2)
-subfree_annotation <- c()
-cell_ontology_class <-c("Myofibroblast","Myofibroblast", "Smooth_Muscle_Cells")
+subcluster.ids <- c(0, 1, 2, 3)
+sub.free_annotation <-c("Myofibroblast","Myofibroblast","Myofibroblast","Smooth_Muscle_Cells")
+sub.cell_ontology_class = c()
 
-subtiss@meta.data[,'subcell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
 
-tiss@meta.data[subtiss@cell.names,'subcell_ontology_class'] <- as.character(subtiss@meta.data$subcell_ontology_class)
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+validate_cell_ontology(sub.cell_ontology_class)
+sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+
+subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
+subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
+subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
 
 TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subcell_ontology_class')
 ```
@@ -324,7 +334,7 @@ When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -340,10 +350,19 @@ head(tiss@meta.data)
 
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_annotation.csv"))
 write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
 ```
 
 
 
+
+Write the cell ontology and free annotations to CSV.
+
+```{r}
+
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_facs_annotation.csv"))
+write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+```
