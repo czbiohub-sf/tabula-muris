@@ -13,12 +13,12 @@ library(viridis)
 ```
 
 ```{r}
-load(file=here("00_data_ingest", "global_robj", "droplet_all.Robj"))
+load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
 ```
 
 ```{r, fig.width = 8, fig.height = 6}
 FetchData(tiss_droplet, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
-  ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
+  ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1)  + coord_fixed() +
    scale_color_identity(breaks = tissue_colors$color, 
                         labels = tissue_colors$tissue, 
                         guide = "legend") + 
