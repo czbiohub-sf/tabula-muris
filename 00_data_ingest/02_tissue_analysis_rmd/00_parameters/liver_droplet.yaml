@@ -1,0 +1,6 @@
+TISSUE: Liver
+METHOD: droplet
+RES: 0.5
+NPCS: 10
+GENES: "'Alb','Glul','Cyp1a2','Cyp2e1','Gulo','Oat','Cyp2f2','Pck1','Hamp','Ass1','Igfbp2','Asl','Pecam1','Wnt2','C1qa','Clec4g','Mup20','Mup1','Mup12','Mup21','Cyp2d9','Xist','A1bg','Cyp2c69'"
+GROUPBY: null
