@@ -19,6 +19,7 @@ source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 ```{r}
 genes = c("Chga", "Ins1", "Gcg", "Actb", "Pecam1", "Ptprc", "Cd4", 'Myf5', 'Myod1', 'Pdgfra')
 metas = c("cell_ontology_class", "free_annotation", "mouse.sex")
+meta_display_names = c("Cell Ontology Class", "Free Annotation", "Sex")
 ```
 
 Functions for making figures for genes and for metadata.
@@ -26,19 +27,40 @@ Functions for making figures for genes and for metadata.
 ```{r}
 plotgene_tsne <- function(tiss, gene, tissue, method){
   gene_R_safe = paste0("`",gene,"`")
-  FetchData(tiss, c('tSNE_1', 'tSNE_2', gene)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = gene_R_safe)) + geom_point(size = 0.5) + 
-    scale_colour_gradient(low = "grey", high = "red") + coord_fixed()
-  ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene, "-tsne",".png")))
+  if(method == "facs"){
+    legend_name = "ln(1+CPM)"
+  }  else{
+    legend_name = "ln(1+CP10k)"
+  }
+  lims = FetchData(tiss, c('tSNE_1', 'tSNE_2', gene)) %>% summarize(xmin = min(tSNE_1), xmax = max(tSNE_1), ymin = min(tSNE_2), ymax = max(tSNE_2))
+  
+  FetchData(tiss, c('tSNE_1', 'tSNE_2', gene)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = gene_R_safe)) + 
+    geom_point(size = 0.5) + 
+    scale_colour_gradient(low = "lightgrey", high = "blue", name = legend_name) + 
+    xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
 }
 
 plotgene_vln <- function(tiss, gene, tissue, method){
-  VlnPlot(tiss, gene, group.by = 'cell_ontology_class') + coord_flip()
-  ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene,"-vln", ".png")))
+  if(method == "facs"){
+    legend_name = "ln(1+CPM)"
+  }  else{
+    legend_name = "ln(1+CP10k)"
+  }
+  VlnPlot(tiss, gene, group.by = 'cell_ontology_class') + 
+  xlab("Cell Ontology Class") + ylab(paste0("Expression: ", legend_name)) + ggtitle("") +
+    coord_flip()
+  ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene,"-vln", ".png")), width = 14, height = 7)
 }
 
-plotmeta <- function(tiss, meta, tissue, method){
+plotmeta <- function(tiss, meta, tissue, method, legend_name){
   meta_R_safe = paste0("`",meta,"`")
-  FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) + geom_point(size = 0.5) + coord_fixed()
+  FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) + 
+    geom_point(size = 0.5) + 
+    xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+    scale_colour_discrete(name = legend_name) + 
+    xlab("tSNE 1") + ylab("tSNE 2")
+  
   ggsave(here('21_website',"images", paste0(tissue, "-", method, "-", meta, ".png")))
 }
 ```
@@ -50,8 +72,10 @@ tissue_plots <- function(tissue, method){
     plotgene_tsne(tiss, gene, tissue, method)
     plotgene_vln(tiss, gene, tissue, method)
   }
-  for(meta in metas){
-    plotmeta(tiss, meta, tissue, method)
+  for(i in 1:length(metas)){
+    meta = metas[i]
+    display_name = meta_display_names[i]
+    plotmeta(tiss, meta, tissue, method, display_name)
   }
 }
 ```
@@ -60,6 +84,20 @@ tissue_plots <- function(tissue, method){
 tissue_plots("Pancreas", "facs")
 tissue_plots("Muscle", "droplet")
 tissue_plots("Mammary", "facs")
+```
+
+
+## An attempt to reconstruct the Violin Plot so we can use str_wrap on the row names
+
+```{r}
+gene = 'Krt18'
+tissue = 'Mammary'
+method = 'facs'
+
+gene_R_safe = paste0("`",gene,"`")
+FetchData(tiss, c('cell_ontology_class', gene))  %>% mutate(cell_ontology_class = str_wrap(cell_ontology_class, width = 25)) %>% ggplot(aes_string(x = "cell_ontology_class", y = gene_R_safe, fill = 'cell_ontology_class')) + geom_violin(stat = "ydensity") + geom_jitter(size = 0.3, alpha = 0.5) +
+  xlab("cell ontology class") + ylab(quote("Expression: ln(1+" ~ cp10^6~")")) +
+  coord_flip()
 ```
 
 
