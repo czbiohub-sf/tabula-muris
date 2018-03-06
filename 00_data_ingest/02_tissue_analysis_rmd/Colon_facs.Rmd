@@ -219,12 +219,12 @@ VlnPlot(tiss, genes_to_check)
 
 ```{r}
 # To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, 'Asxl1')
+VlnPlot(tiss, 'Lgr5')
 ```
 
 ```{r}
 # To get plots of two genes, add use.raw = T.
-GenePlot(tiss, 'Ascl2', 'Asxl1')
+GenePlot(tiss, 'Hoxb6', 'Hoxb13')
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
