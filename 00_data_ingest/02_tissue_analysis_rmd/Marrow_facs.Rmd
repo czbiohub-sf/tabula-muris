@@ -286,7 +286,7 @@ subcell_ontology_class <-
   "T cell",
   "T cell",
   "T cell")
-  cell_ontology_id = c("CL:0000084",
+cell_ontology_id = c("CL:0000084",
   "CL:0000623",
   "CL:0000623",
   "CL:0000084",
@@ -312,20 +312,11 @@ save(subtiss7, file=paste0(save_dir,"/",subtiss7.name, "_seurat_subtiss7.Robj"))
 
 # Export the final metadata
 
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
-
-```{r}
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','subcell_ontology_class')],file =paste0(save_dir,"/", tissue_of_interest,"_cell_ontology_class.csv"))
-```
-
 
 
 
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```

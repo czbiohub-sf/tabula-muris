@@ -9,7 +9,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Colon"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss <- load_tissue_facs(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -37,7 +37,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 0.5
+res.used <- 0.7
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
@@ -58,11 +58,15 @@ Check expression of genes of interset.
 
 ```{r}
 #{r, echo=FALSE, fig.height=16, fig.width=12}
-genes_to_check = c('Lgr5', 'Krt20', 'Atoh1', 'Chga', 'Dclk1', 'Mki67')
-#genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
+genes_to_check = c('Lgr5', 'Krt20', 'Slc26a3', 'Atoh1', 'Spdef', 'Dclk1', 'Chga', 'Chgb', 'Mki67')
 
 #FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
-FeaturePlot(tiss, genes_to_check, pt.size = 1)
+FeaturePlot(tiss, genes_to_check, pt.size = 0.5)
+```
+
+```{r}
+#FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
+FeaturePlot(tiss, c('Hoxb6', 'Hoxb13'), pt.size = 0.5)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -70,16 +74,6 @@ Dotplots let you see the intensity of exppression and the fraction of cells expr
 ```{r}
 # To change the y-axis to show raw counts, add use.raw = T.
 VlnPlot(tiss, genes_to_check)
-```
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, 'Lgr5')
-```
-
-```{r}
-# To get plots of two genes, add use.raw = T.
-GenePlot(tiss, 'Krt20', 'Atoh1')
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
@@ -95,21 +89,21 @@ table(tiss@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 ```{r}
-print(x = head(x= clust.markers, n = 10))
+#print(x = head(x= clust.markers, n = 10))
 ```
 
 You can also compute all markers for all clusters at once. This may take some time.
 ```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(10, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(10, avg_diff)
 ```
 
 ## Assigning cell type identity to clusters
@@ -121,18 +115,12 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
-free_annotation <- c()
-cell_ontology_class <-c("epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "epithelial cell of large intestine", "large intestine goblet cell", "large intestine goblet cell", "epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "large intestine goblet cell", "large intestine goblet cell", "epithelial cell of large intestine", "large intestine goblet cell", "Brush cell of epithelium proper of large intestine", "enteroendocrine cell")
-cell_ontology_id <- c("CL:0002253", "CL:0002071", "CL:0002253", "CL:1000320", "CL:1000320", "CL:0002253", "CL:0002071", "CL:1000320", "CL:1000320", "CL:0002253", "CL:1000320", "CL:0002203", "CL:0000164")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+free_annotation <- c('Lgr5- undifferentiated cell', 'Lgr5+ undifferentiated cell (Proximal)', 'Enterocyte (Proximal)', 'Lgr5+ amplifying undifferentiated cell', 'Lgr5+ undifferentiated cell (Distal)', 'Lgr5- amplifying undifferentiated cell', 'Enterocyte (Proximal)', 'Goblet cell (Distal)', 'Goblet cell (Distal)', 'Enterocyte (Distal)', 'Goblet cell (Proximal)', 'Goblet cell (Proximal)', 'Goblet cell (Distal)', 'Tuft cell', 'Chromaffin Cell')
+cell_ontology_class <-c("epithelial cell of large intestine", "epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "epithelial cell of large intestine", "epithelial cell of large intestine", "epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "large intestine goblet cell", "large intestine goblet cell", "enterocyte of epithelium of large intestine", "large intestine goblet cell", "large intestine goblet cell", "large intestine goblet cell", "Brush cell of epithelium proper of large intestine", "enteroendocrine cell")
+cell_ontology_id <- c("CL:0002253", "CL:0002253", "CL:0002071", "CL:0002253", "CL:0002253", "CL:0002253", "CL:0002071", "CL:1000320", "CL:1000320", "CL:0002071", "CL:1000320", "CL:1000320", "CL:1000320", "CL:0002203", "CL:0000164")
 
-
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
-
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
@@ -147,26 +135,29 @@ Color by metadata, like plate barcode, to check for batch effects.
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 ```
 
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "subtissue")
+```
+
 Print a table showing the count of cells in each identity category from each plate.
 
 ```{r}
 table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 ```
 
-
-When you save the annotated tissue, please give it a name.
+# Saving
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
 
 ```{r}
 # To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+# filename = here('00_data_ingest', '04_tissue_robj_generated',
+#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
 
@@ -178,20 +169,6 @@ So that Biohub can easily combine all your cell_ontology_classs, please export t
 head(tiss@meta.data)
 ```
 
-
 ```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
-```
-
-
-
-Write the cell ontology and free annotations to CSV.
-
-```{r}
-
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```
