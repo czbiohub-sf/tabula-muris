@@ -1,0 +1,6 @@
+TISSUE: Brain_non-myeloid
+METHOD: facs
+RES: 0.5
+NPCS: 8
+Genes: "'Slc1a3','Aldh1l1','Aqp4','A2m','Nbl1','Gdf10','Naga','Tnfaip2','St6galnac5','Nsdhl'"
+GROUPBY: subtissue

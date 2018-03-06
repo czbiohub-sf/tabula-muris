@@ -1,0 +1,6 @@
+TISSUE: Tongue
+METHOD: facs
+RES: 0.7
+NPCS: 10
+GENES: "'Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Top2a', 'Mt2', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10','Klf4', 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Fabp5', 'Krt32',  'Krt78', 'Vim', 'Hhip', 'Ptch1', 'Gli1','Dsc1', 'Dcn', 'Runx2', 'Sox2', 'Pax9'"
+GROUPBY: null
