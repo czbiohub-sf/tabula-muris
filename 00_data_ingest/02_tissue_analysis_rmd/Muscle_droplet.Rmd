@@ -130,15 +130,8 @@ cell_ontology_class <-
   NA,
   NA)
 
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
-tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
-
-tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
-tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
 ```
 
 ## Checking for batch effects
@@ -191,14 +184,11 @@ Figures for Supplement: Dot plot above is sufficient and code is copied below.
 ```{r, echo=FALSE, fig.height=8, fig.width=10}
 DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 ```
-```
+
 
 
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_droplet_annotation.csv"))
-write.csv(tiss@meta.data[,c('channel','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+save_annotation_csv(tiss, tissue_of_interest, "droplet")
 ```
