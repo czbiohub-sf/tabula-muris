@@ -37,7 +37,7 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 0.7
+res.used <- 0.5
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE)
@@ -75,8 +75,7 @@ table(tiss@meta.data[, "previous_annotation"], tiss@ident)
 
 Check expression of genes of interset.
 
-```{r}
-#{r, echo=FALSE, fig.height=16, fig.width=12}
+```{r, echo=FALSE, fig.height=6, fig.width=6}
 genes_to_check = c('Lgr5', 'Krt20', 'Slc26a3', 'Atoh1', 'Spdef', 'Dclk1', 'Chga', 'Chgb', 'Mki67')
 #genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
 
@@ -103,16 +102,17 @@ VlnPlot(tiss, 'Lgr5')
 
 ```{r}
 # To get plots of two genes, add use.raw = T.
-GenePlot(tiss, 'Hoxb6', 'Hoxb13')
-```
-
-```{r}
 GenePlot(tiss, 'Lgr5', 'Krt20')
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
 DotPlot(tiss, genes_to_check, plot.legend = T)
+```
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+# To change the y-axis to show raw counts, add use.raw = T.
+DotPlot(tiss, genes_to_check, plot.legend = T, group.by='previous_annotation')
 ```
 
 How big are the clusters?
@@ -150,9 +150,42 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
-free_annotation <- c('Lgr5- undifferentiated cell', 'Lgr5+ undifferentiated cell (Proximal)', 'Enterocyte (Proximal)', 'Lgr5+ amplifying undifferentiated cell', 'Lgr5+ undifferentiated cell (Distal)', 'Lgr5- amplifying undifferentiated cell', 'Enterocyte (Proximal)', 'Goblet cell (Distal)', 'Goblet cell (Distal)', 'Enterocyte (Distal)', 'Goblet cell (Proximal)', 'Goblet cell (Proximal)', 'Goblet cell (Distal)', 'Tuft cell', 'Chromaffin Cell')
-
-cell_ontology_class <-c("epithelial cell of large intestine", "epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "epithelial cell of large intestine", "epithelial cell of large intestine", "epithelial cell of large intestine", "enterocyte of epithelium of large intestine", "large intestine goblet cell", "large intestine goblet cell", "enterocyte of epithelium of large intestine", "large intestine goblet cell", "large intestine goblet cell", "large intestine goblet cell", "Brush cell of epithelium proper of large intestine", "enteroendocrine cell")
+free_annotation <-
+  c(
+  NA, # 'Lgr5- undifferentiated cell',
+  NA, # 'Lgr5+ undifferentiated cell (Proximal)',
+  NA, # 'Enterocyte (Proximal)',
+  NA, # 'Lgr5+ amplifying undifferentiated cell',
+  NA, # 'Lgr5+ undifferentiated cell (Distal)',
+  NA, # 'Lgr5- amplifying undifferentiated cell',
+  NA, # 'Enterocyte (Proximal)',
+  NA, # 'Goblet cell (Distal)',
+  NA, # 'Goblet cell (Distal)',
+  NA, # 'Enterocyte (Distal)',
+  NA, # 'Goblet cell (Proximal)',
+  NA, # 'Goblet cell (Proximal)',
+  NA, # 'Goblet cell (Distal)',
+  NA, # 'Tuft cell',
+  NA  # 'Chromaffin Cell'
+  )
+  
+  cell_ontology_class <-
+  c(
+    "epithelial cell of large intestine",
+    "epithelial cell of large intestine",
+    "enterocyte of epithelium of large intestine",
+    "large intestine goblet cell",
+    "large intestine goblet cell",
+    "enterocyte of epithelium of large intestine",
+    "epithelial cell of large intestine",
+    "large intestine goblet cell",
+    "epithelial cell of large intestine",
+    "large intestine goblet cell",
+    "enterocyte of epithelium of large intestine",
+    "large intestine goblet cell",
+    "Brush cell of epithelium proper of large intestine",
+    "enteroendocrine cell"
+  )
 
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
