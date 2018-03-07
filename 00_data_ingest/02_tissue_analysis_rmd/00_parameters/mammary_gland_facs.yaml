@@ -4,3 +4,9 @@ RES: 0.5
 NPCS: 10
 GENES: "'Krt14', 'Krt17', 'Krt5', 'Krt8', 'Krt18', 'Prlr', 'Lgr5', 'Esr1','Elf5', 'Esam', 'Vim', 'Fn1', 'Cd14', 'Cdh5'"
 GROUPBY: null
+SUBSET:
+  BASAL:
+    - FILTER: 'cell_ontology_class == "*basal*"'
+    - RES: 0.5
+    - NPCS: 10
+    - GENES: "'Vcam1','Procr','Id1','Id2','Fos','Igfbp2','Igfpb4','Prlr','Csn3','Cited1','Areg'"
