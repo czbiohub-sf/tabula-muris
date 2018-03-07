@@ -51,7 +51,7 @@ han_metadata_comparable
 ```{r}
 df_microwell <- tibble(cell = character(), tissue = character(), subtissue = character(), nGene = integer(), method = character())
 
-for(i in 1:nrow(han_metadata)){
+for(i in 1:nrow(han_metadata_comparable)){
   print(paste0("Loading ", han_metadata_comparable$filename[i]))
   raw.data <- read.table(here('00_data_ingest','han_data',han_metadata_comparable$filename[i]), header = TRUE)
   df <- tibble(cell = colnames(raw.data))
