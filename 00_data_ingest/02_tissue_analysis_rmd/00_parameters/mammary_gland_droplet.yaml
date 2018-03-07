@@ -6,6 +6,6 @@ GENES: "'Nkg7', 'Ccl5', 'Cd74', 'Ly6c1'"
 GROUPBY: null
 SUBSET:
   BASAL:
-    - 'cell_ontology_class == "*basal*"'
+    - FILTER: 'cell_ontology_class == "*basal*"'
     - RES: 0.5
     - NPCS: 10
