@@ -9,49 +9,86 @@ library(stringr)
 library(Seurat)
 ```
 
+```{r}
+df_all <- tibble(cell = character(), tissue = character(), subtissue = character(), nGene = integer(), method = character())
+```
+
+# FACS data
+
+```{r}
+load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
+```
+
+```{r}
+df_FACS <- as_tibble(tiss_FACS@meta.data[c('tissue', 'subtissue', 'nGene')])
+df_FACS <- rownames_to_column(df_FACS, "cell")
+df_FACS['method'] <- 'FACS'
+```
+
+
+# Droplet data
+
+```{r}
+load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
+```
+
+```{r}
+df_droplet <- as_tibble(tiss_droplet@meta.data[c('tissue', 'subtissue', 'nGene')])
+df_droplet <- rownames_to_column(df_droplet, "cell")
+df_droplet['method'] <- 'droplet'
+```
+
+# Han data
+
 Load the processed and annotated data.
 
 ```{r}
-#load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
-#load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
+han_metadata <- read_csv(here('00_data_ingest','han_data','han_metadata.csv'))
+han_metadata_comparable = han_metadata %>% filter(!is.na(tissue)) %>% filter(is.na(subtissue))
+han_metadata_comparable
 ```
 
-Gather and merge per-cell metadata from FACS and droplet.
 ```{r}
-df_FACS = as_tibble(tiss_FACS@meta.data[c('tissue', 'subtissue', 'percent.ribo', 'percent.Rn45s','nGene', 'plate.barcode', 'nReads')])
-df_FACS <- rownames_to_column(df_FACS, "cell")
-df_FACS['method'] <- 'FACS'
-df_FACS <- rename(df_FACS, run = plate.barcode)
-df_FACS <- rename(df_FACS, nMolecules = nReads)
+df_microwell <- tibble(cell = character(), tissue = character(), subtissue = character(), nGene = integer(), method = character())
 
-df_droplet = as_tibble(tiss_droplet@meta.data[c('tissue', 'percent.ribo', 'nGene','channel', 'percent.Rn45s', 'nUMI')])
-df_droplet <- rownames_to_column(df_droplet, "cell")
-df_droplet <- rename(df_droplet, nMolecules = nUMI)
-
-df_droplet['method'] <- 'droplet'
-df_droplet <- rename(df_droplet, run = channel)
-
-df <- bind_rows(df_FACS, df_droplet)
+for(i in 1:nrow(han_metadata)){
+  print(paste0("Loading ", han_metadata_comparable$filename[i]))
+  raw.data <- read.table(here('00_data_ingest','han_data',han_metadata_comparable$filename[i]), header = TRUE)
+  df <- tibble(cell = colnames(raw.data))
+  df['tissue'] <- han_metadata_comparable$tissue[i]
+  df['subtissue'] <- han_metadata_comparable$subtissue[i]
+  df['method'] <- 'microwell'
+  df['nGene'] <- Matrix::colSums(raw.data > 0)
+  for(j in 0:4){
+    df[paste0('nGene.', j)] <- Matrix::colSums(raw.data > j)
+  }
+  df_microwell <- bind_rows(df_microwell, df)
+}
 ```
 
-Select the tissues processed using both methods.
+# Merge and Plot
 
 ```{r}
-common_tissues <- as.character(df %>% 
+df_all = bind_rows(df_FACS, df_droplet, df_microwell)
+```
+
+Select the tissues processed using all methods.
+
+```{r}
+common_tissues <- as.character(df_all %>% 
                                  group_by(tissue, method) %>% summarize(count = n()) %>% 
                                  ungroup() %>% group_by(tissue) %>% summarize(count = n()) %>% 
                                  filter(count > 1) %>% pull(tissue))
 common_tissues
 ```
 
-
 Plot the histograms of the number of genes per cell for each tissue and method.
 
 ```{r, fig.width = 12, fig.height = 8}
-filter(df, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
-  geom_freqpoly(binwidth = 300) +
+filter(df_all, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
+  geom_freqpoly(binwidth = 100) +
   facet_wrap(~ tissue, ncol = 4) + 
   ggtitle("Number of genes expressed")
 
-ggsave(here("11_supplementary_figure1","sfigure1.pdf"), width = 7, height = 7, units = "in")
+#ggsave(here("11_supplementary_figure1","sfigure1.pdf"), width = 7, height = 7, units = "in")
 ```
