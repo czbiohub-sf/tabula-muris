@@ -3,4 +3,4 @@ METHOD: droplet
 RES:
 NPCS:
 GENES:
-GROUPBY: 
+GROUPBY: "'FACS.selection'"
