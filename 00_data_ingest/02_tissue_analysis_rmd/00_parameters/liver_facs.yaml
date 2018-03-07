@@ -4,3 +4,5 @@ RES: 0.3
 NPCS: 10
 GENES: "'Irf7','Spic' 'Clec4f' 'Cd68' 'Mpeg1' 'Itgb2' 'Ahnak' 'Pld4' 'Cd3e','Zap70','Cd19','Ms4a1', 'Cd74', 'Chchd10', 'Cd79a', 'Cd79b', 'Vpreb3','Klrb1a','Klrb1c','Tyrobp','Ncr1','Gzma','Prf1','Serpinb9','Nkg7','Cd3e','Cd4','Cd8a','Cxcr6','Ncam1'"
 GROUPBY: null
+
+#update once using boilerplate
