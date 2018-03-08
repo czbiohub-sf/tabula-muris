@@ -21,16 +21,27 @@ for method in methods:
         batch_name = 'channel' if method == 'droplet' else 'plate.barcode'
         with open(rmd) as f:
             content = f.read()
-            content += \
-f'''
-Write the cell ontology and free annotations to CSV.
 
-```{{r}}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+            content = content.replace(f"""filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                     paste0(tissue_of_interest, "_{method}_annotation.csv"))
 write.csv(tiss@meta.data[,c('{batch_name},'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
-```
-'''
+""", 
+f"""
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_{method}_annotation.csv"))
+write.csv(tiss@meta.data[,c('{batch_name}','cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+"""
+)
+            content = content.replace(f"""filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_{method}_annotation.csv"))
+write.csv(tiss@meta.data[,c('{batch_name}','cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+""",
+f"""filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_{method}_annotation.csv"))
+write.csv(tiss@meta.data[,c('{batch_name}','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+"""
+)
+
             # print(content)
     #         content = content.replace("""tissue_of_interest = "Bladder"
 
@@ -43,9 +54,9 @@ write.csv(tiss@meta.data[,c('{batch_name},'cell_ontology_class','cell_ontology_i
     get_ipython().system(f'diff Lung_{method}.Rmd Lung_{method}.Rmd.replaced')
 
             
-# replaceds = get_ipython().getoutput('ls *.Rmd.replaced')
-# for replaced in replaceds:
-#     rmd = replaced.split('.replaced')[0]
-#     print(rmd)
-#     get_ipython().system(' mv $replaced $rmd')
+replaceds = get_ipython().getoutput('ls *.Rmd.replaced')
+for replaced in replaceds:
+    rmd = replaced.split('.replaced')[0]
+    print(rmd)
+    get_ipython().system(' mv $replaced $rmd')
     

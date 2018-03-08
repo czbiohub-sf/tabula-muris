@@ -106,16 +106,7 @@ Display the top markers you computed above.
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-0: alpha
-1: beta
-2: beta
-3: exocrine
-4: duct
-5: delta
-6: gamma
-7: endothelial
-8: immune
-9: stellate
+
 
 ```{r}
 # stash current cluster IDs
@@ -123,28 +114,12 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-<<<<<<< HEAD
-free_annotation <- c()
-cell_ontology_class <-c("stromal cell", "stromal cell", "stromal cell", "epithelial cell", "leukocyte", "epithelial cell", "leukocyte", "endothelial cell")
-cell_ontology_id <- c("CL:0000499", "CL:0000499", "CL:0000499", "CL:0000066", "CL:0000738", "CL:0000066", "CL:0000738", "CL:0000115")
-=======
+
 free_annotation = c("NA","NA","NA","NA","NA","NA","NA", "NA")
 cell_ontology_class <- c("mesenchymal cell","mesenchymal cell","mesenchymal cell","epithelial cell","blood cell","endothelial cell","blood cell", "epithelial cell")
-validate_cell_ontology(cell_ontology_class)
 
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
->>>>>>> Removed regression, updated annotation
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
-tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation)
-
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
-<<<<<<< HEAD
-=======
-tiss@meta.data[tiss@cell.names,'free_annotation'] <- as.character(tiss@meta.data$free_annotation)
->>>>>>> Removed regression, updated annotation
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
@@ -170,7 +145,7 @@ When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -178,7 +153,7 @@ save(tiss, file=filename)
 ```{r}
 # To reload a saved object
 # filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
 
@@ -186,26 +161,10 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
-
-```{r}
-head(tiss@meta.data)
-```
-
-
-```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
-```
-
-
 
 
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```

@@ -9,7 +9,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Brain_Microglia"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss = load_tissue_facs(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -71,6 +71,14 @@ Dotplots let you see the intensity of exppression and the fraction of cells expr
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
 
+```{r}
+RidgePlot(tiss, genes_to_check)
+```
+
+```{r}
+RidgePlot(tiss, genes_to_check, group.by='mouse.sex')
+```
+
 How big are the clusters?
 ```{r}
 table(tiss@ident)
@@ -100,6 +108,13 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
 ```
 
+
+
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
+```
+
+
 ## Assigning cell type identity to clusters
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
@@ -116,6 +131,28 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 For the subsets, we produce subcell_ontology_classs. These will be written back as metadata in the original object, so we can see all subcell_ontology_classs together.
 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
+
+```{r}
+library(tidyverse)
+figshare_annotation = read_csv(here("00_data_ingest","00_facs_raw_data", "annotations_FACS.csv"))
+figshare_annotation = filter(figshare_annotation, tissue == tissue_of_interest)
+tiss@meta.data[, 'figshare_annotation'] <- NA
+tiss@meta.data[as.character(figshare_annotation$cell), 'figshare_annotation'] <- as.character(figshare_annotation$cell_ontology_class)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "figshare_annotation")
+```
+
+Look at clusters and previous figshare annotation
+```{r}
+table(tiss@meta.data$figshare_annotation, tiss@ident)
+```
+
+
+
+Look at clusters and sex enrichment
+```{r}
+table(tiss@ident, tiss@meta.data$mouse.sex)
+```
+
 
 ```{r}
 cluster.ids <- c(0, 1, 2, 3,4,5,6)
@@ -151,19 +188,9 @@ head(tiss@meta.data)
 ```
 
 
-```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
-```
-
-
-
 
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```
