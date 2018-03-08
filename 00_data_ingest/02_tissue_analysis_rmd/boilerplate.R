@@ -71,7 +71,7 @@ load_tissue_facs = function(tissue_of_interest){
   tiss@meta.data[,'free_annotation'] <- NA
   tiss@meta.data[,'cell_ontology_class'] <- NA
   
-  #Calculate percent ribosomal genes.
+  # Calculate percent ribosomal genes.
   
   ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
   percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
@@ -99,6 +99,7 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
 }
 
 stash_subtiss_in_tiss = function(tiss, subtiss){
+
   sub.cells = rownames(subtiss@meta.data)
   
   tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
