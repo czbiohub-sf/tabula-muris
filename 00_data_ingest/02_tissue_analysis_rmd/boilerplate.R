@@ -108,6 +108,15 @@ stash_subtiss_in_tiss = function(tiss, subtiss){
   return(tiss)
 }
 
+stash_subtiss_in_tiss = function(tiss, subtiss){
+  sub.cells = rownames(subtiss@meta.data)
+  
+  tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
+  tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
+  tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
+  return(tiss)
+}
+
 process_tissue = function(tiss, scale){
   tiss <- NormalizeData(object = tiss, scale.factor = scale)
   tiss <- ScaleData(object = tiss)
