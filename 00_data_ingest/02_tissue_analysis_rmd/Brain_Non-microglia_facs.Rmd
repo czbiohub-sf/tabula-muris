@@ -9,7 +9,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Brain_Non-microglia"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss = load_tissue_facs(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -27,7 +27,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 15
+n.pcs = 12
 ```
 
 
@@ -37,68 +37,49 @@ For the top-level clustering, aim to under-cluster instead of over-cluster. It w
 
 ```{r}
 # Set resolution 
-res.used <- 0.5
-
+res.used <- 0.4
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
-    resolution = res.used, print.output = 0, save.SNN = TRUE)
+    resolution = res.used, print.output = 0, save.SNN = TRUE, k.param = 50)
+#tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, resolution = res.used, print.output = 0, save.SNN = TRUE)
+#table(tiss@meta.data$res.0.4)
 ```
 
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
 
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=50)
 ```
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
-folder <- paste(rootdir,"brain/all_cells/",sep="")
-title <- "TSNE_plots_metadata.pdf"
-pdf(paste0(folder,title), 10,10)
 TSNEPlot(object = tiss, do.label = T)
 TSNEPlot(object = tiss, group.by='subtissue')
 TSNEPlot(object = tiss, group.by='mouse.id')
-dev.off()
+TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
-folder <- paste(rootdir,"brain/all_cells/",sep="")
-title <- "TSNE_plots_gene_expression.pdf"
-pdf(paste0(folder,title), 10,10)
-genes_to_check = c("Mbp", "Aqp4", "Aldh1l1", "Snap25","Pdgfra", "Des", "Mki67", "Cd34")
+genes_to_check = c("Mog","Mobp" ,"Mbp", "Pecam1", "Cldn5", "Ly6c1", "Aqp4", "Aldh1l1","Slc1a3", "Snap25","Eno2", "Rbfox3","Pdgfra","Susd5", "Cspg4", "Pdgfrb","Mcam", "Des", "Ascl1", "Dcx", "Dlx2","Gad1","Reln", "Calb1", "Slc17a7", "Neurod6", "Mab21l1")
 TSNEPlot(object = tiss, do.label = T)
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
-dev.off()
+DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 ```
 
 You can also compute all markers for all clusters at once. This may take some time.
 ```{r}
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(50, avg_diff)
-# Write top 50 genes for each cluster 
-folder <- paste(rootdir,"brain/all_cells/",sep="")
-title <- "Top_genes_per_cluster.csv"
-write.table(top_genes, file=paste0(folder,title))
-# Also save Seurat Object 
-title <- "Seurat_object.RData"
-save(tiss, file=paste0(folder,title))
-# Also calculate cluster averages 
 cluster.averages <- AverageExpression(object = tiss)
-title <- "Cluster_averages.csv"
-write.table(cluster.averages, file=paste0(folder, title))
 ```
-
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
+
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
 top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
 genes_to_check <- top_genes$gene
-title <- "Dot_plot_top5_genes.pdf"
-pdf(paste0(folder,title), 10,10)
-DotPlot(tiss, genes_to_check, plot.legend = T, x.lab.rot = T)
-dev.off()
 ```
 
 
@@ -110,26 +91,39 @@ table(tiss@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-#clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 ```{r}
-#print(x = head(x= clust.markers, n = 10))
+print(x = head(x= clust.markers, n = 10))
 ```
 
 ## Assigning cell type identity to clusters
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-0: oligodendrocytes
-1: endothelial
-2: astrocytes
-3: OPCs
-4: unknown
-5: pericytes
-6: neurons
-7: neurons
-8: NPCs
+oligodendrocytes- "Mog","Mobp" ,"Mbp
+endothelial- "Pecam1", "Cldn5", "Ly6c1"
+astrocytes- "Aqp4", "Aldh1l1","Slc1a3"
+OPCs- "Pdgfra","Susd5", "Cspg4"
+pericytes- "Pdgfrb","Mcam", "Des"
+pan-neuronal markers- "Snap25","Eno2", "Rbfox3"
+inhibitory neurons- "Gad1","Reln", "Calb1",
+inhibitory neurons- "Slc17a7", "Neurod6", "Mab21l1"
+NPCs- "Ascl1", "Dcx", "Dlx2"
+
+```{r}
+library(tidyverse)
+figshare_annotation = read_csv(here("00_data_ingest","00_facs_raw_data", "annotations_FACS.csv"))
+figshare_annotation = filter(figshare_annotation, tissue == tissue_of_interest)
+tiss@meta.data[, 'figshare_annotation'] <- NA
+tiss@meta.data[as.character(figshare_annotation$cell), 'figshare_annotation'] <- as.character(figshare_annotation$cell_ontology_class)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "figshare_annotation")
+```
+
+```{r}
+table(tiss@meta.data$figshare_annotation, tiss@ident)
+```
 
 
 ```{r}
@@ -137,23 +131,27 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+free_annotation = c(NA,NA,NA,NA,NA,NA,"excitatory neurons and some neuronal stemm cells",NA,
+                    NA,"inhibitory neurons")
+
 cell_ontology_class <-
   c(
-  "oligodendrocyte",
+    "oligodendrocyte",
+     "endothelial cell",
+    "astrocyte",
+     "oligodendrocyte",
+     "oligodendrocyte precursor cell",
   "endothelial cell",
-  "astrocyte",
-  "oligodendrocyte precursor cell",
-  NA,
+   "neuron",
+   "oligodendrocyte",
   "brain pericyte",
-  "neuron",
-  "neuron",
-  "neuronal stem cell"
+   "neuron"
   )
   
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = cell_ontology_class)
-# Replot TSNE plots 
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+
+# Replot TSNE plots
 title <- "TSNE_plots_gene_expression_plus_cell_ontology_class.pdf"
 TSNEPlot(object = tiss, do.label = T)
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
@@ -191,8 +189,8 @@ We can repeat the above analysis on a subset of cells, defined using cluster IDs
 
 ```{r}
 # Subset data based on cluster id
-subtiss <- SubsetData(object = tiss, ident.use = c(6,7), do.center = F, do.scale = F, cells.use = )
-suffix <- "neurons"
+subtiss <- SubsetData(object = tiss, ident.use = c("2"), do.center = F, do.scale = F)
+#suffix <- "neurons"
 
 # To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
 # anno = 'exocrine cells'
@@ -202,8 +200,9 @@ suffix <- "neurons"
 ```
 
 ```{r}
-subtiss <- NormalizeData(object = subtiss)
-subtiss <- ScaleData(object = subtiss, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+subtiss <- NormalizeData(object = subtiss, scale.factor = 1e6)
+subtiss <- ScaleData(object = subtiss)
+subtiss <- FindVariableGenes(object = subtiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
 ```
 
 ```{r}
@@ -233,7 +232,7 @@ PCElbowPlot(object = subtiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-sub.n.pcs = 15
+sub.n.pcs = 10
 ```
 
 
@@ -244,7 +243,7 @@ The clustering is performed based on a nearest neighbors graph. Cells that have 
 sub.res.used <- 1
 
 subtiss <- FindClusters(object = subtiss, reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.used, print.output = 0, save.SNN = TRUE)
+    resolution = sub.res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
 ```
 
 To visualize 
@@ -255,51 +254,31 @@ subtiss <- RunTSNE(object = subtiss, dims.use = 1:sub.n.pcs, seed.use = 10, perp
 
 ```{r}
 # note that you can set do.label=T to help label individual clusters
-suffix <- "astrocytes/"
-folder <- paste(rootdir,"brain/",suffix,sep="")
-dir.create(folder, showWarnings = F)
-# 
-title <- "TSNE_plots_metadata.pdf"
-pdf(paste0(folder,title), 10,10)
 TSNEPlot(object = subtiss, do.label = T)
 TSNEPlot(object = subtiss, group.by="plate.barcode")
+TSNEPlot(object = subtiss, group.by='subtissue')
+TSNEPlot(object = subtiss, group.by='mouse.id')
 
-dev.off()
 ```
 
-```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
+
 
 ```{r Write top 50 markers for each subcluster}
-top <- subtiss.markers %>% group_by(cluster) %>% top_n(50, avg_diff)
-title <- "Top_genes_per_cluster.csv"
-write.table(top,file=paste0(folder,title))
-
+subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+top <- subtiss.markers %>% group_by(cluster) %>% top_n(50, avg_logFC)
+# write.table(top)
 ```
 
 Check expression of genes of interset.
 ```{r}
-# genes_to_check = c("Pdgfrb", "Cspg4", "Anpep","Acta2","Des","Rgs5",
-#                    "Abcc9","Kcnj8", "Cd248","Dlk1")
-genes_to_check = c("Slc1a3", "Fabp7", "S100b" ,"Sept4", "Gfap", "Aldh1l1")
+genes_to_check = c("Slc1a3", "Aldh1l1", "Aqp4","A2m","Nbl1","Gdf10","Naga","Tnfaip2","St6galnac5","Nsdhl")
 #top <- subtiss.markers %>% group_by(cluster) %>% top_n(2, avg_diff)
-title <- "TSNE_plots_gene_expression.pdf"
-pdf(paste0(folder,title), 10,10)
-TSNEPlot(object = subtiss, do.label = T)
-TSNEPlot(object = subtiss, do.label = T, group.by="cell_ontology_class")
-FeaturePlot(subtiss, genes_to_check, pt.size = 1)
-FeaturePlot(subtiss, top$gene, pt.size = 1)
+DotPlot(subtiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 
-dev.off()
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(subtiss, genes_to_check, plot.legend = T)
-```
 
 How big are the clusters?
 ```{r}
@@ -329,21 +308,15 @@ For the subsets, we produce subcell_ontology_classs. These will be written back 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
 ```{r}
-subcluster.ids <- c(0, 1, 2, 3,4,5)
-subfree_annotation <- c()
-cell_ontology_class <-c("astrocyte of the cerebral cortex","astrocyte of the cerebral cortex","astrocyte of the cerebral cortex",
-                   "astrocyte of the cerebral cortex","Bergmann glial cell","oligodendrocyte")
-subtiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
+sub.cluster.ids <- c(0, 1, 2, 3,4)
+sub.free_annotation <- c(NA,NA,NA,NA,NA)
+sub.cell_ontology_class <-c("astrocyte of the cerebral cortex","astrocyte of the cerebral cortex","astrocyte of the cerebral cortex",
+                   "astrocyte of the cerebral cortex","Bergmann glial cell")
 
-subtiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_class)
-subtiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss@ident, from = subcluster.ids, to = subcell_ontology_id)
+subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtiss)
 
-tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss@meta.data$cell_ontology_class)
-tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
-
-TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subcell_ontology_class')
+TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
 
@@ -358,7 +331,7 @@ When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -382,7 +355,5 @@ write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```

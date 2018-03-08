@@ -173,3 +173,17 @@ load_tissue_droplet = function(tissue_of_interest){
   
   return(tiss)
 }
+
+
+save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
+  if (method == "facs"){
+    batch_name_column = 'plate.barcode'
+  } else {
+    batch_name_column = 'channel'
+  }
+
+  filename = here('00_data_ingest', '03_tissue_annotation_csv',
+                    paste0(tissue_of_interest, "_", method, "_annotation.csv"))
+  write.csv(tiss@meta.data[,c(batch_name_column, 'cell_ontology_class',
+    'cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
+}
