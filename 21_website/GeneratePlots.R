@@ -1,39 +1,22 @@
----
-title: "Notebook for generating plots from saved Seurat Robj."
-output: html_notebook
----
-
-```{r}
+## ------------------------------------------------------------------------
 library(Seurat)
 library(tidyverse)
 library(here)
 library(parallel)
 library(foreach)
 library(pryr)
-```
 
-```{r}
+## ------------------------------------------------------------------------
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-```
 
-
-```{r}
+## ------------------------------------------------------------------------
 genes = read_csv("gene_list.csv", col_names = c("gene_names"))$gene_names
 metas = c("cell_ontology_class", "free_annotation", "mouse.sex")
 meta_display_names = c("Cell Ontology Class", "Free Annotation", "Sex")
 
 number_of_cores = 16
-```
 
-```{r, purl=FALSE}
-number_of_cores = 1 # RStudio does not handle multiprocessing very well.
-
-genes = c("Chga", "Ins1", "Gcg", "Actb", "Pecam1", "Ptprc", "Cd4", 'Myf5', 'Myod1', 'Pdgfra')
-```
-
-Functions for making figures for genes and for metadata.
-
-```{r}
+## ------------------------------------------------------------------------
 plotgene_tsne <- function(tiss, gene, tissue, method){
   gene_R_safe = paste0("`",gene,"`")
   if(method == "facs"){
@@ -82,12 +65,8 @@ plotmeta <- function(tiss, tissue, method, index){
 
   ggsave(here('21_website',"images", paste0(tissue, "-", method, "-", meta, "-tsne.png")))
 }
-```
 
-
-
-
-```{r}
+## ------------------------------------------------------------------------
 tissue_plots <- function(tissue, method){
   load(here("00_data_ingest","04_tissue_robj_generated", paste0(method, "_", tissue, "_", "seurat_tiss.Robj")))
 
@@ -99,9 +78,8 @@ tissue_plots <- function(tissue, method){
   mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
   mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
 }
-```
 
-```{r}
+## ------------------------------------------------------------------------
 ptm <- proc.time()
 
 tissue_plots("Pancreas", "facs")
@@ -109,31 +87,4 @@ tissue_plots("Muscle", "droplet")
 tissue_plots("Mammary", "facs")
 
 proc.time() - ptm
-```
 
-
-## An attempt to reconstruct the Violin Plot so we can use str_wrap on the row names
-
-```{r, purl=FALSE}
-gene = 'Krt18'
-tissue = 'Mammary'
-method = 'facs'
-
-gene_R_safe = paste0("`",gene,"`")
-FetchData(tiss, c('cell_ontology_class', gene))  %>% mutate(cell_ontology_class = str_wrap(cell_ontology_class, width = 25)) %>% ggplot(aes_string(x = "cell_ontology_class", y = gene_R_safe, fill = 'cell_ontology_class')) + geom_violin(stat = "ydensity") + geom_jitter(size = 0.3, alpha = 0.5) +
-  xlab("cell ontology class") + ylab(quote("Expression: ln(1+" ~ cp10^6~")")) +
-  coord_flip()
-```
-
-
-Timing information.
-
-```{r, purl=FALSE}
-ptm <- proc.time()
-
-for(gene in rownames(tiss@data)[10000:10100]){
-  plotgene(tiss, gene)
-}
-
-proc.time() - ptm
-```
