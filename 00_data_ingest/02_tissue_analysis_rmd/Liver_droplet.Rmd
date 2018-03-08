@@ -49,12 +49,9 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```{r}
 TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
-
+## Compare to previous annotations
 ```{r}
 tiss = compare_previous_annotation(tiss, tissue_of_interest, "droplet")
-```
-
-```{r}
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
 table(tiss@meta.data[, "previous_annotation"], tiss@ident)
 ```
