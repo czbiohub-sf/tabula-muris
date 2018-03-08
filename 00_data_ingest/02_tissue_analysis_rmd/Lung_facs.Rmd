@@ -45,6 +45,8 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 TSNEPlot(object = tiss, do.label = T)
 ```
 
+
+
 ```{r}
 # Batch and animal effects
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
@@ -137,7 +139,7 @@ cell_ontology_class <-c("lung endothelial cell",
                      "stromal cell",
                      "ciliated columnar cell of tracheobronchial tree")
 
-# tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
 
 ```{r}
