@@ -159,5 +159,5 @@ write.csv(FetchData(tiss, c('channel','cell_ontology_class', 'free_annotation', 
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-save_annotation_csv(tiss, tissue_of_interest, "facs")
+save_annotation_csv(tiss, tissue_of_interest, "droplet")
 ```
