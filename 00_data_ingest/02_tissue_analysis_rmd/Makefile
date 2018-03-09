@@ -1,4 +1,4 @@
-# Launches all notebooks as a background process. Only reccommed to be used on high-powered computers!
+# Launches all notebooks as a background process. Only recommended to be used on high-powered computers!
 
 RMDS := $(wildcard *.Rmd)
 
