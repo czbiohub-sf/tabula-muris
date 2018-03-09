@@ -11,7 +11,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Marrow"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss = load_tissue_facs(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -97,7 +97,7 @@ head(tiss.markers)
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 ```
 
 ## Assigning cell type identity to clusters
@@ -234,7 +234,7 @@ subtiss7.markers <- FindAllMarkers(object = subtiss7, only.pos = TRUE, min.pct =
 ```
 
 ```{r}
-subtiss7.markers %>% group_by(cluster) %>% top_n(6, avg_diff)
+subtiss7.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
 ```
 
 Check expression of genes of interset.

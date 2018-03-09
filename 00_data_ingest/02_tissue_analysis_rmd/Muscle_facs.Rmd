@@ -122,7 +122,7 @@ We can also find all differentially expressed genes marking each cluster. This m
 
 Display the top markers you computed above.
 ```{r}
-#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 ```
 
 Using the markers above, we can confidentaly label many of the clusters:
