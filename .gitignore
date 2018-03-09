@@ -187,3 +187,6 @@ Temporary Items
 
 ### Emacs
 *~
+
+### Ignore RStudio specific files
+.Rproj.user
