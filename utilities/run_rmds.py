@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import glob
 import os
 import subprocess
@@ -20,8 +22,27 @@ def main(folder):
     rmds = glob.iglob(globber)
 
     for rmd in rmds:
-        subprocess.call(f"""echo \"rmarkdown::render('{rmd}', clean=TRUE)\" 
-    | R --slave > {rmd}.out 2>{rmd}.err""")
+        click.echo(f'Starting {rmd} ...')
+        command = ['echo', f'"rmarkdown::render(\'{rmd}\', clean=TRUE)"']
+        # command = f"echo \"rmarkdown::render(\'{rmd}\', clean=TRUE)\" | R --slave"
+        echo = subprocess.run(command, stdout=subprocess.PIPE)
+        # echo = subprocess.Popen(command, stdout=subprocess.PIPE)
+        rmd_output = subprocess.run(['R', '--slave'], stdin=echo.stdout,
+                                    stdout=subprocess.PIPE)
+        # echo.communicate()
+        stdout = rmd + '.out'
+        stderr = rmd + '.err'
+
+        with open(stdout, 'w') as f:
+            f.write(rmd_output.stdout)
+
+        with open(stderr, 'w') as f:
+            f.write(rmd_output.stderr)
+
+
+
+    #     subprocess.call(f"""echo \"rmarkdown::render(\'{rmd}\', clean=TRUE)\"
+    # | R --slave > {rmd}.out 2>{rmd}.err""")
 
 
 if __name__ == "__main__":
