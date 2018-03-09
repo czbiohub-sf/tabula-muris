@@ -108,6 +108,15 @@ stash_subtiss_in_tiss = function(tiss, subtiss){
   return(tiss)
 }
 
+stash_subtiss_in_tiss = function(tiss, subtiss){
+  sub.cells = rownames(subtiss@meta.data)
+  
+  tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
+  tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
+  tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
+  return(tiss)
+}
+
 process_tissue = function(tiss, scale){
   tiss <- NormalizeData(object = tiss, scale.factor = scale)
   tiss <- ScaleData(object = tiss)
@@ -194,7 +203,6 @@ save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
 
   filename = here('00_data_ingest', '03_tissue_annotation_csv',
                     paste0(tissue_of_interest, "_", method, "_annotation.csv"))
-
   write.csv(FetchData(tiss, c(batch_name_column, 'cell_ontology_class',
     'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex')), file=filename)
 }
@@ -209,4 +217,5 @@ compare_previous_annotation = function(tiss, tissue_of_interest, method='facs'){
   print(table(tiss@meta.data[, "previous_annotation"]))
   print(table(tiss@meta.data[, "previous_annotation"], tiss@ident))
   return(tiss)
+
 }
