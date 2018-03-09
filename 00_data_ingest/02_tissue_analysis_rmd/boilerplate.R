@@ -203,8 +203,10 @@ save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
 
   filename = here('00_data_ingest', '03_tissue_annotation_csv',
                     paste0(tissue_of_interest, "_", method, "_annotation.csv"))
-  write.csv(FetchData(tiss, c(batch_name_column, 'cell_ontology_class',
-    'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex')), file=filename)
+  write.csv(FetchData(tiss, c('subtissue', 'FACS.selection',
+    batch_name_column, 'cell_ontology_class',
+    'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex',
+    'mouse.id')), file=filename)
 }
 
 compare_previous_annotation = function(tiss, tissue_of_interest, method='facs'){
