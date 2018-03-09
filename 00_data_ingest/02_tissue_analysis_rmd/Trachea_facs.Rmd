@@ -9,7 +9,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Trachea"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss = load_tissue_facs(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -26,12 +26,7 @@ PCElbowPlot(object = tiss)
 
 Choose the number of principal components to use.
 ```{r}
-# Set number of principal components. 
-<<<<<<< HEAD
-n.pcs = 7
-=======
 n.pcs = 16
->>>>>>> Removed regression, updated annotation
 ```
 
 
@@ -40,12 +35,8 @@ The clustering is performed based on a nearest neighbors graph. Cells that have 
 For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
 
 ```{r}
-# Set resolution 
-<<<<<<< HEAD
-res.used <- 0.5
-=======
+# Set resolution
 res.used <- 0.2
->>>>>>> Removed regression, updated annotation
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
     resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
