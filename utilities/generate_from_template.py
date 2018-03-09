@@ -6,13 +6,17 @@
 # Usage: generate_from_template.py parameter_file.yaml
 import sys
 import yaml
+import click
 
-def main():
+@click.command()
+@click.argument('parameters_yaml')
+@click.option('--template-file', default='Template.Rmd')
+@click.option('--suffix', default='_template.Rmd')
+def main(parameter_yaml, template_file='Template.Rmd',
+         suffix='_template.Rmd'):
     # print command line arguments
-    parameter_file = sys.argv[1]
-    template_file = "Template.Rmd"
 
-    with open(parameter_file) as f:
+    with open(parameter_yaml) as f:
         parameters = yaml.load(f)
 
     with open(template_file) as f:
@@ -23,7 +27,7 @@ def main():
             else:
                 template = template.replace("{" + parameter + "}", '')
 
-    outfile = parameters['TISSUE'] + "_" + parameters['METHOD'] + "_template" + ".Rmd"
+    outfile = parameters['TISSUE'] + "_" + parameters['METHOD'] + suffix
     with open(outfile, 'w') as f:
         f.write(template)
 
