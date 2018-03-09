@@ -9,7 +9,7 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Marrow"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_droplet(tissue_of_interest)
+tiss = load_tissue_droplet(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
