@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 import glob
+from io import StringIO
 import os
+import shlex
 import subprocess
 
 import click
@@ -18,31 +20,21 @@ export LC_ALL=en_US.UTF-8
 @click.command()
 @click.option('--folder', default='.')
 def main(folder):
+    """Run all *.Rmd files in a folder and render to HTML"""
     globber = os.path.join(folder, '*.Rmd')
     rmds = glob.iglob(globber)
 
     for rmd in rmds:
         click.echo(f'Starting {rmd} ...')
-        command = ['echo', f'"rmarkdown::render(\'{rmd}\', clean=TRUE)"']
-        # command = f"echo \"rmarkdown::render(\'{rmd}\', clean=TRUE)\" | R --slave"
-        echo = subprocess.run(command, stdout=subprocess.PIPE)
-        # echo = subprocess.Popen(command, stdout=subprocess.PIPE)
-        rmd_output = subprocess.run(['R', '--slave'], stdin=echo.stdout,
-                                    stdout=subprocess.PIPE)
-        # echo.communicate()
         stdout = rmd + '.out'
         stderr = rmd + '.err'
 
-        with open(stdout, 'w') as f:
-            f.write(rmd_output.stdout)
-
-        with open(stderr, 'w') as f:
-            f.write(rmd_output.stderr)
-
-
-
-    #     subprocess.call(f"""echo \"rmarkdown::render(\'{rmd}\', clean=TRUE)\"
-    # | R --slave > {rmd}.out 2>{rmd}.err""")
+        command = shlex.split(f"Rscript -e \"rmarkdown::render(\'{rmd}\', "
+                              "clean=TRUE)\"  > {stdout} 2>{stderr}")
+        print(command)
+        with open(stdout, 'w') as file_out:
+            with open(stderr, 'w') as file_err:
+                subprocess.Popen(command, stdout=file_out, stderr=file_err)
 
 
 if __name__ == "__main__":
