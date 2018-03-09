@@ -1,0 +1,6 @@
+TISSUE: Lung
+METHOD: facs
+RES: 3
+NPCS: 20
+GENES: "'Pecam1','Epcam','Col1a1','Ptprc','Sftpb','Foxj1','Ager','Scgb1a1','Resp18','Calca','Scgb3a2','Pdpn','Wnt3a','Krt5','Cd8a','Cd79a','Klrb1c','Cd3e','Csf1r','Ly6c2','H2-Aa','Marco','Itgax','Mrc1','Cd24a','Cd68','Cx3cr1','Cd14','Itgam','Cd14','Cd19','Ccr2','Cd200r3'"
+GROUPBY: null
