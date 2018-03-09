@@ -10,7 +10,7 @@ rmd:
 
 all: rmd
 	# Launches all notebooks as a background process. Only recommended to be used on high-powered computers!
-	RMDS=$(wildcard *.Rmd)
+	RMDS='$(wildcard *.Rmd)'
 	@echo "got Rmds"
 	for RMD in $(RMDS); do \
 		@echo "got to loop"; \
