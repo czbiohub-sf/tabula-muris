@@ -1,0 +1,7 @@
+TISSUE: Skin
+METHOD: facs
+RES: 0.4
+NPCS: 5
+GENES: "'Ptprc','Top2a','Krt14','Krt10','Itga6','Fgf18','Dkk3','Cd34'"
+GROUPBY: subtissue
+#skin version in master is old - it uses 20pcs but should use 7 I believe

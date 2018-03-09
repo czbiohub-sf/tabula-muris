@@ -1,0 +1,6 @@
+TISSUE: Limb_Muscle
+METHOD: droplet
+RES: 1
+NPCS: 15
+GENES: "'Myf5', 'Myod1', 'Pdgfra', 'Atxn1', 'Pecam1','Ptprc','Itgam','Cd3g','Cd4', 'Cd19', 'Chad','Chodl', 'Sox9', 'Acan','Acta2'"
+GROUPBY: null
