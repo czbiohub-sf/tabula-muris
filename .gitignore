@@ -189,4 +189,6 @@ Temporary Items
 *~
 
 ### Ignore RStudio specific files
+
 .Rproj.user
+
