@@ -58,6 +58,13 @@ table(tiss@meta.data[, "previous_annotation"], tiss@ident)
 
 
 ```{r}
+tiss = compare_previous_annotation(tiss, tissue_of_interest, "droplet")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
+table(tiss@meta.data[, "previous_annotation"], tiss@ident)
+```
+
+
+```{r}
 TSNEPlot(tiss, group.by="mouse.sex")
 TSNEPlot(tiss, group.by="mouse.id")
 ```
