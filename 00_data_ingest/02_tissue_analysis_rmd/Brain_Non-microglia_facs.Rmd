@@ -473,7 +473,7 @@ GenePlot(object = ECs, gene1 = "nReads", gene2 = "nGene")
 
 ECs <- FilterCells(object = ECs, subset.names = c("nGene", "nReads"), low.thresholds = c(200, 20000), high.thresholds = c(25000, Inf)) 
 ECs <- NormalizeData(object = ECs)
-ECs <- ScaleData(object = ECs, vars.to.regress = c("nReads")) 
+ECs <- ScaleData(object = ECs) 
 
 ```
 
