@@ -139,15 +139,7 @@ free_annotation <- c(
   "NA"
   )
 
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
-
-tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
-
-tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
-tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
 
 ```{r}
@@ -218,11 +210,11 @@ sub.cell_ontology_class <-c("T cell", "T cell", "natural killer cell", "T cell",
 
  validate_cell_ontology(sub.cell_ontology_class)
  sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
- 
+
  subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
  validate_cell_ontology(sub.cell_ontology_class)
  sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
- 
+
  subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
  subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
  subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
@@ -232,7 +224,7 @@ sub.cell_ontology_class <-c("T cell", "T cell", "natural killer cell", "T cell",
 
 ```{r}
  sub.cells = rownames(subtiss@meta.data)
- 
+
  tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
  tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
  tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
@@ -271,37 +263,9 @@ save(tiss, file=filename)
 
 So that Biohub can easily combine all your annotations, please export them as a simple csv.
 
-```{r}
-head(tiss@meta.data)
-```
-
-```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_annotation.csv"))
-write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
-```
-
-
-
-
-Figures for Supplement
-
-#Can we apply the
-```{r, echo=FALSE, fig.height=4, fig.width=8}
-DotPlot(tiss, genes_to_check, plot.legend = T, group.by = 'free_annotation', x.lab.rot = T)
-```
-
-#Not sure how to make this, but a table with free_annotation names as rows, and columns as "BAT", "GAT", "MAT", "SCAT", and "Total"
-
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "subtissue")
 
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free.annotation', 'cluster.ids')], file=filename)
-
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```

@@ -9,7 +9,7 @@ Enter the directory of the maca folder on your drive and the name of the tissue 
 tissue_of_interest = "Colon"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-tiss = load_tissue_facs(tissue_of_interest)
+tiss <- load_tissue_facs(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
@@ -88,21 +88,18 @@ FeaturePlot(tiss, genes_to_check, pt.size = 0.5)
 FeaturePlot(tiss, c('Hoxb6', 'Hoxb13'), pt.size = 0.5)
 ```
 
+```{r}
+#FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
+FeaturePlot(tiss, c('Hoxb6', 'Hoxb13'), pt.size = 0.5)
+```
+
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, genes_to_check)
-```
-
-```{r}
-# To change the y-axis to show raw counts, add use.raw = T.
-VlnPlot(tiss, 'Lgr5')
-```
 
 ```{r}
 # To get plots of two genes, add use.raw = T.
 GenePlot(tiss, 'Lgr5', 'Krt20')
+# To change the y-axis to show raw counts, add use.raw = T.
+VlnPlot(tiss, genes_to_check)
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
@@ -123,21 +120,21 @@ table(tiss@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 ```{r}
-print(x = head(x= clust.markers, n = 10))
+#print(x = head(x= clust.markers, n = 10))
 ```
 
 You can also compute all markers for all clusters at once. This may take some time.
 ```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(10, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(10, avg_diff)
 ```
 
 ## Assigning cell type identity to clusters
@@ -216,8 +213,7 @@ Print a table showing the count of cells in each identity category from each pla
 table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 ```
 
-
-When you save the annotated tissue, please give it a name.
+# Saving
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
@@ -226,6 +222,12 @@ print(filename)
 save(tiss, file=filename)
 ```
 
+```{r}
+# To reload a saved object
+# filename = here('00_data_ingest', '04_tissue_robj_generated',
+#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+# load(file=filename)
+```
 
 # Export the final metadata
 
