@@ -10,5 +10,4 @@ rmd:
 
 all: rmd
 	# Launches all notebooks as a background process. Only recommended to be used on high-powered computers!
-	python ../run_rmds.py
-
+	../utilities/run_rmds.py
