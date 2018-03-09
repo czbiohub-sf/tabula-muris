@@ -192,3 +192,6 @@ Temporary Items
 
 .Rproj.user
 
+### Ignore stderr/stdout files
+.err
+.out
