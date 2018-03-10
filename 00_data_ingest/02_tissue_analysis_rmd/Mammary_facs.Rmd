@@ -91,7 +91,7 @@ You can also compute all markers for all clusters at once. This may take some ti
 
 Display the top markers you computed above.
 ```{r}
-#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 ```
 
 ## Assigning cell type identity to clusters

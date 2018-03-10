@@ -1,8 +1,6 @@
 TISSUE: Liver
 METHOD: facs
-RES: 0.3
-NPCS: 10
-GENES: "'Irf7','Spic' 'Clec4f' 'Cd68' 'Mpeg1' 'Itgb2' 'Ahnak' 'Pld4' 'Cd3e','Zap70','Cd19','Ms4a1', 'Cd74', 'Chchd10', 'Cd79a', 'Cd79b', 'Vpreb3','Klrb1a','Klrb1c','Tyrobp','Ncr1','Gzma','Prf1','Serpinb9','Nkg7','Cd3e','Cd4','Cd8a','Cxcr6','Ncam1'"
+RES: 1
+NPCS: 11
+GENES: "'Alb', 'Ttr', 'Apoa1', 'Serpina1c','Cyp2e1', 'Glul', 'Oat', 'Gulo','Ass1', 'Hamp', 'Gstp1', 'Ubb','Cyp2f2', 'Pck1', 'Hal', 'Cdh1','Pecam1', 'Nrp1', 'Kdr','Oit3','Emr1', 'Clec4f', 'Cd68', 'Irf7','Zap70', 'Il2rb', 'Nkg7', 'Cxcr6', 'Gzma','Cd79a', 'Cd79b', 'Cd74'"
 GROUPBY: null
-
-#update once using boilerplate

@@ -71,14 +71,14 @@ DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + c
 You can also compute all markers for all clusters at once. This may take some time.
 ```{r}
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(50, avg_diff)
+top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(50, avg_logFC)
 cluster.averages <- AverageExpression(object = tiss)
 ```
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
-top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 genes_to_check <- top_genes$gene
 ```
 
@@ -272,7 +272,7 @@ top <- subtiss.markers %>% group_by(cluster) %>% top_n(50, avg_logFC)
 Check expression of genes of interset.
 ```{r}
 genes_to_check = c("Slc1a3", "Aldh1l1", "Aqp4","A2m","Nbl1","Gdf10","Naga","Tnfaip2","St6galnac5","Nsdhl")
-#top <- subtiss.markers %>% group_by(cluster) %>% top_n(2, avg_diff)
+#top <- subtiss.markers %>% group_by(cluster) %>% top_n(2, avg_logFC)
 DotPlot(subtiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 
 ```

@@ -102,7 +102,7 @@ table(tiss@ident)
 <!-- ``` -->
 
 <!-- ```{r} -->
-<!-- print(x = head(x= clust.markers, n = 20, avg_diff)) -->
+<!-- print(x = head(x= clust.markers, n = 20, avg_logFC)) -->
 <!-- ``` -->
 
 <!-- You can also compute all markers for all clusters at once. This may take some time. -->
