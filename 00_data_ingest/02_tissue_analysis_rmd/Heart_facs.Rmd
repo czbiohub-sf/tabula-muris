@@ -311,7 +311,7 @@ sub.cell_ontology_class = c("myofibroblast cell", "myofibroblast cell", "myofibr
 subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
 tiss = stash_subtiss_in_tiss(tiss, subtiss)
 
-TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='subcell_ontology_class')
+TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
 # Save the Robject for later
