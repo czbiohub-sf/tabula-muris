@@ -302,13 +302,6 @@ tiss@meta.data[subtiss7@cell.names,'cell_ontology_id'] <- as.character(subtiss7@
 TSNEPlot(object = subtiss7, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
-When you save the subtissue, please give it a name.
-
-```{r}
-subtiss7.name = 'Nk_T_cells'
-save(subtiss7, file=paste0(save_dir,"/",subtiss7.name, "_seurat_subtiss7.Robj"))
-```
-
 
 # Export the final metadata
 
