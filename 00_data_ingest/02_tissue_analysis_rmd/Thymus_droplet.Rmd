@@ -113,9 +113,7 @@ cell_ontology_class <-c("immature T cell",
                         "immature T cell",
                         "professional antigen presenting cell")
 
-tiss@meta.data[,'free_annotation'] <- plyr::mapvalues(x = tiss@meta.data$cluster.ids, from = cluster.ids, to = free_annotation)
-
-stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
 
 ```{r}
