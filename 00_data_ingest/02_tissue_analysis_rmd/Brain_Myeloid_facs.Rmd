@@ -1,12 +1,12 @@
 ---
-title: "Brain Microglia FACS Notebook"
+title: "Brain Myeloid FACS Notebook"
 output: html_notebook
 ---
 
 Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
-tissue_of_interest = "Brain_Microglia"
+tissue_of_interest = "Brain_Myeloid"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 tiss = load_tissue_facs(tissue_of_interest)
@@ -132,21 +132,11 @@ For the subsets, we produce subcell_ontology_classs. These will be written back 
 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
+## Compare to previous annotations
 ```{r}
-library(tidyverse)
-figshare_annotation = read_csv(here("00_data_ingest","00_facs_raw_data", "annotations_FACS.csv"))
-figshare_annotation = filter(figshare_annotation, tissue == tissue_of_interest)
-tiss@meta.data[, 'figshare_annotation'] <- NA
-tiss@meta.data[as.character(figshare_annotation$cell), 'figshare_annotation'] <- as.character(figshare_annotation$cell_ontology_class)
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "figshare_annotation")
+tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
 ```
-
-Look at clusters and previous figshare annotation
-```{r}
-table(tiss@meta.data$figshare_annotation, tiss@ident)
-```
-
-
 
 Look at clusters and sex enrichment
 ```{r}
