@@ -1,12 +1,12 @@
 ---
-title: "Muscle FACS Notebook"
+title: "Limb Muscle FACS Notebook"
 output: html_notebook
 ---
 
 Enter the name of the tissue you want to analyze.
 
 ```{r}
-tissue_of_interest = "Muscle"
+tissue_of_interest = "Limb_Muscle"
 ```
 
 
