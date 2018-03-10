@@ -1,12 +1,12 @@
 ---
-title: "Colon FACS Notebook"
+title: "Large Intestine FACS Notebook"
 output: html_notebook
 ---
 
 Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
 
 ```{r}
-tissue_of_interest = "Colon"
+tissue_of_interest = "Large_Intestine"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 tiss <- load_tissue_facs(tissue_of_interest)
