@@ -172,7 +172,7 @@ cell_ontology_class <- c(
 "basal cell of epidermis",
 "keratinocyte",
 "keratinocyte",
- "Langerhans cells"
+ "Langerhans cell"
  )
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
