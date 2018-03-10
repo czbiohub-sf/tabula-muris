@@ -81,7 +81,7 @@ Which markers identify a specific cluster?
 ```
 
 ```{r}
-print(x = head(x= clust.markers, n = 10))
+# print(x = head(x= clust.markers, n = 10))
 ```
 
 You can also compute all markers for all clusters at once. This may take some time.
