@@ -205,15 +205,15 @@ load_tissue_droplet = function(tissue_of_interest){
 
 save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
   if (method == "facs"){
-    batch_name_column = 'plate.barcode'
+    method_specific_columns = c('plate.barcode', 'FACS.selection')
   } else {
-    batch_name_column = 'channel'
+    method_specific_columns = 'channel'
   }
 
   filename = here('00_data_ingest', '03_tissue_annotation_csv',
                     paste0(tissue_of_interest, "_", method, "_annotation.csv"))
-  write.csv(FetchData(tiss, c('subtissue', 'FACS.selection',
-    batch_name_column, 'cell_ontology_class',
+  write.csv(FetchData(tiss, c('subtissue',
+    method_specific_columns, 'cell_ontology_class',
     'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex',
     'mouse.id')), file=filename)
 
