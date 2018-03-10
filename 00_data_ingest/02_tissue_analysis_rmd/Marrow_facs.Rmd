@@ -54,23 +54,10 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=84)
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = tiss, do.label = T)
 ```
-Compare to previous annotations
+## Compare to previous annotations
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_facs_annotation.csv"))
-previous_annotation = read_csv(filename)
-tiss@meta.data[, 'previous_annotation'] <- "NA"
-tiss@meta.data[as.character(previous_annotation$X1), 'previous_annotation'] <- as.character(previous_annotation$cell_ontology_class)
+tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs")
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
-```
-
-```{r}
-table(tiss@meta.data[, "previous_annotation"])
-```
-
-
-```{r}
-table(tiss@meta.data[, "previous_annotation"], tiss@ident)
 ```
 
 Check expression of genes of interset.
