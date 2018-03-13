@@ -257,37 +257,15 @@ cell_ontology_class <-c(
   "granulocyte", 
   "immature B cell", 
   "late pro-B cell", 
-  "T_NK_NKT cell", 
+  NA, #"T_NK_NKT cell", 
   "monocyte", 
   "granulocytopoietic cell", 
   "hematopoietic precursor cell", 
   "macrophage", 
   "granulocyte monocyte progenitor cell", 
   "basophil")
-cell_ontology_id <- c(
-  "CL:0008001", 
-  "CL:0000788", 
-  "CL:0000817", 
-  "CL:0000094", 
-  "CL:0000094", 
-  "CL:0000816", 
-  "CL:0002048", 
-  NA, 
-  "CL:0000576", 
-  "CL:0002191", 
-  "CL:0008001", 
-  "CL:0000235", 
-  "CL:0000557", 
-  "CL:0000767")
-  
 
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
-
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
-
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
