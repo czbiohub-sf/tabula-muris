@@ -198,57 +198,7 @@ When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-		  paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-print(filename)
-save(tiss, file=filename)
-```
-
-```{r}
-# To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-# load(file=filename)
-```
-
-
-
-# Export the final metadata
-
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
-
-```{r}
-head(tiss@meta.data)
-```
-
-
-```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-		  paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file="Bladder_cell_ontology_class.csv")
-```
-
-
-## Checking for batch effects
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
-TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
-```
-
-Print a table showing the count of cells in each identity category from each plate.
-
-```{r}
-table(as.character(subtiss@ident), as.character(subtiss@meta.data$plate.barcode))
-```
-
-
-# Save the Robject for later
-When you save the annotated tissue, please give it a name.
-
-```{r}
-filename = here('00_data_ingest', '04_tissue_robj_generated', 
-		  paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+		  paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
