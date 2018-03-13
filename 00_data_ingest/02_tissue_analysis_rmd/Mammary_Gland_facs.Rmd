@@ -8,7 +8,7 @@ output:
 Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
-tissue_of_interest = "Mammary"
+tissue_of_interest = "Mammary_Gland"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 tiss <- load_tissue_facs(tissue_of_interest)
