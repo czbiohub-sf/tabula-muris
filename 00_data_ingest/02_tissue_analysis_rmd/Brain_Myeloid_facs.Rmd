@@ -127,8 +127,8 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 5: microglia
 6: macrophages
 
-### Assigning subcell_ontology_classs
-For the subsets, we produce subcell_ontology_classs. These will be written back as metadata in the original object, so we can see all subcell_ontology_classs together.
+### Assigning Anotations
+For the subsets, we produce annotations These will be written back as metadata in the original object, so we can see all annotations together.
 
 If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
 
@@ -138,7 +138,7 @@ cluster.ids <- c(0, 1, 2, 3,4,5,6)
 free_annotation <- c(NA, NA, NA, NA, NA, NA, NA)
 cell_ontology_class <-c("microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","macrophage" )
 
-tiss = stash_annotations(tiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
