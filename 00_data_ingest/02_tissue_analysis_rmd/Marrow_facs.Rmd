@@ -56,6 +56,12 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=84)
 TSNEPlot(object = tiss, do.label = T)
 ```
 
+## Compare to previous annotations
+```{r}
+tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
+```
+
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=84, fig.width=15}
@@ -121,17 +127,10 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-free_annotation <- c()
+free_annotation <-  c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 cell_ontology_class <-c("hematopoietic stem cell", "B cell", "B cell", "neutrophil", "granulocyte", "monocyte", "B cell", "T_NK", "neutrophil", "Fraction A pre-pro B cell", "hematopoietic stem cell")
-cell_ontology_id <- c("CL:0000037", "CL:0000236", "CL:0000236", "CL:0000775", "CL:0000094", "CL:0000576", "CL:0000236", NA, "CL:0000775", "CL:0002045", "CL:0000037")
-  
 
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
-
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
