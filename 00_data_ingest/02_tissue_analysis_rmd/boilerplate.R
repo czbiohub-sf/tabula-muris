@@ -86,6 +86,8 @@ load_tissue_facs = function(tissue_of_interest){
 }
 
 stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_class){
+  tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+  
   validate_cell_ontology(cell_ontology_class)
   cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
   
@@ -100,24 +102,6 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
 
 stash_subtiss_in_tiss = function(tiss, subtiss){
 
-  sub.cells = rownames(subtiss@meta.data)
-  
-  tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
-  tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
-  tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
-  return(tiss)
-}
-
-stash_subtiss_in_tiss = function(tiss, subtiss){
-  sub.cells = rownames(subtiss@meta.data)
-  
-  tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
-  tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
-  tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
-  return(tiss)
-}
-
-stash_subtiss_in_tiss = function(tiss, subtiss){
   sub.cells = rownames(subtiss@meta.data)
   
   tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
