@@ -206,12 +206,18 @@ save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
 compare_previous_annotation = function(tiss, tissue_of_interest, method='facs'){
   filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                   paste0(tissue_of_interest, "_", method, "_annotation.csv"))
-  previous_annotation = read_csv(filename)
-  tiss@meta.data[, 'previous_annotation'] <- "NA"
-  tiss@meta.data[as.character(previous_annotation$X1), 'previous_annotation'] <- as.character(previous_annotation$cell_ontology_class)
-  TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
-  print(table(tiss@meta.data[, "previous_annotation"]))
-  print(table(tiss@meta.data[, "previous_annotation"], tiss@ident))
+  if (file.exists(filename)){
+    previous_annotation = read_csv(filename)
+    cols = c('free_annotation', 'cell_ontology_class')
+    for (col in cols){
+      previous_col = paste0('previous_', col)
+      tiss@meta.data[, previous_col] <- "NA"
+      tiss@meta.data[as.character(previous_annotation$X1), previous_col] <- as.character(previous_annotation[col])
+      print(table(tiss@meta.data[, previous_col]))
+      print(table(tiss@meta.data[, previous_col], tiss@ident))
+      
+    }
+  }
   return(tiss)
 
 }
