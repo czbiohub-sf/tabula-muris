@@ -51,14 +51,14 @@ TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 ## Compare to previous annotations
 ```{r}
-tiss = compare_previous_cell_ontology_class(tiss, tissue_of_interest, "droplet")
+tiss = compare_previous_annotation(tiss, tissue_of_interest, "droplet")
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
 table(tiss@meta.data[, "previous_cell_ontology_class"], tiss@ident)
 ```
 
 
 ```{r}
-tiss = compare_previous_cell_ontology_class(tiss, tissue_of_interest, "droplet")
+tiss = compare_previous_annotation(tiss, tissue_of_interest, "droplet")
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
 table(tiss@meta.data[, "previous_cell_ontology_class"], tiss@ident)
 ```
