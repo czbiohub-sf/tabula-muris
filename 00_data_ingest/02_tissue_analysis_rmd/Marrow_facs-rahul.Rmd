@@ -693,7 +693,7 @@ PCElbowPlot(subtissE)
 sub.n.pcs = 20
 sub.res.use = 1
 subtissE <- subtissE %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE, force=TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=60)
 
 TSNEPlot(object = subtissE, do.label = T, pt.size = 1.2, label.size = 4)
