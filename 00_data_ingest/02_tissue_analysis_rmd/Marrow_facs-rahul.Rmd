@@ -54,7 +54,7 @@ plate_metadata
 Subset the metadata on the tissue.
 
 ```{r}
-tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissFue','mouse.sex')]
+tissue_plates = filter(plate_metadata, tissue == tissue_of_interest)[,c('plate.barcode','tissue','subtissue','mouse.sex')]
 tissue_plates
 ```
 
@@ -296,39 +296,39 @@ table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 # Subset A == T_NK_NKT cell (Cluster 7)
 
 ```{r}
-subtissFA = SubsetData(tiss, ident.use = c(7))
+subtissA = SubsetData(tiss, ident.use = c(7))
 ```
 
 ```{r}
-subtissFA <- subtissFA %>% ScaleData() %>% 
+subtissA <- subtissA %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 ```
 
 ```{r}
-PCHeatmap(object = subtissFA, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
-PCElbowPlot(subtissFA)
+PCHeatmap(object = subtissA, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissA)
 ```
 
 
 ```{r}
 sub.n.pcs = 4
 sub.res.use = 1
-subtissFA <- subtissFA %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+subtissA <- subtissA %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=44)
 
-TSNEPlot(object = subtissFA, do.label = T, pt.size = 1.2, label.size = 4)
+TSNEPlot(object = subtissA, do.label = T, pt.size = 1.2, label.size = 4)
 
 ```
 Check expression of genes of interset.
 
 # ```{r}
-# subtissFA.markers <- FindAllMarkers(object = subtissFA, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# subtissA.markers <- FindAllMarkers(object = subtissA, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 # ```
 # 
 # ```{r}
-# subtissFA.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# subtissA.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
 # ```
 # 
 
@@ -336,19 +336,19 @@ Check expression of genes of interset.
 ```{r, echo=FALSE, fig.height=102, fig.width=15}
 genes_to_check = c('Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Ncr1', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag1', 'Rag2', 'Dntt', 'Pax5', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Emr1', 'Adamts14', 'Itgax', 'Styk1', 'Ugt1a7c', 'Khdc1a', 'Car5b', 'Gzma', 'Cma1', 'A430084P05Rik', 'Ccl4', 'Sh2d1b1', 'Ncam1', 'Klra1', 'Cd34', 'Il2rb', 'Itga4', 'Itgb7')
 
-FeaturePlot(subtissFA, genes_to_check, pt.size = 1, nCol = 3)
+FeaturePlot(subtissA, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 
 ```{r, echo=FALSE, fig.height=8, fig.width=10}
-#DotPlot(subtissFA, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+#DotPlot(subtissA, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
 
 The multitude of clusters of each type correspond mostly to individual animals/sexes.
 
 ```{r}
-table(FetchData(subtissFA, c('mouse.id','ident')) %>% droplevels())
+table(FetchData(subtissA, c('mouse.id','ident')) %>% droplevels())
 ```
 
 ```{r}
@@ -357,15 +357,15 @@ sub.free_annotation <- c("regulatory_immature T cell", "mature natural killer ce
 
 sub.cell_ontology_class <-c("regulatory T cell", "mature natural killer cell", "immature NK T cell", "B cell", "immature natural killer cell", "pre-natural killer cell")
 
-subtissFA = stash_annotations(subtissFA, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissFA_in_tiss(tiss, subtissFA)
+subtissA = stash_annotations(subtissA, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtissA_in_tiss(tiss, subtissA)
 ```
 
 ## Checking for batch effects
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtissFA, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = subtissA, do.return = TRUE, group.by = "plate.barcode")
 ```
 
 # Final coloring
@@ -373,8 +373,8 @@ TSNEPlot(object = subtissFA, do.return = TRUE, group.by = "plate.barcode")
 Color by cell ontology class on the original TSNE.
 
 ```{r}
-TSNEPlot(object = subtissFA, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
-TSNEPlot(object = subtissFA, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = subtissA, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+TSNEPlot(object = subtissA, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
 ```
 
 
@@ -382,43 +382,43 @@ TSNEPlot(object = subtissFA, do.label = TRUE, do.return = TRUE, group.by = "free
 #######################################################
 
 # Subset B == regulatory_immature T cell (Cluster 0)
-## Multiple cell-types in the cluster 0 of subtissF (original cluster 7)
-## subcluster the cluster 0 (regulatory_immature T cell) of subtissF (original cluster 7)
+## Multiple cell-types in the cluster 0 of subtiss (original cluster 7)
+## subcluster the cluster 0 (regulatory_immature T cell) of subtiss (original cluster 7)
 
 ```{r}
-subtissFB = SubsetData(subtissFB, ident.use = c(0))
+subtissB = SubsetData(subtissB, ident.use = c(0))
 ```
 
 ```{r}
-subtissFB <- subtissFB %>% ScaleData() %>% 
+subtissB <- subtissB %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 ```
 
 ```{r}
-PCHeatmap(object = subtissFB, pc.use = 1:3, cells.use = 170, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
-PCElbowPlot(subtissFB)
+PCHeatmap(object = subtissB, pc.use = 1:3, cells.use = 170, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissB)
 ```
 
 
 ```{r}
 sub.n.pcs = 3
 sub.res.use = 1
-subtissFB <- subtissFB %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+subtissB <- subtissB %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=12)
 
-TSNEPlot(object = subtissFB, do.label = T, pt.size = 1.2, label.size = 4)
+TSNEPlot(object = subtissB, do.label = T, pt.size = 1.2, label.size = 4)
 
 ```
 Check expression of genes of interset.
 
 # ```{r}
-# subtissFB.markers <- FindAllMarkers(object = subtissFB, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# subtissB.markers <- FindAllMarkers(object = subtissB, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 # ```
 # 
 # ```{r}
-# subtissFB.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# subtissB.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
 # ```
 # 
 
@@ -426,12 +426,12 @@ Check expression of genes of interset.
 ```{r, echo=FALSE, fig.height=84, fig.width=15}
 genes_to_check = c('Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag2', 'Dntt', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Ugt1a7c', 'Car5b', 'Gzma', 'A430084P05Rik', 'Ccl4', 'Ncam1', 'Klra1', 'Cd34', 'Itga4', 'Itgb7', 'Tgfb1', 'Il10')
 
-FeaturePlot(subtissFB, genes_to_check, pt.size = 1, nCol = 3)
+FeaturePlot(subtissB, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 
 ```{r, echo=FALSE, fig.height=8, fig.width=10}
-#DotPlot(subtissFB, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+#DotPlot(subtissB, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
 From these genes, it appears that the clusters represent:
@@ -439,7 +439,7 @@ From these genes, it appears that the clusters represent:
 The multitude of clusters of each type correspond mostly to individual animals/sexes.
 
 ```{r}
-table(FetchData(subtissFB, c('mouse.id','ident')) %>% droplevels())
+table(FetchData(subtissB, c('mouse.id','ident')) %>% droplevels())
 ```
 
 ```{r}
@@ -451,8 +451,8 @@ sub.free_annotation <- c(
 
 sub.cell_ontology_class <-c("regulatory T cell", "immature T cell", "immature T cell")
 
-subtissFB = stash_annotations(subtissFB, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissFB_in_tiss(tiss, subtissFB)
+subtissB = stash_annotations(subtissB, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtissB_in_tiss(tiss, subtissB)
 ```
 
 
@@ -460,7 +460,7 @@ tiss = stash_subtissFB_in_tiss(tiss, subtissFB)
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtissFB, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = subtissB, do.return = TRUE, group.by = "plate.barcode")
 ```
 
 # Final coloring
@@ -468,7 +468,7 @@ TSNEPlot(object = subtissFB, do.return = TRUE, group.by = "plate.barcode")
 Color by cell ontology class on the original TSNE.
 
 ```{r}
-TSNEPlot(object = subtissFB, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+TSNEPlot(object = subtissB, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
 ```
 
 
@@ -484,39 +484,39 @@ TSNEPlot(object = subtissFB, do.label = TRUE, do.return = TRUE, group.by = "cell
 ## It appears there are multiple novel cell-types within the Pax5+ late pro-B cell
 
 ```{r}
-subtissFC = SubsetData(tiss, ident.use = c(6))
+subtissC = SubsetData(tiss, ident.use = c(6))
 ```
 
 ```{r}
-subtissFC <- subtissFC %>% ScaleData() %>% 
+subtissC <- subtissC %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 ```
 
 ```{r}
-PCHeatmap(object = subtissFC, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
-PCElbowPlot(subtissFC)
+PCHeatmap(object = subtissC, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissC)
 ```
 
 
 ```{r}
 sub.n.pcs = 4
 sub.res.use = 1
-subtissFC <- subtissFC %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+subtissC <- subtissC %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=42)
 
-TSNEPlot(object = subtissFC, do.label = T, pt.size = 1.2, label.size = 4)
+TSNEPlot(object = subtissC, do.label = T, pt.size = 1.2, label.size = 4)
 
 ```
 Check expression of genes of interset.
 
 # ```{r}
-# subtissFC.markers <- FindAllMarkers(object = subtissFC, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# subtissC.markers <- FindAllMarkers(object = subtissC, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 # ```
 # 
 # ```{r}
-# subtissFC.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# subtissC.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
 # ```
 
 
@@ -524,18 +524,18 @@ Check expression of genes of interset.
 ```{r, echo=FALSE, fig.height=102, fig.width=15}
 genes_to_check = c('Il7r', 'Cd69', 'Lyz2', 'Tbxa2r', 'Vpreb1', 'Vpreb2', 'Igll1', 'Vpreb3', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Stmn1', 'Top2a', 'Mki67', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag1', 'Rag2', 'Dntt', 'Pax5', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Cdc20', 'Ube2c', 'Ccnb1', 'Cenpf', 'Kpna2', 'Tcf3', 'Ebf1', 'Ikzf1', 'Sfpi1', 'Slco4a1', 'Zfp810', 'Ska1', 'Kif18a', 'Depdc1b', 'Btg2', 'S100a8', 'Serinc5', 'Srm', 'Smyd2', 'Comtd1', 'Erg', 'Arpp21', 'Mmrn1', 'Kdm5b', 'Grb7', 'Acy3', 'Ung', 'Cybb', 'Klhl15', 'E2f1', 'Troap', 'Eri2', 'Ltb')
 
-FeaturePlot(subtissFC, genes_to_check, pt.size = 1, nCol = 3)
+FeaturePlot(subtissC, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 
 ```{r, echo=FALSE, fig.height=8, fig.width=10}
-#DotPlot(subtissFC, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+#DotPlot(subtissC, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
 The multitude of clusters of each type correspond mostly to individual animals/sexes.
 
 ```{r}
-table(FetchData(subtissFC, c('mouse.id','ident')) %>% droplevels())
+table(FetchData(subtissC, c('mouse.id','ident')) %>% droplevels())
 ```
 
 ```{r}
@@ -544,15 +544,15 @@ sub.free_annotation <- c("Dntt- late pro-B cell", "Dntt+ late pro-B cell", "Dntt
 
 sub.cell_ontology_class <-c("late pro-B cell", "late pro-B cell", "late pro-B cell", "late pro-B cell", "late pro-B cell")
 
-subtissFC = stash_annotations(subtissFC, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissFC_in_tiss(tiss, subtissFC)
+subtissC = stash_annotations(subtissC, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtissC_in_tiss(tiss, subtissC)
 ```
 
 ## Checking for batch effects
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtissFC, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = subtissC, do.return = TRUE, group.by = "plate.barcode")
 ```
 
 ## Final coloring
@@ -560,8 +560,8 @@ TSNEPlot(object = subtissFC, do.return = TRUE, group.by = "plate.barcode")
 Color by cell ontology class on the original TSNE.
 
 ```{r}
-TSNEPlot(object = subtissFC, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
-TSNEPlot(object = subtissFC, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+TSNEPlot(object = subtissC, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = subtissC, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
 ```
 
 ####################################
@@ -574,38 +574,38 @@ TSNEPlot(object = subtissFC, do.label = TRUE, do.return = TRUE, group.by = "cell
 
 
 ```{r}
-subtissFD = SubsetData(tiss, ident.use = c(0, 10))
+subtissD = SubsetData(tiss, ident.use = c(0, 10))
 ```
 
 ```{r}
-subtissFD <- subtissFD %>% ScaleData() %>% 
+subtissD <- subtissD %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 ```
 
 ```{r}
-PCHeatmap(object = subtissFD, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
-PCElbowPlot(subtissFD)
+PCHeatmap(object = subtissD, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissD)
 ```
 
 
 ```{r}
 sub.n.pcs = 20
 sub.res.use = 1
-subtissFD <- subtissFD %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+subtissD <- subtissD %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=65)
 
-TSNEPlot(object = subtissFD, do.label = T, pt.size = 1.2, label.size = 4)
+TSNEPlot(object = subtissD, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 Check expression of genes of interset.
 
 # ```{r}
-# subtissFD.markers <- FindAllMarkers(object = subtissFD, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# subtissD.markers <- FindAllMarkers(object = subtissD, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 # ```
 # 
 # ```{r}
-# subtissFD.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# subtissD.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
 # ```
 
 
@@ -613,19 +613,19 @@ Check expression of genes of interset.
 ```{r, echo=FALSE, fig.height=120, fig.width=15}
 genes_to_check = c('Il7r', 'Kit', 'Atxn1', 'Cd34', 'Slamf1', 'Flt3', 'Cd63', 'Myl12b', 'Muc13', 'Sdsl', 'Stat3', 'Wtap', 'Mpl', 'Txnip', 'Ltb', 'Pdzk1ip1', 'Esam', 'Cish', 'Tyms', 'Tk1', '2810417H13Rik', 'Rrm2', 'Uhrf1', 'Tuba1b', 'Myl10', 'Junb', 'Fos', 'Ier2', 'Dusp1', 'Ly6a', 'Ube2c', 'Ccnb2', 'Ccnb1', 'Cdc20', 'Ccna2', 'Flt3', 'Dntt', 'Gm11428', 'Ncf1', 'Mn1', 'H2-Ob', 'Ctsg', 'Mpo', 'Ccl9', 'Sell', 'Hk3', 'Cd48', 'Gata1', 'Mfsd2b', 'Tuba8', 'Itga2b', 'Apoe', 'Pf4', 'Elane', 'Ms4a3', 'Ctsg', 'Mpo', 'Prtn3', 'Cd69', 'Ccr7', 'Ctla2a', 'Tyrobp', 'Serpinb9', 'Lyz2', 'Hp', 'Ly6c2', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Chchd10', 'Cnp', 'Rag2', 'Dntt', 'Mki67', 'Stmn1', 'Gimap8', 'Jhdm1d', 'Kif11', 'Spag5', 'Xist', 'Tsix', 'Notch2', 'Slc39a1', 'Socs3', 'Vldlr', 'Mcm4', 'Ung')
 
-FeaturePlot(subtissFD, genes_to_check, pt.size = 1, nCol = 3)
+FeaturePlot(subtissD, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 
 ```{r, echo=FALSE, fig.height=8, fig.width=10}
-#DotPlot(subtissFD, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+#DotPlot(subtissD, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
 
 The multitude of clusters of each type correspond mostly to individual animals/sexes.
 
 ```{r}
-table(FetchData(subtissFD, c('mouse.id','ident')) %>% droplevels())
+table(FetchData(subtissD, c('mouse.id','ident')) %>% droplevels())
 ```
 
 ```{r}
@@ -642,8 +642,8 @@ sub.cell_ontology_class <-c("hematopoietic precursor cell",
   "hematopoietic precursor cell", 
   "hematopoietic precursor cell")
 
-subtissFD = stash_annotations(subtissFD, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissFD_in_tiss(tiss, subtissFD)
+subtissD = stash_annotations(subtissD, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtissD_in_tiss(tiss, subtissD)
 
 ```
 
@@ -653,7 +653,7 @@ tiss = stash_subtissFD_in_tiss(tiss, subtissFD)
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtissFD, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = subtissD, do.return = TRUE, group.by = "plate.barcode")
 ```
 
 ## Final coloring
@@ -661,52 +661,52 @@ TSNEPlot(object = subtissFD, do.return = TRUE, group.by = "plate.barcode")
 Color by cell ontology class on the original TSNE.
 
 ```{r}
-TSNEPlot(object = subtissFD, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
-TSNEPlot(object = subtissFD, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+TSNEPlot(object = subtissD, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = subtissD, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
 ```
 
 ######################################################
 #######################################################
 
 ## Remove plate specific cells affected by batch effect.
-## Subcluster the clusters 0, 2, 5, 6, and 7 (hematopoietic precursor cell) of subtissF (original cluster 0, and 10)
+## Subcluster the clusters 0, 2, 5, 6, and 7 (hematopoietic precursor cell) of subtiss (original cluster 0, and 10)
 
 # Subset E == hematopoietic precursor cell (Cluster 0, 2, 5, 6, and 7)
 
 ```{r}
-subtissFE = SubsetData(subtissFE, ident.use = c(0, 2, 5, 6, 7))
+subtissE = SubsetData(subtissE, ident.use = c(0, 2, 5, 6, 7))
 ```
 
 ```{r}
-subtissFE <- subtissFE %>% ScaleData() %>% 
+subtissE <- subtissE %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 ```
 
 ```{r}
-PCHeatmap(object = subtissFE, pc.use = 1:3, cells.use = 170, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
-PCElbowPlot(subtissFE)
+PCHeatmap(object = subtissE, pc.use = 1:3, cells.use = 170, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissE)
 ```
 
 
 ```{r}
 sub.n.pcs = 20
 sub.res.use = 1
-subtissFE <- subtissFE %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+subtissE <- subtissE %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=60)
 
-TSNEPlot(object = subtissFE, do.label = T, pt.size = 1.2, label.size = 4)
+TSNEPlot(object = subtissE, do.label = T, pt.size = 1.2, label.size = 4)
 
 ```
 Check expression of genes of interset.
 
 # ```{r}
-# subtissFE.markers <- FindAllMarkers(object = subtissFE, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# subtissE.markers <- FindAllMarkers(object = subtissE, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 # ```
 # 
 # ```{r}
-# subtissFE.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# subtissE.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
 # ```
 
 
@@ -714,18 +714,18 @@ Check expression of genes of interset.
 ```{r, echo=FALSE, fig.height=138, fig.width=15}
 genes_to_check = c('Hoxb5', 'Trib3', 'Neo1', 'Il7r', 'Kit', 'Atxn1', 'Cd34', 'Slamf1', 'Flt3', 'Cd63', 'Myl12b', 'Muc13', 'Sdsl', 'Stat3', 'Wtap', 'Mpl', 'Txnip', 'Ltb', 'Pdzk1ip1', 'Esam', 'Cish', 'Tyms', 'Tk1', '2810417H13Rik', 'Rrm2', 'Uhrf1', 'Tuba1b', 'Myl10', 'Junb', 'Fos', 'Ier2', 'Dusp1', 'Ly6a', 'Ube2c', 'Ccnb2', 'Ccnb1', 'Cdc20', 'Ccna2', 'Dntt', 'Gm11428', 'Ncf1', 'Mn1', 'H2-Ob', 'Ctsg', 'Mpo', 'Ccl9', 'Sell', 'Hk3', 'Cd48', 'Gata1', 'Mfsd2b', 'Tuba8', 'Itga2b', 'Apoe', 'Pf4', 'Elane', 'Ms4a3', 'Ctsg', 'Prtn3', 'Cd69', 'Ccr7', 'Ctla2a', 'Tyrobp', 'Serpinb9', 'Lyz2', 'Hp', 'Ly6c2', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Nkg7', 'Cd1d1', 'Chchd10', 'Cnp', 'Rag1',  'Rag2', 'Dntt', 'Mki67', 'Stmn1', 'Gimap8', 'Jhdm1d', 'Kif11', 'Spag5', 'Xist', 'Tsix', 'Notch2', 'Slc39a1', 'Socs3', 'Vldlr', 'Mcm4', 'Ung', 'Fam102a', 'Ccl4', 'Pyy', 'Ak4',  'Prc1', 'Cenpf', 'Prr11', 'Lhcgr', 'Tgm2', 'Abcg3', 'Ccne2', 'Pask', 'Nsg1', 'Bok', 'Klf1', 'Treml1')
 
-FeaturePlot(subtissFE, genes_to_check, pt.size = 1, nCol = 3)
+FeaturePlot(subtissE, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 
 ```{r, echo=FALSE, fig.height=8, fig.width=10}
-#DotPlot(subtissFE, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+#DotPlot(subtissE, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
 The multitude of clusters of each type correspond mostly to individual animals/sexes.
 
 ```{r}
-table(FetchData(subtissFE, c('mouse.id','ident')) %>% droplevels())
+table(FetchData(subtissE, c('mouse.id','ident')) %>% droplevels())
 ```
 
 ```{r}
@@ -740,8 +740,8 @@ sub.free_annotation <- c(
   "megakaryocyte-erythroid progenitor cell")
 sub.cell_ontology_class <-c("regulatory T cell", "Slamf1-negative multipotent progenitor cell", "common lymphoid progenitor", NA, "Slamf1-positive multipotent progenitor cell", "granulocyte monocyte progenitor cell", "megakaryocyte-erythroid progenitor cell")
 
-subtissFE = stash_annotations(subtissFE, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissFE_in_tiss(tiss, subtissFE)
+subtissE = stash_annotations(subtissE, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtissE_in_tiss(tiss, subtissE)
 
 ```
 
@@ -750,7 +750,7 @@ tiss = stash_subtissFE_in_tiss(tiss, subtissFE)
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtissFE, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = subtissE, do.return = TRUE, group.by = "plate.barcode")
 ```
 
 ## Final coloring
@@ -758,8 +758,8 @@ TSNEPlot(object = subtissFE, do.return = TRUE, group.by = "plate.barcode")
 Color by cell ontology class on the original TSNE.
 
 ```{r}
-TSNEPlot(object = subtissFE, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
-TSNEPlot(object = subtissFE, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+TSNEPlot(object = subtissE, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = subtissE, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
 ```
 
 ######################################################
@@ -838,8 +838,9 @@ sub.cell_ontology_class <-c("regulatory T cell", "Slamf1-negative multipotent pr
 
 subtissF = stash_annotations(subtissF, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
 tiss = stash_subtissF_in_tiss(tiss, subtissF)
-TSNEPlot(object = subtissF, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
 
+TSNEPlot(object = subtissF, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = subtissF, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
 ```
 
 
@@ -850,7 +851,7 @@ Color by metadata, like plate barcode, to check for batch effects.
 TSNEPlot(object = subtissF, do.return = TRUE, group.by = "plate.barcode")
 ```
 
-# Final coloring of entire tissue
+# Final coloring - entire tissue!
 
 Color by cell ontology class on the original TSNE.
 
@@ -863,7 +864,7 @@ TSNEPlot(object = tiss, do.label = TRUE, do.return = TRUE, group.by = "cell_onto
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
