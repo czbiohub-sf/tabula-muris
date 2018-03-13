@@ -98,14 +98,6 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
   return(tiss)
 }
 
-
-stash_subtiss_in_tiss = function(tiss, subtiss){
-  tiss@meta.data[subtiss@cell.names,'free_annotation'] <- as.character(subtiss@meta.data$free_annotation)
-  tiss@meta.data[subtiss@cell.names,'cell_ontology_class'] <- as.character(subtiss@meta.data$cell_ontology_class)
-  tiss@meta.data[subtiss@cell.names,'cell_ontology_id'] <- as.character(subtiss@meta.data$cell_ontology_id)
-  return(tiss)
-}
-
 process_tissue = function(tiss, scale){
   tiss <- NormalizeData(object = tiss, scale.factor = scale)
   tiss <- ScaleData(object = tiss)
@@ -179,5 +171,34 @@ load_tissue_droplet = function(tissue_of_interest){
                       low.thresholds = c(500, 1000))
   tiss <- process_tissue(tiss, 1e4)
   
+  return(tiss)
+}
+
+
+save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
+  if (method == "facs"){
+    batch_name_column = 'plate.barcode'
+  } else {
+    batch_name_column = 'channel'
+  }
+
+  filename = here('00_data_ingest', '03_tissue_annotation_csv',
+                    paste0(tissue_of_interest, "_", method, "_annotation.csv"))
+
+  write.csv(FetchData(tiss, c('subtissue', 'FACS.selection',
+    batch_name_column, 'cell_ontology_class',
+    'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex',
+    'mouse.id')), file=filename)
+}
+
+compare_previous_annotation = function(tiss, tissue_of_interest, method='facs'){
+  filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                  paste0(tissue_of_interest, "_", method, "_annotation.csv"))
+  previous_annotation = read_csv(filename)
+  tiss@meta.data[, 'previous_annotation'] <- "NA"
+  tiss@meta.data[as.character(previous_annotation$X1), 'previous_annotation'] <- as.character(previous_annotation$cell_ontology_class)
+  TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
+  print(table(tiss@meta.data[, "previous_annotation"]))
+  print(table(tiss@meta.data[, "previous_annotation"], tiss@ident))
   return(tiss)
 }
