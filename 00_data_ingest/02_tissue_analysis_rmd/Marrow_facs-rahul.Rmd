@@ -386,7 +386,7 @@ TSNEPlot(object = subtissA, do.label = TRUE, do.return = TRUE, group.by = "free_
 ## subcluster the cluster 0 (regulatory_immature T cell) of subtiss (original cluster 7)
 
 ```{r}
-subtissB = SubsetData(subtissB, ident.use = c(0))
+subtissB = SubsetData(subtissA, ident.use = c(0))
 ```
 
 ```{r}
@@ -674,7 +674,7 @@ TSNEPlot(object = subtissD, do.label = TRUE, do.return = TRUE, group.by = "cell_
 # Subset E == hematopoietic precursor cell (Cluster 0, 2, 5, 6, and 7)
 
 ```{r}
-subtissE = SubsetData(subtissE, ident.use = c(0, 2, 5, 6, 7))
+subtissE = SubsetData(subtissD, ident.use = c(0, 2, 5, 6, 7))
 ```
 
 ```{r}
@@ -770,7 +770,7 @@ TSNEPlot(object = subtissE, do.label = TRUE, do.return = TRUE, group.by = "cell_
 # Subset F == HSC_MPPa (Cluster 3) of cluster hematopoietic precursor cell (clusters 0, 2, 5, 6, and 7) of original hematopoietic precursor cell (clusters 0, and 10)
 
 ```{r}
-subtissF = SubsetData(subtissF, ident.use = c(3))
+subtissF = SubsetData(subtissE, ident.use = c(3))
 ```
 
 ```{r}
