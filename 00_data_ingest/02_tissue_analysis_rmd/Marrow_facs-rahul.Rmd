@@ -358,7 +358,7 @@ sub.free_annotation <- c("regulatory_immature T cell", "mature natural killer ce
 sub.cell_ontology_class <-c("regulatory T cell", "mature natural killer cell", "immature NK T cell", "B cell", "immature natural killer cell", "pre-natural killer cell")
 
 subtissA = stash_annotations(subtissA, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissA_in_tiss(tiss, subtissA)
+tiss = stash_subtiss_in_tiss(tiss, subtissA)
 ```
 
 ## Checking for batch effects
@@ -452,7 +452,7 @@ sub.free_annotation <- c(
 sub.cell_ontology_class <-c("regulatory T cell", "immature T cell", "immature T cell")
 
 subtissB = stash_annotations(subtissB, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissB_in_tiss(tiss, subtissB)
+tiss = stash_subtiss_in_tiss(tiss, subtissB)
 ```
 
 
@@ -545,7 +545,7 @@ sub.free_annotation <- c("Dntt- late pro-B cell", "Dntt+ late pro-B cell", "Dntt
 sub.cell_ontology_class <-c("late pro-B cell", "late pro-B cell", "late pro-B cell", "late pro-B cell", "late pro-B cell")
 
 subtissC = stash_annotations(subtissC, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissC_in_tiss(tiss, subtissC)
+tiss = stash_subtiss_in_tiss(tiss, subtissC)
 ```
 
 ## Checking for batch effects
@@ -643,7 +643,7 @@ sub.cell_ontology_class <-c("hematopoietic precursor cell",
   "hematopoietic precursor cell")
 
 subtissD = stash_annotations(subtissD, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissD_in_tiss(tiss, subtissD)
+tiss = stash_subtiss_in_tiss(tiss, subtissD)
 
 ```
 
@@ -741,7 +741,7 @@ sub.free_annotation <- c(
 sub.cell_ontology_class <-c("regulatory T cell", "Slamf1-negative multipotent progenitor cell", "common lymphoid progenitor", NA, "Slamf1-positive multipotent progenitor cell", "granulocyte monocyte progenitor cell", "megakaryocyte-erythroid progenitor cell")
 
 subtissE = stash_annotations(subtissE, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissE_in_tiss(tiss, subtissE)
+tiss = stash_subtiss_in_tiss(tiss, subtissE)
 
 ```
 
@@ -837,7 +837,7 @@ sub.free_annotation <- c(
 sub.cell_ontology_class <-c("regulatory T cell", "Slamf1-negative multipotent progenitor cell", "common lymphoid progenitor", NA, "Slamf1-positive multipotent progenitor cell", "granulocyte monocyte progenitor cell", "megakaryocyte-erythroid progenitor cell")
 
 subtissF = stash_annotations(subtissF, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-tiss = stash_subtissF_in_tiss(tiss, subtissF)
+tiss = stash_subtiss_in_tiss(tiss, subtissF)
 
 TSNEPlot(object = subtissF, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
 TSNEPlot(object = subtissF, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
