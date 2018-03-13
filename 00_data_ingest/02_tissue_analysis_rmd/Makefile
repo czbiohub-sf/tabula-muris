@@ -2,10 +2,13 @@
 
 RMDS := $(wildcard *.Rmd)
 
-all:
+clean:
+	rm -rf *.out *.err *html *_files
+
+all: clean
 	../../utilities/run_rmds.py
 
-all_oldschool:
+all_oldschool: clean
 	for RMD in $(RMDS); do \
 		echo $$RMD; \
 		echo "rmarkdown::render('$$RMD', clean=TRUE)" | R --slave > $$RMD.out 2>$$RMD.err & \
