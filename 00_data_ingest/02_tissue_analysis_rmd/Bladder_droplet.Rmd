@@ -73,12 +73,6 @@ genes_to_check = c('Epcam','Upk1b', 'Upk3a','Grhl3', 'Krt5', 'Krt14', 'Dcn', 'Co
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
-```{r, fig.height=6, fig.width=8}
-###############Figure4
-RidgePlot(tiss, genes_to_check)
-```
-
-
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
@@ -95,40 +89,35 @@ table(tiss@ident)
 Which markers identify a specific cluster?
 
 ```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 2, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#clust.markers <- FindMarkers(object = tiss, ident.1 = 2, ident.2 = 1, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 
 ```{r}
-print(x = head(x= clust.markers, n = 10))
+#print(x = head(x= clust.markers, n = 10))
 ```
 
 You can also compute all markers for all clusters at once. This may take some time.
 ```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
 
 Display the top markers you computed above.
 ```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(20, avg_logFC)
-```
-
-```{r, echo=FALSE, fig.height=4, fig.width=8}
-# To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(tiss, genes_to_check, plot.legend = T)
+#tiss.markers %>% group_by(cluster) %>% top_n(20, avg_logFC)
 ```
 
 ```{r}
-tiss= BuildClusterTree(tiss)
+#tiss= BuildClusterTree(tiss)
 ```
 
 ```{r}
-Node11_markers = FindAllMarkersNode(tiss, node = 11)
+#Node11_markers = FindAllMarkersNode(tiss, node = 11)
 ```
 
 ```{r}
-Node11_markers %>% group_by(cluster) %>% top_n(30, avg_logFC)
+#Node11_markers %>% group_by(cluster) %>% top_n(30, avg_logFC)
 ```
 
 
