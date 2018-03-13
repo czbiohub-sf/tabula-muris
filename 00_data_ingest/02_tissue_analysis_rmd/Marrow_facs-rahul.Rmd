@@ -248,11 +248,11 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
-free_annotation <- c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+free_annotation <- c(NA, NA, "pre-B cell (Philadelphia nomenclature)", NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 cell_ontology_class <-c(
   "hematopoietic precursor cell", 
   "naive B cell", 
-  "pre-B cell", 
+  "pro-B cell", 
   "granulocyte", 
   "granulocyte", 
   "immature B cell", 
