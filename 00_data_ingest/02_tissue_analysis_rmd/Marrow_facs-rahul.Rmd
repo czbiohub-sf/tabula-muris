@@ -256,7 +256,7 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
-free_annotation <- c()
+free_annotation <- c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 cell_ontology_class <-c(
   "hematopoietic precursor cell", 
   "naive B cell", 
@@ -394,25 +394,11 @@ table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
 ```{r}
 sub.cluster.ids <- c(0, 1, 2, 3, 4, 5)
 sub.free_annotation <- c("regulatory_immature T cell", "mature natural killer cell", "immature NK T cell", "Cd3e+_Klrb1+ B cell", "immature natural killer cell", "pre-natural killer cell")
-#sub.free_annotation <- c()
-sub.cell_ontology_id = c(NA,
-  "CL:0000824",
-  "CL:0000914",
-  NA,
-  "CL:0000823",
-  "CL:0000937")
-sub.cell_ontology_class <-c(NA, "mature natural killer cell", "immature NK T cell", NA, "immature natural killer cell", "pre-natural killer cell")
 
-validate_cell_ontology(sub.cell_ontology_class)
-sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
+sub.cell_ontology_class <-c("T cell", "mature natural killer cell", "immature NK T cell", "B cell", "immature natural killer cell", "pre-natural killer cell")
 
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-validate_cell_ontology(sub.cell_ontology_class)
-sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
+subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtiss)
 ```
 
 ## Add subcluster cell_ontology_classs to main cell_ontology_class
@@ -438,39 +424,10 @@ TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
 Color by cell ontology class on the original TSNE.
 
 ```{r}
+TSNEPlot(object = subtiss, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
 TSNEPlot(object = subtiss, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
 ```
 
-# Save the Robject for later
-
-```{r}
-filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-print(filename)
-save(tiss, file=filename)
-```
-
-```{r}
-# To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-# load(file=filename)
-```
-
-
-# Export the final metadata
-
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
-
-```{r}
-head(tiss@meta.data)
-```
-
-```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
-```
 
 ######################################################
 #######################################################
@@ -547,28 +504,16 @@ table(FetchData(subsubtiss, c('mouse.id','ident')) %>% droplevels())
 ```
 
 ```{r}
-subsub.cluster.ids <- c(0, 1, 2)
-subsub.free_annotation <- c(
+sub.cluster.ids <- c(0, 1, 2)
+sub.free_annotation <- c(
   "regulatory T cell", 
   "immature T cell", 
   "immature T cell")
-#subsub.free_annotation <- c()
-subsub.cell_ontology_id = c(
-  "CL:0000815",
-  "CL:0002420",
-  "CL:0002420")
-subsub.cell_ontology_class <-c("regulatory T cell", "immature T cell", "immature T cell")
 
-validate_cell_ontology(subsub.cell_ontology_class)
-subsub.cell_ontology_id = convert_to_cell_ontology_id(subsub.cell_ontology_class)
+sub.cell_ontology_class <-c("regulatory T cell", "immature T cell", "immature T cell")
 
-subsubtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subsubtiss@ident, from = subsub.cluster.ids, to = subsub.free_annotation))
-validate_cell_ontology(subsub.cell_ontology_class)
-subsub.cell_ontology_id = convert_to_cell_ontology_id(subsub.cell_ontology_class)
-
-subsubtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subsubtiss@ident, from = subsub.cluster.ids, to = subsub.free_annotation))
-subsubtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subsubtiss@ident, from = subsub.cluster.ids, to = subsub.cell_ontology_class))
-subsubtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subsubtiss@ident, from = subsub.cluster.ids, to = subsub.cell_ontology_id))
+subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtiss)
 ```
 
 ## Add subsubcluster cell_ontology_classs to main cell_ontology_class
