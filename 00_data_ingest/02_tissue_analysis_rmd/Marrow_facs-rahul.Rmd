@@ -15,6 +15,9 @@ Load the requisite packages and some additional helper functions.
 
 ```{r}
 library(here)
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+
+
 library(useful)
 library(Seurat)
 library(dplyr)
@@ -212,28 +215,28 @@ How big are the clusters?
 table(tiss@ident)
 ```
 
-Which markers identify a specific cluster?
+<!-- Which markers identify a specific cluster? -->
 
-```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
+<!-- ```{r} -->
+<!-- clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
+<!-- ``` -->
 
-```{r}
-print(x = head(x= clust.markers, n = 10))
-```
+<!-- ```{r} -->
+<!-- print(x = head(x= clust.markers, n = 10)) -->
+<!-- ``` -->
 
-You can also compute all markers for all clusters at once. This may take some time.
-```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-```{r}
-head(tiss.markers)
-```
+<!-- You can also compute all markers for all clusters at once. This may take some time. -->
+<!-- ```{r} -->
+<!-- tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- head(tiss.markers) -->
+<!-- ``` -->
 
-Display the top markers you computed above.
-```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
-```
+<!-- Display the top markers you computed above. -->
+<!-- ```{r} -->
+<!-- tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC) -->
+<!-- ``` -->
 
 ## Assigning cell type identity to clusters
 
@@ -342,14 +345,14 @@ TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 Check expression of genes of interset.
 
-```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
-```
-
+# ```{r}
+# subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
+# 
 
 
 ```{r, echo=FALSE, fig.height=102, fig.width=15}
@@ -433,14 +436,14 @@ TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 Check expression of genes of interset.
 
-```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
-```
-
+# ```{r}
+# subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
+# 
 
 
 ```{r, echo=FALSE, fig.height=84, fig.width=15}
@@ -531,13 +534,13 @@ TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 Check expression of genes of interset.
 
-```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
-```
+# ```{r}
+# subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
 
 
 
@@ -620,13 +623,13 @@ TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 Check expression of genes of interset.
 
-```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
-```
+# ```{r}
+# subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
 
 
 
@@ -730,13 +733,13 @@ TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 Check expression of genes of interset.
 
-```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
-```
+# ```{r}
+# subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
 
 
 
@@ -826,13 +829,13 @@ TSNEPlot(object = subtiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 Check expression of genes of interset.
 
-```{r}
-subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
-```
+# ```{r}
+# subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
 
 
 
