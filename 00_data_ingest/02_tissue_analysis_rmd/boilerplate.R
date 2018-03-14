@@ -71,7 +71,7 @@ load_tissue_facs = function(tissue_of_interest){
   tiss@meta.data[,'free_annotation'] <- NA
   tiss@meta.data[,'cell_ontology_class'] <- NA
   
-  # Calculate percent ribosomal genes.
+  #Calculate percent ribosomal genes.
   
   ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), value = TRUE)
   percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
@@ -86,8 +86,6 @@ load_tissue_facs = function(tissue_of_interest){
 }
 
 stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_class){
-  tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
-  
   validate_cell_ontology(cell_ontology_class)
   cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
   
@@ -101,14 +99,28 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
 }
 
 stash_subtiss_in_tiss = function(tiss, subtiss){
-
+  
   sub.cells = rownames(subtiss@meta.data)
+  
+  # Save which cells were in this subset
+  subset_cols = sort(grep("subset", colnames(tiss@meta.data), perl=TRUE, value=TRUE))
+  if (length(subset_cols) > 0){
+    last_subset = subset_cols[length(subset_cols)]
+    last_letter = substring(last_subset, 7, 7)
+    new_letter = LETTERS[grep(last_letter, LETTERS)+1]
+    subset_col = paste0('subset', new_letter)
+  } else {
+    subset_col = 'subsetA'
+  }
+  tiss@meta.data[subset_col] = FALSE
+  tiss@meta.data[sub.cells, subset_col] = TRUE
   
   tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
   tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
   tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
   return(tiss)
 }
+
 
 process_tissue = function(tiss, scale){
   tiss <- NormalizeData(object = tiss, scale.factor = scale)
@@ -189,35 +201,42 @@ load_tissue_droplet = function(tissue_of_interest){
 
 save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
   if (method == "facs"){
-    method_specific_columns = c('plate.barcode', 'FACS.selection')
+    batch_name_column = 'plate.barcode'
   } else {
-    method_specific_columns = 'channel'
+    batch_name_column = 'channel'
   }
 
   filename = here('00_data_ingest', '03_tissue_annotation_csv',
                     paste0(tissue_of_interest, "_", method, "_annotation.csv"))
-  write.csv(FetchData(tiss, c('subtissue',
-    method_specific_columns, 'cell_ontology_class',
+
+  write.csv(FetchData(tiss, c('subtissue', 'FACS.selection',
+    batch_name_column, 'cell_ontology_class',
     'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex',
     'mouse.id')), file=filename)
-
 }
 
 compare_previous_annotation = function(tiss, tissue_of_interest, method='facs'){
   filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                   paste0(tissue_of_interest, "_", method, "_annotation.csv"))
   if (file.exists(filename)){
-    previous_annotation = read_csv(filename)
+    previous_annotation = read.csv(filename, stringsAsFactors = FALSE)
     cols = c('free_annotation', 'cell_ontology_class')
     for (col in cols){
       previous_col = paste0('previous_', col)
       tiss@meta.data[, previous_col] <- "NA"
-      tiss@meta.data[as.character(previous_annotation$X1), previous_col] <- as.character(previous_annotation[col])
+      tiss@meta.data[as.character(previous_annotation$X), previous_col] <- previous_annotation[, col]
       print(table(tiss@meta.data[, previous_col]))
       print(table(tiss@meta.data[, previous_col], tiss@ident))
-      
+
     }
   }
   return(tiss)
+}
 
+previous_annotation_table = function(tiss, method='facs'){
+  previous_cols = c('previous_free_annotation', 'previous_cell_ontology_class')
+  for (previous_col in previous_cols){
+    print(previous_col)
+    print(table(tiss@meta.data[, previous_col], tiss@ident))
+  }
 }

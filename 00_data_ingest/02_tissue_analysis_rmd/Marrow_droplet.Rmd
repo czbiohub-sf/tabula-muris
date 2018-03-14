@@ -47,7 +47,7 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
 To visualize 
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=273, dim.embed = 2)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=100, dim.embed = 2)
 ```
 
 ```{r}
@@ -55,17 +55,35 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=273
 TSNEPlot(object = tiss, do.label = T)
 ```
 
+Compare to previous annotations
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_droplet_annotation.csv"))
+previous_annotation = read_csv(filename)
+tiss@meta.data[, 'previous_annotation'] <- "NA"
+tiss@meta.data[as.character(previous_annotation$X1), 'previous_annotation'] <- as.character(previous_annotation$cell_ontology_class)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
+```
+```{r}
+table(tiss@meta.data[, "previous_annotation"])
+```
+
+
+```{r}
+table(tiss@meta.data[, "previous_annotation"], tiss@ident)
+```
+
 Check expression of genes of interset. Found inconsistensies in gene names. Mme (Cd10), Ly6g6c, Ly6g6e, and Iga2b though present in plate data was not found here and gave an error.
 
-```{r, echo=FALSE, fig.height=75, fig.width=15}
-genes_to_check = c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Fcgr3', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr4', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Ly6d', 'Cd27', 'Cr2', 'Fcer2a', 'Cd2', 'Cd7', 'Thy1', 'Cd19', 'Ms4a1', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Vpreb1', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ptprc', 'Cd48', 'Tfrc', 'Mki67', 'Eng', 'Itga2', 'Cxcr4', 'Cd44', 'Bpgm', 'Beta-s', 'Hbb-b2')
+```{r, echo=FALSE, fig.height=120, fig.width=15}
+genes_to_check = c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Mki67', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr3', 'Cd14', 'Fcgr4', 'Mpl', 'Il3ra', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Cox6a2', 'Cd40', 'Spn', 'Ly6d', 'Irf8', 'Cd27', 'Fcer2a', 'Cd2', 'Cd7', 'Thy1', 'Cd19', 'Ms4a1', 'Cr2', 'Cd22', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Vpreb1', 'Dntt', 'Pax5', 'Rag1', 'Rag2', 'Cxcr5', 'Ccr6', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ptprc', 'Cd48', 'Tfrc', 'Eng', 'Itga2', 'Cxcr4', 'Cd44', 'Bpgm', 'Beta-s', 'Hbb-b2', 'Cpa3', 'Fcer1a', 'Mcpt8', 'Ccl3')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r, echo=FALSE, fig.height=4, fig.width=45}
+```{r, echo=FALSE, fig.height=4, fig.width=57}
 # To change the y-axis to show raw counts, add use.raw = T.
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
@@ -102,16 +120,6 @@ tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-0: alpha
-1: beta
-2: beta
-3: exocrine
-4: duct
-5: delta
-6: gamma
-7: endothelial
-8: immune
-9: stellate
 
 ```{r}
 # stash current cluster IDs
@@ -123,22 +131,23 @@ free_annotation <- c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 
 cell_ontology_class <-
   c(
-  "granulocyte",
   "monocyte",
-  "hematopoietic stem cell",
-  "hematopoietic stem cell",
-  "hematopoietic stem cell",
-  "B cell",
-  "hematopoietic stem cell",
   "granulocyte",
+  NA,
+  "granulocytopoietic cell",
+  "hematopoietic precursor cell",
+  "granulocyte",
+  "late pro-B cell",
+  "proerythroblast",
   "macrophage",
   "T cell",
-  "erythrocyte",
-  "B cell",
-  "Fraction A pre-pro B cell",
-  "hematopoietic stem cell"
+  "erythroblast",
+  NA,
+  "early pro-B cell",
+  "basophil"
   )
 
+free_annotation = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
