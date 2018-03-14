@@ -98,6 +98,30 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
   return(tiss)
 }
 
+stash_subtiss_in_tiss = function(tiss, subtiss){
+  
+  sub.cells = rownames(subtiss@meta.data)
+  
+  # Save which cells were in this subset
+  subset_cols = sort(grep("subset", colnames(tiss@meta.data), perl=TRUE, value=TRUE))
+  if (length(subset_cols) > 0){
+    last_subset = subset_cols[length(subset_cols)]
+    last_letter = substring(last_subset, 7, 7)
+    new_letter = LETTERS[grep(last_letter, LETTERS)+1]
+    subset_col = paste0('subset', new_letter)
+  } else {
+    subset_col = 'subsetA'
+  }
+  tiss@meta.data[subset_col] = FALSE
+  tiss@meta.data[sub.cells, subset_col] = TRUE
+  
+  tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
+  tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
+  tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
+  return(tiss)
+}
+
+
 process_tissue = function(tiss, scale){
   tiss <- NormalizeData(object = tiss, scale.factor = scale)
   tiss <- ScaleData(object = tiss)
@@ -194,11 +218,25 @@ save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
 compare_previous_annotation = function(tiss, tissue_of_interest, method='facs'){
   filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                   paste0(tissue_of_interest, "_", method, "_annotation.csv"))
-  previous_annotation = read_csv(filename)
-  tiss@meta.data[, 'previous_annotation'] <- "NA"
-  tiss@meta.data[as.character(previous_annotation$X1), 'previous_annotation'] <- as.character(previous_annotation$cell_ontology_class)
-  TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
-  print(table(tiss@meta.data[, "previous_annotation"]))
-  print(table(tiss@meta.data[, "previous_annotation"], tiss@ident))
+  if (file.exists(filename)){
+    previous_annotation = read.csv(filename, stringsAsFactors = FALSE)
+    cols = c('free_annotation', 'cell_ontology_class')
+    for (col in cols){
+      previous_col = paste0('previous_', col)
+      tiss@meta.data[, previous_col] <- "NA"
+      tiss@meta.data[as.character(previous_annotation$X), previous_col] <- previous_annotation[, col]
+      print(table(tiss@meta.data[, previous_col]))
+      print(table(tiss@meta.data[, previous_col], tiss@ident))
+
+    }
+  }
   return(tiss)
+}
+
+previous_annotation_table = function(tiss, method='facs'){
+  previous_cols = c('previous_free_annotation', 'previous_cell_ontology_class')
+  for (previous_col in previous_cols){
+    print(previous_col)
+    print(table(tiss@meta.data[, previous_col], tiss@ident))
+  }
 }
