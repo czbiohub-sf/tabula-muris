@@ -71,30 +71,11 @@ Dotplots let you see the intensity of exppression and the fraction of cells expr
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
 
-```{r}
-RidgePlot(tiss, genes_to_check)
-```
-
-```{r}
-RidgePlot(tiss, genes_to_check, group.by='mouse.sex')
-```
-
 How big are the clusters?
 ```{r}
 table(tiss@ident)
 ```
 
-Which markers identify a specific cluster?
-
-```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 6, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-specific markers for macrophages (cluster 6)
-
-```{r}
-print(x = head(x= clust.markers, n = 10))
-```
 
 ## Checking for batch effects
 
@@ -124,8 +105,7 @@ At a coarse level, we can use canonical markers to match the unbiased clustering
 2: microglia
 3: microglia
 4: microglia
-5: microglia
-6: macrophages
+5: macrophages
 
 ### Assigning Anotations
 For the subsets, we produce annotations These will be written back as metadata in the original object, so we can see all annotations together.
@@ -136,9 +116,9 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
-cluster.ids <- c(0, 1, 2, 3,4,5,6)
-free_annotation <- c(NA, NA, NA, NA, NA, NA, NA)
-cell_ontology_class <-c("microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","macrophage" )
+cluster.ids <- c(0, 1, 2, 3,4,5)
+free_annotation <- c(NA, NA, NA, NA, NA, NA)
+cell_ontology_class <-c("microglial cell","microglial cell","microglial cell","microglial cell","microglial cell","macrophage" )
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
