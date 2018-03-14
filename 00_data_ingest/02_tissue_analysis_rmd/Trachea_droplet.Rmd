@@ -145,29 +145,6 @@ table(as.character(tiss@ident), as.character(tiss@meta.data$channel))
 ```
 
 
-# Save the Robject for later
-When you save the annotated tissue, please give it a name.
-
-```{r}
-filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
-print(filename)
-save(tiss, file=filename)
-```
-
-```{r}
-# To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-# load(file=filename)
-```
-
-
-
-
-
-
-
 # Subset and iterate
 
 We can repeat the above analysis on a subset of cells, defined using cluster IDs or some other metadata. This is a good way to drill down and find substructure.
