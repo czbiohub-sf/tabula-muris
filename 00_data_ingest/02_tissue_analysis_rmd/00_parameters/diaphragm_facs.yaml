@@ -1,0 +1,6 @@
+TISSUE: Diaphragm
+METHOD: facs
+RES: 0.3
+NPCS: 10
+GENES: "'Ptprc','Cd3d','Vpreb3','Cd19','Cd69','Cd79a','Cd79b','Klrb1b','Foxp3','Itgam','Fcer1g','C1qa','Vcam1','Itga7','Calcr','Pax7','Pax3','Myod1','Myf5','Cxcr4','Sdc4','Itgb1','Cd34','Cd44','Pdgfra','Pecam1'"
+GROUPBY: null

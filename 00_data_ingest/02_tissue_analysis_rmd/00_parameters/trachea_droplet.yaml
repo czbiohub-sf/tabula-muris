@@ -1,0 +1,7 @@
+TISSUE: Trachea
+METHOD: droplet
+RES: 0.1
+NPCS: 3
+GENES: "'Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1a1', 'Col8a1', 'Foxj1', 'Pecam1', 'Ptprc', 'Cck', 'Syp'"
+GROUPBY: "'FACS.selection'"
+#conflicts need resolving

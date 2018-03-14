@@ -1,0 +1,7 @@
+TISSUE: Limb_Muscle
+METHOD: facs
+RES: 0.5
+NPCS: 10
+GENES: "'Myf5','Calcr', 'Pax7', 'Myod1','Pecam1', 'Atxn1','Ptprc', 'Cd3g','Cd4','Cd8a','Cd19', 'Itgam','Vcam1', 'Chodl', 'Acta2', 'Pdgfra'"
+GROUPBY: null
+#still using filtering in script, version in master is old?
