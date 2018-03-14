@@ -1,0 +1,409 @@
+"","plate.barcode","cell_ontology_class","free_annotation","tSNE_1","tSNE_2"
+"A10.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-16.0433209293826,-7.67646511544444
+"A17.B002431.3_39_F.1.1","B002431","professional antigen presenting cell","antigen presenting cells",-0.0868726666159613,-23.8902607519498
+"A17.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-12.9992341993029,-7.18419460824474
+"A17.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-8.78772869621175,8.67289231461418
+"A17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-8.11438608730322,12.238050080733
+"A18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",3.8489653302635,-13.6154910136472
+"A18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_3",8.95201311406479,7.61343768516037
+"A19.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",7.31692565139371,-5.77694961406063
+"A20.B002431.3_39_F.1.1","B002431","professional antigen presenting cell","antigen presenting cells",0.047195823645458,-21.5918233209041
+"A20.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",8.06738555675317,-4.03495497196005
+"A20.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-5.41740021836637,-2.27793928744884
+"A20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-8.86121688859159,13.2056110988589
+"A21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",9.27223200058916,3.69679956385755
+"A21.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-16.4715872266988,-7.46089045537006
+"A21.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",13.4739358778444,-5.47905152902393
+"A21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-3.12484594428856,14.1887984050671
+"A22.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",10.0987705974958,2.20279580628452
+"A22.B002431.3_39_F.1.1","B002431","professional antigen presenting cell","antigen presenting cells",-1.02894208393573,-22.9511691678012
+"A22.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",3.13664632098478,-15.8410244187722
+"A22.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",3.22434291469222,8.08668400499648
+"A22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",0.369266606379726,15.0301166013258
+"A5.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",15.3343179992317,-3.3628640628354
+"A8.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",14.3570982344374,-5.86852730065394
+"B1.MAA000908.3_10_M.1.1","MAA000908","erythrocyte","red blood cells",14.4441344228222,-6.94640730199195
+"B13.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",8.48795231932234,-2.22889175949617
+"B17.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-18.0799984848076,-7.32407176563417
+"B17.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",7.67953347087526,-1.70720609699961
+"B17.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-7.29300982875944,18.0000882162291
+"B17.MAA000908.3_10_M.1.1","MAA000908","erythrocyte","red blood cells",12.3232360666521,-1.51370049943716
+"B18.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-13.2694640330379,-7.25394147989762
+"B18.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",0.561231049682754,-20.7788450705589
+"B18.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-7.76491212006122,17.9877999580805
+"B18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-2.11613800933491,11.7504847307821
+"B19.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-17.9165423808335,-4.11234029153629
+"B19.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",5.15363228240052,10.2272065066059
+"B19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-10.3628223046342,8.14121108831013
+"B20.B002431.3_39_F.1.1","B002431","professional antigen presenting cell","antigen presenting cells",-0.239394410412596,-22.0451943897431
+"B20.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-1.47020009733385,-20.3682184860104
+"B20.MAA000906.3_11_M.1.1","MAA000906","fibroblast","fibroblasts",-18.9501326628475,-4.87424835826257
+"B20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-8.45900717198911,14.4780046358418
+"B21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",5.79912677311421,8.65046014380861
+"B21.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",5.91376487454949,-9.69859548485801
+"B21.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_3",8.33243924091569,7.1190012740325
+"B21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.0167250833907414,14.8643032107072
+"B22.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",10.9506770747825,2.35386482812864
+"B22.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",9.25582469896612,-10.1159872169969
+"B22.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",10.2357460566132,-7.85948984654867
+"B22.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-6.55683877896237,9.22799335767596
+"B22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-1.71730760947543,14.0248531421834
+"B3.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",13.9893428110681,-4.81906290264329
+"B7.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",15.3159126323437,-4.07246682447883
+"C15.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",13.9897953628006,-3.66311349606438
+"C17.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",8.47274966788881,-8.55820348098301
+"C17.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-6.3540133551758,-2.58504348359697
+"C17.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-8.13402352334661,17.8897122628356
+"C17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-9.86752153556676,13.7484355033073
+"C18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",3.39400109149587,10.8585900348748
+"C18.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-8.02598346220157,17.9689164015931
+"C18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-2.04743012653322,14.0468525311669
+"C19.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",8.08074047439096,5.41241469843502
+"C19.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",11.155961114753,-2.36803008399485
+"C19.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-0.492362224306097,-22.7650856014613
+"C19.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",0.23515848932646,-20.1733529124317
+"C19.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-11.4116975246675,10.5753610389869
+"C19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-10.6681462091146,11.4376777333773
+"C20.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",9.39850926015508,3.09727369210562
+"C20.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",1.02850488126117,-18.8394723072815
+"C20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-7.70171831143414,12.6110922569301
+"C21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",-4.06651581627218,10.3249022415991
+"C21.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-13.7503960817414,-5.18101509690954
+"C21.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",0.551985397308102,-21.0210450369921
+"C21.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",1.95050843538181,14.1959944111768
+"C21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.927117214155621,14.8899421465822
+"C22.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-8.85273986178603,6.03248197934647
+"C22.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",2.17222459378555,-16.9400891260963
+"C22.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",4.66154912291643,-15.6788824340144
+"C22.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",2.04802446683221,17.2074254081482
+"C22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-4.64007264316981,14.8243444243302
+"D14.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",11.6114950848521,-10.1982740499549
+"D15.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",15.312965281379,-5.13906099385108
+"D17.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",7.54875468845505,6.36185047176441
+"D17.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",6.9066967444715,-2.43522507446248
+"D17.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-4.75443316917682,-2.66037223462863
+"D17.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",2.33402106638695,15.2317808027894
+"D17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.597365986283472,10.0343335663179
+"D18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-8.94619448562651,5.93474004207448
+"D18.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",1.99780370265575,16.9011773320056
+"D18.MAA000908.3_10_M.1.1","MAA000908","professional antigen presenting cell","antigen presenting cells",6.67242847195134,-9.46527404968891
+"D19.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",3.80130973909503,-13.4947492015487
+"D19.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",1.42877621372914,-19.9477630476774
+"D19.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-5.65581597644778,-2.39457840036958
+"D19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-10.7416275790649,8.92791890743099
+"D20.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_1",-4.64735021257983,6.35673226791189
+"D20.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",8.8641334743716,5.5497347930447
+"D20.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-16.2449013056431,-6.88721449816566
+"D20.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-5.40097927450424,-2.78863551888335
+"D20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-9.96294729106667,11.3919159884364
+"D21.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",1.88661620130963,-18.5592805915196
+"D21.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",-4.38836726098833,-3.10827020162697
+"D21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-4.82042867811265,15.556445228341
+"D22.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-6.58430811048545,9.88233957672052
+"D22.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",5.13447427522788,-9.73624965187481
+"D22.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-18.2847829424104,-6.68939574106474
+"D22.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",10.3918834617869,-4.01700065537498
+"D22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-6.78417935637659,13.9586725832456
+"D4.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",5.56197823405821,-14.27015682044
+"D4.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-15.0167879876499,-6.80678312847258
+"D6.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",13.8741760481821,-6.46000083666854
+"D6.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",16.4655310412988,-4.8104181139921
+"E15.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-17.668321011525,-7.44342763058783
+"E17.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-17.7014717015952,-4.20281624696103
+"E17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-1.70860144586848,12.7121785415264
+"E18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",6.02320298260595,7.88928445779804
+"E18.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",4.47071785291995,-16.0992108496759
+"E18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-8.69043312891846,17.5561184377306
+"E19.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-14.102074318379,-7.24534478214712
+"E19.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",0.820060660382005,-21.3259168990764
+"E19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-3.97096019159953,12.3865104337376
+"E20.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",7.77562971816001,4.61618895155723
+"E20.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",7.79519945713821,-7.0528912578442
+"E20.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",14.7808517688227,-6.30537759548798
+"E20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-3.85926255209986,11.274561362897
+"E21.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",9.79036194974034,-8.1071433625387
+"E21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-1.80647698599953,14.6616377792194
+"E22.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_1",-5.05403684642854,6.38103788693718
+"E22.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-16.0288351889591,-9.45415056733783
+"E22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-2.82788694899591,10.9425850478535
+"E4.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",15.2637278554977,-4.55635753911938
+"F14.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",11.0284813696932,-9.54655707527656
+"F14.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",17.0779526224412,-5.71151969893082
+"F17.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",-5.0581006994498,6.22543311237019
+"F17.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",1.85082598606085,-18.1272955040246
+"F17.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",11.6716404181383,-7.69292394855013
+"F17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-6.03552523051276,12.4271395386697
+"F18.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",-0.442449314289,-20.1314913551806
+"F18.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",3.8042081654075,15.2682661657684
+"F18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-8.96707448552581,13.3442861507124
+"F19.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-19.9155254100287,-7.73121192653108
+"F19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-5.19129637954541,11.4852834732982
+"F2.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-16.9020024369272,-6.48011549085068
+"F20.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",6.35764967949291,7.84542213083863
+"F20.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-15.0006219984006,-7.28447125621523
+"F20.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",-0.907997787484131,-20.8223087742615
+"F20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",0.172534737691895,10.8245618981025
+"F21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",6.31207800072268,6.01927436231296
+"F21.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-18.3483854002302,-6.62942072426563
+"F21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-5.83026810127422,11.3098860533696
+"F22.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",10.6361173050683,0.975205722104009
+"F22.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",11.3452908362094,-0.986294118292351
+"F22.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-18.7462745151174,-5.60323484516707
+"F22.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-5.98984281198479,-2.06970978034163
+"F22.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",1.79810008469139,9.46544346193051
+"F22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",0.797538849199386,18.3623453469384
+"F8.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",7.45531065817809,-6.11240110015532
+"G1.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",14.6158321612715,-4.83496956142619
+"G12.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",13.6531789527153,-8.05833611683481
+"G14.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-15.9723822787997,-5.04853229073759
+"G15.B002431.3_39_F.1.1","B002431","professional antigen presenting cell","antigen presenting cells",3.64161600335399,-13.6782901425294
+"G15.MAA000908.3_10_M.1.1","MAA000908","erythrocyte","red blood cells",16.2153889433251,-4.7685814352872
+"G17.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",2.27662710975638,-17.6524072737739
+"G17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.723953869802174,14.4268429016178
+"G18.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",8.00224926900928,6.23582247762099
+"G18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-8.10753394716741,9.95975633171341
+"G18.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-14.6750795345634,-3.07788005368999
+"G18.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",11.0919082300452,-7.46532637073937
+"G18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-1.46551788924772,10.2919862329179
+"G19.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-0.128502607101925,-21.116419695168
+"G19.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",11.0113431962757,-7.47896695209481
+"G19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-6.15653808421251,11.7751713065207
+"G20.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",9.90074679108816,4.15177897800929
+"G20.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",7.65439088538826,-4.02264692909452
+"G20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-4.19256381472586,14.8297129873089
+"G21.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-14.8616822047975,-3.5446811652731
+"G21.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",-0.773232905043416,-20.1866528145726
+"G21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-1.59403473374765,15.3631608185761
+"G22.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",15.5235836896225,0.322523459831429
+"G22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",2.86030503564593,16.3131837286696
+"G3.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",5.02459392670818,-14.527091938024
+"G5.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",15.909383729095,-4.74331546342766
+"G7.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",14.2065830045284,-7.66730255192652
+"G8.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",14.792607134727,-3.65110635630955
+"H1.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",19.60833840859,-7.50240707732434
+"H1.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-16.1265132572813,-5.16311224593811
+"H11.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",14.5272618481321,-5.25256814202439
+"H12.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",12.4639788046557,0.119411226850678
+"H17.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",12.2666570837061,-11.1631361123258
+"H17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-4.75013171331174,11.1442415410589
+"H18.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",11.3937988371585,-1.95609943954054
+"H18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-6.42323976784254,11.9067128867148
+"H19.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-6.06675967843499,6.98269953749374
+"H19.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-2.60299549205201,-20.924947806579
+"H19.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-17.2730072644349,-1.96305846628476
+"H19.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",1.85244707755177,17.8421533503509
+"H2.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-17.8886092687371,-6.22777140558969
+"H20.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",10.6470677916905,3.05216852037989
+"H20.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-3.22882397119408,-20.8419092215795
+"H20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-10.9192070401822,11.3396584542658
+"H21.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",10.1795875345393,1.71008231926868
+"H21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",10.50578649292,3.78302430925026
+"H21.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",4.15784338160349,-16.9742236432825
+"H21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-1.18589073249369,11.0309353019373
+"H22.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-18.8137261983224,-9.144881578547
+"H22.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_3",7.3185866024204,9.92983774896848
+"H22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-9.19238236651103,11.1731547658563
+"H6.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",16.0157623598569,-6.62708994293232
+"H7.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",19.6125949871637,-7.50355179111549
+"H8.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",10.2777157721624,-2.89088996255401
+"I14.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",15.335238730403,-6.18669508594543
+"I16.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",12.4671899359607,-11.4778695599837
+"I17.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-15.9713339676115,-8.00485390011148
+"I17.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",0.949970236860893,17.8288106103774
+"I17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",1.11411505464593,10.0361259934197
+"I18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-5.61059453389575,6.34475633680615
+"I18.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",-6.66327903129415,18.2019946830016
+"I18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-5.79055026283283,9.3927313721906
+"I19.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",11.4458358793982,-0.214696757991331
+"I19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",1.14034537497361,11.3033352004835
+"I20.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-8.40419940137951,5.89068371509283
+"I20.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-18.5668891918479,-9.39742037703994
+"I20.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",11.064388804492,-6.98108415304769
+"I20.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_3",6.16985223059383,6.93244345620504
+"I20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",1.55756024056207,10.2152740832621
+"I21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-6.27584911432219,9.31270817678359
+"I21.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-18.7327941557997,-9.65214054202881
+"I21.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",0.68866017874595,-21.9881285896269
+"I21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-1.50373647922308,13.1546880746674
+"I22.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-19.0930009355807,-9.76052269487211
+"I22.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-6.99179998354341,9.82191051296653
+"I22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",1.02382862953388,16.5085047359376
+"J10.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",15.8098702983916,-5.93980441341524
+"J17.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",7.75732130818266,5.84608795226798
+"J17.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-4.51855126997234,-15.7975679305849
+"J17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-3.26034731855936,16.5193869295489
+"J18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",9.35644078881415,4.21404347851711
+"J18.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-4.52295367031969,-15.7978311412758
+"J18.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",3.61694005768736,17.2809387801925
+"J18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",1.66139723144546,11.3034501127371
+"J19.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",3.90800661097176,11.3499134194503
+"J19.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-4.54301822808519,-15.7863594133293
+"J2.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-17.7873873117475,-6.7798349276636
+"J20.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",9.00140221694538,4.70303821893577
+"J20.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-16.9409276618381,1.54460152003605
+"J20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",3.79737030559745,9.95348157431701
+"J21.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",5.19341704497951,7.95733766177414
+"J21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",5.6384506024203,8.29386129193547
+"J21.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",0.945028281929312,-23.4054071836792
+"J21.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-6.04974426601648,-1.74647255816311
+"J21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-3.96213213703335,13.1989710675629
+"J22.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",10.4041413084105,-1.27522446029233
+"J22.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-18.3003047799473,-7.5214015240541
+"J22.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",8.65137422168748,-3.08933692148833
+"J22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-8.74076074944712,10.9182940676665
+"J4.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",10.2289305477594,-11.7597038505168
+"J9.MAA000908.3_10_M.1.1","MAA000908","erythrocyte","red blood cells",14.6321231086683,-4.22940077516774
+"K14.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",16.4748304010302,-7.54218529371862
+"K17.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",4.37605592527547,10.923388603762
+"K17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.137899914669859,12.1863827249893
+"K18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",9.91891434323548,3.04583551151439
+"K18.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-16.7643318005087,2.19582303625789
+"K19.B002431.3_39_F.1.1","B002431","professional antigen presenting cell","antigen presenting cells",0.547069719440793,-23.9328966562565
+"K19.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-16.938292740199,1.54038159858939
+"K19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",0.497547011742661,13.4408981399177
+"K20.B002431.3_39_F.1.1","B002431","professional antigen presenting cell","antigen presenting cells",-0.711971780451692,-23.4998129241388
+"K20.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-16.845623499407,1.94617009508472
+"K20.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",0.100513862918087,-23.01379256694
+"K20.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-10.6837224809108,10.1716581568505
+"K20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",3.79689028292125,17.9007933781488
+"K21.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",7.93859655418342,3.97180667203924
+"K21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",10.0428857248936,4.32382213148794
+"K21.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-16.753282281352,2.24058930306558
+"K21.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",5.11649158007461,-14.7365510725244
+"K21.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",1.98017024794711,15.8197881550964
+"K21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.867429566205449,11.8654899266303
+"K22.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",10.9398109954718,-3.26460639898845
+"K22.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-16.7234151123465,2.35146800501432
+"K22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-4.29164709238555,12.6398960241485
+"K4.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",11.1681074816644,-4.21934037396308
+"K5.B002430.3_38_F.1.1","B002430","erythrocyte","red blood cells",15.6322123286839,-3.5663561167642
+"K8.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",14.9008319525591,-8.39126477099085
+"K9.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",16.5413077404283,-5.82073968766289
+"L10.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",6.69930425155642,-6.12090066538192
+"L17.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",11.6348438794306,-0.927636626837758
+"L17.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-18.8853301128631,-7.75282143055853
+"L17.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",4.08021355437955,13.4182882747773
+"L17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.72992701020374,12.2650476249675
+"L18.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",6.63488125069198,6.4586775516282
+"L18.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",-0.112317675998222,-22.4513259136366
+"L18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-2.62473504287333,13.1420545676178
+"L19.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",9.57631813585396,-4.16871218821428
+"L19.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-20.0382573465715,-8.72248573962956
+"L19.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-5.62077681178723,-2.04549614237852
+"L20.B002431.3_39_F.1.1","B002431","professional antigen presenting cell","antigen presenting cells",-0.46222665719946,-23.3033242789461
+"L20.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-1.80266522708919,-21.7705565405682
+"L20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-2.41797392563982,16.0434796112249
+"L21.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",10.5795388138873,-2.01819559720175
+"L21.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",2.79116957256318,-16.3266417273835
+"L21.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",-0.282512001204901,-19.5173930618445
+"L21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-6.20158737502285,14.8306318058172
+"L22.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",9.14176582160303,1.9748701776881
+"L22.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",2.78500141002729,-16.0956679005859
+"L22.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-5.05396103933444,-2.88541569128963
+"L22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-1.61762411339795,12.3888537111115
+"L6.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-13.9356197329708,-2.46452988225477
+"L8.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",9.64928158739629,-2.27348115497282
+"L9.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",15.9923249455373,-8.12661058786204
+"M14.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",6.73252072798614,-9.44033791161422
+"M17.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",6.93730200993795,5.65765970955542
+"M17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-4.60292232124504,13.757623355568
+"M18.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",12.1174828882597,-1.58769921034584
+"M18.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-14.6853228680032,-2.97878491528126
+"M18.MAA000906.3_11_M.1.1","MAA000906","erythrocyte","red blood cells",9.78552479306142,-5.07444024939185
+"M18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-3.41284296378291,14.8033040648834
+"M19.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",12.0344118944817,-2.46589022489054
+"M19.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",0.336802226167161,-20.8732842022867
+"M19.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",3.21273017798445,14.6493730840325
+"M19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-9.8997203228572,9.88271601666759
+"M20.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",3.72892906896841,-13.5099616110056
+"M20.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",3.33946091348165,8.69719812360774
+"M20.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",0.896654433809419,-17.1004306539434
+"M20.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",2.21514718012082,14.3512812293851
+"M20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-3.26099023849755,13.0667210829891
+"M21.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",0.546443556858265,-17.3246663691147
+"M21.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",0.713722633002954,14.2919847595395
+"M21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-8.86474561211357,12.5590221667438
+"M22.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",5.62647741026341,6.10124311391681
+"M22.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",0.759950162759535,-17.3681758004559
+"M22.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",11.1802137133522,-7.80251275705283
+"M22.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",2.95312967199216,10.9431342758364
+"M22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.555596264016699,12.5932131579347
+"M9.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",9.81809259031034,-2.28620964441161
+"N10.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",12.7445609785231,-9.31415550675147
+"N10.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",8.3223029844826,-2.66912653409997
+"N13.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",15.5352943357992,-7.39833784092331
+"N15.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",14.2134071957092,-3.51283249111686
+"N16.B002430.3_38_F.1.1","B002430","erythrocyte","red blood cells",13.7286638846116,-3.06418214010039
+"N17.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",8.77224924343778,3.74393003748069
+"N17.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-8.16736422601697,5.80807293960548
+"N17.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",1.81613414122229,-19.6128795197395
+"N17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-4.87894746395493,12.2338153764062
+"N18.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-14.2089609690593,-6.6010858293297
+"N18.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-19.667045456926,-7.56200351028472
+"N18.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_3",7.24783116321032,10.0872828630197
+"N18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-9.06867253611883,11.8538904139977
+"N19.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",3.42138593814988,11.2327806396106
+"N19.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-13.8644801992055,-6.8671699552232
+"N19.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",-0.77584324165596,16.3203710852264
+"N19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-4.73217655750414,12.824925382889
+"N2.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-17.1555762542495,-2.48463203007177
+"N20.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",0.419189632352408,-16.0002182423305
+"N20.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-4.88085651754185,-2.554158087931
+"N20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",2.72240967212178,13.1499137714011
+"N21.B002431.3_39_F.1.1","B002431","professional antigen presenting cell","antigen presenting cells",-0.17981033937717,-21.5002949878449
+"N21.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",0.207792017669474,-15.4839313792005
+"N21.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",4.34809562508535,12.3857738427103
+"N21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-9.77776158674295,11.3994835018506
+"N22.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-6.96283732436978,10.5706967698217
+"N22.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-5.1605732967166,-1.38786346858826
+"N4.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-17.6916868508899,-5.53679503786812
+"N9.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",14.8603382753814,-7.96313469122475
+"O1.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",11.5413212467127,-2.62481243660743
+"O15.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",15.0909332709909,-3.81943853911247
+"O17.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-14.9431114470661,-8.0860553846255
+"O17.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",0.409815179624752,-19.8718239737192
+"O17.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_3",5.8587044905525,3.98232066650682
+"O17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-8.5390780458846,11.6878518232843
+"O18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",3.22408139954001,8.92335936724236
+"O18.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",3.05383091731642,-18.0897760525287
+"O18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",0.960664821812723,11.9635469663902
+"O19.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_2",-8.72759500542266,5.89971976412235
+"O19.MAA000595.3_9_M.1.1","MAA000595","professional antigen presenting cell","antigen presenting cells",0.848698915907727,-20.3572809863813
+"O19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-2.97308997468248,11.2572109450947
+"O2.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-16.9070388042859,-7.03207932588633
+"O20.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",2.06429436356906,-17.7263809575247
+"O20.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",3.92536531685713,13.1237922628427
+"O20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.354242949475266,15.6174032509153
+"O21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",8.0329242030957,7.20696521830089
+"O21.MAA000594.3_8_M.1.1","MAA000594","professional antigen presenting cell","antigen presenting cells",-0.848538792113233,-21.4579502306026
+"O21.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_2",-9.78313462426564,7.2694111605721
+"O21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-6.09104891536038,14.8205390384608
+"O22.B002431.3_39_F.1.1","B002431","erythrocyte","red blood cells",11.4742058466255,-1.87239798588416
+"O22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-8.52881818680421,14.4597509342819
+"O3.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-15.5841518495209,-4.9580744275676
+"O7.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",15.0546120722395,-5.69068594337791
+"P10.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-16.7983762851834,-6.49475124266393
+"P17.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",10.4858357674493,2.4116197713628
+"P17.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-15.0244895306871,-2.99800227083559
+"P17.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",3.34885425148495,15.6941118344151
+"P17.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.132716578557596,9.38734848518851
+"P18.B002430.3_38_F.1.1","B002430","endothelial cell","endothelial cells_3",7.41931037171638,-1.07242935208745
+"P18.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",4.28050230530112,9.66636554909953
+"P18.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-15.5885055639065,-6.87670245217822
+"P18.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-15.81770410066,-6.64616103654093
+"P18.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-9.97266784708748,9.95525918549898
+"P19.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-15.3363075298256,-6.79403003172885
+"P19.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-6.0933657284815,13.5978826057771
+"P2.MAA000594.3_8_M.1.1","MAA000594","erythrocyte","red blood cells",15.409859406041,-6.75476105483833
+"P20.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",3.91772764739194,11.4545313171418
+"P20.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-17.3839659612394,-4.10753918132928
+"P20.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_2",-5.93135743990968,12.9297146779342
+"P21.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_1",3.18877822915315,10.486929817289
+"P21.MAA000594.3_8_M.1.1","MAA000594","fibroblast","fibroblasts",-19.0369090853749,-7.07302908786388
+"P21.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-4.97817536844351,-2.24609415536689
+"P21.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",-0.147719645229226,11.4932619554876
+"P22.B002431.3_39_F.1.1","B002431","endothelial cell","endothelial cells_3",6.71931095798471,7.77465131003408
+"P22.MAA000906.3_11_M.1.1","MAA000906","endothelial cell","endothelial cells_1",-3.42794879617653,9.94724870166201
+"P22.MAA000908.3_10_M.1.1","MAA000908","endothelial cell","endothelial cells_1",1.36978472947061,9.17025283644512
+"P5.MAA000595.3_9_M.1.1","MAA000595","fibroblast","fibroblasts",-16.9816362147201,-6.30116501083808
+"P8.MAA000595.3_9_M.1.1","MAA000595","erythrocyte","red blood cells",10.7341840565025,-6.10694328967915

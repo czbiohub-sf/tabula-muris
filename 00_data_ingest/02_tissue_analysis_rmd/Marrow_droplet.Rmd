@@ -3,13 +3,17 @@
  output: html_notebook
 ---
 
-Enter the directory of the maca folder on your drive and the name of the tissue you want to analyze.
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
 tissue_of_interest = "Marrow"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+<<<<<<< HEAD
 tiss = load_tissue_droplet(tissue_of_interest)
+=======
+load_tissue_droplet(tissue_of_interest)
+>>>>>>> master
 ```
 
 Visualize top genes in principal components
@@ -139,6 +143,7 @@ cell_ontology_class <-
   "proerythroblast",
   "macrophage",
   "T cell",
+<<<<<<< HEAD
   "erythroblast",
   NA,
   "early pro-B cell",
@@ -148,6 +153,17 @@ cell_ontology_class <-
 free_annotation = c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+=======
+  "erythrocyte",
+  "B cell",
+  "Fraction A pre-pro B cell",
+  "hematopoietic stem cell"
+  )
+
+
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+
+>>>>>>> master
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
@@ -177,7 +193,7 @@ When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-		  paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
+		  paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -185,7 +201,7 @@ save(tiss, file=filename)
 ```{r}
 # To reload a saved object
 # filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
+#                      paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
 
@@ -193,15 +209,15 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
+
+Write the cell ontology and free annotations to CSV.
 
 ```{r}
-head(tiss@meta.data)
-```
-
-
-```{r}
+<<<<<<< HEAD
 filename = here('00_data_ingest', '03_tissue_annotation_csv', 
                      paste0(tissue_of_interest, "_droplet_annotation.csv"))
 write.csv(FetchData(tiss, c('channel','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+=======
+save_annotation_csv(tiss, tissue_of_interest, "droplet")
+>>>>>>> master
 ```

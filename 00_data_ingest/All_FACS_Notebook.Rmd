@@ -18,7 +18,7 @@ library(here)
 
 
 ```{r}
-FACS_files = list.files(here("00_data_ingest","facs_raw_data","FACS"), full.names = TRUE)
+FACS_files = list.files(here("00_data_ingest","00_facs_raw_data","FACS"), full.names = TRUE)
 
 raw.data.list = list()
 for (file in FACS_files){
@@ -31,14 +31,13 @@ raw.data <- do.call(cbind, raw.data.list)
 ```
 
 ```{r}
-#cell_order_FACS = scan("~/tabula-muris/00_data_ingest/cell_order_FACS.txt", what = character())
 cell_order_FACS <- order(colnames(raw.data))
 raw.data = raw.data[,cell_order_FACS]
 ```
 
 
 ```{r}
-meta.data <- read.csv(here("00_data_ingest","facs_raw_data", "metadata_FACS.csv"))
+meta.data <- read.csv(here("00_data_ingest","00_facs_raw_data", "metadata_FACS.csv"))
 
 plates <- str_split(colnames(raw.data),"[.]", simplify = TRUE)[,2]
 
@@ -57,7 +56,7 @@ raw.data <- raw.data[-ercc.index,]
 
 ```{r}
 # Create the Seurat object with all the data
-tiss <- CreateSeuratObject(raw.data = raw.data, min.cells = 1, min.genes = 0)
+tiss <- CreateSeuratObject(raw.data = raw.data)
 
 tiss <- AddMetaData(object = tiss, cell.meta.data)
 tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
@@ -70,7 +69,6 @@ ribo.genes <- grep(pattern = "^Rp[sl][[:digit:]]", x = rownames(x = tiss@data), 
 percent.ribo <- Matrix::colSums(tiss@raw.data[ribo.genes, ])/Matrix::colSums(tiss@raw.data)
 tiss <- AddMetaData(object = tiss, metadata = percent.ribo, col.name = "percent.ribo")
 ```
-
 
 ```{r}
 percent.Rn45s <- tiss@raw.data['Rn45s', ]/Matrix::colSums(tiss@raw.data)
@@ -101,7 +99,7 @@ tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.
 
 Run Principal Component Analysis.
 ```{r}
-tiss <- RunPCA(object = tiss, do.print = FALSE, pcs.compute = 50)
+tiss <- RunPCA(object = tiss, do.print = FALSE, pcs.compute = 100)
 tiss <- ProjectPCA(object = tiss, do.print = FALSE)
 ```
 
@@ -112,13 +110,13 @@ PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, labe
 Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
 
 ```{r}
-PCElbowPlot(object = tiss, num.pc = 50)
+PCElbowPlot(object = tiss, num.pc = 80)
 ```
 
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 40
+n.pcs = 43
 ```
 
 The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
@@ -139,13 +137,8 @@ To visualize
 tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```
 
-```{r, fig.width = 8, fig.height = 6}
-FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
-  ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
-   scale_color_identity(breaks = tissue_colors$color, 
-                        labels = tissue_colors$tissue, 
-                        guide = "legend") + 
-  guides(colour = guide_legend(override.aes = list(size=2)))
+```{r}
+TSNEPlot(tiss, group.by = 'tissue')
 ```
 
 # Add in metadata, annotations, and save.
@@ -156,12 +149,13 @@ tiss@meta.data['cell'] <- rownames(tiss@meta.data)
 ```
 
 ```{r}
-anno = read_csv(here("00_data_ingest", "facs_raw_data", "annotations_FACS.csv"))
+anno = read_csv(here("00_data_ingest", "00_facs_raw_data", "annotations_FACS.csv"))
 anno %>% group_by(tissue, cell_ontology_class) %>% summarize(count = n())
 ```
 
 ```{r}
-tissue_colors = read_csv(here("00_data_ingest", "tissue_colors.csv"))
+tissue_colors = read_csv(here("00_data_ingest", "15_color_palette","tissue_colors.csv"))
+colnames(tissue_colors) = c("tissue", "color")
 ```
 
 
@@ -175,5 +169,5 @@ rownames(tiss@meta.data) <- tiss@meta.data$cell
 
 ```{r}
 tiss_FACS = tiss
-save(tiss_FACS, file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
+save(tiss_FACS, file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
 ```
