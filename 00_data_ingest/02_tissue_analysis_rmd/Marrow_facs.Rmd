@@ -11,7 +11,6 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Marrow"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-<<<<<<< HEAD
 tiss = load_tissue_facs(tissue_of_interest)
 ```
 
@@ -220,12 +219,6 @@ TSNEPlot(object = subtissA, do.return = TRUE, group.by = "previous_free_annotati
 ```{r}
 previous_annotation_table(subtissA)
 ```
-=======
-load_tissue_facs(tissue_of_interest)
-```
-
-Visualize top genes in principal components
->>>>>>> master
 
 
 ```{r, echo=FALSE, fig.height=102, fig.width=15}
@@ -718,26 +711,9 @@ TSNEPlot(object = subtissE, do.return = TRUE, group.by = "plate.barcode")
 Color by cell ontology class on the original TSNE.
 
 ```{r}
-<<<<<<< HEAD
 # TSNEPlot(object = subtissE, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
 TSNEPlot(object = subtissE, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
 ```
-=======
-subcluster.ids <- c(0, 1, 2, 3, 4, 5)
-subcell_ontology_class <-
-  c("T cell",
-  "natural killer cell",
-  "natural killer cell",
-  "T cell",
-  "T cell",
-  "T cell")
-cell_ontology_id = c("CL:0000084",
-  "CL:0000623",
-  "CL:0000623",
-  "CL:0000084",
-  "CL:0000084",
-  "CL:0000084")
->>>>>>> master
 
 ######################################################
 #######################################################
@@ -771,17 +747,10 @@ save(tiss, file=filename)
 # Export the final metadata
 
 
-<<<<<<< HEAD
-```{r}
-head(tiss@meta.data)
-```
-
-=======
 
 
 Write the cell ontology and free annotations to CSV.
 
->>>>>>> master
 ```{r}
 save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```

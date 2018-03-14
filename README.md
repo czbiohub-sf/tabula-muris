@@ -43,20 +43,22 @@ This will download two zip files,`droplet_raw_data.zip` and `facs_raw_data.zip` 
 The FACS folder should look like this:
 
 ```
-00_facs_raw_data/
+00_facs_raw_data
 ├── FACS
+│   ├── Aorta-counts.csv
 │   ├── Bladder-counts.csv
-│   ├── Brain_Microglia-counts.csv
-│   ├── Brain_Neurons-counts.csv
-│   ├── Colon-counts.csv
+│   ├── Brain_Myeloid-counts.csv
+│   ├── Brain_Non-Myeloid-counts.csv
+│   ├── Diaphragm-counts.csv
 │   ├── Fat-counts.csv
 │   ├── Heart-counts.csv
 │   ├── Kidney-counts.csv
+│   ├── Large_Intestine-counts.csv
+│   ├── Limb_Muscle-counts.csv
 │   ├── Liver-counts.csv
 │   ├── Lung-counts.csv
-│   ├── Mammary-counts.csv
+│   ├── Mammary_Gland-counts.csv
 │   ├── Marrow-counts.csv
-│   ├── Muscle-counts.csv
 │   ├── Pancreas-counts.csv
 │   ├── Skin-counts.csv
 │   ├── Spleen-counts.csv
@@ -74,15 +76,17 @@ Now your droplet folders should look like this:
 
 ```
 01_droplet_raw_data
-├── annotations_droplets.csv
+├── annotations_droplet.csv
 ├── droplet
 │   ├── Bladder-10X_P4_3
 │   ├── Bladder-10X_P4_4
 │   ├── Bladder-10X_P7_7
-│   ├── Heart-10X_P7_4
+│   ├── Heart_and_Aorta-10X_P7_4
 │   ├── Kidney-10X_P4_5
 │   ├── Kidney-10X_P4_6
 │   ├── Kidney-10X_P7_5
+│   ├── Limb_Muscle-10X_P7_14
+│   ├── Limb_Muscle-10X_P7_15
 │   ├── Liver-10X_P4_2
 │   ├── Liver-10X_P7_0
 │   ├── Liver-10X_P7_1
@@ -90,12 +94,10 @@ Now your droplet folders should look like this:
 │   ├── Lung-10X_P7_9
 │   ├── Lung-10X_P8_12
 │   ├── Lung-10X_P8_13
-│   ├── Mammary-10X_P7_12
-│   ├── Mammary-10X_P7_13
+│   ├── Mammary_Gland-10X_P7_12
+│   ├── Mammary_Gland-10X_P7_13
 │   ├── Marrow-10X_P7_2
 │   ├── Marrow-10X_P7_3
-│   ├── Muscle-10X_P7_14
-│   ├── Muscle-10X_P7_15
 │   ├── Spleen-10X_P4_7
 │   ├── Spleen-10X_P7_6
 │   ├── Thymus-10X_P7_11

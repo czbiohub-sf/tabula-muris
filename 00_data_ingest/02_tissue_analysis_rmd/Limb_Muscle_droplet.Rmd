@@ -1,25 +1,18 @@
 ---
- title: "Mammary Droplet Notebook"
+ title: "Muscle Notebook"
  output: html_notebook
 ---
 
 Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
 
 ```{r}
-tissue_of_interest = "Mammary"
-
+tissue_of_interest = "Limb_Muscle"
 library(here)
-source(here("00_data_ingest", "02_tissue_analysis_rmd","boilerplate.R"))
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 tiss <- load_tissue_droplet(tissue_of_interest)
 ```
 
-A sanity check: genes per cell vs reads per cell.
-
-```{r}
-GenePlot(object = tiss, gene1 = "nUMI", gene2 = "nGene", use.raw=T)
-```
-
-Visualize top genes in principal components.
+Visualize top genes in principal components
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
@@ -59,11 +52,9 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 
-Check expression of genes useful for indicating cell type. For the islet cells, the mRNA for their specific secretory molecule is a strong signal.
 
 ```{r}
-genes_to_check = c('Krt14', 'Krt17', 'Krt5', 'Krt8', 'Krt19', 'Krt18', 'Ceacam1', 'Itgb3', 'Itga6', 'Elf5', 'Prlr', 'Esr1', 'Pgr', 'Fn1', 'Vim', 'Cdh5', 'Cited1', 'Areg', 'Csn3', 'Cd55',
-'Cd3g', 'Cd4', 'Cd8a', 'Cd74', 'Cd79a', 'Cd19', 'Cd14', 'Csf1r', 'Pecam1', 'Esam', 'Ptprc')
+genes_to_check = c('Myf5', 'Myod1', 'Pdgfra', 'Atxn1', 'Pecam1','Ptprc','Itgam','Cd3g','Cd4', 'Cd19', 'Chad','Chodl', 'Sox9', 'Acan','Acta2')
 ```
 
 ```{r, echo=FALSE, fig.height=4, fig.width=12}
@@ -79,7 +70,7 @@ DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + c
 ```
 
 ```{r, fig.height = 8, fig.width = 8}
-VlnPlot(tiss, "Krt14", use.raw= T, nCol = 2)
+VlnPlot(tiss, "Myf5", use.raw= T, nCol = 2)
 ```
 
 
@@ -100,45 +91,48 @@ Using the markers above, we can confidentaly label many of the clusters.
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
 free_annotation <-
   c(
-    "T cell",
-    "B cell",
-    "T cell",
-    "stromal cell",
-    "basal cell",
-    "T cell",
-    "luminal progenitor cell",
-    "mature luminal cell",
-    "macrophage",
-    "stromal cell",
-    "endothelial cell",
-    "endothelial cell",
-    "stromal cell",
-    "stromal cell")
+  "mesenchymal stem cell",
+  "endothelial cell",
+  "B cell",
+  "chondrocyte-like",
+  "endothelial cell",
+  "skeletal muscle satellite cell",
+  "T cell",
+  "macrophage",
+  "mesenchymal stem cell",
+  "mesenchymal stem cell",
+  "endothelial cell",
+  "endothelial cell",
+  "unknown",
+  "unknown",
+  "unknown")
 
 cell_ontology_class <-
   c(
-    "T cell",
-    "B cell",
-    "T cell",
-    "stromal cell",
-    "basal cell",
-    "T cell",
-    "luminal epithelial cell of mammary gland",
-    "luminal epithelial cell of mammary gland",
-    "macrophage",
-    "stromal cell",
-    "endothelial cell",
-    "endothelial cell",
-    "stromal cell",
-    "stromal cell")
+  "mesenchymal stem cell",
+  "endothelial cell",
+  "B cell",
+  NA,
+  "endothelial cell",
+  "skeletal muscle satellite cell",
+  "T cell",
+  "macrophage",
+  "mesenchymal stem cell",
+  "mesenchymal stem cell",
+  "endothelial cell",
+  "endothelial cell",
+  NA,
+  NA,
+  NA)
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+
 ```
-
-
 
 ## Checking for batch effects
 
@@ -160,7 +154,7 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class")
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -168,7 +162,7 @@ save(tiss, file=filename)
 ```{r}
 # To reload a saved object
 # filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+#                      paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
 
@@ -181,10 +175,20 @@ So that Biohub can easily combine all your cell_ontology_classs, please export t
 head(tiss@meta.data)
 ```
 
+```{r}
+filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                     paste0(tissue_of_interest, "_droplet_annotation.csv"))
+write.csv(FetchData(tiss, c('channel','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
+```
+Figures for Supplement: Dot plot above is sufficient and code is copied below.
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
+```
+
+
 
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
 save_annotation_csv(tiss, tissue_of_interest, "droplet")
-
 ```

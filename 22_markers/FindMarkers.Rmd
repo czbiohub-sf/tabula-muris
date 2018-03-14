@@ -1,0 +1,29 @@
+---
+title: "Find markers by cell type"
+output: html_notebook
+---
+
+```{r}
+find_markers <- function(tissue, method, annotation){
+  filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                       paste0(method,"_", tissue, "_seurat_tiss.Robj"))
+  load(file=filename)
+  
+  annotations = tiss@meta.data[,annotation]
+  unique_annotations = unique(annotations)
+  enumerated_annotations = 0:(length(unique_annotations)-1)
+  
+  annotation_ident = as.factor(plyr::mapvalues(x = annotations, from = unique_annotations, to = enumerated_annotations))
+  names(annotation_ident) = names(tiss@ident)
+  tiss@ident = annotation_ident
+  tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+  
+  write.csv(tiss.markers, file = here("22_markers",paste0(method, "_", tissue, "_", annotation, "_markers.csv")))
+  write.csv(unique_annotations, file = here("22_markers", paste0(method, "_", tissue, "_", annotation, "_classes.csv")))
+}
+```
+
+```{r}
+find_markers("Spleen", "facs", "cell_ontology_class")
+```
+
