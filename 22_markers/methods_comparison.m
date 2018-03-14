@@ -26,18 +26,6 @@ tissue10xnames = readtable(filename22, 'delimiter', ',');
 filename3 = sprintf('%s_Han.csv',tissuename);
 tissueMicrowellSeq = readtable(filename3);
 
-% filename1 = sprintf('/Users/angela.pisco/src/tabula-muris/22_markers/facs_%s_cell_ontology_class_markers.csv',tissuename);
-% tissueFACS = readtable(filename1);
-% filename11 = sprintf('/Users/angela.pisco/src/tabula-muris/22_markers/facs_%s_cell_ontology_class_classes.csv',tissuename);
-% tissueFACSnames = readtable(filename11, 'delimiter', ',');
-% filename2 = sprintf('/Users/angela.pisco/src/tabula-muris/22_markers/droplet_%s_cell_ontology_class_markers.csv',tissuename);
-% tissue10x = readtable(filename2);
-% filename22 = sprintf('/Users/angela.pisco/src/tabula-muris/22_markers/droplet_%s_cell_ontology_class_classes.csv',tissuename);
-% tissue10xnames = readtable(filename22, 'delimiter', ',');
-% filename3 = sprintf('%s_Han.csv',tissuename);
-% tissueMicrowellSeq = readtable(filename3);
-
-
 %% get tissue cell signatures for Tabula muris FACS
 cellNamesTMfacs = unique(table2cell(tissueFACSnames(:,2)));
 cellNamesTMfacs = sortrows(cellNamesTMfacs);
