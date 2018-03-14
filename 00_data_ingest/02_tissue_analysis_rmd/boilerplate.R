@@ -227,7 +227,7 @@ compare_previous_annotation = function(tiss, tissue_of_interest, method='facs'){
       tiss@meta.data[as.character(previous_annotation$X), previous_col] <- previous_annotation[, col]
       print(table(tiss@meta.data[, previous_col]))
       print(table(tiss@meta.data[, previous_col], tiss@ident))
-      
+
     }
   }
   return(tiss)
