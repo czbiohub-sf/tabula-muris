@@ -146,7 +146,7 @@ end
 if strcmp(tissuename,'Marrow')
     tissueOverlaps = cell(1,6);
     tissueOverlapsSizes = [];
-    overlapMatrix = [[1;2;3;5;6],[1;2;3;6;8],[[1 0];[16 0];[17 0];[5 0];[9 10]]];
+    overlapMatrix = [[3;6;8],[8;10;4],[[5 0];[6 7];[16 0]]];
 end
 
 if strcmp(tissuename,'Muscle')
