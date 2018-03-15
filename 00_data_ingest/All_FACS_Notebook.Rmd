@@ -161,7 +161,7 @@ colnames(tissue_colors) = c("tissue", "color")
 
 ```{r}
 tiss@meta.data <- tiss@meta.data %>% 
-                   left_join(anno %>% select(-tissue), by = 'cell') %>%
+                   left_join(anno %>% select(cell_ontology_class,cell_ontology_id,free_annotation), by = 'cell') %>%
                    left_join(tissue_colors, by = 'tissue')
 
 rownames(tiss@meta.data) <- tiss@meta.data$cell
