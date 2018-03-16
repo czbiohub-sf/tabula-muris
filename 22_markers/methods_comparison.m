@@ -56,12 +56,7 @@ cellNamesTM10x = unique(table2cell(tissue10xnames(:,2)));
 cellNamesTM10x = sortrows(cellNamesTM10x);
 for i = 1:length(cellNamesTM10x)
     [a,b] = ismember(table2cell(tissue10xnames(:,2)),cellNamesTM10x(i));
-%     if strcmp(tissuename,'Kidney')
-% %         cellClustersTM10x(i,1:length(find(a))) = tissue10xnames{a,1};
-%         cellClustersTM10x(i,1:length(find(a))) = str2double(table2cell(tissue10xnames(a,1)))';
-%     else
         cellClustersTM10x(i,1:length(find(a))) = str2double(table2cell(tissue10xnames(a,1)))';
-%     end
 end
 cellClustersTM10x = cellClustersTM10x - ones;
 
