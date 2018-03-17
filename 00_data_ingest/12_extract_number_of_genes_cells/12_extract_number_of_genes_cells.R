@@ -45,9 +45,10 @@ extract_ngenes_ncells = function(tiss, object, folder, n_counts='nUMI') {
   suffix = sub(paste0(platform, '_'), '', robject)
   tissue_of_interest = sub('_seurat_tiss.Robj', '', suffix)
   print(tissue_of_interest)
+  print(c(dim(tiss@scale.data), dim(tiss@raw.data)[2]))
 
   tissue_metadata = data.frame(c(dim(tiss@scale.data), dim(tiss@raw.data)[2]),
-                               row.names = c('n_genes', 'n_cells_pass_qc', 'n_cells_sequenced'))
+             row.names = c('n_genes', 'n_cells_pass_qc', 'n_cells_sequenced'))
   colnames(tissue_metadata) = tissue_of_interest
   write.csv(tissue_metadata,
             paste0(folder, tissue_of_interest,
