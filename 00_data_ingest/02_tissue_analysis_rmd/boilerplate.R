@@ -1,9 +1,9 @@
 library(useful)
 library(Seurat)
-library(dplyr)
+suppressMessages(library(dplyr))
 library(Matrix)
 library(ontologyIndex)
-library(tidyverse)
+suppressMessages(library(tidyverse))
 
 cell_ontology = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
 
