@@ -10,7 +10,6 @@ library(tidyverse)
 library(stringr)
 library(Seurat)
 library(here)
-library(viridis)
 ```
 
 ```{r}
@@ -22,14 +21,26 @@ tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colo
 tissue_colors <- rename(tissue_colors, tissue = X1)
 ```
 
-
 ```{r, fig.width = 8, fig.height = 6}
+lims = FetchData(tiss_FACS, c('tSNE_1', 'tSNE_2')) %>% summarize(xmin = min(tSNE_1), xmax = max(tSNE_1), ymin = min(tSNE_2), ymax = max(tSNE_2))
+
+plot_min = min(lims$xmin, lims$ymin)
+plot_max = max(lims$xmax, lims$ymax)
+
 FetchData(tiss_FACS, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
-  ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1)  + coord_fixed() + 
+  ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1)  +  
    scale_color_identity(breaks = tissue_colors$color, 
                         labels = tissue_colors$tissue, 
                         guide = "legend") + 
-  guides(colour = guide_legend(override.aes = list(size=2)))
+  guides(colour = guide_legend(override.aes = list(size=2))) +
+  xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+  xlab("tSNE 1") + ylab("tSNE 2")
 
-ggsave(here("02_figure2","figure2a.pdf"), width = 14, height = 7, units = "in")
+ggsave(here("02_figure2","facs_tsne_by_tissue.pdf"), width = 14, height = 7, units = "in")
+
+TSNEPlot(tiss_FACS, do.label = T, pt.size = 0.1)  +
+  xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+  xlab("tSNE 1") + ylab("tSNE 2")
+
+ggsave(here("02_figure2","facs_tsne_by_cluster.pdf"), width = 14, height = 7, units = "in")
 ```
