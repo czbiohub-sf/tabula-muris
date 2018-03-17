@@ -1,409 +1,409 @@
-"","subtissue","plate.barcode","FACS.selection","cell_ontology_class","cell_ontology_id","free_annotation","cluster.ids","mouse.sex","mouse.id"
-"A10.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"A17.B002431.3_39_F.1.1","Aorta","B002431","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","F","3_39_F"
-"A17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"A17.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"A17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"A18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"A18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","M","3_10_M"
-"A19.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"A20.B002431.3_39_F.1.1","Aorta","B002431","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","F","3_39_F"
-"A20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"A20.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"A20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"A21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"A21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"A21.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"A21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"A22.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"A22.B002431.3_39_F.1.1","Aorta","B002431","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","F","3_39_F"
-"A22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"A22.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"A22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"A5.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"A8.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"B13.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"B17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"B17.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"B17.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"B17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_10_M"
-"B18.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"B18.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"B18.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"B18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"B19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"B19.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"B19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"B1.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_10_M"
-"B20.B002431.3_39_F.1.1","Aorta","B002431","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","F","3_39_F"
-"B20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"B20.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_11_M"
-"B20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"B21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"B21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"B21.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","M","3_11_M"
-"B21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"B22.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"B22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"B22.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"B22.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"B22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"B3.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"B7.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"C15.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"C17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"C17.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"C17.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"C17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"C18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"C18.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"C18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"C19.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"C19.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"C19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"C19.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"C19.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"C19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"C20.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"C20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"C20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"C21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"C21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"C21.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"C21.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"C21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"C22.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"C22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"C22.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"C22.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"C22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"D14.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"D15.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"D17.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"D17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"D17.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"D17.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"D17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"D18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"D18.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"D18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_10_M"
-"D19.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"D19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"D19.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"D19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"D20.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_38_F"
-"D20.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"D20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"D20.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"D20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"D21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"D21.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"D21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"D22.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"D22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"D22.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"D22.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"D22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"D4.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"D4.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"D6.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"D6.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"E15.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"E17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"E17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"E18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"E18.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"E18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"E19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"E19.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"E19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"E20.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"E20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"E20.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"E20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"E21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"E21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"E22.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_38_F"
-"E22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"E22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"E4.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"F14.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"F14.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"F17.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"F17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"F17.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"F17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"F18.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"F18.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"F18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"F19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"F19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"F20.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"F20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"F20.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"F20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"F21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"F21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"F21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"F22.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"F22.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"F22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"F22.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"F22.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"F22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"F2.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"F8.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"G12.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"G14.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"G15.B002431.3_39_F.1.1","Aorta","B002431","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","F","3_39_F"
-"G15.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_10_M"
-"G17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"G17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"G18.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"G18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"G18.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"G18.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"G18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"G19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"G19.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"G19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"G1.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"G20.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"G20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"G20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"G21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"G21.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"G21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"G22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"G22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"G3.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"G5.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"G7.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"G8.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"H11.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"H12.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"H17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"H17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"H18.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"H18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"H19.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"H19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"H19.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"H19.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"H1.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"H1.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"H20.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"H20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"H20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"H21.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"H21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"H21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"H21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"H22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"H22.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","M","3_11_M"
-"H22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"H2.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"H6.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"H7.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"H8.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"I14.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"I16.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"I17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"I17.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"I17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"I18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"I18.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"I18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"I19.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"I19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"I20.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"I20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"I20.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"I20.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","M","3_11_M"
-"I20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"I21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"I21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"I21.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"I21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"I22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"I22.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"I22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"J10.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"J17.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"J17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"J17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"J18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"J18.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"J18.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"J18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"J19.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"J19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"J20.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"J20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"J20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"J21.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"J21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"J21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"J21.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"J21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"J22.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"J22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"J22.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"J22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"J2.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"J4.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"J9.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_10_M"
-"K14.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"K17.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"K17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"K18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"K18.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"K19.B002431.3_39_F.1.1","Aorta","B002431","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","F","3_39_F"
-"K19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"K19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"K20.B002431.3_39_F.1.1","Aorta","B002431","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","F","3_39_F"
-"K20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"K20.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"K20.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"K20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"K21.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"K21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"K21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"K21.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"K21.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"K21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"K22.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"K22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"K22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"K4.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"K5.B002430.3_38_F.1.1","Aorta","B002430","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_38_F"
-"K8.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"K9.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"L10.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"L17.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"L17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"L17.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"L17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"L18.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"L18.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"L18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"L19.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"L19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"L19.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"L20.B002431.3_39_F.1.1","Aorta","B002431","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","F","3_39_F"
-"L20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"L20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"L21.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"L21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"L21.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"L21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"L22.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"L22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"L22.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"L22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"L6.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"L8.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"L9.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"M14.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"M17.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"M17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"M18.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"M18.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"M18.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_11_M"
-"M18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"M19.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"M19.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"M19.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"M19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"M20.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"M20.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"M20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"M20.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"M20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"M21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"M21.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"M21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"M22.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"M22.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"M22.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"M22.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"M22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"M9.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"N10.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"N10.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
-"N13.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"N15.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"N16.B002430.3_38_F.1.1","Aorta","B002430","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_38_F"
-"N17.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"N17.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"N17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"N17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"N18.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"N18.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"N18.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","M","3_11_M"
-"N18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"N19.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"N19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"N19.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"N19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"N20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"N20.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"N20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"N21.B002431.3_39_F.1.1","Aorta","B002431","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","F","3_39_F"
-"N21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"N21.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"N21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"N22.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"N22.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"N2.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"N4.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"N9.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"O15.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"O17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"O17.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"O17.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","M","3_11_M"
-"O17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"O18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"O18.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"O18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"O19.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","F","3_39_F"
-"O19.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_9_M"
-"O19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"O1.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"O20.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"O20.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"O20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"O21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"O21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","professional antigen presenting cell","CL:0000145","antigen presenting cells","4","M","3_8_M"
-"O21.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_11_M"
-"O21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"O22.B002431.3_39_F.1.1","Aorta","B002431","Viable","erythrocyte","CL:0000232","red blood cells","0","F","3_39_F"
-"O22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"O2.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"O3.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"O7.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"P10.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"P17.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"P17.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"P17.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"P17.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"P18.B002430.3_38_F.1.1","Aorta","B002430","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_38_F"
-"P18.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"P18.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"P18.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"P18.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"P19.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"P19.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"P20.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"P20.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"P20.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_2","2","M","3_10_M"
-"P21.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","F","3_39_F"
-"P21.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_8_M"
-"P21.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"P21.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"P22.B002431.3_39_F.1.1","Aorta","B002431","Viable","endothelial cell","CL:0000115","endothelial cells_3","5","F","3_39_F"
-"P22.MAA000906.3_11_M.1.1","Aorta","MAA000906","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_11_M"
-"P22.MAA000908.3_10_M.1.1","Aorta","MAA000908","Viable","endothelial cell","CL:0000115","endothelial cells_1","1","M","3_10_M"
-"P2.MAA000594.3_8_M.1.1","Aorta","MAA000594","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_8_M"
-"P5.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","fibroblast","CL:0000057","fibroblasts","3","M","3_9_M"
-"P8.MAA000595.3_9_M.1.1","Aorta","MAA000595","Viable","erythrocyte","CL:0000232","red blood cells","0","M","3_9_M"
+cell,tissue,subtissue,FACS.selection,plate.barcode,cell_ontology_class,cell_ontology_id,free_annotation,cluster.ids,mouse.sex,mouse.id
+A10.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+A17.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,F,3_39_F
+A17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+A17.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+A17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+A18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+A18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_3,5,M,3_10_M
+A19.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+A20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,F,3_39_F
+A20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+A20.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+A20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+A21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+A21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+A21.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+A21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+A22.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+A22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,F,3_39_F
+A22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+A22.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+A22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+A5.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+A8.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+B1.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,erythrocyte,CL:0000232,red blood cells,0,M,3_10_M
+B13.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+B17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+B17.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+B17.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+B17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,erythrocyte,CL:0000232,red blood cells,0,M,3_10_M
+B18.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+B18.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+B18.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+B18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+B19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+B19.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+B19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+B20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,F,3_39_F
+B20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+B20.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,fibroblast,CL:0000057,fibroblasts,3,M,3_11_M
+B20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+B21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+B21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+B21.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_3,5,M,3_11_M
+B21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+B22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+B22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+B22.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+B22.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+B22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+B3.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+B7.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+C15.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+C17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+C17.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+C17.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+C17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+C18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+C18.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+C18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+C19.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+C19.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+C19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+C19.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+C19.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+C19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+C20.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+C20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+C20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+C21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+C21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+C21.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+C21.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+C21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+C22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+C22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+C22.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+C22.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+C22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+D14.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+D15.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+D17.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+D17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+D17.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+D17.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+D17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+D18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+D18.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+D18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_10_M
+D19.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+D19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+D19.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+D19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+D20.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_38_F
+D20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+D20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+D20.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+D20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+D21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+D21.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+D21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+D22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+D22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+D22.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+D22.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+D22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+D4.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+D4.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+D6.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+D6.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+E15.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+E17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+E17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+E18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+E18.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+E18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+E19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+E19.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+E19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+E20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+E20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+E20.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+E20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+E21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+E21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+E22.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_38_F
+E22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+E22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+E4.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+F14.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+F14.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+F17.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+F17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+F17.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+F17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+F18.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+F18.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+F18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+F19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+F19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+F2.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+F20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+F20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+F20.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+F20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+F21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+F21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+F21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+F22.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+F22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+F22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+F22.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+F22.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+F22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+F8.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+G1.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+G12.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+G14.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+G15.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,F,3_39_F
+G15.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,erythrocyte,CL:0000232,red blood cells,0,M,3_10_M
+G17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+G17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+G18.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+G18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+G18.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+G18.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+G18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+G19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+G19.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+G19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+G20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+G20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+G20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+G21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+G21.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+G21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+G22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+G22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+G3.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+G5.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+G7.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+G8.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+H1.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+H1.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+H11.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+H12.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+H17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+H17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+H18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+H18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+H19.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+H19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+H19.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+H19.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+H2.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+H20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+H20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+H20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+H21.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+H21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+H21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+H21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+H22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+H22.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_3,5,M,3_11_M
+H22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+H6.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+H7.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+H8.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+I14.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+I16.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+I17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+I17.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+I17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+I18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+I18.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+I18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+I19.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+I19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+I20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+I20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+I20.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+I20.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_3,5,M,3_11_M
+I20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+I21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+I21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+I21.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+I21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+I22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+I22.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+I22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+J10.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+J17.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+J17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+J17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+J18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+J18.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+J18.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+J18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+J19.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+J19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+J2.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+J20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+J20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+J20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+J21.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+J21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+J21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+J21.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+J21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+J22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+J22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+J22.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+J22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+J4.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+J9.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,erythrocyte,CL:0000232,red blood cells,0,M,3_10_M
+K14.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+K17.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+K17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+K18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+K18.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+K19.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,F,3_39_F
+K19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+K19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+K20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,F,3_39_F
+K20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+K20.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+K20.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+K20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+K21.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+K21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+K21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+K21.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+K21.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+K21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+K22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+K22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+K22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+K4.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+K5.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,erythrocyte,CL:0000232,red blood cells,0,F,3_38_F
+K8.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+K9.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+L10.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+L17.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+L17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+L17.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+L17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+L18.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+L18.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+L18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+L19.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+L19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+L19.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+L20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,F,3_39_F
+L20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+L20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+L21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+L21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+L21.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+L21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+L22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+L22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+L22.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+L22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+L6.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+L8.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+L9.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+M14.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+M17.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+M17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+M18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+M18.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+M18.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,erythrocyte,CL:0000232,red blood cells,0,M,3_11_M
+M18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+M19.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+M19.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+M19.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+M19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+M20.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+M20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+M20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+M20.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+M20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+M21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+M21.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+M21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+M22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+M22.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+M22.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+M22.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+M22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+M9.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+N10.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+N10.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
+N13.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+N15.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+N16.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,erythrocyte,CL:0000232,red blood cells,0,F,3_38_F
+N17.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+N17.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+N17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+N17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+N18.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+N18.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+N18.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_3,5,M,3_11_M
+N18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+N19.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+N19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+N19.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+N19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+N2.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+N20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+N20.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+N20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+N21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,F,3_39_F
+N21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+N21.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+N21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+N22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+N22.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+N4.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+N9.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+O1.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+O15.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+O17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+O17.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+O17.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_3,5,M,3_11_M
+O17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+O18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+O18.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+O18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+O19.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_2,2,F,3_39_F
+O19.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_9_M
+O19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+O2.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+O20.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+O20.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+O20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+O21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+O21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,professional antigen presenting cell,CL:0000145,antigen presenting cells,4,M,3_8_M
+O21.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_11_M
+O21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+O22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,erythrocyte,CL:0000232,red blood cells,0,F,3_39_F
+O22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+O3.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+O7.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+P10.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+P17.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+P17.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+P17.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+P17.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+P18.B002430.3_38_F.1.1,Heart,Aorta,Viable,B002430,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_38_F
+P18.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+P18.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+P18.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+P18.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+P19.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+P19.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+P2.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,erythrocyte,CL:0000232,red blood cells,0,M,3_8_M
+P20.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+P20.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+P20.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_2,2,M,3_10_M
+P21.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_1,1,F,3_39_F
+P21.MAA000594.3_8_M.1.1,Heart,Aorta,Viable,MAA000594,fibroblast,CL:0000057,fibroblasts,3,M,3_8_M
+P21.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+P21.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+P22.B002431.3_39_F.1.1,Heart,Aorta,Viable,B002431,endothelial cell,CL:0000115,endothelial cells_3,5,F,3_39_F
+P22.MAA000906.3_11_M.1.1,Heart,Aorta,Viable,MAA000906,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_11_M
+P22.MAA000908.3_10_M.1.1,Heart,Aorta,Viable,MAA000908,endothelial cell,CL:0000115,endothelial cells_1,1,M,3_10_M
+P5.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,fibroblast,CL:0000057,fibroblasts,3,M,3_9_M
+P8.MAA000595.3_9_M.1.1,Heart,Aorta,Viable,MAA000595,erythrocyte,CL:0000232,red blood cells,0,M,3_9_M
