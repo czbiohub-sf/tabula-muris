@@ -25,7 +25,7 @@ tissue_colors <- rename(tissue_colors, tissue = X1)
 lims = FetchData(tiss_FACS, c('tSNE_1', 'tSNE_2')) %>% summarize(xmin = min(tSNE_1), xmax = max(tSNE_1), ymin = min(tSNE_2), ymax = max(tSNE_2))
 
 plot_min = min(lims$xmin, lims$ymin)
-plot_max = min(lims$xmax, lims$ymax)
+plot_max = max(lims$xmax, lims$ymax)
 
 FetchData(tiss_FACS, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
   ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1)  +  
