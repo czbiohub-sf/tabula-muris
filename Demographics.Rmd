@@ -1,0 +1,102 @@
+---
+title: "Demographics"
+output: html_notebook
+---
+
+This notebook computes demographic information about the dataset and analysis. These are the numbers that go in the text of the paper.
+
+## Sample Text
+
+The compendium is comprised of single cell transcriptome sequence data from 97,029 cells isolated from 20 tissues (Fig. 1).
+
+Single cell transcriptomes were sequenced to an average depth of 685,500 reads per cell for the plate data and 7,709 unique molecular identifiers (UMI) per cell for the microfluidic droplet data.  After quality control filtering, 44,879 FACS sorted cells and 55,656 microfluidic droplet processed cells were retained for further analysis.  
+
+The majority of clusters contain cells from only one organ, but XXX number of clusters contained cells from many tissues.  
+
+## Calculations
+
+```{r}
+load(here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
+load(here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
+```
+
+Basic numbers
+```{r}
+facs_cells = length(tiss_FACS@meta.data)
+droplet_cells = length(tiss_droplet@meta.data)
+
+facs_depth = average(tiss_FACS@meta.data$nReads)
+droplet_depth = average(tiss_droplet@meta.data$nUMI)
+
+total_cells = facs_cells + droplet_cells
+```
+
+```{r}
+print(paste0("FACS cells past QC: ", facs_cells))
+print(paste0("Droplet cells past QC: ", droplet_cells))
+print(paste0("Droplet avg UMI: ", droplet_depth))
+print(paste0("FACS avg reads: ", facs_depth))
+print(paste0("Total cells past QC: ", total_cells))
+```
+
+Clusters in global with subset.
+
+```{r}
+multi_tissue_clusters = length(FetchData(tiss_FACS, c('ident', 'tissue')) %>% 
+         group_by(ident, tissue) %>% count() %>% 
+         filter(n > 1) %>% group_by(ident) %>% count())
+
+print(paste0("Clusters covering multiple tissues: ", multi_tissue_clusters))
+```
+
+Numbers of annotations, by tissue and total.
+
+```{r}
+ontology_tissues_facs = unique(tiss_FACS@meta.data %>% 
+                            transmute(ontology_tissue = paste0(cell_ontology_class, tissue)) %>%
+                            pull(ontology_tissue))
+
+anno_tissues_facs = unique(tiss_FACS@meta.data %>% 
+                            transmute(free_annotation_tissue = paste0(free_annotation, tissue)) %>%
+                            pull(free_annotation_tissue))
+
+ontology_facs = unique(tiss_FACS@meta.data %>% 
+                            pull(cell_ontology_class))
+
+anno_facs = unique(tiss_FACS@meta.data %>% 
+                            pull(free_annotation))
+
+ontology_tissues_droplet = unique(tiss_droplet@meta.data %>% 
+                            transmute(ontology_tissue = paste0(cell_ontology_class, tissue)) %>%
+                            pull(ontology_tissue))
+
+anno_tissues_droplet = unique(tiss_droplet@meta.data %>% 
+                            transmute(free_annotation_tissue = paste0(free_annotation, tissue)) %>%
+                            pull(free_annotation_tissue))
+
+ontology_droplet = unique(tiss_droplet@meta.data %>% 
+                            pull(cell_ontology_class))
+
+anno_droplet = unique(tiss_droplet@meta.data %>% 
+                            pull(free_annotation))
+
+```
+
+```{r}
+print(paste0("Total ontology-tissue (FACS): ", length(ontology_tissues_facs)))
+print(paste0("Total ontology-tissue (FACS): ", length(anno_tissues_droplet)))
+print(paste0("Total ontology-tissue (both): ", length(unique(c(ontology_tissues_facs, ontology_tissues_droplet)))))
+
+print(paste0("Total anno-tissue (FACS): ", length(anno_tissues_facs)))
+print(paste0("Total anno-tissue (FACS): ", length(anno_tissues_droplet)))
+print(paste0("Total anno-tissue (both): ", length(unique(c(anno_tissues_facs, anno_tissues_droplet)))))
+
+print(paste0("Total ontology (FACS): ", length(ontology_facs)))
+print(paste0("Total ontology (droplet): ", length(ontology_droplet)))
+print(paste0("Total ontology (both): ", length(unique(c(ontology_facs, ontology_droplet)))))
+
+print(paste0("Total anno (FACS): ", length(anno_facs)))
+print(paste0("Total anno (droplet): ", length(anno_droplet)))
+print(paste0("Total anno (both): ", length(unique(c(anno_facs, anno_droplet)))))
+```
+
