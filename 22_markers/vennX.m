@@ -148,12 +148,13 @@ function error = plot_venn3( a, b, c, d, e, f, g, resolution, dist_A_B, dist_B_C
     %draw the circles
     img = zeros( size(Y,1), size(Y,2) );
     
-    img = img + 2 .* ( (X - center1_x).^2 + (Y - center1_y).^2 < r1^2 );
-    img = img + 4 .* ( (X - center2_x).^2 + (Y - center2_y).^2 < r2^2 );
-    img = img + 6 .* ( (X - center3_x).^2 + (Y - center3_y).^2 < r3^2 );
+    img = img + 4.5 .* ( (X - center1_x).^2 + (Y - center1_y).^2 < r1^2 );
+    img = img + 2 .* ( (X - center2_x).^2 + (Y - center2_y).^2 < r2^2 );
+    img = img + 9 .* ( (X - center3_x).^2 + (Y - center3_y).^2 < r3^2 );
     
     clf
     imagesc(img)
+    
     ax = gca;
     ax.Clipping = 'off';
     hold on
