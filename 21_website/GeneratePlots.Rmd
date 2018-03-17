@@ -43,7 +43,7 @@ plotgene_tsne <- function(tiss, gene, tissue, method){
   }
   lims = FetchData(tiss, c('tSNE_1', 'tSNE_2', gene)) %>% summarize(xmin = min(tSNE_1), xmax = max(tSNE_1), ymin = min(tSNE_2), ymax = max(tSNE_2))
   plot_min = min(lims$xmin, lims$ymin)
-  plot_max = min(lims$xmax, lims$ymax)
+  plot_max = max(lims$xmax, lims$ymax)
   FetchData(tiss, c('tSNE_1', 'tSNE_2', gene)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = gene_R_safe)) +
     geom_point(size = 0.5) +
     scale_colour_gradient(low = "lightgrey", high = "blue", name = legend_name) +
