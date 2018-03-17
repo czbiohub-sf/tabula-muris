@@ -125,7 +125,7 @@ Display top 24 markers per cluster.
 ```{r}
 #tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, 
 #                               thresh.use = 0.25)
-#tiss.markers %>% group_by(cluster) %>% top_n(24, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(24, avg_logFC)
 ```
 
 Assigning cell type identity to clusters

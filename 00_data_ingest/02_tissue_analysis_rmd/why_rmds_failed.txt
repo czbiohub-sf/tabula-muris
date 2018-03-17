@@ -1,0 +1,144 @@
+Bladder_droplet.Rmd.err-|----|----|----|----|----|----|----|----|----|----|
+Bladder_droplet.Rmd.err-**************************************************|
+Bladder_droplet.Rmd.err-Quitting from lines 62-72 (Bladder_droplet.Rmd) 
+Bladder_droplet.Rmd.err-Error in x[[jj]][iseq] <- vjj : replacement has length zero
+Bladder_droplet.Rmd.err-Calls: <Anonymous> ... withVisible -> eval -> eval -> [<- -> [<-.data.frame
+Bladder_droplet.Rmd.err:Execution halted
+--
+Bladder_facs.Rmd.err-0%   10   20   30   40   50   60   70   80   90   100%
+Bladder_facs.Rmd.err-|----|----|----|----|----|----|----|----|----|----|
+Bladder_facs.Rmd.err-**************************************************|
+Bladder_facs.Rmd.err-Quitting from lines 62-72 (Bladder_facs.Rmd) 
+Bladder_facs.Rmd.err-Error: '/home/rstudio/tabula-muris/00_data_ingest/03_tissue_annotation_csv/Bladder_facs_annotation.csv.backup' does not exist.
+Bladder_facs.Rmd.err:Execution halted
+--
+Brain_Microglia_facs.Rmd.err-**************************************************|
+Brain_Microglia_facs.Rmd.err-Quitting from lines 158-166 (Brain_Microglia_facs.Rmd) 
+Brain_Microglia_facs.Rmd.err-Error in lapply(X = X, FUN = FUN, ...) : 
+Brain_Microglia_facs.Rmd.err-  object 'sub.cell_ontology_class' not found
+Brain_Microglia_facs.Rmd.err-Calls: <Anonymous> ... stash_annotations -> validate_cell_ontology -> sapply -> lapply
+Brain_Microglia_facs.Rmd.err:Execution halted
+--
+Brain_Non-microglia_facs.Rmd.err-Error in yaml::yaml.load(string, ...) : 
+Brain_Non-microglia_facs.Rmd.err-  Parser error: while parsing a block mapping at line 1, column 1did not find expected key at line 2, column 2
+Brain_Non-microglia_facs.Rmd.err-Calls: <Anonymous> ... parse_yaml_front_matter -> yaml_load_utf8 -> <Anonymous> -> .Call
+Brain_Non-microglia_facs.Rmd.err:Execution halted
+--
+Colon_facs_021818.Rmd.err-**************************************************|
+Colon_facs_021818.Rmd.err-Quitting from lines 257-258 (Colon_facs_021818.Rmd) 
+Colon_facs_021818.Rmd.err-Error in filter_impl(.data, quo) : 
+Colon_facs_021818.Rmd.err-  Evaluation error: object 'avg_diff' not found.
+Colon_facs_021818.Rmd.err-Calls: <Anonymous> ... .Call -> filter -> filter.tbl_df -> filter_impl -> .Call
+Colon_facs_021818.Rmd.err:Execution halted
+--
+Colon_facs.Rmd.err-|----|----|----|----|----|----|----|----|----|----|
+Colon_facs.Rmd.err-**************************************************|
+Colon_facs.Rmd.err-Quitting from lines 59-65 (Colon_facs.Rmd) 
+Colon_facs.Rmd.err-Error in x[[jj]][iseq] <- vjj : replacement has length zero
+Colon_facs.Rmd.err-Calls: <Anonymous> ... withVisible -> eval -> eval -> [<- -> [<-.data.frame
+Colon_facs.Rmd.err:Execution halted
+--
+Colon_Heatmap.Rmd.err-**************************************************|
+Colon_Heatmap.Rmd.err-Quitting from lines 257-258 (Colon_Heatmap.Rmd) 
+Colon_Heatmap.Rmd.err-Error in filter_impl(.data, quo) : 
+Colon_Heatmap.Rmd.err-  Evaluation error: object 'avg_diff' not found.
+Colon_Heatmap.Rmd.err-Calls: <Anonymous> ... .Call -> filter -> filter.tbl_df -> filter_impl -> .Call
+Colon_Heatmap.Rmd.err:Execution halted
+--
+Fat_facs.Rmd.err-**************************************************|
+Fat_facs.Rmd.err-Quitting from lines 102-103 (Fat_facs.Rmd) 
+Fat_facs.Rmd.err-Error in filter_impl(.data, quo) : 
+Fat_facs.Rmd.err-  Evaluation error: object 'avg_diff' not found.
+Fat_facs.Rmd.err-Calls: <Anonymous> ... .Call -> filter -> filter.tbl_df -> filter_impl -> .Call
+Fat_facs.Rmd.err:Execution halted
+--
+Heart_droplet.Rmd.err-**************************************************|
+Heart_droplet.Rmd.err-Quitting from lines 226-227 (Heart_droplet.Rmd) 
+Heart_droplet.Rmd.err-Error in filter_impl(.data, quo) : 
+Heart_droplet.Rmd.err-  Evaluation error: object 'avg_diff' not found.
+Heart_droplet.Rmd.err-Calls: <Anonymous> ... .Call -> filter -> filter.tbl_df -> filter_impl -> .Call
+Heart_droplet.Rmd.err:Execution halted
+--
+Heart_facs.Rmd.err-**************************************************|
+Heart_facs.Rmd.err-Quitting from lines 263-264 (Heart_facs.Rmd) 
+Heart_facs.Rmd.err-Error in filter_impl(.data, quo) : 
+Heart_facs.Rmd.err-  Evaluation error: object 'avg_diff' not found.
+Heart_facs.Rmd.err-Calls: <Anonymous> ... .Call -> filter -> filter.tbl_df -> filter_impl -> .Call
+Heart_facs.Rmd.err:Execution halted
+--
+Mammary_facs.Rmd.err-**************************************************|
+Mammary_facs.Rmd.err-Quitting from lines 84-85 (Mammary_facs.Rmd) 
+Mammary_facs.Rmd.err-Error in head(x = clust.markers, n = 10) : 
+Mammary_facs.Rmd.err-  object 'clust.markers' not found
+Mammary_facs.Rmd.err-Calls: <Anonymous> ... withCallingHandlers -> withVisible -> eval -> eval -> print -> head
+Mammary_facs.Rmd.err:Execution halted
+--
+Marrow_droplet.Rmd.err-**************************************************|
+Marrow_droplet.Rmd.err-Quitting from lines 18-19 (Marrow_droplet.Rmd) 
+Marrow_droplet.Rmd.err-Error in reduction.type %in% names(x = object@dr) : 
+Marrow_droplet.Rmd.err-  object 'tiss' not found
+Marrow_droplet.Rmd.err-Calls: <Anonymous> ... eval -> PCHeatmap -> DimHeatmap -> DimTopCells -> %in%
+Marrow_droplet.Rmd.err:Execution halted
+--
+Marrow_facs.Rmd.err-**************************************************|
+Marrow_facs.Rmd.err-Quitting from lines 20-21 (Marrow_facs.Rmd) 
+Marrow_facs.Rmd.err-Error in reduction.type %in% names(x = object@dr) : 
+Marrow_facs.Rmd.err-  object 'tiss' not found
+Marrow_facs.Rmd.err-Calls: <Anonymous> ... eval -> PCHeatmap -> DimHeatmap -> DimTopCells -> %in%
+Marrow_facs.Rmd.err:Execution halted
+--
+Skin_facs.Rmd.err-**************************************************|
+Skin_facs.Rmd.err-Quitting from lines 98-99 (Skin_facs.Rmd) 
+Skin_facs.Rmd.err-Error in filter_impl(.data, quo) : 
+Skin_facs.Rmd.err-  Evaluation error: object 'avg_diff' not found.
+Skin_facs.Rmd.err-Calls: <Anonymous> ... .Call -> filter -> filter.tbl_df -> filter_impl -> .Call
+Skin_facs.Rmd.err:Execution halted
+--
+Template.Rmd.err-Error in parse(text = x, srcfile = src) : <text>:4:21: unexpected '{'
+Template.Rmd.err-3: source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+Template.Rmd.err-4: tiss <- load_tissue_{
+Template.Rmd.err-                       ^
+Template.Rmd.err-Calls: <Anonymous> ... evaluate -> parse_all -> parse_all.character -> parse
+Template.Rmd.err:Execution halted
+--
+Thymus_droplet.Rmd.err-**************************************************|
+Thymus_droplet.Rmd.err-Quitting from lines 162-163 (Thymus_droplet.Rmd) 
+Thymus_droplet.Rmd.err-Error in FetchData(tiss, c(batch_name_column, "cell_ontology_class", "cell_ontology_id",  : 
+Thymus_droplet.Rmd.err-  Error: cell_ontology_id not found
+Thymus_droplet.Rmd.err-Calls: <Anonymous> ... eval -> eval -> write.table -> is.data.frame -> FetchData
+Thymus_droplet.Rmd.err:Execution halted
+--
+Thymus_facs.Rmd.err-**************************************************|
+Thymus_facs.Rmd.err-Quitting from lines 150-151 (Thymus_facs.Rmd) 
+Thymus_facs.Rmd.err-Error in FetchData(tiss, c(batch_name_column, "cell_ontology_class", "cell_ontology_id",  : 
+Thymus_facs.Rmd.err-  Error: cell_ontology_id not found
+Thymus_facs.Rmd.err-Calls: <Anonymous> ... eval -> eval -> write.table -> is.data.frame -> FetchData
+Thymus_facs.Rmd.err:Execution halted
+--
+Tongue_droplet.Rmd.err-**************************************************|
+Tongue_droplet.Rmd.err-Quitting from lines 145-181 (Tongue_droplet.Rmd) 
+Tongue_droplet.Rmd.err-Error in validate_cell_ontology(cell_ontology_class) : 
+Tongue_droplet.Rmd.err-  "Langerhans cells" is not in the cell ontology
+Tongue_droplet.Rmd.err-Calls: <Anonymous> ... eval -> stash_annotations -> validate_cell_ontology
+Tongue_droplet.Rmd.err:Execution halted
+--
+Tongue_facs.Rmd.err-**************************************************|
+Tongue_facs.Rmd.err-Quitting from lines 101-102 (Tongue_facs.Rmd) 
+Tongue_facs.Rmd.err-Error in head(x = cluster6.markers, n = 30) : 
+Tongue_facs.Rmd.err-  object 'cluster6.markers' not found
+Tongue_facs.Rmd.err-Calls: <Anonymous> ... withCallingHandlers -> withVisible -> eval -> eval -> print -> head
+Tongue_facs.Rmd.err:Execution halted
+--
+Trachea_droplet.Rmd.err-**************************************************|
+Trachea_droplet.Rmd.err-Quitting from lines 245-246 (Trachea_droplet.Rmd) 
+Trachea_droplet.Rmd.err-Error in filter_impl(.data, quo) : 
+Trachea_droplet.Rmd.err-  Evaluation error: object 'avg_diff' not found.
+Trachea_droplet.Rmd.err-Calls: <Anonymous> ... .Call -> filter -> filter.tbl_df -> filter_impl -> .Call
+Trachea_droplet.Rmd.err:Execution halted
+--
+Trachea_facs.Rmd.err-**************************************************|
+Trachea_facs.Rmd.err-Quitting from lines 18-19 (Trachea_facs.Rmd) 
+Trachea_facs.Rmd.err-Error in reduction.type %in% names(x = object@dr) : 
+Trachea_facs.Rmd.err-  object 'tiss' not found
+Trachea_facs.Rmd.err-Calls: <Anonymous> ... eval -> PCHeatmap -> DimHeatmap -> DimTopCells -> %in%
+Trachea_facs.Rmd.err:Execution halted
