@@ -1,7 +1,11 @@
 ---
 title: "Liver FACS Notebook"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
+
+## Preprocess and Cluster
 
 Enter the name of the tissue you want to analyze.
 
@@ -12,12 +16,21 @@ source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 tiss = load_tissue_facs(tissue_of_interest)
 ```
 
-Visualize top genes in principal components
+The loading function above includes basic preprocessing of the gene x cell matrix, including
+
+1. Filtering out cells with fewer than 500 genes or 50,000 reads.
+2. Log-normalizing counts for each cell (log(1 + counts per million)).
+3. Shifting and scaling each gene to have mean 0 and variance 1.
+4. Finding variable genes (those with high dispersion, given their mean).
+5. PCA to project the variable genes to 20 dimensions.
+
+We can visualize top genes in each principal component.
+
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
 
-Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
+To further reduce variance in the data, we will project onto the top principal components. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. A decent rule of thumb is to pick the elbow in the plot below.
 
 ```{r}
 PCElbowPlot(object = tiss)
@@ -30,9 +43,7 @@ n.pcs = 11
 ```
 
 
-The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale. Higher resolution will give more clusters, lower resolution will give fewer.
-
-For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
+The clustering is performed using on a shared-nearest-neighbors graph on the cells. Two cells are connected in the graph of their k-neighborhoods of cells overlap. The (enhanced) Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the tradeoff between in-group connections and between-group connections in that objective. Higher resolution will give more clusters, lower resolution will give fewer.
 
 ```{r}
 # Set resolution 
@@ -42,9 +53,9 @@ tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
     resolution = res.used, print.output = 0, save.SNN = TRUE)
 ```
 
-We use TSNE solely to visualize the data.
+We use tSNE solely to visualize the data.
+
 ```{r}
-# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
 tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```
 
@@ -52,71 +63,57 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 
-## Compare to previous annotations
-```{r}
-tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs")
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
-```
+## Label clusters using marker genes
 
-Check expression of genes useful for indicating cell type. For the islet cells, the mRNA for their specific secretory molecule is a strong signal.
+Check expression of genes useful for indicating cell type.
 
 hepatocyte: Alb, Ttr, Apoa1, and Serpina1c
-pericentral: Cyp2e1, Glul, Oat, Gulo
-midlobular: Ass1, Hamp, Gstp1, Ubb
-periportal: Cyp2f2, Pck1, Hal, Cdh1
-
 endothelial cells: Pecam1, Nrp1, Kdr+ and Oit3+
 Kuppfer cells: Emr1, Clec4f, Cd68, Irf7
 NK/NKT cells: Zap70, Il2rb, Nkg7, Cxcr6, Klr1c, Gzma
 B cells: Cd79a, Cd79b, Cd74 and Cd19
 
-
-
 ```{r}
-genes_hep = c('Alb', 'Ttr', 'Apoa1', 'Serpina1c',
-                   'Cyp2e1', 'Glul', 'Oat', 'Gulo',
-                   'Ass1', 'Hamp', 'Gstp1', 'Ubb',
-                   'Cyp2f2', 'Pck1', 'Hal', 'Cdh1')
+genes_hep = c('Alb', 'Ttr', 'Apoa1', 'Serpina1c')
 genes_endo = c('Pecam1', 'Nrp1', 'Kdr','Oit3')
 genes_kuppfer = c('Emr1', 'Clec4f', 'Cd68', 'Irf7')
 genes_nk = c('Zap70', 'Il2rb', 'Nkg7', 'Cxcr6', 'Gzma')
 genes_b = c('Cd79a', 'Cd79b', 'Cd74')
 
-
-all_genes = c(genes_hep, genes_endo, genes_kuppfer, genes_nk, genes_b)
+genes_all = c(genes_hep, genes_endo, genes_kuppfer, genes_nk, genes_b)
 ```
+
+In the tSNE plots below, the intensity of each point represents the gene expression, scaled to mean 0 and variance 1 across all cells.
 
 ```{r, echo=FALSE, fig.height=24, fig.width=12}
-FeaturePlot(tiss, genes_hep, pt.size = 3, nCol = 2, cols.use = c("grey", "red"))
+FeaturePlot(tiss, genes_all, pt.size = 3, nCol = 3, cols.use = c("lightgrey", "blue"))
 ```
 
-Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-The radius shows you the percent of cells in that cluster with at least one read sequenced from that gene. The color level indicates the average
-Z-score of gene expression for cells in that cluster, where the scaling is done over taken over all cells in the sample.
+Dotplots show, for each cluster and gene, the fraction of cells with at least one read for the gene (circle size) and the average scaled expression for that gene among the cells expressing it (circle color).
 
 ```{r, echo=FALSE, fig.height=10, fig.width=6}
-DotPlot(tiss, all_genes, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
+DotPlot(tiss, genes_all, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
 ```
 
-Violin plot of Albumin expression to assess possible leakage.
+The low but nonzero levels of Albumin present in all clusters is consistent with a small amount of leakage, either through physical contamination or index hopping. Nevertheless, the absolute levels of expression confirm a sharp difference between the hepatocyte clusters and the others.
 
 ```{r, echo=FALSE, fig.height=3, fig.width=6}
 VlnPlot(tiss, 'Alb', use.raw = T, do.return = T)
 ```
 
-We can also find all differentially expressed genes marking each cluster. This may take some time.
+To confirm the identity of a cluster, you can inspect the genes differentially expressed in that cluster compared to the others.
 
 ```{r}
-#clust.markers0 <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+clust.markers7 <- FindMarkers(object = tiss, ident.1 = 7, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
-Display the top markers you computed above.
+The top markers for cluster 7 include histocompatibility markers H2-*, consistent with the expression of other B-cell markers seen above.
+
 ```{r}
-#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
+clust.markers7
 ```
 
-Using the markers above, we can confidentaly label many of the clusters:
+Using the markers, we can confidentaly label the clusters:
 
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
@@ -132,7 +129,7 @@ free_annotation <- c(
   "kuppfer",
   "hepatocyte",
   "B cell",
-  "Nk/NKT cells")
+  "NK/NKT cells")
 
 cell_ontology_class <-c(
   "endothelial cell of hepatic sinusoid",
@@ -151,19 +148,21 @@ tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class
 
 ## Checking for batch effects
 
-Color by metadata, like plate barcode, to check for batch effects.
+Color by metadata, like plate barcode, to check for batch effects. Here we see that the clusters are segregated by sex, though cell types are mixed within each population.
+
 ```{r}
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
 ```
 
+Every cluster contains cell types from multiple mice.
 
 ```{r}
-table(FetchData(tiss, c('plate.barcode','ident')) %>% droplevels())
+table(FetchData(tiss, c('mouse.id','ident')) %>% droplevels())
 ```
 
 # Final coloring
 
-Color by cell ontology class on the original TSNE.
+Color by cell ontology class on the original tSNE.
 
 ```{r}
 TSNEPlot(object = tiss, group.by = "cell_ontology_class")
@@ -186,12 +185,7 @@ save(tiss, file=filename)
 #load(file=filename)
 ```
 
-```{r}
-BuildClusterTree(tiss)
-```
-
 # Export the final metadata
-
 
 ```{r}
 save_annotation_csv(tiss, tissue_of_interest, "facs")

@@ -1,0 +1,264 @@
+---
+title: "Tissue Annotation Vignette"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+```{r, include = FALSE}
+library(here)
+source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
+```
+
+## Preprocess
+
+Enter the name of the tissue you want to analyze.
+
+```{r}
+tissue_of_interest = "Liver"
+```
+
+After loading a gene x cell table and appropriate metadata, we begin filtering and processing the data.
+
+```{r, include=FALSE}
+# Load the per-plate metadata
+plate_metadata_filename = here('00_data_ingest', '00_facs_raw_data', 'metadata_FACS.csv')
+
+plate_metadata <- read.csv(plate_metadata_filename, sep=",", header = TRUE)
+colnames(plate_metadata)[1] <- "plate.barcode"
+
+
+# Load the gene names and set the metadata columns by opening the first file
+filename = here('00_data_ingest', '00_facs_raw_data', 'FACS', paste0(tissue_of_interest, '-counts.csv'))
+
+raw.data = read.csv(filename, sep=",", row.names=1)
+
+plate.barcodes = lapply(colnames(raw.data), function(x) strsplit(strsplit(x, "_")[[1]][1], '.', fixed=TRUE)[[1]][2])
+
+barcode.df = t.data.frame(as.data.frame(plate.barcodes))
+
+rownames(barcode.df) = colnames(raw.data)
+colnames(barcode.df) = c('plate.barcode')
+
+rnames = row.names(barcode.df)
+meta.data <- merge(barcode.df, plate_metadata, by='plate.barcode', sort = F)
+row.names(meta.data) <- rnames
+
+# Sort cells by cell name
+meta.data = meta.data[order(rownames(meta.data)), ]
+raw.data = raw.data[, rownames(meta.data)]
+
+# Find ERCC's, compute the percent ERCC, and drop them from the raw data.
+erccs <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = TRUE)
+percent.ercc <- Matrix::colSums(raw.data[erccs, ])/Matrix::colSums(raw.data)
+ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE)
+raw.data <- raw.data[-ercc.index,]
+
+# Create the Seurat object with all the data
+tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest)
+tiss <- AddMetaData(object = tiss, meta.data)
+tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
+
+# Change default name for sums of counts from nUMI to nReads
+colnames(tiss@meta.data)[colnames(tiss@meta.data) == 'nUMI'] <- 'nReads'
+  
+# Create metadata columns for annotations
+tiss@meta.data[,'free_annotation'] <- NA
+tiss@meta.data[,'cell_ontology_class'] <- NA
+```
+
+Filter out cells with fewer than 500 genes or 50,000 reads.
+
+```{r}
+tiss <- FilterCells(object = tiss, subset.names = c("nGene", "nReads"), 
+                    low.thresholds = c(500, 50000))
+```
+
+Log-normalize counts for each cell (to log(1 + counts per million)).
+
+```{r}
+tiss <- NormalizeData(object = tiss, scale.factor = 1e6)
+```
+
+Shift and scale each gene to have mean 0 and variance 1.
+
+```{r, warning = FALSE, message=FALSE}
+tiss <- ScaleData(object = tiss)
+```
+
+Find variable genes (those with high dispersion, given their mean).
+
+```{r, warning = FALSE, message = FALSE}
+tiss <- FindVariableGenes(object = tiss, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
+```
+
+Use PCA to project the variable genes to 20 dimensions.
+
+```{r}
+tiss <- RunPCA(object = tiss, do.print = FALSE)
+tiss <- ProjectPCA(object = tiss, do.print = FALSE)
+```
+
+We can visualize top genes in each principal component.
+
+```{r, echo=FALSE}
+PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+```
+
+To further reduce variance in the data, we will project onto the top principal components. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. A decent rule of thumb is to pick the elbow in the plot below.
+
+```{r}
+PCElbowPlot(object = tiss)
+```
+
+Choose the number of principal components to use.
+
+```{r}
+# Set number of principal components. 
+n.pcs = 11
+```
+
+## Cluster
+
+The clustering is performed using on a shared-nearest-neighbors graph on the cells. Two cells are connected in the graph of their k-neighborhoods of cells overlap. The (enhanced) Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the tradeoff between in-group connections and between-group connections in that objective. Higher resolution will give more clusters, lower resolution will give fewer.
+
+```{r}
+# Set resolution 
+res.used <- 1
+
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+    resolution = res.used, print.output = 0, save.SNN = TRUE)
+```
+
+We use tSNE solely to visualize the data.
+
+```{r}
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+```
+
+```{r}
+TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
+```
+
+## Label clusters using marker genes
+
+Check expression of genes useful for indicating cell type.
+
+```{r}
+genes_hep = c('Alb', 'Ttr', 'Apoa1', 'Serpina1c') #hepatocyte
+genes_endo = c('Pecam1', 'Nrp1', 'Kdr','Oit3') # endothelial
+genes_kuppfer = c('Emr1', 'Clec4f', 'Cd68', 'Irf7') # Kuppfer cells
+genes_nk = c('Zap70', 'Il2rb', 'Nkg7', 'Cxcr6') # Natural Killer cells
+genes_b = c('Cd79a', 'Cd79b', 'Cd74', 'Cd19') # B Cells
+
+genes_all = c(genes_hep, genes_endo, genes_kuppfer, genes_nk, genes_b)
+```
+
+In the tSNE plots below, the intensity of each point represents the gene expression, scaled to mean 0 and variance 1 across all cells.
+
+```{r, echo=FALSE, fig.height=20, fig.width=16}
+FeaturePlot(tiss, genes_all, pt.size = 3, nCol = 4, cols.use = c("lightgrey", "blue"))
+```
+
+Dotplots show, for each cluster and gene, the fraction of cells with at least one read for the gene (circle size) and the average scaled expression for that gene among the cells expressing it (circle color).
+
+```{r, echo=FALSE}
+DotPlot(tiss, genes_all, plot.legend = T, col.max = 2.5, x.lab.rot = T)
+```
+
+The low but nonzero levels of Albumin present in all clusters is consistent with a small amount of leakage, either through physical contamination or index hopping. Nevertheless, the absolute levels of expression confirm a sharp difference between the hepatocyte clusters and the others.
+
+```{r, echo=FALSE, fig.height=3, fig.width=6}
+VlnPlot(tiss, 'Alb', use.raw = T, do.return = T)
+```
+
+To confirm the identity of a cluster, you can inspect the genes differentially expressed in that cluster compared to the others.
+
+```{r}
+clust.markers7 <- FindMarkers(object = tiss, ident.1 = 7, 
+                              only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
+
+The top markers for cluster 7 include histocompatibility markers H2-*, consistent with the expression of other B-cell markers seen above.
+
+```{r}
+head(clust.markers7)
+```
+
+Using the markers, we can confidentaly label the clusters:
+
+```{r}
+tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
+
+free_annotation <- c(
+  "endothelial cell",
+  "hepatocyte",
+  "hepatocyte",
+  "hepatocyte",
+  "hepatocyte",
+  "kuppfer",
+  "hepatocyte",
+  "B cell",
+  "NK/NKT cells")
+
+cell_ontology_class <-c(
+  "endothelial cell of hepatic sinusoid",
+  "hepatocyte",
+  "hepatocyte",
+  "hepatocyte",
+  "hepatocyte",
+  "Kupffer cell",
+  "hepatocyte",
+  "B cell",
+  "natural killer cell")
+
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+```
+
+
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects. Here we see that the clusters are segregated by sex.
+
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
+```
+
+Nevertheless, every cluster contains cells from multiple mice.
+
+```{r}
+table(FetchData(tiss, c('mouse.id','ident')) %>% droplevels())
+```
+
+# Final coloring
+
+Color by cell ontology class on the original tSNE.
+
+```{r}
+TSNEPlot(object = tiss, group.by = "cell_ontology_class")
+```
+
+
+# Save the Robject for later
+
+```{r}
+#filename = here('00_data_ingest', '04_tissue_robj_generated', 
+#                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+#print(filename)
+#save(tiss, file=filename)
+```
+
+```{r}
+# To reload a saved object
+#filename = here('00_data_ingest', '04_tissue_robj_generated',
+#                      paste0("facs_", tissue_of_interest, "_seurat_subtiss.Robj"))
+#load(file=filename)
+```
+
+# Export the final metadata
+
+```{r}
+#save_annotation_csv(tiss, tissue_of_interest, "facs")
+```

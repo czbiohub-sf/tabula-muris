@@ -8,7 +8,7 @@ Standard procedures for cell selection, variable gene selection, dimensionality 
 
 2. Create a log normalized data matrix
 $$N_{ij} = \log \left (1 + M \frac{A_{ij}}{\sum_{j^\prime} A_{i j^\prime}} \right ),$$
-where we set $M = 1e6$ for FACS and $M = 1e4$ for droplets. The log is base $e$.
+where we set $M = 10^6$ for FACS and $M = 10^4$ for droplets. The log is base $e$.
 
 3. Create a scaled data matrix, rescaling each gene to mean zero and variance one.
 $$X_{ij} = (N_{ij} - \mu_i)/\sigma_i,$$
@@ -33,7 +33,7 @@ The resolution is a tuneable parameter in this analysis: larger $\gamma$ favors 
 
 7.	Cells were visualized using a 2-dimensional t-distributed Stochastic Neighbor Embedding on the PCA embedding.
 
-8.	Cell types were assigned to each cluster using the abundance of known marker genes. Plots showing the expression of the markers for each tissue appear in the extended data.
+8.	Cell types were assigned to each cluster using the expression of known marker genes. Plots showing the expression of the markers for each tissue appear in the extended data.
 
 9.	When clusters appeared to be mixtures of cell types, they were refined either by increasing the resolution parameter for Louvain clustering, or subsetting the data and rerunning steps 3-7.
 
