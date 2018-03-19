@@ -1,6 +1,6 @@
 
 # Generate all Rmds from template
-YAMLS := $(wildcard ../00_data_ingest/02_tissue_analysis_rmd/00_parameters/*yaml)
+YAMLS := $(wildcard ../28_tissue_yamls_for_supplement/*yaml)
 
 clean:
 	rm -rf *_auto_generated.Rmd
