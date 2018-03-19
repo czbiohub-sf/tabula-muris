@@ -4,7 +4,7 @@ YAMLS := $(wildcard ../00_data_ingest/02_tissue_analysis_rmd/00_parameters/*yaml
 
 rmd:
 	for YML in $(YAMLS); do \
-		python ../utilities/generate_from_template.py $$YML ; \
+		LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 python ../utilities/generate_from_template.py $$YML ; \
 	done
 
 
