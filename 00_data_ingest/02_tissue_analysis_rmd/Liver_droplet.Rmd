@@ -52,8 +52,15 @@ TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ## Compare to previous annotations
 ```{r}
 tiss = compare_previous_annotation(tiss, tissue_of_interest, "droplet")
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
-table(tiss@meta.data[, "previous_annotation"], tiss@ident)
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
+table(tiss@meta.data[, "previous_cell_ontology_class"], tiss@ident)
+```
+
+
+```{r}
+tiss = compare_previous_annotation(tiss, tissue_of_interest, "droplet")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
+table(tiss@meta.data[, "previous_cell_ontology_class"], tiss@ident)
 ```
 
 
@@ -120,10 +127,9 @@ We will add those cell_ontology_classes to the dataset.
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
-cluster.ids <- c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21)
+cluster.ids <- c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
 
 free_annotation <- c(
-  "hepatocyte",
   "hepatocyte",
   "hepatocyte",
   "hepatocyte",
@@ -165,7 +171,6 @@ cell_ontology_class <- c(
   "hepatocyte",
   "hepatocyte",
   "hepatocyte",
-  "hepatocyte",
    "endothelial cell of hepatic sinusoid",
    "duct epithelial cell",
    "leukocyte")
@@ -185,7 +190,7 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
 Let's drill down on the hepatocytes.
 
 ```{r}
-subtiss = SubsetData(tiss, ident.use = c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18))
+subtiss = SubsetData(tiss, ident.use = c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17))
 ```
 
 ```{r}
@@ -246,7 +251,7 @@ table(FetchData(subtiss, c('mouse.sex','ident')) %>% droplevels())
 
 ```{r}
 sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-sub.free_annotation <- c("midlobular male", "pericentral female", "periportal female", "periportal male", "midlobular male", "pericentral male", "midlobular female", "midlobular female")
+sub.free_annotation <- c("midlobular male", "periportal female", "pericentral female", "periportal male", "midlobular male", "pericentral male", "midlobular female", "midlobular female")
 sub.cell_ontology_class <- c("hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte", "hepatocyte")
 
 subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
@@ -275,14 +280,14 @@ TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class")
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
                      paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
-save(subtiss, file=filename)
+save(tiss, file=filename)
 ```
 
 ```{r}
 # To reload a saved object
-#filename = here('00_data_ingest', '04_tissue_robj_generated',
-#                      paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
-#load(file=filename)
+filename = here('00_data_ingest', '04_tissue_robj_generated',
+                      paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
+load(file=filename)
 ```
 
 

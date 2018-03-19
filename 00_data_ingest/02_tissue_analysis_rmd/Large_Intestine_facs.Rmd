@@ -54,24 +54,11 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 TSNEPlot(object = tiss, do.label = T)
 ```
 
-Compare to previous annotations
-```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_facs_annotation.csv"))
-previous_annotation = read_csv(filename)
-tiss@meta.data[, 'previous_annotation'] <- "NA"
-tiss@meta.data[as.character(previous_annotation$X1), 'previous_annotation'] <- as.character(previous_annotation$annotation)
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_annotation")
-```
-
-```{r}
-table(tiss@meta.data[, "previous_annotation"])
-```
-
-
-```{r}
-table(tiss@meta.data[, "previous_annotation"], tiss@ident)
-```
+<!-- ## Compare to previous annotations -->
+<!-- ```{r} -->
+<!-- tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs") -->
+<!-- TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class") -->
+<!-- ``` -->
 
 Check expression of genes of interset.
 
@@ -109,7 +96,7 @@ DotPlot(tiss, genes_to_check, plot.legend = T)
 
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 # To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(tiss, genes_to_check, plot.legend = T, group.by='previous_annotation')
+DotPlot(tiss, genes_to_check, plot.legend = T, group.by='previous_cell_ontology_class')
 ```
 
 How big are the clusters?
@@ -134,7 +121,7 @@ You can also compute all markers for all clusters at once. This may take some ti
 
 Display the top markers you computed above.
 ```{r}
-#tiss.markers %>% group_by(cluster) %>% top_n(10, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(10, avg_logFC)
 ```
 
 ## Assigning cell type identity to clusters
