@@ -6,7 +6,6 @@ GENES: "'Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Top2a', 'Mt2', 'Krt15', 'Krt5', 'Krt
 GROUPBY: null
 
 #To identify taste receptor cells
-ADDITIONAL_CODE:
-  - "VlnPlot(tiss, c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7'))"
+ADDITIONAL_CODE: true
   
 #master behind - should have instructions for supp. figures
