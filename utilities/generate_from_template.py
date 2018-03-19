@@ -11,6 +11,7 @@ import sys
 #
 # locale.setlocale(locale.LC_ALL, 'en_US.utf8')
 # locale.setlocale(locale.LC_CTYPE, 'en_US.utf8')
+import os
 
 import yaml
 import click
@@ -32,8 +33,13 @@ def main(parameters_yaml, template_file='Template.Rmd',
         template = f.read()
         for parameter, value in parameters.items():
             if parameter == ADDITIONAL_CODE:
+                # If ADDITIONAL_CODE is set to True
                 if value:
-
+                    basename = parameters['TISSUE'] + "_" + parameters['METHOD'] + '.Rmd'
+                    filename = os.path.join(
+                        '..', '29_tissue-specific_supplement_code', basename)
+                    with open(filename) as g:
+                        template += g.read()
             elif value is not None:
                 template = template.replace("{" + parameter + "}", str(value))
             else:
