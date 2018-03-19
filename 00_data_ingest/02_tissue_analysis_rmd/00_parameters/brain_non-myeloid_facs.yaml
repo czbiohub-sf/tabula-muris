@@ -5,9 +5,7 @@ NPCS: 8
 Genes: "'Slc1a3','Aldh1l1','Aqp4','A2m','Nbl1','Gdf10','Naga','Tnfaip2','St6galnac5','Nsdhl'"
 GROUPBY: subtissue
 
-#To identify excititory, inhibitory, and NPCs
-ADDITIONAL_CODE:
-  - "VlnPlot(tiss, c('Slc17a7','Neurod6','Mab21l1','Gad1','Reln','Calb1','Dcx','Dlx2','Ascl1','Hes5'))"
+ADDITIONAL_CODE: true
 
 SUBSET:
   ASTROCYTES:
