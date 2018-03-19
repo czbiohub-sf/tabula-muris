@@ -195,3 +195,7 @@ Temporary Items
 ### Ignore stderr/stdout files
 *.err
 *.out
+
+
+## Jetbrains/Pycharm
+.idea/
