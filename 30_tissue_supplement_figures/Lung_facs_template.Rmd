@@ -64,5 +64,5 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 
 
 ```{r}
-{ADDITIONAL_CODE}
+# No additional code
 ```
