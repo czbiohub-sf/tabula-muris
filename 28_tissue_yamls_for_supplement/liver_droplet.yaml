@@ -6,9 +6,9 @@ GENES: "'Alb', 'Ttr', 'Apoa1', 'Serpina1c','Cyp2e1', 'Glul', 'Oat', 'Gulo','Ass1
 GROUPBY: null
 SUBSET:
   HEPATOCYTES:
-    - FILTER_COLUMN: cell_ontology_class
-    - FILTER_VALUE: hepatocyte
-    - RES: 0.5
-    - NPCS: 8
-    - GENES: "'Mup20', 'Mup1','Mup12', 'Mup21', 'Cyp2d9', 'Xist', 'A1bg', 'Cyp2c69'"
-    - GROUPBY: null
+    FILTER_COLUMN: cell_ontology_class
+    FILTER_VALUE: hepatocyte
+    RES: 0.5
+    NPCS: 8
+    GENES: "'Mup20', 'Mup1','Mup12', 'Mup21', 'Cyp2d9', 'Xist', 'A1bg', 'Cyp2c69'"
+    GROUPBY: null
