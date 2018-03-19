@@ -29,7 +29,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c())
+genes_to_check = sort(c('Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1a1', 'Col8a1', 'Foxj1', 'Pecam1', 'Ptprc'))
 ```
 
 ```{r}
@@ -64,5 +64,5 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 
 
 ```{r}
-{ADDITIONAL_CODE}
+# No additional code
 ```

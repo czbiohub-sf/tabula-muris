@@ -25,7 +25,7 @@ for (column in colnames(annotation)){
 }
 
 standard.group.bys = c("cell_ontology_class", "free_annotation")
-additional.group.bys = sort(c('FACS.selection'))
+additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
@@ -64,5 +64,5 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 
 
 ```{r}
-{ADDITIONAL_CODE}
+# No additional code
 ```

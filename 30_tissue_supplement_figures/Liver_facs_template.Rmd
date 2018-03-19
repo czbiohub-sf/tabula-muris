@@ -29,7 +29,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c('Irf7','Spic' 'Clec4f' 'Cd68' 'Mpeg1' 'Itgb2' 'Ahnak' 'Pld4' 'Cd3e','Zap70','Cd19','Ms4a1', 'Cd74', 'Chchd10', 'Cd79a', 'Cd79b', 'Vpreb3','Klrb1a','Klrb1c','Tyrobp','Ncr1','Gzma','Prf1','Serpinb9','Nkg7','Cd3e','Cd4','Cd8a','Cxcr6','Ncam1'))
+genes_to_check = sort(c('Alb', 'Ttr', 'Apoa1', 'Serpina1c','Cyp2e1', 'Glul', 'Oat', 'Gulo','Ass1', 'Hamp', 'Gstp1', 'Ubb','Cyp2f2', 'Pck1', 'Hal', 'Cdh1','Pecam1', 'Nrp1', 'Kdr','Oit3','Emr1', 'Clec4f', 'Cd68', 'Irf7','Zap70', 'Il2rb', 'Nkg7', 'Cxcr6', 'Gzma','Cd79a', 'Cd79b', 'Cd74'))
 ```
 
 ```{r}
@@ -64,5 +64,5 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 
 
 ```{r}
-{ADDITIONAL_CODE}
+# No additional code
 ```
