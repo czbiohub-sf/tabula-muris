@@ -31,7 +31,10 @@ def main(parameters_yaml, template_file='Template.Rmd',
     with open(template_file) as f:
         template = f.read()
         for parameter, value in parameters.items():
-            if value is not None:
+            if parameter == ADDITIONAL_CODE:
+                if value:
+
+            elif value is not None:
                 template = template.replace("{" + parameter + "}", str(value))
             else:
                 template = template.replace("{" + parameter + "}", '')
