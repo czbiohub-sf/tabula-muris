@@ -1,5 +1,5 @@
 ---
-title: "{TISSUE} {METHOD} {COLUMN} Supplementary Notebook"
+title: "{TISSUE} {METHOD} Supplementary Notebook"
 output: html_notebook
 ---
 
