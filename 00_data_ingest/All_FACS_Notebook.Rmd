@@ -115,7 +115,7 @@ PCElbowPlot(object = tiss, num.pc = 80)
 
 Choose the number of principal components to use.
 ```{r}
-# Set number of principal components. 
+# Set number of principal components.
 n.pcs = 43
 ```
 
@@ -124,14 +124,14 @@ The clustering is performed based on a nearest neighbors graph. Cells that have 
 For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
 
 ```{r}
-# Set resolution 
+# Set resolution
 res.used <- 1
 
-tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
     resolution = res.used, print.output = 0, save.SNN = TRUE)
 ```
 
-To visualize 
+To visualize
 ```{r}
 # If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
 tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
@@ -139,6 +139,11 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 
 ```{r}
 TSNEPlot(tiss, group.by = 'tissue')
+```
+
+```{r}
+save(tiss, file=here("00_data_ingest", "11_global_robj", "FACS_all_preannotation.Robj"))
+#load(here("00_data_ingest", "11_global_robj", "FACS_all_preannotation.Robj"))
 ```
 
 # Add in metadata, annotations, and save.
@@ -160,9 +165,9 @@ colnames(tissue_colors) = c("tissue", "color")
 
 
 ```{r}
-tiss@meta.data <- tiss@meta.data %>% 
-                   left_join(anno %>% select(cell_ontology_class,cell_ontology_id,free_annotation), by = 'cell') %>%
-                   left_join(tissue_colors, by = 'tissue')
+tiss@meta.data <- tiss@meta.data %>%
+		   left_join(anno %>% select(cell_ontology_class,cell_ontology_id,free_annotation, cell), by = 'cell') %>%
+		   left_join(tissue_colors, by = 'tissue')
 
 rownames(tiss@meta.data) <- tiss@meta.data$cell
 ```
