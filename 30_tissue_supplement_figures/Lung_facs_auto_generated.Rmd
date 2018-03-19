@@ -1,5 +1,5 @@
 ---
-title: "Lung facs {COLUMN} Supplementary Notebook"
+title: "Lung facs Supplementary Notebook"
 output: html_notebook
 ---
 
@@ -62,7 +62,3 @@ tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, t
 filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ```
 
-
-```{r}
-# No additional code
-```

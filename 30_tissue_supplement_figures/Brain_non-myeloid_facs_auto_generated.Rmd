@@ -1,5 +1,5 @@
 ---
-title: "Brain_non-myeloid facs {COLUMN} Supplementary Notebook"
+title: "Brain_Non-Myeloid facs Supplementary Notebook"
 output: html_notebook
 ---
 
@@ -12,13 +12,13 @@ library(ontologyIndex)
 library(tidyverse)
 library(here)
 
-save_folder = here('30_tissue_supplement_figures', 'Brain_non-myeloid', 'facs')
+save_folder = here('30_tissue_supplement_figures', 'Brain_Non-Myeloid', 'facs')
 
-tissue_of_interest = 'Brain_non-myeloid'
+tissue_of_interest = 'Brain_Non-Myeloid'
 filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
 load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 
-annotation = read_csv(here('00_data_ingest', '03_tissue_annotation_csv', 'Brain_non-myeloid_facs_annotation.csv'))
+annotation = read_csv(here('00_data_ingest', '03_tissue_annotation_csv', 'Brain_Non-Myeloid_facs_annotation.csv'))
 
 for (column in colnames(annotation)){
   tiss@meta.data[annotation$X1, column] = annotation[column]
@@ -63,6 +63,259 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ```
 
 
+
+## To identify excititory, inhibitory, and NPCs
+```
+VlnPlot(tiss, c('Slc17a7','Neurod6','Mab21l1','Gad1','Reln','Calb1','Dcx','Dlx2','Ascl1','Hes5'))
+```
+
+# Subsetting of brain endothelial cells and analysis using robust PCA followed by Seurat
+
+Filter for all endothelial cells from whole brain (non-microglia) annotation
 ```{r}
-["VlnPlot(tiss, c('Slc17a7','Neurod6','Mab21l1','Gad1','Reln','Calb1','Dcx','Dlx2','Ascl1','Hes5'))"]
+endo.sub<-tiss@raw.data[, grep("endothelial",tiss@meta.data$cell_ontology_class)]
+endo<-grep("endothelial",tiss@meta.data$cell_ontology_class)
+endo.sub.names<-colnames(tiss@scale.data)[endo]
+endo.sub<-tiss@raw.data[,endo.sub.names]
+
+```
+
+Load packages
+```{r}
+library(dplyr)
+library(Matrix)
+library(cowplot)
+require(RColorBrewer)
+```
+
+Required custom functions
+```{r}
+
+# return minimum (most negative) correlation value for each gene
+get.gene.cor <- function(data, min.cells.expr = 1) {
+  mat = t(data[, colSums(data > 0) > min.cells.expr]) # filter genes
+  mat = mat - rowMeans(mat)
+  cr = tcrossprod( mat/sqrt(rowSums(mat^2)) )
+  return(cr)
+}
+get.min.cor <- function(data, min.cells.expr = 1) {
+  require(matrixStats)
+  cr = get.gene.cor(data, min.cells.expr)
+  min.cor = colMins(cr, na.rm =T)
+  names(min.cor) = colnames(cr)
+  return(min.cor)
+}
+
+
+## robust PCA function
+do.robpca <- function(data.counts,min_cells=0,min_sd=0,ncp=10,expression.values="log10.cpm",from.mat = T,...){
+  require(rrcov)
+  if(!from.mat){
+    if(min_cells>0){
+      data<-filter.genes(data.counts,expression.values,min_sd,min_cells)
+    } else{ cast.counts <- cast.to.df(data.counts,expression.values) }
+  } else {
+    cast.counts = data.counts[, colSums(data.counts > 0) > min_cells]
+  }
+  print('starting rPCA')
+  pca <- PcaHubert(cast.counts, k = ncp,kmax=ncp,...)
+  rm(cast.counts);gc()
+  scores <- as.data.frame(getScores(pca));scores$cell.name <- rownames(scores); scores <- data.table(scores);setkey(scores)
+  var   <- as.data.frame(getLoadings(pca)); var$gene <- rownames(var);var <- as.data.table(var);setkey(var)
+  gc()
+  list(pca, scores, var)
+}
+
+filter.genes <- function(data.counts,expression.value="log10.cpm",min_sd=0,min_cells=0){
+  data=copy(data.counts);
+  data[,numcells_exp:=sum(get(expression.value)>0),by=gene]; data<-data[numcells_exp>min_cells]
+  data[,gene_sd:=sd(get(expression.value)),by=gene]; data<-data[gene_sd>min_sd]
+  data
+}
+
+
+## cast to dataframe function
+cast.to.df <- function(data.counts,expression.values="log10.cpm",annot="none", to.matrix = F, genes.use = NULL){
+  if(!is.null(genes.use)) data.counts = data.counts[gene %in% genes.use]
+  if(annot != "none"){
+    cast.counts <- dcast.data.table(data.counts, cell.name ~ gene, value.var=expression.values, fill = 0)
+    setkey(data.counts)
+    cast.counts <- merge(cast.counts,unique(data.counts[,.(cell.name,get(annot))]),by="cell.name")
+    setnames(cast.counts,c(colnames(cast.counts)[1:(ncol(cast.counts)-1)],annot))
+    cast.counts <- as.data.frame(cast.counts)
+  }
+  else{
+    cast.counts <- as.data.frame(dcast.data.table(data.counts, cell.name ~ gene, value.var=expression.values,fill=0))
+    gc()
+  }
+  rownames(cast.counts)<-cast.counts$cell.name; cast.counts <- cast.counts[,c(ncol(cast.counts),2:(ncol(cast.counts)-1))]
+  if(to.matrix) cast.counts = as.matrix(cast.counts)
+  cast.counts
+}
+
+
+```
+
+
+
+QC
+```{r}
+ECs<-CreateSeuratObject(raw.data=endo.sub, min.cells=5, min.genes=5) # already filter zero count genes
+colnames(ECs@meta.data)[colnames(ECs@meta.data)=='nUMI']<-'nReads' ##change name
+
+#Add ribo data
+ribo.genes<-grep(pattern="^Rp[s1][[:digit:]]", x=rownames(x=ECs@data), value=TRUE) ##60
+percent.ribo<-Matrix::colSums(ECs@raw.data[ribo.genes, ])/Matrix::colSums(ECs@raw.data)
+ECs <- AddMetaData(object = ECs, metadata = percent.ribo, col.name = "percent.ribo")
+
+#Add mito data
+mito.genes <- grep(pattern = "^mt-", x = rownames(x = ECs@data), value = TRUE)
+percent.mito <- Matrix::colSums(ECs@raw.data[mito.genes, ])/Matrix::colSums(ECs@raw.data)
+ECs <- AddMetaData(object = ECs, metadata = percent.mito, col.name = "percent.mito")
+
+GenePlot(object = ECs, gene1 = "nReads", gene2 = "nGene")
+
+ECs <- FilterCells(object = ECs, subset.names = c("nGene", "nReads"), low.thresholds = c(200, 20000), high.thresholds = c(25000, Inf))
+ECs <- NormalizeData(object = ECs)
+ECs <- ScaleData(object = ECs)
+
+```
+
+
+Add brain region information in metadata
+```{r}
+
+DF<-as.data.frame(cbind(tiss@cell.names, as.character(tiss@meta.data$subtissue)))
+rownames(DF)<-DF$V1
+ECs@meta.data$subtissue<-as.character(DF[ECs@cell.names, 2])
+
+```
+
+
+Feature selection: perform robust PCA on top 2500 most anti-correlated genes
+
+```{r}
+
+data.pca <- t(log2(1+1e6*(t(t(ECs@raw.data)/colSums(ECs@raw.data))))) ##log 2 normalize data
+gene.min.cors <- get.min.cor(data.pca, min.cells.expr = 2)
+genes.use <- names(sort(gene.min.cors)[1:2500])
+
+# Remove some housekeeping genes
+genes.use <- genes.use[grep('^Rp[ls].*', genes.use, invert = T)]
+genes.use <- genes.use[grep('Rn45s', genes.use, invert = T)]
+genes.use <- genes.use[grep('Lars2', genes.use, invert = T)]
+genes.use <- genes.use[grep('Malat1', genes.use, invert = T)]
+
+ncp=20
+num.sig.genes <- 30
+
+pcalist <- do.robpca(data.pca[, genes.use],ncp = ncp, from.mat = T)
+loadings <- pcalist[[3]]
+sdev<-pcalist[[1]]
+sdev<-sdev@sd
+data.scaled<-t(t(data.pca[,genes.use]) / colMaxs(data.pca[,genes.use]))
+
+library(pbapply)
+dims <- paste0('PC', 1:ncp) ## 1:20
+pc.sigs <- as.data.frame(do.call(cbind, lapply(dims, function(dim) {
+  setorderv(loadings,dim,-1)
+  genes.pos <- loadings[,gene][1:num.sig.genes]
+  setorderv(loadings,dim,1)
+  genes.neg <- loadings[,gene][num.sig.genes:1]
+  cast.sig <- as.data.frame(cbind(rowSums(data.scaled[, genes.pos]), rowSums(data.scaled[, genes.neg])))
+  print(head(cast.sig))
+  cast.sig$pc.score <- cast.sig[, 1] - cast.sig[, 2]
+  colnames(cast.sig) <- c(paste0(dim,'.pos'), paste0(dim,'.neg'), dim)
+  return(as.matrix(cast.sig))
+  }
+)))
+
+pc.sigs <- pc.sigs[match(ECs@cell.names, rownames(pc.sigs)), ]
+pc.sigs <- as.matrix(pc.sigs[, grepl("PC[0-9]+$", colnames(pc.sigs))])
+ECs <- SetDimReduction(ECs, 'pca', 'cell.embeddings', new.data = pc.sigs)
+pc.loadings<-loadings[,1:20]
+pc.loadings<-as.matrix(pc.loadings)
+rownames(pc.loadings)<-loadings$gene
+ECs <- SetDimReduction(ECs, 'pca', 'gene.loadings', new.data = pc.loadings)
+ECs@dr$pca@key<-"PC"
+
+```
+
+
+
+Plug the cell.embeddings and gene.loadings from rPCA back into Seurat object and run Seurat clustering
+```{r}
+
+ECs <- FindClusters(object = ECs, reduction.type = "pca", dims.use = 1:15,
+    resolution = 1, print.output = 0, save.SNN = TRUE, force.recalc = T)
+
+ECs <- RunTSNE(object = ECs, dims.use = 1:8, seed.use = 10, check_duplicates = F, perplexity=40)
+
+# unsupervised clustering
+TSNEPlot(object = ECs, do.label = T, label.size = 6, pt.size = 3.1, colors.use = brewer.pal(11,'Paired'), do.return=TRUE) + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
+
+#annotated by brain subregion
+TSNEPlot(object = ECs, do.label = T, label.size = 6, pt.size = 3.1, colors.use = brewer.pal(9,'Set1'), do.return=TRUE, group.by="subtissue") + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
+
+
+PCHeatmap(object = ECs, pc.use = 1:12, cells.use = 300, do.balanced = TRUE, label.columns = FALSE, num.genes = 20)
+PCAPlot(object = ECs, dim.1 = 1, dim.2 = 2, pt.size = 2)
+
+
+#violin plots of key defining genes for the Inflamed (Venous) and Notch (Arterial) populations
+genes_check<-c('Vcam1','Icam1','Lcn2','Hif1a','Vwf','Csf1','Notch1','Hey1','Vegfc','Edn1','Tmem100')
+FeaturePlot(ECs, features.plot=genes_check, pt.size = 2, no.axes = T, cols.use = c("lightgray", "red"), dark.theme = F)
+
+
+VlnPlot(object = ECs, features.plot = genes_check, do.sort=F, size.title.use = 18, size.x.use = 0.3,size.y.use = 3, cols.use = brewer.pal(11,'Paired'), point.size.use = 0.3)
+
+
+```
+
+
+Find differentially expressed genes between clusters
+```{r}
+
+
+DE_markers <- mclapply(levels(ECs@ident),  function(x) {
+  df <- FindMarkers(object = ECs, ident.1 = x, only.pos = TRUE, min.pct = 0.20, thresh.use = 0.20)
+  df$gene <- rownames(df)
+  df$cluster <- x
+  return(df)
+  }, mc.cores = 2)
+DE_markers <- bind_rows(DE_markers)
+
+DE_markers <- DE_markers[DE_markers$p_val<0.05, ]
+DE_markers_sorted <- DE_markers %>% group_by(cluster) %>% top_n(10, avg_diff)
+
+
+DoHeatmap(object = ECs, genes.use = DE_markers_sorted$gene, slim.col.label = TRUE, remove.key = FALSE, cex.row = 7)
+
+
+```
+
+
+
+#renaming cluster for function AND segmental identity based on differentially expressed genes
+```{r}
+
+current.cluster.ids <- c(0, 1, 2, 3, 4)
+new.cluster.ids <- c("Capillary/BBB-maintenance", "Capillary/BBB-maintenance","Arterial/Notch-signaling", "Capillary/BBB-maintenance", "Venous/inflammatory")
+ECs@ident <- plyr::mapvalues(x = ECs@ident, from = current.cluster.ids, to = new.cluster.ids)
+ECs<-StashIdent(object=ECs, save.name="Annotation") ## for more clusters
+
+
+TSNEPlot(object = ECs, do.label = T, pt.size = 3, colors.use = brewer.pal(8,'Set2'), do.return=TRUE) + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
+
+
+```
+
+
+Make Dot plot based top defining genes for each annotated endothelial cluster
+```{r}
+
+features.plot <- c("Vwf","Flt4","Nr2f2","Ephb4","Car4","Slc16a1","Tfrc","Efnb2","Jag1","Bmx")
+DotPlot(object = ECs, genes.plot = features.plot, plot.legend = TRUE,group.by = "Annotation", x.lab.rot = T)
+
+
 ```
