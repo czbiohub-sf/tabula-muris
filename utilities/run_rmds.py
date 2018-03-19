@@ -5,6 +5,8 @@ from io import StringIO
 import os
 import shlex
 import subprocess
+import locale
+locale.setlocale(locale.LC_ALL, 'en_US.utf8')
 
 import click
 
@@ -14,7 +16,7 @@ May need to set "locales" for Unicode because ASCII is stupid.
 e.g. for a ENglish, US machine:
 
 export LC_ALL=en_US.UTF-8 
-export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 """
 
 @click.command()
