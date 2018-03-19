@@ -1,6 +1,6 @@
 TISSUE: Marrow
 METHOD: facs
 RES: 0.5
-NPCS: 15
-GENES: "'Itgam', 'Il7r', 'Kit', 'Atxn1', 'Fcgr3', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr4', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Ly6d', 'Cd27', 'Cr2', 'Fcer2a', 'Cd2', 'Cd7', 'Mme', 'Thy1', 'Cd19', 'Ms4a1', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ly6g6c', 'Ly6g6e', 'Ptprc'"
+NPCS: 18
+GENES: "'Itgam', 'Il7r', 'Kit', 'Atxn1', 'Fcgr3', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Mki67', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Cd69', 'Fcgr4', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Ly6d', 'Cd27', 'Cr2', 'Fcer2a', 'Cd2', 'Cd7', 'Mme', 'Thy1', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ly6g6c', 'Ly6g6e', 'Ptprc', 'Cd19', 'Ms4a1', 'Cox6a2', 'Irf8', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb1', 'Vpreb3', 'Cd38', 'Cd22', 'Cd24a', 'Cd40', 'Cd48', 'Cd53', 'Cd81', 'Cd84', 'Cxcr4', 'Cxcr5', 'Ccr6', 'Cd200', 'Ly9', 'Abcb1b', 'Tlr9', 'Slamf6', 'H2-Ea-ps', 'Pax5', 'Foxo1', 'Klf4', 'Klf9', 'Mitf', 'Pou2af1', 'Zbtb16', 'Spib', 'Spn', 'Dntt', 'Rag1', 'Rag2', 'Il2ra', 'Pdzk1ip1', 'Ly6a', 'Itga2b', 'Fos', 'Junb', 'Myl10', 'Jun', 'Mn1', 'S100a9', 'Ccl9', 'Tcf3', 'Ebf1', 'Ikzf1', 'Sfpi1', 'Cd1d1', 'Egr2', 'Cd14', 'Mpl', 'Il3ra', 'Bpgm', 'Beta-s', 'Hbb-b2', 'Cpa3', 'Fcer1a', 'Mcpt8', 'Ccl3', 'Gata1', 'Gata2', 'Cebpa'"
 GROUPBY: null

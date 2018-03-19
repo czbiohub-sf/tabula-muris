@@ -24,6 +24,28 @@ find_markers <- function(tissue, method, annotation){
 ```
 
 ```{r}
+find_markers("Bladder", "facs", "cell_ontology_class")
+find_markers("Bladder", "droplet", "cell_ontology_class")
+
+find_markers("Kidney", "facs", "cell_ontology_class")
+find_markers("Kidney", "droplet", "cell_ontology_class")
+
+find_markers("Liver", "facs", "cell_ontology_class")
+find_markers("Liver", "droplet", "cell_ontology_class")
+
+find_markers("Lung", "facs", "cell_ontology_class")
+find_markers("Lung", "droplet", "cell_ontology_class")
+
+find_markers("Marrow", "facs", "cell_ontology_class")
+find_markers("Marrow", "droplet", "cell_ontology_class")
+
+find_markers("Muscle", "facs", "cell_ontology_class")
+find_markers("Muscle", "droplet", "cell_ontology_class")
+
 find_markers("Spleen", "facs", "cell_ontology_class")
+find_markers("Spleen", "droplet", "cell_ontology_class")
+
+find_markers("Thymus", "facs", "cell_ontology_class")
+find_markers("Thymus", "droplet", "cell_ontology_class")
 ```
 

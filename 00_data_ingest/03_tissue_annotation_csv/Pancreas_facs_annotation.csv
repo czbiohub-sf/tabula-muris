@@ -1,0 +1,1565 @@
+cell,tissue,subtissue,FACS.selection,plate.barcode,cell_ontology_class,cell_ontology_id,free_annotation,cluster.ids,mouse.sex,mouse.id
+A1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+A1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+A10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+A10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+A11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+A11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+A11.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+A11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+A12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+A12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+A12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+A12.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+A13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+A13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+A13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+A14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+A14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+A14.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+A14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+A14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+A14.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+A15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+A15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+A15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+A15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+A16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+A16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+A16.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+A16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,endothelial cell,CL:0000115,endothelial cell,7,F,3_38_F
+A17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+A18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+A18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+A19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+A19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+A2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+A2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+A20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+A20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+A20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+A20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+A20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+A21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+A21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+A21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+A21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+A21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+A22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+A22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+A22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+A22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+A3.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+A3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+A3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+A3.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+A4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+A4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+A4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+A5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+A5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+A5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+A6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+A6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+A6.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+A6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+A6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+A6.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+A7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+A7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+A7.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+A7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+A7.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+A8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,1,M,3_8_M
+A8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+A8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+A8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+A9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+A9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+A9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+A9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+B1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+B1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+B1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+B1.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+B10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+B10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+B10.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+B10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+B11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+B11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+B12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+B12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+B12.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+B13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+B13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+B13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+B14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+B14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+B15.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+B15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+B15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+B15.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+B16.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+B16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+B16.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+B16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+B16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+B17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+B17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_10_M
+B17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+B17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+B18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+B18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+B18.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+B19.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+B19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+B19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+B19.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+B19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+B19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+B2.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+B2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+B2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+B2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+B20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+B20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+B20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+B20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+B20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+B20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+B20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+B21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+B21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+B21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+B21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+B21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+B21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+B21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+B22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+B22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+B22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+B22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+B22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+B22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+B3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+B3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+B3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+B3.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+B4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+B4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+B5.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+B5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+B5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+B5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+B5.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+B6.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+B6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+B6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+B7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+B7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+B7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+B8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+B8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+B9.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+B9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_8_M
+B9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+B9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+B9.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+B9.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+C1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+C1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+C1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+C10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+C10.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+C10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+C10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C11.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+C11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+C11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+C11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+C11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C12.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+C12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+C12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+C12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+C13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+C13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+C13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+C14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+C15.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+C15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+C15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+C15.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+C15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C16.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+C16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+C16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C17.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+C17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+C17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+C17.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+C17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C18.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+C18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+C18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+C18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+C18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C19.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+C19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+C19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C19.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+C2.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+C2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+C2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+C20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+C20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+C20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+C20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_39_F
+C20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_38_F
+C21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+C21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+C21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+C21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+C21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+C22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+C22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+C22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+C22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+C22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+C3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+C3.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+C3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+C4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+C5.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+C5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+C5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+C5.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+C6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+C6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_10_M
+C6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+C6.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+C7.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+C7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+C7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+C7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+C8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+C8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+C8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+C8.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+C8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+C8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+C8.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+C9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+C9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+C9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+D1.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+D1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+D1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+D10.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+D10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+D10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+D10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+D11.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+D11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+D11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+D11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+D12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+D12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+D12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+D13.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+D13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+D13.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+D13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+D13.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_38_F
+D14.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+D14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+D14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+D14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+D15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+D15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+D15.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,endothelial cell,CL:0000115,endothelial cell,7,F,3_39_F
+D15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+D16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+D16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+D17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+D17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+D17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+D17.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+D17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+D18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+D18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+D18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_39_F
+D18.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+D19.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+D19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+D19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+D19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D19.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+D2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+D2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+D2.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+D2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+D2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+D20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+D20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+D20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+D20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+D20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+D20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+D20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+D21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+D21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+D21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+D21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+D22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+D22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+D22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+D22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+D22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+D3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+D3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D4.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+D4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+D4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+D4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+D4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+D4.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+D5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+D5.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+D5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+D5.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+D5.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+D6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+D6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+D6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+D7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+D7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+D7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+D7.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+D7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+D8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+D8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+D8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D8.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,F,3_39_F
+D8.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+D9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+D9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+D9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+E1.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+E1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+E1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+E1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_38_F
+E1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+E10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+E10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+E10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+E11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+E11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+E11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+E11.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,endothelial cell,CL:0000115,endothelial cell,7,F,3_39_F
+E11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+E12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+E12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,5,M,3_10_M
+E12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+E13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+E13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+E13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+E13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+E13.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+E14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+E14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+E14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+E14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+E15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+E15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+E15.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+E15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+E15.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+E16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+E16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+E16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+E17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+E17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+E17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+E17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+E18.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+E18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+E18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+E18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+E18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+E19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+E19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+E19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+E2.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+E2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+E2.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+E2.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+E20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+E20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+E20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+E20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+E20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+E20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+E20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+E21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+E21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+E21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+E21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+E21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+E22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+E22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+E22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+E22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+E22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+E22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+E3.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+E3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+E3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+E3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+E4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+E4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_10_M
+E4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+E5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+E5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+E5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,endothelial cell,CL:0000115,endothelial cell,7,F,3_38_F
+E5.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+E6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+E6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+E6.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+E6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+E7.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+E7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+E7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+E7.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+E8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+E8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+E8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+E9.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+E9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+E9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F1.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+F1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+F1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+F1.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+F1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F10.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+F10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+F10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+F10.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+F10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F11.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+F11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+F11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+F11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F12.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+F12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+F12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+F12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+F13.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+F13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+F13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+F14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+F14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+F14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+F15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+F15.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+F15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+F16.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+F16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+F16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+F16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+F16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F17.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+F17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+F17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+F17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+F17.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+F18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+F18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+F18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+F18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F18.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+F19.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic D cell,CL:0000173,pancreatic D cell,1,M,3_8_M
+F19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+F19.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+F2.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+F2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+F2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+F2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+F2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+F20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+F20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+F20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+F20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+F20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+F21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+F21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+F21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+F21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+F21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+F22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+F22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+F22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+F22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+F3.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+F3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+F3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+F4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+F4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+F4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+F5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+F5.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+F5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+F5.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+F6.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+F6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+F6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+F6.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+F6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+F6.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+F6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+F7.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+F7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+F7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+F7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+F7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+F8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+F8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+F8.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+F8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+F8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+F9.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+F9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+F9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+G1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+G1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_10_M
+G1.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+G1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+G10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+G10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+G10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+G10.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+G10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+G11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+G11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+G11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+G11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+G11.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+G12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+G12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+G12.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+G13.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+G13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+G13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+G13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+G14.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+G14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+G14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+G14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+G14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+G15.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+G15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+G15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+G15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,5,F,3_39_F
+G15.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+G16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+G16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+G16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+G17.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+G17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+G17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+G17.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+G17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+G17.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+G17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+G18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+G18.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+G18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+G18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+G18.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+G19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+G19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+G19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+G2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+G2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+G2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+G20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+G20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+G20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+G20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+G20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+G20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+G20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+G21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+G21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+G21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+G21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+G21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+G21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,endothelial cell,CL:0000115,endothelial cell,7,F,3_38_F
+G22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+G22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+G22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+G22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+G22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+G3.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+G3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+G3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+G3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+G3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+G4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_8_M
+G4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+G4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+G5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+G5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+G5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+G5.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+G5.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+G6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+G6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+G6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+G7.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+G7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+G7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+G7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+G7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+G7.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+G8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+G8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+G8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+G9.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+G9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+G9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+G9.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,endothelial cell,CL:0000115,endothelial cell,7,F,3_38_F
+H1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+H1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+H1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+H1.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+H1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+H10.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+H10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+H10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+H10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,6,F,3_39_F
+H11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+H11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+H11.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+H11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+H11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+H12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+H12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+H12.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+H12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+H13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+H13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+H14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+H14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+H14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+H15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+H15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+H15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+H16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+H16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+H16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+H17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_8_M
+H17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+H17.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+H17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+H17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+H18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+H18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+H18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+H18.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+H18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+H19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+H19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+H19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+H2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+H2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+H2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+H20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+H20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,1,M,3_8_M
+H20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+H20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+H20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+H20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+H20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+H21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+H21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_8_M
+H21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+H21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+H21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+H21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+H21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+H22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+H22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+H22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+H22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+H22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,endothelial cell,CL:0000115,endothelial cell,7,F,3_39_F
+H22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+H22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+H3.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+H3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+H3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+H3.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+H3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+H4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+H4.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+H4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+H5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+H5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+H5.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+H6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+H6.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+H6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+H6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,6,F,3_39_F
+H7.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+H7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+H7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+H7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+H8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+H8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+H8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+H8.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+H8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+H9.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+H9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+H9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+H9.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+H9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+H9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+I1.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+I1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+I1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+I1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+I10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+I10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+I11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+I11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+I11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+I11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+I12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+I12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+I12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+I12.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+I12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+I13.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+I13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+I13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+I13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+I14.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+I14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+I15.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+I15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+I15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+I15.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+I15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,endothelial cell,CL:0000115,endothelial cell,7,F,3_39_F
+I15.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+I16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+I16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+I16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+I17.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+I17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+I17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+I17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+I18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+I18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+I18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+I19.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+I19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+I19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+I19.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+I19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+I19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+I2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+I2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+I2.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+I2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+I2.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,type B pancreatic cell,CL:0000169,beta cell,6,F,3_39_F
+I2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+I20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+I20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+I20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+I20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+I20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,endothelial cell,CL:0000115,endothelial cell,7,F,3_39_F
+I20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+I20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+I21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+I21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+I21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+I21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+I21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+I22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+I22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,1,M,3_10_M
+I22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+I22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+I22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+I22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+I22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+I3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+I3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+I3.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+I3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+I3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+I4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+I4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+I4.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+I4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+I5.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+I5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+I5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+I6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+I6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+I6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+I6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+I7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+I7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+I7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+I7.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+I7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,endothelial cell,CL:0000115,endothelial cell,7,F,3_39_F
+I8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+I8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+I8.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_39_F
+I8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+I9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+I9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+I9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+I9.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+J1.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+J1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+J1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_10_M
+J1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+J1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+J10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_10_M
+J10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+J10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+J11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+J11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_10_M
+J11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+J11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J12.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+J12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+J12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+J12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+J12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J12.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+J13.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+J13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+J13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+J14.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+J14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+J14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+J14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+J15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+J15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+J15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+J15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+J16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+J16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+J16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+J16.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+J17.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+J17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+J17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+J17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+J18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+J18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+J19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+J19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+J19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+J19.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,endothelial cell,CL:0000115,endothelial cell,7,F,3_39_F
+J19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J19.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+J2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+J2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+J2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+J2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+J20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+J20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+J20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+J20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+J20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+J20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+J21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+J21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+J21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+J21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+J21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+J21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+J22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+J22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+J22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+J22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+J22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+J22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,endothelial cell,CL:0000115,endothelial cell,7,F,3_38_F
+J3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+J3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+J3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+J3.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+J4.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+J4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+J4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+J4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+J4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J4.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+J5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+J5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+J5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+J5.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+J6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+J6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+J6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+J6.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+J6.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+J7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+J7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+J7.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+J7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+J8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+J8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,5,F,3_38_F
+J8.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+J8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+J9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+J9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+J9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+J9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K1.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+K1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+K1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+K1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+K10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+K10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+K11.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,type B pancreatic cell,CL:0000169,beta cell,6,F,3_39_F
+K11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+K12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+K12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K13.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+K13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,1,M,3_10_M
+K13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+K13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K14.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+K14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+K14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+K14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+K15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+K15.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+K15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+K15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K15.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+K16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+K16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+K16.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+K16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+K17.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+K17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+K18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+K18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+K18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+K19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+K2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+K20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+K20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+K20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_10_M
+K20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+K20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+K20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+K20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+K21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+K21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+K21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+K21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+K21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+K22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+K22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+K22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,leukocyte,CL:0000738,immune cell,8,F,3_39_F
+K22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+K22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_38_F
+K3.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+K3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+K4.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+K4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+K4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+K5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+K5.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+K5.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+K6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+K6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+K6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+K6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K7.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+K7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+K7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+K7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,1,F,3_39_F
+K7.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+K8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+K8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+K8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+K8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,leukocyte,CL:0000738,immune cell,8,F,3_38_F
+K8.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+K8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+K9.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+K9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+K9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+K9.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+K9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+L1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+L1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+L10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+L10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+L10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+L10.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+L11.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+L11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+L11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+L11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+L12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+L12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+L12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+L12.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+L12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+L13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+L13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+L13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+L13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L13.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+L14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+L14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+L14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L15.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+L15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+L15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+L15.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+L15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+L15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+L16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+L16.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+L16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+L16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L17.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+L17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+L17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+L18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+L18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_10_M
+L18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L19.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+L19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+L19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+L19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+L19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+L19.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+L2.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+L2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+L2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+L2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+L2.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+L2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L2.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+L20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+L20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+L20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+L20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+L20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_39_F
+L20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+L21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+L21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+L21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+L21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+L21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_39_F
+L21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+L21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_38_F
+L22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+L22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,2,M,3_10_M
+L22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+L22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+L22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+L22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+L3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+L3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+L3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+L3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+L3.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+L4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+L4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+L4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+L5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+L5.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+L5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+L6.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+L6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+L6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+L6.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+L6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+L6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+L7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+L7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+L7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+L8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+L8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+L8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+L8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+L9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+L9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+L9.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+L9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+L9.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_39_F
+M1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+M1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+M1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+M10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+M10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+M10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+M11.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+M11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+M11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M11.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+M11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M11.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,leukocyte,CL:0000738,immune cell,8,F,3_38_F
+M12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+M12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+M12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+M12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+M13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+M13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+M13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+M14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+M15.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+M15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+M15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+M15.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+M15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M16.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+M16.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+M16.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+M17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+M17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+M17.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+M18.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+M18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+M18.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+M18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+M19.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+M19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+M19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+M19.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+M19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+M19.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+M2.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+M2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+M2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+M2.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+M2.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+M20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+M20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+M20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+M20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+M20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+M20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+M21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+M21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+M21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+M21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+M21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+M22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+M22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+M22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+M22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+M22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+M22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+M3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+M3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+M3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M4.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+M4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+M4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+M4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M5.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+M5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+M5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M5.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+M5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+M5.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M5.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+M6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+M6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+M6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,endothelial cell,CL:0000115,endothelial cell,7,F,3_39_F
+M7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+M7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M7.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+M7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+M8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+M8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M8.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+M9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+M9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+M9.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+M9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+M9.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+M9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+N1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+N1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+N1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+N1.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+N10.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+N10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+N10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+N10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+N10.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+N11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+N11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+N11.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+N11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+N11.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+N12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+N12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+N12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,endothelial cell,CL:0000115,endothelial cell,7,F,3_39_F
+N13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+N13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+N13.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+N13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+N13.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+N13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+N13.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+N14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+N14.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+N15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+N15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+N15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+N16.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+N16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+N16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+N16.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+N16.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,type B pancreatic cell,CL:0000169,beta cell,6,F,3_39_F
+N16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+N16.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+N17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+N17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+N17.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+N17.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+N17.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+N18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+N18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+N18.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,type B pancreatic cell,CL:0000169,beta cell,0,M,3_10_M
+N18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+N18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+N19.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+N19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+N19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+N19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+N2.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+N2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+N2.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+N2.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+N2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+N20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+N20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+N20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+N20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+N20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+N20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+N20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+N20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+N21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+N21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,leukocyte,CL:0000738,immune cell,8,M,3_8_M
+N21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+N21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+N21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+N21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+N21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+N21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+N22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+N22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+N22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+N22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+N22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_39_F
+N22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+N22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+N3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+N3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+N3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+N4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+N4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+N4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+N4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+N4.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+N5.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+N5.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+N5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+N6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+N6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+N6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+N6.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+N7.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+N7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+N7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+N7.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+N8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+N8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+N8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+N9.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+N9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+N9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+N9.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+N9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+O1.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+O1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+O1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+O10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+O10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+O10.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+O10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O10.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+O11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+O11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+O11.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+O11.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+O12.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+O12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+O12.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+O12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+O12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+O12.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+O13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+O13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+O13.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+O13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+O14.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+O14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+O14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+O14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O14.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,endothelial cell,CL:0000115,endothelial cell,7,F,3_38_F
+O15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+O15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+O15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+O16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+O16.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+O16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+O17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+O17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+O17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+O17.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+O18.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+O18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+O18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+O18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+O18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+O19.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+O19.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+O19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+O19.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,endothelial cell,CL:0000115,endothelial cell,7,M,3_10_M
+O19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+O19.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+O2.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+O2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+O2.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+O2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+O2.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+O20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+O20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+O20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic stellate cell,CL:0002410,stellate cell,9,F,3_39_F
+O20.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+O20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+O21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+O21.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+O21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+O21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+O21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+O21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,leukocyte,CL:0000738,immune cell,8,F,3_38_F
+O22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+O22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+O22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+O22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+O22.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+O22.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+O3.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+O3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+O3.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+O3.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O4.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+O4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O4.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+O4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+O5.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+O6.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+O6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+O6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,1,M,3_10_M
+O6.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+O6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+O6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+O7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+O7.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+O7.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+O7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+O7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+O8.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+O8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+O8.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+O8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+O8.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+O9.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+O9.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+O9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+O9.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+P1.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+P1.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+P1.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+P1.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+P10.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+P10.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,6,M,3_8_M
+P10.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+P10.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+P10.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+P11.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+P11.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_10_M
+P11.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+P11.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+P12.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,M,3_8_M
+P12.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+P12.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_38_F
+P12.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+P12.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+P13.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+P13.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+P13.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+P13.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+P14.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+P14.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+P14.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+P14.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+P14.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+P15.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+P15.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+P15.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+P15.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+P15.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+P15.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+P16.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+P16.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+P17.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+P17.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+P17.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+P17.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+P17.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+P17.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+P18.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+P18.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+P18.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_10_M
+P18.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,6,F,3_38_F
+P18.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic PP cell,CL:0002275,pancreatic PP cell,1,F,3_39_F
+P19.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_10_M
+P19.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_38_F
+P19.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+P19.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+P2.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+P2.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+P2.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+P20.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_8_M
+P20.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,1,M,3_8_M
+P20.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+P20.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+P20.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+P20.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+P20.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+P21.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,endothelial cell,CL:0000115,endothelial cell,7,M,3_8_M
+P21.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic D cell,CL:0000173,pancreatic D cell,1,M,3_10_M
+P21.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+P21.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+P21.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F
+P21.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+P21.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_38_F
+P22.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_8_M
+P22.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_10_M
+P22.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic stellate cell,CL:0002410,stellate cell,9,M,3_10_M
+P22.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+P22.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,endothelial cell,CL:0000115,endothelial cell,7,F,3_38_F
+P3.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+P3.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+P3.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+P3.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+P4.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+P4.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+P4.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_39_F
+P5.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,endothelial cell,CL:0000115,endothelial cell,7,F,3_38_F
+P5.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic ductal cell,CL:0002079,ductal cell,4,F,3_39_F
+P5.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+P5.MAA001868.3_38_F.1.1,Pancreas,Exocrine,Viable,MAA001868,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_38_F
+P6.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic A cell,CL:0000171,pancreatic A cell,2,M,3_8_M
+P6.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,type B pancreatic cell,CL:0000169,beta cell,6,M,3_10_M
+P6.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,leukocyte,CL:0000738,immune cell,8,M,3_10_M
+P6.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+P6.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,type B pancreatic cell,CL:0000169,beta cell,0,F,3_39_F
+P7.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+P7.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,type B pancreatic cell,CL:0000169,beta cell,0,M,3_8_M
+P7.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,type B pancreatic cell,CL:0000169,beta cell,0,F,3_38_F
+P7.MAA001862.3_39_F.1.1,Pancreas,Endocrine,Viable,MAA001862,pancreatic D cell,CL:0000173,pancreatic D cell,5,F,3_39_F
+P8.MAA000577.3_8_M.1.1,Pancreas,Endocrine,Viable,MAA000577,pancreatic D cell,CL:0000173,pancreatic D cell,5,M,3_8_M
+P8.MAA000884.3_10_M.1.1,Pancreas,Endocrine,Viable,MAA000884,pancreatic ductal cell,CL:0002079,ductal cell,4,M,3_10_M
+P8.MAA000910.3_10_M.1.1,Pancreas,Exocrine,Viable,MAA000910,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_10_M
+P8.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,1,F,3_38_F
+P9.MAA000574.3_8_M.1.1,Pancreas,Exocrine,Viable,MAA000574,pancreatic acinar cell,CL:0002064,acinar cell,3,M,3_8_M
+P9.MAA001857.3_38_F.1.1,Pancreas,Endocrine,Viable,MAA001857,pancreatic A cell,CL:0000171,pancreatic A cell,2,F,3_38_F
+P9.MAA001861.3_39_F.1.1,Pancreas,Exocrine,Viable,MAA001861,pancreatic acinar cell,CL:0002064,acinar cell,3,F,3_39_F

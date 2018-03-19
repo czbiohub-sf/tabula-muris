@@ -1,0 +1,68 @@
+---
+title: "Mammary_Gland droplet {COLUMN} Supplementary Notebook"
+output: html_notebook
+---
+
+```{r}
+library(useful)
+library(Seurat)
+library(dplyr)
+library(Matrix)
+library(ontologyIndex)
+library(tidyverse)
+library(here)
+
+save_folder = here('30_tissue_supplement_figures', 'Mammary_Gland', 'droplet')
+
+tissue_of_interest = 'Mammary_Gland'
+filename = paste0('droplet_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+annotation = read_csv(here('00_data_ingest', '03_tissue_annotation_csv', 'Mammary_Gland_droplet_annotation.csv'))
+
+for (column in colnames(annotation)){
+  tiss@meta.data[annotation$X1, column] = annotation[column]
+}
+
+standard.group.bys = c("cell_ontology_class", "free_annotation")
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = sort(c('Nkg7', 'Ccl5', 'Cd74', 'Ly6c1'))
+```
+
+```{r}
+
+prefix = 'allcells'
+
+for (group.by in group.bys ){
+  
+  filename = file.path(save_folder, paste(prefix, group.by, 'dotplot.pdf', sep='_'))
+  p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T, group.by = column) + coord_flip()
+  ggsave(filename, width = 3, height = 6)
+  dev.off()
+  
+  filename = file.path(save_folder, paste(prefix, group.by, 'tsneplot.pdf', sep='_'))
+  p = TSNEPlot(object = tiss, do.return = TRUE, group.by = column)
+  ggsave(filename, width = 2, height = 2)
+  dev.off()
+  
+  filename = file.path(save_folder, paste(prefix, group.by, 'violinplot.pdf', sep='_'))
+  p = ViolinPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
+  ggsave(filename, width = 6, height = 3)
+  dev.off()
+}
+```
+
+
+
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+```
+
+
+```{r}
+# No additional code
+```

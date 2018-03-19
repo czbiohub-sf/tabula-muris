@@ -93,12 +93,12 @@ Which markers identify a specific cluster?
 #cluster4.markers <- FindMarkers(object = tiss, ident.1 = 4, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
 #cluster5.markers <- FindMarkers(object = tiss, ident.1 = 5, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
 #cluster6.markers <- FindMarkers(object = tiss, ident.1 = 6, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
-cluster7.markers <- FindMarkers(object = tiss, ident.1 = 6, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
+# cluster7.markers <- FindMarkers(object = tiss, ident.1 = 6, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
 #cluster0.markers <- FindMarkers(object = tiss, ident.1 = 0, min.pct = 0.25, only.pos = TRUE, thresh.use = 0.25)
 ```
 
 ```{r}
-print(x = head(x = cluster6.markers, n = 30))
+# print(x = head(x = cluster6.markers, n = 30))
 ```
 
 You can also compute all markers for all clusters at once. This may take some time.

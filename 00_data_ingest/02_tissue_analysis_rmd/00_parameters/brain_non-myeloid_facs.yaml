@@ -25,6 +25,7 @@ SUBSET:
     #- RES:
     #- NPCS:
     - GENES: "'Vcam1','Icam1','Lcn2','Hif1a','Vwf','Csf1','Notch1','Hey1','Vegfc','Edn1','Tmem100','Flt4','Nr2f2','Ephb4','Car4','Slc16a1','Tfrc','Efnb2','Jag1','Bmx'"
+
 #this endo tsne should be labeled by vessel type
 SUBSET:
   BRAIN ENDOTHELIAL CELLS:

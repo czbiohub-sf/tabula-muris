@@ -174,31 +174,73 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxubGlicmFyeSh1c2VmdWwpXG5saWJyYXJ5KFNldXJhdClcbmxpYnJhcnkoZHBseXIpXG5saWJyYXJ5KE1hdHJpeClcbmxpYnJhcnkob250b2xvZ3lJbmRleClcbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeShoZXJlKVxuXG50aXNzdWVfb2ZfaW50ZXJlc3QgPSBjYXBpdGFsaXplKCd7VElTU1VFfScpXG5maWxlbmFtZSA9IHBhc3RlMChtZXRob2QsICdfe1RJU1NVRX1fc2V1cmF0X3Rpc3MuUm9iaicpXG5sb2FkKGhlcmUoJzAwX2RhdGFfaW5nZXN0JywgJzEwX3Rpc3N1ZV9yb2JqX2Rvd25sb2FkZWQnLCBmaWxlbmFtZSkpXG5cbmFubm90YXRpb24gPSByZWFkX2NzdihoZXJlKCcwMF9kYXRhX2luZ2VzdCcsICcwM190aXNzdWVfYW5ub3RhdGlvbl9jc3YnLCAnMDNfdGlzc3VlX2Fubm90YXRpb25fY3N2JywgcGFzdGUwKHRpc3N1ZV9vZl9pbnRlcmVzdCwgJ197TUVUSE9EfV9hbm5vdGF0aW9uLmNzdicpKSlcblxuZm9yIChjb2x1bW4gaW4gY29sbmFtZXMoYW5ub3RhdGlvbikpe1xuICB0aXNzQG1ldGEuZGF0YVthbm5vdGF0aW9uJFgsIGNvbHVtbl0gPSBhbm5vdGF0aW9uW2NvbHVtbl1cbn1cblxuZ2VuZXNfdG9fY2hlY2sgPSBzb3J0KGMoe0dFTkVTfSkpXG5gYGBcbmBgYCJ9 -->
-<p><code>r</code>r library(useful) library(Seurat) library(dplyr) library(Matrix) library(ontologyIndex) library(tidyverse) library(here)</p>
-<p>tissue_of_interest = capitalize(‘{TISSUE}’) filename = paste0(method, ’_{TISSUE}_seurat_tiss.Robj’) load(here(‘00_data_ingest’, ‘10_tissue_robj_downloaded’, filename))</p>
-<p>annotation = read_csv(here(‘00_data_ingest’, ‘03_tissue_annotation_csv’, ‘03_tissue_annotation_csv’, paste0(tissue_of_interest, ’_{METHOD}_annotation.csv’)))</p>
-<p>for (column in colnames(annotation)){ <a href="mailto:tiss@meta.data">tiss@meta.data</a>[annotation$X, column] = annotation[column] }</p>
-<p>genes_to_check = sort(c({GENES}))</p>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuYGBgclxubGlicmFyeSh1c2VmdWwpXG5saWJyYXJ5KFNldXJhdClcbmxpYnJhcnkoZHBseXIpXG5saWJyYXJ5KE1hdHJpeClcbmxpYnJhcnkob250b2xvZ3lJbmRleClcbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeShoZXJlKVxuXG50aXNzdWVfb2ZfaW50ZXJlc3QgPSBjYXBpdGFsaXplKCd7VElTU1VFfScpXG5maWxlbmFtZSA9IHBhc3RlMChtZXRob2QsICdfe1RJU1NVRX1fc2V1cmF0X3Rpc3MuUm9iaicpXG5sb2FkKGhlcmUoJzAwX2RhdGFfaW5nZXN0JywgJzEwX3Rpc3N1ZV9yb2JqX2Rvd25sb2FkZWQnLCBmaWxlbmFtZSkpXG5cbmFubm90YXRpb24gPSByZWFkX2NzdihoZXJlKCcwMF9kYXRhX2luZ2VzdCcsICcwM190aXNzdWVfYW5ub3RhdGlvbl9jc3YnLCAnMDNfdGlzc3VlX2Fubm90YXRpb25fY3N2JywgcGFzdGUwKHRpc3N1ZV9vZl9pbnRlcmVzdCwgJ197TUVUSE9EfV9hbm5vdGF0aW9uLmNzdicpKSlcblxuZm9yIChjb2x1bW4gaW4gY29sbmFtZXMoYW5ub3RhdGlvbikpe1xuICB0aXNzQG1ldGEuZGF0YVthbm5vdGF0aW9uJFgsIGNvbHVtbl0gPSBhbm5vdGF0aW9uW2NvbHVtbl1cbn1cblxuZ2VuZXNfdG9fY2hlY2sgPSBzb3J0KGMoe0dFTkVTfSkpXG5gYGBcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r</p>
+<pre class="r"><code>library(useful)
+library(Seurat)
+library(dplyr)
+library(Matrix)
+library(ontologyIndex)
+library(tidyverse)
+library(here)
+
+tissue_of_interest = capitalize('{TISSUE}')
+filename = paste0(method, '_{TISSUE}_seurat_tiss.Robj')
+load(here('00_data_ingest', '10_tissue_robj_downloaded', filename))
+
+annotation = read_csv(here('00_data_ingest', '03_tissue_annotation_csv', '03_tissue_annotation_csv', paste0(tissue_of_interest, '_{METHOD}_annotation.csv')))
+
+for (column in colnames(annotation)){
+  tiss@meta.data[annotation$X, column] = annotation[column]
+}
+
+genes_to_check = sort(c({GENES}))</code></pre>
 <pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5mb3IgKGdyb3VwLmJ5IGluIHN0YW5kYXJkLmdyb3VwLmJ5cyApe1xuICBEb3RQbG90KHRpc3MsIGdlbmVzX3RvX2NoZWNrLCBjb2wubWF4ID0gMi41LCBwbG90LmxlZ2VuZCA9IFQsIGRvLnJldHVybiA9IFQsIGdyb3VwLmJ5ID0gY29sdW1uKSArIGNvb3JkX2ZsaXAoKVxuICBUU05FUGxvdChvYmplY3QgPSB0aXNzLCBkby5yZXR1cm4gPSBUUlVFLCBncm91cC5ieSA9IGNvbHVtbilcbiAgUmlkZ2VQbG90KHRpc3MsIGdlbmVzX3RvX2NoZWNrLCBncm91cC5ieSA9IGNvbHVtbilcblxufVxuXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5wcmVmaXggPSAnYWxsY2VsbHMnXG5cbmZvciAoZ3JvdXAuYnkgaW4gZ3JvdXAuYnlzICl7XG4gIFxuICBmaWxlbmFtZSA9IGZpbGUucGF0aChzYXZlX2ZvbGRlciwgcGFzdGUocHJlZml4LCBncm91cC5ieSwgJ2RvdHBsb3QucGRmJywgc2VwPSdfJykpXG4gIHAgPSBEb3RQbG90KHRpc3MsIGdlbmVzX3RvX2NoZWNrLCBjb2wubWF4ID0gMi41LCBwbG90LmxlZ2VuZCA9IFQsIGRvLnJldHVybiA9IFQsIGdyb3VwLmJ5ID0gY29sdW1uKSArIGNvb3JkX2ZsaXAoKVxuICBnZ3NhdmUoZmlsZW5hbWUsIHdpZHRoID0gMywgaGVpZ2h0ID0gNilcbiAgZGV2Lm9mZigpXG4gIFxuICBmaWxlbmFtZSA9IGZpbGUucGF0aChzYXZlX2ZvbGRlciwgcGFzdGUocHJlZml4LCBncm91cC5ieSwgJ3RzbmVwbG90LnBkZicsIHNlcD0nXycpKVxuICBwID0gVFNORVBsb3Qob2JqZWN0ID0gdGlzcywgZG8ucmV0dXJuID0gVFJVRSwgZ3JvdXAuYnkgPSBjb2x1bW4pXG4gIGdnc2F2ZShmaWxlbmFtZSwgd2lkdGggPSAyLCBoZWlnaHQgPSAyKVxuICBkZXYub2ZmKClcbiAgXG4gIGZpbGVuYW1lID0gZmlsZS5wYXRoKHNhdmVfZm9sZGVyLCBwYXN0ZShwcmVmaXgsIGdyb3VwLmJ5LCAndmlvbGlucGxvdC5wZGYnLCBzZXA9J18nKSlcbiAgcCA9IFZpb2xpblBsb3QodGlzcywgZ2VuZXNfdG9fY2hlY2ssIGdyb3VwLmJ5ID0gY29sdW1uLCBkby5yZXR1cm49VFJVRSlcbiAgZ2dzYXZlKGZpbGVuYW1lLCB3aWR0aCA9IDYsIGhlaWdodCA9IDMpXG4gIGRldi5vZmYoKVxufVxuYGBgIn0= -->
 <pre class="r"><code>
-for (group.by in standard.group.bys ){
-  DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T, group.by = column) + coord_flip()
-  TSNEPlot(object = tiss, do.return = TRUE, group.by = column)
-  RidgePlot(tiss, genes_to_check, group.by = column)
+prefix = 'allcells'
 
-}
-</code></pre>
+for (group.by in group.bys ){
+  
+  filename = file.path(save_folder, paste(prefix, group.by, 'dotplot.pdf', sep='_'))
+  p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T, group.by = column) + coord_flip()
+  ggsave(filename, width = 3, height = 6)
+  dev.off()
+  
+  filename = file.path(save_folder, paste(prefix, group.by, 'tsneplot.pdf', sep='_'))
+  p = TSNEPlot(object = tiss, do.return = TRUE, group.by = column)
+  ggsave(filename, width = 2, height = 2)
+  dev.off()
+  
+  filename = file.path(save_folder, paste(prefix, group.by, 'violinplot.pdf', sep='_'))
+  p = ViolinPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
+  ggsave(filename, width = 6, height = 3)
+  dev.off()
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGlzcy5tYXJrZXJzIDwtIEZpbmRBbGxNYXJrZXJzKG9iamVjdCA9IHRpc3MsIG9ubHkucG9zID0gVFJVRSwgbWluLnBjdCA9IDAuMjUsIHRocmVzaC51c2UgPSAwLjI1KVxuZmlsZW5hbWUgPSBmaWxlLnBhdGgoc2F2ZV9mb2xkZXIsIHBhc3RlKHByZWZpeCwgJ2ZpbmRhbGxtYXJrZXJzLmNzdicsIHNlcD0nXycpKVxuYGBgIn0= -->
+<pre class="r"><code>tiss.markers &lt;- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxue0FERElUSU9OQUxfQ09ERX1cbmBgYCJ9 -->
+<pre class="r"><code>{ADDITIONAL_CODE}</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAie1RJU1NVRX0ge01FVEhPRH0ge0NPTFVNTn0gU3VwcGxlbWVudGFyeSBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodXNlZnVsKQpsaWJyYXJ5KFNldXJhdCkKbGlicmFyeShkcGx5cikKbGlicmFyeShNYXRyaXgpCmxpYnJhcnkob250b2xvZ3lJbmRleCkKbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoaGVyZSkKCnRpc3N1ZV9vZl9pbnRlcmVzdCA9IGNhcGl0YWxpemUoJ3tUSVNTVUV9JykKZmlsZW5hbWUgPSBwYXN0ZTAoJ3tNRVRIT0R9XycsdGlzc3VlX29mX2ludGVyZXN0LCAnX3NldXJhdF90aXNzLlJvYmonKQpsb2FkKGhlcmUoJzAwX2RhdGFfaW5nZXN0JywgJzEwX3Rpc3N1ZV9yb2JqX2Rvd25sb2FkZWQnLCBmaWxlbmFtZSkpCgphbm5vdGF0aW9uID0gcmVhZF9jc3YoaGVyZSgnMDBfZGF0YV9pbmdlc3QnLCAnMDNfdGlzc3VlX2Fubm90YXRpb25fY3N2JywgJzAzX3Rpc3N1ZV9hbm5vdGF0aW9uX2NzdicsIHBhc3RlMCh0aXNzdWVfb2ZfaW50ZXJlc3QsICdfe01FVEhPRH1fYW5ub3RhdGlvbi5jc3YnKSkpCgpmb3IgKGNvbHVtbiBpbiBjb2xuYW1lcyhhbm5vdGF0aW9uKSl7CiAgdGlzc0BtZXRhLmRhdGFbYW5ub3RhdGlvbiRYMSwgY29sdW1uXSA9IGFubm90YXRpb25bY29sdW1uXQp9CgoKc3RhbmRhcmQuZ3JvdXAuYnlzID0gYygiY2VsbF9vbnRvbG9neV9jbGFzcyIsICJmcmVlX2Fubm90YXRpb24iKQphZGRpdGlvbmFsLmdyb3VwLmJ5cyA9IHNvcnQoYyh7R1JPVVBfQll9KSkKCgoKZ2VuZXNfdG9fY2hlY2sgPSBzb3J0KGMoe0dFTkVTfSkpCmBgYAoKYGBge3J9Cgpmb3IgKGdyb3VwLmJ5IGluIHN0YW5kYXJkLmdyb3VwLmJ5cyApewogIERvdFBsb3QodGlzcywgZ2VuZXNfdG9fY2hlY2ssIGNvbC5tYXggPSAyLjUsIHBsb3QubGVnZW5kID0gVCwgZG8ucmV0dXJuID0gVCwgZ3JvdXAuYnkgPSBjb2x1bW4pICsgY29vcmRfZmxpcCgpCiAgVFNORVBsb3Qob2JqZWN0ID0gdGlzcywgZG8ucmV0dXJuID0gVFJVRSwgZ3JvdXAuYnkgPSBjb2x1bW4pCiAgUmlkZ2VQbG90KHRpc3MsIGdlbmVzX3RvX2NoZWNrLCBncm91cC5ieSA9IGNvbHVtbikKCn0KCmBgYA==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAie1RJU1NVRX0ge01FVEhPRH0ge0NPTFVNTn0gU3VwcGxlbWVudGFyeSBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmxpYnJhcnkodXNlZnVsKQpsaWJyYXJ5KFNldXJhdCkKbGlicmFyeShkcGx5cikKbGlicmFyeShNYXRyaXgpCmxpYnJhcnkob250b2xvZ3lJbmRleCkKbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoaGVyZSkKCnNhdmVfZm9sZGVyID0gaGVyZSgnMzBfdGlzc3VlX3N1cHBsZW1lbnRfZmlndXJlcycsICd7VElTU1VFfScsICd7TUVUSE9EfScpCgp0aXNzdWVfb2ZfaW50ZXJlc3QgPSAne1RJU1NVRX0nCmZpbGVuYW1lID0gcGFzdGUwKCd7TUVUSE9EfV8nLHRpc3N1ZV9vZl9pbnRlcmVzdCwgJ19zZXVyYXRfdGlzcy5Sb2JqJykKbG9hZChoZXJlKCcwMF9kYXRhX2luZ2VzdCcsICcwNF90aXNzdWVfcm9ial9nZW5lcmF0ZWQnLCBmaWxlbmFtZSkpCgphbm5vdGF0aW9uID0gcmVhZF9jc3YoaGVyZSgnMDBfZGF0YV9pbmdlc3QnLCAnMDNfdGlzc3VlX2Fubm90YXRpb25fY3N2JywgJ3tUSVNTVUV9X3tNRVRIT0R9X2Fubm90YXRpb24uY3N2JykpCgpmb3IgKGNvbHVtbiBpbiBjb2xuYW1lcyhhbm5vdGF0aW9uKSl7CiAgdGlzc0BtZXRhLmRhdGFbYW5ub3RhdGlvbiRYMSwgY29sdW1uXSA9IGFubm90YXRpb25bY29sdW1uXQp9CgpzdGFuZGFyZC5ncm91cC5ieXMgPSBjKCJjZWxsX29udG9sb2d5X2NsYXNzIiwgImZyZWVfYW5ub3RhdGlvbiIpCmFkZGl0aW9uYWwuZ3JvdXAuYnlzID0gc29ydChjKHtHUk9VUEJZfSkpCgpncm91cC5ieXMgPSBjKHN0YW5kYXJkLmdyb3VwLmJ5cywgYWRkaXRpb25hbC5ncm91cC5ieXMpCgpnZW5lc190b19jaGVjayA9IHNvcnQoYyh7R0VORVN9KSkKYGBgCgpgYGB7cn0KCnByZWZpeCA9ICdhbGxjZWxscycKCmZvciAoZ3JvdXAuYnkgaW4gZ3JvdXAuYnlzICl7CiAgCiAgZmlsZW5hbWUgPSBmaWxlLnBhdGgoc2F2ZV9mb2xkZXIsIHBhc3RlKHByZWZpeCwgZ3JvdXAuYnksICdkb3RwbG90LnBkZicsIHNlcD0nXycpKQogIHAgPSBEb3RQbG90KHRpc3MsIGdlbmVzX3RvX2NoZWNrLCBjb2wubWF4ID0gMi41LCBwbG90LmxlZ2VuZCA9IFQsIGRvLnJldHVybiA9IFQsIGdyb3VwLmJ5ID0gY29sdW1uKSArIGNvb3JkX2ZsaXAoKQogIGdnc2F2ZShmaWxlbmFtZSwgd2lkdGggPSAzLCBoZWlnaHQgPSA2KQogIGRldi5vZmYoKQogIAogIGZpbGVuYW1lID0gZmlsZS5wYXRoKHNhdmVfZm9sZGVyLCBwYXN0ZShwcmVmaXgsIGdyb3VwLmJ5LCAndHNuZXBsb3QucGRmJywgc2VwPSdfJykpCiAgcCA9IFRTTkVQbG90KG9iamVjdCA9IHRpc3MsIGRvLnJldHVybiA9IFRSVUUsIGdyb3VwLmJ5ID0gY29sdW1uKQogIGdnc2F2ZShmaWxlbmFtZSwgd2lkdGggPSAyLCBoZWlnaHQgPSAyKQogIGRldi5vZmYoKQogIAogIGZpbGVuYW1lID0gZmlsZS5wYXRoKHNhdmVfZm9sZGVyLCBwYXN0ZShwcmVmaXgsIGdyb3VwLmJ5LCAndmlvbGlucGxvdC5wZGYnLCBzZXA9J18nKSkKICBwID0gVmlvbGluUGxvdCh0aXNzLCBnZW5lc190b19jaGVjaywgZ3JvdXAuYnkgPSBjb2x1bW4sIGRvLnJldHVybj1UUlVFKQogIGdnc2F2ZShmaWxlbmFtZSwgd2lkdGggPSA2LCBoZWlnaHQgPSAzKQogIGRldi5vZmYoKQp9CmBgYAoKCgpgYGB7cn0KdGlzcy5tYXJrZXJzIDwtIEZpbmRBbGxNYXJrZXJzKG9iamVjdCA9IHRpc3MsIG9ubHkucG9zID0gVFJVRSwgbWluLnBjdCA9IDAuMjUsIHRocmVzaC51c2UgPSAwLjI1KQpmaWxlbmFtZSA9IGZpbGUucGF0aChzYXZlX2ZvbGRlciwgcGFzdGUocHJlZml4LCAnZmluZGFsbG1hcmtlcnMuY3N2Jywgc2VwPSdfJykpCmBgYAoKCmBgYHtyfQp7QURESVRJT05BTF9DT0RFfQpgYGA=</div>
 
 
 

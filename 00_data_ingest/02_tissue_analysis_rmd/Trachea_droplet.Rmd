@@ -96,7 +96,7 @@ You can also compute all markers for all clusters at once. This may take some ti
 
 Display the top markers you computed above.
 ```{r}
-#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 ```
 
 ## Assigning cell type identity to clusters
@@ -143,29 +143,6 @@ Print a table showing the count of cells in each identity category from each pla
 ```{r}
 table(as.character(tiss@ident), as.character(tiss@meta.data$channel))
 ```
-
-
-# Save the Robject for later
-When you save the annotated tissue, please give it a name.
-
-```{r}
-filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("droplet", tissue_of_interest, "_seurat_tiss.Robj"))
-print(filename)
-save(tiss, file=filename)
-```
-
-```{r}
-# To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-# load(file=filename)
-```
-
-
-
-
-
 
 
 # Subset and iterate
@@ -242,7 +219,7 @@ subtiss.markers <- FindAllMarkers(object = subtiss, only.pos = TRUE, min.pct = 0
 ```
 
 ```{r}
-subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_diff)
+subtiss.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
 ```
 
 Check expression of genes of interset.
