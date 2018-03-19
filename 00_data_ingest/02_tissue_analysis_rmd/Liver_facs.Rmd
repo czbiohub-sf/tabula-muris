@@ -113,7 +113,7 @@ free_annotation <- c(
   "kuppfer",
   "hepatocyte",
   "B cell",
-  "NK/NKT cells")
+  "Nk/NKT cells")
 
 cell_ontology_class <-c(
   "endothelial cell of hepatic sinusoid",
