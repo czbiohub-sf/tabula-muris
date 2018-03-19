@@ -7,7 +7,7 @@ clean:
 	rm -rf *.out *.err *html *_files
 
 all: clean
-	../../utilities/run_rmds.py
+	export LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 ../../utilities/run_rmds.py
 
 all_oldschool: clean
 	for RMD in $(RMDS); do \
