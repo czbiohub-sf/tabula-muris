@@ -139,7 +139,7 @@ $$Q = \sum_{ij} \left (A_{ij} - \gamma \frac{k_i k_j}{2m} \right ) \delta(c_i, c
 
 where $A_{ij}$ is the weighted adjacency matrix, $k_i$ and $k_j$ are the weighted degrees of cells $i$ and $j$, $m$ is the total weight of edges in the graph, $c_i$ denotes cluster membership, and $\delta(c_i,c_j)$ is $1$ if $i$ and $j$ are in the same cluster, and $0$ otherwise.
 
-The resolution $\gamma$ is a tuneable parameter in this analysis that sets the tradeoff off between in-group connections and between-group connections. High resolution favors smaller clusters.
+The resolution $\gamma$ is a tuneable parameter in this analysis that sets the tradeoff between in-group connections and between-group connections. High resolution favors smaller clusters.
 
 ```{r}
 # Set resolution 
@@ -204,7 +204,7 @@ The top markers for cluster 7 include histocompatibility markers H2-*, consisten
 head(clust.markers7)
 ```
 
-Using the markers, we can confidentaly label the clusters. We provide both a free annotation (where anything name can be used) and a cell ontology class. The latter uses a controlled vocabulary for easy comparison between studies and different levels of the taxonomy.
+Using the markers, we can confidentaly label the clusters. We provide both a free annotation (where any name can be used) and a cell ontology class. The latter uses a controlled vocabulary for easy comparison between studies and different levels of the taxonomy.
 
 ```{r}
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
