@@ -192,7 +192,7 @@ tissue_colors <- rename(tissue_colors, tissue = X1)
 
 ```{r}
 tiss@meta.data <- tiss@meta.data %>%
-		   left_join(anno %>% select(cell_ontology_class,cell_ontology_id,free_annotation), by = 'cell') %>%
+		   left_join(anno %>% select(cell_ontology_class,cell_ontology_id,free_annotation, cell), by = 'cell') %>%
 		   left_join(tissue_colors, by = 'tissue')
 
 rownames(tiss@meta.data) <- tiss@meta.data$cell
