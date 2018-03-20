@@ -1,6 +1,7 @@
-TISSUE: Large_Intestine
-METHOD: facs
-RES: 0.7
-NPCS: 12
+---
 GENES: "'Lgr5', 'Krt20', 'Slc26a3', 'Atoh1', 'Spdef', 'Dclk1', 'Chga', 'Chgb', 'Mki67'"
 GROUPBY: subtissue
+METHOD: facs
+NPCS: 12
+RES: 0.7
+TISSUE: Large_Intestine

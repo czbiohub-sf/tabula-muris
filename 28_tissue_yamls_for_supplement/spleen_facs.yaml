@@ -1,6 +1,7 @@
-TISSUE: Spleen
-METHOD: facs
-RES: 0.5
-NPCS: 7
+---
 GENES: "'Cd4', 'Cd79a', 'Ccr2', 'Cnn3', 'Cd8a', 'Il2rb', 'Cd5', 'Cd9', 'Vcam1'"
-GROUPBY: null
+GROUPBY: ~
+METHOD: facs
+NPCS: 7
+RES: 0.5
+TISSUE: Spleen

@@ -1,6 +1,7 @@
-TISSUE: Thymus
-METHOD: facs
-RES: 0.7
-NPCS: 13
+---
 GENES: "'Vim','Krt5','Krt8','Ptprc','Epcam','H2-Ab1','H2-Aa','Cd3e','Cd3d','Cd3g','Cd4','Cd8a','Cd8b1','Ets1','Cd44','Il2ra', 'Top2a','Cd69','Rag1','Rag2','Dntt'"
-GROUPBY: null
+GROUPBY: ~
+METHOD: facs
+NPCS: 13
+RES: 0.7
+TISSUE: Thymus
