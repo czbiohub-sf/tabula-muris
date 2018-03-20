@@ -1,11 +1,11 @@
 ---
 GENES:
-- Tmem119
-- P2ry12
-- Sall1
+- Cd163
 - H2-Aa
 - H2-Eb1
-- Cd163
+- P2ry12
+- Sall1
+- Tmem119
 GROUPBY: subtissue
 METHOD: facs
 NPCS: 8

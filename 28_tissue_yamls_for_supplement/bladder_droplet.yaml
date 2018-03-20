@@ -1,16 +1,16 @@
 ---
 GENES:
-- Epcam
-- Upk1b
-- Upk3a
-- Grhl3
-- Krt5
-- Krt14
-- Dcn
+- Cd14
 - Col1a1
 - Col8a1
+- Dcn
+- Epcam
+- Grhl3
+- Krt14
+- Krt5
 - Pecam1
-- Cd14
+- Upk1b
+- Upk3a
 GROUPBY: mouse.sex
 METHOD: droplet
 NPCS: 15
