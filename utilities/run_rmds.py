@@ -30,7 +30,7 @@ def main(folder):
 
     for rmd in rmds:
         # Skip the template because it won't work anyway due to syntax errors
-        if rmd == "Template.Rmd":
+        if rmd.endswith("Template.Rmd"):
             continue
         click.echo(f'Starting {rmd} ...')
         stdout = rmd + '.out'
