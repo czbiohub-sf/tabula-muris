@@ -16,7 +16,7 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
 
       # If this column is all NAs, then skip it
       if (all(is.na(tiss@meta.data[, group.by]))){
-        continue
+        next
       }
       p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T,
         do.return = T, group.by = group.by) + coord_flip()
