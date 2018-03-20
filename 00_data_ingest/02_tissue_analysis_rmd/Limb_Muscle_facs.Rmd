@@ -202,33 +202,6 @@ DotPlot(subtiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) 
 table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
 ```
 
-```{r}
-# sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
-# sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-# sub.cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
-# 
-# validate_cell_ontology(sub.cell_ontology_class)
-# sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-# 
-# subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-# validate_cell_ontology(sub.cell_ontology_class)
-# sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-# 
-# subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-# subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-# subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
-```
-
-## Add subcluster cell_ontology_class to main cell_ontology_class
-
-```{r}
-# sub.cells = rownames(subtiss@meta.data)
-# 
-# tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
-# tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
-# tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
-```
-
 # Final coloring
 
 Color by cell ontology class on the original TSNE.
