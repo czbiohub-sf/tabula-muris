@@ -5,7 +5,7 @@
 
 # Commonly used variables by all Rmd files
 standard.group.bys = c("cell_ontology_class", "free_annotation", 'cluster.ids')
-
+prefix = 'allcells'
 
 # Make all supplemental figures for a tiss object
 dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys){
