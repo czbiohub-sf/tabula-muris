@@ -1,6 +1,7 @@
-TISSUE: Skin
-METHOD: facs
-RES: 0.4
-NPCS: 5
+---
 GENES: "'Ptprc','Top2a','Krt14','Krt10','Itga6','Fgf18','Dkk3','Cd34'"
 GROUPBY: subtissue
+METHOD: facs
+NPCS: 5
+RES: 0.4
+TISSUE: Skin

@@ -1,6 +1,7 @@
-TISSUE: Thymus
-METHOD: droplet
-RES: 0.5
-NPCS: 10
+---
 GENES: "'Vim','Krt5','Krt8','Ptprc','Epcam','H2-Ab1','H2-Aa','Cd3e','Cd3d','Cd3g','Cd4','Cd8a','Cd8b1','Ets1','Cd44','Il2ra', 'Top2a','Cd86','Cd14','Cd19','Itgax','Dntt','Rag1','Rag2','Ptcra','Mki67','Cd69','Cd27'"
-GROUPBY: null
+GROUPBY: ~
+METHOD: droplet
+NPCS: 10
+RES: 0.5
+TISSUE: Thymus
