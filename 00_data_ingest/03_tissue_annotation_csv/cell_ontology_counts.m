@@ -40,6 +40,9 @@ for i = 1:length(d)
         [cellOntologies,ia,ic] = unique(workingTable.cell_ontology_class);
         [a,b]=hist(ic,unique(ic));
         
+        if length(tissueName)>1 & strcmp(tissueName{2},'Non-Myeloid')
+            tissueName{2} = 'NonMyeloid';
+        end
         assignin('base',strjoin([tissueName, methodName],'_'), [cellOntologies num2cell(a')]);
 %         end
     end
