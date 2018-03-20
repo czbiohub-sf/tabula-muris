@@ -36,7 +36,7 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
       filename = file.path(save_folder, paste(prefix, group.by,
         'tsneplot.pdf', sep='_'))
       p = TSNEPlot(object = tiss, do.return = TRUE, group.by = group.by,
-        no.axes=TRUE,)
+        no.axes=TRUE)
       ggsave(filename, width = 2, height = 2)
       dev.off()
 
