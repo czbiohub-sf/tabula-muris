@@ -17,4 +17,4 @@ clean:
 
 all: rmd clean
 	# Launches all notebooks as a background process. Only recommended to be used on high-powered computers!
-	../utilities/run_rmds.py
+	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 ../utilities/run_rmds.py
