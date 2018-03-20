@@ -1,6 +1,7 @@
-TISSUE: Kidney
-METHOD: facs
-RES: 2.5
-NPCS: 9
+---
 GENES: "'Tmem213','Pdzk1','Ugt1a2','Slc5a2','Slc6a19'"
-GROUPBY: null
+GROUPBY: ~
+METHOD: facs
+NPCS: 9
+RES: 2.5
+TISSUE: Kidney

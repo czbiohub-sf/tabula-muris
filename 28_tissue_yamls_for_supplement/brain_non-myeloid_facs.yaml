@@ -1,41 +1,16 @@
-TISSUE: Brain_Non-Myeloid
-METHOD: facs
-RES: 0.5
-NPCS: 8
+---
+ADDITIONAL_CODE: true
 GENES: "'Slc1a3','Aldh1l1','Aqp4','A2m','Nbl1','Gdf10','Naga','Tnfaip2','St6galnac5','Nsdhl'"
 GROUPBY: subtissue
-
-ADDITIONAL_CODE: true
-
+METHOD: facs
+NPCS: 8
+RES: 0.5
 SUBSET:
   ASTROCYTES:
-    - FILTER: 'cell_ontology_class == "*astrocyte*"'
-    - RES: 1
-    - NPCS: 10
-    - GENES: "'Slc1a3','Aldh1l1','Aqp4','A2m','Nbl1','Gdf10','Naga','Tnfaip2','St6galnac5','Nsdhl'"
-    - GROUPBY: subtissue
-
-    #endos use robust PCA - how to include that here?
-    #the first endo tsne should be just the cluster #s (e.g. 0-4)
-SUBSET:
-  BRAIN ENDOTHELIAL CELLS:
-    - FILTER: 'cell_ontology_class == "*endothelial*"'
-    #- RES:
-    #- NPCS:
-    - GENES: "'Vcam1','Icam1','Lcn2','Hif1a','Vwf','Csf1','Notch1','Hey1','Vegfc','Edn1','Tmem100','Flt4','Nr2f2','Ephb4','Car4','Slc16a1','Tfrc','Efnb2','Jag1','Bmx'"
-
-#this endo tsne should be labeled by vessel type
-SUBSET:
-  BRAIN ENDOTHELIAL CELLS:
-    - FILTER: 'cell_ontology_class == "*endothelial*"'
-    #- RES:
-    #- NPCS:
-    - GENES: "'Vcam1','Icam1','Lcn2','Hif1a','Vwf','Csf1','Notch1','Hey1','Vegfc','Edn1','Tmem100','Flt4','Nr2f2','Ephb4','Car4','Slc16a1','Tfrc','Efnb2','Jag1','Bmx'"
-
-  #this endo tsne should be labeled by purported function
-  SUBSET:
-    BRAIN ENDOTHELIAL CELLS:
-      - FILTER: 'cell_ontology_class == "*endothelial*"'
-      #- RES:
-      #- NPCS:
-      - GENES: "'Vcam1','Icam1','Lcn2','Hif1a','Vwf','Csf1','Notch1','Hey1','Vegfc','Edn1','Tmem100','Flt4','Nr2f2','Ephb4','Car4','Slc16a1','Tfrc','Efnb2','Jag1','Bmx'"
+    FILTER_COLUMN: cell_ontology_class
+    FILTER_VALUE: astrocyte
+    GENES: "'Slc1a3','Aldh1l1','Aqp4','A2m','Nbl1','Gdf10','Naga','Tnfaip2','St6galnac5','Nsdhl'"
+    GROUPBY: subtissue
+    NPCS: 10
+    RES: 1
+TISSUE: Brain_Non-Myeloid
