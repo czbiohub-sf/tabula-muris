@@ -26,7 +26,7 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
 
       filename = file.path(save_folder, paste(prefix, group.by,
         'violinplot.pdf', sep='_'))
-      p = ViolinPlot(tiss, genes_to_check, group.by = group.by, do.return=TRUE)
+      p = VlnPlot(tiss, genes_to_check, group.by = group.by, do.return=TRUE)
       ggsave(filename, width = 6, height = 3)
       dev.off()
     }
