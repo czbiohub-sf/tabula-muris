@@ -183,3 +183,19 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+### Emacs
+*~
+
+### Ignore RStudio specific files
+
+.Rproj.user
+
+### Ignore stderr/stdout files
+*.err
+*.out
+
+
+## Jetbrains/Pycharm
+.idea/

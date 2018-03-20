@@ -1,0 +1,8 @@
+FACS,Droplet10x,microwellSeq1,microwellSeq2,microwellSeq3,microwellSeq4,microwellSeq5,microwellSeq6,microwellSeq7,microwellSeq8,microwellSeq9,microwellSeq10,microwellSeq11
+B cell,B cell,B Cell,Ig_producing B cell,,,,,,,,,
+T cell,T cell,Dividing T cells,T Cell_Cd8b1 high,,,,,,,,,
+ciliated columnar cell of tracheobronchial tree,ciliated columnar cell of tracheobronchial tree,Ciliated cell,,,,,,,,,,
+lung endothelial cell,lung endothelial cell,Endothelial cell_Kdr high,Endothelial cell_Tmem100 high,Endothelial cells_Vwf high,,,,,,,,
+myeloid cell,myeloid cell,Conventional dendritic cell_Gngt2 high,Conventional dendritic cell_H2-M2 high,Conventional dendritic cell_Mgl2 high,Conventional dendritic cell_Tubb5 high,Dendritic cell_Naaa high,Dividing dendritic cells,Eosinophil granulocyte,Interstitial macrophage,Monocyte progenitor cell,Neutrophil granulocyte,Plasmacytoid dendritic cell
+natural killer cell,natural killer cell,NK Cell,,,,,,,,,,
+stromal cell,stromal cell,Stromal cell_Acta2 high,Stromal cell_Dcn high,Stromal cell_Inmt high,,,,,,,,

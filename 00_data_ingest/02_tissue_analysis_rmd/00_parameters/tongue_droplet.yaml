@@ -1,0 +1,12 @@
+TISSUE: Tongue
+METHOD: droplet
+RES: 0.4
+NPCS: 14
+GENES: "'Itgb4', 'Itga6', 'Itgb1', 'Cdh3', 'Top2a', 'Mt2', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10','Klf4', 'Krt84', 'Krt36', 'Hoxc13', 'Krt4', 'Krt13', 'Fabp5', 'Krt32',  'Krt78', 'Vim', 'Hhip', 'Ptch1', 'Gli1','Dsc1', 'Dcn', 'Runx2', 'Sox2', 'Pax9'"
+GROUPBY: null
+
+#To identify taste receptor cells
+ADDITIONAL_CODE:
+  - "VlnPlot(tiss, c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7'))"
+
+#master behind - should have instructions for supp. figures

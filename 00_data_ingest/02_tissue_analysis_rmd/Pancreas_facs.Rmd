@@ -93,7 +93,7 @@ We can also find all differentially expressed genes marking each cluster. This m
 
 Display the top markers you computed above.
 ```{r}
-#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 ```
 
 Using the markers above, we can confidentaly label many of the clusters:
@@ -207,12 +207,10 @@ table(subtiss@ident)
 Discover new PP marker genes (negative or positive)
 ```{r}
 gamma_markers = FindMarkers(subtiss, ident.1 = c(6,7), ident.2 = c(0,1,2,4), test.use = "roc")
-write.csv(gamma_markers, file="~/Desktop/gamma_markers_roc.csv")
 ```
 
 ```{r}
 gamma_markers = FindMarkers(subtiss, ident.1 = c(6,7), ident.2 = c(0,1,2,4), test.use = "wilcox")
-write.csv(gamma_markers, file="~/Desktop/gamma_markers_wilcox.csv")
 ```
 New markers from this test include
 1) negative marker genes, aka. those abscent in PP cells or highly abundant in alpha cells
@@ -314,7 +312,7 @@ table(tiss@meta.data[["cell_ontology_class"]])
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -322,7 +320,7 @@ save(tiss, file=filename)
 ```{r}
 # To reload a saved object
 # filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+#                      paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 # load(file=filename)
 ```
 
@@ -367,7 +365,5 @@ GenePlot(subtiss, 'Vsig1', 'Gfra3')
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```

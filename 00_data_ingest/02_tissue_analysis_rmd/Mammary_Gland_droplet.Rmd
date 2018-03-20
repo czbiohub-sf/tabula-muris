@@ -1,0 +1,190 @@
+---
+ title: "Mammary Droplet Notebook"
+ output: html_notebook
+---
+
+Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+
+```{r}
+tissue_of_interest = "Mammary_Gland"
+
+library(here)
+source(here("00_data_ingest", "02_tissue_analysis_rmd","boilerplate.R"))
+tiss <- load_tissue_droplet(tissue_of_interest)
+```
+
+A sanity check: genes per cell vs reads per cell.
+
+```{r}
+GenePlot(object = tiss, gene1 = "nUMI", gene2 = "nGene", use.raw=T)
+```
+
+Visualize top genes in principal components.
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+```
+
+Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
+
+```{r}
+PCElbowPlot(object = tiss)
+```
+
+Choose the number of principal components to use.
+```{r}
+# Set number of principal components.
+n.pcs = 15
+```
+
+The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale. Higher resolution will give more clusters, lower resolution will give fewer.
+
+For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
+
+```{r}
+# Set resolution
+res.used <- 1
+
+tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs,
+    resolution = res.used, print.output = 0, save.SNN = TRUE)
+```
+
+We use TSNE solely to visualize the data.
+```{r}
+# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+```
+
+```{r}
+TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
+```
+
+Check expression of genes useful for indicating cell type. For the islet cells, the mRNA for their specific secretory molecule is a strong signal.
+
+```{r}
+genes_to_check = c('Krt14', 'Krt17', 'Krt5', 'Krt8', 'Krt19', 'Krt18', 'Ceacam1', 'Itgb3', 'Itga6', 'Elf5', 'Prlr', 'Esr1', 'Pgr', 'Fn1', 'Vim', 'Cdh5', 'Cited1', 'Areg', 'Csn3', 'Cd55',
+'Cd3g', 'Cd4', 'Cd8a', 'Cd74', 'Cd79a', 'Cd19', 'Cd14', 'Csf1r', 'Pecam1', 'Esam', 'Ptprc')
+```
+
+```{r, echo=FALSE, fig.height=4, fig.width=12}
+FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 5, cols.use = c("grey", "red"))
+```
+
+Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
+The radius shows you the percent of cells in that cluster with at least one read sequenced from that gene. The color level indicates the average
+Z-score of gene expression for cells in that cluster, where the scaling is done over taken over all cells in the sample.
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(tiss, genes_to_check, plot.legend = T, col.max = 2.5, do.return = T) + coord_flip()
+```
+
+```{r, fig.height = 8, fig.width = 8}
+VlnPlot(tiss, "Krt14", use.raw= T, nCol = 2)
+```
+
+
+We can also find all differentially expressed genes marking each cluster. This may take some time.
+
+```{r}
+#clust.markers0 <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```
+
+Display the top markers you computed above.
+```{r}
+#tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
+```
+
+Using the markers above, we can confidentaly label many of the clusters.
+
+```{r}
+tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+free_annotation <-
+  c(
+    "T cell",
+    "B cell",
+    "T cell",
+    "stromal cell",
+    "basal cell",
+    "T cell",
+    "luminal progenitor cell",
+    "mature luminal cell",
+    "macrophage",
+    "stromal cell",
+    "endothelial cell",
+    "endothelial cell",
+    "stromal cell",
+    "stromal cell")
+
+cell_ontology_class <-
+  c(
+    "T cell",
+    "B cell",
+    "T cell",
+    "stromal cell",
+    "basal cell",
+    "T cell",
+    "luminal epithelial cell of mammary gland",
+    "luminal epithelial cell of mammary gland",
+    "macrophage",
+    "stromal cell",
+    "endothelial cell",
+    "endothelial cell",
+    "stromal cell",
+    "stromal cell")
+
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
+```
+
+
+
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "channel")
+```
+
+
+# Final coloring
+
+Color by cell ontology class on the original TSNE.
+
+```{r}
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class")
+```
+
+# Save the Robject for later
+
+```{r}
+filename = here('00_data_ingest', '04_tissue_robj_generated',
+		     paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
+print(filename)
+save(tiss, file=filename)
+```
+
+```{r}
+# To reload a saved object
+# filename = here('00_data_ingest', '04_tissue_robj_generated',
+#                      paste0("droplet_", tissue_of_interest, "_seurat_tiss.Robj"))
+# load(file=filename)
+```
+
+
+# Export the final metadata
+
+So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
+
+```{r}
+head(tiss@meta.data)
+```
+
+
+Write the cell ontology and free annotations to CSV.
+
+```{r}
+save_annotation_csv(tiss, tissue_of_interest, "droplet")
+
+```
