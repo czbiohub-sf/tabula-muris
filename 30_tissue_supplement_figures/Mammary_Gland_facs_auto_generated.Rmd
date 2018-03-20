@@ -24,7 +24,7 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = sort(c("Krt14", "Krt17", "Krt5", "Krt8", "Krt18", "Prlr", "Lgr5", "Esr1", "Elf5", "Esam", "Vim", "Fn1", "Cd14", "Cdh5"))
-dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = 'allcells', group.bys)
+dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
 
