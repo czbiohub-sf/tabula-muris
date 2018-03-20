@@ -208,27 +208,11 @@ table(FetchData(subtiss, c('mouse.id','ident')) %>% droplevels())
 sub.free_annotation <- c("T cell", "T cell", "natural killer cell", "T cell", "NA","T cell")
 sub.cell_ontology_class <-c("T cell", "T cell", "natural killer cell", "T cell", NA,"T cell")
 
- validate_cell_ontology(sub.cell_ontology_class)
- sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
- subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
- validate_cell_ontology(sub.cell_ontology_class)
- sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
- subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
- subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
- subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
+subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtiss)
 ```
 
-## Add subcluster cell_ontology_class to main cell_ontology_class
 
-```{r}
- sub.cells = rownames(subtiss@meta.data)
-
- tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
- tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
- tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
-```
 
 # Final coloring
 
