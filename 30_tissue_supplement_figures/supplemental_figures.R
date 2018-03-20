@@ -1,7 +1,16 @@
-# Title     : TODO
-# Objective : TODO
+# Title     : Generate TSNE, dotplots, and violinplots for tissue supplement
+# Objective : make lots of plots
 # Created by: olgabot
 # Created on: 3/19/18
+
+# Load packages
+library(useful)
+library(Seurat)
+library(dplyr)
+library(Matrix)
+library(ontologyIndex)
+library(tidyverse)
+library(cowplot)
 
 # Commonly used variables by all Rmd files
 standard.group.bys = c("cell_ontology_class", "free_annotation", 'cluster.ids')
@@ -26,7 +35,8 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
 
       filename = file.path(save_folder, paste(prefix, group.by,
         'tsneplot.pdf', sep='_'))
-      p = TSNEPlot(object = tiss, do.return = TRUE, group.by = group.by)
+      p = TSNEPlot(object = tiss, do.return = TRUE, group.by = group.by,
+        no.axes=TRUE,)
       ggsave(filename, width = 2, height = 2)
       dev.off()
 
