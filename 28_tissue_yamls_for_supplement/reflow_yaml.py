@@ -13,10 +13,10 @@ def cli(yamls):
         with open(filename) as f:
             data = yaml.load(f)
 
-        data['GENES'] = listify(data["GENES"])
+        data['GENES'] = sorted(list(set(data["GENES"])))
         if 'SUBSET' in data:
             for name, subset in data['SUBSET'].items():
-                subset['GENES'] = listify(subset['GENES'])
+                subset['GENES'] = sorted(list(set(subset['GENES'])))
 
         reflowed_data = yaml.dump(data,
                                   # Add the --- at the beginning of the file

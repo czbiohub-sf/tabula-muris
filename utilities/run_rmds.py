@@ -6,7 +6,6 @@ import os
 import shlex
 import subprocess
 import locale
-locale.setlocale(locale.LC_ALL, 'en_US.utf8')
 
 import click
 
