@@ -4,7 +4,6 @@
 # Created on: 3/19/18
 
 # Commonly used variables by all Rmd files
-save_folder = here('30_tissue_supplement_figures', '{TISSUE}', '{METHOD}')
 standard.group.bys = c("cell_ontology_class", "free_annotation")
 
 
