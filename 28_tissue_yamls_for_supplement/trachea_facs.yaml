@@ -1,16 +1,16 @@
 ---
 GENES:
-- Epcam
 - Cdh1
-- Krt5
-- Scgb1a1
-- Pdgfrb
-- Pdgfra
 - Col1a1
 - Col8a1
+- Epcam
 - Foxj1
+- Krt5
+- Pdgfra
+- Pdgfrb
 - Pecam1
 - Ptprc
+- Scgb1a1
 GROUPBY: null
 METHOD: facs
 NPCS: 16

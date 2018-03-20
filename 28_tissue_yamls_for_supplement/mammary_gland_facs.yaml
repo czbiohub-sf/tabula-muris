@@ -1,19 +1,19 @@
 ---
 GENES:
-- Krt14
-- Krt17
-- Krt5
-- Krt8
-- Krt18
-- Prlr
-- Lgr5
-- Esr1
-- Elf5
-- Esam
-- Vim
-- Fn1
 - Cd14
 - Cdh5
+- Elf5
+- Esam
+- Esr1
+- Fn1
+- Krt14
+- Krt17
+- Krt18
+- Krt5
+- Krt8
+- Lgr5
+- Prlr
+- Vim
 GROUPBY: null
 METHOD: facs
 NPCS: 10
@@ -23,17 +23,17 @@ SUBSET:
     FILTER_COLUMN: cell_ontology_class
     FILTER_VALUE: basal
     GENES:
-    - Vcam1
-    - Procr
+    - Areg
+    - Cited1
+    - Csn3
+    - Fos
     - Id1
     - Id2
-    - Fos
     - Igfbp2
     - Igfpb4
     - Prlr
-    - Csn3
-    - Cited1
-    - Areg
+    - Procr
+    - Vcam1
     NPCS: 10
     RES: 0.5
 TISSUE: Mammary_Gland

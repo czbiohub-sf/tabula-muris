@@ -1,21 +1,21 @@
 ---
 GENES:
-- Myf5
-- Calcr
-- Pax7
-- Myod1
-- Pecam1
+- Acta2
 - Atxn1
-- Ptprc
+- Calcr
+- Cd19
 - Cd3g
 - Cd4
 - Cd8a
-- Cd19
-- Itgam
-- Vcam1
 - Chodl
-- Acta2
+- Itgam
+- Myf5
+- Myod1
+- Pax7
 - Pdgfra
+- Pecam1
+- Ptprc
+- Vcam1
 GROUPBY: null
 METHOD: facs
 NPCS: 10

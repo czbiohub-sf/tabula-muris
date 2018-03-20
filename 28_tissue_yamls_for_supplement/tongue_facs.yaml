@@ -1,19 +1,19 @@
 ---
 ADDITIONAL_CODE: true
 GENES:
-- Top2a
 - Cdc20
-- Mki67
-- Krt15
-- Krt5
-- Krt14
-- Sbsn
-- Krt10
-- Krt4
-- Krt13
-- Krt36
-- Krt84
 - Hoxc13
+- Krt10
+- Krt13
+- Krt14
+- Krt15
+- Krt36
+- Krt4
+- Krt5
+- Krt84
+- Mki67
+- Sbsn
+- Top2a
 GROUPBY: null
 METHOD: facs
 NPCS: 10

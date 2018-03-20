@@ -1,9 +1,9 @@
 ---
 GENES:
-- Nkg7
 - Ccl5
 - Cd74
 - Ly6c1
+- Nkg7
 GROUPBY: null
 METHOD: droplet
 NPCS: 15

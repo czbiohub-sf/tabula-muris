@@ -1,20 +1,20 @@
 ---
 GENES:
+- Acan
+- Acta2
+- Atxn1
+- Cd19
+- Cd3g
+- Cd4
+- Chad
+- Chodl
+- Itgam
 - Myf5
 - Myod1
 - Pdgfra
-- Atxn1
 - Pecam1
 - Ptprc
-- Itgam
-- Cd3g
-- Cd4
-- Cd19
-- Chad
-- Chodl
 - Sox9
-- Acan
-- Acta2
 GROUPBY: null
 METHOD: droplet
 NPCS: 15
