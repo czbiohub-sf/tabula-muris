@@ -140,15 +140,7 @@ cell_ontology_class <-c(
    "leukocyte", 
    "pancreatic stellate cell")
 
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
-
-tiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = free_annotation))
-validate_cell_ontology(cell_ontology_class)
-cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
-
-tiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class))
-tiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id))
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
 
 ## Checking for batch effects
@@ -269,16 +261,8 @@ sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7)
 sub.free_annotation <- c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
 sub.cell_ontology_class <-c("pancreatic A cell", "pancreatic A cell", "pancreatic A cell", "pancreatic D cell", "pancreatic A cell", "pancreatic D cell", "pancreatic PP cell", "pancreatic PP cell")
 
-validate_cell_ontology(sub.cell_ontology_class)
-sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-validate_cell_ontology(sub.cell_ontology_class)
-sub.cell_ontology_id = convert_to_cell_ontology_id(sub.cell_ontology_class)
-
-subtiss@meta.data['free_annotation'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.free_annotation))
-subtiss@meta.data['cell_ontology_class'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_class))
-subtiss@meta.data['cell_ontology_id'] <- as.character(plyr::mapvalues(x = subtiss@ident, from = sub.cluster.ids, to = sub.cell_ontology_id))
+subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtiss)
 ```
 
 ## Add subcluster cell_ontology_class to main cell_ontology_class
