@@ -1,7 +1,20 @@
 ---
 ADDITIONAL_CODE: true
-GENES: "'Top2a', 'Cdc20', 'Mki67', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10', 'Krt4', 'Krt13', 'Krt36', 'Krt84', 'Hoxc13'"
-GROUPBY: ~
+GENES:
+- Top2a
+- Cdc20
+- Mki67
+- Krt15
+- Krt5
+- Krt14
+- Sbsn
+- Krt10
+- Krt4
+- Krt13
+- Krt36
+- Krt84
+- Hoxc13
+GROUPBY: null
 METHOD: facs
 NPCS: 10
 RES: 0.7

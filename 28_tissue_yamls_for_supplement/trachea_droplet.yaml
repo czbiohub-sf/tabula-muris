@@ -1,15 +1,32 @@
 ---
-GENES: "'Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1a1', 'Col8a1', 'Foxj1', 'Pecam1', 'Ptprc', 'Cck', 'Syp'"
-GROUPBY: ~
+GENES:
+- Epcam
+- Cdh1
+- Krt5
+- Scgb1a1
+- Pdgfrb
+- Pdgfra
+- Col1a1
+- Col8a1
+- Foxj1
+- Pecam1
+- Ptprc
+- Cck
+- Syp
+GROUPBY: null
 METHOD: droplet
 NPCS: 3
 RES: 0.1
 SUBSET:
   EPITHELIAL:
     FILTER_COLUMN: cell_ontology_class
-    FILTER_VALUE: "epithelial cell"
-    GENES: "'Krt5', 'Krt14', 'Scgb1a1', 'Foxj1'"
-    GROUPBY: ~
+    FILTER_VALUE: epithelial cell
+    GENES:
+    - Krt5
+    - Krt14
+    - Scgb1a1
+    - Foxj1
+    GROUPBY: null
     NPCS: 2
     RES: 0.2
 TISSUE: Trachea

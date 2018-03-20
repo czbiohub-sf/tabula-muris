@@ -1,6 +1,19 @@
 ---
-GENES: "'Egf','Slc12a1','Ptprc','Umod','Pecam1','Epcam','Pvalb','Slc12a3','Slc34a1','Slc22a12','Emr1','Lyz2','Itgam'"
-GROUPBY: ~
+GENES:
+- Egf
+- Slc12a1
+- Ptprc
+- Umod
+- Pecam1
+- Epcam
+- Pvalb
+- Slc12a3
+- Slc34a1
+- Slc22a12
+- Emr1
+- Lyz2
+- Itgam
+GROUPBY: null
 METHOD: droplet
 NPCS: 10
 RES: 0.5

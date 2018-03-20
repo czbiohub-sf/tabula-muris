@@ -1,6 +1,10 @@
 ---
-GENES: "'Nkg7', 'Ccl5', 'Cd74', 'Ly6c1'"
-GROUPBY: ~
+GENES:
+- Nkg7
+- Ccl5
+- Cd74
+- Ly6c1
+GROUPBY: null
 METHOD: droplet
 NPCS: 15
 RES: 0.5
