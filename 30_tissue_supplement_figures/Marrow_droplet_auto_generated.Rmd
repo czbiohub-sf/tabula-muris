@@ -22,7 +22,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c(['Itgam', 'Il7r', 'Kit', 'Atxn1', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Mki67', 'Tmem176b', 'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr3', 'Cd14', 'Fcgr4', 'Mpl', 'Il3ra', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Cox6a2', 'Cd40', 'Spn', 'Ly6d', 'Irf8', 'Cd27', 'Fcer2a', 'Cd2', 'Cd7', 'Thy1', 'Cd19', 'Ms4a1', 'Cr2', 'Cd22', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Vpreb1', 'Dntt', 'Pax5', 'Rag1', 'Rag2', 'Cxcr5', 'Ccr6', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ptprc', 'Cd48', 'Tfrc', 'Eng', 'Itga2', 'Cxcr4', 'Cd44', 'Bpgm', 'Beta-s', 'Hbb-b2', 'Cpa3', 'Fcer1a', 'Mcpt8', 'Ccl3']))
+genes_to_check = sort(c("Itgam", "Il7r", "Kit", "Atxn1", "Flt3", "Cd34", "Slamf1", "Gpr56", "Stmn1", "Mki67", "Tmem176b", "Itgal", "Itgax", "Emr1", "Cd68", "Fcgr3", "Cd14", "Fcgr4", "Mpl", "Il3ra", "Mpeg1", "Itgb2", "Ahnak", "Pld4", "Cd3e", "Cd4", "Cd8a", "Cox6a2", "Cd40", "Spn", "Ly6d", "Irf8", "Cd27", "Fcer2a", "Cd2", "Cd7", "Thy1", "Cd19", "Ms4a1", "Cr2", "Cd22", "Cd74", "Chchd10", "Cnp", "Cd79a", "Cd79b", "Vpreb3", "Vpreb1", "Dntt", "Pax5", "Rag1", "Rag2", "Cxcr5", "Ccr6", "Klrb1a", "S100a11", "Ltf", "Ngp", "Fcer1g", "Pglyrp1", "Lcn2", "Camp", "Hp", "Ptprc", "Cd48", "Tfrc", "Eng", "Itga2", "Cxcr4", "Cd44", "Bpgm", "Beta-s", "Hbb-b2", "Cpa3", "Fcer1a", "Mcpt8", "Ccl3"))
 dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = 'allcells', group.bys)
 ```
 
