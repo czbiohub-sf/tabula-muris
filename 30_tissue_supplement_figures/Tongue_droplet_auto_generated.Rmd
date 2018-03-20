@@ -22,7 +22,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c(['Top2a', 'Cdc20', 'Mki67', 'Krt15', 'Krt5', 'Krt14', 'Sbsn', 'Krt10', 'Krt4', 'Krt13', 'Krt36', 'Krt84', 'Hoxc13']))
+genes_to_check = sort(c("Top2a", "Cdc20", "Mki67", "Krt15", "Krt5", "Krt14", "Sbsn", "Krt10", "Krt4", "Krt13", "Krt36", "Krt84", "Hoxc13"))
 dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = 'allcells', group.bys)
 ```
 
@@ -35,7 +35,14 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 
 ## To identify taste receptor cells
 
-
-```{r}
+#```{r}
 VlnPlot(tiss, c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7'))
 ```
+
+```{r}
+genes_to_check = c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7')
+filename = file.path(save_folder, paste(prefix, group.by, 'violinplot.pdf', sep='_'))
+  p = ViolinPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
+  ggsave(filename, width = 6, height = 3)
+  dev.off()
+  ```

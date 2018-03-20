@@ -1,0 +1,67 @@
+---
+title: "Pancreas facs Supplementary Notebook"
+output: html_notebook
+---
+
+```{r}
+library(useful)
+library(Seurat)
+library(dplyr)
+library(Matrix)
+library(ontologyIndex)
+library(tidyverse)
+library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
+
+
+tissue_of_interest = 'Pancreas'
+filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = sort(c("Chga", "Isl1", "Gcg", "Mafb", "Arx", "Ins1", "Ins2", "Mafa", "Nkx6-1", "Slc2a2", "Sst", "Hhex", "Pdx1", "Ppy", "Ghrl", "Krt19", "Hnf1b", "Amy2b", "Cpa1", "Ptf1a", "Pdgfra", "Pdgfrb", "Pecam1", "Cdh5", "Kdr", "Ptprc", "Neurog3"))
+dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = 'allcells', group.bys)
+```
+
+
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+```
+
+Figure 1.
+```{r}
+RidgePlot(tiss, c('Sst'), group.by = "cell_ontology_class")
+```
+
+Figure 2.
+```{r}
+#Subset delta cells for analysis
+anno = 'pancreatic D cell'
+cells.to.use = tiss@cell.names[which(tiss@meta.data$cell_ontology_class == anno)]
+delta <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
+
+#2a - using scaled data.
+VlnPlot(tiss,'Neurog3', group.by = "cell_ontology_class")
+
+delta.1=FetchData(delta, c("ident", "mouse.id","cell_ontology_class", "mouse.sex", "plate.barcode", "subtissue", "percent.ercc", "percent.ribo","nGene", "nReads","Sst","Pdx1","Hhex","Neurog3", "Ins2", "Gcg", "Ppy","Actb","Gapdh"))
+delta.1$mouse.id <- as.factor(delta.1$mouse.id)
+ggplot(delta.1, aes(Hhex, Neurog3, color = Neurog3 > 0))+ geom_point() + geom_rug(sides="bl")
+ggplot(delta.1, aes(x=Hhex, y=Neurog3, color = mouse.id)) + geom_point() + geom_rug(sides = "bl")
+
+#2b - using raw data.
+VlnPlot(tiss,'Neurog3', group.by = "cell_ontology_class", use.raw = TRUE)
+delta.2=FetchData(delta, c("ident", "mouse.id","cell_ontology_class", "mouse.sex", "plate.barcode", "subtissue", "percent.ercc", "percent.ribo", "nGene", "nReads", "Sst", "Pdx1", "Hhex", "Neurog3", "Ins2", "Gcg", "Ppy", "Actb", "Gapdh"), use.raw = TRUE)
+delta.2$mouse.id <- as.factor(delta.2$mouse.id)
+ggplot(delta.2, aes(Hhex, Neurog3, color = Neurog3 > 0))+ geom_point() + geom_rug(sides="bl")
+ggplot(delta.2, aes(x=Hhex, y=Neurog3, color = mouse.id)) + geom_point() + geom_rug(sides = "bl")
+```
+
+Figure 3.
+```{r}
+FeaturePlot(tiss, c('Prss53', 'Slc2a2', 'Nkx6-1','Ins2'), cols.use = c("grey","blue"))
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "cell_ontology_class")
+```
