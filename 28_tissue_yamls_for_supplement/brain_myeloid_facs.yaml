@@ -1,6 +1,7 @@
-TISSUE: Brain_myeloid
-METHOD: facs
-RES: 0.5
-NPCS: 8
+---
 GENES: "'Tmem119','P2ry12','Sall1','H2-Aa', 'H2-Eb1', 'Cd163'"
 GROUPBY: subtissue
+METHOD: facs
+NPCS: 8
+RES: 0.5
+TISSUE: Brain_myeloid
