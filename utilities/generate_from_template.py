@@ -26,7 +26,7 @@ RES = 'RES'
 NPCS = "NPCS"
 GENES = "GENES"
 GROUPBY = "GROUPBY"
-
+CODE_FOLDER = '29_tissue-specific_supplement_code'
 
 
 def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
@@ -79,7 +79,7 @@ def main(parameters_yaml, template_file='Template.Rmd',
                 if value:
                     basename = parameters[TISSUE] + "_" + parameters[METHOD] + '.Rmd'
                     filename = os.path.join(
-                        '..', '29_tissue-specific_supplement_code', basename)
+                        '..', CODE_FOLDER, basename)
                     with open(filename) as g:
                         template += g.read()
 
