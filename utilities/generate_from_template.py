@@ -31,10 +31,11 @@ CODE_FOLDER = '29_tissue-specific_supplement_code'
 
 def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
     filter = f'rownames(tiss@meta.data)[grep("{filter_value}",tiss@meta.data${filter_column})]'
+    genes_str = ', '.join(map(lambda x: '"x"', genes))
     code = f"""{name}.cells.use = {filter}
 {name}.n.pcs = {npcs}
 {name}.res = {res}
-{name}.genes_to_check = c({genes})
+{name}.genes_to_check = c({genes_str})
 {name}.tiss = SubsetData(tiss, cells.use={name}.cells.use, )
 {name}.tiss <- {name}.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
