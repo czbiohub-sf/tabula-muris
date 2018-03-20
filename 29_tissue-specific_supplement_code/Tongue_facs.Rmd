@@ -1,6 +1,14 @@
 
 ## To identify taste receptor cells
 
-```{r}
+#```{r}
 VlnPlot(tiss, c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7'))
 ```
+
+```{r}
+genes_to_check = c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7')
+filename = file.path(save_folder, paste(prefix, group.by, 'violinplot.pdf', sep='_'))
+  p = ViolinPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
+  ggsave(filename, width = 6, height = 3)
+  dev.off()
+  ```
