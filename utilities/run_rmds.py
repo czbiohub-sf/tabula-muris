@@ -38,7 +38,6 @@ def main(folder):
 
         command = shlex.split(f"Rscript -e \"rmarkdown::render(\'{rmd}\', "
                               "clean=TRUE)\"  > {stdout} 2>{stderr}")
-        print(command)
         with open(stdout, 'w') as file_out:
             with open(stderr, 'w') as file_err:
                 subprocess.Popen(command, stdout=file_out, stderr=file_err)
