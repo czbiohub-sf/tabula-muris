@@ -31,7 +31,7 @@ CODE_FOLDER = '29_tissue-specific_supplement_code'
 
 def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
     filter = f'rownames(tiss@meta.data)[grep("{filter_value}",tiss@meta.data${filter_column})]'
-    genes_str = ', '.join(map(lambda x: '"x"', genes))
+    genes_str = ', '.join(map(lambda x: f'"{x}"', genes))
     code = f"""{name}.cells.use = {filter}
 {name}.n.pcs = {npcs}
 {name}.res = {res}
