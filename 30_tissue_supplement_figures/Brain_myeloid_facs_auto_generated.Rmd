@@ -1,5 +1,5 @@
 ---
-title: "Brain_myeloid facs Supplementary Notebook"
+title: "Brain_Myeloid facs Supplementary Notebook"
 output: html_notebook
 ---
 
@@ -12,9 +12,10 @@ library(ontologyIndex)
 library(tidyverse)
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
-save_folder = here('30_tissue_supplement_figures', 'Brain_myeloid', 'facs')
+save_folder = here('30_tissue_supplement_figures', 'Brain_Myeloid', 'facs')
+dir.create(save_folder)
 
-tissue_of_interest = 'Brain_myeloid'
+tissue_of_interest = 'Brain_Myeloid'
 filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
 load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 
