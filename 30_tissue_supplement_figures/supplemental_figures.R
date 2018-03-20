@@ -28,6 +28,7 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
       if (all(is.na(tiss@meta.data[, group.by]))){
         next
       }
+      quartz()
       p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T,
         do.return = T, group.by = group.by) + coord_flip()
       ggsave(filename, width = 3, height = 6)
@@ -35,13 +36,15 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
 
       filename = file.path(save_folder, paste(prefix, group.by,
         'tsneplot.pdf', sep='_'))
+      quartz()
       p = TSNEPlot(object = tiss, do.return = TRUE, group.by = group.by,
-        no.axes=TRUE)
+        no.axes=TRUE, pt.size=1)
       ggsave(filename, width = 2, height = 2)
       dev.off()
 
       filename = file.path(save_folder, paste(prefix, group.by,
         'violinplot.pdf', sep='_'))
+      quartz()
       p = VlnPlot(tiss, genes_to_check, group.by = group.by, do.return=TRUE)
       ggsave(filename, width = 6, height = 3)
       dev.off()
