@@ -11,50 +11,20 @@ library(Matrix)
 library(ontologyIndex)
 library(tidyverse)
 library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
 
-save_folder = here('30_tissue_supplement_figures', 'Brain_Non-Myeloid', 'facs')
 
 tissue_of_interest = 'Brain_Non-Myeloid'
 filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
 load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 
-annotation = read_csv(here('00_data_ingest', '03_tissue_annotation_csv', 'Brain_Non-Myeloid_facs_annotation.csv'))
-
-for (column in colnames(annotation)){
-  tiss@meta.data[annotation$X1, column] = annotation[column]
-}
-
-standard.group.bys = c("cell_ontology_class", "free_annotation")
 additional.group.bys = sort(c(subtissue))
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c({GENES}))
+genes_to_check = sort(c(['Slc1a3', 'Aldh1l1', 'Aqp4', 'A2m', 'Nbl1', 'Gdf10', 'Naga', 'Tnfaip2', 'St6galnac5', 'Nsdhl']))
+dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = 'allcells', group.bys)
 ```
-
-```{r}
-
-prefix = 'allcells'
-
-for (group.by in group.bys ){
-  
-  filename = file.path(save_folder, paste(prefix, group.by, 'dotplot.pdf', sep='_'))
-  p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T, group.by = column) + coord_flip()
-  ggsave(filename, width = 3, height = 6)
-  dev.off()
-  
-  filename = file.path(save_folder, paste(prefix, group.by, 'tsneplot.pdf', sep='_'))
-  p = TSNEPlot(object = tiss, do.return = TRUE, group.by = column)
-  ggsave(filename, width = 2, height = 2)
-  dev.off()
-  
-  filename = file.path(save_folder, paste(prefix, group.by, 'violinplot.pdf', sep='_'))
-  p = ViolinPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
-  ggsave(filename, width = 6, height = 3)
-  dev.off()
-}
-```
-
 
 
 ```{r}
@@ -317,5 +287,25 @@ Make Dot plot based top defining genes for each annotated endothelial cluster
 features.plot <- c("Vwf","Flt4","Nr2f2","Ephb4","Car4","Slc16a1","Tfrc","Efnb2","Jag1","Bmx")
 DotPlot(object = ECs, genes.plot = features.plot, plot.legend = TRUE,group.by = "Annotation", x.lab.rot = T)
 
+
+```
+## Subset: ASTROCYTES
+
+```{r}
+ASTROCYTES.cells.use = rownames(tiss@meta.data)[grep("astrocyte",tiss@meta.data$cell_ontology_class)]
+ASTROCYTES.n.pcs = 10
+ASTROCYTES.res = 1
+ASTROCYTES.genes_to_check = c("Slc1a3", "Aldh1l1", "Aqp4", "A2m", "Nbl1", "Gdf10", "Naga", "Tnfaip2", "St6galnac5", "Nsdhl")
+ASTROCYTES.tiss = SubsetData(tiss, cells.use=ASTROCYTES.cells.use, )
+ASTROCYTES.tiss <- ASTROCYTES.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+ASTROCYTES.tiss <- ASTROCYTES.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+
+# Append this subset's groupby to the list
+group.bys = c(group.bys, "{groupby}")dot_tsne_violin({name}.tiss, {name}.genes_to_check,
+    save_folder, prefix = {name}, group.bys)
 
 ```

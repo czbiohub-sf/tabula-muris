@@ -11,50 +11,20 @@ library(Matrix)
 library(ontologyIndex)
 library(tidyverse)
 library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
 
-save_folder = here('30_tissue_supplement_figures', 'Marrow', 'droplet')
 
 tissue_of_interest = 'Marrow'
 filename = paste0('droplet_',tissue_of_interest, '_seurat_tiss.Robj')
 load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 
-annotation = read_csv(here('00_data_ingest', '03_tissue_annotation_csv', 'Marrow_droplet_annotation.csv'))
-
-for (column in colnames(annotation)){
-  tiss@meta.data[annotation$X1, column] = annotation[column]
-}
-
-standard.group.bys = c("cell_ontology_class", "free_annotation")
 additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Mki67', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr3', 'Cd14', 'Fcgr4', 'Mpl', 'Il3ra', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Cox6a2', 'Cd40', 'Spn', 'Ly6d', 'Irf8', 'Cd27', 'Fcer2a', 'Cd2', 'Cd7', 'Thy1', 'Cd19', 'Ms4a1', 'Cr2', 'Cd22', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Vpreb1', 'Dntt', 'Pax5', 'Rag1', 'Rag2', 'Cxcr5', 'Ccr6', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ptprc', 'Cd48', 'Tfrc', 'Eng', 'Itga2', 'Cxcr4', 'Cd44', 'Bpgm', 'Beta-s', 'Hbb-b2', 'Cpa3', 'Fcer1a', 'Mcpt8', 'Ccl3'))
+genes_to_check = sort(c(['Itgam', 'Il7r', 'Kit', 'Atxn1', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Mki67', 'Tmem176b', 'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr3', 'Cd14', 'Fcgr4', 'Mpl', 'Il3ra', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Cox6a2', 'Cd40', 'Spn', 'Ly6d', 'Irf8', 'Cd27', 'Fcer2a', 'Cd2', 'Cd7', 'Thy1', 'Cd19', 'Ms4a1', 'Cr2', 'Cd22', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Vpreb1', 'Dntt', 'Pax5', 'Rag1', 'Rag2', 'Cxcr5', 'Ccr6', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ptprc', 'Cd48', 'Tfrc', 'Eng', 'Itga2', 'Cxcr4', 'Cd44', 'Bpgm', 'Beta-s', 'Hbb-b2', 'Cpa3', 'Fcer1a', 'Mcpt8', 'Ccl3']))
+dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = 'allcells', group.bys)
 ```
-
-```{r}
-
-prefix = 'allcells'
-
-for (group.by in group.bys ){
-  
-  filename = file.path(save_folder, paste(prefix, group.by, 'dotplot.pdf', sep='_'))
-  p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T, group.by = column) + coord_flip()
-  ggsave(filename, width = 3, height = 6)
-  dev.off()
-  
-  filename = file.path(save_folder, paste(prefix, group.by, 'tsneplot.pdf', sep='_'))
-  p = TSNEPlot(object = tiss, do.return = TRUE, group.by = column)
-  ggsave(filename, width = 2, height = 2)
-  dev.off()
-  
-  filename = file.path(save_folder, paste(prefix, group.by, 'violinplot.pdf', sep='_'))
-  p = ViolinPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
-  ggsave(filename, width = 6, height = 3)
-  dev.off()
-}
-```
-
 
 
 ```{r}
