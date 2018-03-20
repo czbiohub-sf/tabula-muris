@@ -3,6 +3,11 @@
 ## To identify excititory, inhibitory, and NPCs
 ```
 VlnPlot(tiss, c('Slc17a7','Neurod6','Mab21l1','Gad1','Reln','Calb1','Dcx','Dlx2','Ascl1','Hes5'))
+genes_to_check = c('Slc17a7','Neurod6','Mab21l1','Gad1','Reln','Calb1','Dcx','Dlx2','Ascl1','Hes5')
+filename = file.path(save_folder, paste(prefix, group.by, 'violinplot.pdf', sep='_'))
+  p = ViolinPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
+  ggsave(filename, width = 6, height = 3)
+  dev.off()
 ```
 
 # Subsetting of brain endothelial cells and analysis using robust PCA followed by Seurat
@@ -186,13 +191,18 @@ ECs <- FindClusters(object = ECs, reduction.type = "pca", dims.use = 1:15,
     resolution = 1, print.output = 0, save.SNN = TRUE, force.recalc = T)
 
 ECs <- RunTSNE(object = ECs, dims.use = 1:8, seed.use = 10, check_duplicates = F, perplexity=40)
-
+  
 # unsupervised clustering
+filename = file.path(save_folder, paste(prefix, group.by, 'tsneplot.png', sep='_'))
 TSNEPlot(object = ECs, do.label = T, label.size = 6, pt.size = 3.1, colors.use = brewer.pal(11,'Paired'), do.return=TRUE) + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
+ggsave(filename, dpi=300)
+dev.off()
 
 #annotated by brain subregion
+filename = file.path(save_folder, paste(prefix, group.by, 'tsneplot.png', sep='_'))
 TSNEPlot(object = ECs, do.label = T, label.size = 6, pt.size = 3.1, colors.use = brewer.pal(9,'Set1'), do.return=TRUE, group.by="subtissue") + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
-
+ggsave(filename, dpi=300)
+dev.off()
 
 PCHeatmap(object = ECs, pc.use = 1:12, cells.use = 300, do.balanced = TRUE, label.columns = FALSE, num.genes = 20)
 PCAPlot(object = ECs, dim.1 = 1, dim.2 = 2, pt.size = 2)
@@ -240,9 +250,10 @@ new.cluster.ids <- c("Capillary/BBB-maintenance", "Capillary/BBB-maintenance","A
 ECs@ident <- plyr::mapvalues(x = ECs@ident, from = current.cluster.ids, to = new.cluster.ids)
 ECs<-StashIdent(object=ECs, save.name="Annotation") ## for more clusters
 
-
+filename = file.path(save_folder, paste(prefix, group.by, 'tsneplot.png', sep='_'))
 TSNEPlot(object = ECs, do.label = T, pt.size = 3, colors.use = brewer.pal(8,'Set2'), do.return=TRUE) + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
-
+ggsave(filename, dpi=300)
+dev.off()
 
 ```
 
@@ -251,7 +262,10 @@ Make Dot plot based top defining genes for each annotated endothelial cluster
 ```{r}
 
 features.plot <- c("Vwf","Flt4","Nr2f2","Ephb4","Car4","Slc16a1","Tfrc","Efnb2","Jag1","Bmx")
-DotPlot(object = ECs, genes.plot = features.plot, plot.legend = TRUE,group.by = "Annotation", x.lab.rot = T)
 
+filename = file.path(save_folder, paste(prefix, group.by, 'dotplot.png', sep='_'))
+DotPlot(object = ECs, genes.plot = features.plot, plot.legend = TRUE,group.by = "Annotation", x.lab.rot = T)
+ggsave(filename, dpi=300)
+dev.off()
 
 ```
