@@ -1,17 +1,17 @@
 ---
 GENES:
-- Epcam
+- Cck
 - Cdh1
-- Krt5
-- Scgb1a1
-- Pdgfrb
-- Pdgfra
 - Col1a1
 - Col8a1
+- Epcam
 - Foxj1
+- Krt5
+- Pdgfra
+- Pdgfrb
 - Pecam1
 - Ptprc
-- Cck
+- Scgb1a1
 - Syp
 GROUPBY: null
 METHOD: droplet
@@ -22,10 +22,10 @@ SUBSET:
     FILTER_COLUMN: cell_ontology_class
     FILTER_VALUE: epithelial cell
     GENES:
-    - Krt5
-    - Krt14
-    - Scgb1a1
     - Foxj1
+    - Krt14
+    - Krt5
+    - Scgb1a1
     GROUPBY: null
     NPCS: 2
     RES: 0.2

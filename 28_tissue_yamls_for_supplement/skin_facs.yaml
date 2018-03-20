@@ -1,13 +1,13 @@
 ---
 GENES:
+- Cd34
+- Dkk3
+- Fgf18
+- Itga6
+- Krt10
+- Krt14
 - Ptprc
 - Top2a
-- Krt14
-- Krt10
-- Itga6
-- Fgf18
-- Dkk3
-- Cd34
 GROUPBY: subtissue
 METHOD: facs
 NPCS: 5

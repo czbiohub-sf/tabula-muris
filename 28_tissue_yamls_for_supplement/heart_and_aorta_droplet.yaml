@@ -1,11 +1,11 @@
 ---
 GENES:
-- Fabp4
-- Dcn
-- Myh11
-- Tnni3
-- Npr3
 - C1qa
+- Dcn
+- Fabp4
+- Myh11
+- Npr3
+- Tnni3
 GROUPBY: null
 METHOD: droplet
 NPCS: 15

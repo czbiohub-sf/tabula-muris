@@ -1,10 +1,10 @@
 ---
 GENES:
-- Tmem213
 - Pdzk1
-- Ugt1a2
 - Slc5a2
 - Slc6a19
+- Tmem213
+- Ugt1a2
 GROUPBY: null
 METHOD: facs
 NPCS: 9
