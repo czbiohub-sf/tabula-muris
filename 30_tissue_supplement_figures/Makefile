@@ -2,7 +2,7 @@
 # Generate all Rmds from template
 YAMLS := $(wildcard ../28_tissue_yamls_for_supplement/*yaml)
 
-clean:
+clean_rmd:
 	rm -rf *_auto_generated.Rmd
 
 rmd: clean
@@ -12,7 +12,9 @@ rmd: clean
 			--suffix _auto_generated.Rmd $$YML ; \
 	done
 
+clean:
+	rm -rf *.out *.err
 
-all: rmd
+all: rmd clean
 	# Launches all notebooks as a background process. Only recommended to be used on high-powered computers!
 	../utilities/run_rmds.py
