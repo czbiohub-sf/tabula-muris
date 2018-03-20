@@ -31,13 +31,13 @@ CODE_FOLDER = '29_tissue-specific_supplement_code'
 DEFAULTS = {'res': 0.5, 'npcs': 20, 'genes': ['Actb'], 'groupby': None}
 
 
-def stringify_genes(genes):
+def stringify_list(genes):
     return ', '.join(map(lambda x: f'"{x}"', genes))
 
 
 def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
     filter = f'rownames(tiss@meta.data)[grep("{filter_value}",tiss@meta.data${filter_column})]'
-    genes_str = stringify_genes(genes)
+    genes_str = stringify_list(genes)
     code = f"""{name}.cells.use = {filter}
 {name}.n.pcs = {npcs}
 {name}.res = {res}
@@ -52,8 +52,8 @@ def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
 """
     if groupby is not None:
         # Append this subset's groupby to the list
-        code += '''\n# Append this subset's groupby to the list
-group.bys = c(group.bys, "{groupby}")'''
+        code += f'''\n# Append this subset's groupby to the list
+group.bys = c(group.bys, "{stringify_list([groupby])}")'''
 
     code += '''dot_tsne_violin({name}.tiss, {name}.genes_to_check,
     save_folder, prefix = {name}, group.bys)
@@ -100,7 +100,9 @@ def main(parameters_yaml, template_file='Template.Rmd',
                     template += f'\n## Subset: {name}\n\n{subset_code}'
             elif value is not None:
                 if parameter == GENES:
-                    value = stringify_genes(value)
+                    value = stringify_list(value)
+                if parameter == GROUPBY:
+                    value = stringify_list([value])
                 template = template.replace("{" + parameter + "}", str(value))
             else:
                 template = template.replace("{" + parameter + "}", '')
