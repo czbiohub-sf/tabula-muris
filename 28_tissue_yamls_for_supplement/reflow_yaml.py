@@ -10,9 +10,6 @@ def listify(genes):
 def cli(yamls):
     for filename in yamls:
 
-        # Contingency plan for now
-        if filename == 'brain_non-myeloid_facs.yaml':
-            continue
         with open(filename) as f:
             data = yaml.load(f)
 
