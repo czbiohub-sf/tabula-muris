@@ -10,6 +10,7 @@ prefix = 'allcells'
 # Make all supplemental figures for a tiss object
 dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys){
     for (group.by in group.bys ){
+      print(paste('group.by:', group.by, '   prefix:', prefix))
 
       filename = file.path(save_folder, paste(prefix, group.by,
         'dotplot.pdf', sep='_'))
