@@ -13,7 +13,7 @@ library(tidyverse)
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
 save_folder = here('30_tissue_supplement_figures', 'Kidney', 'droplet')
-dir.create(save_folder)
+dir.create(save_folder, recursive=TRUE)
 
 tissue_of_interest = 'Kidney'
 filename = paste0('droplet_',tissue_of_interest, '_seurat_tiss.Robj')
