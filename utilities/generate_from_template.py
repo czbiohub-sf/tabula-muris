@@ -28,10 +28,16 @@ GENES = "GENES"
 GROUPBY = "GROUPBY"
 CODE_FOLDER = '29_tissue-specific_supplement_code'
 
+DEFAULTS = {'res': 0.5, 'npcs': 20, 'genes': ['Actb'], 'groupby': None}
+
+
+def stringify_genes(genes):
+    return ', '.join(map(lambda x: f'"{x}"', genes))
+
 
 def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
     filter = f'rownames(tiss@meta.data)[grep("{filter_value}",tiss@meta.data${filter_column})]'
-    genes_str = ', '.join(map(lambda x: f'"{x}"', genes))
+    genes_str = stringify_genes(genes)
     code = f"""{name}.cells.use = {filter}
 {name}.n.pcs = {npcs}
 {name}.res = {res}
@@ -57,7 +63,6 @@ group.bys = c(group.bys, "{groupby}")'''
 {code}
 ```'''
     return codeblock
-
 
 
 
@@ -88,10 +93,14 @@ def main(parameters_yaml, template_file='Template.Rmd',
                 for name, kv in value.items():
                     # Make all the keys have lowercase names
                     kv = {k.lower(): v for k, v in kv.items()}
+                    # Set defaults if they're not already
+                    for k, v in DEFAULTS.items():
+                        kv.setdefault(k, v)
                     subset_code = add_subset(name, **kv)
-                    import pdb; pdb.set_trace()
                     template += f'\n## Subset: {name}\n\n{subset_code}'
             elif value is not None:
+                if parameter == GENES:
+                    value = stringify_genes(value)
                 template = template.replace("{" + parameter + "}", str(value))
             else:
                 template = template.replace("{" + parameter + "}", '')
