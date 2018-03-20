@@ -72,6 +72,11 @@ for(i in 1:nrow(han_metadata_comparable)){
 df_all = bind_rows(df_FACS, df_droplet, df_microwell)
 ```
 
+```{r}
+df_all %>% group_by(tissue, method) %>% count()
+```
+
+
 Select the tissues processed using all methods.
 
 ```{r}
@@ -85,10 +90,92 @@ common_tissues
 Plot the histograms of the number of genes per cell for each tissue and method.
 
 ```{r, fig.width = 12, fig.height = 8}
-filter(df_all, tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
+df_all %>% filter(nGene > 500) %>% 
+filter(tissue %in% common_tissues) %>% ggplot(aes(nGene, ..density..,colour = method)) + 
   geom_freqpoly(binwidth = 100) +
   facet_wrap(~ tissue, ncol = 4) + 
   ggtitle("Number of genes expressed")
 
 #ggsave(here("11_supplementary_figure1","sfigure1.pdf"), width = 7, height = 7, units = "in")
 ```
+
+Boxplots of the same distributions.
+
+```{r, fig.width = 12, fig.height = 8}
+df_all %>% filter(nGene > 500) %>% 
+filter(tissue %in% common_tissues) %>% ggplot(aes(x=tissue, y=nGene, fill=method)) + 
+    geom_boxplot() + 
+  ggtitle("Number of genes expressed")
+
+ggsave(here("11_supplementary_figure1","sfigure1.pdf"), width = 14, height = 7, units = "in")
+```
+
+## Dependency of boxplots on cutoff
+
+For UMI we do cutoffs of 0,1,2,3,4. For reads we do 10 times those numbers, as 10 is roughly the average reads/UMI, though it varies vastly by eg 10x run.
+
+```{r}
+for(i in c(0,1,2,3,4)){
+  df_FACS[paste0("nGene.",i)] = Matrix::colSums(tiss_FACS@raw.data[,df_FACS %>% pull(cell)] > 10*i)
+}
+
+for(i in c(0,1,2,3,4)){
+  df_droplet[paste0("nGene.",i)] = Matrix::colSums(tiss_droplet@raw.data[,df_droplet %>% pull(cell)] > i)
+}
+```
+
+
+```{r, fig.width = 12, fig.height = 12}
+
+df_FACS %>% filter(nGene > 500) %>% mutate(percentnGene.0 = nGene.0/nGene,
+                                              percentnGene.1 = nGene.1/nGene,
+                                              percentnGene.2 = nGene.2/nGene,
+                                              percentnGene.3 = nGene.3/nGene,
+                                              percentnGene.4 = nGene.4/nGene) %>%
+  gather(percentnGene.1:percentnGene.4, key=cutoff, value = percentnGene.cutoff) %>%
+  separate(cutoff, c("std","threshold")) %>% select(-std) %>% mutate(Read.threshold = as.character(10*as.integer(threshold))) %>%
+  ggplot(aes(x=tissue, y=percentnGene.cutoff, fill=Read.threshold)) +
+  geom_boxplot() +
+  xlab("Tissue") + ylab("Fraction of detected genes present above threshold") + ylim(0,1) +
+  ggtitle("FACS") + 
+  coord_flip()
+
+ggsave(here("11_supplementary_figure1","sfigure1-facs.pdf"), width = 7, height = 10, units = "in")
+
+df_droplet %>% filter(nGene > 500) %>% mutate(percentnGene.0 = nGene.0/nGene,
+                                              percentnGene.1 = nGene.1/nGene,
+                                              percentnGene.2 = nGene.2/nGene,
+                                              percentnGene.3 = nGene.3/nGene,
+                                              percentnGene.4 = nGene.4/nGene) %>%
+  gather(percentnGene.1:percentnGene.4, key=cutoff, value = percentnGene.cutoff) %>%
+  separate(cutoff, c("std","UMI.threshold")) %>% select(-std) %>%
+  ggplot(aes(x=tissue, y=percentnGene.cutoff, fill=UMI.threshold)) +
+  geom_boxplot() +
+  xlab("Tissue") + ylab("Fraction of detected genes present above threshold") + ylim(0,1) +
+  ggtitle("Droplet") + 
+  coord_flip()
+ggsave(here("11_supplementary_figure1","sfigure1-droplet.pdf"), width = 7, height = 10, units = "in")
+
+
+df_microwell %>% filter(nGene > 500) %>% mutate(percentnGene.0 = nGene.0/nGene,
+                                              percentnGene.1 = nGene.1/nGene,
+                                              percentnGene.2 = nGene.2/nGene,
+                                              percentnGene.3 = nGene.3/nGene,
+                                              percentnGene.4 = nGene.4/nGene) %>%
+  gather(percentnGene.1:percentnGene.4, key=cutoff, value = percentnGene.cutoff) %>%
+  separate(cutoff, c("std","UMI.threshold")) %>% select(-std) %>%
+  ggplot(aes(x=tissue, y=percentnGene.cutoff, fill=UMI.threshold)) +
+  geom_boxplot() +
+  xlab("Tissue") + ylab("Fraction of detected genes present above threshold") + ylim(0,1) +
+  ggtitle("Microwell") + 
+  coord_flip()
+ggsave(here("11_supplementary_figure1","sfigure1-microwell.pdf"), width = 7, height = 10, units = "in")
+
+```
+
+Median number of genes for each tissue, method.
+
+```{r}
+df_all %>% group_by(tissue, method) %>% summarize(med = median(nGene))
+```
+

@@ -44,3 +44,8 @@ TSNEPlot(tiss_FACS, do.label = T, pt.size = 0.1)  +
 
 ggsave(here("02_figure2","facs_tsne_by_cluster.pdf"), width = 14, height = 7, units = "in")
 ```
+
+```{r, fig.width = 8, fig.height = 6}
+TSNEPlot(tiss_FACS, do.label = TRUE, pt.size = 0.1)
+ggsave(here("02_figure2","figure2a-clusters.pdf"), width = 9, height = 7, units = "in")
+```

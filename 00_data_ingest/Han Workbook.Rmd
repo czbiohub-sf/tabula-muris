@@ -4,6 +4,12 @@ output: html_notebook
 ---
 
 ```{r}
+library(tidyverse)
+library(here)
+```
+
+
+```{r}
 han_metadata <- read_csv(here('00_data_ingest','han_data','han_metadata.csv'))
 han_metadata_comparable = han_metadata %>% filter(!is.na(tissue)) %>% filter(is.na(subtissue))
 han_metadata_comparable
@@ -32,7 +38,7 @@ for(i in 1:nrow(han_metadata_comparable)){
   df <- tibble(cell = colnames(raw.data))
   df['tissue'] <- han_metadata_comparable$tissue[i]
   df['subtissue'] <- han_metadata_comparable$subtissue[i]
-  df['method'] <- 'microwell
+  df['method'] <- 'microwell'
   df['nGene'] <- Matrix::colSums(raw.data > 0)
   for(j in 0:4){
     df[paste0('nGene.', j)] <- Matrix::colSums(raw.data > j)
