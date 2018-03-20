@@ -1,6 +1,16 @@
 ---
 ADDITIONAL_CODE: true
-GENES: "'Slc1a3','Aldh1l1','Aqp4','A2m','Nbl1','Gdf10','Naga','Tnfaip2','St6galnac5','Nsdhl'"
+GENES:
+- Slc1a3
+- Aldh1l1
+- Aqp4
+- A2m
+- Nbl1
+- Gdf10
+- Naga
+- Tnfaip2
+- St6galnac5
+- Nsdhl
 GROUPBY: subtissue
 METHOD: facs
 NPCS: 8
@@ -9,7 +19,17 @@ SUBSET:
   ASTROCYTES:
     FILTER_COLUMN: cell_ontology_class
     FILTER_VALUE: astrocyte
-    GENES: "'Slc1a3','Aldh1l1','Aqp4','A2m','Nbl1','Gdf10','Naga','Tnfaip2','St6galnac5','Nsdhl'"
+    GENES:
+    - Slc1a3
+    - Aldh1l1
+    - Aqp4
+    - A2m
+    - Nbl1
+    - Gdf10
+    - Naga
+    - Tnfaip2
+    - St6galnac5
+    - Nsdhl
     GROUPBY: subtissue
     NPCS: 10
     RES: 1

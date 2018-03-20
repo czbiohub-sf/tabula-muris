@@ -1,5 +1,11 @@
 ---
-GENES: "'Tmem119','P2ry12','Sall1','H2-Aa', 'H2-Eb1', 'Cd163'"
+GENES:
+- Tmem119
+- P2ry12
+- Sall1
+- H2-Aa
+- H2-Eb1
+- Cd163
 GROUPBY: subtissue
 METHOD: facs
 NPCS: 8

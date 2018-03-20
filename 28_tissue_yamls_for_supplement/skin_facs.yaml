@@ -1,5 +1,13 @@
 ---
-GENES: "'Ptprc','Top2a','Krt14','Krt10','Itga6','Fgf18','Dkk3','Cd34'"
+GENES:
+- Ptprc
+- Top2a
+- Krt14
+- Krt10
+- Itga6
+- Fgf18
+- Dkk3
+- Cd34
 GROUPBY: subtissue
 METHOD: facs
 NPCS: 5

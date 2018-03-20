@@ -1,6 +1,42 @@
 ---
-GENES: "'Alb', 'Ttr', 'Apoa1', 'Serpina1c','Cyp2e1', 'Glul', 'Oat', 'Gulo','Ass1', 'Hamp', 'Gstp1', 'Ubb','Cyp2f2', 'Pck1', 'Hal', 'Cdh1','Pecam1', 'Nrp1', 'Kdr','Oit3','Emr1', 'Clec4f', 'Cd68', 'Irf7','Zap70', 'Il2rb', 'Nkg7', 'Cxcr6', 'Gzma','Cd79a', 'Cd79b', 'Cd74','Epcam', 'Krt19', 'Krt7','Ptprc'"
-GROUPBY: ~
+GENES:
+- Alb
+- Ttr
+- Apoa1
+- Serpina1c
+- Cyp2e1
+- Glul
+- Oat
+- Gulo
+- Ass1
+- Hamp
+- Gstp1
+- Ubb
+- Cyp2f2
+- Pck1
+- Hal
+- Cdh1
+- Pecam1
+- Nrp1
+- Kdr
+- Oit3
+- Emr1
+- Clec4f
+- Cd68
+- Irf7
+- Zap70
+- Il2rb
+- Nkg7
+- Cxcr6
+- Gzma
+- Cd79a
+- Cd79b
+- Cd74
+- Epcam
+- Krt19
+- Krt7
+- Ptprc
+GROUPBY: null
 METHOD: droplet
 NPCS: 10
 RES: 3.5
@@ -8,8 +44,16 @@ SUBSET:
   HEPATOCYTES:
     FILTER_COLUMN: cell_ontology_class
     FILTER_VALUE: hepatocyte
-    GENES: "'Mup20', 'Mup1','Mup12', 'Mup21', 'Cyp2d9', 'Xist', 'A1bg', 'Cyp2c69'"
-    GROUPBY: ~
+    GENES:
+    - Mup20
+    - Mup1
+    - Mup12
+    - Mup21
+    - Cyp2d9
+    - Xist
+    - A1bg
+    - Cyp2c69
+    GROUPBY: null
     NPCS: 8
     RES: 0.5
 TISSUE: Liver
