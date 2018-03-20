@@ -4,6 +4,8 @@ output: html_notebook
 ---
 
 ```{r}
+library(here)
+
 find_markers <- function(tissue, method, annotation){
   filename = here('00_data_ingest', '04_tissue_robj_generated', 
                        paste0(method,"_", tissue, "_seurat_tiss.Robj"))
