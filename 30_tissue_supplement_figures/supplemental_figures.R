@@ -4,7 +4,7 @@
 # Created on: 3/19/18
 
 # Commonly used variables by all Rmd files
-standard.group.bys = c("cell_ontology_class", "free_annotation")
+standard.group.bys = c("cell_ontology_class", "free_annotation", 'cluster.ids')
 
 
 # Make all supplemental figures for a tiss object
@@ -13,6 +13,11 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
 
       filename = file.path(save_folder, paste(prefix, group.by,
         'dotplot.pdf', sep='_'))
+
+      # If this column is all NAs, then skip it
+      if (all(is.na(tiss@meta.data[, group.by]))){
+        continue
+      }
       p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T,
         do.return = T, group.by = group.by) + coord_flip()
       ggsave(filename, width = 3, height = 6)
