@@ -1,6 +1,17 @@
 ---
-GENES: "'Epcam', 'Cdh1', 'Krt5', 'Scgb1a1', 'Pdgfrb', 'Pdgfra', 'Col1a1', 'Col8a1', 'Foxj1', 'Pecam1', 'Ptprc'"
-GROUPBY: ~
+GENES:
+- Epcam
+- Cdh1
+- Krt5
+- Scgb1a1
+- Pdgfrb
+- Pdgfra
+- Col1a1
+- Col8a1
+- Foxj1
+- Pecam1
+- Ptprc
+GROUPBY: null
 METHOD: facs
 NPCS: 16
 RES: 0.2

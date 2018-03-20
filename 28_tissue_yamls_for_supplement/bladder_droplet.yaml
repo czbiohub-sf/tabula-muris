@@ -1,5 +1,16 @@
 ---
-GENES: "'Epcam','Upk1b', 'Upk3a','Grhl3', 'Krt5', 'Krt14', 'Dcn', 'Col1a1','Col8a1', 'Pecam1', 'Cd14'"
+GENES:
+- Epcam
+- Upk1b
+- Upk3a
+- Grhl3
+- Krt5
+- Krt14
+- Dcn
+- Col1a1
+- Col8a1
+- Pecam1
+- Cd14
 GROUPBY: mouse.sex
 METHOD: droplet
 NPCS: 15

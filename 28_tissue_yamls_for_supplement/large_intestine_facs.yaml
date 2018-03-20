@@ -1,5 +1,14 @@
 ---
-GENES: "'Lgr5', 'Krt20', 'Slc26a3', 'Atoh1', 'Spdef', 'Dclk1', 'Chga', 'Chgb', 'Mki67'"
+GENES:
+- Lgr5
+- Krt20
+- Slc26a3
+- Atoh1
+- Spdef
+- Dclk1
+- Chga
+- Chgb
+- Mki67
 GROUPBY: subtissue
 METHOD: facs
 NPCS: 12
