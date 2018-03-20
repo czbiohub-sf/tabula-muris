@@ -86,6 +86,8 @@ load_tissue_facs = function(tissue_of_interest){
 }
 
 stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_class){
+  tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
+
   validate_cell_ontology(cell_ontology_class)
   cell_ontology_id = convert_to_cell_ontology_id(cell_ontology_class)
   
@@ -112,9 +114,17 @@ stash_subtiss_in_tiss = function(tiss, subtiss){
   } else {
     subset_col = 'subsetA'
   }
-  tiss@meta.data[subset_col] = FALSE
+  subset_id_col = paste(subset_col, 'cluster.ids', sep='_')
+
+  # Set cells in this subset as TRUE
+  tiss@meta.data[, subset_col] = FALSE
   tiss@meta.data[sub.cells, subset_col] = TRUE
-  
+  tiss@meta.data[sub.cells, subset_col] = TRUE
+
+  # Save the cluster ids for the subset
+  tiss@meta.data[, subset_id_col] = NA
+  tiss@meta.data[sub.cells, subset_id_col] = subtiss@ident
+
   tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
   tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
   tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
