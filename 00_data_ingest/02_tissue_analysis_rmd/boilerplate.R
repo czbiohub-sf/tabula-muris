@@ -221,16 +221,22 @@ save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
                     paste0(tissue_of_interest, "_", method, "_annotation.csv"))
 
   if(method == 'facs'){
-    write_csv(FetchData(tiss, c('cell', 'tissue', 'subtissue', 'FACS.selection',
-      batch_name_column, 'cell_ontology_class',
-      'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex',
-      'mouse.id')), filename)
+    columns = c('cell', 'tissue', 'subtissue', 'FACS.selection',
+                batch_name_column, 'cell_ontology_class',
+                'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex',
+                'mouse.id')
   } else {
-    write_csv(FetchData(tiss, c('cell', 'tissue', 'subtissue',
+    columns = c('cell', 'tissue', 'subtissue',
                                 batch_name_column, 'cell_ontology_class',
                                 'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex',
-                                'mouse.id')), filename)
+                                'mouse.id')
   }
+  # Get any columns that say "subset"
+  subset_cols = sort(grep("subset", colnames(tiss@meta.data), perl=TRUE, value=TRUE))
+  columns = c(columns, subset_cols)
+  
+  write_csv(FetchData(tiss, columns), filename)
+            
 }
 
 compare_previous_annotation = function(tiss, tissue_of_interest, method='facs'){
