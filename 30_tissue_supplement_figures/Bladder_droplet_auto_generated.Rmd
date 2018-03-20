@@ -18,7 +18,7 @@ tissue_of_interest = 'Bladder'
 filename = paste0('droplet_',tissue_of_interest, '_seurat_tiss.Robj')
 load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 
-additional.group.bys = sort(c(mouse.sex))
+additional.group.bys = sort(c("mouse.sex"))
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
