@@ -11,11 +11,10 @@ Specify the tissue of interest, run the boilerplate code which sets up the funct
 tissue_of_interest = "Marrow"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss = load_tissue_facs(tissue_of_interest)
 ```
 
 Visualize top genes in principal components
-
 ```{r, echo=FALSE, fig.height=4, fig.width=8}
 PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
@@ -29,7 +28,7 @@ PCElbowPlot(object = tiss)
 Choose the number of principal components to use.
 ```{r}
 # Set number of principal components. 
-n.pcs = 15
+n.pcs = 18
 ```
 
 
@@ -55,11 +54,23 @@ tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=84)
 # note that you can set do.label=T to help label individual clusters
 TSNEPlot(object = tiss, do.label = T)
 ```
+## Compare to previous annotations
+```{r, fig.height=4, fig.width=8}
+tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_free_annotation")
+```
+
+```{r}
+previous_annotation_table(tiss)
+```
+
+
 
 Check expression of genes of interset.
 
-```{r, echo=FALSE, fig.height=84, fig.width=15}
-genes_to_check = c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Fcgr3', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Fcgr4', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Ly6d', 'Cd27', 'Cr2', 'Fcer2a', 'Cd2', 'Cd7', 'Mme', 'Thy1', 'Cd19', 'Ms4a1', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb3', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ly6g6c', 'Ly6g6e', 'Ptprc')
+```{r, echo=FALSE, fig.height=174, fig.width=15}
+genes_to_check = c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Fcgr3', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Mki67', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Cd69', 'Fcgr4', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Ly6d', 'Cd27', 'Cr2', 'Fcer2a', 'Cd2', 'Cd7', 'Mme', 'Thy1', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ly6g6c', 'Ly6g6e', 'Ptprc', 'Cd19', 'Ms4a1', 'Cox6a2', 'Irf8', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb1', 'Vpreb3', 'Cd38', 'Cd22', 'Cd24a', 'Cd40', 'Cd48', 'Cd53', 'Cd81', 'Cd84', 'Cxcr4', 'Cxcr5', 'Ccr6', 'Cd200', 'Ly9', 'Abcb1b', 'Tlr9', 'Slamf6', 'H2-Ea-ps', 'Pax5', 'Foxo1', 'Klf4', 'Klf9', 'Mitf', 'Pou2af1', 'Zbtb16', 'Spib', 'Spn', 'Dntt', 'Rag1', 'Rag2', 'Il2ra', 'Pdzk1ip1', 'Ly6a', 'Itga2b', 'Fos', 'Junb', 'Myl10', 'Jun', 'Mn1', 'S100a9', 'Ccl9', 'Tcf3', 'Ebf1', 'Ikzf1', 'Sfpi1', 'Cd1d1', 'Egr2', 'Cd14', 'Mpl', 'Il3ra', 'Bpgm', 'Beta-s', 'Hbb-b2', 'Cpa3', 'Fcer1a', 'Mcpt8', 'Ccl3', 'Gata1', 'Gata2', 'Cebpa')
 #genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
 
 FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
@@ -67,7 +78,7 @@ FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
 
-```{r, echo=FALSE, fig.height=4, fig.width=39}
+```{r, echo=FALSE, fig.height=4, fig.width=84}
 # To change the y-axis to show raw counts, add use.raw = T.
 DotPlot(tiss, genes_to_check, plot.legend = T)
 ```
@@ -77,61 +88,60 @@ How big are the clusters?
 table(tiss@ident)
 ```
 
-Which markers identify a specific cluster?
+<!-- Which markers identify a specific cluster? -->
 
-```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
+<!-- ```{r} -->
+<!-- clust.markers <- FindMarkers(object = tiss, ident.1 = 0, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
+<!-- ``` -->
 
-```{r}
-print(x = head(x= clust.markers, n = 10))
-```
+<!-- ```{r} -->
+<!-- print(x = head(x= clust.markers, n = 10)) -->
+<!-- ``` -->
 
-You can also compute all markers for all clusters at once. This may take some time.
-```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-```{r}
-head(tiss.markers)
-```
+<!-- You can also compute all markers for all clusters at once. This may take some time. -->
+<!-- ```{r} -->
+<!-- tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- head(tiss.markers) -->
+<!-- ``` -->
 
-Display the top markers you computed above.
-```{r}
-tiss.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
-```
+<!-- Display the top markers you computed above. -->
+<!-- ```{r} -->
+<!-- tiss.markers %>% group_by(cluster) %>% top_n(5, avg_logFC) -->
+<!-- ``` -->
 
 ## Assigning cell type identity to clusters
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
 
-0: alpha
-1: beta
-2: beta
-3: exocrine
-4: duct
-5: delta
-6: gamma
-7: endothelial
-8: immune
-9: stellate
 
 ```{r}
 # stash current cluster IDs
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-free_annotation <- c()
-cell_ontology_class <-c("hematopoietic stem cell", "B cell", "B cell", "neutrophil", "granulocyte", "monocyte", "B cell", "T_NK", "neutrophil", "Fraction A pre-pro B cell", "hematopoietic stem cell")
-cell_ontology_id <- c("CL:0000037", "CL:0000236", "CL:0000236", "CL:0000775", "CL:0000094", "CL:0000576", "CL:0000236", NA, "CL:0000775", "CL:0002045", "CL:0000037")
-  
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+free_annotation <- c(NA, NA, "pre-B cell (Philadelphia nomenclature)",
+                     NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+cell_ontology_class <-c(
+  NA, # Cluster 0 is a mix of progenitors and precursors
+  "naive B cell", 
+  "pro-B cell", 
+  "granulocyte", 
+  "hematopoietic precursor cell", 
+  "granulocyte",
+  "immature B cell", 
+  NA, # Cluster 7 is a mix of monocytes and granulocyte progenitors
+  "late pro-B cell", 
+  "hematopoietic precursor cell",
+  "macrophage",
+  NA, # Cluster 11 is a mix of T, NKT and B cells
+  NA # Cluster 12 is a mix of basophil, B cells, immature NK cells, mature NK cells, pre-natural killer cells
+)
 
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
 
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
@@ -152,171 +162,589 @@ Print a table showing the count of cells in each identity category from each pla
 table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
 ```
 
+## Redo Subcluster as per the code from pancreas plate Rmd, which is without regressing out ribosomal genes
+## 
 
-# Subset and iterate
+####################################
+#####################################
+######################################
 
-We can repeat the above analysis on a subset of cells, defined using cluster IDs or some other metadata. This is a good way to drill down and find substructure.
 
-
-## Subset == T and NK cells (Cluster 7)
+# Subset A == T_NK_NKT cell (Clusters 11, 12)
 
 ```{r}
-# Subset data based on cluster id
-subtiss7 <- SubsetData(object = tiss, ident.use = c(7), do.center = F, do.scale = F, cells.use = )
-
-# To subset data based on cell_ontology_class or other metadata, you can explicitly pass cell names
-
-# anno = 'exocrine cells'
-# cells.to.use = tiss@cell.names[which(tiss@meta.data$cell_ontology_class == anno)]
-# subtiss7 <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
-
+subtissA = SubsetData(tiss, ident.use = c(11, 12))
 ```
 
 ```{r}
-subtiss7 <- NormalizeData(object = subtiss7)
-subtiss7 <- ScaleData(object = subtiss7, vars.to.regress = c("nReads", "percent.ribo","Rn45s"))
+subtissA <- subtissA %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
 ```
 
 ```{r}
-subtiss7 <- FindVariableGenes(object = subtiss7, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.8)
-subtiss7 <- RunPCA(object = subtiss7, pcs.compute = 20)
-subtiss7 <- ProjectPCA(object = subtiss7, do.print = FALSE)
+PCHeatmap(object = subtissA, pc.use = 1:3, cells.use = 100, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissA)
 ```
 
-
-Run Principal Component Analysis.
-```{r}
-subtiss7 <- RunPCA(object = subtiss7, do.print = FALSE)
-subtiss7 <- ProjectPCA(object = subtiss7, do.print = FALSE)
-```
 
 ```{r}
-# If this fails for your subset, it may be that cells.use is more cells than you have left! Try reducing it.
-PCHeatmap(object = subtiss7, pc.use = 1:3, cells.use = 250, do.balanced = TRUE, label.columns = FALSE, num.genes = 12)
+sub.n.pcs = 4
+sub.res.use = 1
+subtissA <- subtissA %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=44)
+
+TSNEPlot(object = subtissA, do.label = T, pt.size = 1.2, label.size = 4)
+
 ```
-
-Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
-
-```{r}
-PCElbowPlot(object = subtiss7)
-```
-
-Choose the number of principal components to use.
-```{r}
-# Set number of principal components. 
-sub7.n.pcs = 5
-```
-
-
-The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
-
-```{r}
-# Set resolution 
-sub.res.used <- 1
-
-subtiss7 <- FindClusters(object = subtiss7, reduction.type = "pca", dims.use = 1:sub7.n.pcs, 
-    resolution = sub.res.used, print.output = 0, save.SNN = TRUE)
-```
-
-To visualize 
-```{r}
-# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-subtiss7 <- RunTSNE(object = subtiss7, dims.use = 1:sub7.n.pcs, seed.use = 10, perplexity=30)
-```
-
-```{r}
-# note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = subtiss7, do.label = T)
-```
-
-```{r}
-subtiss7.markers <- FindAllMarkers(object = subtiss7, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-```
-
-```{r}
-subtiss7.markers %>% group_by(cluster) %>% top_n(6, avg_diff)
-```
-
 Check expression of genes of interset.
-```{r, echo=FALSE, fig.height=48, fig.width=15}
-genes_to_check = c('Cd6','Il7r','Ctla4','Cd8b1', 'Cxcr6', 'Cd8a', 'Tyrobp', 'Ncr1', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Gzma', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Stmn1', 'Top2a', 'Mki67', 'Rrm2', 'Nkg7')
 
-FeaturePlot(subtiss7, genes_to_check, pt.size = 1, nCol = 3)
-```
+# ```{r}
+# subtissA.markers <- FindAllMarkers(object = subtissA, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtissA.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
+# 
 
-Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-
-```{r, echo=FALSE, fig.height=4, fig.width=30}
-# To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(subtiss7, genes_to_check, plot.legend = T)
-```
-
-How big are the clusters?
 ```{r}
-table(subtiss7@ident)
+TSNEPlot(object = subtissA, do.return = TRUE, group.by = "previous_cell_ontology_class")
+TSNEPlot(object = subtissA, do.return = TRUE, group.by = "previous_free_annotation")
+```
+
+
+
+```{r}
+previous_annotation_table(subtissA)
+```
+
+
+```{r, echo=FALSE, fig.height=102, fig.width=15}
+genes_to_check = c('Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Ncr1', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag1', 'Rag2', 'Dntt', 'Pax5', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Emr1', 'Adamts14', 'Itgax', 'Styk1', 'Ugt1a7c', 'Khdc1a', 'Car5b', 'Gzma', 'Cma1', 'A430084P05Rik', 'Ccl4', 'Sh2d1b1', 'Ncam1', 'Klra1', 'Cd34', 'Il2rb', 'Itga4', 'Itgb7')
+
+FeaturePlot(subtissA, genes_to_check, pt.size = 1, nCol = 3)
+```
+
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+#DotPlot(subtissA, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+
+The multitude of clusters of each type correspond mostly to individual animals/sexes.
+
+```{r}
+table(FetchData(subtissA, c('mouse.id','ident')) %>% droplevels())
+```
+
+```{r}
+sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
+sub.free_annotation <- c("regulatory_immature T cell", "mature natural killer cell", "Cd3e+_Klrb1+ B cell",  "immature NK T cell", NA, "immature natural killer cell", "pre-natural killer cell")
+""
+sub.cell_ontology_class <-c("T cell", "mature natural killer cell","B cell",  "immature NK T cell", "immature natural killer cell", "basophil",  "pre-natural killer cell")
+
+subtissA = stash_annotations(subtissA, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtissA)
+head(tiss@meta.data)
 ```
 
 ## Checking for batch effects
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtiss7, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = subtissA, do.return = TRUE, group.by = "plate.barcode")
 ```
 
-Print a table showing the count of cells in each identity category from each plate.
+# Final coloring
+
+Color by cell ontology class on the original TSNE.
 
 ```{r}
-table(as.character(subtiss7@ident), as.character(subtiss7@meta.data$plate.barcode))
+TSNEPlot(object = subtissA, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+TSNEPlot(object = subtissA, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+```
+
+
+######################################################
+#######################################################
+
+# Subset B == regulatory_immature T cell (Cluster 0)
+## Multiple cell-types in the cluster 0 of subtiss (original cluster 7)
+## subcluster the cluster 0 (regulatory_immature T cell) of subtiss (original cluster 7)
+
+```{r}
+subtissB = SubsetData(subtissA, ident.use = c(0))
+```
+
+```{r}
+subtissB <- subtissB %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+```
+
+```{r}
+PCHeatmap(object = subtissB, pc.use = 1:3, cells.use = 170, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissB)
+```
+
+
+```{r}
+sub.n.pcs = 3
+sub.res.use = 1
+subtissB <- subtissB %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=12)
+
+TSNEPlot(object = subtissB, do.label = T, pt.size = 1.2, label.size = 4)
+
+```
+```{r}
+previous_annotation_table(subtissB)
+```
+
+Check expression of genes of interset.
+
+# ```{r}
+# subtissB.markers <- FindAllMarkers(object = subtissB, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtissB.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
+# 
+
+
+```{r, echo=FALSE, fig.height=84, fig.width=15}
+genes_to_check = c('Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag2', 'Dntt', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Ugt1a7c', 'Car5b', 'Gzma', 'A430084P05Rik', 'Ccl4', 'Ncam1', 'Klra1', 'Cd34', 'Itga4', 'Itgb7', 'Tgfb1', 'Il10')
+
+FeaturePlot(subtissB, genes_to_check, pt.size = 1, nCol = 3)
+```
+
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+#DotPlot(subtissB, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+From these genes, it appears that the clusters represent:
+
+The multitude of clusters of each type correspond mostly to individual animals/sexes.
+
+```{r}
+table(FetchData(subtissB, c('mouse.id','ident')) %>% droplevels())
+```
+
+```{r}
+sub.cluster.ids <- c(0, 1, 2)
+sub.free_annotation <-c("immature T cell", "immature T cell", "regulatory T cell")
+
+sub.cell_ontology_class <-c("immature T cell", "immature T cell", "regulatory T cell")
+
+subtissB = stash_annotations(subtissB, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtissB)
+```
+
+
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = subtissB, do.return = TRUE, group.by = "plate.barcode")
+```
+
+# Final coloring
+
+Color by cell ontology class on the original TSNE.
+
+```{r}
+TSNEPlot(object = subtissB, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+```
+
+
+####################################
+#####################################
+######################################
+
+
+# Subset C == late pro-B cell (Cluster 8)
+
+## late pro-B cells are reportedly committed to B cell lineage as they begin expressing Pax5. They also have Rag1, Rag2, and Dntt expression. At single cell resolution there seem to be two subsets of late pro-B cells: Dntt+ and Dntt-.
+
+## It appears there are multiple novel cell-types within the Pax5+ late pro-B cell
+
+```{r}
+subtissC = SubsetData(tiss, ident.use = c(8))
+```
+
+```{r}
+subtissC <- subtissC %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+```
+
+```{r}
+PCHeatmap(object = subtissC, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissC)
+```
+
+
+```{r}
+sub.n.pcs = 4
+sub.res.use = 1
+subtissC <- subtissC %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=42)
+
+TSNEPlot(object = subtissC, do.label = T, pt.size = 1.2, label.size = 4)
+
+```
+
+```{r}
+previous_annotation_table(subtissC)
+```
+Check expression of genes of interset.
+
+# ```{r}
+# subtissC.markers <- FindAllMarkers(object = subtissC, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtissC.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
+```{r}
+genes_to_check = c('Dntt')
+FeaturePlot(subtissC, genes_to_check, pt.size = 1, nCol = 3)
+DotPlot(subtissC, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+
 ```
 
 
 
-### Assigning subcell_ontology_classs
+```{r, echo=FALSE, fig.height=102, fig.width=15}
+genes_to_check = c('Il7r', 'Cd69', 'Lyz2', 'Tbxa2r', 'Vpreb1', 'Vpreb2', 'Igll1', 'Vpreb3', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Stmn1', 'Top2a', 'Mki67', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag1', 'Rag2', 'Dntt', 'Pax5', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Cdc20', 'Ube2c', 'Ccnb1', 'Cenpf', 'Kpna2', 'Tcf3', 'Ebf1', 'Ikzf1', 'Sfpi1', 'Slco4a1', 'Zfp810', 'Ska1', 'Kif18a', 'Depdc1b', 'Btg2', 'S100a8', 'Serinc5', 'Srm', 'Smyd2', 'Comtd1', 'Erg', 'Arpp21', 'Mmrn1', 'Kdm5b', 'Grb7', 'Acy3', 'Ung', 'Cybb', 'Klhl15', 'E2f1', 'Troap', 'Eri2', 'Ltb')
 
-For the subsets, we produce subcell_ontology_classs. These will be written back as metadata in the original object, so we can see all subcell_ontology_classs together.
-
-If some of the clusters you find in the subset deserve additional cell_ontology_class, you can add that right here. Use NA for clusters for which no subcell_ontology_class is needed.
-
-```{r}
-subcluster.ids <- c(0, 1, 2, 3, 4, 5)
-subcell_ontology_class <-
-  c("T cell",
-  "natural killer cell",
-  "natural killer cell",
-  "T cell",
-  "T cell",
-  "T cell")
-  cell_ontology_id = c("CL:0000084",
-  "CL:0000623",
-  "CL:0000623",
-  "CL:0000084",
-  "CL:0000084",
-  "CL:0000084")
-
-subtiss7@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = subtiss7@ident, from = subcluster.ids, to = subcell_ontology_class)
-subtiss7@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = subtiss7@ident, from = subcluster.ids, to = cell_ontology_id)
-
-tiss@meta.data[subtiss7@cell.names,'cell_ontology_class'] <- as.character(subtiss7@meta.data$cell_ontology_class)
-tiss@meta.data[subtiss7@cell.names,'cell_ontology_id'] <- as.character(subtiss7@meta.data$cell_ontology_id)
-
-TSNEPlot(object = subtiss7, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
+FeaturePlot(subtissC, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
-When you save the subtissue, please give it a name.
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+#DotPlot(subtissC, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+The multitude of clusters of each type correspond mostly to individual animals/sexes.
 
 ```{r}
-subtiss7.name = 'Nk_T_cells'
-save(subtiss7, file=paste0(save_dir,"/",subtiss7.name, "_seurat_subtiss7.Robj"))
+table(FetchData(subtissC, c('mouse.id','ident')) %>% droplevels())
+```
+
+```{r}
+sub.cluster.ids <- c(0, 1, 2, 3, 4, 5)
+sub.free_annotation <-
+  c(
+  "Dntt- late pro-B cell",
+  "Dntt- late pro-B cell",
+  "Dntt- late pro-B cell",
+  "Dntt+ late pro-B cell",
+  "Dntt- late pro-B cell",
+  "Dntt+ late pro-B cell"
+  )
+  
+  sub.cell_ontology_class <-
+  c(
+  "late pro-B cell",
+  "late pro-B cell",
+  "late pro-B cell",
+  "late pro-B cell",
+  "late pro-B cell",
+  "late pro-B cell"
+  )
+  
+subtissC = stash_annotations(subtissC, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtissC)
+```
+
+```{r}
+head(tiss@meta.data)
+```
+
+
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = subtissC, do.return = TRUE, group.by = "plate.barcode")
+```
+
+## Final coloring
+
+Color by cell ontology class on the original TSNE.
+
+```{r}
+TSNEPlot(object = subtissC, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = subtissC, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+```
+
+####################################
+#####################################
+######################################
+
+
+# Subset D == hematopoietic precursor cells (Cluster 0)
+## This subset contains hematopoietic multipotent progenitor (MPP) cells and a very minute fraction of Hematopoietic stem cells (HSC).
+
+
+```{r}
+subtissD = SubsetData(tiss, ident.use = c(0))
+```
+
+```{r}
+subtissD <- subtissD %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+```
+
+```{r}
+PCHeatmap(object = subtissD, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissD)
+```
+
+
+```{r}
+sub.n.pcs = 20
+sub.res.use = 1
+subtissD <- subtissD %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=65)
+
+TSNEPlot(object = subtissD, do.label = T, pt.size = 1.2, label.size = 4)
+```
+
+```{r}
+previous_annotation_table(subtissD)
+```
+
+
+Check expression of genes of interset.
+
+# ```{r}
+# subtissD.markers <- FindAllMarkers(object = subtissD, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtissD.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
+
+
+
+```{r, echo=FALSE, fig.height=120, fig.width=15}
+genes_to_check = sort(unique(c('Il7r', 'Kit', 'Atxn1', 'Cd34', 'Slamf1', 'Flt3', 'Cd63', 'Myl12b', 'Muc13', 'Sdsl', 'Stat3', 'Wtap', 'Mpl', 'Txnip', 'Ltb', 'Pdzk1ip1', 'Esam', 'Cish', 'Tyms', 'Tk1', '2810417H13Rik', 'Rrm2', 'Uhrf1', 'Tuba1b', 'Myl10', 'Junb', 'Fos', 'Ier2', 'Dusp1', 'Ly6a', 'Ube2c', 'Ccnb2', 'Ccnb1', 'Cdc20', 'Ccna2', 'Flt3', 'Dntt', 'Gm11428', 'Ncf1', 'Mn1', 'H2-Ob', 'Ctsg', 'Ccl9', 'Sell', 'Hk3', 'Cd48', 'Gata1', 'Mfsd2b', 'Tuba8', 'Itga2b', 'Apoe', 'Pf4', 'Elane', 'Ms4a3', 'Ctsg', 'Mpo', 'Prtn3', 'Cd69', 'Ccr7', 'Ctla2a', 'Tyrobp', 'Serpinb9', 'Lyz2', 'Hp', 'Ly6c2', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Chchd10', 'Cnp', 'Rag2', 'Dntt', 'Mki67', 'Stmn1', 'Gimap8', 'Jhdm1d', 'Kif11', 'Spag5', 'Xist', 'Tsix', 'Notch2', 'Slc39a1', 'Socs3', 'Vldlr', 'Mcm4', 'Ung')))
+
+# FeaturePlot(subtissD, genes_to_check, pt.size = 1, nCol = 3)
+
+```
+
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+DotPlot(subtissD, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+
+The multitude of clusters of each type correspond mostly to individual animals/sexes.
+
+```{r}
+table(FetchData(subtissD, c('mouse.id','ident')) %>% droplevels())
+```
+
+```{r}
+sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
+sub.free_annotation <- c(NA, NA, NA, NA, NA, NA, NA)
+sub.cell_ontology_class <- c(
+  "Slamf1-negative multipotent progenitor cell",
+  "hematopoietic precursor cell",
+  "Slamf1-negative multipotent progenitor cell",
+  "common lymphoid progenitor",
+  "Slamf1-positive multipotent progenitor cell",
+  "granulocyte monocyte progenitor cell",
+  "megakaryocyte-erythroid progenitor cell"
+  )
+
+subtissD = stash_annotations(subtissD, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtissD)
+head(tiss@meta.data)
+```
+
+```{r}
+head(subtissD@meta.data)
+```
+
+
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = subtissD, do.return = TRUE, group.by = "plate.barcode")
+```
+
+## Final coloring
+
+Color by cell ontology class on the original TSNE.
+
+```{r}
+# TSNEPlot(object = subtissD, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = subtissD, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+```
+
+
+
+## Final coloring
+
+Color by cell ontology class on the original TSNE.
+
+```{r}
+TSNEPlot(object = tiss, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = tiss, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+```
+
+######################################################
+#######################################################
+
+## Subcluster the clusters 7 of tiss
+
+# Subset E ==  granulocyte monocyte progenitor cell, monocyte
+
+```{r}
+subtissE = SubsetData(tiss, ident.use = c(7))
+```
+
+```{r}
+subtissE <- subtissE %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+```
+
+```{r}
+PCHeatmap(object = subtissE, pc.use = 1:3, cells.use = 170, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCElbowPlot(subtissE)
+```
+
+
+```{r}
+sub.n.pcs = 20
+sub.res.use = 1
+subtissE <- subtissE %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE, force=TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=60)
+
+TSNEPlot(object = subtissE, do.label = T, pt.size = 1.2, label.size = 4)
+
+```
+
+```{r}
+previous_annotation_table(subtissE)
+```
+
+
+Check expression of genes of interset.
+
+
+# ```{r}
+# subtissE.markers <- FindAllMarkers(object = subtissE, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+# ```
+# 
+# ```{r}
+# subtissE.markers %>% group_by(cluster) %>% top_n(6, avg_logFC)
+# ```
+
+
+
+```{r, echo=FALSE, fig.height=138, fig.width=15}
+genes_to_check = c('Hoxb5', 'Trib3', 'Neo1', 'Il7r', 'Kit', 'Atxn1', 'Cd34', 'Slamf1', 'Flt3', 'Cd63', 'Myl12b', 'Muc13', 'Sdsl', 'Stat3', 'Wtap', 'Mpl', 'Txnip', 'Ltb', 'Pdzk1ip1', 'Esam', 'Cish', 'Tyms', 'Tk1', '2810417H13Rik', 'Rrm2', 'Uhrf1', 'Tuba1b', 'Myl10', 'Junb', 'Fos', 'Ier2', 'Dusp1', 'Ly6a', 'Ube2c', 'Ccnb2', 'Ccnb1', 'Cdc20', 'Ccna2', 'Dntt', 'Gm11428', 'Ncf1', 'Mn1', 'H2-Ob', 'Ctsg', 'Mpo', 'Ccl9', 'Sell', 'Hk3', 'Cd48', 'Gata1', 'Mfsd2b', 'Tuba8', 'Itga2b', 'Apoe', 'Pf4', 'Elane', 'Ms4a3', 'Ctsg', 'Prtn3', 'Cd69', 'Ccr7', 'Ctla2a', 'Tyrobp', 'Serpinb9', 'Lyz2', 'Hp', 'Ly6c2', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Nkg7', 'Cd1d1', 'Chchd10', 'Cnp', 'Rag1',  'Rag2', 'Dntt', 'Mki67', 'Stmn1', 'Gimap8', 'Jhdm1d', 'Kif11', 'Spag5', 'Xist', 'Tsix', 'Notch2', 'Slc39a1', 'Socs3', 'Vldlr', 'Mcm4', 'Ung', 'Fam102a', 'Ccl4', 'Pyy', 'Ak4',  'Prc1', 'Cenpf', 'Prr11', 'Lhcgr', 'Tgm2', 'Abcg3', 'Ccne2', 'Pask', 'Nsg1', 'Bok', 'Klf1', 'Treml1')
+
+FeaturePlot(subtissE, genes_to_check, pt.size = 1, nCol = 3)
+```
+
+
+```{r, echo=FALSE, fig.height=8, fig.width=10}
+#DotPlot(subtissE, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+```
+
+The multitude of clusters of each type correspond mostly to individual animals/sexes.
+
+```{r}
+table(FetchData(subtissE, c('mouse.id','ident')) %>% droplevels())
+```
+
+```{r}
+sub.cluster.ids <- c(0, 1, 2, 3)
+sub.free_annotation <- c(
+  NA, NA, NA, NA
+  )
+sub.cell_ontology_class <-
+  c(
+  "monocyte",
+  "monocyte",
+  "granulocyte monocyte progenitor cell",
+  "monocyte"
+  )
+
+subtissE = stash_annotations(subtissE, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
+tiss = stash_subtiss_in_tiss(tiss, subtissE)
+
+```
+
+```{r}
+head(tiss@meta.data)
+```
+
+
+
+## Checking for batch effects
+
+Color by metadata, like plate barcode, to check for batch effects.
+```{r}
+TSNEPlot(object = subtissE, do.return = TRUE, group.by = "plate.barcode")
+```
+
+## Final coloring
+
+Color by cell ontology class on the original TSNE.
+
+```{r}
+# TSNEPlot(object = subtissE, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = subtissE, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+```
+
+######################################################
+#######################################################
+
+# Final coloring - entire tissue!
+
+Color by cell ontology class on the original TSNE.
+
+```{r, fig.width=8, fig.height=4}
+TSNEPlot(object = tiss, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
+TSNEPlot(object = tiss, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
+```
+
+# Save the Robject for later
+
+```{r}
+filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+print(filename)
+save(tiss, file=filename)
+```
+
+```{r}
+# To reload a saved object
+# filename = here('00_data_ingest', '04_tissue_robj_generated', 
+#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+# load(file=filename)
 ```
 
 
 # Export the final metadata
-
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
-
-```{r}
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','subcell_ontology_class')],file =paste0(save_dir,"/", tissue_of_interest,"_cell_ontology_class.csv"))
-```
 
 
 
@@ -324,7 +752,5 @@ write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','subcell_ontol
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```

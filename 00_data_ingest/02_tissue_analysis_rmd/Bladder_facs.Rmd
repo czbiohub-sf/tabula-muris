@@ -57,32 +57,10 @@ TSNEPlot(object = tiss, do.label = T)
 
 
 
-Compare to previous annotations
+## Compare to previous annotations
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_facs_annotation.csv.backup"))
-previous_annotation = read_csv(filename)
-tiss@meta.data[, 'previous_cell_ontology_class'] <- "NA"
-tiss@meta.data[as.character(previous_annotation$X1), 'previous_cell_ontology_class'] <- as.character(previous_annotation$cell_ontology_class)
+tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs")
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
-
-tiss@meta.data[, 'previous_free_annotation'] <- "NA"
-tiss@meta.data[as.character(previous_annotation$X1), 'previous_free_annotation'] <- as.character(previous_annotation$free_annotation)
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_free_annotation")
-```
-
-
-```{r}
-table(tiss@meta.data[, "previous_cell_ontology_class"])
-```
-
-
-```{r}
-table(tiss@meta.data[, "previous_cell_ontology_class"], tiss@ident)
-```
-
-```{r}
-table(tiss@meta.data[, "previous_free_annotation"], tiss@ident)
 ```
 
 Check expression of genes of interset.
@@ -175,7 +153,7 @@ cell_ontology_class <- c(
     "bladder urothelial cell",
    "bladder urothelial cell", 
   "bladder cell",
-   "bladder urothelial cell", 
+   "bladder urothelial cell"
    )
 
 data.frame(cluster.ids, 
@@ -220,7 +198,7 @@ When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-		  paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+		  paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
@@ -236,73 +214,9 @@ save(tiss, file=filename)
 
 # Export the final metadata
 
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
-
-```{r}
-head(tiss@meta.data)
-```
-
-
-```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-		  paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file="Bladder_cell_ontology_class.csv")
-```
-
-
-## Checking for batch effects
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
-TSNEPlot(object = subtiss, do.return = TRUE, group.by = "plate.barcode")
-```
-
-Print a table showing the count of cells in each identity category from each plate.
-
-```{r}
-table(as.character(subtiss@ident), as.character(subtiss@meta.data$plate.barcode))
-```
-
-
-# Save the Robject for later
-When you save the annotated tissue, please give it a name.
-
-```{r}
-filename = here('00_data_ingest', '04_tissue_robj_generated', 
-		  paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-print(filename)
-save(tiss, file=filename)
-```
-
-```{r}
-# To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-# load(file=filename)
-```
-
-
-
-# Export the final metadata
-
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
-
-```{r}
-head(tiss@meta.data)
-```
-
-
-```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                     paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(FetchData(tiss, c('plate.barcode','cell_ontology_class','cell_ontology_id', 'free_annotation', 'tSNE_1', 'tSNE_2')), file=filename)
-```
 
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```

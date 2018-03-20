@@ -1,254 +1,178 @@
 ---
 title: "Liver FACS Notebook"
 output:
-  html_document: default
+  pdf_document: default
   html_notebook: default
 ---
 
-Specify the tissue of interest, run the boilerplate code which sets up the functions and environment, load the tissue object.
+Enter the name of the tissue you want to analyze.
 
 ```{r}
 tissue_of_interest = "Liver"
 library(here)
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
-load_tissue_facs(tissue_of_interest)
+tiss = load_tissue_facs(tissue_of_interest)
 ```
 
-Visualize top genes in principal components
+We can visualize top genes in each principal component.
 
-```{r, echo=FALSE, fig.height=4, fig.width=8}
+```{r, echo=FALSE}
 PCHeatmap(object = tiss, pc.use = 1:3, cells.use = 500, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 ```
 
-Later on (in FindClusters and TSNE) you will pick a number of principal components to use. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. There is no correct answer to the number to use, but a decent rule of thumb is to go until the plot plateaus.
+We then project onto just the top principal components. This has the effect of keeping the major directions of variation in the data and, ideally, supressing noise. A decent rule of thumb is to pick the elbow in the plot below.
 
 ```{r}
 PCElbowPlot(object = tiss)
 ```
 
 Choose the number of principal components to use.
+
 ```{r}
-# Set number of principal components. 
-n.pcs = 10
+n.pcs = 11
 ```
 
-
-The clustering is performed based on a nearest neighbors graph. Cells that have similar expression will be joined together. The Louvain algorithm looks for groups of cells with high modularity--more connections within the group than between groups. The resolution parameter determines the scale...higher resolution will give more clusters, lower resolution will give fewer.
-
-For the top-level clustering, aim to under-cluster instead of over-cluster. It will be easy to subset groups and further analyze them below.
+## Cluster
 
 ```{r}
 # Set resolution 
-res.used <- 0.3
+res.used <- 1
 
 tiss <- FindClusters(object = tiss, reduction.type = "pca", dims.use = 1:n.pcs, 
-    resolution = res.used, print.output = 0, save.SNN = TRUE, force.recalc = TRUE)
+    resolution = res.used, print.output = 0, save.SNN = TRUE)
 ```
 
-To visualize 
+We use tSNE solely to visualize the data.
+
 ```{r}
-# If cells are too spread out, you can raise the perplexity. If you have few cells, try a lower perplexity (but never less than 10).
-tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=15)
-```
-
-```{r,}
-# note that you can set do.label=T to help label individual clusters
-TSNEPlot(object = tiss, do.label = T)
+tiss <- RunTSNE(object = tiss, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
 ```
 
 ```{r}
-tiss = BuildClusterTree(tiss)
-```
-```{r}
-table(tiss@ident)
-```
-Check expression of genes of interset.
-
-```{r, echo=FALSE, fig.height=6, fig.width=9}
-genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp', 'Glul', 'Pck1')
-FeaturePlot(tiss, genes_to_check, pt.size = 2, nCol = 3)
+TSNEPlot(object = tiss, do.label = T, pt.size = 1.2, label.size = 4)
 ```
 
-```{r, echo=FALSE, fig.height=4, fig.width=8}
-# To change the y-axis to show raw counts, add use.raw = T.
-DotPlot(tiss, genes_to_check, plot.legend = T)
-```
+## Label clusters using marker genes
 
-```{r, echo=FALSE, fig.height=12, fig.width=9}
-#Endothelial cell marker, Halpern paper.
-genes_to_check = c( 'Pecam1', 'Oit3', 'Il1a', 'F8', 'Bmp2', 'C1qtnf1', 'Mmrn2', 'Pcdh12', 'Dpp4', 'Rspo3', 'Igfbp4', 'Igfbp7')
-FeaturePlot(tiss, genes_to_check, pt.size = 2, nCol = 3)
-```
-
-Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
-
-```{r, echo=FALSE, fig.height=4, fig.width=8}
-# To change the y-axis to show raw counts, add use.raw = T.
-###DotPlot(tiss, genes_to_check, plot.legend = T)
-```
-
-
-```{r, echo=FALSE, fig.height=9, fig.width=9}
-### Kuppfer cell marker
-genes_to_check = c('Irf7', 'Spic', 'Clec4f', 'Cd68', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e')
-FeaturePlot(tiss, genes_to_check, pt.size = 2, nCol = 3)
-```
-
-```{r, echo=FALSE, fig.height=9, fig.width=9}
-### B cells markers (Cd74 present in KC, mhc2 complex, antigen presenting, shared by Kuppfer, B cells, not NK cells)
-genes_to_check = c('Zap70', 'Cd19', 'Ms4a1', 'Cd74', 'Chchd10', 'Cd79a', 'Cd79b', 'Vpreb3')
-FeaturePlot(tiss, genes_to_check, pt.size = 2, nCol = 3)
-```
-```{r, echo=FALSE, fig.height=15, fig.width=9}
-### NK cell markers: Klarb1a, Klrb1c (nk1.1); T cells: Cd3e, Cd4, Cd8a; both NK and T: cxcr6 (?),  (not specific) nkg7, 
-genes_to_check = c('Klrb1a', 'Klrb1c', 'Tyrobp', 'Ncr1', 'Gzma', 'Prf1', 'Serpinb9', 'Nkg7', 'Cd3e', 'Cd4', 'Cd8a', 'Cxcr6', 'Ncam1' )
-FeaturePlot(tiss, genes_to_check, pt.size = 2, nCol = 3)
-```
-```{r, echo=FALSE, fig.height=4, fig.width=8}
-# To change the y-axis to show raw counts, add use.raw = T.
-#DotPlot(tiss, genes_to_check, plot.legend = T)
-```
+Check expression of genes useful for indicating cell type.
 
 ```{r}
-VlnPlot(object = tiss, features.plot = c("Klrb1a", "Klrb1c", "Cd4", "Cd8a"), use.raw = TRUE, nCol = 2)
-```
-```{r}
-GenePlot(tiss, 'Cxcr6', 'Nkg7', use.raw = T)
-```
-```{r}
-GenePlot(tiss, 'Cxcr6', 'Cd8a', use.raw = T)
-```
+genes_hep = c('Alb', 'Ttr', 'Apoa1', 'Serpina1c') #hepatocyte
+genes_endo = c('Pecam1', 'Nrp1', 'Kdr','Oit3') # endothelial
+genes_kuppfer = c('Emr1', 'Clec4f', 'Cd68', 'Irf7') # Kuppfer cells
+genes_nk = c('Zap70', 'Il2rb', 'Nkg7', 'Cxcr6') # Natural Killer cells
+genes_b = c('Cd79a', 'Cd79b', 'Cd74', 'Cd19') # B Cells
 
-```{r}
-GenePlot(tiss, 'Cyp2e1', 'Cyp2f2', use.raw = T)
+genes_all = c(genes_hep, genes_endo, genes_kuppfer, genes_nk, genes_b)
 ```
 
-How big are the clusters?
-```{r}
-table(tiss@ident)
+In the tSNE plots below, the intensity of each point represents the log-normalized gene expression $N_{ij}$.
+
+```{r, echo=FALSE, fig.height=20, fig.width=16}
+FeaturePlot(tiss, genes_all, pt.size = 3, nCol = 4, cols.use = c("lightgrey", "blue"), no.legend = F)
 ```
 
-Which markers identify a specific cluster?
+Dotplots show, for each cluster and gene, the fraction of cells with at least one read for the gene (circle size) and the average scaled expression for that gene among the cells expressing it (circle color).
 
-```{r}
-#clust.markers <- FindMarkers(object = tiss, ident.1 = 6, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-#print(x = head(x= clust.markers, n = 20))
+```{r, echo=FALSE}
+DotPlot(tiss, genes_all, plot.legend = T, col.max = 2.5, x.lab.rot = T)
 ```
 
+The low but nonzero levels of Albumin present in all clusters is consistent with a small amount of leakage, either through physical contamination or index hopping. Nevertheless, the absolute levels of expression confirm a sharp difference between the hepatocyte clusters and the others.
 
-```{r}
-clust.markers <- FindMarkers(object = tiss, ident.1 = 4, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+```{r, echo=FALSE, fig.height=3, fig.width=6}
+VlnPlot(tiss, 'Alb', use.raw = T, do.return = T)
 ```
 
+To confirm the identity of a cluster, you can inspect the genes differentially expressed in that cluster compared to the others.
+
 ```{r}
-print(x = head(x= clust.markers, n = 20))
+clust.markers7 <- FindMarkers(object = tiss, ident.1 = 7, 
+                              only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 ```
 
-You can also compute all markers for all clusters at once. This may take some time.
+The top markers for cluster 7 include histocompatibility markers H2-*, consistent with the expression of other B-cell markers seen above.
+
 ```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+head(clust.markers7)
 ```
 
-Display the top markers you computed above.
-```{r}
-top_genes <- tiss.markers %>% group_by(cluster) %>% top_n(50, avg_diff)
-print(top_genes)
-```
+Using the markers, we can confidentaly label the clusters. We provide both a free annotation (where anything name can be used) and a cell ontology class. The latter uses a controlled vocabulary for easy comparison between studies and different levels of the taxonomy.
 
 ```{r}
-# find all markers distinguishing FEMALE vs MALE
-#cluster_sex.markers <- FindMarkers(object = tiss, ident.1 = c(0), ident.2 = c(2,5), 
-#    min.pct = 0.25)
-#print(x = head(x = cluster_sex.markers, n = 50))
-#write.csv(x = head(x = cluster_sex.markers, n = 20), "clus-marker-SEX.csv")
-```
-
-## Assigning cell type identity to clusters
-
-At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
-
-
-```{r}
-# stash current cluster IDs
 tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
-# enumerate current cluster IDs and the labels for them
-cluster.ids <- c(0, 1, 2, 3, 4, 5)
-free_annotation <- c()
-cell_ontology_class <-c("hepatocyte",   "endothelial cell of hepatic sinusoid", "hepatocyte", "Kupffer cell", "natural killer cell", 
-                "B cell")
-cell_ontology_id <- c("CL:0000182",   "CL:1000398", "CL:0000182", "CL:0000091", "CL:0000623", 
-                "CL:0000236")
+cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
 
+free_annotation <- c(
+  "endothelial cell",
+  "hepatocyte",
+  "hepatocyte",
+  "hepatocyte",
+  "hepatocyte",
+  "kuppfer",
+  "hepatocyte",
+  "B cell",
+  "Nk/NKT cells")
 
-tiss@meta.data[,'free_annotation'] <- NA
-tiss@meta.data[,'cell_ontology_class'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_class)
-tiss@meta.data[,'cell_ontology_id'] <- plyr::mapvalues(x = tiss@ident, from = cluster.ids, to = cell_ontology_id)
+cell_ontology_class <-c(
+  "endothelial cell of hepatic sinusoid",
+  "hepatocyte",
+  "hepatocyte",
+  "hepatocyte",
+  "hepatocyte",
+  "Kupffer cell",
+  "hepatocyte",
+  "B cell",
+  "natural killer cell")
 
-tiss@meta.data[tiss@cell.names,'cell_ontology_class'] <- as.character(tiss@meta.data$cell_ontology_class)
-tiss@meta.data[tiss@cell.names,'cell_ontology_id'] <- as.character(tiss@meta.data$cell_ontology_id)
-
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 1, group.by='cell_ontology_class')
+tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
-
 
 
 ## Checking for batch effects
 
-
-Color by metadata, like plate barcode, to check for batch effects.
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "plate.barcode")
-```
-```{r}
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.sex")
-```
-Print a table showing the count of cells in each identity category from each plate.
+Color by metadata, like plate barcode, to check for batch effects. Here we see that the clusters are segregated by sex.
 
 ```{r}
-table(as.character(tiss@ident), as.character(tiss@meta.data$plate.barcode))
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "mouse.id")
+```
+
+Nevertheless, every cluster contains cells from multiple mice.
+
+```{r}
+table(FetchData(tiss, c('mouse.id','ident')) %>% droplevels())
+```
+
+# Final coloring
+
+Color by cell ontology class on the original tSNE.
+
+```{r}
+TSNEPlot(object = tiss, group.by = "cell_ontology_class")
 ```
 
 
 # Save the Robject for later
-When you save the annotated tissue, please give it a name.
 
 ```{r}
 filename = here('00_data_ingest', '04_tissue_robj_generated', 
-                     paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
+                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
 print(filename)
 save(tiss, file=filename)
 ```
 
 ```{r}
 # To reload a saved object
-# filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                      paste0("facs", tissue_of_interest, "_seurat_tiss.Robj"))
-# load(file=filename)
+#filename = here('00_data_ingest', '04_tissue_robj_generated',
+#                      paste0("facs_", tissue_of_interest, "_seurat_subtiss.Robj"))
+#load(file=filename)
 ```
-
-
 
 # Export the final metadata
 
-So that Biohub can easily combine all your cell_ontology_classs, please export them as a simple csv.
-
 ```{r}
-head(tiss@meta.data)
+save_annotation_csv(tiss, tissue_of_interest, "facs")
 ```
 
 
-```{r}
-filename = here('00_data_ingest', '03_tissue_cell_ontology_class_csv', 
-                     paste0(tissue_of_interest, "_cell_ontology_class.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode','cell_ontology_class','cell_ontology_id')], file=filename)
-```
-
-
-Write the cell ontology and free annotations to CSV.
-
-```{r}
-filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                    paste0(tissue_of_interest, "_facs_annotation.csv"))
-write.csv(tiss@meta.data[,c('plate.barcode,'cell_ontology_class','cell_ontology_id', 'free.annotation')], file=filename)
-```

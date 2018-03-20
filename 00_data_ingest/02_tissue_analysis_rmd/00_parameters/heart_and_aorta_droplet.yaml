@@ -1,0 +1,6 @@
+TISSUE: Heart_and_Aorta
+METHOD: droplet
+RES: 0.5
+NPCS: 15
+GENES: "'Fabp4','Dcn','Myh11','Tnni3','Npr3','C1qa'"
+GROUPBY: null

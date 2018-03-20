@@ -1,0 +1,625 @@
+cell,tissue,subtissue,channel,cell_ontology_class,cell_ontology_id,free_annotation,cluster.ids,mouse.sex,mouse.id
+10X_P7_4_AAACCTGCACGACGAA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AAACCTGGTTCCACGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_AAACCTGTCTCGATGA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AAACGGGAGCGCTCCA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_AAAGCAAAGTGAATTG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AAAGCAACACCGAAAG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_AAATGCCAGTCCATAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AAATGCCCAGTAAGAT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_AACCATGCACTGTCGG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_AACGTTGTCCTCATTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_AACTCAGTCACTTCAT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_AACTCTTGTCTTGCGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AACTCTTGTTCAACCA,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_AACTTTCCACGAAGCA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_AAGACCTAGTCCCACG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AAGACCTCAGGGTTAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AAGACCTCAGGTTTCA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_AAGACCTTCTCAAACG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AAGACCTTCTTCTGGC,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_AAGGAGCAGCCAGAAC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_AAGGCAGAGCGTTGCC,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_AAGGCAGAGCTCAACT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_AAGGCAGGTCACCTAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AAGGTTCCAGCTATTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AAGGTTCGTATAGTAG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_AAGTCTGGTAAGAGGA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_AATCCAGCATGATCCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AATCCAGTCAGTTAGC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_AATCCAGTCTTGTCAT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_AATCGGTAGACAGGCT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_ACACCAAAGAAGCCCA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ACACCAACATCTCGCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACACCCTCAGTCGATT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACACCCTTCGAGCCCA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACACCGGTCTAACTGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACACTGACATGCCACG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACACTGATCAACACGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACAGCCGGTAGCGTAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_ACATACGTCACTGGGC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_ACATCAGAGAGCCCAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACATCAGAGTTTAGGA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_ACATCAGCAGATCCAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACATCAGTCTCTTGAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACATGGTAGCTAAGAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACATGGTGTAAGTTCC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_ACATGGTTCCACGTGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACCCACTAGATATACG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACCGTAAAGGATGGTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACCGTAACAACTTGAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACGAGCCAGCGCTCCA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_ACGAGCCAGCTCTCGG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_ACGAGGATCTCTTGAT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_ACGATACAGCCGTCGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACGATACCACAGCGTC,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_ACGATGTCAAACAACA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACGATGTCATACGCTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACGATGTTCTACGAGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACGCCGAAGCCCAACC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACGGAGAAGCGATATA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_ACGGAGAGTCACACGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACGGCCACAACTGCTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACGGGCTAGTAGATGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACGGGCTGTTTGTTTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACGGGTCCAGGCTCAC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_ACGGGTCGTTGTACAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ACGTCAATCGCGCCAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ACTGAGTCACTGCCAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACTGAGTTCGACCAGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ACTGATGAGCTCTCGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACTGATGTCGGTTAAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACTGCTCAGACCCACC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ACTGCTCAGAGGGCTT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_ACTGCTCAGCCTTGAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACTGCTCAGCTAGTTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ACTGCTCGTGCGGTAA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACTTACTAGAAACCGC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACTTGTTCATCCAACA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ACTTGTTCATGACATC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGAATAGAGCACGCCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGAATAGTCTCTGCTG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_AGACGTTTCTCGATGA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_AGAGCGAAGCACGCCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGAGCGAAGTGTGGCA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGAGCGATCAATCACG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGAGCGATCCGTAGTA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_AGAGCTTAGTACGTTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGAGTGGAGTCCGTAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGAGTGGCATGCCACG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_AGATCTGAGCGATCCC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGATCTGGTCTCTTTA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_AGATCTGTCTGTACGA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_AGCATACGTTACGTCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGCGGTCAGTATCTCG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGCGTCGGTGCAGGTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGCTCTCTCCCAAGTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_AGCTTGAAGGGATGGG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_AGCTTGATCCACGTTC,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_AGGCCACAGCGCTCCA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_AGGCCACGTATCGCAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGGCCACTCGCTTAGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGGTCATGTATTCGTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGGTCATGTCAGTGGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGGTCATGTTACGACT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGGTCCGCACCACGTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGTCTTTCAGTGGGAT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_AGTCTTTCATCATCCC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGTCTTTGTATTACCG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGTGAGGCACATTCGA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_AGTGAGGGTAATCACC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_AGTGGGACAGCCTTGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGTGGGATCTCTAAGG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_AGTGTCAAGCCACCTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_AGTGTCACACATGGGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGTTGGTCAGTTAACC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_AGTTGGTGTATCAGTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_AGTTGGTGTGACTACT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ATAAGAGAGGGCTCTC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_ATAAGAGAGTACGCGA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ATAAGAGGTGTGCCTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ATAGACCTCTCACATT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ATCACGATCAACACCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ATCCACCAGAAACCTA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_ATCCACCGTCGACTAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ATCCGAACAAGCCCAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ATCCGAATCAAACCGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ATCGAGTAGGGTGTTG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_ATCGAGTGTCGAACAG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ATCTACTAGGAATCGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ATCTACTAGTGGACGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ATCTACTGTTGAGTTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ATCTGCCAGGTGGGTT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ATGAGGGTCGGACAAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_ATGAGGGTCTACTTAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ATGCGATAGATGCCAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ATGCGATGTCGCATAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ATGTGTGTCGGCCGAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ATTATCCAGACTACAA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_ATTATCCCACCGAATT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_ATTATCCGTCTTCGTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ATTCTACCAAACAACA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ATTCTACCATATACCG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_ATTCTACTCTCCCTGA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_ATTGGACCATGCAATC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_ATTGGTGTCTGAGGGA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_ATTTCTGCACCACCAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_ATTTCTGTCCCGGATG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_ATTTCTGTCTAGAGTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CAACCAACAAGAAGAG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CAACCAACAGCTATTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAACCTCCATTAGGCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAACTAGCACATAACC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CAACTAGGTTAGATGA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CAACTAGTCCTGTACC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CAAGAAAAGAGAGCTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CAAGAAAGTATGGTTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CAAGATCTCACGCGGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CAAGTTGAGATCTGAA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CAAGTTGCAATCTGCA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CACAAACAGATGCCAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CACAAACTCGCGATCG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CACACAAAGCCCTAAT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CACAGGCGTACTCTCC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CACAGGCGTCGAATCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CACATAGAGGGATACC,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_CACATAGCACACATGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CACATAGGTCTCTTTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CACATAGTCCCAAGTA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CACATTTTCTGTCAAG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CACTCCATCCGCAGTG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CACTCCATCGTGTAGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAGAATCAGCTCCTCT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CAGAATCCAATAACGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CAGAGAGCACCTTGTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAGATCAAGAAGGCCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAGATCACAGCTGCAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CAGATCAGTACGCACC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAGCAGCAGACTAGAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CAGCAGCGTGAAAGAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CAGCAGCGTTGTTTGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAGCCGACACAGTCGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CAGCGACCAAACGCGA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAGCTAACAAGAGTCG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAGGTGCTCACCACCT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CAGGTGCTCTCCGGTT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CAGTAACAGTGGTAAT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CAGTCCTAGGATTCGG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CAGTCCTGTGAGCGAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CATATGGTCAGGTAAA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CATATGGTCGTTTATC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CATATTCAGACGCTTT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CATCCACCAATACGCT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CATCGAAAGGCTCTTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CATCGAAAGTACGCGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CATCGAATCAACGGGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CATCGGGCAGCTGTAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CATCGGGCATAAAGGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CATCGGGGTCGCTTTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CATCGGGGTTGTACAC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CATGACATCCACGTGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CATGCCTCATTGGCGC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CATGGCGCACCCATGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CATGGCGGTGCAGGTA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CATTCGCCATTTCACT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CCAATCCCACTACAGT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CCACCTAAGGCCCGTT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCACCTAGTCACTGGC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CCACCTATCAGCATGT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CCACGGAAGGCCCGTT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CCAGCGACACGAAAGC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CCATGTCCACTTGGAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCATGTCTCCCATTAT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CCCAATCCAGGTGGAT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CCCAATCTCATCTGCC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CCCAGTTCATCGTCGG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CCCATACGTAGCTAAA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCCTCCTTCAAACAAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CCCTCCTTCATTGCGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CCGGGATGTTGGTTTG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CCGTACTCATCGGGTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCGTGGAAGTAACCCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCGTGGATCTATCCTA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CCGTTCAGTAGGCTGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CCTAAAGGTTCGTCTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCTACACCAACTGCTA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCTACCAGTAGGGTAC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CCTACCATCGCTTGTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCTAGCTGTGCATCTA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCTATTAGTCGCATAT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CCTCAGTCAGCAGTTT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCTCTGAAGAAGATTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CCTTACGGTTCATGGT,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_CCTTACGTCGCCAGCA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CCTTCGAAGTCTTGCA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CCTTCGAGTCACACGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CCTTTCTTCGTAGATC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGAATGTAGAGCTGCA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CGACTTCGTAGTACCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGACTTCTCTGATACG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CGAGAAGAGCAGCGTA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CGAGAAGAGCGATAGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CGAGAAGGTTGCGTTA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CGAGAAGTCTAGCACA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGATGGCGTACTTCTT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CGATGTATCCCTTGTG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CGATGTATCGAGAACG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGCCAAGTCCTAGAAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGCGGTACAAGTACCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGCGGTACAGACGCCT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CGCGGTACAGCCTTGG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CGCGTTTGTTCCACAA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CGCTATCCACTGCCAG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGCTATCCATCTATGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGCTGGATCTGCGACG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGCTTCAAGATCCCAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGCTTCAGTAAGCACG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CGCTTCATCCGAATGT,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_CGGACACAGGCTACGA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CGGACACAGTAGGCCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGGACGTAGCTTTGGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CGGACGTAGGCTAGCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGGACTGAGCAGCCTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CGGACTGCACTGTCGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CGGACTGGTCCGTCAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGGACTGGTGGTACAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGGAGCTCACGACGAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGGAGCTGTTAAGGGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGGAGCTTCCTGCAGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGGAGTCCACGAGGTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGGAGTCCAGACACTT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGGAGTCTCAGCAACT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CGGCTAGGTCAGTGGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGGGTCATCAGGATCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGGGTCATCCCAGGTG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CGGGTCATCTGCGTAA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGGTTAATCCGCAGTG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CGGTTAATCTGTCCGT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CGTAGCGCACCACGTG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CGTAGCGCATGGGAAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CGTAGGCCATTCGACA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGTCACTGTAACGCGA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGTCAGGTCGGCTTGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CGTCCATAGACAATAC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGTCCATAGGAGCGAG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CGTCCATCAGCTCGAC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CGTCTACCAAATCCGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CGTGAGCAGGGCATGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGTGAGCAGTACACCT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CGTGTCTAGCGATAGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CGTGTCTAGTGGACGT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CGTGTCTCACTCTGTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CGTTCTGTCGTGGGAA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CTAAGACGTACATCCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTAAGACGTGACAAAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTAAGACGTTGACGTT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CTAAGACTCGTGGACC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTAATGGGTACAGTGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTACACCAGAAACGCC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CTACACCGTCCAGTTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTACATTAGTATTGGA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CTACCCACACGAAACG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTACGTCGTCTCACCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTAGCCTGTTCGCGAC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTAGTGAAGCAAATCA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CTAGTGACAATGGTCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTAGTGATCGTGACAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTAGTGATCTCCCTGA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTCAGAACACCCTATC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTCAGAATCGCAGGCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTCATTACACGAAATA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTCGAGGGTCGCATCG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTCGGAGGTCAACTGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTCGGAGTCATCACCC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTCGGAGTCCTCTAGC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CTCGTCACATTATCTC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CTCGTCAGTATGAATG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CTCGTCAGTGGTCTCG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CTCTAATAGGGTCGAT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CTCTACGAGTGGAGAA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTCTACGCAAAGCAAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTCTGGTAGGAGCGTT,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_CTCTGGTGTTCCCGAG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTCTGGTGTTTGGCGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTGAAACTCCGAATGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTGAAGTGTAGAGCTG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_CTGATAGGTGAAGGCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTGATAGGTTAAAGAC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CTGATCCCAAGCCCAC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTGCCTAAGGGTGTTG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTGCGGATCGGAGCAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTGCTGTTCCTCGCAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTGTTTAGTTAAAGTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTGTTTATCGTCCGTT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CTTACCGAGTCCATAC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_CTTACCGGTCCATCCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_CTTACCGTCTTGCAAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_CTTCTCTCACCGCTAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_CTTCTCTTCATTCACT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_CTTGGCTAGACTTTCG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GAACGGACAGTCAGCC,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_GAACGGAGTGCGAAAC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GAACGGATCCTTCAAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GAAGCAGTCACTATTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GAAGCAGTCGAATCCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GAATAAGTCCCATTAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GAATGAATCGAATGCT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GACACGCAGGGTTCCC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GACACGCCAGCCTTGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GACACGCCATTTCAGG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GACAGAGAGATCGATA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GACAGAGGTATTCGTG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GACAGAGGTGCACGAA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GACCTGGTCATAACCG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GACGTTAAGTGTACCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GACGTTATCCACGAAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GACTACACAAGCTGAG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GACTACAGTAGCGTGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GACTGCGGTGCAACTT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GAGCAGAAGATATGCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GATCAGTAGTCTCCTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GATCAGTGTTTGCATG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GATCGATCACATGGGA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GATCGCGAGGGCTCTC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GATCGCGGTTGCGCAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GATCGTATCTCGGACG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GATCTAGGTCTAGAGG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GATGAAAAGAAGATTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GATGAAAAGACGACGT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GATTCAGCACAGCGTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GCAAACTAGCCCTAAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GCAAACTGTCAGAGGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GCAAACTGTTTCCACC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GCACTCTGTAAACCTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GCAGCCAGTTGAACTC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GCAGTTAAGTATTGGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GCAGTTATCGCACTCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GCATACATCCCTGACT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GCATGCGCAGCTGCTG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GCATGTACACCTCGTT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GCCAAATAGATATACG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GCCAAATCACCATCCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GCCTCTACATCGGAAG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GCCTCTATCAAGAAGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GCGACCAAGTGACATA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GCGAGAAGTCGAGTTT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GCGCCAAAGGCATTGG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GCGCGATGTGCTGTAT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GCGCGATTCTTGCATT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GCTCCTAGTCTAAAGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GCTCTGTAGTCGTTTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GCTCTGTGTCTAAAGA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GCTGCAGAGCCCTAAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GCTGCAGTCAACGGGA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GCTGCAGTCGTTTGCC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GCTGCAGTCTGCGACG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GCTGCGAAGAACAACT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GCTGCGAGTAAACGCG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GCTGCGATCGAATGCT,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_GCTGCTTCAGCTGTAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GCTGCTTTCCAATGGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GCTGGGTCAATGAATG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GCTTCCAAGTGAAGTT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GCTTCCACACGAGGTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GGAAAGCAGGAGTAGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GGAACTTTCTGAGTGT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GGACAGAAGTCAAGGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GGACGTCAGGGTGTTG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GGACGTCCACGCGAAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GGAGCAATCTGTCAAG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGATGTTAGTGTACGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGATGTTTCGTGGTCG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GGATTACAGAGGACGG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GGATTACCACGGTAAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GGATTACGTGCCTGTG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GGCAATTCATGATCCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGCAATTGTAAATACG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGCCGATCAAGGACTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGCGACTCAAATCCGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GGCGACTCAGTATAAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GGCGTGTCAATCCAAC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GGCTCGACAAGCTGTT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GGCTCGATCACATACG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGCTGGTCAGGGCATA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGCTGGTGTGTCGCTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGGAATGTCCGCAGTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGGACCTCACTCTGTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGGACCTCAGACGCAA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GGGACCTGTTATCGGT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GGGAGATAGGTGCTTT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GGGATGATCCGAAGAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GGGCATCCAGTCGATT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GGGCATCGTACCCAAT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GGGTCTGCATTGTGCA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GGTATTGCACAGAGGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GGTATTGGTCGGCACT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GGTGAAGTCGACCAGC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GGTGCGTGTATATCCG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GGTGTTAAGCTAGTGG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GGTGTTATCAGTGCAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTAACGTAGCTAACAA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GTAACGTGTCTTGTCC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GTAACGTGTTGAGTTC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTAACGTGTTTGCATG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTAACTGGTAAGTTCC,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_GTAACTGGTCGCGTGT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GTAGGCCAGCTAACAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GTAGGCCCAGCCTATA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTAGGCCTCAACGGGA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTAGGCCTCTCGAGTA,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_GTATCTTAGGTGATAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTATCTTTCATCGGAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GTATTCTTCACCATAG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTATTCTTCCGTCATC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTCAAGTAGAGGTTGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GTCACAAGTTCCTCCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTCACGGCATGGATGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTCATTTAGTGTGAAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTCATTTGTAGGAGTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTCATTTTCACCGTAA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTCATTTTCCCAACGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GTCCTCACATTCTCAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTCCTCATCTGTCCGT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GTCGTAAAGCTGATAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTCGTAATCCTAGGGC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GTCGTAATCTTTAGTC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GTCTTCGAGCGTCTAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GTGCAGCAGATGCGAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GTGCAGCGTTGGAGGT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GTGCATACACGCTTTC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_GTGCATACATGGTCTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTGCGGTCACGAAATA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GTGCTTCCACATAACC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GTGGGTCAGAGGTTGC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_GTGGGTCCAAGCTGAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTGGGTCTCCAGAGGA,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_GTGTTAGAGCTGCAAG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTGTTAGCAACTGCTA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTTAAGCCATTCTCAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GTTAAGCTCAAGGTAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_GTTCATTAGAGTCTGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTTCGGGAGCTTATCG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_GTTCTCGAGGCATGTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTTCTCGAGTACGTTC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_GTTCTCGGTCTAGCGC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_GTTTCTACAGATCCAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TAAACCGAGCCACCTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TAAGAGACACGTAAGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TAAGAGACATGGATGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TAAGAGATCCCGGATG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TACAGTGGTTCCACGG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TACCTATAGCGAGAAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TACCTATGTCGCATCG,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TACCTTAGTCCAACTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TACCTTATCGTGGGAA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TACGGATAGGCAATTA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TACGGATCATGGAATA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TACGGATGTATAAACG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TACGGGCAGTCTCGGC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TACGGTAAGAGTAATC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TACGGTAAGCTACCTA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TACGGTACAAGTTCTG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TACTCATTCAAGGTAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TACTCGCGTCTTGCGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TACTTACTCTCCAACC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TAGCCGGGTCGAACAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TAGCCGGGTTCGTGAT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TAGGCATGTCTCCATC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TAGGCATTCAAACCAC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TAGTTGGAGTGTTGAA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TAGTTGGGTAGTACCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TAGTTGGTCACGAAGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TATCTCAAGCTACCTA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TATCTCACAAGGACAC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TATCTCACAATCACAC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TATTACCCACCGAAAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TATTACCTCGTAGGTT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TCAACGAAGACGCTTT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TCAACGATCTTTAGGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TCACAAGAGTAGCGGT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TCAGCTCAGTCGCCGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TCAGCTCAGTGCTGCC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TCAGCTCGTGGACGAT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TCAGCTCGTTGATTGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TCAGGATCACTGTGTA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TCAGGATGTCTAGTCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TCAGGTACATAACCTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TCATTACCACATCTTT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TCATTACTCACCGTAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TCCACACCACTCGACG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TCCCGATTCCATGAAC,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_TCCCGATTCCGTAGGC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TCGAGGCGTATGCTTG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TCGAGGCTCTGAGTGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TCGCGAGGTTGGGACA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TCGGGACAGTCAAGGC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TCGGGACCAGGTGCCT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TCGGGACCATCACCCT,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TCGGGACGTTCGGGCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TCGGTAACATTGGCGC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TCGTACCAGTTACGGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TCGTACCTCAACGCTA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TCGTACCTCTGTACGA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TCGTAGATCGCATGGC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TCTATTGCACTGAAGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TCTCATAGTGTAACGG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TCTGAGACAGCTGTGC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TCTGGAATCGAGCCCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TCTTCGGGTAGGACAC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TCTTTCCGTCGCGTGT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TGACAACAGATATGGT,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TGACGGCAGAGAGCTC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TGACGGCGTAAGTAGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TGACTTTCATTCTCAT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGACTTTTCAAACCGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGACTTTTCGTAGATC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TGAGCATCATGCTGGC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TGAGCCGGTCGGCATC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TGAGGGAAGCGTGAAC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGAGGGACATACCATG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TGCACCTCAAGTTCTG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TGCACCTCAGCCTGTG,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_TGCACCTTCCAAGTAC,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGCCAAAGTGTGCCTG,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TGCCCATTCTGCTTGC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TGCCCTACATGGAATA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TGCGCAGCACTTCGAA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGCGGGTCAGATGGGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TGCGGGTGTATGGTTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TGCGTGGGTAGCTGCC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TGCGTGGTCCAGGGCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TGCTACCTCACAAACC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TGCTACCTCCCTTGCA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TGCTGCTCATCGACGC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TGCTGCTGTAACGTTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TGGACGCCACGGACAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TGGACGCCACTTACGA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TGGACGCGTTACGACT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGGACGCTCTGGCGTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGGCGCAGTAAGTAGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGGCTGGTCGAATGCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TGGGAAGAGGCGCTCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGGGAAGGTACAAGTA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TGGGCGTCATAGGATA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGGTTAGCAAGAAGAG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TGGTTAGCATGTCGAT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TGTATTCAGCAGCCTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TGTATTCAGCGAAGGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TGTCCCACAGCTGTTA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TGTCCCAGTCGCGTGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGTGGTAGTTCCAACA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TGTGTTTCATTACGAC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TTAGGCACAGAAGCAC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TTAGGCAGTACTCGCG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTAGTTCAGCTAACAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TTAGTTCCATCCGGGT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TTAGTTCGTCTTCTCG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTAGTTCTCTCTGCTG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTATGCTTCCCAAGTA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTATGCTTCCTTAATC,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TTCCCAGCATAAGACA,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TTCCCAGGTTGTTTGG,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTCGGTCAGACAATAC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TTCGGTCCAATCCGAT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TTCGGTCCACTGTTAG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TTCGGTCTCAGCTCTC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TTCTACAAGAGCAATT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTCTCCTTCACCGTAA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TTCTTAGGTTTGGGCC,Heart_and_Aorta,,10X_P7_4,NA,NA,smooth muscle cell,2,F,3-F-56
+10X_P7_4_TTCTTAGTCATGGTCA,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTGCCGTAGCTATGCT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TTGCCGTGTTGCGCAC,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TTGCCGTGTTGTTTGG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TTGCGTCAGCAGATCG,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TTGGAACAGTTGCAGG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TTGTAGGAGGTGGGTT,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TTTACTGCAGACGCTC,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
+10X_P7_4_TTTATGCTCGATAGAA,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,1,F,3-F-56
+10X_P7_4_TTTCCTCGTATCACCA,Heart_and_Aorta,,10X_P7_4,erythrocyte,CL:0000232,erythrocyte,3,F,3-F-56
+10X_P7_4_TTTCCTCTCCAGGGCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTTGCGCAGGACAGCT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTTGGTTCAGACTCGC,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TTTGTCAAGTGGAGAA,Heart_and_Aorta,,10X_P7_4,cardiac muscle cell,CL:0000746,cardiac muscle cell,5,F,3-F-56
+10X_P7_4_TTTGTCACAAGCCATT,Heart_and_Aorta,,10X_P7_4,endocardial cell,CL:0002350,endocardial cell,4,F,3-F-56
+10X_P7_4_TTTGTCAGTCGATTGT,Heart_and_Aorta,,10X_P7_4,endothelial cell,CL:0000115,endothelial cell,0,F,3-F-56
+10X_P7_4_TTTGTCAGTGCGCTTG,Heart_and_Aorta,,10X_P7_4,fibroblast,CL:0000057,fibroblast,2,F,3-F-56
