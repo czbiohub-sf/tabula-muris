@@ -4,12 +4,6 @@ output: html_notebook
 ---
 
 ```{r}
-library(useful)
-library(Seurat)
-library(dplyr)
-library(Matrix)
-library(ontologyIndex)
-library(tidyverse)
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
 save_folder = here('30_tissue_supplement_figures', 'Pancreas', 'facs')
@@ -23,7 +17,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c("Chga", "Isl1", "Gcg", "Mafb", "Arx", "Ins1", "Ins2", "Mafa", "Nkx6-1", "Slc2a2", "Sst", "Hhex", "Pdx1", "Ppy", "Ghrl", "Krt19", "Hnf1b", "Amy2b", "Cpa1", "Ptf1a", "Pdgfra", "Pdgfrb", "Pecam1", "Cdh5", "Kdr", "Ptprc", "Neurog3"))
+genes_to_check = c("Amy2b", "Arx", "Cdh5", "Chga", "Cpa1", "Gcg", "Ghrl", "Hhex", "Hnf1b", "Ins1", "Ins2", "Isl1", "Kdr", "Krt19", "Mafa", "Mafb", "Neurog3", "Nkx6-1", "Pdgfra", "Pdgfrb", "Pdx1", "Pecam1", "Ppy", "Ptf1a", "Ptprc", "Slc2a2", "Sst")
 dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
