@@ -17,7 +17,7 @@ library(grid)
 standard.group.bys = c("cell_ontology_class", "free_annotation", 'cluster.ids')
 prefix = 'allcells'
 
-CHUNKSIZE = 20
+CHUNKSIZE = 12
 
 # Extract legend from a ggplot
 # Stolen from https://gist.github.com/crsh/be88be19233f1df4542aca900501f0fb
@@ -32,8 +32,6 @@ gglegend <- function(x){
 dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys){
     for (group.by in group.bys ){
       write(paste('group.by:', group.by, '   prefix:', prefix), stderr())
-
-
 
       # If this column is all NAs, then skip it
       if (all(is.na(tiss@meta.data[, group.by]))){
@@ -66,7 +64,7 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
         genes = chunked_genes[[name]]
         # Dotplot - enrichment of gene expression in group.by with dot size
         filename = file.path(save_folder, paste(prefix, group.by,
-          paste0('dotplot-', name, '_of-', n_chunks, '.pdf'), sep='_'))
+          paste0('dotplot_', name, '-of-', n_chunks, '.pdf'), sep='_'))
       p = DotPlot(tiss, genes, col.max = 2.5, plot.legend = T,
         do.return = T, group.by = group.by) #+ coord_flip()
       ggsave(filename, width = 11, height = 8)
@@ -74,8 +72,8 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
 
       # Violinplot - enrichment of gene expression in group.by with double wide histogram
       filename = file.path(save_folder, paste(prefix, group.by,
-          paste0('violinplot-', name, '_of-', n_chunks, '.pdf'), sep='_'))
-      p = VlnPlot(tiss, genes, group.by = group.by, do.return=TRUE, size.x.use=8, size.y.use=8)
+          paste0('violinplot_', name, '-of-', n_chunks, '.pdf'), sep='_'))
+      p = VlnPlot(tiss, genes, group.by = group.by, do.return=TRUE, size.x.use=8, size.y.use=8, nCol=3)
       ggsave(filename, width = 8, height = 11)
       dev.off()
       }
