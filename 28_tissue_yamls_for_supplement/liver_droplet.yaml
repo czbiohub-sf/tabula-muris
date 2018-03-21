@@ -53,7 +53,7 @@ SUBSET:
     - Mup20
     - Mup21
     - Xist
-    GROUPBY: null
+    GROUPBY: mouse.sex
     NPCS: 8
     RES: 0.5
 TISSUE: Liver
