@@ -102,20 +102,22 @@ dot_tsne_ridge = function(tiss,
       no.legend = TRUE,
       colors.use = colors.use
     )
-    ggsave(filename, width = 2, height = 2)
+    ggsave(filename, width = 4, height = 4)
     # dev.off()
     
     # Legend for TSNE
-    # Add letter to the groupby for legends
-    labels = sort(unique(tiss@meta.data[, group.by]))
-    letters = LETTERS[seq(1, length(labels))]
-    new_labels = paste0('(', letters, ') ', labels)
-    group.by.plus = paste0(group.by, '_letter')
-    tiss@meta.data[, group.by.plus] = plyr::mapvalues(
-      x = tiss@meta.data[, group.by],
-      from = labels,
-      to = new_labels
-    )
+    # Add letter to the string labels groupby for legends
+    if (group.by != 'cluster.ids'){
+      labels = sort(unique(tiss@meta.data[, group.by]))
+      letters = LETTERS[seq(1, length(labels))]
+      new_labels = paste0('(', letters, ') ', labels)
+      group.by.plus = paste0(group.by, '_letter')
+      tiss@meta.data[, group.by.plus] = plyr::mapvalues(
+        x = tiss@meta.data[, group.by],
+        from = labels,
+        to = new_labels
+      )
+    }
 
     filename = make_filename(save_folder, prefix, group.by, 'tsneplot_legend')
     # Plot TSNE again just to steal the legend
@@ -133,9 +135,9 @@ dot_tsne_ridge = function(tiss,
 
     # Initialize an empty canvas!
     ggdraw()
-    # Draw only gene 
+    # Draw only the legend
     ggdraw(g_legend(p))
-    ggsave(filename, width = 3, height = 3)
+    ggsave(filename, width = 8, height = 4)
     dev.off()
     
     # Many of the strings are too long so we use numbers instead. The color
