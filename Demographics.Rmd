@@ -25,8 +25,8 @@ Basic numbers
 facs_cells = length(tiss_FACS@meta.data)
 droplet_cells = length(tiss_droplet@meta.data)
 
-facs_depth = average(tiss_FACS@meta.data$nReads)
-droplet_depth = average(tiss_droplet@meta.data$nUMI)
+facs_depth = mean(tiss_FACS@meta.data$nReads)
+droplet_depth = mean(tiss_droplet@meta.data$nUMI)
 
 total_cells = facs_cells + droplet_cells
 ```
