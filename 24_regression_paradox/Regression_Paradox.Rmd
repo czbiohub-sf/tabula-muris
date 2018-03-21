@@ -1,0 +1,35 @@
+---
+title: "Regression Paradox"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+Regressing against a covariate like log(nReads) can introduce artifacts because those factors are often correlated with cell type.
+
+For example, in the liver, hepatocytes are very large cells that tend to have more reads.
+
+```{r, include = F}
+library(here)
+library(Seurat)
+suppressMessages(library(tidyverse))
+load(here("00_data_ingest", "04_tissue_robj_generated", "facs_Liver_seurat_tiss.Robj"))
+```
+
+
+```{r, fig.width = 12, echo = F}
+FetchData(tiss, c('cell_ontology_class', 'nReads','tissue')) %>% ggplot(aes(x = cell_ontology_class, y = log(nReads), col = cell_ontology_class)) + geom_boxplot() + coord_flip() + ggtitle("nReads differs between cell types")
+ggsave(here("24_regression_paradox", "liver_nreads_boxplot.pdf"))
+```
+
+Fitting linear models to each cell type (colored lines) yield very different slopes and residuals than fitting one global model (black line).
+
+```{r, fig.width = 12, echo=FALSE}
+FetchData(tiss, c('cell_ontology_class', 'nReads','tissue', 'Alb')) %>% 
+  ggplot(aes(x = log(nReads), y = Alb, col = cell_ontology_class)) + geom_point() + geom_smooth(method = 'lm',aes(x = log(nReads), y = Alb), inherit.aes = F, se = F, color = 'black') + geom_smooth(method = 'lm', se = F) + 
+  ggtitle("Linear models (per cell type vs global)")
+
+ggsave(here("24_regression_paradox", "liver_nreads_Alb_regression.pdf"))
+```
+
+
