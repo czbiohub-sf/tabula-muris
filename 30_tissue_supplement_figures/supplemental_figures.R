@@ -154,7 +154,7 @@ dot_tsne_violin = function(tiss,
       
       # Dotplot - enrichment of gene expression in group.by with dot size
         filename = make_filename(save_folder, prefix, group.by,
-          paste0('dotplot_', name, '-of-', n_chunks)
+          paste0('dotplot_', name, '-of-', n_chunks))
       # Use rev(genes) to reverse the order because dotplot does Right to Left instead of left to right
       p = DotPlot(
         tiss,
@@ -172,7 +172,7 @@ dot_tsne_violin = function(tiss,
       
       # Ridgeplot - enrichment of gene expression in group.by with smoothed histograms
         filename = make_filename(save_folder, prefix, group.by,
-          paste0('ridgeplot_', name, '-of-', n_chunks)
+          paste0('ridgeplot_', name, '-of-', n_chunks))
       plots = RidgePlot(
         tiss,
         genes,
