@@ -3,6 +3,8 @@ title: "Diaphragm facs Supplementary Notebook"
 output: html_notebook
 ---
 
+# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
 ```{r}
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
@@ -18,12 +20,12 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("C1qa", "Calcr", "Cd19", "Cd34", "Cd3d", "Cd44", "Cd69", "Cd79a", "Cd79b", "Cxcr4", "Fcer1g", "Foxp3", "Itga7", "Itgam", "Itgb1", "Klrb1b", "Myf5", "Myod1", "Pax3", "Pax7", "Pdgfra", "Pecam1", "Ptprc", "Sdc4", "Vcam1", "Vpreb3")
-dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
+## Output differentially expressed genes in clusters
 
 ```{r}
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ```
-

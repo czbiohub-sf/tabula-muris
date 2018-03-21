@@ -3,6 +3,8 @@ title: "Fat facs Supplementary Notebook"
 output: html_notebook
 ---
 
+# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
 ```{r}
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
@@ -18,12 +20,12 @@ additional.group.bys = sort(c("subtissue"))
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("C1qa", "Cd14", "Cd19", "Cd34", "Cd3g", "Cd4", "Cd68", "Cd8a", "Cdh5", "Emr1", "Fabp4", "Gzma", "Irf8", "Itgam", "Kdr", "Lyz2", "Nkg7", "Pdgfra", "Pecam1", "Ptprc", "Tek")
-dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
+## Output differentially expressed genes in clusters
 
 ```{r}
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ```
-
