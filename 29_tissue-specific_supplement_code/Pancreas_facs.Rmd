@@ -1,6 +1,9 @@
 Figure 1.
 ```{r}
+filename = file.path(save_folder, paste(prefix, group.by, 'ridgeplot.png', sep='_'))
 RidgePlot(tiss, c('Sst'), group.by = "cell_ontology_class")
+ggsave(filename, dpi=300)
+dev.off()
 ```
 
 Figure 2.
