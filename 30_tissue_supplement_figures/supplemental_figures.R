@@ -53,7 +53,7 @@ make_filename = function(save_folder, prefix, group.by, plottype, format='pdf'){
 }
 
 # Make all supplemental figures for a tiss object
-dot_tsne_violin = function(tiss,
+dot_tsne_ridge = function(tiss,
                            genes_to_check,
                            save_folder,
                            prefix,
