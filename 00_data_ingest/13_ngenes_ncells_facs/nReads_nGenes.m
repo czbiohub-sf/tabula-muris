@@ -8,7 +8,8 @@ clc
 
 d = dir('*_nreads_ngenes.csv');
 facs_nreads_ngenes = cell(length(d),3);
-lengthTissue = {};
+
+acrossAllTissues = [];
 for i = 1:length(d)
     
     workingFile = d(i).name;
@@ -32,11 +33,10 @@ for i = 1:length(d)
     
     facs_nreads_ngenes(i,:) = [tissueName mean(workingTable.nGene)...
         mean(workingTable.nReads)];
-    lengthTissue = [lengthTissue;[tissueName num2cell(height(workingTable))]];
+    acrossAllTissues = [acrossAllTissues;[workingTable.nGene workingTable.nReads]];
+    
 end
-facs_nreads_ngenes = [{'acrossAllTissues'...
-    num2cell(mean(cell2mat(facs_nreads_ngenes(:,2)).*cell2mat(lengthTissue(:,2)))./sum(cell2mat(lengthTissue(:,2))))...
-    num2cell(mean(cell2mat(facs_nreads_ngenes(:,3)).*cell2mat(lengthTissue(:,2)))./sum(cell2mat(lengthTissue(:,2))))};facs_nreads_ngenes];
+facs_nreads_ngenes = [{'acrossAllTissues' num2cell(mean(acrossAllTissues(:,1))) num2cell(mean(acrossAllTissues(:,2)))};facs_nreads_ngenes];
 facs_nreads_ngenes = cell2table(facs_nreads_ngenes,'VariableNames',{'TissueName' 'avg_nGene' 'avg_nReads'});
 writetable(facs_nreads_ngenes,'facsNreadsNgenes.csv')
 % the number of cells is different
