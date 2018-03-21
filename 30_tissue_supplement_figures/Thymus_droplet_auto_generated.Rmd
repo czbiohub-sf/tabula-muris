@@ -3,6 +3,8 @@ title: "Thymus droplet Supplementary Notebook"
 output: html_notebook
 ---
 
+# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
 ```{r}
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
@@ -18,12 +20,12 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Cd14", "Cd19", "Cd27", "Cd3d", "Cd3e", "Cd3g", "Cd4", "Cd44", "Cd69", "Cd86", "Cd8a", "Cd8b1", "Dntt", "Epcam", "Ets1", "H2-Aa", "H2-Ab1", "Il2ra", "Itgax", "Krt5", "Krt8", "Mki67", "Ptcra", "Ptprc", "Rag1", "Rag2", "Top2a", "Vim")
-dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
+## Output differentially expressed genes in clusters
 
 ```{r}
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ```
-
