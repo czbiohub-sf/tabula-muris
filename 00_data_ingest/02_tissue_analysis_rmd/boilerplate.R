@@ -220,21 +220,17 @@ save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
   filename = here('00_data_ingest', '03_tissue_annotation_csv',
                     paste0(tissue_of_interest, "_", method, "_annotation.csv"))
 
-  if(method == 'facs'){
-    columns = c('cell', 'tissue', 'subtissue', 'FACS.selection',
-                batch_name_column, 'cell_ontology_class',
+  # Set columns commonly used across all methods
+  common_cols = c('cell', 'tissue', 'subtissue', 'cell_ontology_class',
                 'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex',
-                'mouse.id')
-  } else {
-    columns = c('cell', 'tissue', 'subtissue',
-                                batch_name_column, 'cell_ontology_class',
-                                'cell_ontology_id', 'free_annotation', 'cluster.ids', 'mouse.sex',
-                                'mouse.id')
-  }
+                'mouse.id', 'tSNE_1', 'tSNE_2')
+
+
   # Get any columns that say "subset"
   subset_cols = sort(grep("subset", colnames(tiss@meta.data), perl=TRUE, value=TRUE))
-  columns = c(columns, subset_cols)
-  
+
+  columns = c(common_cols, batch_name_column, subset_cols)
+
   write_csv(FetchData(tiss, columns), filename)
             
 }
