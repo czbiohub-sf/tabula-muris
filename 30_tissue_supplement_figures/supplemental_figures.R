@@ -160,7 +160,7 @@ dot_tsne_violin = function(tiss,
         do.return = T,
         group.by = group.by,
         cols.use = dotplot.cols.use,
-      ) + scale_y_reverse()
+      ) #+ scale_y_reverse()
         # Reverse the yscale so the clusters appear in ascending instead of descending order
       # ) + scale_y_discrete(limits = levels(group.by))
       ggsave(filename, width = 13.75, height = 10)
@@ -187,7 +187,7 @@ dot_tsne_violin = function(tiss,
       for (i in seq(1, length(plots))) {
         plots[[i]] = plots[[i]] + xlab(expression_unit)
         + scale_x_continuous(breaks = pretty_breaks(n = 4))
-        + scale_y_reverse()
+        # + scale_y_reverse()
         # + scale_y_discrete(limits = levels(group.by))
       }
       plots.combined <- plot_grid(plotlist = plots, ncol = nCol)
