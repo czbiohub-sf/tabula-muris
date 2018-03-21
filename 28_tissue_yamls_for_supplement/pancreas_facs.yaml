@@ -32,4 +32,34 @@ GROUPBY: null
 METHOD: facs
 NPCS: 12
 RES: 0.5
+SUBSET:
+  HEPATOCYTES:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: c(1,2,5)
+    GENES:
+    - Ang
+    - Arg1
+    - Arx
+    - Cd9
+    - Chga
+    - Dpp10
+    - Folr1
+    - Gfra3
+    - Hhex
+    - Irx1
+    - Isl1
+    - Gcg
+    - Gfra3
+    - Ghrl
+    - Mafb
+    - Pdx1
+    - Ppy
+    - Slc38a5
+    - Spp1
+    - Sst
+    - Tspan8
+    - Vsig1
+    GROUPBY: null
+    NPCS: 8
+    RES: 1
 TISSUE: Pancreas
