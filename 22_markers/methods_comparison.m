@@ -10,7 +10,7 @@ clc
 
 %% load files
 
-tissuesAvailable = {'Bladder', 'Kidney', 'Liver', 'Lung','Marrow', 'Muscle', 'Spleen', 'Thymus'}';
+tissuesAvailable = {'Bladder', 'Kidney', 'Liver', 'Lung','Marrow', 'Limb_Muscle', 'Spleen', 'Thymus'}';
 [s,v] = listdlg('PromptString','Select a tissue:',...
     'SelectionMode','single',...
     'ListString',tissuesAvailable);
@@ -145,7 +145,7 @@ if strcmp(tissuename,'Marrow')
     overlapMatrix = [[3;6;8],[8;10;4],[[5 0];[6 7];[16 0]]];
 end
 
-if strcmp(tissuename,'Muscle')
+if strcmp(tissuename,'Limb_Muscle')
     tissueOverlaps = cell(1,6);
     tissueOverlapsSizes = [];
     overlapMatrix = [[1;2;3;4;5;6],[1;3;4;5;6;7],[[1 2 0];[17 0 0];[4 0 0];[8 9 0];[16 0 0];[10 11 12]]];
