@@ -19,6 +19,7 @@ load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
 ```{r}
 tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colors.csv"))
 tissue_colors <- rename(tissue_colors, tissue = X1)
+tissue_colors['tissue'] <- str_replace(tissue_colors %>% pull(tissue), "_", " ")
 ```
 
 ```{r, fig.width = 8, fig.height = 6}
@@ -38,7 +39,7 @@ FetchData(tiss_FACS, vars.all = c('tSNE_1','tSNE_2', 'color')) %>%
 
 ggsave(here("02_figure2","facs_tsne_by_tissue.pdf"), width = 14, height = 7, units = "in")
 
-TSNEPlot(tiss_FACS, do.label = T, pt.size = 0.1)  +
+TSNEPlot(tiss_FACS, do.label = T, pt.size = 0.1, do.return = T)  +
   xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
   xlab("tSNE 1") + ylab("tSNE 2")
 
