@@ -2,7 +2,7 @@
 ```{r}
 genes_to_check = c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7')
 filename = file.path(save_folder, paste('Taste_receptor_cells', 'violinplot.png', sep='_'))
-  p = VlnPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
+  VlnPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
   ggsave(filename, dpi=300)
   dev.off()
   ```
