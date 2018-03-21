@@ -3,6 +3,8 @@ title: "Trachea droplet Supplementary Notebook"
 output: html_notebook
 ---
 
+# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
 ```{r}
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
@@ -18,15 +20,15 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Cck", "Cdh1", "Col1a1", "Col8a1", "Epcam", "Foxj1", "Krt5", "Pdgfra", "Pdgfrb", "Pecam1", "Ptprc", "Scgb1a1", "Syp")
-dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
+## Output differentially expressed genes in clusters
 
 ```{r}
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ```
-
 
 ## Subset: EPITHELIAL
 
@@ -42,7 +44,7 @@ EPITHELIAL.tiss <- EPITHELIAL.tiss %>% ScaleData() %>%
 EPITHELIAL.tiss <- EPITHELIAL.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin({name}.tiss, {name}.genes_to_check,
+dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
     save_folder, prefix = {name}, group.bys)
 
 ```
