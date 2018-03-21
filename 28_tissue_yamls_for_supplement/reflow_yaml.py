@@ -1,9 +1,14 @@
+#!/usr/bin/env python
+
 import click
 import yaml
 
 
 def listify(genes):
-    return genes.replace("'", '').replace(' ', '').split(',')
+    if isinstance(genes, list):
+        return genes
+    else:
+        return genes.replace("'", '').replace(' ', '').split(',')
 
 @click.command()
 @click.argument('yamls', nargs=-1)
@@ -13,10 +18,10 @@ def cli(yamls):
         with open(filename) as f:
             data = yaml.load(f)
 
-        data['GENES'] = sorted(list(set(data["GENES"])))
+        data['GENES'] = sorted(list(set(listify(data["GENES"]))))
         if 'SUBSET' in data:
             for name, subset in data['SUBSET'].items():
-                subset['GENES'] = sorted(list(set(subset['GENES'])))
+                subset['GENES'] = sorted(list(set(listify(subset['GENES']))))
 
         reflowed_data = yaml.dump(data,
                                   # Add the --- at the beginning of the file
