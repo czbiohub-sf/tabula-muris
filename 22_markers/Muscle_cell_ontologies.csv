@@ -1,0 +1,7 @@
+FACS,Droplet10x,microwellSeq1,microwellSeq2,microwellSeq3
+B cell,B cell,B cell_Jchain high,B cell_Vpreb3 high,
+T cell,T cell,T cell,,
+endothelial cell,endothelial cell,Endothelial cell,,
+macrophage,macrophage,Macrophage_Ms4a6c high,Macrophage_Retnla high,
+mesenchymal stem cell,mesenchymal stem cell,Stromal cell,,
+skeletal muscle satellite cell,skeletal muscle satellite cell,Muscle cell_Tnnc1 high,Muscle cell_Tnnc2 high,Muscle progenitor cell
