@@ -77,7 +77,13 @@ dot_tsne_violin = function(tiss,
     if (group.by == 'cell_ontology_class') {
       n_annotations = dim(unique(tiss@meta.data[group.by]))[1]
       if (n_annotations > 8) {
-        colors.use = c(brewer.pal(8, 'Set2'), brewer.pal(max(n_annotations - 8, 3), 'Dark2'))
+        if (n_annotations > 16){
+          colors.use = c(brewer.pal(8, 'Set2'), brewer.pal(8, 'Dark2'),
+            brewer.pal(max(n_annotations -16, 3), 'Pastel2'))
+
+        } else {
+          colors.use = c(brewer.pal(8, 'Set2'), brewer.pal(max(n_annotations - 8, 3), 'Dark2'))
+        }
       } else{
         colors.use = brewer.pal(max(n_annotations, 3), 'Set2')
       }
