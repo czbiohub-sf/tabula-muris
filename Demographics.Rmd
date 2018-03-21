@@ -16,14 +16,20 @@ The majority of clusters contain cells from only one organ, but XXX number of cl
 ## Calculations
 
 ```{r}
+library(here)
+source(here("00_data_ingest","02_tissue_analysis_rmd", "boilerplate.R"))
+```
+
+
+```{r}
 load(here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
 load(here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
 ```
 
 Basic numbers
 ```{r}
-facs_cells = length(tiss_FACS@meta.data)
-droplet_cells = length(tiss_droplet@meta.data)
+facs_cells = dim(tiss_FACS@data)[2]
+droplet_cells = dim(tiss_droplet@data)[2]
 
 facs_depth = mean(tiss_FACS@meta.data$nReads)
 droplet_depth = mean(tiss_droplet@meta.data$nUMI)
@@ -42,11 +48,14 @@ print(paste0("Total cells past QC: ", total_cells))
 Clusters in global with subset.
 
 ```{r}
-multi_tissue_clusters = length(FetchData(tiss_FACS, c('ident', 'tissue')) %>% 
-         group_by(ident, tissue) %>% count() %>% 
-         filter(n > 1) %>% group_by(ident) %>% count())
+multi_tissue_clusters = 
+  FetchData(tiss_FACS, c('ident', 'tissue')) %>% 
+         group_by(ident, tissue) %>% count() %>% filter(n > 5) %>% 
+         group_by(ident) %>% count() %>% filter(nn > 1)
 
-print(paste0("Clusters covering multiple tissues: ", multi_tissue_clusters))
+print(paste0("Clusters covering multiple tissues: ", nrow(multi_tissue_clusters)))
+print(paste0("Number of clusters: ", length(unique(tiss_FACS@ident)) ))
+
 ```
 
 Numbers of annotations, by tissue and total.
@@ -82,13 +91,14 @@ anno_droplet = unique(tiss_droplet@meta.data %>%
 
 ```
 
+
 ```{r}
 print(paste0("Total ontology-tissue (FACS): ", length(ontology_tissues_facs)))
-print(paste0("Total ontology-tissue (FACS): ", length(anno_tissues_droplet)))
+print(paste0("Total ontology-tissue (droplet): ", length(anno_tissues_droplet)))
 print(paste0("Total ontology-tissue (both): ", length(unique(c(ontology_tissues_facs, ontology_tissues_droplet)))))
 
 print(paste0("Total anno-tissue (FACS): ", length(anno_tissues_facs)))
-print(paste0("Total anno-tissue (FACS): ", length(anno_tissues_droplet)))
+print(paste0("Total anno-tissue (droplet): ", length(anno_tissues_droplet)))
 print(paste0("Total anno-tissue (both): ", length(unique(c(anno_tissues_facs, anno_tissues_droplet)))))
 
 print(paste0("Total ontology (FACS): ", length(ontology_facs)))
