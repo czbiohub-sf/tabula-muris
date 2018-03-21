@@ -10,4 +10,14 @@ GROUPBY: null
 METHOD: droplet
 NPCS: 15
 RES: 0.5
+SUBSET:
+  SUBSETA:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: 2
+    GENES:
+      - Dcn
+      - Myh11
+    GROUPBY: null
+    NPCS: 5
+    RES: 1
 TISSUE: Heart_and_Aorta

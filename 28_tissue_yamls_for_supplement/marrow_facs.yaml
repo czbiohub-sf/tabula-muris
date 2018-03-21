@@ -119,4 +119,40 @@ GROUPBY: null
 METHOD: facs
 NPCS: 18
 RES: 0.5
+SUBSET:
+  SUBSETA:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: c(11,12)
+    GENES: "'Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Ncr1', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag1', 'Rag2', 'Dntt', 'Pax5', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Emr1', 'Adamts14', 'Itgax', 'Styk1', 'Ugt1a7c', 'Khdc1a', 'Car5b', 'Gzma', 'Cma1', 'A430084P05Rik', 'Ccl4', 'Sh2d1b1', 'Ncam1', 'Klra1', 'Cd34', 'Il2rb', 'Itga4', 'Itgb7'"
+    GROUPBY: null
+    NPCS: 4
+    RES: 1
+  SUBSETB:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: 0
+    GENES: "'Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag2', 'Dntt', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Ugt1a7c', 'Car5b', 'Gzma', 'A430084P05Rik', 'Ccl4', 'Ncam1', 'Klra1', 'Cd34', 'Itga4', 'Itgb7', 'Tgfb1', 'Il10'"
+    GROUPBY: null
+    NPCS: 3
+    RES: 1
+  SUBSETC:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: 8
+    GENES: "'Il7r', 'Cd69', 'Lyz2', 'Tbxa2r', 'Vpreb1', 'Vpreb2', 'Igll1', 'Vpreb3', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Stmn1', 'Top2a', 'Mki67', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag1', 'Rag2', 'Dntt', 'Pax5', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Cdc20', 'Ube2c', 'Ccnb1', 'Cenpf', 'Kpna2', 'Tcf3', 'Ebf1', 'Ikzf1', 'Sfpi1', 'Slco4a1', 'Zfp810', 'Ska1', 'Kif18a', 'Depdc1b', 'Btg2', 'S100a8', 'Serinc5', 'Srm', 'Smyd2', 'Comtd1', 'Erg', 'Arpp21', 'Mmrn1', 'Kdm5b', 'Grb7', 'Acy3', 'Ung', 'Cybb', 'Klhl15', 'E2f1', 'Troap', 'Eri2', 'Ltb'"
+    GROUPBY: null
+    NPCS: 4
+    RES: 1
+  SUBSETD:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: 0
+    GENES: "'Il7r', 'Kit', 'Atxn1', 'Cd34', 'Slamf1', 'Flt3', 'Cd63', 'Myl12b', 'Muc13', 'Sdsl', 'Stat3', 'Wtap', 'Mpl', 'Txnip', 'Ltb', 'Pdzk1ip1', 'Esam', 'Cish', 'Tyms', 'Tk1', '2810417H13Rik', 'Rrm2', 'Uhrf1', 'Tuba1b', 'Myl10', 'Junb', 'Fos', 'Ier2', 'Dusp1', 'Ly6a', 'Ube2c', 'Ccnb2', 'Ccnb1', 'Cdc20', 'Ccna2', 'Flt3', 'Dntt', 'Gm11428', 'Ncf1', 'Mn1', 'H2-Ob', 'Ctsg', 'Ccl9', 'Sell', 'Hk3', 'Cd48', 'Gata1', 'Mfsd2b', 'Tuba8', 'Itga2b', 'Apoe', 'Pf4', 'Elane', 'Ms4a3', 'Ctsg', 'Mpo', 'Prtn3', 'Cd69', 'Ccr7', 'Ctla2a', 'Tyrobp', 'Serpinb9', 'Lyz2', 'Hp', 'Ly6c2', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Chchd10', 'Cnp', 'Rag2', 'Dntt', 'Mki67', 'Stmn1', 'Gimap8', 'Jhdm1d', 'Kif11', 'Spag5', 'Xist', 'Tsix', 'Notch2', 'Slc39a1', 'Socs3', 'Vldlr', 'Mcm4', 'Ung'"
+    GROUPBY: null
+    NPCS: 20
+    RES: 1
+  SUBSETE:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: 7
+    GENES: "'Hoxb5', 'Trib3', 'Neo1', 'Il7r', 'Kit', 'Atxn1', 'Cd34', 'Slamf1', 'Flt3', 'Cd63', 'Myl12b', 'Muc13', 'Sdsl', 'Stat3', 'Wtap', 'Mpl', 'Txnip', 'Ltb', 'Pdzk1ip1', 'Esam', 'Cish', 'Tyms', 'Tk1', '2810417H13Rik', 'Rrm2', 'Uhrf1', 'Tuba1b', 'Myl10', 'Junb', 'Fos', 'Ier2', 'Dusp1', 'Ly6a', 'Ube2c', 'Ccnb2', 'Ccnb1', 'Cdc20', 'Ccna2', 'Dntt', 'Gm11428', 'Ncf1', 'Mn1', 'H2-Ob', 'Ctsg', 'Mpo', 'Ccl9', 'Sell', 'Hk3', 'Cd48', 'Gata1', 'Mfsd2b', 'Tuba8', 'Itga2b', 'Apoe', 'Pf4', 'Elane', 'Ms4a3', 'Ctsg', 'Prtn3', 'Cd69', 'Ccr7', 'Ctla2a', 'Tyrobp', 'Serpinb9', 'Lyz2', 'Hp', 'Ly6c2', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Nkg7', 'Cd1d1', 'Chchd10', 'Cnp', 'Rag1',  'Rag2', 'Dntt', 'Mki67', 'Stmn1', 'Gimap8', 'Jhdm1d', 'Kif11', 'Spag5', 'Xist', 'Tsix', 'Notch2', 'Slc39a1', 'Socs3', 'Vldlr', 'Mcm4', 'Ung', 'Fam102a', 'Ccl4', 'Pyy', 'Ak4',  'Prc1', 'Cenpf', 'Prr11', 'Lhcgr', 'Tgm2', 'Abcg3', 'Ccne2', 'Pask', 'Nsg1', 'Bok', 'Klf1', 'Treml1'"
+    GROUPBY: null
+    NPCS: 20
+    RES: 1
 TISSUE: Marrow

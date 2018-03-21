@@ -81,4 +81,19 @@ GROUPBY: null
 METHOD: droplet
 NPCS: 10
 RES: 0.5
+SUBSET:
+  SUBSETA:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: 2
+    GENES: "'Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Ncr1', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag1', 'Rag2', 'Dntt', 'Pax5', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Emr1', 'Adamts14', 'Itgax', 'Styk1', 'Ugt1a7c', 'Khdc1a', 'Car5b', 'Gzma', 'Cma1', 'A430084P05Rik', 'Ccl4', 'Sh2d1b1', 'Ncam1', 'Klra1', 'Cd34', 'Il2rb', 'Itga4', 'Itgb7'"
+    GROUPBY: null
+    NPCS: 6
+    RES: 0.5
+  SUBSETB:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: 11
+    GENES: "'Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag2', 'Dntt', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Ugt1a7c', 'Car5b', 'Gzma', 'A430084P05Rik', 'Ccl4', 'Ncam1', 'Klra1', 'Cd34', 'Itga4', 'Itgb7', 'Tgfb1', 'Il10'"
+    GROUPBY: null
+    NPCS: 3
+    RES: 1
 TISSUE: Marrow
