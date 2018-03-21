@@ -43,6 +43,15 @@ dotplot.cols.use = c(palette[1], palette[3])
 #   tmp$grobs[[leg]]
 # }
 
+make_filename = function(save_folder, prefix, group.by, plottype, format='pdf'){
+  # Replace dots with dashes so filesystems are happy
+  suffix = sub('.', '-', group.by, fixed=TRUE)
+  filename = file.path(save_folder,
+                       paste(prefix, suffix,
+                             paste0(plottype, '.', format), sep = '_'))
+  return(filename)
+}
+
 # Make all supplemental figures for a tiss object
 dot_tsne_violin = function(tiss,
                            genes_to_check,
@@ -77,9 +86,7 @@ dot_tsne_violin = function(tiss,
     }
     
     # TSNE only
-    filename = file.path(save_folder,
-                         paste(prefix, group.by,
-                               'tsneplot.pdf', sep = '_'))
+    filename = make_filename(save_folder, prefix, group.by, 'tsneplot')
     p = TSNEPlot(
       object = tiss,
       do.return = TRUE,
@@ -93,10 +100,7 @@ dot_tsne_violin = function(tiss,
     # dev.off()
     
     # Legend for TSNE
-    filename = file.path(save_folder,
-                         paste(prefix, group.by,
-                               'tsneplot_legend.pdf', sep =
-                                 '_'))
+    filename = make_filename(save_folder, prefix, group.by, 'tsneplot_legend')
     # Plot TSNE again just to steal the legend
     p = TSNEPlot(
       object = tiss,
@@ -143,18 +147,14 @@ dot_tsne_violin = function(tiss,
       
       # Adjust canvas size so the plots are the same size no matter how many genes
       nCol = 4
-      nRow = ceiling(length(genes) / ncol)
+      nRow = ceiling(length(genes) / nCol)
       
       # Set height of ridgeplots
       ridge_height = 4.4
       
       # Dotplot - enrichment of gene expression in group.by with dot size
-      filename = file.path(save_folder, paste(
-        prefix,
-        group.by,
-        paste0('dotplot_', name, '-of-', n_chunks, '.pdf'),
-        sep = '_'
-      ))#
+        filename = make_filename(save_folder, prefix, group.by,
+          paste0('dotplot_', name, '-of-', n_chunks)
       # Use rev(genes) to reverse the order because dotplot does Right to Left instead of left to right
       p = DotPlot(
         tiss,
@@ -171,12 +171,8 @@ dot_tsne_violin = function(tiss,
       # dev.off()
       
       # Ridgeplot - enrichment of gene expression in group.by with smoothed histograms
-      filename = file.path(save_folder, paste(
-        prefix,
-        group.by,
-        paste0('ridgeplot_', name, '-of-', n_chunks, '.pdf'),
-        sep = '_'
-      ))
+        filename = make_filename(save_folder, prefix, group.by,
+          paste0('ridgeplot_', name, '-of-', n_chunks)
       plots = RidgePlot(
         tiss,
         genes,
