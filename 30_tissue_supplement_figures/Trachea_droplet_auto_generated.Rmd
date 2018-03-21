@@ -4,12 +4,6 @@ output: html_notebook
 ---
 
 ```{r}
-library(useful)
-library(Seurat)
-library(dplyr)
-library(Matrix)
-library(ontologyIndex)
-library(tidyverse)
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
 save_folder = here('30_tissue_supplement_figures', 'Trachea', 'droplet')
@@ -23,7 +17,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c("Epcam", "Cdh1", "Krt5", "Scgb1a1", "Pdgfrb", "Pdgfra", "Col1a1", "Col8a1", "Foxj1", "Pecam1", "Ptprc", "Cck", "Syp"))
+genes_to_check = c("Cck", "Cdh1", "Col1a1", "Col8a1", "Epcam", "Foxj1", "Krt5", "Pdgfra", "Pdgfrb", "Pecam1", "Ptprc", "Scgb1a1", "Syp")
 dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
@@ -40,7 +34,7 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 EPITHELIAL.cells.use = rownames(tiss@meta.data)[grep("epithelial cell",tiss@meta.data$cell_ontology_class)]
 EPITHELIAL.n.pcs = 2
 EPITHELIAL.res = 0.2
-EPITHELIAL.genes_to_check = c("Krt5", "Krt14", "Scgb1a1", "Foxj1")
+EPITHELIAL.genes_to_check = c("Foxj1", "Krt14", "Krt5", "Scgb1a1")
 EPITHELIAL.tiss = SubsetData(tiss, cells.use=EPITHELIAL.cells.use, )
 EPITHELIAL.tiss <- EPITHELIAL.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%

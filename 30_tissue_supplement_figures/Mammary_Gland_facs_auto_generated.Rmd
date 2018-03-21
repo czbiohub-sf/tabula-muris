@@ -4,12 +4,6 @@ output: html_notebook
 ---
 
 ```{r}
-library(useful)
-library(Seurat)
-library(dplyr)
-library(Matrix)
-library(ontologyIndex)
-library(tidyverse)
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
 save_folder = here('30_tissue_supplement_figures', 'Mammary_Gland', 'facs')
@@ -23,7 +17,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c("Krt14", "Krt17", "Krt5", "Krt8", "Krt18", "Prlr", "Lgr5", "Esr1", "Elf5", "Esam", "Vim", "Fn1", "Cd14", "Cdh5"))
+genes_to_check = c("Cd14", "Cdh5", "Elf5", "Esam", "Esr1", "Fn1", "Krt14", "Krt17", "Krt18", "Krt5", "Krt8", "Lgr5", "Prlr", "Vim")
 dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
@@ -40,7 +34,7 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 BASAL.cells.use = rownames(tiss@meta.data)[grep("basal",tiss@meta.data$cell_ontology_class)]
 BASAL.n.pcs = 10
 BASAL.res = 0.5
-BASAL.genes_to_check = c("Vcam1", "Procr", "Id1", "Id2", "Fos", "Igfbp2", "Igfpb4", "Prlr", "Csn3", "Cited1", "Areg")
+BASAL.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
 BASAL.tiss = SubsetData(tiss, cells.use=BASAL.cells.use, )
 BASAL.tiss <- BASAL.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%

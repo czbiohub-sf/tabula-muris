@@ -4,12 +4,6 @@ output: html_notebook
 ---
 
 ```{r}
-library(useful)
-library(Seurat)
-library(dplyr)
-library(Matrix)
-library(ontologyIndex)
-library(tidyverse)
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
 save_folder = here('30_tissue_supplement_figures', 'Large_Intestine', 'facs')
@@ -23,7 +17,7 @@ additional.group.bys = sort(c("subtissue"))
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = sort(c("Lgr5", "Krt20", "Slc26a3", "Atoh1", "Spdef", "Dclk1", "Chga", "Chgb", "Mki67"))
+genes_to_check = c("Atoh1", "Chga", "Chgb", "Dclk1", "Krt20", "Lgr5", "Mki67", "Slc26a3", "Spdef")
 dot_tsne_violin(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
