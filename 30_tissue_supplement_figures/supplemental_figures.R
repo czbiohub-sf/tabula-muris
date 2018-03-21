@@ -106,12 +106,23 @@ dot_tsne_ridge = function(tiss,
     # dev.off()
     
     # Legend for TSNE
+    # Add letter to the groupby for legends
+    labels = sort(unique(tiss@meta.data[, group.by]))
+    letters = LETTERS[seq(1, length(labels))]
+    new_labels = paste0('(', letters, ') ', labels)
+    group.by.plus = paste0(group.by, '_letter')
+    tiss@meta.data[, group.by.plus] = plyr::mapvalues(
+      x = tiss@meta.data[, group.by],
+      from = labels,
+      to = new_labels
+    )
+
     filename = make_filename(save_folder, prefix, group.by, 'tsneplot_legend')
     # Plot TSNE again just to steal the legend
     p = TSNEPlot(
       object = tiss,
       do.return = TRUE,
-      group.by = group.by,
+      group.by = group.by.plus,
       no.axes = TRUE,
       pt.size = 1,
       no.legend = FALSE,
@@ -131,12 +142,10 @@ dot_tsne_ridge = function(tiss,
     # scheme is the same as the TSNE as long as we sort alphabetically.
     # Make a temporary copy of the column to store the original strings
     tiss@meta.data[, 'tmp'] = tiss@meta.data[, group.by]
-    labels = sort(unique(tiss@meta.data[, group.by]))
-    numbers = LETTERS[seq(1, length(labels))]
     tiss@meta.data[, group.by] = plyr::mapvalues(
       x = tiss@meta.data[, 'tmp'],
       from = labels,
-      to = numbers
+      to = letters
     )
     
     # Reverse the order of the identities to make it easier to read
