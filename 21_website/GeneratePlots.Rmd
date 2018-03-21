@@ -91,11 +91,19 @@ plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index){
     mutate(metadataclass = str_wrap(tiss@meta.data[,meta], width=25)) %>% 
     pull(metadataclass)
   
-  FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
-    geom_point(size = 0.5) +
-    xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
-    scale_colour_discrete(name = legend_name) + # theme(legend.key.height = unit(1, "cm")) +
-    xlab("tSNE 1") + ylab("tSNE 2")
+  if (tissue == "All") {
+    FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
+      geom_point(size = 0.5) +
+      xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+      scale_colour_discrete(name = legend_name) +
+      xlab("tSNE 1") + ylab("tSNE 2")
+  } else {
+    FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
+      geom_point(size = 0.5) +
+      xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+      scale_colour_discrete(name = legend_name) + theme(legend.key.height = unit(1, "cm")) +
+      xlab("tSNE 1") + ylab("tSNE 2")
+  }
 
   ggsave(here('21_website',"images", paste0(tissue, "-", method, "-", meta, "-tsne.png")))
 }
