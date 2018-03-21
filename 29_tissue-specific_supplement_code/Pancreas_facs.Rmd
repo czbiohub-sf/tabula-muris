@@ -55,7 +55,7 @@ dev.off()
 
 Figure 3.
 ```{r}
-filename = file.path(save_folder, paste('Prss53', 'tsne.png', sep='_'))
+filename = file.path(save_folder, paste('Prss53', 'tsneplot.png', sep='_'))
 FeaturePlot(tiss, c('Prss53', 'Slc2a2', 'Nkx6-1','Ins2'), cols.use = c("grey","blue"))
 ggsave(filename, dpi=300)
 dev.off()
