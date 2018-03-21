@@ -97,6 +97,7 @@ dot_tsne_violin = function(tiss,
                          paste(prefix, group.by,
                                'tsneplot_legend.pdf', sep =
                                  '_'))
+    # Plot TSNE again just to steal the legend
     p = TSNEPlot(
       object = tiss,
       do.return = TRUE,
@@ -106,11 +107,14 @@ dot_tsne_violin = function(tiss,
       no.legend = FALSE,
       label.size = 8,
       colors.use = colors.use
-    )
-    quartz()
-    dev.off()
-    grid.draw(g_legend(p))
-    ggsave(filename, width = 4, height = 4)
+    ) + coord_fixed(ratio = 1) +
+      xlab("tSNE 1") + ylab("tSNE 2")
+
+    # Initialize an empty canvas!
+    ggdraw()
+    # Draw only gene 
+    ggdraw(g_legend(p))
+    ggsave(filename, width = 3, height = 3)
     dev.off()
     
     # Many of the strings are too long so we use numbers instead. The color
@@ -118,12 +122,12 @@ dot_tsne_violin = function(tiss,
     # Make a temporary copy of the column to store the original strings
     tiss@meta.data[, 'tmp'] = tiss@meta.data[, group.by]
     labels = sort(unique(tiss@meta.data[, group.by]))
-    numbers = seq(1, length(labels))
-    tiss@meta.data[, group.by] = as.numeric(plyr::mapvalues(
+    numbers = LETTERS[seq(1, length(labels))]
+    tiss@meta.data[, group.by] = plyr::mapvalues(
       x = tiss@meta.data[, 'tmp'],
       from = labels,
       to = numbers
-    ))
+    )
     
     # Reverse the order of the identities to make it easier to read
     ident.use = rev(sort(unique(tiss@meta.data[, group.by])))
@@ -160,9 +164,9 @@ dot_tsne_violin = function(tiss,
         do.return = T,
         group.by = group.by,
         cols.use = dotplot.cols.use,
-      ) #+ scale_y_reverse()
+      # ) #+ scale_y_reverse()
         # Reverse the yscale so the clusters appear in ascending instead of descending order
-      # ) + scale_y_discrete(limits = levels(group.by))
+      ) + scale_y_discrete(limits = rev(levels(group.by)))
       ggsave(filename, width = 13.75, height = 10)
       # dev.off()
       
@@ -185,10 +189,9 @@ dot_tsne_violin = function(tiss,
         # Reverse the yscale so the clusters appear in ascending instead of descending order
       )
       for (i in seq(1, length(plots))) {
-        plots[[i]] = plots[[i]] + xlab(expression_unit)
-        + scale_x_continuous(breaks = pretty_breaks(n = 4))
+        plots[[i]] = plots[[i]] + xlab(expression_unit) + scale_x_continuous(breaks = pretty_breaks(n = 4)) + scale_y_discrete(limits = rev(levels(group.by)))
         # + scale_y_reverse()
-        # + scale_y_discrete(limits = levels(group.by))
+        #
       }
       plots.combined <- plot_grid(plotlist = plots, ncol = nCol)
       invisible(x = lapply(X = plots.combined, FUN = print))
