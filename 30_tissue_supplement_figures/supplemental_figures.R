@@ -17,6 +17,8 @@ library(grid)
 standard.group.bys = c("cell_ontology_class", "free_annotation", 'cluster.ids')
 prefix = 'allcells'
 
+CHUNKSIZE = 20
+
 # Extract legend from a ggplot
 # Stolen from https://gist.github.com/crsh/be88be19233f1df4542aca900501f0fb
 # Who stole it from: http://stackoverflow.com/a/12041779/914024
@@ -31,18 +33,14 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
     for (group.by in group.bys ){
       print(paste('group.by:', group.by, '   prefix:', prefix))
 
-      filename = file.path(save_folder, paste(prefix, group.by,
-        'dotplot.pdf', sep='_'))
+
 
       # If this column is all NAs, then skip it
       if (all(is.na(tiss@meta.data[, group.by]))){
         next
       }
-      p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T,
-        do.return = T, group.by = group.by) + coord_flip()
-      ggsave(filename, width = 3, height = 6)
-      dev.off()
 
+      # TSNE only
       filename = file.path(save_folder, paste(prefix, group.by,
         'tsneplot.pdf', sep='_'))
       p = TSNEPlot(object = tiss, do.return = TRUE, group.by = group.by,
@@ -50,6 +48,7 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
       ggsave(filename, width = 2, height = 2)
       dev.off()
 
+      # Legend for TSNE
       filename = file.path(save_folder, paste(prefix, group.by,
         'tsneplot_legend.pdf', sep='_'))
       p = TSNEPlot(object = tiss, do.return = TRUE, group.by = group.by,
@@ -59,12 +58,26 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
       ggsave(filename, width = 2, height = 2)
       dev.off()
 
-
-      filename = file.path(save_folder, paste(prefix, group.by,
-        'violinplot.pdf', sep='_'))
-      p = VlnPlot(tiss, genes_to_check, group.by = group.by, do.return=TRUE)
-      ggsave(filename, width = 6, height = 3)
+      chunked_genes = split(genes_to_check, ceiling(seq_along(genes_to_check)/CHUNKSIZE))
+      n_chunks = length(chunked_genes)
+      for (name in names(chunked_genes)){
+        # Dotplot - enrichment of gene expression in group.by with dot size
+        filename = file.path(save_folder, paste(prefix, group.by,
+          paste0('dotplot-', name, '-of-', n_chunks, '.pdf'), sep='_'))
+      p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T,
+        do.return = T, group.by = group.by) #+ coord_flip()
+      ggsave(filename, width = 11, height = 8)
       dev.off()
+
+      # Violinplot - enrichment of gene expression in group.by with double wide histogram
+      filename = file.path(save_folder, paste(prefix, group.by,
+          paste0('violinplot-', name, '-of-', n_chunks, '.pdf'), sep='_'))
+      p = VlnPlot(tiss, genes_to_check, group.by = group.by, do.return=TRUE)
+      ggsave(filename, width = 8, height = 11)
+      dev.off()
+      }
+
+
     }
 }
 
