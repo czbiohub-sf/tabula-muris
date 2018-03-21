@@ -23,7 +23,12 @@ filename2 = sprintf('droplet_%s_cell_ontology_class_markers.csv',tissuename);
 tissue10x = readtable(filename2);
 filename22 = sprintf('droplet_%s_cell_ontology_class_classes.csv',tissuename);
 tissue10xnames = readtable(filename22, 'delimiter', ',');
-filename3 = sprintf('%s_Han.csv',tissuename);
+
+if strcmp(tissuename,'Limb_Muscle')
+    tissuenameHan = 'Muscle';
+else tissuenameHan = tissuename;
+end
+filename3 = sprintf('%s_Han.csv',tissuenameHan);
 tissueMicrowellSeq = readtable(filename3);
 
 %% get tissue cell signatures for Tabula muris FACS
@@ -142,7 +147,7 @@ end
 if strcmp(tissuename,'Marrow')
     tissueOverlaps = cell(1,6);
     tissueOverlapsSizes = [];
-    overlapMatrix = [[3;6;8],[8;10;4],[[5 0];[6 7];[16 0]]];
+    overlapMatrix = [[8;14;17],[8;11;12],[[5 0];[6 7];[9 10]]];
 end
 
 if strcmp(tissuename,'Limb_Muscle')
@@ -232,8 +237,8 @@ for i = 1:size(overlapMatrix,1)
             length(overlap_10xnoFACS_microwell);length(overlap_10xnoFACSnomicrowell);length(overlap_microwellnoFACSno10x)];
         vennNumbers = vennNumbers([4,2,6,5,7,3,1]);
         eRR = vennX(vennNumbers,.1);
-        title([sprintf('Tissue: %s',tissuename) sprintf(' -- Cell type: %s',cellNamesTMfacs{overlapMatrix(i,1)})])
-        saveas(gcf,[sprintf('Tissue_%s',tissuename) sprintf('_Cell type_%s',cellNamesTMfacs{overlapMatrix(i,1)})],'pdf')
+        title([sprintf('Tissue: %s',tissuename) sprintf(' -- CellType: %s',cellNamesTMfacs{overlapMatrix(i,1)})])
+        saveas(gcf,[sprintf('Tissue_%s',tissuename) sprintf('_CellType_%s',cellNamesTMfacs{overlapMatrix(i,1)})],'pdf')
 
 %         % plot FC distribution
 %         figure()
