@@ -56,7 +56,7 @@ def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
 group.bys = c(group.bys, "{stringify_list([groupby])}")'''
 
     code += f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
-    save_folder, prefix = {name}, group.bys)
+    save_folder, prefix = "{name}", group.bys)
 '''
 
     codeblock = f'''```{{r}}
