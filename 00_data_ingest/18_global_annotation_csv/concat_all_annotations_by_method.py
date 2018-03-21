@@ -4,7 +4,7 @@ import glob
 import os.path
 
 
-METHODS = ("FACS", "droplet")
+METHODS = ("facs", "droplet")
 INPUT_ANNOTATIONS_DIR = "../03_tissue_annotation_csv"
 
 
@@ -34,7 +34,9 @@ def main():
     first_header_seen = get_header(input_annotations[0])
 
     with open(all_annotations_csv_name, 'w') as all_annotations_csv_file:
-        all_annotations_csv = csv.writer(all_annotations_csv_file, delimiter=',', quoting=csv.QUOTE_ALL, quotechar='"')
+        all_annotations_csv = csv.writer(all_annotations_csv_file,
+                                         delimiter=',', quoting=csv.QUOTE_ALL,
+                                         quotechar='"')
         all_annotations_csv.writerow(first_header_seen)
 
         for annotation_file in input_annotations:
