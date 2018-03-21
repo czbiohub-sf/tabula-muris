@@ -12,10 +12,10 @@ SUBSET:
     FILTER_COLUMN: cell_ontology_class
     FILTER_VALUE: smooth muscle cell
     GENES:
-      - Cnn1
-      - Kcnj8
-      - Myh11
-      - Postn
+    - Cnn1
+    - Kcnj8
+    - Myh11
+    - Postn
     GROUPBY: null
     NPCS: 5
     RES: 1
