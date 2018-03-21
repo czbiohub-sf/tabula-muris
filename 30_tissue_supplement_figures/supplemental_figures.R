@@ -31,7 +31,7 @@ gglegend <- function(x){
 # Make all supplemental figures for a tiss object
 dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys){
     for (group.by in group.bys ){
-      print(paste('group.by:', group.by, '   prefix:', prefix))
+      write(paste('group.by:', group.by, '   prefix:', prefix), stderr())
 
 
 
@@ -53,7 +53,7 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
         'tsneplot_legend.pdf', sep='_'))
       p = TSNEPlot(object = tiss, do.return = TRUE, group.by = group.by,
         no.axes=TRUE, pt.size=1, no.legend=FALSE)
-      dev.off()
+      # dev.off()
       grid.draw(gglegend(p))
       ggsave(filename, width = 2, height = 2)
       dev.off()
@@ -61,18 +61,21 @@ dot_tsne_violin = function(tiss, genes_to_check, save_folder, prefix, group.bys)
       chunked_genes = split(genes_to_check, ceiling(seq_along(genes_to_check)/CHUNKSIZE))
       n_chunks = length(chunked_genes)
       for (name in names(chunked_genes)){
+        write(paste('\tchunk:', name), stderr())
+
+        genes = chunked_genes[[name]]
         # Dotplot - enrichment of gene expression in group.by with dot size
         filename = file.path(save_folder, paste(prefix, group.by,
-          paste0('dotplot-', name, '-of-', n_chunks, '.pdf'), sep='_'))
-      p = DotPlot(tiss, genes_to_check, col.max = 2.5, plot.legend = T,
+          paste0('dotplot-', name, '_of-', n_chunks, '.pdf'), sep='_'))
+      p = DotPlot(tiss, genes, col.max = 2.5, plot.legend = T,
         do.return = T, group.by = group.by) #+ coord_flip()
       ggsave(filename, width = 11, height = 8)
       dev.off()
 
       # Violinplot - enrichment of gene expression in group.by with double wide histogram
       filename = file.path(save_folder, paste(prefix, group.by,
-          paste0('violinplot-', name, '-of-', n_chunks, '.pdf'), sep='_'))
-      p = VlnPlot(tiss, genes_to_check, group.by = group.by, do.return=TRUE)
+          paste0('violinplot-', name, '_of-', n_chunks, '.pdf'), sep='_'))
+      p = VlnPlot(tiss, genes, group.by = group.by, do.return=TRUE, size.x.use=8, size.y.use=8)
       ggsave(filename, width = 8, height = 11)
       dev.off()
       }
