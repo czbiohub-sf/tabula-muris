@@ -6,6 +6,7 @@ Brain_Non-Myeloid,#ffbb78
 Diaphragm,#2ca02c
 Fat,#98df8a
 Heart,#d62728
+Heart_and_Aorta,#d62728
 Kidney,#ff9896
 Large_Intestine,#9467bd
 Limb_Muscle,#c5b0d5
@@ -19,4 +20,3 @@ Spleen,#bcbd22
 Thymus,#dbdb8d
 Tongue,#17becf
 Trachea,#9edae5
-Heart_and_Aorta,#d62728
