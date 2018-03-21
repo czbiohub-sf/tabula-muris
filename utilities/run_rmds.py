@@ -35,7 +35,7 @@ def main(folder):
         stdout = rmd + '.out'
         stderr = rmd + '.err'
 
-        command = shlex.split(f"Rscript -e \"rmarkdown::render(\'{rmd}\', "
+        command = shlex.split(f"Rscript --verbose -e \"rmarkdown::render(\'{rmd}\', "
                               "clean=TRUE)\"  > {stdout} 2>{stderr}")
         with open(stdout, 'w') as file_out:
             with open(stderr, 'w') as file_err:
