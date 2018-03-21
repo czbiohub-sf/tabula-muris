@@ -15,8 +15,8 @@ SUBSET:
     FILTER_COLUMN: cluster.ids
     FILTER_VALUE: 2
     GENES:
-      - Dcn
-      - Myh11
+    - Dcn
+    - Myh11
     GROUPBY: null
     NPCS: 5
     RES: 1
