@@ -106,14 +106,23 @@ plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index){
 tissue_plots <- function(tissue, method){
   load(here("00_data_ingest","04_tissue_robj_generated", paste0(method, "_", tissue, "_", "seurat_tiss.Robj")))
 
-  plotmeta(tiss, tissue, method, metas=c("tissueclass"), meta_display_names="Tissues", index=1)
+  if (tolower(method) == "facs") {
+    metas = metas_facs
+    meta_display_names = meta_display_names_facs
+  } else if (method == "droplet") {
+    metas = metas_droplet
+    meta_display_names = meta_display_names_droplet
+  } else {
+    stop("Unknown method type.")
+  }
+  
   
   gene_only_plotgene_tsne = pryr::partial(plotgene_tsne, tiss=tiss, tissue=tissue, method=method)
   gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue=tissue, method=method)
   meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue=tissue, method=method, metas=metas, meta_display_names=meta_display_names)
 
-  #mclapply(genes, gene_only_plotgene_tsne, mc.preschedule=TRUE, mc.cores=number_of_cores)
-  #mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  mclapply(genes, gene_only_plotgene_tsne, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
   mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
 }
 
