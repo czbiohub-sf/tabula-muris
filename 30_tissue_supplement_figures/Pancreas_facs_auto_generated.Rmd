@@ -30,6 +30,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 #tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 #filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#write.csv(tiss.markers, filename)
 ```
 Figure 1.
 ```{r}
@@ -97,7 +98,7 @@ dev.off()
 ## Subset: HEPATOCYTES
 
 ```{r}
-Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids) == c(1,2,5)]
+Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == c(1,2,5)]
 Hepatocytes.n.pcs = 8
 Hepatocytes.res = 1
 Hepatocytes.genes_to_check = c("Ang", "Arg1", "Arx", "Cd9", "Chga", "Dpp10", "Folr1", "Gcg", "Gfra3", "Ghrl", "Hhex", "Irx1", "Isl1", "Mafb", "Pdx1", "Ppy", "Slc38a5", "Spp1", "Sst", "Tspan8", "Vsig1")
@@ -108,9 +109,9 @@ Hepatocytes.tiss <- Hepatocytes.tiss %>% ScaleData() %>%
 Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-'# Highlight which cells are in this subset
+# Highlight which cells are in this subset
     
-palette = brewer.pal(3, 'YlGnBu')
+palette = brewer.pal(3, "YlGnBu")
 cols.use = c(palette[1], palette[3])
 colors.use
 tiss@meta.data[, "Hepatocytes"] = NA

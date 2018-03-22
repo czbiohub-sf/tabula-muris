@@ -30,6 +30,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 #tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 #filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#write.csv(tiss.markers, filename)
 ```
 
 
@@ -312,7 +313,7 @@ dev.off()
 ## Subset: ASTROCYTES
 
 ```{r}
-Astrocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class) == astrocyte]
+Astrocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "astrocyte]
 Astrocytes.n.pcs = 10
 Astrocytes.res = 1
 Astrocytes.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2")
@@ -326,9 +327,9 @@ Astrocytes.tiss <- Astrocytes.tiss %>% FindClusters(reduction.type = "pca", dims
 
 # Append this subset's groupby to the list
 group.bys = c(group.bys, "subtissue")
-'# Highlight which cells are in this subset
+# Highlight which cells are in this subset
     
-palette = brewer.pal(3, 'YlGnBu')
+palette = brewer.pal(3, "YlGnBu")
 cols.use = c(palette[1], palette[3])
 colors.use
 tiss@meta.data[, "Astrocytes"] = NA
