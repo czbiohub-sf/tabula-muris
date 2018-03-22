@@ -69,6 +69,10 @@ def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
 group.bys = c(group.bys, {stringify_list([groupby])})
 '''
     code += f''''# Highlight which cells are in this subset
+    
+palette = brewer.pal(3, 'YlGnBu')
+cols.use = c(palette[1], palette[3])
+colors.use
 tiss@meta.data[, "{name}"] = NA
 tiss@meta.data[{name}.cells.use, "{name}"] = "{name}" 
 filename = make_filename(save_folder, prefix="{name}", group.by, 
@@ -80,6 +84,7 @@ p = TSNEPlot(
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
+  colors.use = c(palette[1], 'grey50')
 )
 ggsave(filename, width = 4, height = 4)
 '''
