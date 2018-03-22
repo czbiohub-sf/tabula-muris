@@ -1,520 +1,520 @@
-cell,tissue,subtissue,FACS.selection,plate.barcode,cell_ontology_class,cell_ontology_id,free_annotation,cluster.ids,mouse.sex,mouse.id
-A1.B001717.3_38_F.1.1,Kidney,,Viable,B001717,macrophage,CL:0000235,macrophage,8,F,3_38_F
-A10.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-A10.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,endothelial cell,CL:0000115,endothelial cell,5,M,3_10_M
-A11.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-A12.B001717.3_38_F.1.1,Kidney,,Viable,B001717,macrophage,CL:0000235,macrophage,8,F,3_38_F
-A12.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-A12.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,macrophage,CL:0000235,macrophage,8,M,3_9_M
-A13.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F
-A13.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-A14.B001717.3_38_F.1.1,Kidney,,Viable,B001717,macrophage,CL:0000235,macrophage,8,F,3_38_F
-A14.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F
-A14.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M
-A14.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-A15.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-A15.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F
-A15.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-A16.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M
-A16.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-A17.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-A18.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M
-A18.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-A2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_38_F
-A2.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-A2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-A21.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-A22.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-A22.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-A22.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,5,M,3_11_M
-A3.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_9_M
-A4.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,macrophage,CL:0000235,macrophage,8,M,3_10_M
-A4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-A4.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,5,M,3_9_M
-A5.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-A5.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-A5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-A6.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-A7.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F
-A7.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-A8.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-A9.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-A9.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F
-A9.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-B1.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_38_F
-B10.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-B11.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-B11.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-B13.B001717.3_38_F.1.1,Kidney,,Viable,B001717,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F
-B15.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-B15.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F
-B15.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-B16.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-B18.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F
-B19.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_38_F
-B2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-B2.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-B2.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,macrophage,CL:0000235,macrophage,8,M,3_10_M
-B2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-B2.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M
-B20.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M
-B20.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-B21.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-B22.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,natural killer cell,CL:0000623,natural killer cell,9,M,3_8_M
-B3.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-B3.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F
-B3.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M
-B4.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_38_F
-B4.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M
-B5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-B6.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-B7.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-B8.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-B8.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-C1.B001717.3_38_F.1.1,Kidney,,Viable,B001717,macrophage,CL:0000235,macrophage,8,F,3_38_F
-C1.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-C10.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-C12.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-C12.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-C13.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-C13.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-C14.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-C15.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-C16.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M
-C17.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-C17.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-C18.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-C19.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-C2.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F
-C2.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-C2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-C2.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_9_M
-C20.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F
-C20.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,endothelial cell,CL:0000115,endothelial cell,5,M,3_10_M
-C21.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-C21.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-C22.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-C22.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_9_M
-C4.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F
-C4.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M
-C5.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-C5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-C6.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-C6.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-C7.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-C9.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_38_F
-C9.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,macrophage,CL:0000235,macrophage,8,M,3_10_M
-D1.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-D1.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-D1.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-D10.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F
-D10.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-D11.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F
-D11.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-D12.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-D13.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F
-D14.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-D15.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-D17.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-D18.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-D18.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-D2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-D2.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F
-D2.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-D2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-D21.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-D21.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-D22.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F
-D3.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-D3.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-D4.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F
-D4.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-D4.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_9_M
-D5.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-D5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-D6.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-D6.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-D7.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-D7.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-D8.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-D8.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-D9.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F
-E1.B002775.3_39_F.1.1,Kidney,,Viable,B002775,natural killer cell,CL:0000623,natural killer cell,9,F,3_39_F
-E1.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-E10.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-E10.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-E13.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F
-E14.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-E15.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-E16.B002775.3_39_F.1.1,Kidney,,Viable,B002775,natural killer cell,CL:0000623,natural killer cell,9,F,3_39_F
-E17.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-E17.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-E18.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-E2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-E2.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_39_F
-E2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-E20.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-E21.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F
-E22.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M
-E4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-E5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-E7.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_38_F
-F1.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_39_F
-F1.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M
-F11.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-F12.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-F13.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,macrophage,CL:0000235,macrophage,8,M,3_10_M
-F13.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-F14.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-F15.B001717.3_38_F.1.1,Kidney,,Viable,B001717,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F
-F17.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F
-F17.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-F18.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-F18.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F
-F2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-F2.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-F2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M
-F20.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-F21.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-F22.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,macrophage,CL:0000235,macrophage,8,M,3_8_M
-F22.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-F3.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-F3.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-F4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-F5.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-F6.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-F6.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M
-F9.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_39_F
-G1.B002775.3_39_F.1.1,Kidney,,Viable,B002775,natural killer cell,CL:0000623,natural killer cell,9,F,3_39_F
-G1.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-G11.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-G13.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-G14.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-G15.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-G16.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-G17.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-G2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-G20.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-G20.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-G21.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-G22.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-G3.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-G3.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M
-G4.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-G5.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-G5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-G6.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-G6.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-G7.B002775.3_39_F.1.1,Kidney,,Viable,B002775,macrophage,CL:0000235,macrophage,8,F,3_39_F
-G8.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-G9.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-G9.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-H1.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-H1.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-H10.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-H12.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F
-H12.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-H14.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F
-H15.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-H16.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-H16.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M
-H16.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-H17.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-H18.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-H19.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-H2.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M
-H20.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-H20.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-H21.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,endothelial cell,CL:0000115,endothelial cell,5,M,3_10_M
-H4.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-H4.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F
-H4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-H6.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-H7.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-H8.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-H8.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-H9.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-I1.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-I1.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-I1.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-I10.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M
-I12.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-I13.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,macrophage,CL:0000235,macrophage,8,M,3_10_M
-I15.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-I15.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_10_M
-I15.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-I16.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-I17.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-I17.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M
-I18.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-I19.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-I2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F
-I2.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F
-I2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-I2.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M
-I3.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-I3.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-I3.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-I4.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-I4.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-I4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-I5.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-I5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-I6.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-I7.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F
-I8.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-I8.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-I8.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_9_M
-I9.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-J1.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-J10.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_9_M
-J11.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M
-J11.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M
-J12.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-J13.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M
-J15.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M
-J17.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F
-J19.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-J19.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-J2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,macrophage,CL:0000235,macrophage,8,F,3_38_F
-J2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-J20.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M
-J22.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_9_M
-J3.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-J6.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-J7.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-J8.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F
-J9.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-K10.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-K10.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M
-K11.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-K11.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F
-K11.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,macrophage,CL:0000235,macrophage,8,M,3_10_M
-K12.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-K14.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-K14.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-K15.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-K16.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M
-K16.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-K17.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F
-K17.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-K18.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-K19.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-K19.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-K2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-K2.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F
-K2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-K20.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-K20.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F
-K21.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-K22.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-K22.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M
-K4.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-K4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-K5.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-K5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-K5.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M
-K6.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-K6.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-K7.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M
-K7.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M
-K8.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-K8.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-K9.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-L1.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-L10.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-L10.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-L11.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-L12.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-L12.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-L13.B001717.3_38_F.1.1,Kidney,,Viable,B001717,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F
-L13.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-L14.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-L15.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-L15.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,macrophage,CL:0000235,macrophage,8,M,3_10_M
-L17.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-L17.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F
-L18.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-L2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-L2.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-L2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-L20.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-L21.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M
-L22.B002775.3_39_F.1.1,Kidney,,Viable,B002775,macrophage,CL:0000235,macrophage,8,F,3_39_F
-L22.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M
-L3.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F
-L3.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F
-L3.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-L4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-L4.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M
-L5.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-L5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-L6.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-L6.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-L6.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M
-L7.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-L8.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-L8.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-L8.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_9_M
-L9.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-M1.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F
-M1.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-M1.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-M1.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_9_M
-M10.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-M12.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-M12.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,5,M,3_9_M
-M13.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-M13.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M
-M13.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-M14.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-M14.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-M14.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,macrophage,CL:0000235,macrophage,8,M,3_10_M
-M15.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_10_M
-M15.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-M16.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-M16.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-M17.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-M18.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-M18.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-M18.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M
-M19.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-M19.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-M2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-M2.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-M2.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_9_M
-M20.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-M20.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F
-M20.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-M20.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M
-M20.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,natural killer cell,CL:0000623,natural killer cell,9,M,3_9_M
-M21.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M
-M22.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-M22.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M
-M3.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-M3.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-M4.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M
-M4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-M5.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-M5.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-M5.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,macrophage,CL:0000235,macrophage,8,M,3_9_M
-M6.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-M7.B001717.3_38_F.1.1,Kidney,,Viable,B001717,macrophage,CL:0000235,macrophage,8,F,3_38_F
-M8.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-M8.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-M9.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-M9.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-M9.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-N1.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-N1.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,5,M,3_8_M
-N1.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-N1.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-N11.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M
-N11.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-N12.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-N12.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-N13.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-N13.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M
-N14.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-N14.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M
-N15.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-N16.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-N16.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_9_M
-N17.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_8_M
-N17.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M
-N18.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-N18.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-N2.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-N2.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M
-N20.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F
-N20.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-N20.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M
-N21.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-N21.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-N21.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M
-N22.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-N3.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-N3.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-N3.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M
-N3.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M
-N4.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F
-N4.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M
-N4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-N4.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M
-N5.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-N6.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,natural killer cell,CL:0000623,natural killer cell,9,M,3_8_M
-N6.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-N7.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-N7.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-N7.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-N8.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-N9.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-N9.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-N9.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M
-O1.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M
-O1.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-O10.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M
-O10.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,macrophage,CL:0000235,macrophage,8,M,3_9_M
-O13.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-O13.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M
-O14.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-O14.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_10_M
-O16.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-O17.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-O17.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-O17.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-O18.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-O18.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-O18.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-O19.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-O19.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_9_M
-O2.B001717.3_38_F.1.1,Kidney,,Viable,B001717,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F
-O2.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-O2.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-O20.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-O20.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-O21.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_8_M
-O22.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-O4.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-O4.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M
-O4.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M
-O6.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-O6.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-O7.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
-O7.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F
-O8.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-O8.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F
-O9.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F
-O9.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-O9.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-P1.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-P1.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M
-P1.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-P10.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-P10.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_9_M
-P11.B002775.3_39_F.1.1,Kidney,,Viable,B002775,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F
-P12.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-P12.MAA000922.3_9_M.1.1,Kidney,,Viable,MAA000922,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M
-P13.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-P13.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M
-P14.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M
-P15.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_10_M
-P16.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M
-P16.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M
-P18.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M
-P18.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M
-P19.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F
-P19.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M
-P20.B001717.3_38_F.1.1,Kidney,,Viable,B001717,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F
-P21.B002775.3_39_F.1.1,Kidney,,Viable,B002775,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F
-P21.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M
-P22.B001717.3_38_F.1.1,Kidney,,Viable,B001717,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F
-P3.B002775.3_39_F.1.1,Kidney,,Viable,B002775,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F
-P3.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-P4.B001717.3_38_F.1.1,Kidney,,Viable,B001717,macrophage,CL:0000235,macrophage,8,F,3_38_F
-P4.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-P4.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,macrophage,CL:0000235,macrophage,8,M,3_11_M
-P5.MAA000545.3_8_M.1.1,Kidney,,Viable,MAA000545,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M
-P6.MAA000801.3_11_M.1.1,Kidney,,Viable,MAA000801,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M
-P8.MAA000752.3_10_M.1.1,Kidney,,Viable,MAA000752,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M
-P9.B001717.3_38_F.1.1,Kidney,,Viable,B001717,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F
+cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,cluster.ids,mouse.sex,mouse.id,tSNE_1,tSNE_2,plate.barcode
+A1.B001717.3_38_F.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,F,3_38_F,-21.02903130918095,-1.5968717900241431,B001717
+A10.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,-2.404816063015086,-16.146999092581808,B002775
+A10.MAA000752.3_10_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,M,3_10_M,-3.0666794035553417,-13.670210191849979,MAA000752
+A11.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,11.566741764633743,-3.72195160709313,MAA000801
+A12.B001717.3_38_F.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,F,3_38_F,-21.595880509730627,-1.7312213383111936,B001717
+A12.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,16.484011873283233,-1.9463545919010052,MAA000801
+A12.MAA000922.3_9_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_9_M,-22.1854782974683,-2.612142263145977,MAA000922
+A13.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F,0.8721958733015576,-7.087056589501859,B001717
+A13.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,0.7239525473499643,18.43142204468517,MAA000545
+A14.B001717.3_38_F.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,F,3_38_F,-21.17366166312369,0.23119518386063959,B001717
+A14.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F,-5.265567338223554,0.13470816878134462,B002775
+A14.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M,16.75498320010168,-3.218600127087115,MAA000545
+A14.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,2.178222824781021,17.943307918953902,MAA000801
+A15.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-6.768690794035191,7.414389578683485,B001717
+A15.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F,0.20101688847611857,6.889602899238151,B002775
+A15.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-5.955888836346872,1.930030436283434,MAA000801
+A16.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M,17.245749855897603,-3.356247771372945,MAA000545
+A16.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-5.000957850518443,9.139709008436553,MAA000801
+A17.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,11.277248595685766,5.4785290502735,MAA000801
+A18.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M,17.62606788665105,-4.771926013312072,MAA000545
+A18.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,0.825914408884329,14.282194667936135,MAA000801
+A2.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_38_F,1.0555584842357881,16.020858289444256,B001717
+A2.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,-1.203092747400586,-18.297848529177013,B002775
+A2.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,1.5552854767301347,-21.08727194426849,MAA000801
+A21.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,1.3518337209189355,19.866922422817964,MAA000545
+A22.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.987091319513772,-11.37581504489907,B001717
+A22.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-1.6528441951798425,-20.25193345453198,MAA000545
+A22.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,M,3_11_M,-2.8873986687198854,-14.973849597905007,MAA000801
+A3.MAA000922.3_9_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_9_M,9.123875486324016,-0.527181353748182,MAA000922
+A4.MAA000752.3_10_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_10_M,-19.21684557468414,-0.5264204310672942,MAA000752
+A4.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-6.4672025230358745,1.7952198980257694,MAA000801
+A4.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,M,3_9_M,-0.9451581893729183,-14.247703897986929,MAA000922
+A5.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.3075371322999914,-10.309533999893924,B001717
+A5.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-2.2214165384046893,8.83709340565662,MAA000545
+A5.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-1.969694163407376,9.679249450078135,MAA000801
+A6.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,-0.7589781037055093,-18.47181391153494,B002775
+A7.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F,-4.486903719281662,2.8599711249759596,B002775
+A7.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,0.9416196170222788,13.955562775420187,MAA000801
+A8.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-6.476332795537739,0.48328781162254153,MAA000801
+A9.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-5.974036312417254,4.070149406162138,B001717
+A9.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F,-3.7491842765119348,-10.85723617058009,B002775
+A9.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-5.343095205396662,3.624130284571412,MAA000801
+B1.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_38_F,2.0769101622376445,19.443286601879173,B001717
+B10.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-0.5067660989662345,13.515198978061132,MAA000545
+B11.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.85872539337366,-12.585159349097879,B001717
+B11.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-6.143545265192433,0.8937205293558343,MAA000801
+B13.B001717.3_38_F.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F,-13.837351814726091,-1.4035517736448855,B001717
+B15.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.518929708686913,-12.10867542403983,B001717
+B15.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F,15.91070189686402,-1.1519491237878159,B002775
+B15.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,18.632229162744043,-6.123572026930773,MAA000801
+B16.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,3.2033374918522175,21.782651180338977,MAA000801
+B18.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F,-0.668113387108534,15.977820146872011,B002775
+B19.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_38_F,2.475186887777543,13.349625551398011,B001717
+B2.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-4.8244966452576685,5.9610043674320865,B001717
+B2.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-0.7818878155698882,9.239191262392055,MAA000545
+B2.MAA000752.3_10_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_10_M,-21.13813263606973,-0.6873186007173153,MAA000752
+B2.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-19.71256252366791,-3.11331313791428,MAA000801
+B2.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M,-5.744687630901569,10.208755132159887,MAA000922
+B20.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M,15.404905718747273,-7.006087783892123,MAA000545
+B20.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-20.04346111569997,-1.0442369236761861,MAA000801
+B21.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,14.090820857000997,-0.14019332275452745,B001717
+B22.MAA000545.3_8_M.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,M,3_8_M,-13.883292497259536,-1.790468188956203,MAA000545
+B3.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-19.03570138986714,-0.3836325668728488,B001717
+B3.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F,0.8104632089490932,12.497656604937825,B002775
+B3.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M,-5.460827449880032,5.992255921508746,MAA000922
+B4.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_38_F,0.4533915248119184,11.863058541394421,B001717
+B4.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M,1.5557453880438261,-8.219383228757474,MAA000922
+B5.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,10.427073560208786,-1.359104036833089,MAA000801
+B6.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.479443093896782,-12.244342355778254,B001717
+B7.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,1.4701956534925211,-19.62750850933879,MAA000801
+B8.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.4473129199020773,-9.856484612993093,B001717
+B8.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,9.947193749624317,-0.925041672952636,MAA000801
+C1.B001717.3_38_F.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,F,3_38_F,-20.18406345652833,-1.0138718748905675,B001717
+C1.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-4.5703919771063815,3.766794740110307,MAA000801
+C10.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-3.589131050745522,11.449426328955584,MAA000545
+C12.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-1.0922232046662146,13.322619063420488,MAA000545
+C12.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-0.5626678726983116,-19.84000355133722,MAA000801
+C13.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-1.089098661550845,-17.106953122686182,MAA000545
+C13.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-1.1043186677267611,-17.443149283351296,MAA000801
+C14.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,1.4251311736915095,-22.01656230328925,MAA000801
+C15.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,15.935586711549695,-2.020126992294016,MAA000801
+C16.MAA000752.3_10_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M,4.710154235629993,-11.868934464184647,MAA000752
+C17.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.892372477866435,-10.55841152757093,B001717
+C17.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-4.371697697236475,6.560075199347779,MAA000801
+C18.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,17.53622326877044,-1.9656064684573982,MAA000801
+C19.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-6.603602718880814,3.765420323528976,MAA000801
+C2.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F,-2.9759336466534663,-14.349776179528233,B002775
+C2.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-2.69301746132317,10.163828524548002,MAA000545
+C2.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,2.2684416487775265,15.837523821520609,MAA000801
+C2.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_9_M,-6.321353005538734,1.458586352881608,MAA000922
+C20.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F,-1.9040859565418697,9.552474190674165,B002775
+C20.MAA000752.3_10_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,M,3_10_M,1.4581229805463949,-8.266236725447781,MAA000752
+C21.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-6.1628110239804865,1.1863707381472068,B001717
+C21.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-3.406421203509024,-16.519646494512937,MAA000801
+C22.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-3.8340397066907834,7.057210299291021,MAA000545
+C22.MAA000922.3_9_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_9_M,19.1053280105623,-2.7532311791287754,MAA000922
+C4.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F,-1.1922459685923434,7.206819262317351,B002775
+C4.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M,0.19613990763775868,-16.352747732311652,MAA000922
+C5.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-4.18938448992064,8.154286743298847,MAA000545
+C5.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-4.041294141274498,9.753180108626978,MAA000801
+C6.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-0.05504739496722818,-19.1078498347363,MAA000545
+C6.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,1.6883013080581892,-20.335098058741725,MAA000801
+C7.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-0.6958344941000402,-11.837622388384357,B001717
+C9.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_38_F,1.7942508267784931,18.058840065983393,B001717
+C9.MAA000752.3_10_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_10_M,-19.4249021898736,-2.529970323701233,MAA000752
+D1.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.0747612692401245,-8.545194927753093,B001717
+D1.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-2.880527323114944,-17.548403931780037,MAA000545
+D1.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-5.705564258747241,3.033947982892672,MAA000801
+D10.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F,-0.6675599742205408,-16.615949094523433,B001717
+D10.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,2.0311117789216717,-9.331755186786973,B002775
+D11.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F,-3.6343593678195503,7.1698740256176015,B002775
+D11.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,11.558483441888313,-3.8738784905245742,MAA000801
+D12.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,8.88515925329198,0.009720780901333213,B001717
+D13.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F,17.117359882055727,-6.52197080140994,B001717
+D14.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,2.1713195645360344,-19.706015180608315,B002775
+D15.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.2487274835129996,-11.217577677869249,B001717
+D17.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-1.2364311588085743,-14.998571459713382,B001717
+D18.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,2.2466460119028238,21.12170469727734,MAA000545
+D18.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,3.729322956613569,21.48218899986883,MAA000801
+D2.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.858397331359703,-10.803584668780488,B001717
+D2.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F,17.275947675267886,-3.967982569650505,B002775
+D2.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-2.39078271686376,-18.1011089901326,MAA000545
+D2.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,2.5753572876540334,17.729268974857483,MAA000801
+D21.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,9.656854993306352,0.006437358667769042,B002775
+D21.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-6.699170500700821,1.4082264040884311,MAA000801
+D22.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F,17.790269814646322,-6.2387356286076985,B002775
+D3.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-1.7172295982152195,15.323962230613787,MAA000545
+D3.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,3.158508091766016,18.143411399341,MAA000801
+D4.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F,-3.2443577580209224,-9.268657825040739,B002775
+D4.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,1.601720471580654,20.803714843325288,MAA000545
+D4.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_9_M,4.2924579057506165,19.462928091714783,MAA000922
+D5.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-4.0958741715584335,-10.292889773740026,B001717
+D5.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-4.816771650932714,9.15548194560947,MAA000801
+D6.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,14.179258638386628,-1.5909745494207899,B002775
+D6.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,11.391873255766686,-3.045929243903762,MAA000801
+D7.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,13.841188963932971,-1.1863739852654394,B001717
+D7.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-8.090488121013399,4.76474589072104,MAA000801
+D8.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-0.6341152332576546,10.53210739084185,MAA000545
+D8.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-22.483764812689984,-2.5985763379477986,MAA000801
+D9.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F,18.51630371345529,-5.1793553575860765,B001717
+E1.B002775.3_39_F.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,F,3_39_F,-13.862228170542542,-1.7740460618165868,B002775
+E1.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-1.4520589674024467,8.664249887074062,MAA000545
+E10.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-5.440543799936268,4.306736264979572,B001717
+E10.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,14.340411849119407,-5.558513588054052,MAA000801
+E13.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F,-2.347582965791163,-16.60434442179379,B001717
+E14.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,12.457623247696453,-4.968686133286098,MAA000801
+E15.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,11.489604507269643,5.375325374896995,MAA000801
+E16.B002775.3_39_F.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,F,3_39_F,-12.253227522586748,-3.482574316869503,B002775
+E17.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,3.6875992645526514,22.1555066179099,MAA000545
+E17.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-0.5974969150016768,-19.942427531724793,MAA000801
+E18.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,17.97081361768908,-5.3812643120381045,MAA000752
+E2.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.9057497055624895,-12.258070510901844,B001717
+E2.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_39_F,2.4019934924247206,18.39802740126673,B002775
+E2.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-2.056819498384364,-18.13630205539157,MAA000801
+E20.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,15.792824361964728,-5.712726651206218,MAA000801
+E21.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F,-5.639842890671856,11.746290689536059,B002775
+E22.MAA000801.3_11_M.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M,-15.325370180277034,-1.3851171646616522,MAA000801
+E4.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,1.4052522217158727,20.585082204577702,MAA000801
+E5.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-5.298698333444687,7.5252838057331575,MAA000801
+E7.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_38_F,-0.26788529981714265,14.816315841917616,B001717
+F1.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_39_F,3.8887359101908694,21.905616525425884,B002775
+F1.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M,-1.785161194800012,12.822962680464842,MAA000922
+F11.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-2.675588520920463,5.928844457261199,MAA000801
+F12.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.4611010132367808,-13.486486545418789,B001717
+F13.MAA000752.3_10_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_10_M,-20.297368202570773,-1.1952671385109561,MAA000752
+F13.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,0.31760770585095915,-20.507554285444005,MAA000801
+F14.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-0.6399265591402078,14.859433774480346,MAA000545
+F15.B001717.3_38_F.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F,-12.925465901840859,-1.3746522223993765,B001717
+F17.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F,-0.8678749315543756,15.232719781751074,B002775
+F17.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,4.80938651913883,22.527552060106093,MAA000545
+F18.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-4.9654725565688,-14.386630784308716,B001717
+F18.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F,-8.659358900685987,3.2569275965505122,B002775
+F2.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.095263454455497,-12.741996427220384,B001717
+F2.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,0.5912043578964802,-16.846274225123434,B002775
+F2.MAA000801.3_11_M.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M,-13.947867056944078,-1.9457639658240822,MAA000801
+F20.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,4.897490898063648,21.049864125246767,MAA000801
+F21.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,12.632207457790667,-5.1463893799033915,B001717
+F22.MAA000545.3_8_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_8_M,-22.995196042982382,-2.4581220732832905,MAA000545
+F22.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-7.07756259926329,5.896712686686808,MAA000801
+F3.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-4.40294926944847,-13.424113095591625,B001717
+F3.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,0.2953459204148593,17.00846530780824,MAA000801
+F4.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-0.58093947987901,-19.270006959108947,MAA000801
+F5.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,0.0835965916212262,-17.131875470754,MAA000545
+F6.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-0.452651743733902,-19.175150965013515,MAA000801
+F6.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M,-0.8425128740052122,11.875356365305167,MAA000922
+F9.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,F,3_39_F,1.739447940756639,19.122214909631104,B002775
+G1.B002775.3_39_F.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,F,3_39_F,-12.600569534660833,-3.808617879034078,B002775
+G1.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-3.4847747104267843,-17.20231987621249,MAA000545
+G11.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,4.683178700751583,-11.847011924383585,MAA000545
+G13.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,10.680495298490518,-2.161850800216862,B002775
+G14.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-4.059005761378764,-12.029116824991865,B001717
+G15.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-5.937882750875656,0.4875313131963582,B001717
+G16.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,-2.7614965813024863,12.785698294171146,MAA000801
+G17.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,5.65375853928607,22.34476071884166,MAA000801
+G2.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,16.112671608509263,-1.4972201607482043,MAA000801
+G20.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,1.3042603473710497,19.02532094988118,MAA000752
+G20.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,12.382600550782165,-3.257016375241237,MAA000801
+G21.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,10.927022626979317,-3.990247794407079,MAA000801
+G22.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,10.84082362445554,-3.389003957635103,MAA000801
+G3.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,16.962220603684383,-5.826347648190276,MAA000752
+G3.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M,0.9084046572483749,14.983199411254013,MAA000922
+G4.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.3218770937807363,-13.209138356284463,B001717
+G5.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,-0.04479562683684608,-6.823134548106153,B001717
+G5.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,3.0220935133575497,18.14590823163542,MAA000801
+G6.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,1.036130734602539,-18.61810419682505,MAA000545
+G6.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-7.58830217775011,3.1636119213937777,MAA000801
+G7.B002775.3_39_F.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,F,3_39_F,-22.728310307354022,-1.5477585083906111,B002775
+G8.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,9.355042964823955,-0.2289325784933604,B001717
+G9.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,4.945884709222168,-1.9704712231686379,B002775
+G9.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,13.244551249648946,-2.7882107693423266,MAA000801
+H1.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-0.4351433279864197,-6.703415369712563,B001717
+H1.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,3.7741059892588695,17.120523303906474,MAA000801
+H10.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-22.077077898547632,-2.0263227522138507,MAA000801
+H12.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F,-1.089763321800224,-15.876711986417432,B001717
+H12.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,1.0215699945835937,-20.610900978177064,MAA000801
+H14.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_38_F,-2.1486512837488396,-15.873142755060934,B001717
+H15.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-4.733488179467157,6.554190727961421,B001717
+H16.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-3.432921194646291,6.377529943614077,B001717
+H16.MAA000752.3_10_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M,1.8465612415648838,-9.029615334843347,MAA000752
+H16.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-21.227770882230356,-1.2719340388638003,MAA000801
+H17.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-3.5795830607101218,5.3491072495874,B001717
+H18.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-5.146462587910403,4.30379342863378,B001717
+H19.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-1.7564365753943554,10.563976108244514,MAA000801
+H2.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M,17.952751830018133,-4.231900822083373,MAA000545
+H20.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,3.7807498250196057,22.160643134561443,MAA000752
+H20.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-23.580896240868285,-2.0695293375635004,MAA000801
+H21.MAA000752.3_10_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,M,3_10_M,-2.163599467997529,-14.476143351877573,MAA000752
+H4.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-12.865010592275949,-1.3056464522765403,B001717
+H4.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F,14.99630355914061,-5.857782496767271,B002775
+H4.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,12.700273746967477,-5.1606400060945035,MAA000801
+H6.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,1.019756956981473,14.780566239560326,MAA000801
+H7.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,14.76981969603181,0.4331979675113491,B001717
+H8.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.1842405378070673,-14.39369453603756,B001717
+H8.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-21.45111310167261,-2.058945007651463,MAA000801
+H9.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-5.292845785536355,-0.11314480103404399,B001717
+I1.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.634339102751791,-11.744384337958882,B001717
+I1.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-3.9391057591284917,10.846499402500697,MAA000545
+I1.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,10.75918108386859,-2.846963432175017,MAA000801
+I10.MAA000752.3_10_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M,0.7025298838419878,-18.53702890141533,MAA000752
+I12.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,12.249884336697766,-4.164116517966819,MAA000801
+I13.MAA000752.3_10_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_10_M,-20.818201080376248,-1.3565481281098588,MAA000752
+I15.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,-0.012858070009864688,-18.76836038812298,B002775
+I15.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_10_M,13.800530956521277,-3.632490177729351,MAA000752
+I15.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-23.191478128577526,-3.194446047667447,MAA000801
+I16.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,1.900345598884463,14.926601743055073,MAA000801
+I17.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.3994747512048757,-14.354984434216396,B001717
+I17.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M,0.17542359012585498,14.207016493529997,MAA000752
+I18.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,13.502114572283977,-3.417880642113708,MAA000801
+I19.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,1.2058539022161137,19.180622144986213,MAA000752
+I2.B001717.3_38_F.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F,-13.649639268847503,-1.445628259750888,B001717
+I2.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F,-2.4492633416126166,-12.853691565303635,B002775
+I2.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,11.857926387326378,-4.831849923934758,MAA000801
+I2.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M,-1.7670161772037603,-19.400800542512126,MAA000922
+I3.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,1.1555508548617948,-7.86619924357655,B001717
+I3.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,1.3857357191160697,-21.390451228911694,B002775
+I3.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,14.887340480551737,-6.691364198682833,MAA000801
+I4.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,13.455329654137092,-0.014360057271847224,B001717
+I4.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,2.513131311732299,17.84392952294315,MAA000752
+I4.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-1.5756419817127651,4.508519872726804,MAA000801
+I5.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,12.759606354818382,-3.4581664308005733,B001717
+I5.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,16.00783175864715,-5.8341767065358905,MAA000801
+I6.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.68797673157643,-12.89154128559945,B001717
+I7.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F,17.246939422638874,-3.1308646774624127,B001717
+I8.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,0.5717212827881488,-7.310939781315476,B001717
+I8.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,4.188921229141685,16.14626331485559,MAA000801
+I8.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_9_M,5.118013847401204,22.125194612560723,MAA000922
+I9.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,2.3137435296712097,19.15933508693469,MAA000752
+J1.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-0.5454314199552803,15.611054297568364,MAA000545
+J10.MAA000922.3_9_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_9_M,12.17034367297853,-3.2118319079092226,MAA000922
+J11.MAA000752.3_10_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M,-3.3946047610482237,-19.516983641053315,MAA000752
+J11.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M,2.4505834495633834,15.81166802238926,MAA000922
+J12.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-4.257699444603233,6.303299661637039,B001717
+J13.MAA000801.3_11_M.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M,-10.851552122913795,-4.217791073374059,MAA000801
+J15.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M,-7.640143928308963,5.636442130594888,MAA000752
+J17.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F,-1.995795176906295,8.227412918570785,B002775
+J19.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-2.1102543969537164,8.133096237421373,B001717
+J19.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-22.29337853985758,-1.5372271455357929,MAA000801
+J2.B001717.3_38_F.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,F,3_38_F,-20.089213813179246,-0.7050644336058441,B001717
+J2.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,9.673350191686385,-1.3321845074193994,MAA000801
+J20.MAA000801.3_11_M.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M,-12.203750509165618,-3.4445002924026844,MAA000801
+J22.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_9_M,-7.213395948022316,3.8775768417303453,MAA000922
+J3.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,13.383064127846925,-1.6413622340104657,B001717
+J6.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-6.270084548688251,0.16412081068778978,B001717
+J7.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-1.5182666701082852,-19.151406140197732,MAA000545
+J8.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F,14.843513610580013,-1.0472810785586903,B002775
+J9.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,5.334585994152624,22.21961363561681,MAA000752
+K10.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,13.104197038356418,-2.4883875383777116,B002775
+K10.MAA000752.3_10_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M,-0.9902533486821383,-16.9226729172374,MAA000752
+K11.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,12.163547160843702,-2.628964327802834,B001717
+K11.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F,-3.9823846920171087,-9.465419036513987,B002775
+K11.MAA000752.3_10_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_10_M,-20.99832009267195,-1.7059124090002853,MAA000752
+K12.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-6.145666019990631,7.1649425612119355,B001717
+K14.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,12.747819542479231,0.09224380066460906,B001717
+K14.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,13.017520830197988,-4.170371440741604,MAA000801
+K15.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,2.1867508022901556,19.142429425245147,MAA000801
+K16.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M,-5.574167996665658,1.385972706126233,MAA000752
+K16.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,0.4733528457151588,-21.195549419735446,MAA000801
+K17.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F,-3.3559931740529723,-9.537846658073622,B002775
+K17.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,5.770537752090202,22.178177327314742,MAA000801
+K18.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,10.71815102895123,0.3066005309787896,B001717
+K19.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,0.9532561245417079,-19.711942663399466,MAA000545
+K19.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,4.4376241628867525,15.65504614979959,MAA000801
+K2.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.041423263576388,-9.919752112130789,B001717
+K2.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F,19.035447317063124,-5.875907687308821,B002775
+K2.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-5.493105815556733,5.223421944148337,MAA000801
+K20.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,10.112312883842606,-0.270737947499805,B001717
+K20.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F,-2.674695644013406,12.39788773359754,B002775
+K21.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,3.707339551224996,20.168074957243533,MAA000801
+K22.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-5.830553017439522,4.199569156759168,B001717
+K22.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M,1.293535367732214,14.685513142841833,MAA000752
+K4.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-6.540814299766188,5.116041414272868,B001717
+K4.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,13.503120746164564,-5.728658881461287,MAA000801
+K5.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.767963818687194,-8.677374900391532,B001717
+K5.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,1.2510766383193381,15.72443284758703,MAA000801
+K5.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M,0.13025852004005323,-22.160487912404705,MAA000922
+K6.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-1.4191494002149223,-11.63114583544203,B001717
+K6.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,7.368163982200883,-1.1415543671734696,B002775
+K7.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M,14.91337590898009,-5.3704377933980005,MAA000545
+K7.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M,-4.536074233656963,-18.454015204602786,MAA000922
+K8.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.081005358288509,-11.170545231437165,B001717
+K8.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-5.686756737315317,6.142358977269792,MAA000801
+K9.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-3.732866580234808,12.85771947528322,MAA000801
+L1.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,2.533699441763723,16.37391053848286,MAA000752
+L10.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-6.4903478894088,5.373098188688487,B001717
+L10.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,9.73590430942778,-4.166673483035625,B002775
+L11.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-5.691677915836481,3.608064161172217,B001717
+L12.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-2.269283452388123,8.509836587580587,B001717
+L12.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,2.041623269703684,-19.738353963860064,MAA000801
+L13.B001717.3_38_F.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F,-13.887411646527106,-1.3325434525496198,B001717
+L13.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-23.0492483452078,-2.599826972755047,MAA000801
+L14.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,14.709547542648936,-6.0986541152674585,MAA000752
+L15.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.4557277616124606,-13.250541728249024,B001717
+L15.MAA000752.3_10_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_10_M,-21.75452792724325,-1.5470581531609788,MAA000752
+L17.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-6.4784042515755935,0.772674188760346,B001717
+L17.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F,-5.50548167909721,8.159996390761753,B002775
+L18.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,1.014397687243197,18.369573046552727,MAA000752
+L2.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,8.652058486240447,-1.0595190695293837,B001717
+L2.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,11.048847467895783,-2.598986437553358,B002775
+L2.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,18.63613197010831,-4.740710213998133,MAA000801
+L20.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,2.3622496367014527,20.957778643900873,MAA000801
+L21.MAA000801.3_11_M.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,M,3_11_M,-12.273901220270227,-3.4272941985457996,MAA000801
+L22.B002775.3_39_F.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,F,3_39_F,-21.611432559121337,-0.9457317241949471,B002775
+L22.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M,-5.602117174226707,9.850217283398226,MAA000752
+L3.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F,16.541171909946335,-1.545749252509514,B001717
+L3.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F,-4.718910927348969,0.818276558694816,B002775
+L3.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,14.903958996002105,-0.8190223286896205,MAA000801
+L4.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-4.477959087496771,8.024528520211025,MAA000801
+L4.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M,-4.608609549592683,-18.48384986701519,MAA000922
+L5.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-4.1434646948413,-13.257510686129125,B001717
+L5.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-7.893640602228658,1.521001915562324,MAA000801
+L6.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-6.9608372625582575,4.7601978269069045,B001717
+L6.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,1.6991123475129832,12.490208599632599,MAA000545
+L6.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M,0.16351606381388326,-22.06306206779887,MAA000922
+L7.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,1.4507860540473514,-16.847155041466607,MAA000801
+L8.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,13.06661254794019,-0.5155723757751447,B002775
+L8.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-0.09727025504989156,17.043524202782724,MAA000545
+L8.MAA000922.3_9_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_9_M,15.255644098650407,-1.1141754273820381,MAA000922
+L9.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-0.1764846055542975,12.805676594035353,MAA000545
+M1.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_38_F,17.94672985034098,-6.280923239520767,B001717
+M1.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,11.321165678145492,5.468828004583428,MAA000752
+M1.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-3.0988457096293835,8.527224877105159,MAA000801
+M1.MAA000922.3_9_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_9_M,11.057285087032579,5.636620102480785,MAA000922
+M10.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,4.29343352917268,21.67441445797475,MAA000801
+M12.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-5.726651221969364,9.616104696586792,MAA000801
+M12.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,M,3_9_M,-4.114948623927327,-15.405098461420753,MAA000922
+M13.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,13.375229169336146,-5.579020135336477,B002775
+M13.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M,0.8260669109146596,11.48261394784755,MAA000752
+M13.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,0.3911696009037168,-19.05165962960558,MAA000801
+M14.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,10.600088169095464,-2.3060111542183623,B001717
+M14.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-1.2823265559024426,-20.993457255165772,MAA000545
+M14.MAA000752.3_10_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_10_M,-20.666513483849876,-0.9190982485452659,MAA000752
+M15.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_10_M,12.17867968226227,-2.711698710068698,MAA000752
+M15.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,8.276099453446788,0.9081346132110478,MAA000801
+M16.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-6.840322986287628,2.4744056920791815,B001717
+M16.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,18.121655378886583,-2.057407909300137,MAA000801
+M17.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-6.923428094824914,5.991432758128672,MAA000801
+M18.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,3.8076292359193697,21.721894761515035,MAA000545
+M18.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,1.9898553058510664,18.649456902188966,MAA000752
+M18.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M,-2.485458498725751,10.749066409398795,MAA000922
+M19.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,14.332525671193023,-0.5836746743371444,B002775
+M19.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-21.767706040845177,-1.001457046163302,MAA000801
+M2.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.530135767518334,-9.168353956159041,B001717
+M2.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,0.1520792275798617,-21.285375385786246,MAA000545
+M2.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_9_M,2.8161856043498203,19.249800978989718,MAA000922
+M20.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,5.871003148537804,-1.7480383162908324,B001717
+M20.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F,-0.5456115571020254,6.738367886106431,B002775
+M20.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-0.6148739754088136,-17.588238259862916,MAA000545
+M20.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M,-6.01997509734439,1.750867047952132,MAA000752
+M20.MAA000922.3_9_M.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,M,3_9_M,4.66543634210248,-11.813022351283927,MAA000922
+M21.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M,-4.288997386378038,5.005504340685108,MAA000752
+M22.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,9.776384413954089,-0.17395912275676867,MAA000801
+M22.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M,-6.106753535294716,8.453705824539592,MAA000922
+M3.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.5847320891229697,-12.505838781561105,B001717
+M3.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,-0.40230958637277603,12.947090098855416,MAA000801
+M4.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M,16.651929218323147,-1.860459583873083,MAA000545
+M4.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,9.32970172523922,-0.7202003682019334,MAA000801
+M5.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-2.9889702368997466,6.238091741863333,MAA000545
+M5.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-3.375987282447094,10.092810948784617,MAA000801
+M5.MAA000922.3_9_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_9_M,-22.4669988871711,-1.9027604079838198,MAA000922
+M6.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,0.6478436530040791,-19.814978140666305,MAA000801
+M7.B001717.3_38_F.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,F,3_38_F,-20.057172388771857,-1.8416670204161263,B001717
+M8.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-3.4560765548166223,-19.57530721722596,MAA000545
+M8.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-21.757100030768484,-2.094713485964917,MAA000801
+M9.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-3.9610542653606338,-17.859169392993316,MAA000545
+M9.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,3.7582461580831676,19.1716016959099,MAA000752
+M9.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-1.212887384097387,-16.734641277091832,MAA000801
+N1.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-6.918693429822405,-0.917123722537139,B001717
+N1.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,M,3_8_M,-3.3626233663437692,-15.13677231095,MAA000545
+N1.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,3.7413399046466393,19.034082412580176,MAA000752
+N1.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-3.1308809706610528,8.623160031808581,MAA000801
+N11.MAA000752.3_10_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_10_M,0.34710801519136597,-21.162858124944265,MAA000752
+N11.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,0.7191735133659544,-20.800609840529766,MAA000801
+N12.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,4.498513402956399,23.194274613477788,MAA000752
+N12.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-5.727292847232022,8.60865096072945,MAA000801
+N13.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,9.514776408257976,-0.5615596880365601,B001717
+N13.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M,17.30026767656618,-6.747488140773187,MAA000545
+N14.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,7.336117720511177,-0.8981275326330943,B002775
+N14.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M,2.261803579118042,16.02074532435518,MAA000922
+N15.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-2.9028328581109033,-10.247668349896518,B001717
+N16.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-6.561773880931895,0.8733218386089149,MAA000801
+N16.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_9_M,1.4630709333525556,20.270695674771456,MAA000922
+N17.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_8_M,-5.886361193293818,3.301083583394218,MAA000545
+N17.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M,-0.7202428400822545,12.621820542669422,MAA000752
+N18.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,14.012606028673316,-5.498857489806834,MAA000752
+N18.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-8.090920562512952,1.4549935556056601,MAA000801
+N2.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,15.324886843604299,-4.582006745505388,MAA000752
+N2.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_11_M,3.973541789953368,16.139837815230937,MAA000801
+N20.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,F,3_39_F,15.542399641938628,-6.274221044197431,B002775
+N20.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,4.408782274375685,20.89750472769114,MAA000752
+N20.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_11_M,10.538856167691256,6.103374915225748,MAA000801
+N21.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-1.5530705178159274,-13.369326220780426,B001717
+N21.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,15.577728082002702,-1.2501541895371633,MAA000752
+N21.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M,-1.765346331027213,13.192663390482833,MAA000922
+N22.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,7.570812020980249,-1.1720078713320052,B002775
+N3.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-4.19180102142187,5.142546967844687,B001717
+N3.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-2.1523716621844553,-16.2318075404164,MAA000545
+N3.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M,-2.245469054014063,11.935114744702993,MAA000752
+N3.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_9_M,-3.2609737165128916,9.835388774629424,MAA000922
+N4.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F,-1.9988246266957197,6.201962266044221,B002775
+N4.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_8_M,15.41644841935367,-6.998392526034529,MAA000545
+N4.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-5.61692804085251,-1.1814069116710901,MAA000801
+N4.MAA000922.3_9_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_9_M,-1.77445222285346,-17.16571744132012,MAA000922
+N5.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,17.27148099467584,-3.613828629637364,MAA000752
+N6.MAA000545.3_8_M.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,M,3_8_M,-12.450955697040788,-3.647989032294316,MAA000545
+N6.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-1.9643205825310783,-5.023978652218509,MAA000801
+N7.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,-1.046318329110536,-19.414141997540174,B002775
+N7.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-6.970593047428487,9.331012223403004,MAA000545
+N7.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-7.05155299291813,1.6812924197362982,MAA000801
+N8.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-7.632947241683757,5.480804363465804,B001717
+N9.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-6.61451384152045,6.6773762356238855,B001717
+N9.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,13.66420350895764,-1.4318530782376941,B002775
+N9.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M,-6.1017082125100766,9.563689670751485,MAA000752
+O1.MAA000545.3_8_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_8_M,-2.904460358611543,-16.098396673905476,MAA000545
+O1.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-19.81706206622427,-2.05316260771072,MAA000801
+O10.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_11_M,-6.9629718302885895,4.167769789531219,MAA000801
+O10.MAA000922.3_9_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_9_M,-22.759083897726,-1.746651678097025,MAA000922
+O13.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,1.5861103890282227,13.166916884411837,MAA000545
+O13.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M,-4.2450527850040105,10.61073319983489,MAA000752
+O14.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-0.9935825512835887,-13.61902445541952,B001717
+O14.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_10_M,11.5204880662959,-2.7198574958662625,MAA000752
+O16.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,14.231481042222732,-6.210251459777813,MAA000752
+O17.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-7.098763609010978,-1.3554684904244634,B001717
+O17.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,15.418791349485106,-2.283984769351216,MAA000752
+O17.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-21.21490075188677,-1.1823393406229257,MAA000801
+O18.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-5.9855482048270225,6.916787728742169,B001717
+O18.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,18.248672084745955,-4.857464000814882,MAA000752
+O18.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-3.334809239943092,10.903949094917618,MAA000801
+O19.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,0.08883501465576109,-19.03899174209173,MAA000801
+O19.MAA000922.3_9_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_9_M,11.835634038245837,-3.3314357070642977,MAA000922
+O2.B001717.3_38_F.1.1,Kidney,,natural killer cell,CL:0000623,natural killer cell,9,F,3_38_F,-12.39418223272854,-3.590638614834317,B001717
+O2.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,7.479060040082217,-1.6705018355502237,B002775
+O2.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-0.5204854010117386,16.358503313739305,MAA000545
+O20.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,9.993411152051504,-2.0368032067053474,B002775
+O20.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,3.415680780580117,18.042260618878547,MAA000545
+O21.MAA000545.3_8_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_8_M,12.97977785017361,-6.126106336965603,MAA000545
+O22.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,-1.342057486769427,-18.4751934936641,B002775
+O4.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,2.7954947050258236,21.41601368812704,MAA000545
+O4.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,M,3_10_M,-8.317811789174888,2.3186538804339505,MAA000752
+O4.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M,-0.739703114141299,13.083644165851148,MAA000922
+O6.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-6.949232125937424,-0.7088125943945895,B001717
+O6.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-4.6531409092132785,9.4792923562341,MAA000545
+O7.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,11.206380168167382,-0.021776000795241477,B001717
+O7.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_39_F,-5.400306547691909,11.265849460866452,B002775
+O8.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.49308365233339,-11.191087458037792,B001717
+O8.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,F,3_39_F,-0.2504450789009638,12.313836702855449,B002775
+O9.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_38_F,-7.2589190470677485,1.0325067937076142,B001717
+O9.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,4.657983326277115,18.931428285476642,MAA000752
+O9.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-2.871738191885351,12.116567158790373,MAA000801
+P1.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-1.9210382323418285,-11.605147451211378,B001717
+P1.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M,-5.080929965795303,8.854157432550188,MAA000752
+P1.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-21.44021662764014,-1.0130496675201672,MAA000801
+P10.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,11.236864064777428,-3.2209728759236587,MAA000801
+P10.MAA000922.3_9_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_9_M,15.420046159870807,-0.04210323132982696,MAA000922
+P11.B002775.3_39_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,3,F,3_39_F,-6.410638947852447,3.8468814110100302,B002775
+P12.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,9.241082087834675,-1.9075648556949232,B002775
+P12.MAA000922.3_9_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_9_M,1.8431490634871164,14.087122427593789,MAA000922
+P13.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,0.9628812591301221,19.663399028836235,MAA000545
+P13.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_10_M,-1.270200459860078,9.037243656998355,MAA000752
+P14.MAA000801.3_11_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_11_M,-4.766513584028015,7.082225482379302,MAA000801
+P15.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_10_M,1.8653196721932515,-6.417268949146705,MAA000752
+P16.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_10_M,0.6350214181397467,18.074324266183567,MAA000752
+P16.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_11_M,18.852770048426763,-2.683060972478182,MAA000801
+P18.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,M,3_8_M,-3.937255005682393,9.591115254930727,MAA000545
+P18.MAA000752.3_10_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_10_M,0.9387061619729723,14.351803779670089,MAA000752
+P19.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_39_F,-2.7828566631602536,-15.523459427903946,B002775
+P19.MAA000801.3_11_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,M,3_11_M,13.654828761986225,-1.0650329821408813,MAA000801
+P20.B001717.3_38_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,5,F,3_38_F,-3.3113676544940565,-9.18503811865416,B001717
+P21.B002775.3_39_F.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,F,3_39_F,-2.006162788883066,-18.75828192396857,B002775
+P21.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,6,M,3_8_M,3.9049889268978126,20.126259423451888,MAA000545
+P22.B001717.3_38_F.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,2,F,3_38_F,-4.290970533331355,6.884814625970787,B001717
+P3.B002775.3_39_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_39_F,12.721745220732183,-5.531111553713604,B002775
+P3.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,15.443121387736268,-5.4348576036847644,MAA000752
+P4.B001717.3_38_F.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,F,3_38_F,-19.956613881881054,-0.9070802953897237,B001717
+P4.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-0.5305938551051756,16.664803930816376,MAA000545
+P4.MAA000801.3_11_M.1.1,Kidney,,macrophage,CL:0000235,macrophage,8,M,3_11_M,-22.437421734916754,-2.7204452295227632,MAA000801
+P5.MAA000545.3_8_M.1.1,Kidney,,epithelial cell of proximal tubule,CL:0002306,epithelial cell of proximal tubule,7,M,3_8_M,-0.20285853600133313,17.098234691038353,MAA000545
+P6.MAA000801.3_11_M.1.1,Kidney,,endothelial cell,CL:0000115,endothelial cell,0,M,3_11_M,-0.5302899193530847,-17.510376873775847,MAA000801
+P8.MAA000752.3_10_M.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,4,M,3_10_M,14.821392694317131,-6.4803120845436,MAA000752
+P9.B001717.3_38_F.1.1,Kidney,,kidney collecting duct epithelial cell,CL:1000454,kidney collecting duct epithelial cell,1,F,3_38_F,8.197439926895488,-0.7261690979857871,B001717
