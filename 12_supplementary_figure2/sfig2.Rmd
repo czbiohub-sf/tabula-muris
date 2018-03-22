@@ -61,3 +61,198 @@ ggsave(here("13_supplementary_figure3","sfigure3-fib.pdf"), width = 7, height = 
 plate_v_tenx("Spleen", "B cell") + ggtitle("Spleen B Cells")
 ggsave(here("13_supplementary_figure3","sfigure3-b.pdf"), width = 7, height = 7, units = "in")
 ```
+
+```{r}
+plate_v_tenx_df <- function(tissue_var, annotation_var){
+  cells_FACS <- tiss_FACS@meta.data %>% filter(cell_ontology_class == annotation_var & tissue == tissue_var) %>% 
+    pull(cell)
+  pct_FACS <- Matrix::rowMeans(tiss_FACS@raw.data[,cells_FACS] > 0)
+  
+  cells_droplet <- tiss_droplet@meta.data %>% filter(cell_ontology_class == annotation_var & tissue == tissue_var) %>% 
+    pull(cell)
+  pct_tenx <- Matrix::rowMeans(tiss_droplet@raw.data[,cells_droplet] > 0)
+  
+  pct1 = as_data_frame(pct_tenx)
+  pct1['gene'] <- names(pct_tenx)
+  pct1['method'] <- 'droplet'
+  pct1['expr'] <- Matrix::rowSums(tiss_droplet@raw.data[,cells_droplet])/sum(tiss_droplet@raw.data[,cells_droplet])
+  
+  pct2 = as_data_frame(pct_FACS)
+  pct2['gene'] <- names(pct_FACS)
+  pct2['method'] <- 'FACS'
+  pct2['expr'] <- Matrix::rowSums(tiss_FACS@raw.data[,cells_FACS])/sum(tiss_FACS@raw.data[,cells_FACS])
+  
+  pct <- bind_rows(pct1, pct2)
+  pct
+}
+```
+
+```{r}
+df <- plate_v_tenx_df('Liver', 'hepatocyte')
+
+df %>% select(method, value, gene) %>% spread(key = method, value = value, fill = 0) %>% filter(droplet > 0.5) %>%  filter(FACS < 0.1)
+df %>% filter(gene == 'D14Ertd449e')
+
+  plate_v_tenx_pct('Liver', 'hepatocyte') %>% spread(key = method, value = value, fill = 0) %>% filter(droplet <0.1) %>%  filter(FACS > 0.75)
+  
+    plate_v_tenx_pct('Spleen', 'B cell') %>% spread(key = method, value = value, fill = 0) %>% filter(droplet <0.1) %>%  filter(FACS > 0.75)
+    
+    df <- plate_v_tenx_df('Spleen', 'B cell')
+
+    
+    df %>% select(method, value, gene) %>% spread(key = method, value = value, fill = 0) %>% filter(droplet > 0.5) %>%  filter(FACS < 0.1)
+df %>% filter(gene == 'Lars2')
+
+```
+
+```{r}
+df %>% select(-value) %>% spread(key = method, value = expr, fill = 0) %>% filter(gene != 'Rn45s') %>% mutate(union = droplet + FACS) %>%
+  filter(union > 1e-6) %>% 
+  ggplot(aes(log(FACS), log(droplet))) +
+  geom_point() + coord_fixed()
+
+df %>% select(-value) %>% spread(key = method, value = expr, fill = 0) %>% filter(gene != 'Rn45s') %>% mutate(union = droplet + FACS) %>%
+  filter(union > 1e-6) %>% 
+  ggplot(aes(FACS, droplet)) +
+  geom_point() + scale_x_log10() + scale_y_log10() + coord_fixed()
+df %>% ggplot(aes(log(expr), value, color = method)) + geom_point(alpha = 0.1)
+```
+
+## Comparison of 'bulk' profiles via both methods
+
+```{r}
+df_FACS <- tiss_FACS@meta.data[c('tissue','cell_ontology_class')]
+df_FACS['method'] <- 'FACS'
+df_droplet <- tiss_droplet@meta.data[c('tissue','cell_ontology_class')]
+df_droplet['method'] <- 'droplet'
+
+common_pairs <- bind_rows(df_FACS, df_droplet) %>% drop_na() %>%
+     group_by(tissue, cell_ontology_class, method) %>% summarize(count = n()) %>% 
+     ungroup() %>% group_by(tissue, cell_ontology_class) %>% summarize(count = n()) %>% 
+     filter(count > 1) %>% select(-count)
+
+common_pairs['rho'] <- NA
+```
+
+
+```{r}
+all_df <- tibble(tissue = character(), cell_ontology_class = character(), gene = character(), method = character(), expr = numeric())
+
+for(i in 1:nrow(common_pairs)){
+  print(common_pairs$tissue[i])
+  cells_FACS <- tiss_FACS@meta.data %>% filter(cell_ontology_class == common_pairs$cell_ontology_class[i] & tissue == common_pairs$tissue[i]) %>% 
+    pull(cell)
+  
+  cells_droplet <- tiss_droplet@meta.data %>% filter(cell_ontology_class == common_pairs$cell_ontology_class[i] & tissue == common_pairs$tissue[i]) %>% 
+    pull(cell)
+
+  df1 = tibble(gene = rownames(tiss_FACS@raw.data))
+  df1['method'] = 'FACS'
+  df1['expr'] =  Matrix::rowSums(tiss_FACS@raw.data[,cells_FACS])/sum(tiss_FACS@raw.data[,cells_FACS])
+  df1['cell_ontology_class'] = common_pairs$cell_ontology_class[i]
+  df1['tissue'] = common_pairs$tissue[i]
+  
+  df2 = tibble(gene = rownames(tiss_droplet@raw.data))
+  df2['method'] = 'FACS'
+  df2['expr'] =  Matrix::rowSums(tiss_droplet@raw.data[,cells_droplet])/sum(tiss_droplet@raw.data[,cells_droplet])
+  df2['cell_ontology_class'] = common_pairs$cell_ontology_class[i]
+  df2['tissue'] = common_pairs$tissue[i]
+ 
+  all_df <- bind_rows(all_df, df1, df2)
+}
+```
+
+```{r}
+dim(tiss_FACS@raw.data) 
+dim(tiss_droplet@raw.data)
+```
+
+
+```{r}
+all_genes = rownames(tiss_FACS@raw.data)
+mat <- data.frame(row.names = all_genes)
+
+for(i in 1:nrow(common_pairs)){
+  print(common_pairs$tissue[i])
+  cells_FACS <- tiss_FACS@meta.data %>% filter(cell_ontology_class == common_pairs$cell_ontology_class[i] & tissue == common_pairs$tissue[i]) %>% 
+    pull(cell)
+  
+  cells_droplet <- tiss_droplet@meta.data %>% filter(cell_ontology_class == common_pairs$cell_ontology_class[i] & tissue == common_pairs$tissue[i]) %>% 
+    pull(cell)
+
+  mat[paste(common_pairs$tissue[i], common_pairs$cell_ontology_class[i], "FACS", sep = '-')] = Matrix::rowSums(tiss_FACS@raw.data[,cells_FACS])/sum(tiss_FACS@raw.data[,cells_FACS])
+  
+  mat[paste(common_pairs$tissue[i], common_pairs$cell_ontology_class[i], "droplet", sep = '-')] = Matrix::rowSums(tiss_droplet@raw.data[all_genes,cells_droplet])/sum(tiss_droplet@raw.data[all_genes,cells_droplet])
+}
+```
+
+
+```{r, fig.height = 30, fig.width = 12}
+library(gplots)
+library(ggdendro)
+corr = cor(mat, method = 'spearman')
+d = as.dist(1 - corr)
+
+fit <- hclust(d, method="ward.D") 
+ggdendrogram(fit, rotate = TRUE) # display dendogram
+groups <- cutree(fit, k=9) # cut tree into 5 clusters
+# draw dendogram with red borders around the 5 clusters 
+rect.hclust(fit, k=5, border="red")
+```
+
+```{r}
+Matrix::colSums(mat > 1e-6)
+```
+
+
+```{r, fig.width = 12, fig.height = 12}
+dim(corr)
+heatmap.2(corr[seq(2,106,2), seq(1, 105, 2)], Rowv=FALSE, Colv=FALSE, trace = 'none')
+```
+
+
+```{r}
+for(i in 1:nrow(common_pairs)){
+  print(common_pairs$cell_ontology_class[i])
+  df <- plate_v_tenx_df(common_pairs$tissue[i], common_pairs$cell_ontology_class[i]) 
+  corr <- cor.test( ~ droplet + FACS, 
+         data=df %>% select(-value) %>% spread(key = method, value = expr, fill = 0),
+         method = "spearman",
+         continuity = FALSE,
+         conf.level = 0.95)
+  common_pairs$rho[i] <- corr$estimate
+}
+common_pairs
+```
+
+```{r}
+for(i in 1:nrow(common_pairs)){
+  print(common_pairs$cell_ontology_class[i])
+  df <- plate_v_tenx_df(common_pairs$tissue[i], common_pairs$cell_ontology_class[i]) 
+  corr <- cor.test( ~ droplet + FACS, 
+         data=df %>% select(-value) %>% spread(key = method, value = expr, fill = 0),
+         method = "spearman",
+         continuity = FALSE,
+         conf.level = 0.95)
+  common_pairs$rho[i] <- corr$estimate
+}
+common_pairs
+```
+
+
+```{r}
+common_pairs %>% ggplot(aes(rho, ..density..)) + geom_freqpoly()
+```
+
+
+```{r}
+corr <- cor.test( ~ droplet + FACS, 
+         data=df %>% select(-value) %>% spread(key = method, value = expr, fill = 0),
+         method = "spearman",
+         continuity = FALSE,
+         conf.level = 0.95)
+cors[['sample estimates']]
+corr$estimate
+```
+
+
