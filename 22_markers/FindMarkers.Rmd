@@ -4,6 +4,8 @@ output: html_notebook
 ---
 
 ```{r}
+library(here)
+
 find_markers <- function(tissue, method, annotation){
   filename = here('00_data_ingest', '04_tissue_robj_generated', 
                        paste0(method,"_", tissue, "_seurat_tiss.Robj"))
@@ -39,8 +41,8 @@ find_markers("Lung", "droplet", "cell_ontology_class")
 find_markers("Marrow", "facs", "cell_ontology_class")
 find_markers("Marrow", "droplet", "cell_ontology_class")
 
-find_markers("Muscle", "facs", "cell_ontology_class")
-find_markers("Muscle", "droplet", "cell_ontology_class")
+find_markers("Limb_Muscle", "facs", "cell_ontology_class")
+find_markers("Limb_Muscle", "droplet", "cell_ontology_class")
 
 find_markers("Spleen", "facs", "cell_ontology_class")
 find_markers("Spleen", "droplet", "cell_ontology_class")
