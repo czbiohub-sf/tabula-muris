@@ -1,0 +1,79 @@
+---
+title: "Han Raw Data"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+
+```{r}
+han_metadata <- read_csv(here('00_data_ingest','han_data','han_metadata.csv'))
+han_metadata_comparable = han_metadata %>% filter(!is.na(tissue)) %>% filter(is.na(subtissue))
+han_metadata_comparable
+```
+
+```{r}
+bladder <- read.table(here('00_data_ingest','han_data','GSM2889480_Bladder_dge.txt'), header = TRUE)
+```
+
+```{r}
+corner(bladder)
+```
+
+The format we want is a dataframe with one row per cell, and columns: 
+
+cell, tissue, subtissue, nGene, channel, nMolecules, method
+
+We may also want to have the median number of genes per tissue as a function of the cutoff (n > 0, 1, 2, 3, 4).
+
+```{r}
+df_microwell <- tibble(cell = character(), tissue = character(), subtissue = character(), nGene = integer(), method = character())
+
+for(i in 1:nrow(han_metadata_comparable)){
+  print(paste0("Loading ", han_metadata_comparable$filename[i]))
+  raw.data <- read.table(here('00_data_ingest','han_data',han_metadata_comparable$filename[i]), header = TRUE)
+  df <- tibble(cell = colnames(raw.data))
+  df['tissue'] <- han_metadata_comparable$tissue[i]
+  df['subtissue'] <- han_metadata_comparable$subtissue[i]
+  df['method'] <- 'microwell'
+  df['nGene'] <- Matrix::colSums(raw.data > 0)
+  for(j in 0:4){
+    df[paste0('nGene.', j)] <- Matrix::colSums(raw.data > j)
+  }
+  df_microwell <- bind_rows(df_microwell, df)
+}
+```
+
+```{r}
+df_microwell %>% filter(nGene > 500) %>% ggplot(aes(nGene, ..density..,colour = tissue)) + 
+  geom_freqpoly(binwidth = 100) +
+  ggtitle("Number of genes expressed")
+```
+
+
+```{r}
+df_microwell %>% filter(nGene > 500) %>% gather(nGene.0:nGene.4, key=cutoff, value = nGene.cutoff) %>%
+  ggplot(aes(nGene.cutoff, ..density..,colour = tissue)) + 
+  geom_freqpoly(binwidth = 100) +
+  facet_wrap(~cutoff)
+  ggtitle("Number of genes expressed")
+```
+
+```{r}
+
+df_microwell %>% filter(nGene > 500) %>% gather(nGene.0:nGene.4, key=cutoff, value = nGene.cutoff) %>%
+  separate(cutoff, c("std","int.cutoff")) %>% select(-std)
+```
+
+
+```{r}
+df_microwell %>% filter(nGene > 500) %>% gather(nGene.0:nGene.4, key=cutoff, value = nGene.cutoff) %>%
+  separate(cutoff, c("std","int.cutoff")) %>% select(-std) %>% mutate(int.cutoff = as.integer(int.cutoff)) %>%
+  group_by(tissue, int.cutoff) %>% summarize(med = median(nGene.cutoff)) %>%
+  ggplot(aes(int.cutoff, med,colour = tissue)) + 
+  geom_point() +
+  ggtitle("Median of genes expressed above cutoff")
+```
