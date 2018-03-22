@@ -35,8 +35,20 @@ def stringify_list(genes):
     return ', '.join(map(lambda x: f'"{x}"', genes))
 
 
+def clean_name(name):
+    """Make the name nice looking for plots"""
+    if name.startswith('SUBSET'):
+        name = 'Subset' + name[-1]
+    else:
+        name = name.capitalize()
+    return name
+
+
 def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
-    filter = f'rownames(tiss@meta.data)[grep("{filter_value}",tiss@meta.data${filter_column})]'
+    """Add R code blocks for subsetting and reclustering"""
+    name = clean_name(name)
+
+    filter = f'rownames(tiss@meta.data)[tiss@meta.data${filter_column}) == {filter_value}]'
     genes_str = stringify_list(genes)
     code = f"""{name}.cells.use = {filter}
 {name}.n.pcs = {npcs}
