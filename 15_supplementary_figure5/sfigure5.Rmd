@@ -19,7 +19,13 @@ load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
 ```{r}
 tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colors.csv"))
 tissue_colors <- rename(tissue_colors, tissue = X1)
-tissue_colors['tissue'] <- str_replace(tissue_colors %>% pull(tissue), "_", " ")
+tissue_colors['tissue'] <- str_replace_all(tissue_colors %>% pull(tissue), "_", " ")
+tissue_colors = tissue_colors %>% filter(tissue != "Heart")
+
+tiss_droplet@meta.data['tissue'] = tiss_droplet@meta.data %>% transmute(tissue = str_replace_all(tissue, "_", " ")) %>% pull(tissue)
+
+tiss_droplet@meta.data['color'] = tiss_droplet@meta.data %>% select(-color) %>% 
+  left_join(tissue_colors, by = 'tissue') %>% pull(color)
 ```
 
 ```{r, fig.width = 8, fig.height = 6}

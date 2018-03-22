@@ -20,7 +20,36 @@ load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
 tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colors.csv"))
 tissue_colors <- rename(tissue_colors, tissue = X1)
 tissue_colors['tissue'] <- str_replace(tissue_colors %>% pull(tissue), "_", " ")
+tissue_colors
 ```
+
+Make subtissue a char vec.
+```{r}
+tiss_FACS@meta.data['subtissue'] = lapply(tiss_FACS@meta.data['subtissue'], as.character)
+```
+
+Get correct final values for final_tissue, final_subtissue.
+
+```{r}
+promoted_subtissues = c('Aorta', 'Diaphragm')
+
+tiss_FACS@meta.data['tissue'] = tiss_FACS@meta.data %>% 
+                                transmute(final_tissue = ifelse(subtissue %in% promoted_subtissues,
+                                                                subtissue, tissue)) %>%
+                                transmute(final_tissue = str_replace(final_tissue, "_", " "))
+  
+
+tiss_FACS@meta.data['subtissue'] = tiss_FACS@meta.data %>% 
+                                transmute(final_tissue = ifelse(subtissue %in% promoted_subtissues,
+                                                                NA, subtissue))
+
+tiss_FACS@meta.data['color'] = tiss_FACS@meta.data %>% select(-color) %>% 
+  left_join(tissue_colors, by = 'tissue') %>% pull(color)
+
+tiss_FACS@meta.data[,c('color', 'tissue', 'subtissue')]
+
+```
+
 
 ```{r, fig.width = 8, fig.height = 6}
 lims = FetchData(tiss_FACS, c('tSNE_1', 'tSNE_2')) %>% summarize(xmin = min(tSNE_1), xmax = max(tSNE_1), ymin = min(tSNE_2), ymax = max(tSNE_2))
