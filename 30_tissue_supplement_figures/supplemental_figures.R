@@ -27,7 +27,7 @@ integer_breaks = function(x)
     max(x) + 1
   ) * 1.1))))
 
-CHUNKSIZE = 20
+CHUNKSIZE = 16
 
 
 # Dotplot palette
@@ -117,6 +117,8 @@ dot_tsne_ridge = function(tiss,
         from = labels,
         to = new_labels
       )
+    } else {
+      group.by.plus = group.by
     }
 
     filename = make_filename(save_folder, prefix, group.by, 'tsneplot_legend')
@@ -167,7 +169,7 @@ dot_tsne_ridge = function(tiss,
       nRow = ceiling(length(genes) / nCol)
       
       # Set height of ridgeplots
-      ridge_height = 4.4
+      ridge_height = 5.5
       
       # Dotplot - enrichment of gene expression in group.by with dot size
         filename = make_filename(save_folder, prefix, group.by,
