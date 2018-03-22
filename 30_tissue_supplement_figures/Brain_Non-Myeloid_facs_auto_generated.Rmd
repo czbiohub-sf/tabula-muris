@@ -310,21 +310,21 @@ dev.off()
 ## Subset: ASTROCYTES
 
 ```{r}
-ASTROCYTES.cells.use = rownames(tiss@meta.data)[grep("astrocyte",tiss@meta.data$cell_ontology_class)]
-ASTROCYTES.n.pcs = 10
-ASTROCYTES.res = 1
-ASTROCYTES.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2")
-ASTROCYTES.tiss = SubsetData(tiss, cells.use=ASTROCYTES.cells.use, )
-ASTROCYTES.tiss <- ASTROCYTES.tiss %>% ScaleData() %>% 
+Astrocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class) == astrocyte]
+Astrocytes.n.pcs = 10
+Astrocytes.res = 1
+Astrocytes.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2")
+Astrocytes.tiss = SubsetData(tiss, cells.use=Astrocytes.cells.use, )
+Astrocytes.tiss <- Astrocytes.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-ASTROCYTES.tiss <- ASTROCYTES.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+Astrocytes.tiss <- Astrocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
 
 # Append this subset's groupby to the list
 group.bys = c(group.bys, "subtissue")
-dot_tsne_ridge(ASTROCYTES.tiss, ASTROCYTES.genes_to_check,
-    save_folder, prefix = "ASTROCYTES", group.bys)
+dot_tsne_ridge(Astrocytes.tiss, Astrocytes.genes_to_check,
+    save_folder, prefix = "Astrocytes", group.bys)
 
 ```
