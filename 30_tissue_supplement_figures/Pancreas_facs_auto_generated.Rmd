@@ -10,6 +10,7 @@ library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
 save_folder = here('30_tissue_supplement_figures', 'Pancreas', 'facs')
 dir.create(save_folder, recursive=TRUE)
+method = "facs"
 
 tissue_of_interest = 'Pancreas'
 filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
@@ -20,14 +21,15 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Amy2b", "Arx", "Cdh5", "Chga", "Cpa1", "Gcg", "Ghrl", "Hhex", "Hnf1b", "Ins1", "Ins2", "Isl1", "Kdr", "Krt19", "Mafa", "Mafb", "Neurog3", "Nkx6-1", "Pdgfra", "Pdgfrb", "Pdx1", "Pecam1", "Ppy", "Ptf1a", "Ptprc", "Slc2a2", "Sst")
-dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
+    group.bys = group.bys, method = method)
 ```
 
 ## Output differentially expressed genes in clusters
 
 ```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ```
 Figure 1.
 ```{r}
@@ -106,7 +108,26 @@ Hepatocytes.tiss <- Hepatocytes.tiss %>% ScaleData() %>%
 Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+'# Highlight which cells are in this subset
+    
+palette = brewer.pal(3, 'YlGnBu')
+cols.use = c(palette[1], palette[3])
+colors.use
+tiss@meta.data[, "Hepatocytes"] = NA
+tiss@meta.data[Hepatocytes.cells.use, "Hepatocytes"] = "Hepatocytes" 
+filename = make_filename(save_folder, prefix="Hepatocytes", group.by, 
+    'tsneplot_allcells_highlighted')
+p = TSNEPlot(
+  object = tiss,
+  do.return = TRUE,
+  group.by = Hepatocytes,
+  no.axes = TRUE,
+  pt.size = 1,
+  no.legend = TRUE,
+  colors.use = c(palette[1], 'grey50')
+)
+ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(Hepatocytes.tiss, Hepatocytes.genes_to_check,
-    save_folder, prefix = "Hepatocytes", group.bys)
+    save_folder, prefix = "Hepatocytes", group.bys, facs)
 
 ```
