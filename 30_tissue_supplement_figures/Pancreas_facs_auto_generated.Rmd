@@ -91,3 +91,22 @@ FeaturePlot(tiss, c('Prss53', 'Slc2a2', 'Nkx6-1','Ins2'), cols.use = c("grey","b
 ggsave(filename, dpi=300)
 dev.off()
 ```
+
+## Subset: HEPATOCYTES
+
+```{r}
+Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids) == c(1,2,5)]
+Hepatocytes.n.pcs = 8
+Hepatocytes.res = 1
+Hepatocytes.genes_to_check = c("Ang", "Arg1", "Arx", "Cd9", "Chga", "Dpp10", "Folr1", "Gcg", "Gfra3", "Ghrl", "Hhex", "Irx1", "Isl1", "Mafb", "Pdx1", "Ppy", "Slc38a5", "Spp1", "Sst", "Tspan8", "Vsig1")
+Hepatocytes.tiss = SubsetData(tiss, cells.use=Hepatocytes.cells.use, )
+Hepatocytes.tiss <- Hepatocytes.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+dot_tsne_ridge(Hepatocytes.tiss, Hepatocytes.genes_to_check,
+    save_folder, prefix = "Hepatocytes", group.bys)
+
+```

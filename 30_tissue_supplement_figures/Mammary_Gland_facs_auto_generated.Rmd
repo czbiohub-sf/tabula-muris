@@ -33,18 +33,18 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ## Subset: BASAL
 
 ```{r}
-BASAL.cells.use = rownames(tiss@meta.data)[grep("basal",tiss@meta.data$cell_ontology_class)]
-BASAL.n.pcs = 10
-BASAL.res = 0.5
-BASAL.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
-BASAL.tiss = SubsetData(tiss, cells.use=BASAL.cells.use, )
-BASAL.tiss <- BASAL.tiss %>% ScaleData() %>% 
+Basal.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class) == basal]
+Basal.n.pcs = 10
+Basal.res = 0.5
+Basal.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
+Basal.tiss = SubsetData(tiss, cells.use=Basal.cells.use, )
+Basal.tiss <- Basal.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-BASAL.tiss <- BASAL.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+Basal.tiss <- Basal.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_ridge(BASAL.tiss, BASAL.genes_to_check,
-    save_folder, prefix = "BASAL", group.bys)
+dot_tsne_ridge(Basal.tiss, Basal.genes_to_check,
+    save_folder, prefix = "Basal", group.bys)
 
 ```
