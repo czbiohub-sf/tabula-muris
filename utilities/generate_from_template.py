@@ -1,5 +1,4 @@
 #!/usr/bin/env python3.6
-
 # coding: utf-8
 
 # This reads in a parameters file and generates an Rmd notebook
@@ -12,6 +11,7 @@ import sys
 # locale.setlocale(locale.LC_ALL, 'en_US.utf8')
 # locale.setlocale(locale.LC_CTYPE, 'en_US.utf8')
 import os
+import re
 
 import yaml
 import click
@@ -49,6 +49,14 @@ def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
     """Add R code blocks for subsetting and reclustering"""
     name = clean_name(name)
 
+    # If there are no digits in the label, then this is a string so stringify
+    try:
+        if len(re.findall('\d', filter_value)) == 0:
+            filter_value = f'"{filter_value}'
+    except TypeError:
+        # This is an integer, no modification needed
+        pass
+
     filter = f'rownames(tiss@meta.data)[tiss@meta.data${filter_column} == {filter_value}]'
     genes_str = stringify_list(genes)
     code = f"""{name}.cells.use = {filter}
@@ -68,9 +76,9 @@ def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
         code += f'''\n# Append this subset's groupby to the list
 group.bys = c(group.bys, {stringify_list([groupby])})
 '''
-    code += f''''# Highlight which cells are in this subset
+    code += f'''# Highlight which cells are in this subset
     
-palette = brewer.pal(3, 'YlGnBu')
+palette = brewer.pal(3, "YlGnBu")
 cols.use = c(palette[1], palette[3])
 colors.use
 tiss@meta.data[, "{name}"] = NA

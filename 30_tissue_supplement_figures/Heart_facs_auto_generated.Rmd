@@ -30,12 +30,13 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 #tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 #filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#write.csv(tiss.markers, filename)
 ```
 
 ## Subset: SUBSETA
 
 ```{r}
-SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class) == smooth muscle cell]
+SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "smooth muscle cell]
 SubsetA.n.pcs = 5
 SubsetA.res = 1
 SubsetA.genes_to_check = c("Cnn1", "Kcnj8", "Myh11", "Postn")
@@ -46,9 +47,9 @@ SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>%
 SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-'# Highlight which cells are in this subset
+# Highlight which cells are in this subset
     
-palette = brewer.pal(3, 'YlGnBu')
+palette = brewer.pal(3, "YlGnBu")
 cols.use = c(palette[1], palette[3])
 colors.use
 tiss@meta.data[, "SubsetA"] = NA
