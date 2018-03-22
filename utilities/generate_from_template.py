@@ -44,7 +44,8 @@ def clean_name(name):
     return name
 
 
-def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
+def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
+               groupby):
     """Add R code blocks for subsetting and reclustering"""
     name = clean_name(name)
 
@@ -69,7 +70,7 @@ group.bys = c(group.bys, {stringify_list([groupby])})
 '''
 
     code += f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
-    save_folder, prefix = "{name}", group.bys)
+    save_folder, prefix = "{name}", group.bys, {method
 '''
 
     codeblock = f'''```{{r}}
@@ -90,13 +91,15 @@ def main(parameters_yaml, template_file='Template.Rmd',
     with open(parameters_yaml) as f:
         parameters = yaml.load(f)
 
+    method = parameters[METHOD]
+
     with open(template_file) as f:
         template = f.read()
         for parameter, value in parameters.items():
             if parameter == ADDITIONAL_CODE:
                 # If ADDITIONAL_CODE is set to True
                 if value:
-                    basename = parameters[TISSUE] + "_" + parameters[METHOD] + '.Rmd'
+                    basename = parameters[TISSUE] + "_" + method + '.Rmd'
                     filename = os.path.join(
                         '..', CODE_FOLDER, basename)
                     with open(filename) as g:
@@ -109,7 +112,7 @@ def main(parameters_yaml, template_file='Template.Rmd',
                     # Set defaults if they're not already
                     for k, v in DEFAULTS.items():
                         kv.setdefault(k, v)
-                    subset_code = add_subset(name, **kv)
+                    subset_code = add_subset(name, method, **kv)
                     template += f'\n## Subset: {name}\n\n{subset_code}'
             elif value is not None:
                 if parameter == GENES:
@@ -124,7 +127,7 @@ def main(parameters_yaml, template_file='Template.Rmd',
             template = template.replace('{' + ADDITIONAL_CODE + '}',
                                         '# No additional code')
 
-    outfile = parameters[TISSUE] + "_" + parameters[METHOD] + suffix
+    outfile = parameters[TISSUE] + "_" + method + suffix
     with open(outfile, 'w') as f:
         f.write(template)
 
