@@ -10,6 +10,7 @@ library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
 save_folder = here('30_tissue_supplement_figures', 'Tongue', 'droplet')
 dir.create(save_folder, recursive=TRUE)
+method = "droplet"
 
 tissue_of_interest = 'Tongue'
 filename = paste0('droplet_',tissue_of_interest, '_seurat_tiss.Robj')
@@ -20,14 +21,15 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Cdc20", "Hoxc13", "Krt10", "Krt13", "Krt14", "Krt15", "Krt36", "Krt4", "Krt5", "Krt84", "Mki67", "Sbsn", "Top2a")
-dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
+    group.bys = group.bys, method = method)
 ```
 
 ## Output differentially expressed genes in clusters
 
 ```{r}
-tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ```
 ## To identify taste receptor cells
 ```{r}
