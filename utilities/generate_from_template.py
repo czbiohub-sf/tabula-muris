@@ -49,7 +49,7 @@ def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
     """Add R code blocks for subsetting and reclustering"""
     name = clean_name(name)
 
-    filter = f'rownames(tiss@meta.data)[tiss@meta.data${filter_column}) == {filter_value}]'
+    filter = f'rownames(tiss@meta.data)[tiss@meta.data${filter_column} == {filter_value}]'
     genes_str = stringify_list(genes)
     code = f"""{name}.cells.use = {filter}
 {name}.n.pcs = {npcs}
