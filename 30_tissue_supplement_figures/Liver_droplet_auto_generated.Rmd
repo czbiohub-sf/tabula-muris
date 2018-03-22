@@ -33,18 +33,21 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ## Subset: HEPATOCYTES
 
 ```{r}
-HEPATOCYTES.cells.use = rownames(tiss@meta.data)[grep("hepatocyte",tiss@meta.data$cell_ontology_class)]
-HEPATOCYTES.n.pcs = 8
-HEPATOCYTES.res = 0.5
-HEPATOCYTES.genes_to_check = c("A1bg", "Cyp2c69", "Cyp2d9", "Mup1", "Mup12", "Mup20", "Mup21", "Xist")
-HEPATOCYTES.tiss = SubsetData(tiss, cells.use=HEPATOCYTES.cells.use, )
-HEPATOCYTES.tiss <- HEPATOCYTES.tiss %>% ScaleData() %>% 
+Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class) == hepatocyte]
+Hepatocytes.n.pcs = 8
+Hepatocytes.res = 0.5
+Hepatocytes.genes_to_check = c("A1bg", "Cyp2c69", "Cyp2d9", "Mup1", "Mup12", "Mup20", "Mup21", "Xist")
+Hepatocytes.tiss = SubsetData(tiss, cells.use=Hepatocytes.cells.use, )
+Hepatocytes.tiss <- Hepatocytes.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-HEPATOCYTES.tiss <- HEPATOCYTES.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_ridge(HEPATOCYTES.tiss, HEPATOCYTES.genes_to_check,
-    save_folder, prefix = "HEPATOCYTES", group.bys)
+
+# Append this subset's groupby to the list
+group.bys = c(group.bys, "mouse.sex")
+dot_tsne_ridge(Hepatocytes.tiss, Hepatocytes.genes_to_check,
+    save_folder, prefix = "Hepatocytes", group.bys)
 
 ```

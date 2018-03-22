@@ -29,3 +29,22 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ```
+
+## Subset: SUBSETA
+
+```{r}
+SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids) == 2]
+SubsetA.n.pcs = 5
+SubsetA.res = 1
+SubsetA.genes_to_check = c("Dcn", "Myh11")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA", group.bys)
+
+```

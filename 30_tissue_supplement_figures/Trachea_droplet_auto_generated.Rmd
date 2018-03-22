@@ -33,18 +33,18 @@ filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
 ## Subset: EPITHELIAL
 
 ```{r}
-EPITHELIAL.cells.use = rownames(tiss@meta.data)[grep("epithelial cell",tiss@meta.data$cell_ontology_class)]
-EPITHELIAL.n.pcs = 2
-EPITHELIAL.res = 0.2
-EPITHELIAL.genes_to_check = c("Foxj1", "Krt14", "Krt5", "Scgb1a1")
-EPITHELIAL.tiss = SubsetData(tiss, cells.use=EPITHELIAL.cells.use, )
-EPITHELIAL.tiss <- EPITHELIAL.tiss %>% ScaleData() %>% 
+Epithelial.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class) == epithelial cell]
+Epithelial.n.pcs = 2
+Epithelial.res = 0.2
+Epithelial.genes_to_check = c("Foxj1", "Krt14", "Krt5", "Scgb1a1")
+Epithelial.tiss = SubsetData(tiss, cells.use=Epithelial.cells.use, )
+Epithelial.tiss <- Epithelial.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-EPITHELIAL.tiss <- EPITHELIAL.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+Epithelial.tiss <- Epithelial.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_ridge(EPITHELIAL.tiss, EPITHELIAL.genes_to_check,
-    save_folder, prefix = "EPITHELIAL", group.bys)
+dot_tsne_ridge(Epithelial.tiss, Epithelial.genes_to_check,
+    save_folder, prefix = "Epithelial", group.bys)
 
 ```
