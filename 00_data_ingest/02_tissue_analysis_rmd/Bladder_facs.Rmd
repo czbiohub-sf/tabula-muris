@@ -61,6 +61,7 @@ TSNEPlot(object = tiss, do.label = T)
 ```{r}
 tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs")
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
+TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_free_annotation")
 ```
 
 Check expression of genes of interset.
@@ -137,24 +138,25 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
 
-free_annotation <- c(
-  "Bladder mesenchymal cell", 
-   "Bladder mesenchymal cell", 
-   "Luminal bladder epithelial cell", 
-   "Luminal bladder epithelial cell", 
-   "Basal bladder epithelial cell",
-  "Bladder mesenchymal cell",
-  "Basal bladder epithelial cell")
 
-cell_ontology_class <- c(
-  "bladder cell", 
-  "bladder urothelial cell",
-   "bladder cell", 
-    "bladder urothelial cell",
-   "bladder urothelial cell", 
-  "bladder cell",
-   "bladder urothelial cell"
-   )
+free_annotation <- c("Bladder mesenchymal cell",
+                     "Luminal bladder epithelial cell",
+                     "Bladder mesenchymal cell", 
+                     "Luminal bladder epithelial cell", 
+                     "Luminal bladder epithelial cell", 
+                     "Bladder mesenchymal cell", 
+                     "Basal bladder epithelial cell")
+
+
+
+cell_ontology_class <- c("bladder cell",
+                     "bladder urothelial cell",
+                     "bladder cell", 
+                     "bladder urothelial cell", 
+                     "bladder urothelial cell", 
+                     "bladder cell", 
+                     "bladder urothelial cell")
+  
 
 data.frame(cluster.ids, 
            free_annotation, cell_ontology_class)
@@ -162,6 +164,7 @@ data.frame(cluster.ids,
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='free_annotation')
 ```
 
 ```{r}
