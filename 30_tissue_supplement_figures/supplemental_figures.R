@@ -87,6 +87,8 @@ dot_tsne_ridge = function(tiss,
       } else{
         colors.use = brewer.pal(max(n_annotations, 3), 'Set2')
       }
+      # Add black for NA
+      colors.use = c(colors.use, 'black')
     } else {
       colors.use = NULL
     }
