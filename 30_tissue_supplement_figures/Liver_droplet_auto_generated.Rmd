@@ -30,12 +30,13 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 #tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 #filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#write.csv(tiss.markers, filename)
 ```
 
 ## Subset: HEPATOCYTES
 
 ```{r}
-Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class) == hepatocyte]
+Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "hepatocyte]
 Hepatocytes.n.pcs = 8
 Hepatocytes.res = 0.5
 Hepatocytes.genes_to_check = c("A1bg", "Cyp2c69", "Cyp2d9", "Mup1", "Mup12", "Mup20", "Mup21", "Xist")
@@ -49,9 +50,9 @@ Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", di
 
 # Append this subset's groupby to the list
 group.bys = c(group.bys, "mouse.sex")
-'# Highlight which cells are in this subset
+# Highlight which cells are in this subset
     
-palette = brewer.pal(3, 'YlGnBu')
+palette = brewer.pal(3, "YlGnBu")
 cols.use = c(palette[1], palette[3])
 colors.use
 tiss@meta.data[, "Hepatocytes"] = NA
