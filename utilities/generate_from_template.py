@@ -68,9 +68,24 @@ def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
         code += f'''\n# Append this subset's groupby to the list
 group.bys = c(group.bys, {stringify_list([groupby])})
 '''
+    code += f''''# Highlight which cells are in this subset
+tiss@meta.data[, "{name}"] = NA
+tiss@meta.data[{name}.cells.use, "{name}"] = "{name}" 
+filename = make_filename(save_folder, prefix="{name}", group.by, 
+    'tsneplot_allcells_highlighted')
+p = TSNEPlot(
+  object = tiss,
+  do.return = TRUE,
+  group.by = {name},
+  no.axes = TRUE,
+  pt.size = 1,
+  no.legend = TRUE,
+)
+ggsave(filename, width = 4, height = 4)
+'''
 
     code += f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
-    save_folder, prefix = "{name}", group.bys, {method
+    save_folder, prefix = "{name}", group.bys, {method})
 '''
 
     codeblock = f'''```{{r}}
