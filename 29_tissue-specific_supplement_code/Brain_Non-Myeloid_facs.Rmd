@@ -190,7 +190,7 @@ ECs <- FindClusters(object = ECs, reduction.type = "pca", dims.use = 1:15,
 ECs <- RunTSNE(object = ECs, dims.use = 1:8, seed.use = 10, check_duplicates = F, perplexity=40)
   
 # unsupervised clustering
-prefix = 'endothelial'
+prefix = 'EndothelialCells'
 filename = make_filename(save_folder, prefix, 'cluster.ids', 'tsneplot')
 TSNEPlot(object = ECs, do.label = T, label.size = 6, pt.size = 3.1, colors.use = brewer.pal(11,'Paired'), do.return=TRUE) + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
 ggsave(filename, dpi=300)
