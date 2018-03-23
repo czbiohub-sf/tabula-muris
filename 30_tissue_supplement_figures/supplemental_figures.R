@@ -52,6 +52,10 @@ make_filename = function(save_folder, prefix, group.by, plottype, format='pdf'){
   return(filename)
 }
 
+write_caption = function(caption, pdf_name){
+  write(caption, sub('.pdf', '.txt', pdf_name))
+}
+
 # Make all supplemental figures for a tiss object
 dot_tsne_ridge = function(tiss,
                            genes_to_check,
