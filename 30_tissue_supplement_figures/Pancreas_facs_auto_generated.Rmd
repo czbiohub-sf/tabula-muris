@@ -34,7 +34,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```
 Figure 1.
 ```{r}
-filename = file.path(save_folder, paste('Sst', 'ridgeplot.png', sep='_'))
+filename = make_filename(save_folder, 'Delta_cells', 'cell_ontology_class', 'ridgeplot_scaled_Sst')
 RidgePlot(tiss, c('Sst'), group.by = "cell_ontology_class")
 ggsave(filename, dpi=300)
 dev.off()
@@ -42,6 +42,8 @@ dev.off()
 
 Figure 2.
 ```{r}
+prefix = 'DeltaCells'
+
 #Subset delta cells for analysis
 anno = 'pancreatic D cell'
 cells.to.use = tiss@cell.names[which(tiss@meta.data$cell_ontology_class == anno)]
@@ -49,39 +51,41 @@ delta <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.s
 
 #2a - using scaled data.
 
-filename = file.path(save_folder, paste('Neurog3', 'scaled', 'violinplot.png', sep='_'))
-VlnPlot(tiss,'Neurog3', group.by = "cell_ontology_class")
+filename = make_filename(save_folder, prefix, 'cell_ontology_class', 'ridgeplot_scaled_Neurog3')
+RidgePlot(tiss,'Neurog3', group.by = "cell_ontology_class")
 ggsave(filename, dpi=300)
 dev.off()
+
 
 delta.1=FetchData(delta, c("ident", "mouse.id","cell_ontology_class", "mouse.sex", "plate.barcode", "subtissue", "percent.ercc", "percent.ribo","nGene", "nReads","Sst","Pdx1","Hhex","Neurog3", "Ins2", "Gcg", "Ppy","Actb","Gapdh"))
 delta.1$mouse.id <- as.factor(delta.1$mouse.id)
 
-filename = file.path(save_folder, paste('Neurog3_x_Hhex', 'scaled', 'Neurog3', 'scatterplot.png', sep='_'))
+filename = file.path(save_folder, paste(prefix, 'Neurog3_x_Hhex', 'scaled', 'Neurog3_expression', 'scatterplot.pdf', sep='_'))
+filename = make_filename(save_folder, prefix, 'Neurog3>0', 'scatterplot_scaled_Neurog3-x-Hhex')
 ggplot(delta.1, aes(Hhex, Neurog3, color = Neurog3 > 0))+ geom_point() + geom_rug(sides="bl")
 ggsave(filename, dpi=300)
 dev.off()
 
-filename = file.path(save_folder, paste('Neurog3_x_Hhex', 'scaled', 'mouse.id', 'scatterplot.png', sep='_'))
+filename = make_filename(save_folder, prefix, 'mouse.id', 'scatterplot_scaled_Neurog3-x-Hhex')
 ggplot(delta.1, aes(x=Hhex, y=Neurog3, color = mouse.id)) + geom_point() + geom_rug(sides = "bl")
 ggsave(filename, dpi=300)
 dev.off()
 
 #2b - using raw data.
-filename = file.path(save_folder, paste('Neurog3', 'raw', 'violinplot.png', sep='_'))
-VlnPlot(tiss,'Neurog3', group.by = "cell_ontology_class", use.raw = TRUE)
+filename = make_filename(save_folder, prefix, 'cell_ontology_class', 'ridgeplot_raw_Neurog3')
+RidgePlot(tiss,'Neurog3', group.by = "cell_ontology_class", use.raw = TRUE)
 ggsave(filename, dpi=300)
 dev.off()
 
 delta.2=FetchData(delta, c("ident", "mouse.id","cell_ontology_class", "mouse.sex", "plate.barcode", "subtissue", "percent.ercc", "percent.ribo", "nGene", "nReads", "Sst", "Pdx1", "Hhex", "Neurog3", "Ins2", "Gcg", "Ppy", "Actb", "Gapdh"), use.raw = TRUE)
 delta.2$mouse.id <- as.factor(delta.2$mouse.id)
 
-filename = file.path(save_folder, paste('Neurog3_x_Hhex', 'raw', 'Neurog3', 'scatterplot.png', sep='_'))
+filename = make_filename(save_folder, prefix, 'Neurog3>0', 'scatterplot_raw_Neurog3-x-Hhex')
 ggplot(delta.2, aes(Hhex, Neurog3, color = Neurog3 > 0))+ geom_point() + geom_rug(sides="bl")
 ggsave(filename, dpi=300)
 dev.off()
 
-filename = file.path(save_folder, paste('Neurog3_x_Hhex', 'raw', 'mouse.id', 'scatterplot.png', sep='_'))
+filename = make_filename(save_folder, prefix, 'mouse.id', 'scatterplot_raw_Neurog3-x-Hhex')
 ggplot(delta.2, aes(x=Hhex, y=Neurog3, color = mouse.id)) + geom_point() + geom_rug(sides = "bl")
 ggsave(filename, dpi=300)
 dev.off()
@@ -89,7 +93,7 @@ dev.off()
 
 Figure 3.
 ```{r}
-filename = file.path(save_folder, paste('Prss53', 'tsneplot.png', sep='_'))
+filename = make_filename(save_folder, prefix, paste('Prss53', 'expression', sep='-'), 'tsneplot')
 FeaturePlot(tiss, c('Prss53', 'Slc2a2', 'Nkx6-1','Ins2'), cols.use = c("grey","blue"))
 ggsave(filename, dpi=300)
 dev.off()
