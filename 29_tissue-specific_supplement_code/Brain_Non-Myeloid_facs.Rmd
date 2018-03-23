@@ -1,7 +1,7 @@
 ## To identify excititory, inhibitory, and NPCs
 ```
 genes_to_check = c('Slc17a7','Neurod6','Mab21l1','Gad1','Reln','Calb1','Dcx','Dlx2','Ascl1','Hes5')
-filename = file.path(save_folder, paste(prefix, group.by, 'ridgeplot.pdf', sep='_'))
+filename = file.path(save_folder, paste('Neurons', 'cell_ontology_class', 'ridgeplot.pdf', sep='_'))
   RidgePlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
   ggsave(filename, dpi=300)
   dev.off()
@@ -196,7 +196,7 @@ ggsave(filename, dpi=300)
 dev.off()
 
 #annotated by brain subregion
-filename = file.path(save_folder, paste('endothelial', 'subtissue, 'tsneplot.pdf', sep='_'))
+filename = file.path(save_folder, paste('endothelial', 'subtissue', 'tsneplot.pdf', sep='_'))
 TSNEPlot(object = ECs, do.label = T, label.size = 6, pt.size = 3.1, colors.use = brewer.pal(9,'Set1'), do.return=TRUE, group.by="subtissue") + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
 ggsave(filename, dpi=300)
 dev.off()
@@ -213,7 +213,7 @@ FeaturePlot(ECs, features.plot=genes_check, pt.size = 2, no.axes = T, cols.use =
 ggsave(filename, dpi=300)
 dev.off()
 
-filename = file.path(save_folder, paste('endothelial', 'subtissue, 'ridgeplot.pdf', sep='_'))
+filename = file.path(save_folder, paste('endothelial', 'subtissue', 'ridgeplot.pdf', sep='_'))
 RidgePlot(object = ECs, features.plot = genes_check, do.sort=F, size.title.use = 18, size.x.use = 0.3,size.y.use = 3, cols.use = brewer.pal(11,'Paired'), point.size.use = 0.3)
 ggsave(filename, dpi=300)
 dev.off()
