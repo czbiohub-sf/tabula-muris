@@ -23,6 +23,7 @@ RidgePlot(tiss,'Neurog3', group.by = "cell_ontology_class")
 ggsave(filename, dpi=300)
 dev.off()
 write_caption("\emph{Neurog3} transcripts are detected in islet, a few alpha, beta, and the majority of delta cells.", filename)
+
 delta.1=FetchData(delta, c("ident", "mouse.id","cell_ontology_class", "mouse.sex", "plate.barcode", "subtissue", "percent.ercc", "percent.ribo","nGene", "nReads","Sst","Pdx1","Hhex","Neurog3", "Ins2", "Gcg", "Ppy","Actb","Gapdh"))
 delta.1$mouse.id <- as.factor(delta.1$mouse.id)
 
