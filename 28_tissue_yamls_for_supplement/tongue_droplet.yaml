@@ -1,0 +1,21 @@
+---
+ADDITIONAL_CODE: true
+GENES:
+- Cdc20
+- Hoxc13
+- Krt10
+- Krt13
+- Krt14
+- Krt15
+- Krt36
+- Krt4
+- Krt5
+- Krt84
+- Mki67
+- Sbsn
+- Top2a
+GROUPBY: null
+METHOD: droplet
+NPCS: 14
+RES: 0.4
+TISSUE: Tongue

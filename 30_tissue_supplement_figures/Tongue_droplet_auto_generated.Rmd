@@ -1,0 +1,39 @@
+---
+title: "Tongue droplet Supplementary Notebook"
+output: html_notebook
+---
+
+# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r}
+library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
+save_folder = here('30_tissue_supplement_figures', 'Tongue', 'droplet')
+dir.create(save_folder, recursive=TRUE)
+
+tissue_of_interest = 'Tongue'
+filename = paste0('droplet_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = c("Cdc20", "Hoxc13", "Krt10", "Krt13", "Krt14", "Krt15", "Krt36", "Krt4", "Krt5", "Krt84", "Mki67", "Sbsn", "Top2a")
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+```
+
+## Output differentially expressed genes in clusters
+
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+```
+## To identify taste receptor cells
+```{r}
+genes_to_check = c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7')
+filename = file.path(save_folder, paste('Taste_receptor_cells', 'violinplot.png', sep='_'))
+  VlnPlot(tiss, genes_to_check, group.by = column, do.return=TRUE)
+  ggsave(filename, dpi=300)
+  dev.off()
+  ```

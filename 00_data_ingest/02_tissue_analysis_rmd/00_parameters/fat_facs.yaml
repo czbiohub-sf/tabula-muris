@@ -1,6 +1,0 @@
-TISSUE: Fat
-METHOD: facs
-RES: 0.4
-NPCS: 7
-GENES: "'Nkg7','Gzma','Cd14','Lyz2','C1qa','Emr1','Irf8','Itgam','Cd68','Cd4','Cd8a','Cd3g','Cd19','Ptprc','Kdr','Cdh5','Pecam1','Fabp4','Tek','Pdgfra','Cd34'"
-GROUPBY: subtissue

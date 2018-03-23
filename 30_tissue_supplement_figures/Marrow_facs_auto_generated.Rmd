@@ -1,0 +1,122 @@
+---
+title: "Marrow facs Supplementary Notebook"
+output: html_notebook
+---
+
+# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r}
+library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
+save_folder = here('30_tissue_supplement_figures', 'Marrow', 'facs')
+dir.create(save_folder, recursive=TRUE)
+
+tissue_of_interest = 'Marrow'
+filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = c("Abcb1b", "Ahnak", "Atxn1", "Beta-s", "Bpgm", "Camp", "Ccl3", "Ccl9", "Ccr6", "Cd14", "Cd19", "Cd1d1", "Cd2", "Cd200", "Cd22", "Cd24a", "Cd27", "Cd34", "Cd38", "Cd3e", "Cd4", "Cd40", "Cd48", "Cd53", "Cd68", "Cd69", "Cd7", "Cd74", "Cd79a", "Cd79b", "Cd81", "Cd84", "Cd8a", "Cebpa", "Chchd10", "Cnp", "Cox6a2", "Cpa3", "Cr2", "Cxcr4", "Cxcr5", "Dntt", "Ebf1", "Egr2", "Emr1", "Fcer1a", "Fcer1g", "Fcer2a", "Fcgr3", "Fcgr4", "Flt3", "Fos", "Foxo1", "Gata1", "Gata2", "Gpr56", "H2-Ea-ps", "Hbb-b2", "Hp", "Ikzf1", "Il2ra", "Il3ra", "Il7r", "Irf8", "Itga2b", "Itgal", "Itgam", "Itgax", "Itgb2", "Jun", "Junb", "Kit", "Klf4", "Klf9", "Klrb1a", "Lcn2", "Ltf", "Ly6a", "Ly6d", "Ly6g6c", "Ly6g6e", "Ly9", "Mcpt8", "Mitf", "Mki67", "Mme", "Mn1", "Mpeg1", "Mpl", "Ms4a1", "Myl10", "Ngp", "Pax5", "Pdzk1ip1", "Pglyrp1", "Pld4", "Pou2af1", "Ptprc", "Rag1", "Rag2", "S100a11", "S100a9", "Sfpi1", "Slamf1", "Slamf6", "Spib", "Spn", "Stmn1", "Tcf3", "Thy1", "Tlr9", "Tmem176b", "Vpreb1", "Vpreb3", "Zbtb16")
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+```
+
+## Output differentially expressed genes in clusters
+
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+```
+
+## Subset: SUBSETA
+
+```{r}
+SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids) == c(11,12)]
+SubsetA.n.pcs = 4
+SubsetA.res = 1
+SubsetA.genes_to_check = c("A430084P05Rik", "Adamts14", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cma1", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Emr1", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgax", "Itgb7", "Khdc1a", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ncr1", "Ngp", "Nkg7", "Pax5", "Pld4", "Prf1", "Rag1", "Rag2", "Rrm2", "Serpinb9", "Sh2d1b1", "Stmn1", "Styk1", "Tcf7", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA", group.bys)
+
+```
+## Subset: SUBSETB
+
+```{r}
+SubsetB.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids) == 0]
+SubsetB.n.pcs = 3
+SubsetB.res = 1
+SubsetB.genes_to_check = c("A430084P05Rik", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il10", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgb7", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ngp", "Nkg7", "Pld4", "Prf1", "Rag2", "Rrm2", "Serpinb9", "Stmn1", "Tcf7", "Tgfb1", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
+SubsetB.tiss = SubsetData(tiss, cells.use=SubsetB.cells.use, )
+SubsetB.tiss <- SubsetB.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetB.tiss <- SubsetB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
+    save_folder, prefix = "SubsetB", group.bys)
+
+```
+## Subset: SUBSETC
+
+```{r}
+SubsetC.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids) == 8]
+SubsetC.n.pcs = 4
+SubsetC.res = 1
+SubsetC.genes_to_check = c("Acy3", "Arpp21", "Btg2", "Ccna2", "Ccnb1", "Ccr6", "Cd19", "Cd1d1", "Cd22", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cdc20", "Cenpf", "Chchd10", "Cnp", "Comtd1", "Cr2", "Cxcr5", "Cybb", "Depdc1b", "Dntt", "E2f1", "Ebf1", "Egr2", "Erg", "Eri2", "Grb7", "H2-Aa", "H2-Ab1", "H2-Eb1", "Igll1", "Ikzf1", "Il2ra", "Il2rb", "Il7r", "Kdm5b", "Kif18a", "Klhl15", "Kpna2", "Ltb", "Lyz2", "Mki67", "Mmrn1", "Ms4a1", "Nkg7", "Pax5", "Rag1", "Rag2", "Rrm2", "S100a8", "Serinc5", "Sfpi1", "Ska1", "Slco4a1", "Smyd2", "Srm", "Stmn1", "Tbxa2r", "Tcf3", "Top2a", "Troap", "Ube2c", "Ung", "Vpreb1", "Vpreb2", "Vpreb3", "Zfp810")
+SubsetC.tiss = SubsetData(tiss, cells.use=SubsetC.cells.use, )
+SubsetC.tiss <- SubsetC.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetC.tiss <- SubsetC.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
+    save_folder, prefix = "SubsetC", group.bys)
+
+```
+## Subset: SUBSETD
+
+```{r}
+SubsetD.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids) == 0]
+SubsetD.n.pcs = 20
+SubsetD.res = 1
+SubsetD.genes_to_check = c("2810417H13Rik", "Apoe", "Atxn1", "Ccl9", "Ccna2", "Ccnb1", "Ccnb2", "Ccr7", "Cd1d1", "Cd34", "Cd48", "Cd63", "Cd69", "Cd74", "Cd79b", "Cdc20", "Chchd10", "Cish", "Cnp", "Ctla2a", "Ctsg", "Dntt", "Dusp1", "Elane", "Esam", "Flt3", "Fos", "Gata1", "Gimap8", "Gm11428", "H2-Aa", "H2-Ab1", "H2-Eb1", "H2-Ob", "Hk3", "Hp", "Ier2", "Il7r", "Itga2b", "Jhdm1d", "Junb", "Kif11", "Kit", "Ltb", "Ly6a", "Ly6c2", "Lyz2", "Mcm4", "Mfsd2b", "Mki67", "Mn1", "Mpl", "Mpo", "Ms4a3", "Muc13", "Myl10", "Myl12b", "Ncf1", "Nkg7", "Notch2", "Pdzk1ip1", "Pf4", "Prtn3", "Rag2", "Rrm2", "Sdsl", "Sell", "Serpinb9", "Slamf1", "Slc39a1", "Socs3", "Spag5", "Stat3", "Stmn1", "Tk1", "Top2a", "Tsix", "Tuba1b", "Tuba8", "Txnip", "Tyms", "Tyrobp", "Ube2c", "Uhrf1", "Ung", "Vldlr", "Wtap", "Xist")
+SubsetD.tiss = SubsetData(tiss, cells.use=SubsetD.cells.use, )
+SubsetD.tiss <- SubsetD.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetD.tiss <- SubsetD.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
+    save_folder, prefix = "SubsetD", group.bys)
+
+```
+## Subset: SUBSETE
+
+```{r}
+SubsetE.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids) == 7]
+SubsetE.n.pcs = 20
+SubsetE.res = 1
+SubsetE.genes_to_check = c("2810417H13Rik", "Abcg3", "Ak4", "Apoe", "Atxn1", "Bok", "Ccl4", "Ccl9", "Ccna2", "Ccnb1", "Ccnb2", "Ccne2", "Ccr7", "Cd1d1", "Cd34", "Cd48", "Cd63", "Cd69", "Cd74", "Cd79b", "Cdc20", "Cenpf", "Chchd10", "Cish", "Cnp", "Ctla2a", "Ctsg", "Dntt", "Dusp1", "Elane", "Esam", "Fam102a", "Flt3", "Fos", "Gata1", "Gimap8", "Gm11428", "H2-Aa", "H2-Ab1", "H2-Eb1", "H2-Ob", "Hk3", "Hoxb5", "Hp", "Ier2", "Il7r", "Itga2b", "Jhdm1d", "Junb", "Kif11", "Kit", "Klf1", "Lhcgr", "Ltb", "Ly6a", "Ly6c2", "Lyz2", "Mcm4", "Mfsd2b", "Mki67", "Mn1", "Mpl", "Mpo", "Ms4a3", "Muc13", "Myl10", "Myl12b", "Ncf1", "Neo1", "Nkg7", "Notch2", "Nsg1", "Pask", "Pdzk1ip1", "Pf4", "Prc1", "Prr11", "Prtn3", "Pyy", "Rag1", "Rag2", "Rrm2", "Sdsl", "Sell", "Serpinb9", "Slamf1", "Slc39a1", "Socs3", "Spag5", "Stat3", "Stmn1", "Tgm2", "Tk1", "Top2a", "Treml1", "Trib3", "Tsix", "Tuba1b", "Tuba8", "Txnip", "Tyms", "Tyrobp", "Ube2c", "Uhrf1", "Ung", "Vldlr", "Wtap", "Xist")
+SubsetE.tiss = SubsetData(tiss, cells.use=SubsetE.cells.use, )
+SubsetE.tiss <- SubsetE.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetE.tiss <- SubsetE.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+dot_tsne_ridge(SubsetE.tiss, SubsetE.genes_to_check,
+    save_folder, prefix = "SubsetE", group.bys)
+
+```

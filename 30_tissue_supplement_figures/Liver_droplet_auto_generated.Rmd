@@ -1,0 +1,53 @@
+---
+title: "Liver droplet Supplementary Notebook"
+output: html_notebook
+---
+
+# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r}
+library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
+save_folder = here('30_tissue_supplement_figures', 'Liver', 'droplet')
+dir.create(save_folder, recursive=TRUE)
+
+tissue_of_interest = 'Liver'
+filename = paste0('droplet_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = c("Alb", "Apoa1", "Ass1", "Cd68", "Cd74", "Cd79a", "Cd79b", "Cdh1", "Clec4f", "Cxcr6", "Cyp2e1", "Cyp2f2", "Emr1", "Epcam", "Glul", "Gstp1", "Gulo", "Gzma", "Hal", "Hamp", "Il2rb", "Irf7", "Kdr", "Krt19", "Krt7", "Nkg7", "Nrp1", "Oat", "Oit3", "Pck1", "Pecam1", "Ptprc", "Serpina1c", "Ttr", "Ubb", "Zap70")
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+```
+
+## Output differentially expressed genes in clusters
+
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+```
+
+## Subset: HEPATOCYTES
+
+```{r}
+Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class) == hepatocyte]
+Hepatocytes.n.pcs = 8
+Hepatocytes.res = 0.5
+Hepatocytes.genes_to_check = c("A1bg", "Cyp2c69", "Cyp2d9", "Mup1", "Mup12", "Mup20", "Mup21", "Xist")
+Hepatocytes.tiss = SubsetData(tiss, cells.use=Hepatocytes.cells.use, )
+Hepatocytes.tiss <- Hepatocytes.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+
+# Append this subset's groupby to the list
+group.bys = c(group.bys, "mouse.sex")
+dot_tsne_ridge(Hepatocytes.tiss, Hepatocytes.genes_to_check,
+    save_folder, prefix = "Hepatocytes", group.bys)
+
+```

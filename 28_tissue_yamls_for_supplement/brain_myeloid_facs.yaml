@@ -1,0 +1,13 @@
+---
+GENES:
+- Cd163
+- H2-Aa
+- H2-Eb1
+- P2ry12
+- Sall1
+- Tmem119
+GROUPBY: subtissue
+METHOD: facs
+NPCS: 8
+RES: 0.5
+TISSUE: Brain_Myeloid

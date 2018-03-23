@@ -1,0 +1,16 @@
+---
+GENES:
+- Atoh1
+- Chga
+- Chgb
+- Dclk1
+- Krt20
+- Lgr5
+- Mki67
+- Slc26a3
+- Spdef
+GROUPBY: subtissue
+METHOD: facs
+NPCS: 12
+RES: 0.7
+TISSUE: Large_Intestine

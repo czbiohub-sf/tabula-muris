@@ -1,0 +1,20 @@
+---
+GENES:
+- Egf
+- Emr1
+- Epcam
+- Itgam
+- Lyz2
+- Pecam1
+- Ptprc
+- Pvalb
+- Slc12a1
+- Slc12a3
+- Slc22a12
+- Slc34a1
+- Umod
+GROUPBY: null
+METHOD: droplet
+NPCS: 10
+RES: 0.5
+TISSUE: Kidney

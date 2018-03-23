@@ -1,0 +1,32 @@
+---
+GENES:
+- Cck
+- Cdh1
+- Col1a1
+- Col8a1
+- Epcam
+- Foxj1
+- Krt5
+- Pdgfra
+- Pdgfrb
+- Pecam1
+- Ptprc
+- Scgb1a1
+- Syp
+GROUPBY: null
+METHOD: droplet
+NPCS: 3
+RES: 0.1
+SUBSET:
+  EPITHELIAL:
+    FILTER_COLUMN: cell_ontology_class
+    FILTER_VALUE: epithelial cell
+    GENES:
+    - Foxj1
+    - Krt14
+    - Krt5
+    - Scgb1a1
+    GROUPBY: null
+    NPCS: 2
+    RES: 0.2
+TISSUE: Trachea

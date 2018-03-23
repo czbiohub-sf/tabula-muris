@@ -1,0 +1,25 @@
+---
+GENES:
+- Ccl6
+- Cd14
+- Cd3e
+- Cd3g
+- Cd4
+- Cd74
+- Cd79a
+- Cd79b
+- Cd8a
+- Flt3
+- Hmgn3
+- Ifitm3
+- Itgax
+- Klrb1a
+- Klrk1
+- Lyz1
+- Mpeg1
+- Ptprc
+GROUPBY: null
+METHOD: droplet
+NPCS: 15
+RES: 0.5
+TISSUE: Spleen

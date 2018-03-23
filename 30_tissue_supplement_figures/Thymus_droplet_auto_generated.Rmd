@@ -1,5 +1,5 @@
 ---
-title: "{TISSUE} {METHOD} Supplementary Notebook"
+title: "Thymus droplet Supplementary Notebook"
 output: html_notebook
 ---
 
@@ -8,20 +8,19 @@ output: html_notebook
 ```{r}
 library(here)
 source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
-save_folder = here('30_tissue_supplement_figures', '{TISSUE}', '{METHOD}')
+save_folder = here('30_tissue_supplement_figures', 'Thymus', 'droplet')
 dir.create(save_folder, recursive=TRUE)
 
-tissue_of_interest = '{TISSUE}'
-filename = paste0('{METHOD}_',tissue_of_interest, '_seurat_tiss.Robj')
+tissue_of_interest = 'Thymus'
+filename = paste0('droplet_',tissue_of_interest, '_seurat_tiss.Robj')
 load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 
-additional.group.bys = sort(c({GROUPBY}))
+additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c({GENES})
-dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
-    group.bys = group.bys, method = method)
+genes_to_check = c("Cd14", "Cd19", "Cd27", "Cd3d", "Cd3e", "Cd3g", "Cd4", "Cd44", "Cd69", "Cd86", "Cd8a", "Cd8b1", "Dntt", "Epcam", "Ets1", "H2-Aa", "H2-Ab1", "Il2ra", "Itgax", "Krt5", "Krt8", "Mki67", "Ptcra", "Ptprc", "Rag1", "Rag2", "Top2a", "Vim")
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
 ```
 
 ## Output differentially expressed genes in clusters

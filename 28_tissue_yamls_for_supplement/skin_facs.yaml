@@ -1,0 +1,15 @@
+---
+GENES:
+- Cd34
+- Dkk3
+- Fgf18
+- Itga6
+- Krt10
+- Krt14
+- Ptprc
+- Top2a
+GROUPBY: subtissue
+METHOD: facs
+NPCS: 5
+RES: 0.4
+TISSUE: Skin

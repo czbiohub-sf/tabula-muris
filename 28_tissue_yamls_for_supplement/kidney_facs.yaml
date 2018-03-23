@@ -1,0 +1,12 @@
+---
+GENES:
+- Pdzk1
+- Slc5a2
+- Slc6a19
+- Tmem213
+- Ugt1a2
+GROUPBY: null
+METHOD: facs
+NPCS: 9
+RES: 2.5
+TISSUE: Kidney

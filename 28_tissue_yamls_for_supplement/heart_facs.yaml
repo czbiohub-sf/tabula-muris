@@ -1,0 +1,22 @@
+---
+GENES:
+- Cdh5
+- Pecam1
+- Tie1
+GROUPBY: subtissue
+METHOD: facs
+NPCS: 10
+RES: 0.5
+SUBSET:
+  SUBSETA:
+    FILTER_COLUMN: cell_ontology_class
+    FILTER_VALUE: smooth muscle cell
+    GENES:
+    - Cnn1
+    - Kcnj8
+    - Myh11
+    - Postn
+    GROUPBY: null
+    NPCS: 5
+    RES: 1
+TISSUE: Heart

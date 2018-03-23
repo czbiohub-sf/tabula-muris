@@ -1,0 +1,36 @@
+---
+ADDITIONAL_CODE: true
+GENES:
+- A2m
+- Aldh1l1
+- Aqp4
+- Gdf10
+- Naga
+- Nbl1
+- Nsdhl
+- Slc1a3
+- St6galnac5
+- Tnfaip2
+GROUPBY: subtissue
+METHOD: facs
+NPCS: 8
+RES: 0.5
+SUBSET:
+  ASTROCYTES:
+    FILTER_COLUMN: cell_ontology_class
+    FILTER_VALUE: astrocyte
+    GENES:
+    - A2m
+    - Aldh1l1
+    - Aqp4
+    - Gdf10
+    - Naga
+    - Nbl1
+    - Nsdhl
+    - Slc1a3
+    - St6galnac5
+    - Tnfaip2
+    GROUPBY: subtissue
+    NPCS: 10
+    RES: 1
+TISSUE: Brain_Non-Myeloid

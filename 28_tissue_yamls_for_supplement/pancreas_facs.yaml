@@ -1,0 +1,64 @@
+---
+ADDITIONAL_CODE: true
+GENES:
+- Amy2b
+- Arx
+- Cdh5
+- Chga
+- Cpa1
+- Gcg
+- Ghrl
+- Hhex
+- Hnf1b
+- Ins1
+- Ins2
+- Isl1
+- Kdr
+- Krt19
+- Mafa
+- Mafb
+- Neurog3
+- Nkx6-1
+- Pdgfra
+- Pdgfrb
+- Pdx1
+- Pecam1
+- Ppy
+- Ptf1a
+- Ptprc
+- Slc2a2
+- Sst
+GROUPBY: null
+METHOD: facs
+NPCS: 12
+RES: 0.5
+SUBSET:
+  HEPATOCYTES:
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: c(1,2,5)
+    GENES:
+    - Ang
+    - Arg1
+    - Arx
+    - Cd9
+    - Chga
+    - Dpp10
+    - Folr1
+    - Gcg
+    - Gfra3
+    - Ghrl
+    - Hhex
+    - Irx1
+    - Isl1
+    - Mafb
+    - Pdx1
+    - Ppy
+    - Slc38a5
+    - Spp1
+    - Sst
+    - Tspan8
+    - Vsig1
+    GROUPBY: null
+    NPCS: 8
+    RES: 1
+TISSUE: Pancreas

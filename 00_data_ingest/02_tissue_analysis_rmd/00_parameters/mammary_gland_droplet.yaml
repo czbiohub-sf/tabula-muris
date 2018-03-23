@@ -1,6 +1,0 @@
-TISSUE: Mammary_Gland
-METHOD: droplet
-RES: 0.5
-NPCS: 15
-GENES: "'Nkg7', 'Ccl5', 'Cd74', 'Ly6c1'"
-GROUPBY: null

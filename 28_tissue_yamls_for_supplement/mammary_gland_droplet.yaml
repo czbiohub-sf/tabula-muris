@@ -1,0 +1,11 @@
+---
+GENES:
+- Ccl5
+- Cd74
+- Ly6c1
+- Nkg7
+GROUPBY: null
+METHOD: droplet
+NPCS: 15
+RES: 0.5
+TISSUE: Mammary_Gland

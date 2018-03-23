@@ -1,6 +1,0 @@
-TISSUE: Bladder
-METHOD: facs
-RES: 1
-NPCS: 10
-GENES: "'Epcam','Upk1b', 'Upk3a','Grhl3', 'Krt5', 'Krt14', 'Dcn', 'Col1a1','Col8a1'"
-GROUPBY: mouse.sex

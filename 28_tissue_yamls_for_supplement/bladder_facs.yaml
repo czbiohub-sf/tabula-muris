@@ -1,0 +1,16 @@
+---
+GENES:
+- Col1a1
+- Col8a1
+- Dcn
+- Epcam
+- Grhl3
+- Krt14
+- Krt5
+- Upk1b
+- Upk3a
+GROUPBY: mouse.sex
+METHOD: facs
+NPCS: 10
+RES: 1
+TISSUE: Bladder

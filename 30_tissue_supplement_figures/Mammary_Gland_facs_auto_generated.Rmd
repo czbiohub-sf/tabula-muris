@@ -1,0 +1,50 @@
+---
+title: "Mammary_Gland facs Supplementary Notebook"
+output: html_notebook
+---
+
+# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r}
+library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
+save_folder = here('30_tissue_supplement_figures', 'Mammary_Gland', 'facs')
+dir.create(save_folder, recursive=TRUE)
+
+tissue_of_interest = 'Mammary_Gland'
+filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = c("Cd14", "Cdh5", "Elf5", "Esam", "Esr1", "Fn1", "Krt14", "Krt17", "Krt18", "Krt5", "Krt8", "Lgr5", "Prlr", "Vim")
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix, group.bys)
+```
+
+## Output differentially expressed genes in clusters
+
+```{r}
+tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+```
+
+## Subset: BASAL
+
+```{r}
+Basal.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class) == basal]
+Basal.n.pcs = 10
+Basal.res = 0.5
+Basal.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
+Basal.tiss = SubsetData(tiss, cells.use=Basal.cells.use, )
+Basal.tiss <- Basal.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+Basal.tiss <- Basal.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+dot_tsne_ridge(Basal.tiss, Basal.genes_to_check,
+    save_folder, prefix = "Basal", group.bys)
+
+```
