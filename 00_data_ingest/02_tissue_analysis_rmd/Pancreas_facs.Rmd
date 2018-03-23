@@ -308,6 +308,14 @@ save(tiss, file=filename)
 # load(file=filename)
 ```
 
+## Add column for Neurog3 expression for supplemental figures
+
+```{r}
+tiss@meta.data[, 'Neurog3>0_scaled'] = FetchData(tiss, c("Neurog3"), use.raw=FALSE) > 0
+tiss@meta.data[, 'Neurog3>0_raw'] = FetchData(tiss, c("Neurog3"), use.raw=TRUE) > 0
+additional_cols = c('Neurog3>0_scaled', 'Neurog3>0_raw')
+```
+
 
 
 
@@ -337,5 +345,5 @@ GenePlot(subtiss, 'Vsig1', 'Gfra3')
 Write the cell ontology and free annotations to CSV.
 
 ```{r}
-save_annotation_csv(tiss, tissue_of_interest, "facs")
+save_annotation_csv(tiss, tissue_of_interest, "facs", additional_cols = additional_cols)
 ```
