@@ -20,5 +20,7 @@ run_rmd: clean
 
 
 all: rmd clean
+	# copy over microbiome figures
+	cp -r ../27_tissue_additional_figures .
 	# Launches all notebooks as a background process. Only recommended to be used on high-powered computers!
 	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 ../utilities/run_rmds.py
