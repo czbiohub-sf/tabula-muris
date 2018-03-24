@@ -20,7 +20,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c("Cd14", "Cdh5", "Elf5", "Esam", "Esr1", "Fn1", "Krt14", "Krt17", "Krt18", "Krt5", "Krt8", "Lgr5", "Prlr", "Vim")
+genes_to_check = c(['Cd14', 'Cdh5', 'Elf5', 'Esam', 'Esr1', 'Fn1', 'Krt14', 'Krt17', 'Krt18', 'Krt5', 'Krt8', 'Lgr5', 'Prlr', 'Vim'])
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
@@ -36,37 +36,18 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## Subset: BASAL
 
 ```{r}
-Basal.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "basal]
-Basal.n.pcs = 10
-Basal.res = 0.5
-Basal.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
-Basal.tiss = SubsetData(tiss, cells.use=Basal.cells.use, )
-Basal.tiss <- Basal.tiss %>% ScaleData() %>% 
+BASAL.cells.use = rownames(tiss@meta.data)[grep("basal",tiss@meta.data$cell_ontology_class)]
+BASAL.n.pcs = 10
+BASAL.res = 0.5
+BASAL.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
+BASAL.tiss = SubsetData(tiss, cells.use=BASAL.cells.use, )
+BASAL.tiss <- BASAL.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-Basal.tiss <- Basal.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+BASAL.tiss <- BASAL.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-# Highlight which cells are in this subset
-    
-palette = brewer.pal(3, "YlGnBu")
-cols.use = c(palette[1], palette[3])
-colors.use
-tiss@meta.data[, "Basal"] = NA
-tiss@meta.data[Basal.cells.use, "Basal"] = "Basal" 
-filename = make_filename(save_folder, prefix="Basal", group.by, 
-    'tsneplot_allcells_highlighted')
-p = TSNEPlot(
-  object = tiss,
-  do.return = TRUE,
-  group.by = Basal,
-  no.axes = TRUE,
-  pt.size = 1,
-  no.legend = TRUE,
-  colors.use = c(palette[1], 'grey50')
-)
-ggsave(filename, width = 4, height = 4)
-dot_tsne_ridge(Basal.tiss, Basal.genes_to_check,
-    save_folder, prefix = "Basal", group.bys, facs)
+dot_tsne_violin({name}.tiss, {name}.genes_to_check,
+    save_folder, prefix = {name}, group.bys)
 
 ```

@@ -20,7 +20,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c("Cck", "Cdh1", "Col1a1", "Col8a1", "Epcam", "Foxj1", "Krt5", "Pdgfra", "Pdgfrb", "Pecam1", "Ptprc", "Scgb1a1", "Syp")
+genes_to_check = c(['Cck', 'Cdh1', 'Col1a1', 'Col8a1', 'Epcam', 'Foxj1', 'Krt5', 'Pdgfra', 'Pdgfrb', 'Pecam1', 'Ptprc', 'Scgb1a1', 'Syp'])
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
@@ -36,37 +36,18 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## Subset: EPITHELIAL
 
 ```{r}
-Epithelial.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "epithelial cell]
-Epithelial.n.pcs = 2
-Epithelial.res = 0.2
-Epithelial.genes_to_check = c("Foxj1", "Krt14", "Krt5", "Scgb1a1")
-Epithelial.tiss = SubsetData(tiss, cells.use=Epithelial.cells.use, )
-Epithelial.tiss <- Epithelial.tiss %>% ScaleData() %>% 
+EPITHELIAL.cells.use = rownames(tiss@meta.data)[grep("epithelial cell",tiss@meta.data$cell_ontology_class)]
+EPITHELIAL.n.pcs = 2
+EPITHELIAL.res = 0.2
+EPITHELIAL.genes_to_check = c("Foxj1", "Krt14", "Krt5", "Scgb1a1")
+EPITHELIAL.tiss = SubsetData(tiss, cells.use=EPITHELIAL.cells.use, )
+EPITHELIAL.tiss <- EPITHELIAL.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-Epithelial.tiss <- Epithelial.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+EPITHELIAL.tiss <- EPITHELIAL.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-# Highlight which cells are in this subset
-    
-palette = brewer.pal(3, "YlGnBu")
-cols.use = c(palette[1], palette[3])
-colors.use
-tiss@meta.data[, "Epithelial"] = NA
-tiss@meta.data[Epithelial.cells.use, "Epithelial"] = "Epithelial" 
-filename = make_filename(save_folder, prefix="Epithelial", group.by, 
-    'tsneplot_allcells_highlighted')
-p = TSNEPlot(
-  object = tiss,
-  do.return = TRUE,
-  group.by = Epithelial,
-  no.axes = TRUE,
-  pt.size = 1,
-  no.legend = TRUE,
-  colors.use = c(palette[1], 'grey50')
-)
-ggsave(filename, width = 4, height = 4)
-dot_tsne_ridge(Epithelial.tiss, Epithelial.genes_to_check,
-    save_folder, prefix = "Epithelial", group.bys, droplet)
+dot_tsne_violin({name}.tiss, {name}.genes_to_check,
+    save_folder, prefix = {name}, group.bys)
 
 ```
