@@ -16,11 +16,11 @@ tissue_of_interest = 'Heart'
 filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
 load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 
-additional.group.bys = sort(c("subtissue"))
+additional.group.bys = sort(c(subtissue))
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c("Cdh5", "Pecam1", "Tie1")
+genes_to_check = c(['Cdh5', 'Pecam1', 'Tie1'])
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
@@ -36,37 +36,18 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## Subset: SUBSETA
 
 ```{r}
-SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "smooth muscle cell]
-SubsetA.n.pcs = 5
-SubsetA.res = 1
-SubsetA.genes_to_check = c("Cnn1", "Kcnj8", "Myh11", "Postn")
-SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
-SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
+SUBSETA.cells.use = rownames(tiss@meta.data)[grep("smooth muscle cell",tiss@meta.data$cell_ontology_class)]
+SUBSETA.n.pcs = 5
+SUBSETA.res = 1
+SUBSETA.genes_to_check = c("Cnn1", "Kcnj8", "Myh11", "Postn")
+SUBSETA.tiss = SubsetData(tiss, cells.use=SUBSETA.cells.use, )
+SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
+SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-# Highlight which cells are in this subset
-    
-palette = brewer.pal(3, "YlGnBu")
-cols.use = c(palette[1], palette[3])
-colors.use
-tiss@meta.data[, "SubsetA"] = NA
-tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
-filename = make_filename(save_folder, prefix="SubsetA", group.by, 
-    'tsneplot_allcells_highlighted')
-p = TSNEPlot(
-  object = tiss,
-  do.return = TRUE,
-  group.by = SubsetA,
-  no.axes = TRUE,
-  pt.size = 1,
-  no.legend = TRUE,
-  colors.use = c(palette[1], 'grey50')
-)
-ggsave(filename, width = 4, height = 4)
-dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
-    save_folder, prefix = "SubsetA", group.bys, facs)
+dot_tsne_violin({name}.tiss, {name}.genes_to_check,
+    save_folder, prefix = {name}, group.bys)
 
 ```
