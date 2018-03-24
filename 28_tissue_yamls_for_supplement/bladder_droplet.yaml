@@ -9,6 +9,9 @@ GENES:
 - Krt14
 - Krt5
 - Pecam1
+- Ptprc
+- Car3
+- Scara5
 - Upk1b
 - Upk3a
 GROUPBY: mouse.sex
