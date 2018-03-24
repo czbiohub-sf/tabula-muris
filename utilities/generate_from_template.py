@@ -59,8 +59,6 @@ group.bys = c(group.bys, "{groupby}")'''
     return codeblock
 
 
-
-
 @click.command()
 @click.argument('parameters_yaml')
 @click.option('--template-file', default='Template.Rmd')
@@ -89,7 +87,6 @@ def main(parameters_yaml, template_file='Template.Rmd',
                     # Make all the keys have lowercase names
                     kv = {k.lower(): v for k, v in kv.items()}
                     subset_code = add_subset(name, **kv)
-                    import pdb; pdb.set_trace()
                     template += f'\n## Subset: {name}\n\n{subset_code}'
             elif value is not None:
                 template = template.replace("{" + parameter + "}", str(value))
