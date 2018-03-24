@@ -8,6 +8,7 @@ GENES:
 - Krt14
 - Ptprc
 - Top2a
+- Mki67
 GROUPBY: subtissue
 METHOD: facs
 NPCS: 5
