@@ -2,7 +2,7 @@
 "1","monocyte"
 "2","T cell"
 "3","granulocytopoietic cell"
-"4","promonocyte"
+"4",NA
 "5","granulocyte"
 "6","erythroblast"
 "7","hematopoietic precursor cell"
@@ -11,5 +11,3 @@
 "10","basophil"
 "11","macrophage"
 "12","early pro-B cell"
-"13","immature B cell"
-"14","Fraction A pre-pro B cell"
