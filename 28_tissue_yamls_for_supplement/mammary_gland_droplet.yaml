@@ -1,9 +1,31 @@
 ---
 GENES:
+- Ptprc
+- Cd3e
+- Cd3g
+- Cd19
+- Cd79a
+- Cd14
+- Csf1r
+- Vim
+- Fn1
+- Esam
+- Aldh1a3
+- Pecam1
+- Krt14
+- Krt5
+- Krt17
+- Krt8
+- Krt18
+- Krt19
+- Cd14
 - Ccl5
 - Cd74
 - Ly6c1
 - Nkg7
+- Esr1
+- Pgr
+- Cd55
 GROUPBY: null
 METHOD: droplet
 NPCS: 15
