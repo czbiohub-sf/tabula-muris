@@ -14,6 +14,12 @@ GENES:
 - Mki67
 - Sbsn
 - Top2a
+- Krt8
+- Krt19
+- Tas1r1
+- Tas1r2
+- Tas1r3
+- P2rx7
 GROUPBY: null
 METHOD: droplet
 NPCS: 14
