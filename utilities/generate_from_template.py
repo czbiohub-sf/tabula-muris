@@ -65,6 +65,7 @@ group.bys = c(group.bys, "{groupby}")'''
 @click.option('--suffix', default='_template.Rmd')
 def main(parameters_yaml, template_file='Template.Rmd',
          suffix='_template.Rmd'):
+    print(parameters_yaml)
     # print command line arguments
 
     with open(parameters_yaml) as f:
