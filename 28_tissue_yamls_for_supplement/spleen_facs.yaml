@@ -1,6 +1,8 @@
 ---
 GENES:
 - Ccr2
+- Cd19
+- Cd3g
 - Cd4
 - Cd5
 - Cd79a
@@ -8,6 +10,7 @@ GENES:
 - Cd9
 - Cnn3
 - Il2rb
+- Ptprc
 - Vcam1
 GROUPBY: null
 METHOD: facs
