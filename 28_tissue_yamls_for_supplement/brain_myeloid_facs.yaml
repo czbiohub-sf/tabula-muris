@@ -4,6 +4,7 @@ GENES:
 - H2-Aa
 - H2-Eb1
 - P2ry12
+- Ptprc
 - Sall1
 - Tmem119
 GROUPBY: subtissue
