@@ -3,6 +3,16 @@ GENES:
 - Cdh5
 - Pecam1
 - Tie1
+- Tnni3
+- Fabp4
+- Cav1
+- Ehd3
+- Npr3
+- Dcn
+- Gsn
+- Myh11
+- C1qa
+- Hbb-b1
 GROUPBY: subtissue
 METHOD: facs
 NPCS: 10
