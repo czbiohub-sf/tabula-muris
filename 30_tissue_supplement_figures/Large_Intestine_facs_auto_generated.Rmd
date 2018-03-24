@@ -16,11 +16,11 @@ tissue_of_interest = 'Large_Intestine'
 filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
 load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 
-additional.group.bys = sort(c("subtissue"))
+additional.group.bys = sort(c(subtissue))
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c("Atoh1", "Chga", "Chgb", "Dclk1", "Krt20", "Lgr5", "Mki67", "Slc26a3", "Spdef")
+genes_to_check = c(['Atoh1', 'Chga', 'Chgb', 'Dclk1', 'Krt20', 'Lgr5', 'Mki67', 'Slc26a3', 'Spdef'])
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

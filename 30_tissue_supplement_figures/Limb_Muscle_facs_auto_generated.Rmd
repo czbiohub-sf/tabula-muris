@@ -20,7 +20,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c("Acta2", "Atxn1", "Calcr", "Cd19", "Cd3g", "Cd4", "Cd8a", "Chodl", "Itgam", "Myf5", "Myod1", "Pax7", "Pdgfra", "Pecam1", "Ptprc", "Vcam1")
+genes_to_check = c(['Acta2', 'Atxn1', 'Calcr', 'Cd19', 'Cd3g', 'Cd4', 'Cd8a', 'Chodl', 'Itgam', 'Myf5', 'Myod1', 'Pax7', 'Pdgfra', 'Pecam1', 'Ptprc', 'Vcam1'])
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
