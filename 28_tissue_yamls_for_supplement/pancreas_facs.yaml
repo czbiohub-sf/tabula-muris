@@ -24,9 +24,11 @@ GENES:
 - Pdx1
 - Pecam1
 - Ppy
+- Prss53 
 - Ptf1a
 - Ptprc
 - Slc2a2
+- Spp1
 - Sst
 GROUPBY: null
 METHOD: facs
