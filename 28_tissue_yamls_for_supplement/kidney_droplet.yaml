@@ -1,5 +1,15 @@
 ---
 GENES:
+- Des
+- Vim
+- Acta2
+- Podx1
+- Wt1
+- Mm3
+- Vil1
+- Kcne1
+- Scnn1a
+- Aqp2
 - Egf
 - Emr1
 - Epcam
@@ -13,6 +23,8 @@ GENES:
 - Slc22a12
 - Slc34a1
 - Umod
+- Cd3e
+- Cd68
 GROUPBY: null
 METHOD: droplet
 NPCS: 10
