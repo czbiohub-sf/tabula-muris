@@ -1,0 +1,50 @@
+\documentclass[11pt,]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage[a4paper, margin=1.75cm]{geometry}
+\usepackage[page]{totalcount}
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+% Reference sections by name
+\usepackage{nameref}
+
+% Make command to reference section name
+\makeatletter
+\newcommand*{\currentsection}{\@currentlabelname}
+\makeatother
+
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % set the \leftmark
+
+
+% Nice looking tables
+\usepackage{booktabs}
+
+% Add header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Tabula Muris Tissue Supplement}
+\lhead{\itshape\nouppercase{\leftmark}}
+\rfoot{Page \thepage~of~\totalpages}
+
+%SetFonts
+
+%SetFonts
+
+
+\title{Tabula Muris Tissue Supplement}
+\author{Tabula Muris Consortium}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\tableofcontents
+%\listoffigures
+
+
+%%% --- INCLUDE TISSUES HERE --- %
+
+
+\end{document}  
