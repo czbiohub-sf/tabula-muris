@@ -8,8 +8,6 @@ clc
 
 d = dir('*_nreads_ngenes.csv');
 droplet_nreads_ngenes = cell(length(d),3);
-
-acrossAllTissues = [];
 for i = 1:length(d)
     
     workingFile = d(i).name;
@@ -33,10 +31,10 @@ for i = 1:length(d)
     
     droplet_nreads_ngenes(i,:) = [tissueName mean(workingTable.nGene)...
         mean(workingTable.nUMI)];
-    acrossAllTissues = [acrossAllTissues;[workingTable.nGene workingTable.nUMI]];
     
 end
-droplet_nreads_ngenes = [{'acrossAllTissues' num2cell(mean(acrossAllTissues(:,1))) num2cell(mean(acrossAllTissues(:,2)))};droplet_nreads_ngenes];
+droplet_nreads_ngenes = [{'acrossAllTissues' num2cell(mean(cell2mat(droplet_nreads_ngenes(:,2))))...
+    num2cell(mean(cell2mat(droplet_nreads_ngenes(:,3))))};droplet_nreads_ngenes];
 droplet_nreads_ngenes = cell2table(droplet_nreads_ngenes,'VariableNames',{'TissueName' 'avg_nGene' 'avg_nUMI'});
 writetable(droplet_nreads_ngenes,'dropletNreadsNgenes.csv')
 
