@@ -1,5 +1,6 @@
 ---
 GENES:
+- Cd14
 - Col1a1
 - Col8a1
 - Dcn
@@ -7,6 +8,10 @@ GENES:
 - Grhl3
 - Krt14
 - Krt5
+- Pecam1
+- Ptprc
+- Car3
+- Scara5
 - Upk1b
 - Upk3a
 GROUPBY: mouse.sex
