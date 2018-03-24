@@ -18,6 +18,7 @@ GENES:
 - H2-Aa
 - H2-Ab1
 - Il2ra
+- Il2rb
 - Itgax
 - Krt5
 - Krt8
@@ -28,6 +29,13 @@ GENES:
 - Rag2
 - Top2a
 - Vim
+- Zbtb7b
+- Runx3
+- Pdgfrb
+- Igfb7
+- C3
+- Krt5
+- Krt8
 GROUPBY: null
 METHOD: droplet
 NPCS: 10
