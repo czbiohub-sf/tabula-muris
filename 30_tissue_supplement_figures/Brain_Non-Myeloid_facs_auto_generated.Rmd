@@ -57,6 +57,7 @@ Load packages
 library(dplyr)
 library(Matrix)
 library(cowplot)
+library(matrixStats)
 require(RColorBrewer)
 ```
 
