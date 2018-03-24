@@ -7,6 +7,8 @@ import string
 
 import click
 import pandas as pd
+import yaml
+
 
 SUBSET_ORDER = 'allcells',
 PLOT_ORDER = 'tsneplot', 'ridgeplot', 'dotplot'
@@ -36,8 +38,8 @@ FRONTMATTER = r"""\documentclass[11pt,]{article}   	% use "amsart" instead of "a
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}} % set the \leftmark
 
 
-% Rotated figures
-\usepackage{rotating}
+% Nice looking tables
+\usepackage{booktabs}
 
 % Add header
 \usepackage{fancyhdr}
@@ -52,7 +54,7 @@ FRONTMATTER = r"""\documentclass[11pt,]{article}   	% use "amsart" instead of "a
 %SetFonts
 
 
-\title{TISSUE METHOD Figure Packet}
+\title{\textbf{TISSUE METHOD Figure Packet}}
 %\author{The Author}
 \date{}							% Activate to display a given date or no date
 
@@ -69,7 +71,14 @@ SECTION = r"""\newpage
 ENDMATTER = r"\end{document}"
 
 
-class FigureTeXGenerator:
+
+def method_tex(method):
+    if method == 'droplet':
+        return method.capitalize()
+    else:
+        return method.replace('_', ' ').upper()
+
+class TeXGenerator:
     def __init__(self, pdf, plottype, tissue, method, subset, groupby, i=None,
                  n=None, labels=None):
         self.pdf = pdf
@@ -85,6 +94,10 @@ class FigureTeXGenerator:
     @property
     def is_iterative(self):
         return self.i is not None and self.i > 1
+
+    @property
+    def tissue_tex(self):
+        return self.tissue.replace('_', ' ')
 
     @property
     def plottype_tex(self):
@@ -103,16 +116,33 @@ class FigureTeXGenerator:
             return self.plottype.capitalize()
 
     @property
+    def method_tex(self):
+        return method_tex(self.method)
+
+    @property
     def subset_tex(self):
-        if self.subset == 'allcells':
-            return "all cells"
+        if self.subset.lower().endswith('cells'):
+            subset = self.subset.lower().split('cells')[0]
+            return subset + ' cells'
         else:
             return self.subset
 
     @property
     def groupby_tex(self):
         """TeX-formatted groupby"""
-        return self.groupby.replace('_', ' ').replace('.', ' ')
+        return self.groupby.replace('_', ' ').replace('.', ' ').replace('-', ' ')
+
+    @property
+    def section_tex(self):
+        tex = SECTION.replace('GROUPBY', self.groupby_tex.title()).replace(
+            "SUBSET", self.subset_tex.title())
+        return tex
+
+    @property
+    def labels_tex(self):
+        tex = [x.replace('_', ' ') for x in self.labels]
+        return tex
+
 
     @property
     def plot_shows(self):
@@ -142,7 +172,7 @@ class FigureTeXGenerator:
             # ridgeplot and dotplot
             letter_labels = ', '.join([f'{letter}: {label}' for letter, label
                                        in zip(string.ascii_uppercase,
-                                              self.labels)])
+                                              self.labels_tex)])
             letter_labels += '.'
             return letter_labels
 
@@ -152,7 +182,7 @@ class FigureTeXGenerator:
         if self.is_iterative:
             words.append(f'({self.i} of {self.n})')
         words.extend([self.plot_shows, 'in', self.groupby_tex, 'of',
-                      self.tissue, self.method + '.', self.caption_end])
+                      self.tissue_tex, self.method_tex + '.', self.caption_end])
         sentence = ' '.join(words)
         return f'\caption{{{sentence}}}'
 
@@ -167,31 +197,56 @@ class FigureTeXGenerator:
 
     @property
     def legend(self):
-        if self.plottype == 'tsneplot':
+        if self.plottype == 'tsneplot' and not('expression' in self.groupby):
             pdf = self.pdf.replace('.pdf', '_legend.pdf')
             return f'\includegraphics[{self.graphics_options}]{{{pdf}}}'
         else:
             return ''
 
     @property
-    def section_title(self):
+    def subsection_title(self):
         title = self.plottype_title
         if self.is_iterative:
             title += f' {self.i} of {self.n}}}'
         return title
 
-    def generate_code(self):
+    @property
+    def figure_tex(self):
         code = f"""
-\\newpage
-\subsection{{{self.section_title}}}
+\subsection{{{self.subsection_title}}}
 \\begin{{figure}}[h]
 \centering
-\includegraphics[{self.graphics_options}]{{{self.pdf}}}{self.legend}
+\includegraphics[{self.graphics_options}]{{{self.pdf}}}
+{self.legend}
 {self.caption}
 \end{{figure}}
 
 """
         return code
+
+    def make_table_tex(self, counts):
+        tex = f'\subsection{{Table of cell counts in {self.subset_tex}, per {self.groupby_tex}}}'
+        tex += r"""\begin{table}[h]
+\centering
+\label{my-label}
+\begin{tabular}{@{}ll@{}}
+\toprule
+"""
+        tex += f'\n{self.groupby_tex.capitalize()}& Number of cells \\\\ \midrule'
+        for label, n in zip(counts.index, counts.values):
+            try:
+                label = label.replace("_", " ")
+            except AttributeError:
+                # Label is an int
+                pass
+            tex += f'\n{label} & {n} \\\\\n'
+        tex += r'\bottomrule'
+        tex += f'''
+\end{{tabular}}
+\caption{{Cell counts for {self.subset_tex}, per {self.groupby_tex}.}}
+\end{{table}}
+'''
+        return tex
 
 
 def get_category_order(column, defaults):
@@ -212,6 +267,8 @@ def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
     return parameters
 
 
+
+
 @click.command()
 @click.option('--tissue', default='all')
 @click.option('--method', default='all')
@@ -226,7 +283,13 @@ def cli(tissue, method):
             continue
         tissue_path, method = os.path.split(tissue_method_path)
         figure_path, tissue = os.path.split(tissue_path)
-        tex = FRONTMATTER.replace('TISSUE', tissue).replace("METHOD", method)
+
+        basename_yaml = f'{tissue.lower()}_{method}.yaml'
+        filename_yaml = os.path.join('..', '28_tissue_yamls_for_supplement', basename_yaml)
+        with open(filename_yaml) as f:
+            yaml_data = yaml.load(f)
+
+        tex = FRONTMATTER.replace('TISSUE', tissue.replace('_', ' ')).replace("METHOD", method_tex(method))
         print(f'\n--- tissue: "{tissue}", method: "{method}" ---')
         basename = '_'.join([tissue, method, 'annotation.csv'])
         annotation = pd.read_csv(os.path.join('..', '00_data_ingest',
@@ -241,31 +304,74 @@ def cli(tissue, method):
         # print(parameters)
 
         # Remove legend figures because they're auto-added
-        ind = parameters['extra'] != 'legend'
         parameters = parameters.query('extra != "legend"')
         grouped = parameters.groupby(['subset', 'groupby', 'plottype'])
-        for (subset, groupby, plottype), row in grouped:
 
+        # Section counter
+        j = 0
+        prev_subset = ''
+        prev_groupby = ''
+        for (subset, groupby, plottype), row in grouped:
             # Replaced dots with dashes for filenames, need to change back
             # for column referencing
             groupby_col = groupby.replace('-', '.')
             print(row)
-            groupby_unique = annotation[groupby_col].astype(str).unique()
-            print(groupby_unique)
-            labels = sorted(groupby_unique)
-            tex += SECTION.replace('SUBSET', subset).replace("GROUPBY",
-                                                             groupby)
+            try:
+                groupby_unique = annotation[groupby_col].astype(str).unique()
+                print(groupby_unique)
+                labels = sorted(groupby_unique)
+            except KeyError:
+                labels = None
             # This groupby iterates by row but we still need to grab the first
             # item because pandas doesn't cast the row to a vector
-            pdf = row.index[0]
+            pdf = os.path.join(tissue_method_path, row.index[0])
             i = row['i'].iloc[0] if pd.notnull(row['i']).all() else None
             n = row['n'].iloc[0] if pd.notnull(row['n']).all() else None
-            figuretexgen = FigureTeXGenerator(pdf, plottype, tissue,
-                                              method, subset, groupby,
-                                              i=i, n=n,
-                                              labels=labels)
-            figuretex = figuretexgen.generate_code()
-            tex += figuretex
+            tex_generator = TeXGenerator(pdf, plottype, tissue,
+                                        method, subset, groupby,
+                                        i=i, n=n,
+                                        labels=labels)
+
+            # Weird hack for adding sections
+            if prev_groupby != groupby or prev_subset != subset:
+                j = 0
+            else:
+                j += 1
+
+            if j == 0:
+                tex += tex_generator.section_tex
+
+                if subset != 'allcells':
+                    try:
+                        subset_yaml = yaml_data['SUBSET'][groupby.upper()]
+                        print(subset_yaml)
+                        # Add table of counts
+                        column = subset_yaml['FILTER_COLUMN']
+                        value = subset_yaml['FILTER_VALUE']
+                    except KeyError:
+                        column = 'cell_ontology_class'
+                        value = subset.lower().replace('_', ' ').rstrip('s')
+                    subset_annotation = annotation.query(f'{column} == "{value}"')
+                else:
+                    subset_annotation = annotation
+
+                try:
+                    counts = subset_annotation.groupby(groupby_col).size()
+                    tex += tex_generator.make_table_tex(counts)
+                    tex += r'''
+\newpage'''
+                except KeyError:
+                    # e.g. groupby_col = 'expression', then nothing to count
+                    pass
+            else:
+                tex += r'''
+\newpage'''
+
+            # Add section title and figure tex
+            tex += tex_generator.figure_tex
+
+            prev_subset = subset
+            prev_groupby = groupby
 
         tex += ENDMATTER
         filename = f'{tissue}_{method}_auto_generated.tex'
