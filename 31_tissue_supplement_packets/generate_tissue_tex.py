@@ -20,7 +20,6 @@ FIGURE_FOLDER = '30_tissue_supplement_figures'
 PATTERN = '^(?P<subset>[a-zA-Z\d]+)_(?P<groupby>[\w\-]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9]+)?.pdf$'
 
 SUBSECTION = r"""
-\newpage
 \subsection{SUBSET, labeled by GROUPBY}
 """
 
@@ -277,9 +276,13 @@ def cli(tissue, method):
         j = 0
         prev_subset = ''
         prev_groupby = ''
-        for (subset, groupby, plottype), row in grouped:
+        for k, ((subset, groupby, plottype), row) in enumerate(grouped):
             # Replaced dots with dashes for filenames, need to change back
             # for column referencing
+            if k > 0:
+                tex += r'''
+\newpage'''
+
             groupby_col = groupby.replace('-', '.')
             try:
                 try:
@@ -306,7 +309,7 @@ def cli(tissue, method):
             else:
                 j += 1
 
-            print(f'\tsubset: {subset}, groupby: {groupby}, plottype: {plottype}, j: {j}, i: {i}, n: {n}')
+            print(f'\tsubset: {subset}, groupby: {groupby}, plottype: {plottype}, k: {k}, j: {j}, i: {i}, n: {n}')
 
             if j == 0:
                 tex += tex_generator.subsection_tex
