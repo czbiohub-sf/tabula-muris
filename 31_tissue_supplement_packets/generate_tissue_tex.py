@@ -18,54 +18,10 @@ ORDER_DEFAULTS = {'subset': SUBSET_ORDER, 'plottype': PLOT_ORDER,
 
 FIGURE_FOLDER = '30_tissue_supplement_figures'
 PATTERN = '^(?P<subset>[a-zA-Z\d]+)_(?P<groupby>[\w\-]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9]+)?.pdf$'
-FRONTMATTER = r"""\documentclass[11pt,]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage[a4paper, margin=1.75cm]{geometry}
-\usepackage[page]{totalcount}
-%\geometry{landscape}                		% Activate for rotated page geometry
-%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}				% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
-\usepackage{amssymb}
 
-% Reference sections by name
-\usepackage{nameref}
-
-% Make command to reference section name
-\makeatletter
-\newcommand*{\currentsection}{\@currentlabelname}
-\makeatother
-
-\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % set the \leftmark
-
-
-% Nice looking tables
-\usepackage{booktabs}
-
-% Add header
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{TISSUE METHOD Figure Packet}
-\lhead{\itshape\nouppercase{\leftmark}}
-\rfoot{Page \thepage~of~\totalpages}
-
-%SetFonts
-
-%SetFonts
-
-
-\title{\textbf{TISSUE METHOD Figure Packet}}
-%\author{The Author}
-\date{}							% Activate to display a given date or no date
-
-\begin{document}
-\maketitle
-\tableofcontents
-%\listoffigures
-"""
-
-SECTION = r"""\newpage
-\section{SUBSET, labeled by GROUPBY}
+SUBSECTION = r"""
+\newpage
+\subsection{SUBSET, labeled by GROUPBY}
 """
 
 ENDMATTER = r"\end{document}"
@@ -77,6 +33,7 @@ def method_tex(method):
         return method.capitalize()
     else:
         return method.replace('_', ' ').upper()
+
 
 class TeXGenerator:
     def __init__(self, pdf, plottype, tissue, method, subset, groupby, i=None,
@@ -133,14 +90,14 @@ class TeXGenerator:
         return self.groupby.replace('_', ' ').replace('.', ' ').replace('-', ' ')
 
     @property
-    def section_tex(self):
-        tex = SECTION.replace('GROUPBY', self.groupby_tex.title()).replace(
+    def subsection_tex(self):
+        tex = SUBSECTION.replace('GROUPBY', self.groupby_tex.title()).replace(
             "SUBSET", self.subset_tex.title())
         return tex
 
     @property
     def labels_tex(self):
-        tex = [x.replace('_', ' ') for x in self.labels]
+        tex = [str(x).replace('_', ' ') for x in self.labels]
         return tex
 
 
@@ -178,12 +135,17 @@ class TeXGenerator:
 
     @property
     def caption(self):
-        words = [self.caption_start, self.plottype_tex]
-        if self.is_iterative:
-            words.append(f'({self.i} of {self.n})')
-        words.extend([self.plot_shows, 'in', self.groupby_tex, 'of',
-                      self.tissue_tex, self.method_tex + '.', self.caption_end])
-        sentence = ' '.join(words)
+        caption_file = self.pdf.replace('.pdf', '.txt')
+        if os.path.exists(caption_file):
+            with open(caption_file) as f:
+                sentence = f.read()
+        else:
+            words = [self.caption_start, self.plottype_tex]
+            if self.is_iterative:
+                words.append(f'({self.i} of {self.n})')
+            words.extend([self.plot_shows, 'in', self.groupby_tex, 'of',
+                          self.tissue_tex, self.method_tex + '.', self.caption_end])
+            sentence = ' '.join(words)
         return f'\caption{{{sentence}}}'
 
     @property
@@ -204,7 +166,7 @@ class TeXGenerator:
             return ''
 
     @property
-    def subsection_title(self):
+    def subsubsection_title(self):
         title = self.plottype_title
         if self.is_iterative:
             title += f' {self.i} of {self.n}}}'
@@ -213,7 +175,7 @@ class TeXGenerator:
     @property
     def figure_tex(self):
         code = f"""
-\subsection{{{self.subsection_title}}}
+\subsubsection{{{self.subsubsection_title}}}
 \\begin{{figure}}[h]
 \centering
 \includegraphics[{self.graphics_options}]{{{self.pdf}}}
@@ -225,7 +187,7 @@ class TeXGenerator:
         return code
 
     def make_table_tex(self, counts):
-        tex = f'\subsection{{Table of cell counts in {self.subset_tex}, per {self.groupby_tex}}}'
+        tex = f'\subsubsection{{Table of cell counts in {self.subset_tex}, per {self.groupby_tex}}}'
         tex += r"""\begin{table}[h]
 \centering
 \label{my-label}
@@ -251,7 +213,7 @@ class TeXGenerator:
 
 def get_category_order(column, defaults):
     column_unique = set(column.astype(str).unique())
-    print(column_unique)
+    # print(column_unique)
     remaining = column_unique.difference(defaults)
     categories = list(defaults) + list(remaining)
     return categories
@@ -267,8 +229,6 @@ def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
     return parameters
 
 
-
-
 @click.command()
 @click.option('--tissue', default='all')
 @click.option('--method', default='all')
@@ -276,20 +236,26 @@ def cli(tissue, method):
     tissue = '*' if tissue == 'all' else tissue.capitalize()
     method = '*' if method == 'all' else method.lower()
     globber = os.path.join('..', FIGURE_FOLDER, tissue, method)
-    tissue_method_paths = glob.glob(globber)
+    tissue_method_paths = sorted(glob.glob(globber))
+
+    tex_filenames = []
     for tissue_method_path in tissue_method_paths:
         figures = glob.glob(os.path.join(tissue_method_path, '*.pdf'))
         if len(figures) == 0:
             continue
         tissue_path, method = os.path.split(tissue_method_path)
         figure_path, tissue = os.path.split(tissue_path)
+        tissue_tex = tissue.replace('_', ' ')
 
         basename_yaml = f'{tissue.lower()}_{method}.yaml'
         filename_yaml = os.path.join('..', '28_tissue_yamls_for_supplement', basename_yaml)
         with open(filename_yaml) as f:
             yaml_data = yaml.load(f)
 
-        tex = FRONTMATTER.replace('TISSUE', tissue.replace('_', ' ')).replace("METHOD", method_tex(method))
+        tex = f'''\\newpage
+\section{{{tissue_tex} {method_tex(method)}}}
+'''
+
         print(f'\n--- tissue: "{tissue}", method: "{method}" ---')
         basename = '_'.join([tissue, method, 'annotation.csv'])
         annotation = pd.read_csv(os.path.join('..', '00_data_ingest',
@@ -315,11 +281,13 @@ def cli(tissue, method):
             # Replaced dots with dashes for filenames, need to change back
             # for column referencing
             groupby_col = groupby.replace('-', '.')
-            print(row)
             try:
-                groupby_unique = annotation[groupby_col].astype(str).unique()
-                print(groupby_unique)
-                labels = sorted(groupby_unique)
+                try:
+                    groupby_unique = annotation[groupby_col].unique()
+                    labels = sorted(groupby_unique)
+                except TypeError:
+                    groupby_unique = annotation[groupby_col].astype(str).unique()
+                    labels = sorted(groupby_unique)
             except KeyError:
                 labels = None
             # This groupby iterates by row but we still need to grab the first
@@ -338,8 +306,10 @@ def cli(tissue, method):
             else:
                 j += 1
 
+            print(f'\tsubset: {subset}, groupby: {groupby}, plottype: {plottype}, j: {j}, i: {i}, n: {n}')
+
             if j == 0:
-                tex += tex_generator.section_tex
+                tex += tex_generator.subsection_tex
 
                 if subset != 'allcells':
                     try:
@@ -355,14 +325,12 @@ def cli(tissue, method):
                 else:
                     subset_annotation = annotation
 
-                try:
+                if 'expression' not in groupby_col:
                     counts = subset_annotation.groupby(groupby_col).size()
                     tex += tex_generator.make_table_tex(counts)
                     tex += r'''
 \newpage'''
-                except KeyError:
-                    # e.g. groupby_col = 'expression', then nothing to count
-                    pass
+
             else:
                 tex += r'''
 \newpage'''
@@ -373,10 +341,23 @@ def cli(tissue, method):
             prev_subset = subset
             prev_groupby = groupby
 
-        tex += ENDMATTER
         filename = f'{tissue}_{method}_auto_generated.tex'
         with open(filename, 'w') as f:
             f.write(tex)
+        tex_filenames.append(filename)
+
+    print(tex_filenames)
+    with open('tissue_supplement_template.tex') as f:
+        content = f.read()
+
+    include_commands = '\n'.join(['\include{' + x.split('.tex')[0] + '}'
+                                  for x in tex_filenames])
+    content = content.replace('%%% --- INCLUDE TISSUES HERE --- %',
+                              include_commands)
+
+    with open('tissue_supplement.tex', 'w') as g:
+        g.write(content)
+
 
 
 if __name__ == "__main__":
