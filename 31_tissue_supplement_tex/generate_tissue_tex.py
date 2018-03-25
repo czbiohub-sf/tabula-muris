@@ -269,7 +269,7 @@ def cli(figure_folder, tissue, method):
             # Microbiome doesn't have a yaml
             yaml_data = None
 
-        tex = f'''\\newpage
+        tex = f'''\\clearpage
 \section{{{tissue_tex} {method_tex(method)}}}
 '''
 
@@ -295,7 +295,7 @@ def cli(figure_folder, tissue, method):
         parameters['extra'] = parameters['extra'].fillna('')
         grouped = parameters.groupby(['subset', 'groupby', 'plottype', 'extra'])
 
-        # Section counter
+        # Section counterr
         j = 0
         prev_subset = ''
         prev_groupby = ''
@@ -304,7 +304,7 @@ def cli(figure_folder, tissue, method):
             # for column referencing
             if k > 0:
                 tex += r'''
-\newpage'''
+\clearpage'''
 
             groupby_col = groupby.replace('-', '.')
             try:
@@ -359,12 +359,12 @@ def cli(figure_folder, tissue, method):
                         # This is a custom plot and doesn't have a groupby
                         pass
                 tex += r'''
-\newpage'''
+\clearpage'''
 
 
             else:
                 tex += r'''
-\newpage'''
+\clearpage'''
 
             # Add section title and figure tex
             tex += tex_generator.figure_tex
