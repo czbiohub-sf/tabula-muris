@@ -63,7 +63,7 @@ get_valid_genes = function(tiss, genes_to_check){
       for (gene in genes_not_found){
             write(paste("This gene was not found in the data:", gene),
               stderr())
-          similar_genes = rownames(tiss@raw.data)[agrep(gene, rownames(tiss@raw.data))]
+          similar_genes = sort(rownames(tiss@raw.data)[agrep(gene, rownames(tiss@raw.data))])
             write(paste("\t", gene, "was not found, but here is a simlar name:",
                 paste(similar_genes, sep=', ')),
               stderr())
