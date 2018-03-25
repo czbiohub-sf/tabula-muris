@@ -243,6 +243,10 @@ def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
 @click.option('--tissue', default='all')
 @click.option('--method', default='all')
 def cli(figure_folder, tissue, method):
+    """Create per-tissue tex files
+    
+    Total number of tissue figures: 761
+    """
     tissue = '*' if tissue == 'all' else tissue
     method = '*' if method == 'all' else method.lower()
     globber = os.path.join('..', figure_folder, tissue, method)
@@ -294,13 +298,15 @@ def cli(figure_folder, tissue, method):
 
         # Remove legend figures because they're auto-added
         parameters = parameters.query('extra != "legend"')
-        parameters['extra'] = parameters['extra'].fillna('')
+        parameters.loc[:, 'extra'] = parameters['extra'].fillna('')
         grouped = parameters.groupby(['subset', 'groupby', 'plottype', 'extra'])
 
         # Section counterr
         j = 0
         prev_subset = ''
         prev_groupby = ''
+        figures_added = []
+
         for k, ((subset, groupby, plottype, extra), row) in enumerate(grouped):
             # Replaced dots with dashes for filenames, need to change back
             # for column referencing
@@ -349,6 +355,8 @@ def cli(figure_folder, tissue, method):
                     except KeyError:
                         column = 'cell_ontology_class'
                         value = subset.lower().replace('_', ' ').rstrip('s')
+                        if value.endswith('cell'):
+                            value = value.split('cell')[0] + ' cell'
                     subset_annotation = annotation.query(f'{column} == "{value}"')
                 else:
                     subset_annotation = annotation
@@ -373,6 +381,11 @@ def cli(figure_folder, tissue, method):
 
             prev_subset = subset
             prev_groupby = groupby
+            figures_added.append(pdf)
+
+        # figures_not_added = parameters.index.difference(figures_added)
+        # figures_not_added_str = '\n\t'.join(figures_not_added)
+        # print(f'Figures not added: {figures_not_added_str}')
 
         filename = f'{tissue}_{method}_auto_generated.tex'
         with open(filename, 'w') as f:
