@@ -178,7 +178,7 @@ class TeXGenerator:
     def subsubsection_title(self):
         title = self.plottype_title
         if self.is_iterative:
-            title += f' {self.i} of {self.n}'
+            title += f' ({self.i} of {self.n})'
         return title
 
     @property
