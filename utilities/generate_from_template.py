@@ -52,7 +52,7 @@ def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
         code += '''\n# Append this subset's groupby to the list
 group.bys = c(group.bys, "{groupby}")'''
 
-    code += '''dot_tsne_violin({name}.tiss, {name}.genes_to_check,
+    code += f'''dot_tsne_violin({name}.tiss, {name}.genes_to_check,
     save_folder, prefix = {name}, group.bys)
 '''
 
