@@ -29,7 +29,8 @@ GENES = "GENES"
 GROUPBY = "GROUPBY"
 CODE_FOLDER = '29_tissue-specific_supplement_code'
 
-DEFAULTS = {'res': 0.5, 'npcs': 20, 'genes': ['Actb'], 'groupby': None}
+DEFAULTS = {'res': 0.5, 'npcs': 20, 'genes': ['Actb'], 'groupby': None,
+            'perplexity': 30}
 
 
 def stringify_list(genes):
@@ -47,7 +48,7 @@ def clean_name(name):
 
 
 def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
-               groupby):
+               groupby, perplexity):
     """Add R code blocks for subsetting and reclustering"""
     name = clean_name(name)
 
