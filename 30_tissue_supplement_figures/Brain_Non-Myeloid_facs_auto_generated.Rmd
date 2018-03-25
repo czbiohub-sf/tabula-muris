@@ -332,7 +332,7 @@ ASTROCYTES.tiss <- ASTROCYTES.tiss %>% FindClusters(reduction.type = "pca", dims
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
 
 # Append this subset's groupby to the list
-group.bys = c(group.bys, "{groupby}")dot_tsne_violin({name}.tiss, {name}.genes_to_check,
-    save_folder, prefix = {name}, group.bys)
+group.bys = c(group.bys, "{groupby}")dot_tsne_violin(ASTROCYTES.tiss, ASTROCYTES.genes_to_check,
+    save_folder, prefix = "ASTROCYTES", group.bys)
 
 ```
