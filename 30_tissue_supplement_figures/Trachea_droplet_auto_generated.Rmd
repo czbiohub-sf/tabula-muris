@@ -52,8 +52,8 @@ write(paste("Number of cells in Epithelial subset:", length(Epithelial.cells.use
 # Highlight which cells are in this subset
     
 # palette = brewer.pal(3, "YlGnBu")
-colors.use = c('Coral', 'LightGray')
-tiss@meta.data[, "Epithelial"] = "Not in subset"
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "Epithelial"] = "(Not in subset)"
 tiss@meta.data[Epithelial.cells.use, "Epithelial"] = "Epithelial" 
 filename = make_filename(save_folder, prefix="Epithelial", 'highlighted', 
     'tsneplot_allcells')

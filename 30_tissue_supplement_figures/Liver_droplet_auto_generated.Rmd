@@ -55,8 +55,8 @@ group.bys = c(group.bys, "mouse.sex")
 # Highlight which cells are in this subset
     
 # palette = brewer.pal(3, "YlGnBu")
-colors.use = c('Coral', 'LightGray')
-tiss@meta.data[, "Hepatocytes"] = "Not in subset"
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "Hepatocytes"] = "(Not in subset)"
 tiss@meta.data[Hepatocytes.cells.use, "Hepatocytes"] = "Hepatocytes" 
 filename = make_filename(save_folder, prefix="Hepatocytes", 'highlighted', 
     'tsneplot_allcells')

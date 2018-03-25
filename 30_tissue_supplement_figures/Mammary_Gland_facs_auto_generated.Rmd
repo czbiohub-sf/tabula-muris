@@ -52,8 +52,8 @@ write(paste("Number of cells in Basal subset:", length(Basal.cells.use)), stderr
 # Highlight which cells are in this subset
     
 # palette = brewer.pal(3, "YlGnBu")
-colors.use = c('Coral', 'LightGray')
-tiss@meta.data[, "Basal"] = "Not in subset"
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "Basal"] = "(Not in subset)"
 tiss@meta.data[Basal.cells.use, "Basal"] = "Basal" 
 filename = make_filename(save_folder, prefix="Basal", 'highlighted', 
     'tsneplot_allcells')

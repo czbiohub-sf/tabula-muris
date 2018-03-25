@@ -52,8 +52,8 @@ write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), st
 # Highlight which cells are in this subset
     
 # palette = brewer.pal(3, "YlGnBu")
-colors.use = c('Coral', 'LightGray')
-tiss@meta.data[, "SubsetA"] = "Not in subset"
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetA"] = "(Not in subset)"
 tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
 filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells')
@@ -88,8 +88,8 @@ write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), st
 # Highlight which cells are in this subset
     
 # palette = brewer.pal(3, "YlGnBu")
-colors.use = c('Coral', 'LightGray')
-tiss@meta.data[, "SubsetB"] = "Not in subset"
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetB"] = "(Not in subset)"
 tiss@meta.data[SubsetB.cells.use, "SubsetB"] = "SubsetB" 
 filename = make_filename(save_folder, prefix="SubsetB", 'highlighted', 
     'tsneplot_allcells')
@@ -124,8 +124,8 @@ write(paste("Number of cells in SubsetC subset:", length(SubsetC.cells.use)), st
 # Highlight which cells are in this subset
     
 # palette = brewer.pal(3, "YlGnBu")
-colors.use = c('Coral', 'LightGray')
-tiss@meta.data[, "SubsetC"] = "Not in subset"
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetC"] = "(Not in subset)"
 tiss@meta.data[SubsetC.cells.use, "SubsetC"] = "SubsetC" 
 filename = make_filename(save_folder, prefix="SubsetC", 'highlighted', 
     'tsneplot_allcells')
@@ -160,8 +160,8 @@ write(paste("Number of cells in SubsetD subset:", length(SubsetD.cells.use)), st
 # Highlight which cells are in this subset
     
 # palette = brewer.pal(3, "YlGnBu")
-colors.use = c('Coral', 'LightGray')
-tiss@meta.data[, "SubsetD"] = "Not in subset"
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetD"] = "(Not in subset)"
 tiss@meta.data[SubsetD.cells.use, "SubsetD"] = "SubsetD" 
 filename = make_filename(save_folder, prefix="SubsetD", 'highlighted', 
     'tsneplot_allcells')
@@ -196,8 +196,8 @@ write(paste("Number of cells in SubsetE subset:", length(SubsetE.cells.use)), st
 # Highlight which cells are in this subset
     
 # palette = brewer.pal(3, "YlGnBu")
-colors.use = c('Coral', 'LightGray')
-tiss@meta.data[, "SubsetE"] = "Not in subset"
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetE"] = "(Not in subset)"
 tiss@meta.data[SubsetE.cells.use, "SubsetE"] = "SubsetE" 
 filename = make_filename(save_folder, prefix="SubsetE", 'highlighted', 
     'tsneplot_allcells')
