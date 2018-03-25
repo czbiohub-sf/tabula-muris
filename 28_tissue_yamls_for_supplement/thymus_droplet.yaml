@@ -1,5 +1,6 @@
 ---
 GENES:
+- C3
 - Cd14
 - Cd19
 - Cd27
@@ -17,25 +18,22 @@ GENES:
 - Ets1
 - H2-Aa
 - H2-Ab1
+- Igfb7
 - Il2ra
 - Il2rb
 - Itgax
 - Krt5
 - Krt8
 - Mki67
+- Pdgfrb
 - Ptcra
 - Ptprc
 - Rag1
 - Rag2
+- Runx3
 - Top2a
 - Vim
 - Zbtb7b
-- Runx3
-- Pdgfrb
-- Igfb7
-- C3
-- Krt5
-- Krt8
 GROUPBY: null
 METHOD: droplet
 NPCS: 10
