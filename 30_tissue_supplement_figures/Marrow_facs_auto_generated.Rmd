@@ -68,7 +68,7 @@ p = TSNEPlot(
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
-    save_folder, prefix = "SubsetA", group.bys, facs)
+    save_folder, prefix = "SubsetA", group.bys, "facs")
 
 ```
 ## Subset: SUBSETB
@@ -106,7 +106,7 @@ p = TSNEPlot(
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
-    save_folder, prefix = "SubsetB", group.bys, facs)
+    save_folder, prefix = "SubsetB", group.bys, "facs")
 
 ```
 ## Subset: SUBSETC
@@ -144,7 +144,7 @@ p = TSNEPlot(
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
-    save_folder, prefix = "SubsetC", group.bys, facs)
+    save_folder, prefix = "SubsetC", group.bys, "facs")
 
 ```
 ## Subset: SUBSETD
@@ -182,7 +182,7 @@ p = TSNEPlot(
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
-    save_folder, prefix = "SubsetD", group.bys, facs)
+    save_folder, prefix = "SubsetD", group.bys, "facs")
 
 ```
 ## Subset: SUBSETE
@@ -220,6 +220,6 @@ p = TSNEPlot(
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetE.tiss, SubsetE.genes_to_check,
-    save_folder, prefix = "SubsetE", group.bys, facs)
+    save_folder, prefix = "SubsetE", group.bys, "facs")
 
 ```
