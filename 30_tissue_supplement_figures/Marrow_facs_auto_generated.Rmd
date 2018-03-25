@@ -37,6 +37,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ```{r}
 SUBSETA.cells.use = rownames(tiss@meta.data)[grep("c(11,12)",tiss@meta.data$cluster.ids)]
+write(paste("Number of cells in SUBSETA subset:", length(SUBSETA.cells.use)), stderr())
 SUBSETA.n.pcs = 4
 SUBSETA.res.use = 1
 SUBSETA.perplexity = 30
@@ -56,6 +57,7 @@ dot_tsne_ridge(SUBSETA.tiss, SUBSETA.genes_to_check,
 
 ```{r}
 SUBSETB.cells.use = rownames(tiss@meta.data)[grep("0",tiss@meta.data$cluster.ids)]
+write(paste("Number of cells in SUBSETB subset:", length(SUBSETB.cells.use)), stderr())
 SUBSETB.n.pcs = 3
 SUBSETB.res.use = 1
 SUBSETB.perplexity = 30
@@ -75,6 +77,7 @@ dot_tsne_ridge(SUBSETB.tiss, SUBSETB.genes_to_check,
 
 ```{r}
 SUBSETC.cells.use = rownames(tiss@meta.data)[grep("8",tiss@meta.data$cluster.ids)]
+write(paste("Number of cells in SUBSETC subset:", length(SUBSETC.cells.use)), stderr())
 SUBSETC.n.pcs = 4
 SUBSETC.res.use = 1
 SUBSETC.perplexity = 30
@@ -94,6 +97,7 @@ dot_tsne_ridge(SUBSETC.tiss, SUBSETC.genes_to_check,
 
 ```{r}
 SUBSETD.cells.use = rownames(tiss@meta.data)[grep("0",tiss@meta.data$cluster.ids)]
+write(paste("Number of cells in SUBSETD subset:", length(SUBSETD.cells.use)), stderr())
 SUBSETD.n.pcs = 20
 SUBSETD.res.use = 1
 SUBSETD.perplexity = 30
@@ -113,6 +117,7 @@ dot_tsne_ridge(SUBSETD.tiss, SUBSETD.genes_to_check,
 
 ```{r}
 SUBSETE.cells.use = rownames(tiss@meta.data)[grep("7",tiss@meta.data$cluster.ids)]
+write(paste("Number of cells in SUBSETE subset:", length(SUBSETE.cells.use)), stderr())
 SUBSETE.n.pcs = 20
 SUBSETE.res.use = 1
 SUBSETE.perplexity = 30

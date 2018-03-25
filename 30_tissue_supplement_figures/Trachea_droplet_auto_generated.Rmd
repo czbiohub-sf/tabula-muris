@@ -37,6 +37,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ```{r}
 EPITHELIAL.cells.use = rownames(tiss@meta.data)[grep("epithelial cell",tiss@meta.data$cell_ontology_class)]
+write(paste("Number of cells in EPITHELIAL subset:", length(EPITHELIAL.cells.use)), stderr())
 EPITHELIAL.n.pcs = 2
 EPITHELIAL.res.use = 0.2
 EPITHELIAL.perplexity = 30
