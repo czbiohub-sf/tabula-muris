@@ -229,7 +229,7 @@ def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
 
 
 @click.command()
-@click.option('--figure_folder', default=FIGURE_FOLDER)
+@click.option('--figure-folder', default=FIGURE_FOLDER)
 @click.option('--tissue', default='all')
 @click.option('--method', default='all')
 def cli(figure_folder, tissue, method):
