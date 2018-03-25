@@ -56,6 +56,25 @@ write_caption = function(caption, pdf_name){
   write(caption, sub('.pdf', '.txt', pdf_name))
 }
 
+get_valid_genes = function(tiss, genes_to_check){
+  genes_not_found = setdiff(genes_to_check, rownames(tiss@scale.data))
+
+    if (length(genes_not_found) > 0){
+      for (gene in genes_not_found){
+            write(paste("This gene was not found in the data:", gene),
+              stderr())
+          similar_genes = rownames(tiss@raw.data)[agrep(gene, rownames(tiss@raw.data))]
+            write(paste("\t", gene, "was not found, but here is a simlar name:",
+                paste(similar_genes, sep=', ')),
+              stderr())
+
+      }
+
+  }
+    genes_to_check = intersect(genes_to_check, rownames(tiss@scale.data))
+  return(genes_to_check)
+}
+
 # Make all supplemental figures for a tiss object
 dot_tsne_ridge = function(tiss,
                            genes_to_check,
@@ -63,12 +82,8 @@ dot_tsne_ridge = function(tiss,
                            prefix,
                            group.bys,
                            method = 'facs') {
-  genes_not_found = setdiff(genes_to_check, rownames(tiss@scale.data))
-  genes_to_check = intersect(genes_to_check, rownames(tiss@scale.data))
+  genes_to_check = get_valid_genes(tiss, genes_to_check)
 
-  if (length(genes_not_found) > 0){
-    write(paste("This gene was not found in the data:", genes_not_found), stderr())
-  }
 
   if (method == 'facs') {
     expression_unit = 'log(CPM)'
