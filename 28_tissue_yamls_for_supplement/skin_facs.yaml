@@ -6,9 +6,9 @@ GENES:
 - Itga6
 - Krt10
 - Krt14
+- Mki67
 - Ptprc
 - Top2a
-- Mki67
 GROUPBY: subtissue
 METHOD: facs
 NPCS: 5
