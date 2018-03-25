@@ -49,7 +49,8 @@ HEPATOCYTES.tiss <- HEPATOCYTES.tiss %>% FindClusters(reduction.type = "pca", di
     RunTSNE(dims.use = 1:HEPATOCYTES.n.pcs, seed.use = 10, perplexity=30)
 
 # Append this subset's groupby to the list
-group.bys = c(group.bys, "{groupby}")dot_tsne_violin(HEPATOCYTES.tiss, HEPATOCYTES.genes_to_check,
+group.bys = c(group.bys, "mouse.sex")
+dot_tsne_ridge(HEPATOCYTES.tiss, HEPATOCYTES.genes_to_check,
     save_folder, prefix = "HEPATOCYTES", group.bys)
 
 ```
