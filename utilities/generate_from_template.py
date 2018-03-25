@@ -55,7 +55,7 @@ def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
     # If there are no digits in the label, then this is a string so stringify
     try:
         if len(re.findall('\d', filter_value)) == 0:
-            filter_value = f'"{filter_value}'
+            filter_value = f'"{filter_value}"'
     except TypeError:
         # This is an integer, no modification needed
         pass
