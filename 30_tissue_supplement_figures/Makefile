@@ -16,7 +16,7 @@ clean:
 	rm -rf *.out *.err
 
 run_rmd: clean
-	cp -r ../27_tissue_additional_figures .
+	cp -r ../27_tissue_additional_figures/* .
 	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 ../utilities/run_rmds.py
 
 
