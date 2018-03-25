@@ -348,7 +348,7 @@ filename = make_filename(save_folder, prefix="Astrocytes", 'highlighted',
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
-  group.by = Astrocytes,
+  group.by = "Astrocytes",
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
