@@ -64,8 +64,31 @@ p = TSNEPlot(
   pt.size = 1,
   no.legend = TRUE,
   colors.use = colors.use
-)
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = group.by.plus,
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
     save_folder, prefix = "SubsetA", group.bys, "facs")
 
@@ -101,8 +124,31 @@ p = TSNEPlot(
   pt.size = 1,
   no.legend = TRUE,
   colors.use = colors.use
-)
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetB", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = group.by.plus,
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
 dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
     save_folder, prefix = "SubsetB", group.bys, "facs")
 
@@ -138,8 +184,31 @@ p = TSNEPlot(
   pt.size = 1,
   no.legend = TRUE,
   colors.use = colors.use
-)
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetC", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = group.by.plus,
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
 dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
     save_folder, prefix = "SubsetC", group.bys, "facs")
 
@@ -175,8 +244,31 @@ p = TSNEPlot(
   pt.size = 1,
   no.legend = TRUE,
   colors.use = colors.use
-)
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetD", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = group.by.plus,
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
 dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
     save_folder, prefix = "SubsetD", group.bys, "facs")
 
@@ -212,8 +304,31 @@ p = TSNEPlot(
   pt.size = 1,
   no.legend = TRUE,
   colors.use = colors.use
-)
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetE", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = group.by.plus,
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
 dot_tsne_ridge(SubsetE.tiss, SubsetE.genes_to_check,
     save_folder, prefix = "SubsetE", group.bys, "facs")
 
