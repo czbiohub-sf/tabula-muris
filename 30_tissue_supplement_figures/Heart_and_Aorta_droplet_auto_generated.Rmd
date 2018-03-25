@@ -38,20 +38,19 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 2]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
-# SubsetA.n.pcs = 5
-# SubsetA.res.use = 1
-# SubsetA.perplexity = 30
-# SubsetA.genes_to_check = c("Dcn", "Myh11")
-# SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
-# SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
-#   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-#   RunPCA(do.print = FALSE)
-# SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
-#     resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
-#     RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
+SubsetA.n.pcs = 5
+SubsetA.res.use = 1
+SubsetA.perplexity = 30
+SubsetA.genes_to_check = c("Dcn", "Myh11")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
+    resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
 # Highlight which cells are in this subset
     
-# palette = brewer.pal(3, "YlGnBu")
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetA"] = "(Not in subset)"
 tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
@@ -67,5 +66,7 @@ p = TSNEPlot(
   colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA", group.bys, "droplet")
 
 ```

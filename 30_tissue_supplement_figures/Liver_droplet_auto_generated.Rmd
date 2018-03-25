@@ -38,23 +38,22 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "hepatocyte"]
 write(paste("Number of cells in Hepatocytes subset:", length(Hepatocytes.cells.use)), stderr())
-# Hepatocytes.n.pcs = 8
-# Hepatocytes.res.use = 0.5
-# Hepatocytes.perplexity = 30
-# Hepatocytes.genes_to_check = c("A1bg", "Cyp2c69", "Cyp2d9", "Mup1", "Mup12", "Mup20", "Mup21", "Xist")
-# Hepatocytes.tiss = SubsetData(tiss, cells.use=Hepatocytes.cells.use, )
-# Hepatocytes.tiss <- Hepatocytes.tiss %>% ScaleData() %>% 
-#   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-#   RunPCA(do.print = FALSE)
-# Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Hepatocytes.n.pcs, 
-#     resolution = Hepatocytes.res.use, print.output = 0, save.SNN = TRUE) %>%
-#     RunTSNE(dims.use = 1:Hepatocytes.n.pcs, seed.use = 10, perplexity=Hepatocytes.perplexity)
+Hepatocytes.n.pcs = 8
+Hepatocytes.res.use = 0.5
+Hepatocytes.perplexity = 30
+Hepatocytes.genes_to_check = c("A1bg", "Cyp2c69", "Cyp2d9", "Mup1", "Mup12", "Mup20", "Mup21", "Xist")
+Hepatocytes.tiss = SubsetData(tiss, cells.use=Hepatocytes.cells.use, )
+Hepatocytes.tiss <- Hepatocytes.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Hepatocytes.n.pcs, 
+    resolution = Hepatocytes.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:Hepatocytes.n.pcs, seed.use = 10, perplexity=Hepatocytes.perplexity)
 
 # Append this subset's groupby to the list
 group.bys = c(group.bys, "mouse.sex")
 # Highlight which cells are in this subset
     
-# palette = brewer.pal(3, "YlGnBu")
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "Hepatocytes"] = "(Not in subset)"
 tiss@meta.data[Hepatocytes.cells.use, "Hepatocytes"] = "Hepatocytes" 
@@ -70,5 +69,7 @@ p = TSNEPlot(
   colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
+dot_tsne_ridge(Hepatocytes.tiss, Hepatocytes.genes_to_check,
+    save_folder, prefix = "Hepatocytes", group.bys, "droplet")
 
 ```
