@@ -39,6 +39,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 EPITHELIAL.cells.use = rownames(tiss@meta.data)[grep("epithelial cell",tiss@meta.data$cell_ontology_class)]
 EPITHELIAL.n.pcs = 2
 EPITHELIAL.res.use = 0.2
+EPITHELIAL.perplexity = 30
 EPITHELIAL.genes_to_check = c("Foxj1", "Krt14", "Krt5", "Scgb1a1")
 EPITHELIAL.tiss = SubsetData(tiss, cells.use=EPITHELIAL.cells.use, )
 EPITHELIAL.tiss <- EPITHELIAL.tiss %>% ScaleData() %>% 
@@ -46,7 +47,7 @@ EPITHELIAL.tiss <- EPITHELIAL.tiss %>% ScaleData() %>%
   RunPCA(do.print = FALSE)
 EPITHELIAL.tiss <- EPITHELIAL.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:EPITHELIAL.n.pcs, 
     resolution = EPITHELIAL.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:EPITHELIAL.n.pcs, seed.use = 10, perplexity=30)
+    RunTSNE(dims.use = 1:EPITHELIAL.n.pcs, seed.use = 10, perplexity=EPITHELIAL.perplexity)
 dot_tsne_ridge(EPITHELIAL.tiss, EPITHELIAL.genes_to_check,
     save_folder, prefix = "EPITHELIAL", group.bys)
 

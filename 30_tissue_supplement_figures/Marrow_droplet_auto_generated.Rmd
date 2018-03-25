@@ -39,6 +39,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 SUBSETA.cells.use = rownames(tiss@meta.data)[grep("2",tiss@meta.data$cluster.ids)]
 SUBSETA.n.pcs = 6
 SUBSETA.res.use = 0.5
+SUBSETA.perplexity = 30
 SUBSETA.genes_to_check = c("A430084P05Rik", "Adamts14", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cma1", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Emr1", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgax", "Itgb7", "Khdc1a", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ncr1", "Ngp", "Nkg7", "Pax5", "Pld4", "Prf1", "Rag1", "Rag2", "Rrm2", "Serpinb9", "Sh2d1b1", "Stmn1", "Styk1", "Tcf7", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
 SUBSETA.tiss = SubsetData(tiss, cells.use=SUBSETA.cells.use, )
 SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>% 
@@ -46,7 +47,7 @@ SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>%
   RunPCA(do.print = FALSE)
 SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETA.n.pcs, 
     resolution = SUBSETA.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=30)
+    RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=SUBSETA.perplexity)
 dot_tsne_ridge(SUBSETA.tiss, SUBSETA.genes_to_check,
     save_folder, prefix = "SUBSETA", group.bys)
 
@@ -57,6 +58,7 @@ dot_tsne_ridge(SUBSETA.tiss, SUBSETA.genes_to_check,
 SUBSETB.cells.use = rownames(tiss@meta.data)[grep("11",tiss@meta.data$cluster.ids)]
 SUBSETB.n.pcs = 3
 SUBSETB.res.use = 1
+SUBSETB.perplexity = 30
 SUBSETB.genes_to_check = c("A430084P05Rik", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il10", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgb7", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ngp", "Nkg7", "Pld4", "Prf1", "Rag2", "Rrm2", "Serpinb9", "Stmn1", "Tcf7", "Tgfb1", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
 SUBSETB.tiss = SubsetData(tiss, cells.use=SUBSETB.cells.use, )
 SUBSETB.tiss <- SUBSETB.tiss %>% ScaleData() %>% 
@@ -64,7 +66,7 @@ SUBSETB.tiss <- SUBSETB.tiss %>% ScaleData() %>%
   RunPCA(do.print = FALSE)
 SUBSETB.tiss <- SUBSETB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETB.n.pcs, 
     resolution = SUBSETB.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETB.n.pcs, seed.use = 10, perplexity=30)
+    RunTSNE(dims.use = 1:SUBSETB.n.pcs, seed.use = 10, perplexity=SUBSETB.perplexity)
 dot_tsne_ridge(SUBSETB.tiss, SUBSETB.genes_to_check,
     save_folder, prefix = "SUBSETB", group.bys)
 

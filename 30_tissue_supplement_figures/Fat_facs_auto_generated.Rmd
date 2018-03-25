@@ -39,6 +39,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 SUBSETA.cells.use = rownames(tiss@meta.data)[grep("5",tiss@meta.data$cluster.ids)]
 SUBSETA.n.pcs = 6
 SUBSETA.res.use = 0.5
+SUBSETA.perplexity = 30
 SUBSETA.genes_to_check = c("Areg", "C1qa", "Cd14", "Cd19", "Cd3g", "Cd4", "Cd68", "Cd8a", "Emr1", "Gzma", "Irf8", "Itgam", "Lyz2", "Ncr1", "Nkg7", "Ptprc")
 SUBSETA.tiss = SubsetData(tiss, cells.use=SUBSETA.cells.use, )
 SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>% 
@@ -46,7 +47,7 @@ SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>%
   RunPCA(do.print = FALSE)
 SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETA.n.pcs, 
     resolution = SUBSETA.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=30)
+    RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=SUBSETA.perplexity)
 dot_tsne_ridge(SUBSETA.tiss, SUBSETA.genes_to_check,
     save_folder, prefix = "SUBSETA", group.bys)
 
