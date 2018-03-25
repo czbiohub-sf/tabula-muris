@@ -58,8 +58,8 @@ palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "Hepatocytes"] = NA
 tiss@meta.data[Hepatocytes.cells.use, "Hepatocytes"] = "Hepatocytes" 
-filename = make_filename(save_folder, prefix="Hepatocytes", group.by, 
-    'tsneplot_allcells_highlighted')
+filename = make_filename(save_folder, prefix="Hepatocytes", 'highlighted', 
+    'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,

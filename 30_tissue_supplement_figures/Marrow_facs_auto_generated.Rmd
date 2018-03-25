@@ -55,8 +55,8 @@ palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetA"] = NA
 tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
-filename = make_filename(save_folder, prefix="SubsetA", group.by, 
-    'tsneplot_allcells_highlighted')
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
+    'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
@@ -93,8 +93,8 @@ palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetB"] = NA
 tiss@meta.data[SubsetB.cells.use, "SubsetB"] = "SubsetB" 
-filename = make_filename(save_folder, prefix="SubsetB", group.by, 
-    'tsneplot_allcells_highlighted')
+filename = make_filename(save_folder, prefix="SubsetB", 'highlighted', 
+    'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
@@ -131,8 +131,8 @@ palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetC"] = NA
 tiss@meta.data[SubsetC.cells.use, "SubsetC"] = "SubsetC" 
-filename = make_filename(save_folder, prefix="SubsetC", group.by, 
-    'tsneplot_allcells_highlighted')
+filename = make_filename(save_folder, prefix="SubsetC", 'highlighted', 
+    'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
@@ -169,8 +169,8 @@ palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetD"] = NA
 tiss@meta.data[SubsetD.cells.use, "SubsetD"] = "SubsetD" 
-filename = make_filename(save_folder, prefix="SubsetD", group.by, 
-    'tsneplot_allcells_highlighted')
+filename = make_filename(save_folder, prefix="SubsetD", 'highlighted', 
+    'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
@@ -207,8 +207,8 @@ palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetE"] = NA
 tiss@meta.data[SubsetE.cells.use, "SubsetE"] = "SubsetE" 
-filename = make_filename(save_folder, prefix="SubsetE", group.by, 
-    'tsneplot_allcells_highlighted')
+filename = make_filename(save_folder, prefix="SubsetE", 'highlighted', 
+    'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,

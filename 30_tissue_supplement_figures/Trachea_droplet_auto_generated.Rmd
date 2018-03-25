@@ -55,8 +55,8 @@ palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "Epithelial"] = NA
 tiss@meta.data[Epithelial.cells.use, "Epithelial"] = "Epithelial" 
-filename = make_filename(save_folder, prefix="Epithelial", group.by, 
-    'tsneplot_allcells_highlighted')
+filename = make_filename(save_folder, prefix="Epithelial", 'highlighted', 
+    'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
