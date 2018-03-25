@@ -160,6 +160,8 @@ class TeXGenerator:
             return 'width=.75\\textwidth'
         if self.plottype == 'dotplot':
             return 'angle=90, height=.7\\textheight'
+        else:
+            return 'width=\\textwidth'
 
     @property
     def legend(self):
