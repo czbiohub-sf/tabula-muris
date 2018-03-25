@@ -3,6 +3,8 @@ GENES:
 - Ager
 - Calca
 - Ccr2
+- Cd11b
+- Cd11c
 - Cd14
 - Cd19
 - Cd200r3
@@ -11,14 +13,10 @@ GENES:
 - Cd68
 - Cd79a
 - Cd8a
-- Cd11c
-- Cxcr4
-- Ly6g
-- Mrc1
-- Cd11b
 - Col1a1
 - Csf1r
 - Cx3cr1
+- Cxcr4
 - Epcam
 - Foxj1
 - H2-Aa
@@ -27,6 +25,7 @@ GENES:
 - Klrb1c
 - Krt5
 - Ly6c2
+- Ly6g
 - Marco
 - Mrc1
 - Pdpn
