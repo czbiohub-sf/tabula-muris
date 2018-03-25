@@ -321,6 +321,7 @@ write_caption("Key defining genes for function and vessel type.", filename)
 
 ```{r}
 ASTROCYTES.cells.use = rownames(tiss@meta.data)[grep("astrocyte",tiss@meta.data$cell_ontology_class)]
+write(paste("Number of cells in ASTROCYTES subset:", length(ASTROCYTES.cells.use)), stderr())
 ASTROCYTES.n.pcs = 10
 ASTROCYTES.res.use = 1
 ASTROCYTES.perplexity = 30
