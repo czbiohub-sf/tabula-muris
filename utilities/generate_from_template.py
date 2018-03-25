@@ -86,8 +86,8 @@ palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "{name}"] = NA
 tiss@meta.data[{name}.cells.use, "{name}"] = "{name}" 
-filename = make_filename(save_folder, prefix="{name}", group.by, 
-    'tsneplot_allcells_highlighted')
+filename = make_filename(save_folder, prefix="{name}", 'highlighted', 
+    'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
