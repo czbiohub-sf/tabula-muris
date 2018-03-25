@@ -304,7 +304,7 @@ def cli(figure_folder, tissue, method):
                 except TypeError:
                     groupby_unique = annotation[groupby_col].astype(str).unique()
                     labels = sorted(groupby_unique)
-            except KeyError:
+            except (KeyError, TypeError):
                 labels = None
             # This groupby iterates by row but we still need to grab the first
             # item because pandas doesn't cast the row to a vector
@@ -324,7 +324,7 @@ def cli(figure_folder, tissue, method):
 
             print(f'\tsubset: {subset}, groupby: {groupby}, plottype: {plottype}, k: {k}, j: {j}, i: {i}, n: {n}')
 
-            if j == 0:
+            if j == 0 and tissue != 'Microbiome':
                 tex += tex_generator.subsection_tex
 
                 if subset != 'allcells':
@@ -342,10 +342,15 @@ def cli(figure_folder, tissue, method):
                     subset_annotation = annotation
 
                 if 'expression' not in groupby_col:
-                    counts = subset_annotation.groupby(groupby_col).size()
-                    tex += tex_generator.make_table_tex(counts)
-                    tex += r'''
+                    try:
+                        counts = subset_annotation.groupby(groupby_col).size()
+                        tex += tex_generator.make_table_tex(counts)
+                    except KeyError:
+                        # This is a custom plot and doesn't have a groupby
+                        pass
+                tex += r'''
 \newpage'''
+
 
             else:
                 tex += r'''
