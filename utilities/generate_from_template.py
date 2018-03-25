@@ -43,9 +43,9 @@ def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
 {name}.tiss <- {name}.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-{name}.tiss <- {name}.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+{name}.tiss <- {name}.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:{name}.n.pcs, 
+    resolution = {name}.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:{name}.sub.n.pcs, seed.use = 10, perplexity=30)
 """
     if groupby is not None:
         # Append this subset's groupby to the list
