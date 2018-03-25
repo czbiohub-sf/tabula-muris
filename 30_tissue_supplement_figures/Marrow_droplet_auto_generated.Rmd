@@ -38,22 +38,22 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 2]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
-SubsetA.n.pcs = 6
-SubsetA.res.use = 0.5
-SubsetA.perplexity = 30
-SubsetA.genes_to_check = c("A430084P05Rik", "Adamts14", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cma1", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Emr1", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgax", "Itgb7", "Khdc1a", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ncr1", "Ngp", "Nkg7", "Pax5", "Pld4", "Prf1", "Rag1", "Rag2", "Rrm2", "Serpinb9", "Sh2d1b1", "Stmn1", "Styk1", "Tcf7", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
-SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
-SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
-  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-  RunPCA(do.print = FALSE)
-SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
-    resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
+# SubsetA.n.pcs = 6
+# SubsetA.res.use = 0.5
+# SubsetA.perplexity = 30
+# SubsetA.genes_to_check = c("A430084P05Rik", "Adamts14", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cma1", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Emr1", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgax", "Itgb7", "Khdc1a", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ncr1", "Ngp", "Nkg7", "Pax5", "Pld4", "Prf1", "Rag1", "Rag2", "Rrm2", "Serpinb9", "Sh2d1b1", "Stmn1", "Styk1", "Tcf7", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
+# SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+# SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
+#   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+#   RunPCA(do.print = FALSE)
+# SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
+#     resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
+#     RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
 # Highlight which cells are in this subset
     
 palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
-tiss@meta.data[, "SubsetA"] = NA
+tiss@meta.data[, "SubsetA"] = "Not in subset"
 tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
 filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells')
@@ -67,8 +67,6 @@ p = TSNEPlot(
   colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
-dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
-    save_folder, prefix = "SubsetA", group.bys, "droplet")
 
 ```
 ## Subset: SUBSETB
@@ -76,22 +74,22 @@ dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
 ```{r}
 SubsetB.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 11]
 write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), stderr())
-SubsetB.n.pcs = 3
-SubsetB.res.use = 1
-SubsetB.perplexity = 30
-SubsetB.genes_to_check = c("A430084P05Rik", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il10", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgb7", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ngp", "Nkg7", "Pld4", "Prf1", "Rag2", "Rrm2", "Serpinb9", "Stmn1", "Tcf7", "Tgfb1", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
-SubsetB.tiss = SubsetData(tiss, cells.use=SubsetB.cells.use, )
-SubsetB.tiss <- SubsetB.tiss %>% ScaleData() %>% 
-  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-  RunPCA(do.print = FALSE)
-SubsetB.tiss <- SubsetB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetB.n.pcs, 
-    resolution = SubsetB.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SubsetB.n.pcs, seed.use = 10, perplexity=SubsetB.perplexity)
+# SubsetB.n.pcs = 3
+# SubsetB.res.use = 1
+# SubsetB.perplexity = 30
+# SubsetB.genes_to_check = c("A430084P05Rik", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il10", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgb7", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ngp", "Nkg7", "Pld4", "Prf1", "Rag2", "Rrm2", "Serpinb9", "Stmn1", "Tcf7", "Tgfb1", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
+# SubsetB.tiss = SubsetData(tiss, cells.use=SubsetB.cells.use, )
+# SubsetB.tiss <- SubsetB.tiss %>% ScaleData() %>% 
+#   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+#   RunPCA(do.print = FALSE)
+# SubsetB.tiss <- SubsetB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetB.n.pcs, 
+#     resolution = SubsetB.res.use, print.output = 0, save.SNN = TRUE) %>%
+#     RunTSNE(dims.use = 1:SubsetB.n.pcs, seed.use = 10, perplexity=SubsetB.perplexity)
 # Highlight which cells are in this subset
     
 palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
-tiss@meta.data[, "SubsetB"] = NA
+tiss@meta.data[, "SubsetB"] = "Not in subset"
 tiss@meta.data[SubsetB.cells.use, "SubsetB"] = "SubsetB" 
 filename = make_filename(save_folder, prefix="SubsetB", 'highlighted', 
     'tsneplot_allcells')
@@ -105,7 +103,5 @@ p = TSNEPlot(
   colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
-dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
-    save_folder, prefix = "SubsetB", group.bys, "droplet")
 
 ```
