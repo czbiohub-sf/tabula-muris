@@ -327,8 +327,8 @@ def cli(figure_folder, tissue, method):
             # This groupby iterates by row but we still need to grab the first
             # item because pandas doesn't cast the row to a vector
             pdf = os.path.join(tissue_method_path, row.index[0])
-            i = row['i'].iloc[0] if pd.notnull(row['i']).all() else None
-            n = row['n'].iloc[0] if pd.notnull(row['n']).all() else None
+            i = int(row['i'].iloc[0]) if pd.notnull(row['i']).all() else None
+            n = int(row['n'].iloc[0]) if pd.notnull(row['n']).all() else None
             tex_generator = TeXGenerator(pdf, plottype, tissue,
                                         method, subset, groupby,
                                         i=i, n=n,
