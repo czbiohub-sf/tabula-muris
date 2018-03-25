@@ -37,6 +37,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ```{r}
 BASAL.cells.use = rownames(tiss@meta.data)[grep("basal",tiss@meta.data$cell_ontology_class)]
+write(paste("Number of cells in BASAL subset:", length(BASAL.cells.use)), stderr())
 BASAL.n.pcs = 10
 BASAL.res.use = 0.5
 BASAL.perplexity = 30

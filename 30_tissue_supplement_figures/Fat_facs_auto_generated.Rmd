@@ -37,6 +37,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ```{r}
 SUBSETA.cells.use = rownames(tiss@meta.data)[grep("5",tiss@meta.data$cluster.ids)]
+write(paste("Number of cells in SUBSETA subset:", length(SUBSETA.cells.use)), stderr())
 SUBSETA.n.pcs = 6
 SUBSETA.res.use = 0.5
 SUBSETA.perplexity = 30

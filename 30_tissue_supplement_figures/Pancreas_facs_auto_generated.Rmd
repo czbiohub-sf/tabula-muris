@@ -112,6 +112,7 @@ write_caption("\\emph{Prss53} transcripts are only detected in islet beta cells.
 
 ```{r}
 HEPATOCYTES.cells.use = rownames(tiss@meta.data)[grep("c(1,2,5)",tiss@meta.data$cluster.ids)]
+write(paste("Number of cells in HEPATOCYTES subset:", length(HEPATOCYTES.cells.use)), stderr())
 HEPATOCYTES.n.pcs = 8
 HEPATOCYTES.res.use = 1
 HEPATOCYTES.perplexity = 30

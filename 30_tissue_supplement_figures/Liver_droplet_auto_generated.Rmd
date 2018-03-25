@@ -37,6 +37,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ```{r}
 HEPATOCYTES.cells.use = rownames(tiss@meta.data)[grep("hepatocyte",tiss@meta.data$cell_ontology_class)]
+write(paste("Number of cells in HEPATOCYTES subset:", length(HEPATOCYTES.cells.use)), stderr())
 HEPATOCYTES.n.pcs = 8
 HEPATOCYTES.res.use = 0.5
 HEPATOCYTES.perplexity = 30
