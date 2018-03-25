@@ -44,9 +44,9 @@ SUBSETA.tiss = SubsetData(tiss, cells.use=SUBSETA.cells.use, )
 SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETA.n.pcs, 
+    resolution = SUBSETA.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETA.sub.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETA.tiss, SUBSETA.genes_to_check,
     save_folder, prefix = "SUBSETA", group.bys)
 
@@ -62,9 +62,9 @@ SUBSETB.tiss = SubsetData(tiss, cells.use=SUBSETB.cells.use, )
 SUBSETB.tiss <- SUBSETB.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-SUBSETB.tiss <- SUBSETB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+SUBSETB.tiss <- SUBSETB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETB.n.pcs, 
+    resolution = SUBSETB.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETB.sub.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETB.tiss, SUBSETB.genes_to_check,
     save_folder, prefix = "SUBSETB", group.bys)
 
@@ -80,9 +80,9 @@ SUBSETC.tiss = SubsetData(tiss, cells.use=SUBSETC.cells.use, )
 SUBSETC.tiss <- SUBSETC.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-SUBSETC.tiss <- SUBSETC.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+SUBSETC.tiss <- SUBSETC.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETC.n.pcs, 
+    resolution = SUBSETC.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETC.sub.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETC.tiss, SUBSETC.genes_to_check,
     save_folder, prefix = "SUBSETC", group.bys)
 
@@ -98,9 +98,9 @@ SUBSETD.tiss = SubsetData(tiss, cells.use=SUBSETD.cells.use, )
 SUBSETD.tiss <- SUBSETD.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-SUBSETD.tiss <- SUBSETD.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+SUBSETD.tiss <- SUBSETD.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETD.n.pcs, 
+    resolution = SUBSETD.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETD.sub.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETD.tiss, SUBSETD.genes_to_check,
     save_folder, prefix = "SUBSETD", group.bys)
 
@@ -116,9 +116,9 @@ SUBSETE.tiss = SubsetData(tiss, cells.use=SUBSETE.cells.use, )
 SUBSETE.tiss <- SUBSETE.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-SUBSETE.tiss <- SUBSETE.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
-    resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
+SUBSETE.tiss <- SUBSETE.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETE.n.pcs, 
+    resolution = SUBSETE.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETE.sub.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETE.tiss, SUBSETE.genes_to_check,
     save_folder, prefix = "SUBSETE", group.bys)
 
