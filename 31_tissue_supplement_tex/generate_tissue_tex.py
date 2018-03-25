@@ -165,7 +165,10 @@ class TeXGenerator:
     def legend(self):
         if self.plottype == 'tsneplot' and not('expression' in self.groupby):
             pdf = self.pdf.replace('.pdf', '_legend.pdf')
-            return f'\includegraphics[{self.graphics_options}]{{{pdf}}}'
+            if os.path.exists(pdf):
+                return f'\includegraphics[{self.graphics_options}]{{{pdf}}}'
+            else:
+                return ''
         else:
             return ''
 
