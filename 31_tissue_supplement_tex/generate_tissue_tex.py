@@ -93,10 +93,10 @@ class TeXGenerator:
     def subsection_tex(self):
         tex = SUBSECTION.replace('GROUPBY', self.groupby_tex.title())
         if self.extra is not None and self.extra:
-            tex = tex.replace("SUBSET", self.subset_tex.title())
-        else:
             tex = tex.replace("SUBSET", self.subset_tex.title()
                               + f' ({method_tex(self.extra)})')
+        else:
+            tex = tex.replace("SUBSET", self.subset_tex.title())
         return tex
 
     @property
