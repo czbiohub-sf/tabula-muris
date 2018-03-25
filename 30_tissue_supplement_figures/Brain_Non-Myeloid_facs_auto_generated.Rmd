@@ -323,23 +323,22 @@ write_caption("Key defining genes for function and vessel type.", filename)
 ```{r}
 Astrocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "astrocyte"]
 write(paste("Number of cells in Astrocytes subset:", length(Astrocytes.cells.use)), stderr())
-# Astrocytes.n.pcs = 10
-# Astrocytes.res.use = 1
-# Astrocytes.perplexity = 30
-# Astrocytes.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Gfap", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2", "Vim")
-# Astrocytes.tiss = SubsetData(tiss, cells.use=Astrocytes.cells.use, )
-# Astrocytes.tiss <- Astrocytes.tiss %>% ScaleData() %>% 
-#   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-#   RunPCA(do.print = FALSE)
-# Astrocytes.tiss <- Astrocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Astrocytes.n.pcs, 
-#     resolution = Astrocytes.res.use, print.output = 0, save.SNN = TRUE) %>%
-#     RunTSNE(dims.use = 1:Astrocytes.n.pcs, seed.use = 10, perplexity=Astrocytes.perplexity)
+Astrocytes.n.pcs = 10
+Astrocytes.res.use = 1
+Astrocytes.perplexity = 30
+Astrocytes.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Gfap", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2", "Vim")
+Astrocytes.tiss = SubsetData(tiss, cells.use=Astrocytes.cells.use, )
+Astrocytes.tiss <- Astrocytes.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+Astrocytes.tiss <- Astrocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Astrocytes.n.pcs, 
+    resolution = Astrocytes.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:Astrocytes.n.pcs, seed.use = 10, perplexity=Astrocytes.perplexity)
 
 # Append this subset's groupby to the list
 group.bys = c(group.bys, "subtissue")
 # Highlight which cells are in this subset
     
-# palette = brewer.pal(3, "YlGnBu")
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "Astrocytes"] = "(Not in subset)"
 tiss@meta.data[Astrocytes.cells.use, "Astrocytes"] = "Astrocytes" 
@@ -355,5 +354,7 @@ p = TSNEPlot(
   colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
+dot_tsne_ridge(Astrocytes.tiss, Astrocytes.genes_to_check,
+    save_folder, prefix = "Astrocytes", group.bys, "facs")
 
 ```
