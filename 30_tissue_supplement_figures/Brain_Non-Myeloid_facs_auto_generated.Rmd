@@ -20,7 +20,7 @@ additional.group.bys = sort(c(subtissue))
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c(['A2m', 'Aldh1l1', 'Aqp4', 'Dcx', 'Des', 'Gad1', 'Gdf10', 'Naga', 'Nbl1', 'Nsdhl', 'Slc1a3', 'St6galnac5', 'Tnfaip2'])
+genes_to_check = c("Ald1l1", "Aqp4", "Ascl1", "Calb1", "Cldn5", "Cspg4", "Dcx", "Des", "Dlx2", "Eno2", "Gad1", "Gjc2", "Ly6c1", "Mab21l1", "Mag", "Mcam", "Mobp", "Mog", "Mop", "Neurod6", "Ocln", "Pdgfra", "Pdgfrb", "Pecam1", "Rbfox3", "Reln", "Slc17a7", "Slc1a3", "Slco1c1", "Snap25", "Susd5")
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
@@ -322,7 +322,7 @@ write_caption("Key defining genes for function and vessel type.", filename)
 ASTROCYTES.cells.use = rownames(tiss@meta.data)[grep("astrocyte",tiss@meta.data$cell_ontology_class)]
 ASTROCYTES.n.pcs = 10
 ASTROCYTES.res = 1
-ASTROCYTES.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2")
+ASTROCYTES.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Gfap", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2", "Vim")
 ASTROCYTES.tiss = SubsetData(tiss, cells.use=ASTROCYTES.cells.use, )
 ASTROCYTES.tiss <- ASTROCYTES.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
