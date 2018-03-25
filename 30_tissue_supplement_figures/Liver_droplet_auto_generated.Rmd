@@ -63,7 +63,7 @@ filename = make_filename(save_folder, prefix="Hepatocytes", 'highlighted',
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
-  group.by = Hepatocytes,
+  group.by = "Hepatocytes",
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,

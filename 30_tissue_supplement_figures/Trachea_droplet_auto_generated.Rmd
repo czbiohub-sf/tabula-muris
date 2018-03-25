@@ -60,7 +60,7 @@ filename = make_filename(save_folder, prefix="Epithelial", 'highlighted',
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
-  group.by = Epithelial,
+  group.by = "Epithelial",
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
