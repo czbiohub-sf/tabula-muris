@@ -159,9 +159,9 @@ class TeXGenerator:
         if self.plottype == 'ridgeplot':
             return 'width=.75\\textwidth'
         if self.plottype == 'dotplot':
-            return 'angle=90, height=.7\\textheight'
+            return 'angle=90, height=.6\\textheight'
         else:
-            return 'width=\\textwidth'
+            return 'width=.6\\textwidth'
 
     @property
     def legend(self):
@@ -245,7 +245,7 @@ def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
 def cli(figure_folder, tissue, method):
     """Create per-tissue tex files
     
-    Total number of tissue figures: 761
+    Total number of tissue figures: 770
     """
     tissue = '*' if tissue == 'all' else tissue
     method = '*' if method == 'all' else method.lower()
