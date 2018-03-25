@@ -98,6 +98,7 @@ dot_tsne_ridge = function(tiss,
     if (all(is.na(tiss@meta.data[, group.by])) || all(tiss@meta.data[, group.by] == "NA")) {
       next
     }
+
     
     # Get number of colors to use
     if (group.by == 'cell_ontology_class') {
