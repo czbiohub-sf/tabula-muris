@@ -20,7 +20,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c("Acta2", "Adipor1", "Alas2", "Car3", "Cav1", "Cd14", "Cd19", "Cd34", "Cd3e", "Cd74", "Cd86", "Cdh5", "Col1a1", "Col1a2", "Col3a1", "Col6a3", "Dcn", "Ddr2", "Eln", "Epcam", "Esm1", "Fabp4", "Fap", "Fn1", "Gypa", "H2-Aa", "H2-Ab1", "Hbb1", "Hla-Drb1", "Icam1", "Kit", "Krt5", "Krt8", "Laptm5", "Myh11", "Myocd", "Pdgfra", "Pecam1", "Ptprc", "S100a4", "Selplg", "Sox18", "Syk", "Tagln", "Tek", "Timp2", "Vcam1", "Vegfa", "Vim", "Vwf")
+genes_to_check = c("Acta2", "Adipor1", "Alas2", "Car3", "Cav1", "Cd14", "Cd19", "Cd34", "Cd3e", "Cd74", "Cd86", "Cdh5", "Col1a1", "Col1a2", "Col3a1", "Col6a3", "Dcn", "Ddr2", "Eln", "Epcam", "Esm1", "Fabp4", "Fap", "Fn1", "Gypa", "H2-Aa", "H2-Ab1", "Hbb", "H2-Eb1", "Icam1", "Kit", "Krt5", "Krt8", "Laptm5", "Myh11", "Myocd", "Pdgfra", "Pecam1", "Ptprc", "S100a4", "Selplg", "Sox18", "Syk", "Tagln", "Tek", "Timp2", "Vcam1", "Vegfa", "Vim", "Vwf")
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

@@ -36,20 +36,39 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## Subset: SUBSETA
 
 ```{r}
-SUBSETA.cells.use = rownames(tiss@meta.data)[grep("smooth muscle cell",tiss@meta.data$cell_ontology_class)]
-write(paste("Number of cells in SUBSETA subset:", length(SUBSETA.cells.use)), stderr())
-SUBSETA.n.pcs = 5
-SUBSETA.res.use = 1
-SUBSETA.perplexity = 25
-SUBSETA.genes_to_check = c("Cnn1", "Kcnj8", "Myh11", "Postn")
-SUBSETA.tiss = SubsetData(tiss, cells.use=SUBSETA.cells.use, )
-SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>% 
+SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "smooth muscle cell]
+write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
+SubsetA.n.pcs = 5
+SubsetA.res.use = 1
+SubsetA.perplexity = 25
+SubsetA.genes_to_check = c("Cnn1", "Kcnj8", "Myh11", "Postn")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETA.n.pcs, 
-    resolution = SUBSETA.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=SUBSETA.perplexity)
-dot_tsne_ridge(SUBSETA.tiss, SUBSETA.genes_to_check,
-    save_folder, prefix = "SUBSETA", group.bys)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
+    resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
+# Highlight which cells are in this subset
+    
+palette = brewer.pal(3, "YlGnBu")
+cols.use = c(palette[1], palette[3])
+colors.use
+tiss@meta.data[, "SubsetA"] = NA
+tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
+filename = make_filename(save_folder, prefix="SubsetA", group.by, 
+    'tsneplot_allcells_highlighted')
+p = TSNEPlot(
+  object = tiss,
+  do.return = TRUE,
+  group.by = SubsetA,
+  no.axes = TRUE,
+  pt.size = 1,
+  no.legend = TRUE,
+  colors.use = c(palette[1], 'grey50')
+)
+ggsave(filename, width = 4, height = 4)
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA", group.bys, facs)
 
 ```
