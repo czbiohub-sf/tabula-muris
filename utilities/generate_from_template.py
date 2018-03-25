@@ -63,17 +63,17 @@ def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
     filter = f'rownames(tiss@meta.data)[tiss@meta.data${filter_column} == {filter_value}]'
     code = f"""{name}.cells.use = {filter}
 write(paste("Number of cells in {name} subset:", length({name}.cells.use)), stderr())
-{name}.n.pcs = {npcs}
-{name}.res.use = {res}
-{name}.perplexity = {perplexity}
-{name}.genes_to_check = c({stringify_list(genes)})
-{name}.tiss = SubsetData(tiss, cells.use={name}.cells.use, )
-{name}.tiss <- {name}.tiss %>% ScaleData() %>% 
-  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-  RunPCA(do.print = FALSE)
-{name}.tiss <- {name}.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:{name}.n.pcs, 
-    resolution = {name}.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:{name}.n.pcs, seed.use = 10, perplexity={name}.perplexity)
+# {name}.n.pcs = {npcs}
+# {name}.res.use = {res}
+# {name}.perplexity = {perplexity}
+# {name}.genes_to_check = c({stringify_list(genes)})
+# {name}.tiss = SubsetData(tiss, cells.use={name}.cells.use, )
+# {name}.tiss <- {name}.tiss %>% ScaleData() %>% 
+#   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+#   RunPCA(do.print = FALSE)
+# {name}.tiss <- {name}.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:{name}.n.pcs, 
+#     resolution = {name}.res.use, print.output = 0, save.SNN = TRUE) %>%
+#     RunTSNE(dims.use = 1:{name}.n.pcs, seed.use = 10, perplexity={name}.perplexity)
 """
     if groupby is not None:
         # Append this subset's groupby to the list
@@ -84,7 +84,7 @@ group.bys = c(group.bys, {stringify_list([groupby])})
     
 palette = brewer.pal(3, "YlGnBu")
 colors.use = c(palette[1], 'grey50')
-tiss@meta.data[, "{name}"] = NA
+tiss@meta.data[, "{name}"] = "Not in subset"
 tiss@meta.data[{name}.cells.use, "{name}"] = "{name}" 
 filename = make_filename(save_folder, prefix="{name}", 'highlighted', 
     'tsneplot_allcells')
@@ -100,9 +100,9 @@ p = TSNEPlot(
 ggsave(filename, width = 4, height = 4)
 '''
 
-    code += f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
-    save_folder, prefix = "{name}", group.bys, "{method}")
-'''
+#     code += f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
+#     save_folder, prefix = "{name}", group.bys, "{method}")
+# '''
 
     codeblock = f'''```{{r}}
 {code}
