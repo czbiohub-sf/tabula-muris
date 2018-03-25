@@ -38,15 +38,15 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 BASAL.cells.use = rownames(tiss@meta.data)[grep("basal",tiss@meta.data$cell_ontology_class)]
 BASAL.n.pcs = 10
-BASAL.res = 0.5
+BASAL.res.use = 0.5
 BASAL.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
 BASAL.tiss = SubsetData(tiss, cells.use=BASAL.cells.use, )
 BASAL.tiss <- BASAL.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 BASAL.tiss <- BASAL.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:BASAL.n.pcs, 
-    resolution = BASAL.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:BASAL.sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = BASAL.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:BASAL.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(BASAL.tiss, BASAL.genes_to_check,
     save_folder, prefix = "BASAL", group.bys)
 
