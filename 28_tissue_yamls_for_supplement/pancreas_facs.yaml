@@ -35,7 +35,7 @@ METHOD: facs
 NPCS: 12
 RES: 0.5
 SUBSET:
-  HEPATOCYTES:
+  SUBSETA:
     FILTER_COLUMN: cluster.ids
     FILTER_VALUE: c(1,2,5)
     GENES:
