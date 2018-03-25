@@ -39,6 +39,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 SUBSETA.cells.use = rownames(tiss@meta.data)[grep("smooth muscle cell",tiss@meta.data$cell_ontology_class)]
 SUBSETA.n.pcs = 5
 SUBSETA.res.use = 1
+SUBSETA.perplexity = 25
 SUBSETA.genes_to_check = c("Cnn1", "Kcnj8", "Myh11", "Postn")
 SUBSETA.tiss = SubsetData(tiss, cells.use=SUBSETA.cells.use, )
 SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>% 
@@ -46,7 +47,7 @@ SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>%
   RunPCA(do.print = FALSE)
 SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETA.n.pcs, 
     resolution = SUBSETA.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=30)
+    RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=SUBSETA.perplexity)
 dot_tsne_ridge(SUBSETA.tiss, SUBSETA.genes_to_check,
     save_folder, prefix = "SUBSETA", group.bys)
 
