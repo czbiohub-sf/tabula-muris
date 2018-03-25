@@ -38,15 +38,15 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 SUBSETA.cells.use = rownames(tiss@meta.data)[grep("c(11,12)",tiss@meta.data$cluster.ids)]
 SUBSETA.n.pcs = 4
-SUBSETA.res = 1
+SUBSETA.res.use = 1
 SUBSETA.genes_to_check = c("A430084P05Rik", "Adamts14", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cma1", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Emr1", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgax", "Itgb7", "Khdc1a", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ncr1", "Ngp", "Nkg7", "Pax5", "Pld4", "Prf1", "Rag1", "Rag2", "Rrm2", "Serpinb9", "Sh2d1b1", "Stmn1", "Styk1", "Tcf7", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
 SUBSETA.tiss = SubsetData(tiss, cells.use=SUBSETA.cells.use, )
 SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETA.n.pcs, 
-    resolution = SUBSETA.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETA.sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = SUBSETA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETA.tiss, SUBSETA.genes_to_check,
     save_folder, prefix = "SUBSETA", group.bys)
 
@@ -56,15 +56,15 @@ dot_tsne_violin(SUBSETA.tiss, SUBSETA.genes_to_check,
 ```{r}
 SUBSETB.cells.use = rownames(tiss@meta.data)[grep("0",tiss@meta.data$cluster.ids)]
 SUBSETB.n.pcs = 3
-SUBSETB.res = 1
+SUBSETB.res.use = 1
 SUBSETB.genes_to_check = c("A430084P05Rik", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il10", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgb7", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ngp", "Nkg7", "Pld4", "Prf1", "Rag2", "Rrm2", "Serpinb9", "Stmn1", "Tcf7", "Tgfb1", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
 SUBSETB.tiss = SubsetData(tiss, cells.use=SUBSETB.cells.use, )
 SUBSETB.tiss <- SUBSETB.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 SUBSETB.tiss <- SUBSETB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETB.n.pcs, 
-    resolution = SUBSETB.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETB.sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = SUBSETB.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETB.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETB.tiss, SUBSETB.genes_to_check,
     save_folder, prefix = "SUBSETB", group.bys)
 
@@ -74,15 +74,15 @@ dot_tsne_violin(SUBSETB.tiss, SUBSETB.genes_to_check,
 ```{r}
 SUBSETC.cells.use = rownames(tiss@meta.data)[grep("8",tiss@meta.data$cluster.ids)]
 SUBSETC.n.pcs = 4
-SUBSETC.res = 1
+SUBSETC.res.use = 1
 SUBSETC.genes_to_check = c("Acy3", "Arpp21", "Btg2", "Ccna2", "Ccnb1", "Ccr6", "Cd19", "Cd1d1", "Cd22", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cdc20", "Cenpf", "Chchd10", "Cnp", "Comtd1", "Cr2", "Cxcr5", "Cybb", "Depdc1b", "Dntt", "E2f1", "Ebf1", "Egr2", "Erg", "Eri2", "Grb7", "H2-Aa", "H2-Ab1", "H2-Eb1", "Igll1", "Ikzf1", "Il2ra", "Il2rb", "Il7r", "Kdm5b", "Kif18a", "Klhl15", "Kpna2", "Ltb", "Lyz2", "Mki67", "Mmrn1", "Ms4a1", "Nkg7", "Pax5", "Rag1", "Rag2", "Rrm2", "S100a8", "Serinc5", "Sfpi1", "Ska1", "Slco4a1", "Smyd2", "Srm", "Stmn1", "Tbxa2r", "Tcf3", "Top2a", "Troap", "Ube2c", "Ung", "Vpreb1", "Vpreb2", "Vpreb3", "Zfp810")
 SUBSETC.tiss = SubsetData(tiss, cells.use=SUBSETC.cells.use, )
 SUBSETC.tiss <- SUBSETC.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 SUBSETC.tiss <- SUBSETC.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETC.n.pcs, 
-    resolution = SUBSETC.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETC.sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = SUBSETC.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETC.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETC.tiss, SUBSETC.genes_to_check,
     save_folder, prefix = "SUBSETC", group.bys)
 
@@ -92,15 +92,15 @@ dot_tsne_violin(SUBSETC.tiss, SUBSETC.genes_to_check,
 ```{r}
 SUBSETD.cells.use = rownames(tiss@meta.data)[grep("0",tiss@meta.data$cluster.ids)]
 SUBSETD.n.pcs = 20
-SUBSETD.res = 1
+SUBSETD.res.use = 1
 SUBSETD.genes_to_check = c("2810417H13Rik", "Apoe", "Atxn1", "Ccl9", "Ccna2", "Ccnb1", "Ccnb2", "Ccr7", "Cd1d1", "Cd34", "Cd48", "Cd63", "Cd69", "Cd74", "Cd79b", "Cdc20", "Chchd10", "Cish", "Cnp", "Ctla2a", "Ctsg", "Dntt", "Dusp1", "Elane", "Esam", "Flt3", "Fos", "Gata1", "Gimap8", "Gm11428", "H2-Aa", "H2-Ab1", "H2-Eb1", "H2-Ob", "Hk3", "Hp", "Ier2", "Il7r", "Itga2b", "Jhdm1d", "Junb", "Kif11", "Kit", "Ltb", "Ly6a", "Ly6c2", "Lyz2", "Mcm4", "Mfsd2b", "Mki67", "Mn1", "Mpl", "Mpo", "Ms4a3", "Muc13", "Myl10", "Myl12b", "Ncf1", "Nkg7", "Notch2", "Pdzk1ip1", "Pf4", "Prtn3", "Rag2", "Rrm2", "Sdsl", "Sell", "Serpinb9", "Slamf1", "Slc39a1", "Socs3", "Spag5", "Stat3", "Stmn1", "Tk1", "Top2a", "Tsix", "Tuba1b", "Tuba8", "Txnip", "Tyms", "Tyrobp", "Ube2c", "Uhrf1", "Ung", "Vldlr", "Wtap", "Xist")
 SUBSETD.tiss = SubsetData(tiss, cells.use=SUBSETD.cells.use, )
 SUBSETD.tiss <- SUBSETD.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 SUBSETD.tiss <- SUBSETD.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETD.n.pcs, 
-    resolution = SUBSETD.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETD.sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = SUBSETD.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETD.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETD.tiss, SUBSETD.genes_to_check,
     save_folder, prefix = "SUBSETD", group.bys)
 
@@ -110,15 +110,15 @@ dot_tsne_violin(SUBSETD.tiss, SUBSETD.genes_to_check,
 ```{r}
 SUBSETE.cells.use = rownames(tiss@meta.data)[grep("7",tiss@meta.data$cluster.ids)]
 SUBSETE.n.pcs = 20
-SUBSETE.res = 1
+SUBSETE.res.use = 1
 SUBSETE.genes_to_check = c("2810417H13Rik", "Abcg3", "Ak4", "Apoe", "Atxn1", "Bok", "Ccl4", "Ccl9", "Ccna2", "Ccnb1", "Ccnb2", "Ccne2", "Ccr7", "Cd1d1", "Cd34", "Cd48", "Cd63", "Cd69", "Cd74", "Cd79b", "Cdc20", "Cenpf", "Chchd10", "Cish", "Cnp", "Ctla2a", "Ctsg", "Dntt", "Dusp1", "Elane", "Esam", "Fam102a", "Flt3", "Fos", "Gata1", "Gimap8", "Gm11428", "H2-Aa", "H2-Ab1", "H2-Eb1", "H2-Ob", "Hk3", "Hoxb5", "Hp", "Ier2", "Il7r", "Itga2b", "Jhdm1d", "Junb", "Kif11", "Kit", "Klf1", "Lhcgr", "Ltb", "Ly6a", "Ly6c2", "Lyz2", "Mcm4", "Mfsd2b", "Mki67", "Mn1", "Mpl", "Mpo", "Ms4a3", "Muc13", "Myl10", "Myl12b", "Ncf1", "Neo1", "Nkg7", "Notch2", "Nsg1", "Pask", "Pdzk1ip1", "Pf4", "Prc1", "Prr11", "Prtn3", "Pyy", "Rag1", "Rag2", "Rrm2", "Sdsl", "Sell", "Serpinb9", "Slamf1", "Slc39a1", "Socs3", "Spag5", "Stat3", "Stmn1", "Tgm2", "Tk1", "Top2a", "Treml1", "Trib3", "Tsix", "Tuba1b", "Tuba8", "Txnip", "Tyms", "Tyrobp", "Ube2c", "Uhrf1", "Ung", "Vldlr", "Wtap", "Xist")
 SUBSETE.tiss = SubsetData(tiss, cells.use=SUBSETE.cells.use, )
 SUBSETE.tiss <- SUBSETE.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 SUBSETE.tiss <- SUBSETE.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETE.n.pcs, 
-    resolution = SUBSETE.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETE.sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = SUBSETE.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETE.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETE.tiss, SUBSETE.genes_to_check,
     save_folder, prefix = "SUBSETE", group.bys)
 

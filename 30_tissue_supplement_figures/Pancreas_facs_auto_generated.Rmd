@@ -113,15 +113,15 @@ write_caption("\emph{Prss53} transcripts are only detected in islet beta cells."
 ```{r}
 HEPATOCYTES.cells.use = rownames(tiss@meta.data)[grep("c(1,2,5)",tiss@meta.data$cluster.ids)]
 HEPATOCYTES.n.pcs = 8
-HEPATOCYTES.res = 1
+HEPATOCYTES.res.use = 1
 HEPATOCYTES.genes_to_check = c("Ang", "Arg1", "Arx", "Cd9", "Chga", "Dpp10", "Folr1", "Gcg", "Gfra3", "Ghrl", "Hhex", "Irx1", "Isl1", "Mafb", "Pdx1", "Ppy", "Slc38a5", "Spp1", "Sst", "Tspan8", "Vsig1")
 HEPATOCYTES.tiss = SubsetData(tiss, cells.use=HEPATOCYTES.cells.use, )
 HEPATOCYTES.tiss <- HEPATOCYTES.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 HEPATOCYTES.tiss <- HEPATOCYTES.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:HEPATOCYTES.n.pcs, 
-    resolution = HEPATOCYTES.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:HEPATOCYTES.sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = HEPATOCYTES.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:HEPATOCYTES.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(HEPATOCYTES.tiss, HEPATOCYTES.genes_to_check,
     save_folder, prefix = "HEPATOCYTES", group.bys)
 
