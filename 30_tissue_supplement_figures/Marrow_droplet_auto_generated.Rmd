@@ -47,7 +47,7 @@ SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>%
 SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETA.n.pcs, 
     resolution = SUBSETA.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin(SUBSETA.tiss, SUBSETA.genes_to_check,
+dot_tsne_ridge(SUBSETA.tiss, SUBSETA.genes_to_check,
     save_folder, prefix = "SUBSETA", group.bys)
 
 ```
@@ -65,7 +65,7 @@ SUBSETB.tiss <- SUBSETB.tiss %>% ScaleData() %>%
 SUBSETB.tiss <- SUBSETB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETB.n.pcs, 
     resolution = SUBSETB.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:SUBSETB.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin(SUBSETB.tiss, SUBSETB.genes_to_check,
+dot_tsne_ridge(SUBSETB.tiss, SUBSETB.genes_to_check,
     save_folder, prefix = "SUBSETB", group.bys)
 
 ```
