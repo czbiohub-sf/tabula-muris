@@ -51,8 +51,8 @@ write(paste("Number of cells in Basal subset:", length(Basal.cells.use)), stderr
 #     RunTSNE(dims.use = 1:Basal.n.pcs, seed.use = 10, perplexity=Basal.perplexity)
 # Highlight which cells are in this subset
     
-palette = brewer.pal(3, "YlGnBu")
-colors.use = c(palette[1], 'grey50')
+# palette = brewer.pal(3, "YlGnBu")
+colors.use = c('Coral', 'LightGray')
 tiss@meta.data[, "Basal"] = "Not in subset"
 tiss@meta.data[Basal.cells.use, "Basal"] = "Basal" 
 filename = make_filename(save_folder, prefix="Basal", 'highlighted', 
