@@ -47,7 +47,7 @@ SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>%
 SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETA.n.pcs, 
     resolution = SUBSETA.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin(SUBSETA.tiss, SUBSETA.genes_to_check,
+dot_tsne_ridge(SUBSETA.tiss, SUBSETA.genes_to_check,
     save_folder, prefix = "SUBSETA", group.bys)
 
 ```
@@ -65,7 +65,7 @@ SUBSETB.tiss <- SUBSETB.tiss %>% ScaleData() %>%
 SUBSETB.tiss <- SUBSETB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETB.n.pcs, 
     resolution = SUBSETB.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:SUBSETB.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin(SUBSETB.tiss, SUBSETB.genes_to_check,
+dot_tsne_ridge(SUBSETB.tiss, SUBSETB.genes_to_check,
     save_folder, prefix = "SUBSETB", group.bys)
 
 ```
@@ -83,7 +83,7 @@ SUBSETC.tiss <- SUBSETC.tiss %>% ScaleData() %>%
 SUBSETC.tiss <- SUBSETC.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETC.n.pcs, 
     resolution = SUBSETC.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:SUBSETC.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin(SUBSETC.tiss, SUBSETC.genes_to_check,
+dot_tsne_ridge(SUBSETC.tiss, SUBSETC.genes_to_check,
     save_folder, prefix = "SUBSETC", group.bys)
 
 ```
@@ -101,7 +101,7 @@ SUBSETD.tiss <- SUBSETD.tiss %>% ScaleData() %>%
 SUBSETD.tiss <- SUBSETD.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETD.n.pcs, 
     resolution = SUBSETD.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:SUBSETD.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin(SUBSETD.tiss, SUBSETD.genes_to_check,
+dot_tsne_ridge(SUBSETD.tiss, SUBSETD.genes_to_check,
     save_folder, prefix = "SUBSETD", group.bys)
 
 ```
@@ -119,7 +119,7 @@ SUBSETE.tiss <- SUBSETE.tiss %>% ScaleData() %>%
 SUBSETE.tiss <- SUBSETE.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETE.n.pcs, 
     resolution = SUBSETE.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:SUBSETE.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin(SUBSETE.tiss, SUBSETE.genes_to_check,
+dot_tsne_ridge(SUBSETE.tiss, SUBSETE.genes_to_check,
     save_folder, prefix = "SUBSETE", group.bys)
 
 ```

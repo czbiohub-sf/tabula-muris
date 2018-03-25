@@ -47,7 +47,7 @@ EPITHELIAL.tiss <- EPITHELIAL.tiss %>% ScaleData() %>%
 EPITHELIAL.tiss <- EPITHELIAL.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:EPITHELIAL.n.pcs, 
     resolution = EPITHELIAL.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:EPITHELIAL.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin(EPITHELIAL.tiss, EPITHELIAL.genes_to_check,
+dot_tsne_ridge(EPITHELIAL.tiss, EPITHELIAL.genes_to_check,
     save_folder, prefix = "EPITHELIAL", group.bys)
 
 ```
