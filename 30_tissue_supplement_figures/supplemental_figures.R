@@ -67,7 +67,7 @@ dot_tsne_ridge = function(tiss,
   genes_to_check = intersect(genes_to_check, rownames(tiss@scale.data))
 
   if (length(genes_not_found) > 0){
-    write(paste("These genes were not found in the data:", paste(genes_to_check, sep=', ') ))
+    write(paste("This gene was not found in the data:", genes_not_found), stderr())
   }
 
   if (method == 'facs') {
