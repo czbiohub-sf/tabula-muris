@@ -47,7 +47,7 @@ SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>%
 SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:sub.n.pcs, 
     resolution = sub.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:sub.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin({name}.tiss, {name}.genes_to_check,
-    save_folder, prefix = {name}, group.bys)
+dot_tsne_violin(SUBSETA.tiss, SUBSETA.genes_to_check,
+    save_folder, prefix = "SUBSETA", group.bys)
 
 ```
