@@ -37,6 +37,7 @@ def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby,
                perplexity=30):
     filter = f'rownames(tiss@meta.data)[grep("{filter_value}",tiss@meta.data${filter_column})]'
     code = f"""{name}.cells.use = {filter}
+write(paste("Number of cells in {name} subset:", length({name}.cells.use)), stderr())
 {name}.n.pcs = {npcs}
 {name}.res.use = {res}
 {name}.perplexity = {perplexity}
