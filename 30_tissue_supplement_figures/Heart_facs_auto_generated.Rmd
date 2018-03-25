@@ -38,15 +38,15 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 SUBSETA.cells.use = rownames(tiss@meta.data)[grep("smooth muscle cell",tiss@meta.data$cell_ontology_class)]
 SUBSETA.n.pcs = 5
-SUBSETA.res = 1
+SUBSETA.res.use = 1
 SUBSETA.genes_to_check = c("Cnn1", "Kcnj8", "Myh11", "Postn")
 SUBSETA.tiss = SubsetData(tiss, cells.use=SUBSETA.cells.use, )
 SUBSETA.tiss <- SUBSETA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 SUBSETA.tiss <- SUBSETA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SUBSETA.n.pcs, 
-    resolution = SUBSETA.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:SUBSETA.sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = SUBSETA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SUBSETA.n.pcs, seed.use = 10, perplexity=30)
 dot_tsne_violin(SUBSETA.tiss, SUBSETA.genes_to_check,
     save_folder, prefix = "SUBSETA", group.bys)
 
