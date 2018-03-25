@@ -229,12 +229,13 @@ def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
 
 
 @click.command()
+@click.option('--figure_folder', default=FIGURE_FOLDER)
 @click.option('--tissue', default='all')
 @click.option('--method', default='all')
-def cli(tissue, method):
+def cli(figure_folder, tissue, method):
     tissue = '*' if tissue == 'all' else tissue.capitalize()
     method = '*' if method == 'all' else method.lower()
-    globber = os.path.join('..', FIGURE_FOLDER, tissue, method)
+    globber = os.path.join('..', figure_folder, tissue, method)
     tissue_method_paths = sorted(glob.glob(globber))
 
     tex_filenames = []
@@ -247,7 +248,8 @@ def cli(tissue, method):
         tissue_tex = tissue.replace('_', ' ')
 
         basename_yaml = f'{tissue.lower()}_{method}.yaml'
-        filename_yaml = os.path.join('..', '28_tissue_yamls_for_supplement', basename_yaml)
+        filename_yaml = os.path.join('..', '28_tissue_yamls_for_supplement',
+                                     basename_yaml)
         with open(filename_yaml) as f:
             yaml_data = yaml.load(f)
 
