@@ -20,7 +20,7 @@ additional.group.bys = sort(c(subtissue))
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c(['C1qa', 'Cd14', 'Cd19', 'Cd34', 'Cd3g', 'Cd4', 'Cd68', 'Cd8a', 'Cdh5', 'Emr1', 'Fabp4', 'Gzma', 'Irf8', 'Itgam', 'Kdr', 'Lyz2', 'Nkg7', 'Pdgfra', 'Pecam1', 'Ptprc', 'Tek'])
+genes_to_check = c("C1qa", "Cd14", "Cd19", "Cd24", "Cd34", "Cd3g", "Cd4", "Cd68", "Cd8a", "Cdh5", "Emr1", "Fabp4", "Gzma", "Irf8", "Itgam", "Kdr", "Lyz2", "Nkg7", "Pdgfra", "Pecam1", "Ptprc", "Tek")
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

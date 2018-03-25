@@ -20,7 +20,7 @@ additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c(['Ahnak', 'Atxn1', 'Beta-s', 'Bpgm', 'Camp', 'Ccl3', 'Ccr6', 'Cd14', 'Cd19', 'Cd2', 'Cd22', 'Cd27', 'Cd34', 'Cd3e', 'Cd4', 'Cd40', 'Cd44', 'Cd48', 'Cd68', 'Cd7', 'Cd74', 'Cd79a', 'Cd79b', 'Cd8a', 'Chchd10', 'Cnp', 'Cox6a2', 'Cpa3', 'Cr2', 'Cxcr4', 'Cxcr5', 'Dntt', 'Emr1', 'Eng', 'Fcer1a', 'Fcer1g', 'Fcer2a', 'Fcgr3', 'Fcgr4', 'Flt3', 'Gpr56', 'Hbb-b2', 'Hp', 'Il3ra', 'Il7r', 'Irf8', 'Itga2', 'Itgal', 'Itgam', 'Itgax', 'Itgb2', 'Kit', 'Klrb1a', 'Lcn2', 'Ltf', 'Ly6d', 'Mcpt8', 'Mki67', 'Mpeg1', 'Mpl', 'Ms4a1', 'Ngp', 'Pax5', 'Pglyrp1', 'Pld4', 'Ptprc', 'Rag1', 'Rag2', 'S100a11', 'Slamf1', 'Spn', 'Stmn1', 'Tfrc', 'Thy1', 'Tmem176b', 'Vpreb1', 'Vpreb3'])
+genes_to_check = c("Ahnak", "Atxn1", "Beta-s", "Bpgm", "Camp", "Ccl3", "Ccr6", "Cd14", "Cd19", "Cd2", "Cd22", "Cd27", "Cd34", "Cd3e", "Cd4", "Cd40", "Cd44", "Cd48", "Cd68", "Cd7", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Chchd10", "Cnp", "Cox6a2", "Cpa3", "Cr2", "Cxcr4", "Cxcr5", "Dntt", "Emr1", "Eng", "Fcer1a", "Fcer1g", "Fcer2a", "Fcgr3", "Fcgr4", "Flt3", "Gpr56", "Hbb-b2", "Hp", "Il3ra", "Il7r", "Irf8", "Itga2", "Itgal", "Itgam", "Itgax", "Itgb2", "Kit", "Klrb1a", "Lcn2", "Ltf", "Ly6d", "Mcpt8", "Mki67", "Mpeg1", "Mpl", "Ms4a1", "Ngp", "Pax5", "Pglyrp1", "Pld4", "Ptprc", "Rag1", "Rag2", "S100a11", "Slamf1", "Spn", "Stmn1", "Tfrc", "Thy1", "Tmem176b", "Vpreb1", "Vpreb3")
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
