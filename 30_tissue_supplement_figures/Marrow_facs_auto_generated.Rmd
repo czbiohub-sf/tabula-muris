@@ -52,8 +52,7 @@ SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 # Highlight which cells are in this subset
     
 palette = brewer.pal(3, "YlGnBu")
-cols.use = c(palette[1], palette[3])
-colors.use
+colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetA"] = NA
 tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
 filename = make_filename(save_folder, prefix="SubsetA", group.by, 
@@ -65,7 +64,7 @@ p = TSNEPlot(
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
-  colors.use = c(palette[1], 'grey50')
+  colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
@@ -91,8 +90,7 @@ SubsetB.tiss <- SubsetB.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 # Highlight which cells are in this subset
     
 palette = brewer.pal(3, "YlGnBu")
-cols.use = c(palette[1], palette[3])
-colors.use
+colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetB"] = NA
 tiss@meta.data[SubsetB.cells.use, "SubsetB"] = "SubsetB" 
 filename = make_filename(save_folder, prefix="SubsetB", group.by, 
@@ -104,7 +102,7 @@ p = TSNEPlot(
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
-  colors.use = c(palette[1], 'grey50')
+  colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
@@ -130,8 +128,7 @@ SubsetC.tiss <- SubsetC.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 # Highlight which cells are in this subset
     
 palette = brewer.pal(3, "YlGnBu")
-cols.use = c(palette[1], palette[3])
-colors.use
+colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetC"] = NA
 tiss@meta.data[SubsetC.cells.use, "SubsetC"] = "SubsetC" 
 filename = make_filename(save_folder, prefix="SubsetC", group.by, 
@@ -143,7 +140,7 @@ p = TSNEPlot(
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
-  colors.use = c(palette[1], 'grey50')
+  colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
@@ -169,8 +166,7 @@ SubsetD.tiss <- SubsetD.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 # Highlight which cells are in this subset
     
 palette = brewer.pal(3, "YlGnBu")
-cols.use = c(palette[1], palette[3])
-colors.use
+colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetD"] = NA
 tiss@meta.data[SubsetD.cells.use, "SubsetD"] = "SubsetD" 
 filename = make_filename(save_folder, prefix="SubsetD", group.by, 
@@ -182,7 +178,7 @@ p = TSNEPlot(
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
-  colors.use = c(palette[1], 'grey50')
+  colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
@@ -208,8 +204,7 @@ SubsetE.tiss <- SubsetE.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 # Highlight which cells are in this subset
     
 palette = brewer.pal(3, "YlGnBu")
-cols.use = c(palette[1], palette[3])
-colors.use
+colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "SubsetE"] = NA
 tiss@meta.data[SubsetE.cells.use, "SubsetE"] = "SubsetE" 
 filename = make_filename(save_folder, prefix="SubsetE", group.by, 
@@ -221,7 +216,7 @@ p = TSNEPlot(
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
-  colors.use = c(palette[1], 'grey50')
+  colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetE.tiss, SubsetE.genes_to_check,
