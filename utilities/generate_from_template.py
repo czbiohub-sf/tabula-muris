@@ -82,8 +82,8 @@ group.bys = c(group.bys, {stringify_list([groupby])})
 '''
     code += f'''# Highlight which cells are in this subset
     
-palette = brewer.pal(3, "YlGnBu")
-colors.use = c(palette[1], 'grey50')
+# palette = brewer.pal(3, "YlGnBu")
+colors.use = c('Coral', 'LightGray')
 tiss@meta.data[, "{name}"] = "Not in subset"
 tiss@meta.data[{name}.cells.use, "{name}"] = "{name}" 
 filename = make_filename(save_folder, prefix="{name}", 'highlighted', 
