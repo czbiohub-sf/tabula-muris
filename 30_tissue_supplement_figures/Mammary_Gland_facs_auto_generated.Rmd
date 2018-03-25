@@ -36,7 +36,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## Subset: BASAL
 
 ```{r}
-Basal.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "basal]
+Basal.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "basal cell"]
 write(paste("Number of cells in Basal subset:", length(Basal.cells.use)), stderr())
 Basal.n.pcs = 10
 Basal.res.use = 0.5
