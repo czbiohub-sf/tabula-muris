@@ -50,7 +50,7 @@ class TeXGenerator:
 
     @property
     def is_iterative(self):
-        return self.i is not None and self.i > 1
+        return self.n is not None and self.n > 1
 
     @property
     def tissue_tex(self):
@@ -178,7 +178,7 @@ class TeXGenerator:
     def subsubsection_title(self):
         title = self.plottype_title
         if self.is_iterative:
-            title += f' {self.i} of {self.n}}}'
+            title += f' {self.i} of {self.n}'
         return title
 
     @property
@@ -327,8 +327,14 @@ def cli(figure_folder, tissue, method):
             # This groupby iterates by row but we still need to grab the first
             # item because pandas doesn't cast the row to a vector
             pdf = os.path.join(tissue_method_path, row.index[0])
-            i = int(row['i'].iloc[0]) if pd.notnull(row['i']).all() else None
-            n = int(row['n'].iloc[0]) if pd.notnull(row['n']).all() else None
+
+            if extra and '-of-' in extra:
+                split = extra.split('-of-')
+                i = int(split[0])
+                n = int(split[-1])
+            else:
+                i = None
+                n = None
             tex_generator = TeXGenerator(pdf, plottype, tissue,
                                         method, subset, groupby,
                                         i=i, n=n,
