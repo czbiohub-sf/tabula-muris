@@ -37,15 +37,15 @@ def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
     filter = f'rownames(tiss@meta.data)[grep("{filter_value}",tiss@meta.data${filter_column})]'
     code = f"""{name}.cells.use = {filter}
 {name}.n.pcs = {npcs}
-{name}.res = {res}
+{name}.res.use = {res}
 {name}.genes_to_check = c({stringify_list(genes)})
 {name}.tiss = SubsetData(tiss, cells.use={name}.cells.use, )
 {name}.tiss <- {name}.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
 {name}.tiss <- {name}.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:{name}.n.pcs, 
-    resolution = {name}.sub.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:{name}.sub.n.pcs, seed.use = 10, perplexity=30)
+    resolution = {name}.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:{name}.n.pcs, seed.use = 10, perplexity=30)
 """
     if groupby is not None:
         # Append this subset's groupby to the list
