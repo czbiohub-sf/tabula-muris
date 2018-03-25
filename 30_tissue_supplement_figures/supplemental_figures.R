@@ -63,6 +63,13 @@ dot_tsne_ridge = function(tiss,
                            prefix,
                            group.bys,
                            method = 'facs') {
+  genes_not_found = setdiff(genes_to_check, rownames(tiss@scale.data))
+  genes_to_check = intersect(genes_to_check, rownames(tiss@scale.data))
+
+  if (length(genes_not_found) > 0){
+    write(paste("These genes were not found in the data:", paste(genes_to_check, sep=', ') ))
+  }
+
   if (method == 'facs') {
     expression_unit = 'log(CPM)'
   } else {
