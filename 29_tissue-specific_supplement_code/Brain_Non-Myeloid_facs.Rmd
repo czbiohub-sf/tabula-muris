@@ -223,7 +223,7 @@ dev.off()
 write_caption("Key defining genes for the Inflamed (Venous) and Notch (Arterial) populations.", filename)
 
 filename = make_filename(save_folder, prefix, 'subtissue', 'ridgeplot')
-RidgePlot(object = ECs, features.plot = genes_check, do.sort=F, size.title.use = 18, size.x.use = 0.3,size.y.use = 3, cols.use = brewer.pal(11,'Paired'), point.size.use = 0.3)
+RidgePlot(object = ECs, features.plot = genes_check, do.sort=F, size.title.use = 18, size.x.use = 0.3,size.y.use = 3, cols.use = brewer.pal(11,'Paired'))
 ggsave(filename, dpi=300)
 dev.off()
 write_caption("Key defining genes for the Inflamed (Venous) and Notch (Arterial) populations.", filename)
