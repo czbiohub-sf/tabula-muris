@@ -38,20 +38,19 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ```{r}
 Basal.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "basal cell"]
 write(paste("Number of cells in Basal subset:", length(Basal.cells.use)), stderr())
-# Basal.n.pcs = 10
-# Basal.res.use = 0.5
-# Basal.perplexity = 30
-# Basal.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
-# Basal.tiss = SubsetData(tiss, cells.use=Basal.cells.use, )
-# Basal.tiss <- Basal.tiss %>% ScaleData() %>% 
-#   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
-#   RunPCA(do.print = FALSE)
-# Basal.tiss <- Basal.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Basal.n.pcs, 
-#     resolution = Basal.res.use, print.output = 0, save.SNN = TRUE) %>%
-#     RunTSNE(dims.use = 1:Basal.n.pcs, seed.use = 10, perplexity=Basal.perplexity)
+Basal.n.pcs = 10
+Basal.res.use = 0.5
+Basal.perplexity = 30
+Basal.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
+Basal.tiss = SubsetData(tiss, cells.use=Basal.cells.use, )
+Basal.tiss <- Basal.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+Basal.tiss <- Basal.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Basal.n.pcs, 
+    resolution = Basal.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:Basal.n.pcs, seed.use = 10, perplexity=Basal.perplexity)
 # Highlight which cells are in this subset
     
-# palette = brewer.pal(3, "YlGnBu")
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "Basal"] = "(Not in subset)"
 tiss@meta.data[Basal.cells.use, "Basal"] = "Basal" 
@@ -67,5 +66,7 @@ p = TSNEPlot(
   colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
+dot_tsne_ridge(Basal.tiss, Basal.genes_to_check,
+    save_folder, prefix = "Basal", group.bys, "facs")
 
 ```
