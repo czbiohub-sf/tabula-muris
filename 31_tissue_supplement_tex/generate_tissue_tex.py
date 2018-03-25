@@ -241,9 +241,10 @@ def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
 @click.option('--tissue', default='all')
 @click.option('--method', default='all')
 def cli(figure_folder, tissue, method):
-    tissue = '*' if tissue == 'all' else tissue.capitalize()
+    tissue = '*' if tissue == 'all' else tissue
     method = '*' if method == 'all' else method.lower()
     globber = os.path.join('..', figure_folder, tissue, method)
+    print(f'globber: {globber}')
     tissue_method_paths = sorted(glob.glob(globber))
 
     tex_filenames = []
@@ -291,6 +292,7 @@ def cli(figure_folder, tissue, method):
 
         # Remove legend figures because they're auto-added
         parameters = parameters.query('extra != "legend"')
+        parameters['extra'] = parameters['extra'].fillna('')
         grouped = parameters.groupby(['subset', 'groupby', 'plottype', 'extra'])
 
         # Section counter
