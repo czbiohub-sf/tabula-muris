@@ -340,8 +340,7 @@ group.bys = c(group.bys, "subtissue")
 # Highlight which cells are in this subset
     
 palette = brewer.pal(3, "YlGnBu")
-cols.use = c(palette[1], palette[3])
-colors.use
+colors.use = c(palette[1], 'grey50')
 tiss@meta.data[, "Astrocytes"] = NA
 tiss@meta.data[Astrocytes.cells.use, "Astrocytes"] = "Astrocytes" 
 filename = make_filename(save_folder, prefix="Astrocytes", group.by, 
@@ -353,7 +352,7 @@ p = TSNEPlot(
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
-  colors.use = c(palette[1], 'grey50')
+  colors.use = colors.use
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(Astrocytes.tiss, Astrocytes.genes_to_check,
