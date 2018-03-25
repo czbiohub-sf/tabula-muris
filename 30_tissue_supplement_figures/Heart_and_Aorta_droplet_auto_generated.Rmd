@@ -68,6 +68,6 @@ p = TSNEPlot(
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
-    save_folder, prefix = "SubsetA", group.bys, droplet)
+    save_folder, prefix = "SubsetA", group.bys, "droplet")
 
 ```

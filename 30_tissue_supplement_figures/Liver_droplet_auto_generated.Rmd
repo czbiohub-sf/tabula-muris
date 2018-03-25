@@ -71,6 +71,6 @@ p = TSNEPlot(
 )
 ggsave(filename, width = 4, height = 4)
 dot_tsne_ridge(Hepatocytes.tiss, Hepatocytes.genes_to_check,
-    save_folder, prefix = "Hepatocytes", group.bys, droplet)
+    save_folder, prefix = "Hepatocytes", group.bys, "droplet")
 
 ```
