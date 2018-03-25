@@ -36,7 +36,7 @@ def method_tex(method):
 
 class TeXGenerator:
     def __init__(self, pdf, plottype, tissue, method, subset, groupby, i=None,
-                 n=None, labels=None):
+                 n=None, labels=None, extra=None):
         self.pdf = pdf
         self.plottype = plottype
         self.tissue = tissue
@@ -46,6 +46,7 @@ class TeXGenerator:
         self.i = i
         self.n = n
         self.labels = labels
+        self.extra = extra
 
     @property
     def is_iterative(self):
@@ -90,8 +91,12 @@ class TeXGenerator:
 
     @property
     def subsection_tex(self):
-        tex = SUBSECTION.replace('GROUPBY', self.groupby_tex.title()).replace(
-            "SUBSET", self.subset_tex.title())
+        tex = SUBSECTION.replace('GROUPBY', self.groupby_tex.title())
+        if self.extra is not None:
+            tex = tex.replace("SUBSET", self.subset_tex.title())
+        else:
+            tex = tex.replace("SUBSET", self.subset_tex.title()
+                              + f' ({method_tex(self.extra)})')
         return tex
 
     @property
@@ -283,13 +288,13 @@ def cli(figure_folder, tissue, method):
 
         # Remove legend figures because they're auto-added
         parameters = parameters.query('extra != "legend"')
-        grouped = parameters.groupby(['subset', 'groupby', 'plottype'])
+        grouped = parameters.groupby(['subset', 'groupby', 'plottype', 'extra'])
 
         # Section counter
         j = 0
         prev_subset = ''
         prev_groupby = ''
-        for k, ((subset, groupby, plottype), row) in enumerate(grouped):
+        for k, ((subset, groupby, plottype, extra), row) in enumerate(grouped):
             # Replaced dots with dashes for filenames, need to change back
             # for column referencing
             if k > 0:
@@ -314,7 +319,7 @@ def cli(figure_folder, tissue, method):
             tex_generator = TeXGenerator(pdf, plottype, tissue,
                                         method, subset, groupby,
                                         i=i, n=n,
-                                        labels=labels)
+                                        labels=labels, extra=extra)
 
             # Weird hack for adding sections
             if prev_groupby != groupby or prev_subset != subset:
