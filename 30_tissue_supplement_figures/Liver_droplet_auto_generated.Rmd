@@ -39,6 +39,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 HEPATOCYTES.cells.use = rownames(tiss@meta.data)[grep("hepatocyte",tiss@meta.data$cell_ontology_class)]
 HEPATOCYTES.n.pcs = 8
 HEPATOCYTES.res.use = 0.5
+HEPATOCYTES.perplexity = 30
 HEPATOCYTES.genes_to_check = c("A1bg", "Cyp2c69", "Cyp2d9", "Mup1", "Mup12", "Mup20", "Mup21", "Xist")
 HEPATOCYTES.tiss = SubsetData(tiss, cells.use=HEPATOCYTES.cells.use, )
 HEPATOCYTES.tiss <- HEPATOCYTES.tiss %>% ScaleData() %>% 
@@ -46,7 +47,7 @@ HEPATOCYTES.tiss <- HEPATOCYTES.tiss %>% ScaleData() %>%
   RunPCA(do.print = FALSE)
 HEPATOCYTES.tiss <- HEPATOCYTES.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:HEPATOCYTES.n.pcs, 
     resolution = HEPATOCYTES.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:HEPATOCYTES.n.pcs, seed.use = 10, perplexity=30)
+    RunTSNE(dims.use = 1:HEPATOCYTES.n.pcs, seed.use = 10, perplexity=HEPATOCYTES.perplexity)
 
 # Append this subset's groupby to the list
 group.bys = c(group.bys, "mouse.sex")

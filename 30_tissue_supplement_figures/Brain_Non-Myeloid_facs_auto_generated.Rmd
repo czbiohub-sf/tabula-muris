@@ -58,8 +58,9 @@ Load packages
 library(dplyr)
 library(Matrix)
 library(cowplot)
-library(matrixStats)
+library(matrixStats)  # for colMins
 require(RColorBrewer)
+library(rrcov)  # For PcaHubert
 ```
 
 Required custom functions
@@ -322,6 +323,7 @@ write_caption("Key defining genes for function and vessel type.", filename)
 ASTROCYTES.cells.use = rownames(tiss@meta.data)[grep("astrocyte",tiss@meta.data$cell_ontology_class)]
 ASTROCYTES.n.pcs = 10
 ASTROCYTES.res.use = 1
+ASTROCYTES.perplexity = 30
 ASTROCYTES.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Gfap", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2", "Vim")
 ASTROCYTES.tiss = SubsetData(tiss, cells.use=ASTROCYTES.cells.use, )
 ASTROCYTES.tiss <- ASTROCYTES.tiss %>% ScaleData() %>% 
@@ -329,7 +331,7 @@ ASTROCYTES.tiss <- ASTROCYTES.tiss %>% ScaleData() %>%
   RunPCA(do.print = FALSE)
 ASTROCYTES.tiss <- ASTROCYTES.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:ASTROCYTES.n.pcs, 
     resolution = ASTROCYTES.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:ASTROCYTES.n.pcs, seed.use = 10, perplexity=30)
+    RunTSNE(dims.use = 1:ASTROCYTES.n.pcs, seed.use = 10, perplexity=ASTROCYTES.perplexity)
 
 # Append this subset's groupby to the list
 group.bys = c(group.bys, "subtissue")
