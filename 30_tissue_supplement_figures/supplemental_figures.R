@@ -95,7 +95,7 @@ dot_tsne_ridge = function(tiss,
     write(paste('group.by:', group.by, '   prefix:', prefix), stderr())
     
     # If this column is all NAs, then skip it
-    if (all(is.na(tiss@meta.data[, group.by]))) {
+    if (all(is.na(tiss@meta.data[, group.by])) || all(tiss@meta.data[, group.by] == "NA")) {
       next
     }
     
