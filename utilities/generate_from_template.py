@@ -101,7 +101,7 @@ ggsave(filename, width = 4, height = 4)
 '''
 
     code += f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
-    save_folder, prefix = "{name}", group.bys, {method})
+    save_folder, prefix = "{name}", group.bys, "{method}")
 '''
 
     codeblock = f'''```{{r}}
