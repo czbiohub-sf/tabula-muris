@@ -95,6 +95,8 @@ def main(parameters_yaml, template_file='Template.Rmd',
             elif value is not None:
                 if isinstance(value, list):
                     template = template.replace("{" + parameter + "}", stringify_list(value))
+                if parameter in ("GENES", 'GROUPBY'):
+                    template = template.replace("{" + parameter + "}", stringify_list([value]))
                 else:
                     template = template.replace("{" + parameter + "}", str(value))
             else:
