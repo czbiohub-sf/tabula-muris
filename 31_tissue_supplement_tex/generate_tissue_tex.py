@@ -240,7 +240,10 @@ def cli(figure_folder, tissue, method):
 
     tex_filenames = []
     for tissue_method_path in tissue_method_paths:
+        print(f'\n\ntissue_method_path: {tissue_method_path}')
         figures = glob.glob(os.path.join(tissue_method_path, '*.pdf'))
+        figures_str = "\n\t\t".join(figures)
+        print(f'\tFigures: {figures_str}')
         if len(figures) == 0:
             continue
         tissue_path, method = os.path.split(tissue_method_path)
@@ -250,18 +253,26 @@ def cli(figure_folder, tissue, method):
         basename_yaml = f'{tissue.lower()}_{method}.yaml'
         filename_yaml = os.path.join('..', '28_tissue_yamls_for_supplement',
                                      basename_yaml)
-        with open(filename_yaml) as f:
-            yaml_data = yaml.load(f)
+        try:
+            with open(filename_yaml) as f:
+                yaml_data = yaml.load(f)
+        except FileNotFoundError:
+            # Microbiome doesn't have a yaml
+            yaml_data = None
 
         tex = f'''\\newpage
 \section{{{tissue_tex} {method_tex(method)}}}
 '''
 
         print(f'\n--- tissue: "{tissue}", method: "{method}" ---')
-        basename = '_'.join([tissue, method, 'annotation.csv'])
-        annotation = pd.read_csv(os.path.join('..', '00_data_ingest',
-                                              '03_tissue_annotation_csv',
-                                              basename))
+        if tissue != 'Microbiome':
+            basename = '_'.join([tissue, method, 'annotation.csv'])
+            annotation = pd.read_csv(os.path.join('..', '00_data_ingest',
+                                                  '03_tissue_annotation_csv',
+                                                  basename))
+        else:
+            # Microbiome doesn't have a per-cell annotation
+            annotation = None
 
         basenames = [os.path.basename(f) for f in figures]
         basenames = pd.Series(basenames, index=basenames, name='basename')
