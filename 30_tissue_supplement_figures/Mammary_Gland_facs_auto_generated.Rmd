@@ -47,7 +47,7 @@ BASAL.tiss <- BASAL.tiss %>% ScaleData() %>%
 BASAL.tiss <- BASAL.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:BASAL.n.pcs, 
     resolution = BASAL.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:BASAL.n.pcs, seed.use = 10, perplexity=30)
-dot_tsne_violin(BASAL.tiss, BASAL.genes_to_check,
+dot_tsne_ridge(BASAL.tiss, BASAL.genes_to_check,
     save_folder, prefix = "BASAL", group.bys)
 
 ```
