@@ -108,42 +108,42 @@ dev.off()
 write_caption("\\emph{Prss53} transcripts are only detected in islet beta cells.", filename)
 ```
 
-## Subset: HEPATOCYTES
+## Subset: SUBSETA
 
 ```{r}
-Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == c(1,2,5)]
-write(paste("Number of cells in Hepatocytes subset:", length(Hepatocytes.cells.use)), stderr())
-Hepatocytes.n.pcs = 8
-Hepatocytes.res.use = 1
-Hepatocytes.perplexity = 30
-Hepatocytes.genes_to_check = c("Ang", "Arg1", "Arx", "Cd9", "Chga", "Dpp10", "Folr1", "Gcg", "Gfra3", "Ghrl", "Hhex", "Irx1", "Isl1", "Mafb", "Pdx1", "Ppy", "Slc38a5", "Spp1", "Sst", "Tspan8", "Vsig1")
-Hepatocytes.tiss = SubsetData(tiss, cells.use=Hepatocytes.cells.use, )
-Hepatocytes.tiss <- Hepatocytes.tiss %>% ScaleData() %>% 
+SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == c(1,2,5)]
+write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
+SubsetA.n.pcs = 8
+SubsetA.res.use = 1
+SubsetA.perplexity = 30
+SubsetA.genes_to_check = c("Ang", "Arg1", "Arx", "Cd9", "Chga", "Dpp10", "Folr1", "Gcg", "Gfra3", "Ghrl", "Hhex", "Irx1", "Isl1", "Mafb", "Pdx1", "Ppy", "Slc38a5", "Spp1", "Sst", "Tspan8", "Vsig1")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Hepatocytes.n.pcs, 
-    resolution = Hepatocytes.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:Hepatocytes.n.pcs, seed.use = 10, perplexity=Hepatocytes.perplexity)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
+    resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
 # Highlight which cells are in this subset
     
 palette = brewer.pal(3, "YlGnBu")
 cols.use = c(palette[1], palette[3])
 colors.use
-tiss@meta.data[, "Hepatocytes"] = NA
-tiss@meta.data[Hepatocytes.cells.use, "Hepatocytes"] = "Hepatocytes" 
-filename = make_filename(save_folder, prefix="Hepatocytes", group.by, 
+tiss@meta.data[, "SubsetA"] = NA
+tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
+filename = make_filename(save_folder, prefix="SubsetA", group.by, 
     'tsneplot_allcells_highlighted')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
-  group.by = Hepatocytes,
+  group.by = SubsetA,
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
   colors.use = c(palette[1], 'grey50')
 )
 ggsave(filename, width = 4, height = 4)
-dot_tsne_ridge(Hepatocytes.tiss, Hepatocytes.genes_to_check,
-    save_folder, prefix = "Hepatocytes", group.bys, facs)
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA", group.bys, facs)
 
 ```
