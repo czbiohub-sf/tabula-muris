@@ -20,7 +20,7 @@ additional.group.bys = sort(c(mouse.sex))
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c(['Cd14', 'Col1a1', 'Col8a1', 'Dcn', 'Epcam', 'Grhl3', 'Krt14', 'Krt5', 'Pecam1', 'Upk1b', 'Upk3a'])
+genes_to_check = c("Car3", "Cd14", "Col1a1", "Col8a1", "Dcn", "Epcam", "Grhl3", "Krt14", "Krt5", "Pecam1", "Ptprc", "Scara5", "Upk1b", "Upk3a")
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
