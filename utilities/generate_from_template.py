@@ -28,14 +28,17 @@ GENES = "GENES"
 GROUPBY = "GROUPBY"
 CODE_FOLDER = '29_tissue-specific_supplement_code'
 
+def stringify_list(genes):
+    genes_str = ', '.join(map(lambda x: f'"{x}"', genes))
+    return genes_str
+
 
 def add_subset(name, filter_column, filter_value, res, npcs, genes, groupby):
     filter = f'rownames(tiss@meta.data)[grep("{filter_value}",tiss@meta.data${filter_column})]'
-    genes_str = ', '.join(map(lambda x: f'"{x}"', genes))
     code = f"""{name}.cells.use = {filter}
 {name}.n.pcs = {npcs}
 {name}.res = {res}
-{name}.genes_to_check = c({genes_str})
+{name}.genes_to_check = c({stringify_list(genes)})
 {name}.tiss = SubsetData(tiss, cells.use={name}.cells.use, )
 {name}.tiss <- {name}.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
@@ -90,7 +93,10 @@ def main(parameters_yaml, template_file='Template.Rmd',
                     subset_code = add_subset(name, **kv)
                     template += f'\n## Subset: {name}\n\n{subset_code}'
             elif value is not None:
-                template = template.replace("{" + parameter + "}", str(value))
+                if isinstance(value, list):
+                    template = template.replace("{" + parameter + "}", stringify_list(value))
+                else:
+                    template = template.replace("{" + parameter + "}", str(value))
             else:
                 template = template.replace("{" + parameter + "}", '')
 
