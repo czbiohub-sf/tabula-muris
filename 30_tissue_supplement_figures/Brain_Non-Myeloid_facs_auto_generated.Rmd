@@ -340,8 +340,8 @@ group.bys = c(group.bys, "subtissue")
 # Highlight which cells are in this subset
     
 # palette = brewer.pal(3, "YlGnBu")
-colors.use = c('Coral', 'LightGray')
-tiss@meta.data[, "Astrocytes"] = "Not in subset"
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "Astrocytes"] = "(Not in subset)"
 tiss@meta.data[Astrocytes.cells.use, "Astrocytes"] = "Astrocytes" 
 filename = make_filename(save_folder, prefix="Astrocytes", 'highlighted', 
     'tsneplot_allcells')
