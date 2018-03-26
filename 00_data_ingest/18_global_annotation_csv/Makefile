@@ -1,5 +1,7 @@
+all: clean facs droplet
+
 clean:
-	rm *csv
+	rm -rf *csv
 
 droplet:
 	./concat_all_annotations_by_method.py --method droplet
@@ -7,4 +9,4 @@ droplet:
 facs:
 	./concat_all_annotations_by_method.py --method facs
 
-all: clean facs droplet
+
