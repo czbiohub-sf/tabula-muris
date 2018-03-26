@@ -1,0 +1,2 @@
+Scatter plot of all delta cells reveals that \emph{Neurog3} and \emph{Hhex} mark three distinct groups of
+delta cells, i.e. \emph{Neurog3}$^+$\emph{Hhex}^{neg}, \emph{Neurog3}^{neg}\emph{Hhex}$^+$, and \emph{Neurog3}$^+$\emph{Hhex}$^+$.

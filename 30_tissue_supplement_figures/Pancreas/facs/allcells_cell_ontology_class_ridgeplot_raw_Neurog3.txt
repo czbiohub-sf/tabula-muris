@@ -1,0 +1,1 @@
+\emph{Neurog3} transcripts are detected in islet, a few alpha, beta, and the majority of delta cells.
