@@ -39,6 +39,10 @@ def main():
     for annotation_file in input_annotations:
         df = pd.read_csv(annotation_file)
 
+        # Rename within-organ tsne as such
+        df = df.rename(columns=dict(tSNE_1='tissue_tSNE_1',
+                                    tSNE_2='tissue_tSNE_2'))
+
         # These subtissues were separated out for analysis and should just be
         # called the "tissue"
         if (method == 'facs') and (df['subtissue'][0] in subtissues):
