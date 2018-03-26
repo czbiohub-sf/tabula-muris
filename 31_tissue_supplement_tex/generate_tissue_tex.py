@@ -81,13 +81,21 @@ class TeXGenerator:
         if self.subset.lower().endswith('cells'):
             subset = self.subset.lower().split('cells')[0]
             return subset + ' cells'
+        elif 'subset' in self.subset.lower():
+            split = self.subset.lower().split('subset')
+            subset = 'Subset ' + split[-1]
+            return subset
         else:
             return self.subset
 
     @property
     def groupby_tex(self):
         """TeX-formatted groupby"""
-        return self.groupby.replace('_', ' ').replace('.', ' ').replace('-', ' ')
+        groupby = self.groupby.replace('_', ' ').replace('.', ' ').\
+            replace('-', ' ')
+        if 'Subset' in groupby:
+            groupby = 'Subset' + groupby.split('Subset')[-1]
+        return groupby
 
     @property
     def subsection_tex(self):
@@ -157,7 +165,7 @@ class TeXGenerator:
         if self.plottype == 'tsneplot':
             return 'height=.35\\textheight'
         if self.plottype == 'ridgeplot':
-            return 'width=.75\\textwidth'
+            return 'width=.7\\textwidth'
         if self.plottype == 'dotplot':
             return 'angle=90, height=.6\\textheight'
         else:
@@ -308,6 +316,9 @@ def cli(figure_folder, tissue, method):
         figures_added = []
 
         for k, ((subset, groupby, plottype, extra), row) in enumerate(grouped):
+            # if extra == 'allcells':
+            #     continue
+
             # Replaced dots with dashes for filenames, need to change back
             # for column referencing
             if k > 0:
