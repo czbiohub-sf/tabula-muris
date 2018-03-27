@@ -114,8 +114,8 @@ class TeXGenerator:
         groupby = self.groupby.replace('_', ' ').replace('.', ' ').\
             replace('-', ' ')
         if 'Subset' in groupby:
-            groupby = 'Subset' + groupby.split('Subset')[-1]
-        return groupby
+            groupby = 'Subset' + groupby.split('Subset')[-1].upper()
+        return f'\emph{{{groupby}}}'
 
     @property
     def subsection_tex(self):
