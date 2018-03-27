@@ -2,6 +2,8 @@
 # coding: utf-8
 
 import glob
+from functools import cmp_to_key
+import locale
 import os
 import string
 
@@ -32,6 +34,24 @@ def method_tex(method):
         return method.capitalize()
     else:
         return method.replace('_', ' ').upper()
+
+
+def alphabetical_sort(values):
+    if all(isinstance(x, str) for x in values):
+        return sorted(values, key=cmp_to_key(locale.strcoll))
+    else:
+        return sorted(values)
+
+
+def unique_sorted(series):
+    if series.notnull().all():
+        groupby_unique = series.unique()
+        labels = alphabetical_sort(groupby_unique)
+    else:
+        # There's NA and we need to add it separately
+        groupby_unique = series.dropna().unique()
+        labels = alphabetical_sort(groupby_unique) + ['NA']
+    return labels
 
 
 class TeXGenerator:
@@ -139,7 +159,9 @@ class TeXGenerator:
             return f"Bottom, legend mapping {groupby_tex} to colors"
         else:
             # ridgeplot and dotplot
-            letter_labels = ', '.join([f'{letter}: {label}' for letter, label
+            letter_labels = ', '.join([f'{letter}: {label}' if
+                                       label != 'NA' else f'{label}: Unknown'
+                                       for letter, label
                                        in zip(string.ascii_uppercase,
                                               self.labels_tex)])
             letter_labels += '.'
@@ -327,14 +349,12 @@ def cli(figure_folder, tissue, method):
 
             groupby_col = groupby.replace('-', '.')
             try:
-                try:
-                    groupby_unique = annotation[groupby_col].unique()
-                    labels = sorted(groupby_unique)
-                except TypeError:
-                    groupby_unique = annotation[groupby_col].astype(str).unique()
-                    labels = sorted(groupby_unique)
+                labels = unique_sorted(annotation[groupby_col])
             except (KeyError, TypeError):
+                # KeyError: groupby_col is not in annotation dataframe columns
+                # TypeError: annotation is None
                 labels = None
+
             # This groupby iterates by row but we still need to grab the first
             # item because pandas doesn't cast the row to a vector
             pdf = os.path.join(tissue_method_path, row.index[0])
