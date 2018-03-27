@@ -28,7 +28,6 @@ SUBSECTION = r"""
 ENDMATTER = r"\end{document}"
 
 
-
 def method_tex(method):
     if method == 'droplet':
         return method.capitalize()
@@ -115,11 +114,11 @@ class TeXGenerator:
             replace('-', ' ')
         if 'Subset' in groupby:
             groupby = 'Subset' + groupby.split('Subset')[-1].upper()
-        return f'\emph{{{groupby}}}'
+        return f'\emph{{{groupby.title()}}}'
 
     @property
     def subsection_tex(self):
-        tex = SUBSECTION.replace('GROUPBY', self.groupby_tex.title())
+        tex = SUBSECTION.replace('GROUPBY', self.groupby_tex)
         if self.extra is not None and self.extra:
             tex = tex.replace("SUBSET", self.subset_tex.title()
                               + f' ({method_tex(self.extra)})')
@@ -382,7 +381,11 @@ def cli(figure_folder, tissue, method):
             if j == 0 and tissue != 'Microbiome':
                 tex += tex_generator.subsection_tex
 
-                if subset != 'allcells':
+                if subset.lower().startswith('subset'):
+                    letter = subset.lower().split('subset')[-1].upper()
+                    subset_col = 'subset' + letter
+                    subset_annotation = annotation.loc[annotation[subset_col]]
+                elif subset != 'allcells':
                     try:
                         subset_yaml = yaml_data['SUBSET'][groupby.upper()]
                         print(subset_yaml)
@@ -400,7 +403,7 @@ def cli(figure_folder, tissue, method):
 
                 if 'expression' not in groupby_col:
                     try:
-                        counts = subset_annotation.groupby(groupby_col).size()
+                        counts = subset_annotation.fillna("NA").groupby(groupby_col).size()
                         tex += tex_generator.make_table_tex(counts)
                     except KeyError:
                         # This is a custom plot and doesn't have a groupby
