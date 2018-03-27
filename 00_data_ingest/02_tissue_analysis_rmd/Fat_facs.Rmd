@@ -136,7 +136,7 @@ free_annotation <- c(
   "myeloid cell",
   "mesenchymal progenitor",
   "myeloid cell",
-  "NA"
+  NA
   )
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
