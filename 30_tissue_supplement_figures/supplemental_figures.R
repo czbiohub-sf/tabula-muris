@@ -43,6 +43,17 @@ dotplot.cols.use = c(palette[1], palette[3])
 #   tmp$grobs[[leg]]
 # }
 
+add_black_na = function(p, group.by, colors.use, plottype='tsne'){
+  if (group.by == 'cell_ontology_class'){
+    if (plottype == 'tsne'){
+      p = p + scale_colour_manual(values=colors.use, na.value='black')
+    } else if (plottype == 'ridge'){
+      p = p + scale_fill_manual(values=colors.use, na.value='black')
+    }
+  }
+  return(p)
+}
+
 
 make_filename = function(save_folder, prefix, group.by, plottype, format='pdf'){
   # Replace dots with dashes so filesystems are happy
@@ -132,9 +143,7 @@ dot_tsne_ridge = function(tiss,
       no.legend = TRUE,
       colors.use = colors.use
     )
-    if (group.by == 'cell_ontology_class'){
-      p = p + scale_colour_manual(values=colors.use, na.value='black')
-    }
+    p = add_black_na(p, group.by, colors.use, plottype='tsne')
     ggsave(filename, width = 4, height = 4)
     # dev.off()
     
@@ -167,10 +176,8 @@ dot_tsne_ridge = function(tiss,
       colors.use = colors.use
     ) + coord_fixed(ratio = 1) +
       xlab("tSNE 1") + ylab("tSNE 2")
-    if (group.by == 'cell_ontology_class'){
-      p = p + scale_colour_manual(values=colors.use, na.value='black')
-    }
-
+    p = add_black_na(p, group.by, colors.use, plottype='tsne')
+    
     # Initialize an empty canvas!
     ggdraw()
     # Draw only the legend
@@ -228,8 +235,8 @@ dot_tsne_ridge = function(tiss,
       # dev.off()
       
       # Ridgeplot - enrichment of gene expression in group.by with smoothed histograms
-        filename = make_filename(save_folder, prefix, group.by,
-          paste0('ridgeplot_', name, '-of-', n_chunks))
+      filename = make_filename(save_folder, prefix, group.by,
+                               paste0('ridgeplot_', name, '-of-', n_chunks))
       plots = RidgePlot(
         tiss,
         genes,
@@ -241,9 +248,10 @@ dot_tsne_ridge = function(tiss,
         cols.use = colors.use
       )
       for (i in seq(1, length(plots))) {
-        plots[[i]] = plots[[i]] + xlab(expression_unit) + scale_x_continuous(breaks = pretty_breaks(n = 4)) + scale_y_discrete(limits = rev(levels(group.by)))
-        # + scale_y_reverse()
-        #
+        p = plots[[i]]
+        p = p + xlab(expression_unit) + scale_x_continuous(breaks = pretty_breaks(n = 4)) + scale_y_discrete(limits = rev(levels(group.by)))
+        p = add_black_na(p, group.by, colors.use, plottype='ridge')
+        plots[[i]] = p
       }
       plots.combined <- plot_grid(plotlist = plots, ncol = nCol)
       invisible(x = lapply(X = plots.combined, FUN = print))
