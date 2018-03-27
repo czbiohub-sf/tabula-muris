@@ -305,7 +305,7 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 sub.cluster.ids <- c(0, 1, 2, 3)
-sub.free_annotation <-c("Myofibroblast","Myofibroblast","Myofibroblast","Smooth_Muscle_Cells")
+sub.free_annotation <-c("myofibroblast","myofibroblast","myofibroblast","smooth muscle cell")
 sub.cell_ontology_class = c("myofibroblast cell", "myofibroblast cell", "myofibroblast cell", "smooth muscle cell")
 
 subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
