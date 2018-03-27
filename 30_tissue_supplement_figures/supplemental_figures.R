@@ -43,6 +43,7 @@ dotplot.cols.use = c(palette[1], palette[3])
 #   tmp$grobs[[leg]]
 # }
 
+
 make_filename = function(save_folder, prefix, group.by, plottype, format='pdf'){
   # Replace dots with dashes so filesystems are happy
   suffix = sub('.', '-', group.by, fixed=TRUE)
@@ -99,10 +100,10 @@ dot_tsne_ridge = function(tiss,
       next
     }
 
-    
     # Get number of colors to use
     if (group.by == 'cell_ontology_class') {
-      n_annotations = dim(unique(tiss@meta.data[group.by]))[1]
+      annotations = sort(unique(tiss@meta.data[,group.by]))
+      n_annotations = length(annotations)
       if (n_annotations > 8) {
         if (n_annotations > 16){
           colors.use = c(brewer.pal(8, 'Set2'), brewer.pal(8, 'Dark2'),
@@ -115,7 +116,7 @@ dot_tsne_ridge = function(tiss,
         colors.use = brewer.pal(max(n_annotations, 3), 'Set2')
       }
       # Add black for NA
-      colors.use = c(colors.use, 'black')
+      # colors.use = c(colors.use, 'black')
     } else {
       colors.use = NULL
     }
@@ -131,6 +132,9 @@ dot_tsne_ridge = function(tiss,
       no.legend = TRUE,
       colors.use = colors.use
     )
+    if (group.by == 'cell_ontology_class'){
+      p = p + scale_colour_manual(values=colors.use, na.value='black')
+    }
     ggsave(filename, width = 4, height = 4)
     # dev.off()
     
@@ -163,6 +167,9 @@ dot_tsne_ridge = function(tiss,
       colors.use = colors.use
     ) + coord_fixed(ratio = 1) +
       xlab("tSNE 1") + ylab("tSNE 2")
+    if (group.by == 'cell_ontology_class'){
+      p = p + scale_colour_manual(values=colors.use, na.value='black')
+    }
 
     # Initialize an empty canvas!
     ggdraw()
