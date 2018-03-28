@@ -209,7 +209,7 @@ load_tissue_droplet = function(tissue_of_interest){
 }
 
 
-save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
+save_annotation_csv = function(tiss, tissue_of_interest, method='facs', additional_cols=c()){
   if (method == "facs"){
     batch_name_column = 'plate.barcode'
   } else {
@@ -229,7 +229,7 @@ save_annotation_csv = function(tiss, tissue_of_interest, method='facs'){
   # Get any columns that say "subset"
   subset_cols = sort(grep("subset", colnames(tiss@meta.data), perl=TRUE, value=TRUE))
 
-  columns = c(common_cols, batch_name_column, subset_cols)
+  columns = c(common_cols, batch_name_column, subset_cols, additional_cols)
 
   write_csv(FetchData(tiss, columns), filename)
             
