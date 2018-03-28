@@ -53,7 +53,8 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: HEPATOCYTES
 
-## Subset: "Hepatocytes"```{r use-optipng, optipng=''}
+## Subset: "Hepatocytes"
+```{r use-optipng, optipng=''}
 Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "hepatocyte"]
 write(paste("Number of cells in Hepatocytes subset:", length(Hepatocytes.cells.use)), stderr())
 Hepatocytes.n.pcs = 8
@@ -70,11 +71,13 @@ Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", di
 
 ```
 
-### Append this subset's groupby to the list```{r use-optipng, optipng=''}
+### Append this subset's groupby to the list
+```{r use-optipng, optipng=''}
 group.bys = c(group.bys, "mouse.sex")
 ```
 
-### Highlight which cells are in this subset```{r use-optipng, optipng=''}
+### Highlight which cells are in this subset
+```{r use-optipng, optipng=''}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "Hepatocytes"] = "(Not in subset)"
 tiss@meta.data[Hepatocytes.cells.use, "Hepatocytes"] = "Hepatocytes" 
@@ -115,7 +118,8 @@ ggsave(filename, width = 8, height = 4)
 dev.off()
 
 ```
-## tSNE, dotplots, and ridgeplots of this subset```{r use-optipng, optipng=''}
+## tSNE, dotplots, and ridgeplots of this subset
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(Hepatocytes.tiss, Hepatocytes.genes_to_check,
     save_folder, prefix = "Hepatocytes", group.bys, "droplet")
 

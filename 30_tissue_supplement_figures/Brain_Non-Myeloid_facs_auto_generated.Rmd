@@ -339,7 +339,8 @@ write_caption("Key defining genes for function and vessel type.", filename)
 
 ## Subset: ASTROCYTES
 
-## Subset: "Astrocytes"```{r use-optipng, optipng=''}
+## Subset: "Astrocytes"
+```{r use-optipng, optipng=''}
 Astrocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "astrocyte"]
 write(paste("Number of cells in Astrocytes subset:", length(Astrocytes.cells.use)), stderr())
 Astrocytes.n.pcs = 10
@@ -356,11 +357,13 @@ Astrocytes.tiss <- Astrocytes.tiss %>% FindClusters(reduction.type = "pca", dims
 
 ```
 
-### Append this subset's groupby to the list```{r use-optipng, optipng=''}
+### Append this subset's groupby to the list
+```{r use-optipng, optipng=''}
 group.bys = c(group.bys, "subtissue")
 ```
 
-### Highlight which cells are in this subset```{r use-optipng, optipng=''}
+### Highlight which cells are in this subset
+```{r use-optipng, optipng=''}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "Astrocytes"] = "(Not in subset)"
 tiss@meta.data[Astrocytes.cells.use, "Astrocytes"] = "Astrocytes" 
@@ -401,7 +404,8 @@ ggsave(filename, width = 8, height = 4)
 dev.off()
 
 ```
-## tSNE, dotplots, and ridgeplots of this subset```{r use-optipng, optipng=''}
+## tSNE, dotplots, and ridgeplots of this subset
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(Astrocytes.tiss, Astrocytes.genes_to_check,
     save_folder, prefix = "Astrocytes", group.bys, "facs")
 
