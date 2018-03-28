@@ -5,6 +5,7 @@ import glob
 from functools import cmp_to_key
 import locale
 import os
+import re
 import string
 import sys
 
@@ -12,6 +13,13 @@ import click
 import pandas as pd
 import yaml
 
+
+
+INT_RE = re.compile(r"^[-]?\d+$")
+
+def is_int(s):
+    """String contains integer"""
+    return INT_RE.match(str(s)) is not None
 
 SUBSET_ORDER = 'allcells',
 PLOT_ORDER = 'tsneplot', 'ridgeplot', 'dotplot'
@@ -39,7 +47,7 @@ def method_tex(method):
 
 def alphabetical_sort(values):
     if all(isinstance(x, str) for x in values):
-        return sorted(values, key=cmp_to_key(locale.strcoll))
+        return sorted(values, key=lambda x: x.lower())
     else:
         return sorted(values)
 
@@ -138,6 +146,27 @@ class TeXGenerator:
         return tex
 
     @property
+    def labels_are_ints(self):
+        """Boolean if labels can be cast as int"""
+        return all(map(is_int, self.labels))
+
+
+    @property
+    def letter_to_label(self):
+        """For ridgeplot and dotplot when groupby is not cluster ids (ints)"""
+        if not self.labels_are_ints:
+            # ridgeplot and dotplot
+            letter_labels = ', '.join([f'{letter}: {label}' if
+                                       label != 'NA' else f'{label}: Unknown'
+                                       for letter, label
+                                       in zip(string.ascii_uppercase,
+                                              self.labels_tex)])
+            letter_labels += '.'
+            return letter_labels
+        else:
+            return ''
+
+    @property
     def extra_tex(self):
         tex = self.extra.replace('-', ' ').replace('_', ' ').title()
         return tex
@@ -149,7 +178,7 @@ class TeXGenerator:
             return ''
         else:
             # Dotplot and ridgeplot
-            return ' showing gene expression enrichment'
+            return ' showing gene expression enrichment in'
 
     @property
     def caption_start(self):
@@ -168,14 +197,7 @@ class TeXGenerator:
 
             return f"Bottom, legend mapping {groupby_tex} to colors"
         else:
-            # ridgeplot and dotplot
-            letter_labels = ', '.join([f'{letter}: {label}' if
-                                       label != 'NA' else f'{label}: Unknown'
-                                       for letter, label
-                                       in zip(string.ascii_uppercase,
-                                              self.labels_tex)])
-            letter_labels += '.'
-            return letter_labels
+            return self.letter_to_label
 
     @property
     def caption(self):
