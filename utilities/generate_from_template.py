@@ -32,7 +32,6 @@ CODE_FOLDER = '29_tissue-specific_supplement_code'
 DEFAULTS = {'res': 0.5, 'npcs': 20, 'genes': ['Actb'], 'groupby': None,
             'perplexity': 30}
 
-
 def stringify_list(genes):
     genes_str = ', '.join(map(lambda x: f'"{x}"', genes))
     return genes_str
@@ -133,7 +132,7 @@ dev.off()
 
     rmarkdown += '## tSNE, dotplots, and ridgeplots of this subset'
     rmarkdown += code_to_codeblock(f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
-    save_folder, prefix = "{name}", group.bys, "{method}")
+    save_folder, prefix = "{name}", group.bys = group.bys, "{method}")
 ''')
 
     return rmarkdown
