@@ -146,6 +146,20 @@ class TeXGenerator:
         return tex
 
     @property
+    def genes_tex(self):
+        """First and last gene in plot, if applicable"""
+        filename = self.pdf.replace('.pdf', '_genes.txt')
+        if os.path.exists(filename):
+            with open(filename) as f:
+                lines = [x.strip() for x in f.readlines()]
+            first_gene = lines[0]
+            last_gene = lines[-1]
+            tex = f', {first_gene}-{last_gene}'
+            return tex
+        else:
+            return ''
+
+    @property
     def labels_are_ints(self):
         """Boolean if labels can be cast as int"""
         return all(map(is_int, self.labels))
@@ -243,7 +257,7 @@ class TeXGenerator:
     def subsubsection_title(self):
         title = self.plottype_title
         if self.is_iterative:
-            title += f' ({self.i} of {self.n})'
+            title += f' ({self.i} of {self.n}{self.genes_tex})'
         elif self.extra is not None and self.extra:
             title += f' ({self.extra_tex})'
         return title
