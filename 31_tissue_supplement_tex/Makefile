@@ -16,10 +16,13 @@
 
 PROJECT=tissue_supplement
 
+
+all: tex pdf
+
 tex:
 	LC_LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python generate_tissue_tex.py
 
-all: tex obj/$(PROJECT).pdf
+pdf: obj/$(PROJECT).pdf
 
 display: default
 	(${PDFVIEWER} obj/$(PROJECT).pdf &)
@@ -88,6 +91,9 @@ obj/$(PROJECT).aux: $(TEX_FILES) $(IMG_FILES) | obj/
 obj/$(PROJECT).bbl: $(BIB_FILES) | obj/$(PROJECT).aux
 	bibtex obj/$(PROJECT)
 	pdflatex $(PDFLATEX_FLAGS) $(PROJECT)
-	
+
 obj/$(PROJECT).pdf: obj/$(PROJECT).aux $(if $(BIB_FILES), obj/$(PROJECT).bbl)
 	pdflatex $(PDFLATEX_FLAGS) $(PROJECT)
+	# Rerun a last time to adjust page numbers
+	pdflatex $(PDFLATEX_FLAGS) $(PROJECT)
+
