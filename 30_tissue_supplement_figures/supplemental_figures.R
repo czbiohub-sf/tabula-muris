@@ -111,10 +111,14 @@ dot_tsne_ridge = function(tiss,
       next
     }
 
+    annotations = sort(unique(tiss@meta.data[,group.by]))
+    n_annotations = length(annotations)
+    
+    write(paste('Annotations in', tiss@project.name, method, group.by, ':'), stderr())
+    write(paste0('\t', annotations), stderr())
+    
     # Get number of colors to use
     if (group.by == 'cell_ontology_class') {
-      annotations = sort(unique(tiss@meta.data[,group.by]))
-      n_annotations = length(annotations)
       if (n_annotations > 8) {
         if (n_annotations > 16){
           colors.use = c(brewer.pal(8, 'Set2'), brewer.pal(8, 'Dark2'),
@@ -160,6 +164,8 @@ dot_tsne_ridge = function(tiss,
         to = new_labels
       )
     } else {
+      # Make sure cluster ids are numeric so they're sorted properly
+      tiss@meta.data[, group.by] = as.numeric(tiss@meta.data[, group.by])
       group.by.plus = group.by
     }
 
