@@ -245,7 +245,7 @@ class TeXGenerator:
 \begin{tabular}{@{}ll@{}}
 \toprule
 """
-        tex += f'\n{self.groupby_tex.capitalize()}& Number of cells \\\\ \midrule'
+        tex += f'\n{self.groupby_tex}& Number of cells \\\\ \midrule'
         for label, n in zip(counts.index, counts.values):
             try:
                 label = label.replace("_", " ")
@@ -356,9 +356,10 @@ def cli(figure_folder, tissue, method):
 
             # Replaced dots with dashes for filenames, need to change back
             # for column referencing
-            if k > 0:
+            if k > 0 :
                 tex += r'''
-\clearpage'''
+\clearpage
+'''
 
             groupby_col = groupby.replace('-', '.')
             try:
@@ -429,7 +430,9 @@ def cli(figure_folder, tissue, method):
                     except KeyError:
                         # This is a custom plot and doesn't have a groupby
                         pass
-                tex += r'''
+                if groupby != 'highlighted':
+                    # Don't count anything for highlighting cells
+                    tex += r'''
 \clearpage'''
 
 
