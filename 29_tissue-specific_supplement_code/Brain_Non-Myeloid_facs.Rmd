@@ -26,8 +26,9 @@ library(Matrix)
 library(cowplot)
 library(matrixStats)  # for colMins
 require(RColorBrewer)
-library(rrcov)  # For PcaHubert
-library(data.table)  # for data.table
+library(rrcov)        # For PcaHubert
+library(data.table)   # for data.table
+library(parallel)     # For mclapply
 ```
 
 Required custom functions
