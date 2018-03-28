@@ -244,7 +244,7 @@ DE_markers <- mclapply(levels(ECs@ident),  function(x) {
 DE_markers <- bind_rows(DE_markers)
 
 DE_markers <- DE_markers[DE_markers$p_val<0.05, ]
-DE_markers_sorted <- DE_markers %>% group_by(cluster) %>% top_n(10, avg_diff)
+DE_markers_sorted <- DE_markers %>% group_by(cluster) %>% top_n(10, avg_logFC)
 
 
 DoHeatmap(object = ECs, genes.use = DE_markers_sorted$gene, slim.col.label = TRUE, remove.key = FALSE, cex.row = 7)
