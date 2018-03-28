@@ -67,7 +67,7 @@ def get_category_order(column, defaults):
     column_unique = set(column.astype(str).unique())
     # print(column_unique)
     remaining = column_unique.difference(defaults)
-    categories = list(defaults) + list(remaining)
+    categories = list(defaults) + list(alphabetical_sort(remaining))
     return categories
 
 
