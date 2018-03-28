@@ -25,6 +25,9 @@ additional.group.bys = sort(c({GROUPBY}))
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c({GENES})
+
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

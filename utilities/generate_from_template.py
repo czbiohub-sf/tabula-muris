@@ -47,6 +47,13 @@ def clean_name(name):
     return name
 
 
+def code_to_codeblock(code):
+    return f'''```{{r use-optipng, optipng=''}}
+{code}
+```
+'''
+
+
 def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
                groupby, perplexity):
     """Add R code blocks for subsetting and reclustering"""
@@ -60,8 +67,10 @@ def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
         # This is an integer, no modification needed
         pass
 
+    rmarkdown = f'## Subset: "{name}"'
+
     filter = f'rownames(tiss@meta.data)[tiss@meta.data${filter_column} == {filter_value}]'
-    code = f"""{name}.cells.use = {filter}
+    rmarkdown += code_to_codeblock(f"""{name}.cells.use = {filter}
 write(paste("Number of cells in {name} subset:", length({name}.cells.use)), stderr())
 {name}.n.pcs = {npcs}
 {name}.res.use = {res}
@@ -74,15 +83,14 @@ write(paste("Number of cells in {name} subset:", length({name}.cells.use)), stde
 {name}.tiss <- {name}.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:{name}.n.pcs, 
     resolution = {name}.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:{name}.n.pcs, seed.use = 10, perplexity={name}.perplexity)
-"""
+""")
     if groupby is not None:
         # Append this subset's groupby to the list
-        code += f'''\n# Append this subset's groupby to the list
-group.bys = c(group.bys, {stringify_list([groupby])})
-'''
-    code += f'''# Highlight which cells are in this subset
-    
-colors.use = c('LightGray', 'Coral')
+        rmarkdown += "\n### Append this subset's groupby to the list"
+        rmarkdown += code_to_codeblock(f'group.bys = c(group.bys, {stringify_list([groupby])})')
+
+    rmarkdown += '\n### Highlight which cells are in this subset'
+    rmarkdown += code_to_codeblock(f'''colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "{name}"] = "(Not in subset)"
 tiss@meta.data[{name}.cells.use, "{name}"] = "{name}" 
 filename = make_filename(save_folder, prefix="{name}", 'highlighted', 
@@ -120,16 +128,14 @@ ggdraw()
 ggdraw(g_legend(p))
 ggsave(filename, width = 8, height = 4)
 dev.off()
-'''
+''')
 
-    code += f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
+    rmarkdown += '## tSNE, dotplots, and ridgeplots of this subset'
+    rmarkdown += code_to_codeblock(f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
     save_folder, prefix = "{name}", group.bys, "{method}")
-'''
+''')
 
-    codeblock = f'''```{{r}}
-{code}
-```'''
-    return codeblock
+    return rmarkdown
 
 
 @click.command()
