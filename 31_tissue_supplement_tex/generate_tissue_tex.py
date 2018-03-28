@@ -104,7 +104,7 @@ class TeXGenerator:
             return subset + ' cells'
         elif 'subset' in self.subset.lower():
             split = self.subset.lower().split('subset')
-            subset = 'Subset ' + split[-1]
+            subset = 'Subset ' + split[-1].upper()
             return subset
         else:
             return self.subset
@@ -372,13 +372,15 @@ def cli(figure_folder, tissue, method):
             # item because pandas doesn't cast the row to a vector
             pdf = os.path.join(tissue_method_path, row.index[0])
 
+            i = None
+            n = None
             if extra and '-of-' in extra:
                 split = extra.split('-of-')
                 i = int(split[0])
                 n = int(split[-1])
-            else:
-                i = None
-                n = None
+                extra = None
+            elif extra != '1-of-1':
+                extra = None
             tex_generator = TeXGenerator(pdf, plottype, tissue,
                                         method, subset, groupby,
                                         i=i, n=n,
@@ -390,7 +392,8 @@ def cli(figure_folder, tissue, method):
             else:
                 j += 1
 
-            print(f'\tsubset: {subset}, groupby: {groupby}, plottype: {plottype}, k: {k}, j: {j}, i: {i}, n: {n}')
+            print(f'\tsubset: {subset}, groupby: {groupby}, plottype: '
+                  f'{plottype}, k: {k}, j: {j}, i: {i}, n: {n}, extra: {extra}')
 
             if j == 0 and tissue != 'Microbiome':
                 tex += tex_generator.subsection_tex
@@ -430,9 +433,9 @@ def cli(figure_folder, tissue, method):
 \clearpage'''
 
 
-            else:
-                tex += r'''
-\clearpage'''
+#             else:
+#                 tex += r'''
+# \clearpage'''
 
             # Add section title and figure tex
             tex += tex_generator.figure_tex
