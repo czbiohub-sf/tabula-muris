@@ -172,7 +172,10 @@ class TeXGenerator:
                 lines = [x.strip() for x in f.readlines()]
             first_gene = lines[0]
             last_gene = lines[-1]
-            tex = f', \emph{{{first_gene}}}--\emph{{{last_gene}}}'
+            if first_gene != last_gene:
+                tex = f', \emph{{{first_gene}}}--\emph{{{last_gene}}}'
+            else:
+                tex = f', \emph{{{first_gene}}}'
             return tex
         else:
             return ''
