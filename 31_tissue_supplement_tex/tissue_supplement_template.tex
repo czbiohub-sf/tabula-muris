@@ -7,6 +7,14 @@
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
 
+% Fix horizontal spacing for table of contents only
+% from https://tex.stackexchange.com/a/7421
+\usepackage[titles]{tocloft}
+
+\setlength{\cftsubsecnumwidth}{4em}% Set length of number width in ToC for \subsection
+\setlength{\cftsubsubsecnumwidth}{4em}% Set length of number width in ToC for \subsubsection
+\makeatother
+
 % Reference sections by name
 \usepackage{nameref}
 
