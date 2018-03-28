@@ -63,6 +63,25 @@ def unique_sorted(series):
     return labels
 
 
+
+
+def get_category_order(column, defaults):
+    column_unique = set(column.astype(str).unique())
+    # print(column_unique)
+    remaining = column_unique.difference(defaults)
+    categories = list(defaults) + list(remaining)
+    return categories
+
+
+def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
+    """Ensures first group is always TSNE of allcells + cell_ontology_class"""
+    for col in cols:
+        defaults = ORDER_DEFAULTS[col]
+        categories = get_category_order(parameters[col], defaults)
+        parameters[col] = pd.Categorical(parameters[col],
+                                         categories=categories)
+    return parameters
+
 class TeXGenerator:
     def __init__(self, pdf, plottype, tissue, method, subset, groupby, i=None,
                  n=None, labels=None, extra=None):
@@ -301,23 +320,6 @@ class TeXGenerator:
         return tex
 
 
-
-def get_category_order(column, defaults):
-    column_unique = set(column.astype(str).unique())
-    # print(column_unique)
-    remaining = column_unique.difference(defaults)
-    categories = list(defaults) + list(remaining)
-    return categories
-
-
-def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
-    """Ensures first group is always TSNE of allcells + cell_ontology_class"""
-    for col in cols:
-        defaults = ORDER_DEFAULTS[col]
-        categories = get_category_order(parameters[col], defaults)
-        parameters[col] = pd.Categorical(parameters[col],
-                                         categories=categories)
-    return parameters
 
 
 @click.command()
