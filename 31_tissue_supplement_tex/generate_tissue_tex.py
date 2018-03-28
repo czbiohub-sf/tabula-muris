@@ -14,7 +14,8 @@ import yaml
 
 SUBSET_ORDER = 'allcells',
 PLOT_ORDER = 'tsneplot', 'ridgeplot', 'dotplot'
-GROUPBY_ORDER = 'cell_ontology_class', 'cluster-ids', 'free_annotation'
+GROUPBY_ORDER = ('highlighted', 'cell_ontology_class', 'cluster-ids',
+                 'free_annotation')
 ORDER_DEFAULTS = {'subset': SUBSET_ORDER, 'plottype': PLOT_ORDER,
                   'groupby': GROUPBY_ORDER}
 
@@ -123,16 +124,17 @@ class TeXGenerator:
     @property
     def subsection_tex(self):
         tex = SUBSECTION.replace('GROUPBY', self.groupby_tex)
-        if self.extra is not None and self.extra:
-            tex = tex.replace("SUBSET", self.subset_tex.title()
-                              + f' ({method_tex(self.extra)})')
-        else:
-            tex = tex.replace("SUBSET", self.subset_tex.title())
+        tex = tex.replace("SUBSET", self.subset_tex.title())
         return tex
 
     @property
     def labels_tex(self):
         tex = [str(x).replace('_', ' ') for x in self.labels]
+        return tex
+
+    @property
+    def extra_tex(self):
+        tex = self.extra.replace('-', ' ').replace('_', ' ').title()
         return tex
 
 
@@ -212,6 +214,8 @@ class TeXGenerator:
         title = self.plottype_title
         if self.is_iterative:
             title += f' ({self.i} of {self.n})'
+        elif self.extra is not None and self.extra:
+            title += f' ({self.extra_tex})'
         return title
 
     @property
@@ -251,6 +255,14 @@ class TeXGenerator:
 \end{{table}}
 '''
         return tex
+
+
+    @property
+    def highlight_subset_tex(self):
+        if self.subset == 'allcells':
+            return ''
+        else:
+
 
 
 def get_category_order(column, defaults):
@@ -419,6 +431,8 @@ def cli(figure_folder, tissue, method):
             else:
                 tex += r'''
 \clearpage'''
+
+            tex += tex_generator.highlight_subset_tex
 
             # Add section title and figure tex
             tex += tex_generator.figure_tex
