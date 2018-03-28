@@ -105,7 +105,7 @@ filename = make_filename(save_folder, prefix="{name}", 'highlighted',
 p = TSNEPlot(
     object = tiss,
     do.return = TRUE,
-    group.by = group.by.plus,
+    group.by = "{name}",
     no.axes = TRUE,
     pt.size = 1,
     no.legend = FALSE,
