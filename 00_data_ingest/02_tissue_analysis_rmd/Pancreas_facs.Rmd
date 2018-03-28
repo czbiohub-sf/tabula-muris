@@ -265,17 +265,6 @@ subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.c
 tiss = stash_subtiss_in_tiss(tiss, subtiss)
 ```
 
-## Add subcluster cell_ontology_class to main cell_ontology_class
-
-```{r}
-sub.cells = rownames(subtiss@meta.data)
-
-tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
-tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
-tiss@meta.data[sub.cells, 'cell_ontology_id'] = subtiss@meta.data[,'cell_ontology_id']
-```
-
-
 ## Checking for batch effects
 
 Color by metadata, like plate barcode, to check for batch effects.
