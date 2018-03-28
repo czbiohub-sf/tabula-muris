@@ -188,9 +188,10 @@ class TeXGenerator:
             if self.is_iterative:
                 words.append(f'({self.i} of {self.n})')
             words.extend([self.plot_shows,
-                          self.groupby_tex, 'labels' in 'in', self.subset_tex,
+                          self.groupby_tex, 'labels in', self.subset_tex,
                           'of',
-                          self.tissue_tex, self.method_tex + '.', self.caption_end])
+                          self.tissue_tex, self.method_tex + '.',
+                          self.caption_end])
             sentence = ' '.join(words)
         return f'\caption{{{sentence}}}'
 
