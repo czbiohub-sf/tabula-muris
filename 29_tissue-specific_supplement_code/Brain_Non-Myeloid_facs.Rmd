@@ -3,7 +3,7 @@
 genes_to_check = c('Slc17a7','Neurod6','Mab21l1','Gad1','Reln','Calb1','Dcx','Dlx2','Ascl1','Hes5')
 filename = ridgeplot_and_save(tiss, save_folder, prefix='Neurons',
     group.by='cell_ontology_class',
-    genes=genes_to_check)
+    genes=genes_to_check, method=method)
   write_caption("Subclustering of the neuronal cluster identifies excititory neurons, inhibitory neurons, and neural precursor cells.", filename)
 ```
 
@@ -225,7 +225,7 @@ write_caption("Key defining genes for the Inflamed (Venous) and Notch (Arterial)
 filename = make_filename(save_folder, prefix, 'subtissue', 'ridgeplot')
 filename = ridgeplot_and_save(tiss, save_folder, prefix='Neurons',
     group.by='subtissue',
-    genes=genes_to_check, colors.use=brewer.pal(11,'Paired'))
+    genes=genes_to_check, colors.use=brewer.pal(11,'Paired'), method=method)
 write_caption("Key defining genes for the Inflamed (Venous) and Notch (Arterial) populations.", filename)
 ```
 
