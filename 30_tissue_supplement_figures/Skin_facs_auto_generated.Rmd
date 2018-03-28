@@ -3,7 +3,16 @@ title: "Skin facs Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Skin facs
+
 
 ```{r}
 library(here)
@@ -21,6 +30,11 @@ additional.group.bys = sort(c("subtissue"))
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Cd34", "Dkk3", "Fgf18", "Itga6", "Krt10", "Krt14", "Mki67", "Ptprc", "Top2a")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

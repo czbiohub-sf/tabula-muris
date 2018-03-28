@@ -3,7 +3,16 @@ title: "Brain_Myeloid facs Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Brain_Myeloid facs
+
 
 ```{r}
 library(here)
@@ -21,6 +30,11 @@ additional.group.bys = sort(c("subtissue"))
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Alb", "Cd163", "Cyp2e1", "Cyp2f2", "H2-Aa", "H2-Eb1", "Hamp", "P2ry12", "Ptprc", "Sall1", "Tmem119")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

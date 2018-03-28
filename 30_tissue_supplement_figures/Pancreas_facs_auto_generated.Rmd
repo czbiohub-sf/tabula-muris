@@ -3,7 +3,16 @@ title: "Pancreas facs Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Pancreas facs
+
 
 ```{r}
 library(here)
@@ -21,6 +30,11 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Amy2b", "Arx", "Cdh5", "Chga", "Cpa1", "Gcg", "Ghrl", "Hhex", "Hnf1b", "Ins1", "Ins2", "Isl1", "Kdr", "Krt19", "Mafa", "Mafb", "Neurog3", "Nkx6-1", "Pdgfra", "Pdgfrb", "Pdx1", "Pecam1", "Ppy", "Prss53", "Ptf1a", "Ptprc", "Slc2a2", "Spp1", "Sst")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
@@ -110,7 +124,7 @@ write_caption("\\emph{Prss53} transcripts are only detected in islet beta cells.
 
 ## Subset: SUBSETA
 
-```{r}
+## Subset: "SubsetA"```{r use-optipng, optipng=''}
 SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == c(1,2,5)]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 8
@@ -124,8 +138,10 @@ SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>%
 SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
     resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
-# Highlight which cells are in this subset
-    
+
+```
+
+### Highlight which cells are in this subset```{r use-optipng, optipng=''}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetA"] = "(Not in subset)"
 tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
@@ -164,6 +180,9 @@ ggdraw()
 ggdraw(g_legend(p))
 ggsave(filename, width = 8, height = 4)
 dev.off()
+
+```
+## tSNE, dotplots, and ridgeplots of this subset```{r use-optipng, optipng=''}
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
     save_folder, prefix = "SubsetA", group.bys, "facs")
 
