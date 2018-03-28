@@ -50,7 +50,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## Subset: BASAL
 
 ## Subset: "Basal"
-```{r use-optipng, optipng=''}
+```{r optipng='-o1'}
 Basal.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "basal cell"]
 write(paste("Number of cells in Basal subset:", length(Basal.cells.use)), stderr())
 Basal.n.pcs = 10
@@ -68,7 +68,7 @@ Basal.tiss <- Basal.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:B
 ```
 
 ### Highlight which cells are in this subset
-```{r use-optipng, optipng=''}
+```{r optipng='-o1'}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "Basal"] = "(Not in subset)"
 tiss@meta.data[Basal.cells.use, "Basal"] = "Basal" 
@@ -110,7 +110,7 @@ dev.off()
 
 ```
 ## tSNE, dotplots, and ridgeplots of this subset
-```{r use-optipng, optipng=''}
+```{r optipng='-o1'}
 dot_tsne_ridge(Basal.tiss, Basal.genes_to_check,
     save_folder, prefix = "Basal", group.bys, "facs")
 
