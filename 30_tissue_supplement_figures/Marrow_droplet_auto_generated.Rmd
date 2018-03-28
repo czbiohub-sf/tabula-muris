@@ -116,7 +116,7 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o1'}
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
-    save_folder, prefix = "SubsetA", group.bys, "droplet")
+    save_folder, prefix = "SubsetA", group.bys = group.bys, "droplet")
 
 ```
 
@@ -185,6 +185,6 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o1'}
 dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
-    save_folder, prefix = "SubsetB", group.bys, "droplet")
+    save_folder, prefix = "SubsetB", group.bys = group.bys, "droplet")
 
 ```
