@@ -3,7 +3,16 @@ title: "Diaphragm facs Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Diaphragm facs
+
 
 ```{r}
 library(here)
@@ -25,6 +34,11 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("C1qa", "Calcr", "Cd19", "Cd34", "Cd3d", "Cd44", "Cd69", "Cd79a", "Cd79b", "Cxcr4", "Fcer1g", "Foxp3", "Itga7", "Itgam", "Itgb1", "Klrb1b", "Myf5", "Myod1", "Pax3", "Pax7", "Pdgfra", "Pecam1", "Ptprc", "Sdc4", "Vcam1", "Vpreb3")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

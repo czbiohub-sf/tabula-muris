@@ -3,7 +3,16 @@ title: "Spleen facs Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Spleen facs
+
 
 ```{r}
 library(here)
@@ -25,6 +34,11 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Ccr2", "Cd19", "Cd3g", "Cd4", "Cd5", "Cd79a", "Cd8a", "Cd9", "Cnn3", "Il2rb", "Ptprc", "Vcam1")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

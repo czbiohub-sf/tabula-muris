@@ -3,7 +3,16 @@ title: "Liver droplet Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Liver droplet
+
 
 ```{r}
 library(here)
@@ -25,6 +34,11 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Alb", "Apoa1", "Ass1", "Cd19", "Cd68", "Cd74", "Cd79a", "Cd79b", "Cdh1", "Clec4f", "Cxcr6", "Cyp2e1", "Cyp2f2", "Emr1", "Epcam", "Glul", "Gstp1", "Gulo", "Gzma", "Hal", "Hamp", "Il2rb", "Irf7", "Kdr", "Krt19", "Krt7", "Nkg7", "Nrp1", "Oat", "Oit3", "Pck1", "Pecam1", "Ptprc", "Serpina1c", "Ttr", "Ubb", "Zap70")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
@@ -39,7 +53,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: HEPATOCYTES
 
-```{r}
+## Subset: "Hepatocytes"```{r use-optipng, optipng=''}
 Hepatocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "hepatocyte"]
 write(paste("Number of cells in Hepatocytes subset:", length(Hepatocytes.cells.use)), stderr())
 Hepatocytes.n.pcs = 8
@@ -54,10 +68,13 @@ Hepatocytes.tiss <- Hepatocytes.tiss %>% FindClusters(reduction.type = "pca", di
     resolution = Hepatocytes.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:Hepatocytes.n.pcs, seed.use = 10, perplexity=Hepatocytes.perplexity)
 
-# Append this subset's groupby to the list
+```
+
+### Append this subset's groupby to the list```{r use-optipng, optipng=''}
 group.bys = c(group.bys, "mouse.sex")
-# Highlight which cells are in this subset
-    
+```
+
+### Highlight which cells are in this subset```{r use-optipng, optipng=''}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "Hepatocytes"] = "(Not in subset)"
 tiss@meta.data[Hepatocytes.cells.use, "Hepatocytes"] = "Hepatocytes" 
@@ -96,6 +113,9 @@ ggdraw()
 ggdraw(g_legend(p))
 ggsave(filename, width = 8, height = 4)
 dev.off()
+
+```
+## tSNE, dotplots, and ridgeplots of this subset```{r use-optipng, optipng=''}
 dot_tsne_ridge(Hepatocytes.tiss, Hepatocytes.genes_to_check,
     save_folder, prefix = "Hepatocytes", group.bys, "droplet")
 

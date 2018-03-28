@@ -3,7 +3,16 @@ title: "Kidney droplet Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Kidney droplet
+
 
 ```{r}
 library(here)
@@ -25,6 +34,11 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Acta2", "Aqp2", "Cd3e", "Cd68", "Des", "Egf", "Emr1", "Epcam", "Itgam", "Kcne1", "Lyz2", "Mme3", "Pecam1", "Podxl", "Ptprc", "Pvalb", "Scnn1a", "Slc12a1", "Slc12a3", "Slc22a12", "Slc34a1", "Umod", "Vil1", "Vim", "Wt1")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
