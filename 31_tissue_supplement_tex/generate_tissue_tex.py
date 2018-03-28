@@ -63,8 +63,6 @@ def unique_sorted(series):
     return labels
 
 
-
-
 def get_category_order(column, defaults):
     column_unique = set(column.astype(str).unique())
     # print(column_unique)
@@ -81,6 +79,7 @@ def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
         parameters[col] = pd.Categorical(parameters[col],
                                          categories=categories)
     return parameters
+
 
 class TeXGenerator:
     def __init__(self, pdf, plottype, tissue, method, subset, groupby, i=None,
