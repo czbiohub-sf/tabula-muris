@@ -240,7 +240,7 @@ table(FetchData(subtissA, c('mouse.id','ident')) %>% droplevels())
 sub.cluster.ids <- c(0, 1, 2, 3)
 sub.free_annotation <- c(NA, NA, NA, NA)
 ""
-sub.cell_ontology_class <-c("promonocyte", "promonocyte", "Fraction A pre-pro B cell",
+sub.cell_ontology_class <-c("promonocyte", "promonocyte", "pre-pro B cell",
                             "hematopoietic precursor cell")
 
 subtissA = stash_annotations(subtissA, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
