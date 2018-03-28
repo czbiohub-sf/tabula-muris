@@ -129,7 +129,7 @@ write_caption("\\emph{Prss53} transcripts are only detected in islet beta cells.
 ## Subset: SUBSETA
 
 ## Subset: "SubsetA"
-```{r use-optipng, optipng=''}
+```{r optipng='-o1'}
 SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == c(1,2,5)]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 8
@@ -147,7 +147,7 @@ SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 ```
 
 ### Highlight which cells are in this subset
-```{r use-optipng, optipng=''}
+```{r optipng='-o1'}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetA"] = "(Not in subset)"
 tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
@@ -189,7 +189,7 @@ dev.off()
 
 ```
 ## tSNE, dotplots, and ridgeplots of this subset
-```{r use-optipng, optipng=''}
+```{r optipng='-o1'}
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
     save_folder, prefix = "SubsetA", group.bys, "facs")
 
