@@ -3,7 +3,16 @@ title: "Limb_Muscle droplet Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Limb_Muscle droplet
+
 
 ```{r}
 library(here)
@@ -21,6 +30,11 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Acan", "Acta2", "Atxn1", "Calcr", "Cd19", "Cd3g", "Cd4", "Cd8a", "Chad", "Chodl", "Itgam", "Myf5", "Myod1", "Pax7", "Pdgfra", "Pecam1", "Ptprc", "Sox9", "Vcam1")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

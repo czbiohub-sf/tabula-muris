@@ -3,7 +3,16 @@ title: "Liver facs Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Liver facs
+
 
 ```{r}
 library(here)
@@ -21,6 +30,11 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Alb", "Apoa1", "Ass1", "Cd19", "Cd68", "Cd74", "Cd79a", "Cd79b", "Cdh1", "Clec4f", "Cxcr6", "Cyp2e1", "Cyp2f2", "Emr1", "Glul", "Gstp1", "Gulo", "Gzma", "Hal", "Hamp", "Il2rb", "Irf7", "Kdr", "Nkg7", "Nrp1", "Oat", "Oit3", "Pck1", "Pecam1", "Serpina1c", "Ttr", "Ubb", "Zap70")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```

@@ -3,7 +3,16 @@ title: "Spleen droplet Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for Spleen droplet
+
 
 ```{r}
 library(here)
@@ -21,6 +30,11 @@ additional.group.bys = sort(c())
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c("Ccl6", "Ccr2", "Cd14", "Cd19", "Cd3e", "Cd3g", "Cd4", "Cd5", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd9", "Cnn3", "Flt3", "Hmgn3", "Ifitm3", "Il2rb", "Itgax", "Klrb1a", "Klrk1", "Lyz1", "Mpeg1", "Ptprc", "Vcam1")
+```
+
+# Make TSNEPlots, DotPlots and Ridgeplots of data
+
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
