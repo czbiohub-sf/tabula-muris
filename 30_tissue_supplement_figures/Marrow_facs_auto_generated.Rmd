@@ -49,7 +49,8 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: SUBSETA
 
-## Subset: "SubsetA"```{r use-optipng, optipng=''}
+## Subset: "SubsetA"
+```{r use-optipng, optipng=''}
 SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == c(11,12)]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 4
@@ -66,7 +67,8 @@ SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 
 ```
 
-### Highlight which cells are in this subset```{r use-optipng, optipng=''}
+### Highlight which cells are in this subset
+```{r use-optipng, optipng=''}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetA"] = "(Not in subset)"
 tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
@@ -107,7 +109,8 @@ ggsave(filename, width = 8, height = 4)
 dev.off()
 
 ```
-## tSNE, dotplots, and ridgeplots of this subset```{r use-optipng, optipng=''}
+## tSNE, dotplots, and ridgeplots of this subset
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
     save_folder, prefix = "SubsetA", group.bys, "facs")
 
@@ -115,7 +118,8 @@ dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
 
 ## Subset: SUBSETB
 
-## Subset: "SubsetB"```{r use-optipng, optipng=''}
+## Subset: "SubsetB"
+```{r use-optipng, optipng=''}
 SubsetB.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 0]
 write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), stderr())
 SubsetB.n.pcs = 3
@@ -132,7 +136,8 @@ SubsetB.tiss <- SubsetB.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 
 ```
 
-### Highlight which cells are in this subset```{r use-optipng, optipng=''}
+### Highlight which cells are in this subset
+```{r use-optipng, optipng=''}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetB"] = "(Not in subset)"
 tiss@meta.data[SubsetB.cells.use, "SubsetB"] = "SubsetB" 
@@ -173,7 +178,8 @@ ggsave(filename, width = 8, height = 4)
 dev.off()
 
 ```
-## tSNE, dotplots, and ridgeplots of this subset```{r use-optipng, optipng=''}
+## tSNE, dotplots, and ridgeplots of this subset
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
     save_folder, prefix = "SubsetB", group.bys, "facs")
 
@@ -181,7 +187,8 @@ dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
 
 ## Subset: SUBSETC
 
-## Subset: "SubsetC"```{r use-optipng, optipng=''}
+## Subset: "SubsetC"
+```{r use-optipng, optipng=''}
 SubsetC.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 8]
 write(paste("Number of cells in SubsetC subset:", length(SubsetC.cells.use)), stderr())
 SubsetC.n.pcs = 4
@@ -198,7 +205,8 @@ SubsetC.tiss <- SubsetC.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 
 ```
 
-### Highlight which cells are in this subset```{r use-optipng, optipng=''}
+### Highlight which cells are in this subset
+```{r use-optipng, optipng=''}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetC"] = "(Not in subset)"
 tiss@meta.data[SubsetC.cells.use, "SubsetC"] = "SubsetC" 
@@ -239,7 +247,8 @@ ggsave(filename, width = 8, height = 4)
 dev.off()
 
 ```
-## tSNE, dotplots, and ridgeplots of this subset```{r use-optipng, optipng=''}
+## tSNE, dotplots, and ridgeplots of this subset
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
     save_folder, prefix = "SubsetC", group.bys, "facs")
 
@@ -247,7 +256,8 @@ dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
 
 ## Subset: SUBSETD
 
-## Subset: "SubsetD"```{r use-optipng, optipng=''}
+## Subset: "SubsetD"
+```{r use-optipng, optipng=''}
 SubsetD.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 0]
 write(paste("Number of cells in SubsetD subset:", length(SubsetD.cells.use)), stderr())
 SubsetD.n.pcs = 20
@@ -264,7 +274,8 @@ SubsetD.tiss <- SubsetD.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 
 ```
 
-### Highlight which cells are in this subset```{r use-optipng, optipng=''}
+### Highlight which cells are in this subset
+```{r use-optipng, optipng=''}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetD"] = "(Not in subset)"
 tiss@meta.data[SubsetD.cells.use, "SubsetD"] = "SubsetD" 
@@ -305,7 +316,8 @@ ggsave(filename, width = 8, height = 4)
 dev.off()
 
 ```
-## tSNE, dotplots, and ridgeplots of this subset```{r use-optipng, optipng=''}
+## tSNE, dotplots, and ridgeplots of this subset
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
     save_folder, prefix = "SubsetD", group.bys, "facs")
 
@@ -313,7 +325,8 @@ dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
 
 ## Subset: SUBSETE
 
-## Subset: "SubsetE"```{r use-optipng, optipng=''}
+## Subset: "SubsetE"
+```{r use-optipng, optipng=''}
 SubsetE.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 7]
 write(paste("Number of cells in SubsetE subset:", length(SubsetE.cells.use)), stderr())
 SubsetE.n.pcs = 20
@@ -330,7 +343,8 @@ SubsetE.tiss <- SubsetE.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 
 ```
 
-### Highlight which cells are in this subset```{r use-optipng, optipng=''}
+### Highlight which cells are in this subset
+```{r use-optipng, optipng=''}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetE"] = "(Not in subset)"
 tiss@meta.data[SubsetE.cells.use, "SubsetE"] = "SubsetE" 
@@ -371,7 +385,8 @@ ggsave(filename, width = 8, height = 4)
 dev.off()
 
 ```
-## tSNE, dotplots, and ridgeplots of this subset```{r use-optipng, optipng=''}
+## tSNE, dotplots, and ridgeplots of this subset
+```{r use-optipng, optipng=''}
 dot_tsne_ridge(SubsetE.tiss, SubsetE.genes_to_check,
     save_folder, prefix = "SubsetE", group.bys, "facs")
 

@@ -50,9 +50,18 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## To identify taste receptor cells
 ```{r}
 genes_to_check = c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7')
+
+nCol = 4
+nRow = ceiling(length(genes_to_check) / nCol)
+
+# Set height of ridgeplots
+ridge_height = 5.5
+
 filename = make_filename(save_folder, 'allcells', 'cell_ontology_class', 'ridgeplot_taste-receptor')
 RidgePlot(tiss, genes_to_check, group.by = 'cell_ontology_class', do.return=TRUE)
-ggsave(filename, dpi=300)
+ggsave(filename,
+     width = 16,
+     height = nRow * ridge_height)
 dev.off()
 write_caption("Key genes identifying taste receptor cells.", filename)
 ```
