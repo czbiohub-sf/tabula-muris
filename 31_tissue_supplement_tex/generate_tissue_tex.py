@@ -114,7 +114,11 @@ class TeXGenerator:
             replace('-', ' ')
         if 'Subset' in groupby:
             groupby = 'Subset' + groupby.split('Subset')[-1].upper()
-        return f'\emph{{{groupby.title()}}}'
+        if groupby.lower() != 'cluster ids':
+            groupby = groupby.title()
+        else:
+            groupby = 'Cluster IDs'
+        return f'\emph{{{groupby}}}'
 
     @property
     def subsection_tex(self):
@@ -443,7 +447,6 @@ def cli(figure_folder, tissue, method):
 
     with open('tissue_supplement.tex', 'w') as g:
         g.write(content)
-
 
 
 if __name__ == "__main__":
