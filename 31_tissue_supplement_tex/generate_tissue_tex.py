@@ -6,6 +6,7 @@ from functools import cmp_to_key
 import locale
 import os
 import string
+import sys
 
 import click
 import pandas as pd
@@ -257,13 +258,6 @@ class TeXGenerator:
         return tex
 
 
-    @property
-    def highlight_subset_tex(self):
-        if self.subset == 'allcells':
-            return ''
-        else:
-
-
 
 def get_category_order(column, defaults):
     column_unique = set(column.astype(str).unique())
@@ -400,7 +394,11 @@ def cli(figure_folder, tissue, method):
                 if subset.lower().startswith('subset'):
                     letter = subset.lower().split('subset')[-1].upper()
                     subset_col = 'subset' + letter
-                    subset_annotation = annotation.loc[annotation[subset_col]]
+                    try:
+                        subset_annotation = annotation.loc[annotation[subset_col]]
+                    except KeyError:
+                        sys.stderr.write(f'{subset_col} not found in {tissue} {method}!!!\n')
+                        subset_annotation = annotation
                 elif subset != 'allcells':
                     try:
                         subset_yaml = yaml_data['SUBSET'][groupby.upper()]
@@ -431,8 +429,6 @@ def cli(figure_folder, tissue, method):
             else:
                 tex += r'''
 \clearpage'''
-
-            tex += tex_generator.highlight_subset_tex
 
             # Add section title and figure tex
             tex += tex_generator.figure_tex
