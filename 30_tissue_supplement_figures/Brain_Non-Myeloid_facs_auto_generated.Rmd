@@ -60,8 +60,9 @@ library(Matrix)
 library(cowplot)
 library(matrixStats)  # for colMins
 require(RColorBrewer)
-library(rrcov)  # For PcaHubert
-library(data.table)  # for data.table
+library(rrcov)        # For PcaHubert
+library(data.table)   # for data.table
+library(parallel)     # For mclapply
 ```
 
 Required custom functions
@@ -362,7 +363,7 @@ filename = make_filename(save_folder, prefix="Astrocytes", 'highlighted',
 p = TSNEPlot(
     object = tiss,
     do.return = TRUE,
-    group.by = group.by.plus,
+    group.by = "Astrocytes",
     no.axes = TRUE,
     pt.size = 1,
     no.legend = FALSE,
