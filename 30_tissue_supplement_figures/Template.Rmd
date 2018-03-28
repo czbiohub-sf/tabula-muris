@@ -3,7 +3,16 @@ title: "{TISSUE} {METHOD} Supplementary Notebook"
 output: html_notebook
 ---
 
-# Load data and make TSNEPlots, DotPlots and Ridgeplots of data
+
+
+Optimize pngs for smaller knitted html file sizes
+```{r setup}
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+# Load data for {TISSUE} {METHOD}
+
 
 ```{r}
 library(here)
@@ -25,7 +34,9 @@ additional.group.bys = sort(c({GROUPBY}))
 group.bys = c(standard.group.bys, additional.group.bys)
 
 genes_to_check = c({GENES})
+```
 
+# Make TSNEPlots, DotPlots and Ridgeplots of data
 
 ```{r use-optipng, optipng=''}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
