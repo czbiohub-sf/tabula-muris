@@ -170,7 +170,11 @@ ridgeplot_and_save = function(tiss,
   ggsave(filename,
          width = 16,
          height = nRow * ridge_height)
-  
+
+    genes_filename = sub('.pdf', '_genes.txt', filename)
+    write(c(genes[1], genes[length(genes)]), genes_filename)
+
+
   return(filename)
 }
 
@@ -352,6 +356,8 @@ dot_tsne_ridge = function(tiss,
       #   # Reverse the yscale so the clusters appear in ascending instead of descending order
       # ) + scale_y_discrete(limits = rev(levels(ident.use)))
       ggsave(filename, width = 13.75, height = 10)
+        genes_filename = sub('.pdf', '_genes.txt', filename)
+      write(c(genes[1], genes[length(genes)]), genes_filename)
       # dev.off()
       
       ridgeplot_and_save(tiss,
