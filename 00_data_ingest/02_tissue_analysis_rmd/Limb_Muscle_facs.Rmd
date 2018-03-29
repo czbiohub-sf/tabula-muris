@@ -135,13 +135,13 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
 
 free_annotation <- c(
-  "skeletal muscle satellite cell", 
-  "mesenchymal stem cell", 
-  "skeletal muscle satellite cell", 
-  "endothelial cell",
-  "B cell", 
-  "macrophage",
-  "T cell")
+  NA, 
+  NA, 
+  NA, 
+  NA,
+  NA, 
+  NA,
+  NA)
 
 cell_ontology_class <-c(
   "skeletal muscle satellite cell", 
