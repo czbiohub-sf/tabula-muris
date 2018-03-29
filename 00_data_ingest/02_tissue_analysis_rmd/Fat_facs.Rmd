@@ -128,14 +128,14 @@ cell_ontology_class <-
 
 free_annotation <- c(
  "mesenchymal progenitor",
-  "myeloid cell",
-  "endothelial cell",
+  NA,
+  NA,
   "mesenchymal progenitor",
-  "B cell",
-  "lymphocyte",
-  "myeloid cell",
+  NA,
+  NA,
+  NA,
   "mesenchymal progenitor",
-  "myeloid cell",
+  NA,
   NA
   )
 
