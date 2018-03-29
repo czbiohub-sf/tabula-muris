@@ -279,9 +279,9 @@ class TeXGenerator:
         if self.plottype == 'tsneplot':
             return 'height=.35\\textheight'
         if self.plottype == 'ridgeplot':
-            return 'width=.7\\textwidth'
+            return 'width=.65\\textwidth'
         if self.plottype == 'dotplot':
-            return 'angle=90, height=.6\\textheight'
+            return 'angle=90, height=.65\\textheight'
         else:
             return 'width=.6\\textwidth'
 
