@@ -117,7 +117,7 @@ cell_ontology_class <- c(
   "dendritic cell"
   )
 
-free_annotation <- cell_ontology_class
+free_annotation <- c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
