@@ -38,7 +38,7 @@ genes_to_check = c("Ahnak", "Atxn1", "Beta-s", "Bpgm", "Camp", "Ccl3", "Ccr6", "
 
 # Make TSNEPlots, DotPlots and Ridgeplots of data
 
-```{r use-optipng, optipng=''}
+```{r use-optipng, optipng='-o7'}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
@@ -54,7 +54,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## Subset: SUBSETA
 
 ## Subset: "SubsetA"
-```{r optipng='-o1'}
+```{r optipng='-o7'}
 SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 2]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 6
@@ -72,7 +72,7 @@ SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 ```
 
 ### Highlight which cells are in this subset
-```{r optipng='-o1'}
+```{r optipng='-o7'}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetA"] = "(Not in subset)"
 tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
@@ -114,7 +114,7 @@ dev.off()
 
 ```
 ## tSNE, dotplots, and ridgeplots of this subset
-```{r optipng='-o1'}
+```{r optipng='-o7'}
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
     save_folder, prefix = "SubsetA", group.bys = group.bys, "droplet")
 
@@ -123,7 +123,7 @@ dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
 ## Subset: SUBSETB
 
 ## Subset: "SubsetB"
-```{r optipng='-o1'}
+```{r optipng='-o7'}
 SubsetB.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 11]
 write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), stderr())
 SubsetB.n.pcs = 3
@@ -141,7 +141,7 @@ SubsetB.tiss <- SubsetB.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 ```
 
 ### Highlight which cells are in this subset
-```{r optipng='-o1'}
+```{r optipng='-o7'}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetB"] = "(Not in subset)"
 tiss@meta.data[SubsetB.cells.use, "SubsetB"] = "SubsetB" 
@@ -183,7 +183,7 @@ dev.off()
 
 ```
 ## tSNE, dotplots, and ridgeplots of this subset
-```{r optipng='-o1'}
+```{r optipng='-o7'}
 dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
     save_folder, prefix = "SubsetB", group.bys = group.bys, "droplet")
 

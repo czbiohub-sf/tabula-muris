@@ -38,7 +38,7 @@ genes_to_check = c("Cck", "Cdh1", "Col1a1", "Col8a1", "Epcam", "Foxj1", "Krt5", 
 
 # Make TSNEPlots, DotPlots and Ridgeplots of data
 
-```{r use-optipng, optipng=''}
+```{r use-optipng, optipng='-o7'}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
@@ -54,7 +54,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## Subset: EPITHELIAL
 
 ## Subset: "Epithelial"
-```{r optipng='-o1'}
+```{r optipng='-o7'}
 Epithelial.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "epithelial cell"]
 write(paste("Number of cells in Epithelial subset:", length(Epithelial.cells.use)), stderr())
 Epithelial.n.pcs = 2
@@ -72,7 +72,7 @@ Epithelial.tiss <- Epithelial.tiss %>% FindClusters(reduction.type = "pca", dims
 ```
 
 ### Highlight which cells are in this subset
-```{r optipng='-o1'}
+```{r optipng='-o7'}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "Epithelial"] = "(Not in subset)"
 tiss@meta.data[Epithelial.cells.use, "Epithelial"] = "Epithelial" 
@@ -114,7 +114,7 @@ dev.off()
 
 ```
 ## tSNE, dotplots, and ridgeplots of this subset
-```{r optipng='-o1'}
+```{r optipng='-o7'}
 dot_tsne_ridge(Epithelial.tiss, Epithelial.genes_to_check,
     save_folder, prefix = "Epithelial", group.bys = group.bys, "droplet")
 
