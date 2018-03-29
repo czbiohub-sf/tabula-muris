@@ -109,8 +109,8 @@ free_annotation <- c(
   NA,
   NA,
   NA,
-  NA",
-  NA",
+  NA,
+  NA,
   NA,
   NA,
   "NK/NKT cells")
