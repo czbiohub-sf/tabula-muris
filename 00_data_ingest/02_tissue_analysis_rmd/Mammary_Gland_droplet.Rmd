@@ -103,20 +103,20 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
 free_annotation <-
   c(
-    "T cell",
-    "B cell",
-    "T cell",
-    "stromal cell",
-    "basal cell",
-    "T cell",
+    NA,
+    NA,
+    NA,
+    NA,
+    NA,
+    NA,
     "luminal progenitor cell",
     "mature luminal cell",
-    "macrophage",
-    "stromal cell",
-    "endothelial cell",
-    "endothelial cell",
-    "stromal cell",
-    "stromal cell")
+    NA,
+    NA,
+    NA,
+    NA,
+    NA,
+    NA)
 
 cell_ontology_class <-
   c(
