@@ -59,7 +59,7 @@ SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class 
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 5
 SubsetA.res.use = 1
-SubsetA.perplexity = 25
+SubsetA.perplexity = 20
 SubsetA.genes_to_check = c("Cnn1", "Kcnj8", "Myh11", "Postn")
 SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
 SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
