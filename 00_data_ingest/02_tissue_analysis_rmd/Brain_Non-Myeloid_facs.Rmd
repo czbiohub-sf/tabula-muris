@@ -309,8 +309,7 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 ```{r}
 sub.cluster.ids <- c(0, 1, 2, 3,4)
 sub.free_annotation <- c(NA,NA,NA,NA,NA)
-sub.cell_ontology_class <-c("astrocyte of the cerebral cortex","astrocyte of the cerebral cortex","astrocyte of the cerebral cortex",
-                   "astrocyte of the cerebral cortex","Bergmann glial cell")
+sub.cell_ontology_class <-c("astrocyte","astrocyte","astrocyte","astrocyte","Bergmann glial cell")
 
 subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
 tiss = stash_subtiss_in_tiss(tiss, subtiss)
