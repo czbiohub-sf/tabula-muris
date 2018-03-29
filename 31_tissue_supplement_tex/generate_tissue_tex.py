@@ -407,7 +407,8 @@ def cli(figure_folder, tissue, method):
 
         # Remove legend figures because they're auto-added
         # Remove any legends because they get auto-added
-        parameters = parameters.loc[~parameters.extra.str.contains('legend').fillna(False)]
+        is_legend = parameters['extra'].astype(str).str.contains('legend').fillna(False)
+        parameters = parameters.loc[~is_legend]
         parameters.loc[:, 'extra'] = parameters['extra'].fillna('')
         grouped = parameters.groupby(['subset', 'groupby', 'plottype', 'extra'])
 
