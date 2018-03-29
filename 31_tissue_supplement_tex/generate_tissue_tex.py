@@ -29,13 +29,20 @@ ORDER_DEFAULTS = {'subset': SUBSET_ORDER, 'plottype': PLOT_ORDER,
                   'groupby': GROUPBY_ORDER}
 
 FIGURE_FOLDER = '30_tissue_supplement_figures'
-PATTERN = '^(?P<subset>[a-zA-Z\d]+)_(?P<groupby>[\w\-]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9]+)?.pdf$'
+PATTERN = '^(?P<subset>[a-zA-Z\d]+)_(?P<groupby>[\w\->]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9_]+)?.pdf$'
 
 SUBSECTION = r"""
 \subsection{SUBSET, labeled by GROUPBY}
 """
 
 ENDMATTER = r"\end{document}"
+
+
+def texify(s):
+    """Convert a string to be TeX compatible"""
+    s = s.replace('_', ' ').replace('-', ' ')
+    s = s.replace('>0', '$>0$')
+    return s
 
 
 def method_tex(method):
@@ -142,6 +149,11 @@ class TeXGenerator:
             replace('-', ' ')
         if 'Subset' in groupby:
             groupby = 'Subset' + groupby.split('Subset')[-1].upper()
+        elif '>' in groupby:
+            # e.g. Neurog3>0
+            gene_name = groupby.split('>')[0]
+            groupby = f'\emph{{{gene_name}}} $> 0$'
+            return groupby
         if groupby.lower() != 'cluster ids':
             groupby = groupby.title()
         else:
@@ -203,7 +215,17 @@ class TeXGenerator:
 
     @property
     def extra_tex(self):
-        tex = self.extra.replace('-', ' ').replace('_', ' ').title()
+        if self.extra is not None:
+            tex = self.extra.replace('-', ' ').replace('_', ' ').title()
+            if ' x ' in tex.lower():
+                # e.g. Raw Neurog3 x Hhex
+                unit, gene1, x, gene2 = tex.split()
+                unit = unit.title()
+                gene1 = gene1.title()
+                gene2 = gene2.title()
+                tex = f'{unit} \emph{{{gene1}}} $\\times$ \emph{{{gene2}}}'
+        else:
+            tex = ''
         return tex
 
 
@@ -343,8 +365,6 @@ def cli(figure_folder, tissue, method):
     for tissue_method_path in tissue_method_paths:
         print(f'\n\ntissue_method_path: {tissue_method_path}')
         figures = glob.glob(os.path.join(tissue_method_path, '*.pdf'))
-        figures_str = "\n\t\t".join(figures)
-        print(f'\tFigures: {figures_str}')
         if len(figures) == 0:
             continue
         tissue_path, method = os.path.split(tissue_method_path)
@@ -377,13 +397,17 @@ def cli(figure_folder, tissue, method):
 
         basenames = [os.path.basename(f) for f in figures]
         basenames = pd.Series(basenames, index=basenames, name='basename')
+        figures_str = "\n".join(basenames)
+        print(f'\tFigures:\n{figures_str}')
+
         parameters = basenames.str.extractall(PATTERN)
         parameters.index = parameters.index.droplevel(-1)
         parameters = add_categorical_order(parameters)
         # print(parameters)
 
         # Remove legend figures because they're auto-added
-        parameters = parameters.query('extra != "legend"')
+        # Remove any legends because they get auto-added
+        parameters = parameters.loc[~parameters.extra.str.contains('legend').fillna(False)]
         parameters.loc[:, 'extra'] = parameters['extra'].fillna('')
         grouped = parameters.groupby(['subset', 'groupby', 'plottype', 'extra'])
 
@@ -423,8 +447,8 @@ def cli(figure_folder, tissue, method):
                 i = int(split[0])
                 n = int(split[-1])
                 extra = None
-            elif extra != '1-of-1':
-                extra = None
+            # elif extra != '1-of-1':
+            #     extra = None
             tex_generator = TeXGenerator(pdf, plottype, tissue,
                                         method, subset, groupby,
                                         i=i, n=n,
@@ -438,6 +462,7 @@ def cli(figure_folder, tissue, method):
 
             print(f'\tsubset: {subset}, groupby: {groupby}, plottype: '
                   f'{plottype}, k: {k}, j: {j}, i: {i}, n: {n}, extra: {extra}')
+            print(f'\t\tpdf name: {os.path.basename(pdf)}')
 
             if j == 0 and tissue != 'Microbiome':
                 tex += tex_generator.subsection_tex
