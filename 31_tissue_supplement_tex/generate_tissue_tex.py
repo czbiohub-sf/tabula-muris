@@ -152,7 +152,7 @@ class TeXGenerator:
         elif '>' in groupby:
             # e.g. Neurog3>0
             gene_name = groupby.split('>')[0]
-            groupby = f'\emph{{{gene_name}}} $> 0$'
+            groupby = f'\emph{{{gene_name}}} \\textgreater 0'
             return groupby
         if groupby.lower() != 'cluster ids':
             groupby = groupby.title()
