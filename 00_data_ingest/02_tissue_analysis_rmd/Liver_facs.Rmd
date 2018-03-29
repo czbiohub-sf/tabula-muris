@@ -106,13 +106,13 @@ cluster.ids <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
 
 free_annotation <- c(
   "endothelial cell",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "hepatocyte",
-  "Kupffer cell",
-  "hepatocyte",
-  "B cell",
+  NA,
+  NA,
+  NA,
+  NA",
+  NA",
+  NA,
+  NA,
   "NK/NKT cells")
 
 cell_ontology_class <-c(
