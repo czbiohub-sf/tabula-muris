@@ -27,7 +27,7 @@ integer_breaks = function(x)
     max(x) + 1
   ) * 1.1))))
 
-CHUNKSIZE = 16
+CHUNKSIZE = 12
 
 
 # Dotplot palette
@@ -140,7 +140,7 @@ ridgeplot_and_save = function(tiss,
                            group.by,
                            paste('ridgeplot', suffix, sep = '_'))
   # Adjust canvas size so the plots are the same size no matter how many genes
-  nCol = 4
+  nCol = 3
   nRow = ceiling(length(genes) / nCol)
   
   # Set height of ridgeplots
@@ -151,7 +151,7 @@ ridgeplot_and_save = function(tiss,
     genes,
     group.by = group.by,
     do.return = TRUE,
-    nCol = 4,
+    nCol = nCol,
     same.y.lims = TRUE,
     return.plotlist = TRUE,
     cols.use = colors.use
