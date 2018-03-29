@@ -50,7 +50,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_3_CCGGTAGAGGCAGTCA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-8,22.70169286167594,-8.98336519565281,10X_P4_3
 10X_P4_3_CCGGTAGCAGTGGGAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-8,-24.950942312883758,2.791016687929858,10X_P4_3
 10X_P4_3_CCGTGGAGTGAGGGTT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-8,23.061405142548555,-10.021656811172562,10X_P4_3
-10X_P4_3_CCGTTCAGTTCCCTTG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-8,-4.844317408274196,-33.86258642380589,10X_P4_3
+10X_P4_3_CCGTTCAGTTCCCTTG,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-8,-4.844317408274196,-33.86258642380589,10X_P4_3
 10X_P4_3_CCTACACAGGGCATGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-8,-37.207135662333485,-5.91893993962006,10X_P4_3
 10X_P4_3_CCTTCGATCTCCGGTT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-8,-14.241722630429955,17.95795758683609,10X_P4_3
 10X_P4_3_CGAGAAGAGGACTGGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-8,-27.65492715499688,-14.265153209208092,10X_P4_3
@@ -91,7 +91,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_3_GCAAACTAGAGCCCAA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-8,-25.537185563998822,-1.3535777303038163,10X_P4_3
 10X_P4_3_GCATGATCATATGGTC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-8,21.92650627678343,-7.38871395403966,10X_P4_3
 10X_P4_3_GCGACCAAGGGATCTG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-8,23.56639938778548,-9.168264449207603,10X_P4_3
-10X_P4_3_GCGACCACACCAACCG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-8,-7.9245117103460405,-31.497703902911553,10X_P4_3
+10X_P4_3_GCGACCACACCAACCG,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-8,-7.9245117103460405,-31.497703902911553,10X_P4_3
 10X_P4_3_GCGAGAACACATGGGA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-8,-27.97609587704146,-14.549469063597087,10X_P4_3
 10X_P4_3_GCGAGAATCCCTCTTT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-8,-23.194843519863444,-2.671514228842192,10X_P4_3
 10X_P4_3_GCTGCTTTCAAAGTAG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-8,10.51387293854157,-18.96488713102372,10X_P4_3
@@ -132,7 +132,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_3_TCTTTCCTCCGCATAA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-8,32.851754053566495,13.96506610700927,10X_P4_3
 10X_P4_3_TGAGAGGAGACATAAC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-8,0.9237253308153915,15.519806792347604,10X_P4_3
 10X_P4_3_TGAGAGGAGCGATATA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-8,-26.118445997066562,0.4011497538797126,10X_P4_3
-10X_P4_3_TGAGCATAGTGGAGTC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-8,-3.3703677761313493,-34.1707050073501,10X_P4_3
+10X_P4_3_TGAGCATAGTGGAGTC,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-8,-3.3703677761313493,-34.1707050073501,10X_P4_3
 10X_P4_3_TGCGGGTTCTTTACGT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-8,23.37270772870802,-9.045695950037327,10X_P4_3
 10X_P4_3_TGGACGCTCCGATATG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-8,-30.04100763072903,1.5818393022877426,10X_P4_3
 10X_P4_3_TGGACGCTCTGCAGTA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-8,27.552102807117993,3.4478286240378555,10X_P4_3
@@ -208,7 +208,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_AACTTTCAGACAAAGG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,25.342238560471696,15.649096845457839,10X_P4_4
 10X_P4_4_AACTTTCCAATCTGCA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,22.961533365971196,-5.540772622110383,10X_P4_4
 10X_P4_4_AACTTTCCAGCGTAAG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,33.62992820873552,-10.020123745336555,10X_P4_4
-10X_P4_4_AACTTTCGTACACCGC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-7.852637462027959,-31.137932953342943,10X_P4_4
+10X_P4_4_AACTTTCGTACACCGC,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-7.852637462027959,-31.137932953342943,10X_P4_4
 10X_P4_4_AAGACCTAGAGCTGCA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,19.85143765488067,-10.053717552557824,10X_P4_4
 10X_P4_4_AAGACCTAGGGTGTGT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,8.617311645117812,-14.799253733304797,10X_P4_4
 10X_P4_4_AAGACCTCAACTGCTA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,18.62189111703139,-11.184539029464624,10X_P4_4
@@ -279,7 +279,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_ACAGCTAAGCGACGTA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-27.067250718621573,-20.17669754453514,10X_P4_4
 10X_P4_4_ACAGCTAAGCGTGTCC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-22.647153836555418,13.566543230068964,10X_P4_4
 10X_P4_4_ACAGCTAAGCTGATAA,Bladder,,leukocyte,CL:0000738,Monocyte/Macrophage,6,M,3-M-9,-13.506971520207799,44.351198616329405,10X_P4_4
-10X_P4_4_ACAGCTACAGCGTCCA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-8.00918641653223,-31.821810673180618,10X_P4_4
+10X_P4_4_ACAGCTACAGCGTCCA,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-8.00918641653223,-31.821810673180618,10X_P4_4
 10X_P4_4_ACAGCTATCTGATTCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-29.64845694430366,5.954893842349611,10X_P4_4
 10X_P4_4_ACATACGCACGAGGTA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,9.663542220927281,0.2704084284550001,10X_P4_4
 10X_P4_4_ACATACGCAGACAGGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-7.993319197379028,13.02091130104734,10X_P4_4
@@ -363,11 +363,11 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_ACTATCTTCCGAATGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-23.954793115254517,10.61613669691554,10X_P4_4
 10X_P4_4_ACTATCTTCGTAGATC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-16.18624662428589,18.895634933383676,10X_P4_4
 10X_P4_4_ACTATCTTCTCTGAGA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,12.901830158646549,-13.586030301392894,10X_P4_4
-10X_P4_4_ACTGAACCAAGTACCT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-3.1668443509139754,-35.04995646725613,10X_P4_4
+10X_P4_4_ACTGAACCAAGTACCT,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-3.1668443509139754,-35.04995646725613,10X_P4_4
 10X_P4_4_ACTGAACCACCTTGTC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,7.164261010385602,4.613604550849471,10X_P4_4
 10X_P4_4_ACTGAACCACGAAGCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-24.37739635245416,10.867329709543721,10X_P4_4
 10X_P4_4_ACTGAACTCGAATCCA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,30.747341656789164,-1.2061947848111805,10X_P4_4
-10X_P4_4_ACTGAGTGTTGCGTTA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-4.740840207328179,-33.80717921546084,10X_P4_4
+10X_P4_4_ACTGAGTGTTGCGTTA,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-4.740840207328179,-33.80717921546084,10X_P4_4
 10X_P4_4_ACTGAGTTCATCGATG,Bladder,,leukocyte,CL:0000738,Monocyte/Macrophage,6,M,3-M-9,-15.559570985376487,43.21737580709118,10X_P4_4
 10X_P4_4_ACTGATGCATTAGCCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-10.786994046694408,24.153510981219018,10X_P4_4
 10X_P4_4_ACTGATGGTATTCGTG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,6.643098089569069,-18.888183122987126,10X_P4_4
@@ -378,7 +378,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_ACTGCTCAGTATCGAA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-12.160122370084165,23.187300722282814,10X_P4_4
 10X_P4_4_ACTGCTCCACATCCAA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,27.383923597896334,9.472629010438778,10X_P4_4
 10X_P4_4_ACTGTCCAGGGTCTCC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,26.231429213355202,14.515996344956298,10X_P4_4
-10X_P4_4_ACTGTCCCATTCACTT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-7.752038922890819,-30.895337812782127,10X_P4_4
+10X_P4_4_ACTGTCCCATTCACTT,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-7.752038922890819,-30.895337812782127,10X_P4_4
 10X_P4_4_ACTGTCCTCTTCGAGA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,20.154471592991253,4.5723652488666175,10X_P4_4
 10X_P4_4_ACTTACTAGCAGATCG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-27.739111064367954,2.0274650186232654,10X_P4_4
 10X_P4_4_ACTTACTAGTTATCGC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,19.782067834986808,11.645461187832554,10X_P4_4
@@ -439,7 +439,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_AGCTCCTGTCGACTGC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,21.933601022695882,7.080039606105939,10X_P4_4
 10X_P4_4_AGCTCCTGTTCGGGCT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,18.815783580657612,-18.624176753166772,10X_P4_4
 10X_P4_4_AGCTCCTTCCTCGCAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-3.0688625148102324,16.36167226495561,10X_P4_4
-10X_P4_4_AGCTCCTTCTCCAGGG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-3.7186109365599433,-33.995954283429306,10X_P4_4
+10X_P4_4_AGCTCCTTCTCCAGGG,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-3.7186109365599433,-33.995954283429306,10X_P4_4
 10X_P4_4_AGCTCTCCATAAAGGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-28.868179956574007,0.8062541472414949,10X_P4_4
 10X_P4_4_AGCTCTCGTTCGGGCT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,19.147794391883625,-20.327344558106947,10X_P4_4
 10X_P4_4_AGCTCTCTCATCTGCC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,18.30247422731788,-18.8673792479501,10X_P4_4
@@ -531,7 +531,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_ATCCGAATCCTAGTGA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,9.706896603058293,2.339091876119203,10X_P4_4
 10X_P4_4_ATCGAGTGTGCAGTAG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,19.209471218558225,-4.920404828063233,10X_P4_4
 10X_P4_4_ATCGAGTGTGCGGTAA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,13.395247395973392,-4.205260673240239,10X_P4_4
-10X_P4_4_ATCTACTAGGCAATTA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-3.3371777961299953,-34.2897898772467,10X_P4_4
+10X_P4_4_ATCTACTAGGCAATTA,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-3.3371777961299953,-34.2897898772467,10X_P4_4
 10X_P4_4_ATCTACTGTCGGCATC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,19.714653780158454,4.200124340016062,10X_P4_4
 10X_P4_4_ATCTGCCAGAAGAAGC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-16.611934602551276,13.068966361681975,10X_P4_4
 10X_P4_4_ATCTGCCAGTGATCGG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,15.888217581960054,0.8060640049167704,10X_P4_4
@@ -575,7 +575,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_CAACTAGTCCCATTTA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,15.405360524884754,10.435593279189282,10X_P4_4
 10X_P4_4_CAAGAAAAGGACTGGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-5.640983922112601,22.71911307977013,10X_P4_4
 10X_P4_4_CAAGAAACACGCATCG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-24.192106021881852,10.481270134052123,10X_P4_4
-10X_P4_4_CAAGAAACATTCCTCG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-7.802656217201114,-31.209931839401897,10X_P4_4
+10X_P4_4_CAAGAAACATTCCTCG,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-7.802656217201114,-31.209931839401897,10X_P4_4
 10X_P4_4_CAAGAAATCGCGCCAA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,33.479080633197896,-12.12236803500909,10X_P4_4
 10X_P4_4_CAAGATCAGCGAAGGG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-1.6870063565399,13.504119472872178,10X_P4_4
 10X_P4_4_CAAGATCCAAGTCATC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-12.00635885446766,17.61940241191545,10X_P4_4
@@ -594,7 +594,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_CACAAACCATGAACCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-15.59119088756662,18.3204411471753,10X_P4_4
 10X_P4_4_CACAAACGTTTCGCTC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,12.263068082925459,-1.1037430462606932,10X_P4_4
 10X_P4_4_CACAAACTCCCAAGTA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,7.270432685300378,-0.6203225226229298,10X_P4_4
-10X_P4_4_CACACAAAGTTATCGC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-7.748778919969867,-31.909241091417584,10X_P4_4
+10X_P4_4_CACACAAAGTTATCGC,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-7.748778919969867,-31.909241091417584,10X_P4_4
 10X_P4_4_CACACAATCATCATTC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-27.949099543420388,-11.32038202414467,10X_P4_4
 10X_P4_4_CACACAATCCAAGTAC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-12.455707430874675,14.428566066176606,10X_P4_4
 10X_P4_4_CACACAATCGCGCCAA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-35.372146952728066,-10.666413495020379,10X_P4_4
@@ -703,7 +703,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_CATCGGGGTCTTCGTC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,21.347522482593785,8.733024067265248,10X_P4_4
 10X_P4_4_CATCGGGGTTCAGTAC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-3.204176018262002,14.419933482536564,10X_P4_4
 10X_P4_4_CATGACAAGCGATCCC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,12.644220677918964,-1.8234445677425053,10X_P4_4
-10X_P4_4_CATGACAAGGACTGGT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-2.9669840303287374,-34.873444215722785,10X_P4_4
+10X_P4_4_CATGACAAGGACTGGT,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-2.9669840303287374,-34.873444215722785,10X_P4_4
 10X_P4_4_CATGACACACCAGGCT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,28.105442520924367,15.925083299707548,10X_P4_4
 10X_P4_4_CATGACAGTCTTCAAG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-5.243077065904817,22.040968403243212,10X_P4_4
 10X_P4_4_CATGACAGTTACAGAA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,10.101874023583676,-19.835087550052666,10X_P4_4
@@ -790,7 +790,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_CCGTTCAGTAAGAGAG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-6.128678141261988,16.42520947188567,10X_P4_4
 10X_P4_4_CCGTTCAGTCTGATTG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,19.933861711528113,-5.225081977341408,10X_P4_4
 10X_P4_4_CCGTTCAGTCTTCAAG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,9.399148318462915,-11.282557017371266,10X_P4_4
-10X_P4_4_CCTAAAGAGCTCCTTC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-4.04548830436231,-34.7479612799641,10X_P4_4
+10X_P4_4_CCTAAAGAGCTCCTTC,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-4.04548830436231,-34.7479612799641,10X_P4_4
 10X_P4_4_CCTAAAGCAAGGGTCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-30.914940088742902,-1.7247047414459928,10X_P4_4
 10X_P4_4_CCTAAAGCACTGTTAG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-30.407756610519137,-9.835014870301842,10X_P4_4
 10X_P4_4_CCTAAAGGTCAGAAGC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,19.14800169945019,-19.72488958423436,10X_P4_4
@@ -831,7 +831,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_CCTTTCTCACCAGGCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-25.19345515434305,7.947225607522446,10X_P4_4
 10X_P4_4_CCTTTCTCATTGCGGC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,22.513224339354032,16.86415459192958,10X_P4_4
 10X_P4_4_CCTTTCTTCAAGCCTA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-1.8410067426213104,18.372680940300242,10X_P4_4
-10X_P4_4_CCTTTCTTCCCTTGCA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-3.705497903335727,-34.194307310388055,10X_P4_4
+10X_P4_4_CCTTTCTTCCCTTGCA,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-3.705497903335727,-34.194307310388055,10X_P4_4
 10X_P4_4_CCTTTCTTCTATCCCG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-4.5988524836087965,20.12736315067501,10X_P4_4
 10X_P4_4_CGAACATCATCGTCGG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-34.15234933754354,-4.1207034459369085,10X_P4_4
 10X_P4_4_CGAACATGTACTCAAC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-30.997631734265983,-16.20212841450347,10X_P4_4
@@ -854,7 +854,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_CGAGCACTCTGCTTGC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,22.83005199460671,-1.3785310672001623,10X_P4_4
 10X_P4_4_CGAGCCACATATGAGA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,8.978326695076591,-23.785140198454467,10X_P4_4
 10X_P4_4_CGAGCCACATTAGCCA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,26.420690049485227,16.481623325643078,10X_P4_4
-10X_P4_4_CGATCGGAGTGGAGTC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-3.7401643679072634,-34.42079670594578,10X_P4_4
+10X_P4_4_CGATCGGAGTGGAGTC,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-3.7401643679072634,-34.42079670594578,10X_P4_4
 10X_P4_4_CGATCGGCATGGTCAT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,34.71430466740283,9.51623937380396,10X_P4_4
 10X_P4_4_CGATGGCAGAGCCTAG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,6.545751146421914,-19.48300411989993,10X_P4_4
 10X_P4_4_CGATGGCGTACTCTCC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,10.48562845240866,8.612226823711914,10X_P4_4
@@ -887,7 +887,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_CGGACACAGCCCAGCT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,19.077172209796146,-20.864107272141062,10X_P4_4
 10X_P4_4_CGGACACAGGGCACTA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-1.7638799654403257,14.467090899857398,10X_P4_4
 10X_P4_4_CGGACACCACTACAGT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,21.028688365686122,13.945043108352081,10X_P4_4
-10X_P4_4_CGGACACCAGCTTAAC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-7.5279417412884255,-31.181814704042402,10X_P4_4
+10X_P4_4_CGGACACCAGCTTAAC,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-7.5279417412884255,-31.181814704042402,10X_P4_4
 10X_P4_4_CGGACACGTTTGGCGC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,14.757458766003417,-3.1317623351852237,10X_P4_4
 10X_P4_4_CGGACGTAGGAGTCTG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-33.80636848707567,-12.90188038577905,10X_P4_4
 10X_P4_4_CGGACGTAGGAGTTGC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-5.1400874681224495,25.244256948284264,10X_P4_4
@@ -905,9 +905,9 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_CGGAGTCTCACCAGGC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,12.42185974240489,-7.143623757643104,10X_P4_4
 10X_P4_4_CGGGTCACACCAGCAC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-25.689821086419506,-14.80204291727348,10X_P4_4
 10X_P4_4_CGGGTCACACGAAGCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-26.940214211716317,-18.089278531245995,10X_P4_4
-10X_P4_4_CGGGTCACAGACGCTC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-7.4789687731102426,-32.32122141981157,10X_P4_4
+10X_P4_4_CGGGTCACAGACGCTC,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-7.4789687731102426,-32.32122141981157,10X_P4_4
 10X_P4_4_CGGGTCACATCACGAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-5.63405114359713,10.24254617259384,10X_P4_4
-10X_P4_4_CGGGTCACATTCACTT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-7.822815995071352,-30.875031770638774,10X_P4_4
+10X_P4_4_CGGGTCACATTCACTT,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-7.822815995071352,-30.875031770638774,10X_P4_4
 10X_P4_4_CGGGTCAGTTCGGCAC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-3.3836967195738263,12.774147073857666,10X_P4_4
 10X_P4_4_CGGTTAAAGTCACGCC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,7.091858578033972,-22.218022575877583,10X_P4_4
 10X_P4_4_CGGTTAACACGGTAAG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,33.038838145183625,11.300314218541564,10X_P4_4
@@ -1018,7 +1018,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_CTCGGGATCACTTATC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-29.8676795057577,-12.147085110213036,10X_P4_4
 10X_P4_4_CTCGTACGTCATACTG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-14.559194430105183,14.00830827632341,10X_P4_4
 10X_P4_4_CTCGTCAAGAATTGTG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-23.165450908057664,5.906808016009181,10X_P4_4
-10X_P4_4_CTCGTCACACTTAAGC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-3.213188317518512,-34.9226594571457,10X_P4_4
+10X_P4_4_CTCGTCACACTTAAGC,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-3.213188317518512,-34.9226594571457,10X_P4_4
 10X_P4_4_CTCGTCAGTAATCGTC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,17.825969375039296,-8.140716552041688,10X_P4_4
 10X_P4_4_CTCGTCAGTCGCGGTT,Bladder,,leukocyte,CL:0000738,Monocyte/Macrophage,6,M,3-M-9,-14.252714460128107,41.67153651540866,10X_P4_4
 10X_P4_4_CTCGTCATCGCACTCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-3.2587136333086884,19.461132116838503,10X_P4_4
@@ -1122,7 +1122,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_GAATAAGAGCTGAACG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-33.25574797969614,-7.47832416648445,10X_P4_4
 10X_P4_4_GAATAAGAGGAGCGTT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-20.561609595195517,13.531287205194563,10X_P4_4
 10X_P4_4_GAATAAGGTACGACCC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,21.29156743764805,14.868664148795473,10X_P4_4
-10X_P4_4_GAATGAAAGCTTATCG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-2.9227933829014794,-34.72104254094558,10X_P4_4
+10X_P4_4_GAATGAAAGCTTATCG,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-2.9227933829014794,-34.72104254094558,10X_P4_4
 10X_P4_4_GAATGAACATGCCTTC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,27.429125965104806,14.132826725838958,10X_P4_4
 10X_P4_4_GAATGAAGTAGCAAAT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,22.2745871714546,-14.66370839946205,10X_P4_4
 10X_P4_4_GAATGAAGTCGAGTTT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,34.94242067633968,-3.357520885519153,10X_P4_4
@@ -1188,7 +1188,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_GATCGATAGAGACGAA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,6.965546187720566,-16.677909895741216,10X_P4_4
 10X_P4_4_GATCGATAGGTTCCTA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,6.643526427019506,-21.77059503294567,10X_P4_4
 10X_P4_4_GATCGATAGTTAGGTA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-1.1460618970860368,16.04604763470909,10X_P4_4
-10X_P4_4_GATCGATCAAAGCAAT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-5.89204969155756,-32.9759836615242,10X_P4_4
+10X_P4_4_GATCGATCAAAGCAAT,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-5.89204969155756,-32.9759836615242,10X_P4_4
 10X_P4_4_GATCGATTCGCTGATA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-36.28039496628558,-7.98573883153336,10X_P4_4
 10X_P4_4_GATCGCGGTATGAATG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,10.95571185033746,8.13815272926144,10X_P4_4
 10X_P4_4_GATCGTAAGGCTACGA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,10.652312631115949,-16.423279011152047,10X_P4_4
@@ -1229,7 +1229,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_GCACTCTAGCCACGCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-29.76561794188353,-18.898482844737117,10X_P4_4
 10X_P4_4_GCACTCTAGCGAGAAA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-1.95586324230236,23.1496532045178,10X_P4_4
 10X_P4_4_GCACTCTCACTTACGA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-4.281932521493812,28.702834179384986,10X_P4_4
-10X_P4_4_GCACTCTCAGCGATCC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-6.27690282676705,-32.666337522542904,10X_P4_4
+10X_P4_4_GCACTCTCAGCGATCC,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-6.27690282676705,-32.666337522542904,10X_P4_4
 10X_P4_4_GCACTCTGTACCATCA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,27.1086835463709,14.866756574748294,10X_P4_4
 10X_P4_4_GCACTCTGTACCCAAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-1.2051360185140332,24.659656868155665,10X_P4_4
 10X_P4_4_GCACTCTGTTCGTTGA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,15.19916458023017,0.547127280660482,10X_P4_4
@@ -1314,7 +1314,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_GCTGCTTAGCTGTCTA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-18.676872308241467,18.625102406473687,10X_P4_4
 10X_P4_4_GCTGCTTCAGGTTTCA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,17.604720899250722,-12.260204286526427,10X_P4_4
 10X_P4_4_GCTGCTTTCTGATTCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-28.673684917936466,-1.540867069603784,10X_P4_4
-10X_P4_4_GCTTCCAAGTCCTCCT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-3.236783590669839,-35.27048426237335,10X_P4_4
+10X_P4_4_GCTTCCAAGTCCTCCT,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-3.236783590669839,-35.27048426237335,10X_P4_4
 10X_P4_4_GCTTCCACACTTACGA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,4.4490437299451875,-2.198716418220535,10X_P4_4
 10X_P4_4_GCTTCCATCCGTAGGC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-10.283278757900336,9.154991665102731,10X_P4_4
 10X_P4_4_GCTTCCATCGTCGTTC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-28.733317335418953,7.264645333166436,10X_P4_4
@@ -1430,7 +1430,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_GTAGTCAGTCGGCTCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-31.341813596144988,-6.52643401953764,10X_P4_4
 10X_P4_4_GTATCTTGTAGCGTAG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,7.05788995449177,-15.102373615684078,10X_P4_4
 10X_P4_4_GTATCTTTCGATAGAA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,22.752922248039305,-14.017157595537501,10X_P4_4
-10X_P4_4_GTATTCTCAATAACGA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-7.49485949547013,-32.108890946904474,10X_P4_4
+10X_P4_4_GTATTCTCAATAACGA,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-7.49485949547013,-32.108890946904474,10X_P4_4
 10X_P4_4_GTATTCTCAATGGAAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-18.698244950918337,13.632019658512895,10X_P4_4
 10X_P4_4_GTATTCTTCGAATGCT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,31.622083268057843,-1.2099140797199797,10X_P4_4
 10X_P4_4_GTCAAGTCACACATGT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,22.970005136859722,17.739165093191993,10X_P4_4
@@ -1448,7 +1448,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_GTCCTCAAGGACTGGT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,21.157125302884733,1.6923989850258079,10X_P4_4
 10X_P4_4_GTCCTCAAGGCGCTCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-18.18585119891541,8.331415590076581,10X_P4_4
 10X_P4_4_GTCCTCACACCCATTC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-25.453953632381598,5.144095831801796,10X_P4_4
-10X_P4_4_GTCCTCATCATGTGGT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-2.9899373588622096,-35.168377883629404,10X_P4_4
+10X_P4_4_GTCCTCATCATGTGGT,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-2.9899373588622096,-35.168377883629404,10X_P4_4
 10X_P4_4_GTCCTCATCTCCAACC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,26.14825456005719,10.59783151730283,10X_P4_4
 10X_P4_4_GTCGGGTTCTCTGAGA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,6.621589573824255,-2.062401112822977,10X_P4_4
 10X_P4_4_GTCGTAACATCGACGC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-25.70241250008819,-20.68466541394131,10X_P4_4
@@ -1497,7 +1497,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_GTTAAGCGTCGCTTCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-32.044738128338636,-13.095950781674588,10X_P4_4
 10X_P4_4_GTTAAGCTCCAAACTG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,M,3-M-9,24.6833280583244,14.47397043468984,10X_P4_4
 10X_P4_4_GTTACAGAGACATAAC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,5.645919232052349,-6.943027559801578,10X_P4_4
-10X_P4_4_GTTACAGAGCTGTCTA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-8.030466492469321,-31.865035002146957,10X_P4_4
+10X_P4_4_GTTACAGAGCTGTCTA,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-8.030466492469321,-31.865035002146957,10X_P4_4
 10X_P4_4_GTTACAGAGTGGCACA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-14.402721952407912,14.413984497368705,10X_P4_4
 10X_P4_4_GTTCATTAGATCCCAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-6.746814332472889,17.830474556366525,10X_P4_4
 10X_P4_4_GTTCATTGTGGTCTCG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-19.837123290307897,18.294327180332207,10X_P4_4
@@ -1517,7 +1517,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_TAAACCGGTGAAATCA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,27.899866931389088,-13.370258731597806,10X_P4_4
 10X_P4_4_TAAACCGTCGCGTTTC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-29.08867022354963,7.748883631682517,10X_P4_4
 10X_P4_4_TAAACCGTCTGCGGCA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,M,3-M-9,10.465547419336563,0.10654815555849195,10X_P4_4
-10X_P4_4_TAAGAGAGTTAAGTAG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-4.611358397173884,-34.26844673159492,10X_P4_4
+10X_P4_4_TAAGAGAGTTAAGTAG,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-4.611358397173884,-34.26844673159492,10X_P4_4
 10X_P4_4_TAAGAGATCCTTAATC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-1.597633643146188,13.616416596143434,10X_P4_4
 10X_P4_4_TAAGCGTAGAGACTAT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,10.85764765562795,-13.72209488953649,10X_P4_4
 10X_P4_4_TAAGCGTCAAACCTAC,Bladder,,leukocyte,CL:0000738,Monocyte/Macrophage,6,M,3-M-9,-9.305026105287407,43.549326555375146,10X_P4_4
@@ -1926,19 +1926,19 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P4_4_TTTGCGCGTTGCGTTA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,15.553590753495751,-13.714165403465463,10X_P4_4
 10X_P4_4_TTTGCGCTCACCTCGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-5.5865643151652025,20.274341376334135,10X_P4_4
 10X_P4_4_TTTGGTTCATTAACCG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-37.364702468847064,-7.116329913456149,10X_P4_4
-10X_P4_4_TTTGGTTGTTACCAGT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,M,3-M-9,-3.9698418278755736,-34.41410204426377,10X_P4_4
+10X_P4_4_TTTGGTTGTTACCAGT,Bladder,,endothelial cell,CL:0000115,NA,7,M,3-M-9,-3.9698418278755736,-34.41410204426377,10X_P4_4
 10X_P4_4_TTTGGTTGTTACGTCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,M,3-M-9,-30.16530773380349,-18.657122355312605,10X_P4_4
 10X_P4_4_TTTGGTTTCAGTGTTG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,M,3-M-9,26.572351390478758,-24.960115116470835,10X_P4_4
 10X_P4_4_TTTGGTTTCGGTCCGA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-2.579455798003767,18.59946037410408,10X_P4_4
 10X_P4_4_TTTGTCACAGACACTT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,2,M,3-M-9,-12.428286274135427,23.188936630388252,10X_P4_4
 10X_P7_7_AAACCTGTCTAACCGA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.27025772646015,-19.62410790947356,10X_P7_7
-10X_P7_7_AAACGGGGTGCAACGA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.2740859993898366,-35.53405998486552,10X_P7_7
+10X_P7_7_AAACGGGGTGCAACGA,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.2740859993898366,-35.53405998486552,10X_P7_7
 10X_P7_7_AAACGGGTCAAGAAGT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,27.402293320680723,0.9669672820402982,10X_P7_7
 10X_P7_7_AAAGATGAGAGCTATA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.376650442188534,-19.044923474557585,10X_P7_7
 10X_P7_7_AAAGATGCAATACGCT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,30.152665721227237,2.3918174129576917,10X_P7_7
 10X_P7_7_AAAGCAACAGTTTACG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,31.22878433095363,-12.937085567910877,10X_P7_7
 10X_P7_7_AACCATGAGGATCGCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-7.755002025197782,4.394619418378632,10X_P7_7
-10X_P7_7_AACCATGTCGCCAAAT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.708434274987908,-30.667406177664933,10X_P7_7
+10X_P7_7_AACCATGTCGCCAAAT,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.708434274987908,-30.667406177664933,10X_P7_7
 10X_P7_7_AACCGCGTCGTGACAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-6.612236063200027,-8.449796336012781,10X_P7_7
 10X_P7_7_AACGTTGCACATCCAA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-7.202946628239526,-7.9021570931170695,10X_P7_7
 10X_P7_7_AACTCAGCAGTAAGAT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,31.980144129741284,13.381613046263952,10X_P7_7
@@ -1946,7 +1946,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_AACTCAGTCCCAACGG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,32.233063013180804,2.855852199997321,10X_P7_7
 10X_P7_7_AACTCCCGTCGCCATG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.734442857013818,-23.570014919665066,10X_P7_7
 10X_P7_7_AAGACCTGTCGGCACT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.208124108356415,-6.491835375675464,10X_P7_7
-10X_P7_7_AAGACCTTCTAGAGTC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.963474691838742,-30.80829541528391,10X_P7_7
+10X_P7_7_AAGACCTTCTAGAGTC,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.963474691838742,-30.80829541528391,10X_P7_7
 10X_P7_7_AAGCCGCGTGTAATGA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-19.689625833766197,-0.007271768842713143,10X_P7_7
 10X_P7_7_AAGGAGCCAACCGCCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-10.885252894691432,-2.167717441383362,10X_P7_7
 10X_P7_7_AAGGAGCTCAGTGCAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-14.330995998230097,-12.029616991444316,10X_P7_7
@@ -1966,7 +1966,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_ACCAGTATCGCAAACT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-6.348129989131922,-5.593267245384942,10X_P7_7
 10X_P7_7_ACCAGTATCGTTGCCT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,33.74816590880579,-15.932177492869391,10X_P7_7
 10X_P7_7_ACCCACTGTCCGACGT,Bladder,,leukocyte,CL:0000738,Monocyte/Macrophage,6,F,3-F-56,-15.571398437427282,42.85308623998689,10X_P7_7
-10X_P7_7_ACCGTAATCAAAGTAG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.2603990874390885,-34.46960866031201,10X_P7_7
+10X_P7_7_ACCGTAATCAAAGTAG,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.2603990874390885,-34.46960866031201,10X_P7_7
 10X_P7_7_ACCTTTACAAGCGAGT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,32.495742808924156,-12.415659457916153,10X_P7_7
 10X_P7_7_ACCTTTACAATGACCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-13.804952889118349,-11.270415830788181,10X_P7_7
 10X_P7_7_ACCTTTACAGCTGTAT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,28.08688156589466,-23.632506121915295,10X_P7_7
@@ -1974,7 +1974,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_ACGAGGAAGGATTCGG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-14.295592126555261,-10.352409702653187,10X_P7_7
 10X_P7_7_ACGAGGAAGTAGCGGT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,F,3-F-56,23.736352575696298,-1.8438374416390682,10X_P7_7
 10X_P7_7_ACGATGTGTAGCAAAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-18.763373626870845,-17.987486426935522,10X_P7_7
-10X_P7_7_ACGCAGCAGCAATCTC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.420641175626085,-30.793060519112704,10X_P7_7
+10X_P7_7_ACGCAGCAGCAATCTC,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.420641175626085,-30.793060519112704,10X_P7_7
 10X_P7_7_ACGCAGCGTTCCACGG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,32.763325338054806,-7.628066335434379,10X_P7_7
 10X_P7_7_ACGCAGCTCACGGTTA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-16.813694512133146,-15.549138267268725,10X_P7_7
 10X_P7_7_ACGCCAGGTGGTACAG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,26.327416309797808,-8.292109293885298,10X_P7_7
@@ -1999,7 +1999,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_AGAGCGACATACGCCG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-18.09353066258116,-18.247595832255858,10X_P7_7
 10X_P7_7_AGAGCGACATCTGGTA,Bladder,,leukocyte,CL:0000738,Monocyte/Macrophage,6,F,3-F-56,-15.810200972427271,42.3487545979712,10X_P7_7
 10X_P7_7_AGAGCGAGTTAAGAAC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,26.900475766245073,-15.90581734467098,10X_P7_7
-10X_P7_7_AGAGCGATCTTTACAC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.209700390410562,-35.546690755688665,10X_P7_7
+10X_P7_7_AGAGCGATCTTTACAC,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.209700390410562,-35.546690755688665,10X_P7_7
 10X_P7_7_AGAGTGGAGATGCCTT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-9.846761652860815,-7.10474613428426,10X_P7_7
 10X_P7_7_AGAGTGGGTACCCAAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-6.703901369265794,-6.31900587727832,10X_P7_7
 10X_P7_7_AGATCTGGTGAGGGTT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,33.58304768357751,-15.48514081191298,10X_P7_7
@@ -2021,7 +2021,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_AGGCCGTCACTTCTGC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,27.470747690215916,0.5121084650829009,10X_P7_7
 10X_P7_7_AGGGAGTAGATCTGAA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,23.76947079829227,-3.082515527623777,10X_P7_7
 10X_P7_7_AGGGAGTGTAGGCTGA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,19.720236980711146,-10.267709049421086,10X_P7_7
-10X_P7_7_AGGGATGAGCCAGGAT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.426579274613826,-30.65465303213787,10X_P7_7
+10X_P7_7_AGGGATGAGCCAGGAT,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.426579274613826,-30.65465303213787,10X_P7_7
 10X_P7_7_AGGTCATGTCAAACTC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-6.553289672466784,-7.037505678947896,10X_P7_7
 10X_P7_7_AGGTCATTCGCGATCG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-10.726442229673259,0.37424719763829967,10X_P7_7
 10X_P7_7_AGTGAGGGTAGCTGCC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-12.854081141289392,-9.710161727070487,10X_P7_7
@@ -2076,7 +2076,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_CAGATCACACAGACAG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-12.555118417429536,-9.130014910350752,10X_P7_7
 10X_P7_7_CAGATCAGTTCAGTAC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,28.83992994070693,-8.811608394510946,10X_P7_7
 10X_P7_7_CAGATCAGTTCCAACA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-9.889589020729874,-3.6997984946832654,10X_P7_7
-10X_P7_7_CAGCAGCAGGTGCTAG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-4.790654567201527,-33.893469610005674,10X_P7_7
+10X_P7_7_CAGCAGCAGGTGCTAG,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-4.790654567201527,-33.893469610005674,10X_P7_7
 10X_P7_7_CAGCATAAGTTGAGAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-12.368330249738476,-7.86021264072918,10X_P7_7
 10X_P7_7_CAGCCGAAGTTATCGC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-7.335449266059248,4.180823984999011,10X_P7_7
 10X_P7_7_CAGCTGGGTTCCATGA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-7.708390734551776,-4.759140049026853,10X_P7_7
@@ -2109,7 +2109,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_CATTCGCCACTTAACG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,25.497200375130124,-8.234834342276208,10X_P7_7
 10X_P7_7_CATTCGCGTCTCAACA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,24.2794913416227,-5.931035475960596,10X_P7_7
 10X_P7_7_CCAATCCAGCGCCTTG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-11.633293602627267,-3.083843264744534,10X_P7_7
-10X_P7_7_CCACCTAAGTAATCCC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-4.791298727408506,-33.964547804391096,10X_P7_7
+10X_P7_7_CCACCTAAGTAATCCC,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-4.791298727408506,-33.964547804391096,10X_P7_7
 10X_P7_7_CCACTACCATGGTTGT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.937039618657906,-6.918312908750427,10X_P7_7
 10X_P7_7_CCAGCGAAGGTTACCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-7.5235515205150145,-7.155513217303887,10X_P7_7
 10X_P7_7_CCATGTCAGAGTAATC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-14.506123589962002,-10.482719223380535,10X_P7_7
@@ -2120,18 +2120,18 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_CCCTCCTAGGATGTAT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.43033133129927,-10.085505740464523,10X_P7_7
 10X_P7_7_CCCTCCTTCAATAAGG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-15.234753965174473,-12.245393319761117,10X_P7_7
 10X_P7_7_CCGGTAGGTCGAATCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-9.996388048273692,-8.086822447880424,10X_P7_7
-10X_P7_7_CCGGTAGTCTAACTCT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-5.448009459712928,-33.331476689242876,10X_P7_7
+10X_P7_7_CCGGTAGTCTAACTCT,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-5.448009459712928,-33.331476689242876,10X_P7_7
 10X_P7_7_CCGTGGAGTAATAGCA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,33.86078384996008,5.216575497469169,10X_P7_7
 10X_P7_7_CCGTGGATCATGGTCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-15.712732146248719,-12.857526789125085,10X_P7_7
 10X_P7_7_CCGTTCATCAGCTCTC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,28.483274010908005,11.87217001205671,10X_P7_7
-10X_P7_7_CCTAAAGCAGTATCTG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.242702777903495,-35.59979059328128,10X_P7_7
+10X_P7_7_CCTAAAGCAGTATCTG,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.242702777903495,-35.59979059328128,10X_P7_7
 10X_P7_7_CCTAGCTAGTGTACCT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.27321906331596,-18.380213906749837,10X_P7_7
 10X_P7_7_CCTAGCTGTTGCCTCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-9.052647971925332,-2.9493979577308282,10X_P7_7
 10X_P7_7_CCTATTAAGACAGAGA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-6.522233853143133,-7.476093430231416,10X_P7_7
 10X_P7_7_CCTATTAAGACGCTTT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,35.136365047109855,5.94565530161391,10X_P7_7
 10X_P7_7_CCTATTACAGATCGGA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,26.642321525516458,-10.889545004963585,10X_P7_7
-10X_P7_7_CCTATTATCAGCACAT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.241575348659053,-31.91220591422281,10X_P7_7
-10X_P7_7_CCTTCCCAGATGTGGC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.4069062433569686,-35.10072840496781,10X_P7_7
+10X_P7_7_CCTATTATCAGCACAT,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.241575348659053,-31.91220591422281,10X_P7_7
+10X_P7_7_CCTTCCCAGATGTGGC,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.4069062433569686,-35.10072840496781,10X_P7_7
 10X_P7_7_CCTTCCCAGCGTAATA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-15.349762331936166,-1.3239164417918887,10X_P7_7
 10X_P7_7_CCTTCCCAGTACGATA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-30.380040946275056,-17.047541664826706,10X_P7_7
 10X_P7_7_CCTTCGAAGTTTAGGA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-17.09767679033212,-18.108649016087675,10X_P7_7
@@ -2146,10 +2146,10 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_CGAGCACGTAGAGTGC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-7.69926832093011,3.9664317451827453,10X_P7_7
 10X_P7_7_CGATGGCAGAAGGTTT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,30.24062000054477,11.791343864452855,10X_P7_7
 10X_P7_7_CGATGGCCAATGAATG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,29.140537994469046,-23.13257833839112,10X_P7_7
-10X_P7_7_CGATTGAGTCATCGGC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.1102478901935937,-35.43986745792445,10X_P7_7
+10X_P7_7_CGATTGAGTCATCGGC,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.1102478901935937,-35.43986745792445,10X_P7_7
 10X_P7_7_CGCGGTAAGGGCTCTC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-9.827165273707037,-1.348175980254251,10X_P7_7
 10X_P7_7_CGCGTTTAGAGATGAG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.555867198777687,-7.0521529729226975,10X_P7_7
-10X_P7_7_CGCTATCAGAGTCTGG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.8703684352183294,-35.47048747053582,10X_P7_7
+10X_P7_7_CGCTATCAGAGTCTGG,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.8703684352183294,-35.47048747053582,10X_P7_7
 10X_P7_7_CGCTATCGTACAGCAG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,F,3-F-56,24.17486194611382,-4.815119826697886,10X_P7_7
 10X_P7_7_CGCTGGAGTGTGAAAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-10.2971375423228,-8.222355061843889,10X_P7_7
 10X_P7_7_CGCTTCACAGATCGGA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,18.081721022247688,-8.283443589678757,10X_P7_7
@@ -2178,7 +2178,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_CTACATTCACGTGAGA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-12.916111035182809,-9.373449809685575,10X_P7_7
 10X_P7_7_CTACATTTCCATGCTC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-14.799479845876023,-13.369265409567273,10X_P7_7
 10X_P7_7_CTACCCAGTACGCTGC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-32.23863560534169,-0.963634249746045,10X_P7_7
-10X_P7_7_CTACGTCCACTTGGAT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.293648797102356,-30.925970990009663,10X_P7_7
+10X_P7_7_CTACGTCCACTTGGAT,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.293648797102356,-30.925970990009663,10X_P7_7
 10X_P7_7_CTACGTCCAGACGCCT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,34.774410721069444,6.014489836594208,10X_P7_7
 10X_P7_7_CTACGTCCATCCGCGA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-13.37040002984342,-6.707916928779121,10X_P7_7
 10X_P7_7_CTAGAGTGTATAGGGC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.079188588657892,-23.633457241215,10X_P7_7
@@ -2186,7 +2186,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_CTAGTGAAGGAGTACC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,24.72543094428136,-17.020450647014588,10X_P7_7
 10X_P7_7_CTCCTAGCAGCTGCAC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,28.12705882777167,-14.697774557673135,10X_P7_7
 10X_P7_7_CTCCTAGGTCAGAATA,Bladder,,leukocyte,CL:0000738,Monocyte/Macrophage,6,F,3-F-56,-10.67525141332461,45.53636336160432,10X_P7_7
-10X_P7_7_CTCGAAACAGTCTTCC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.476510886896397,-35.365105161145955,10X_P7_7
+10X_P7_7_CTCGAAACAGTCTTCC,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.476510886896397,-35.365105161145955,10X_P7_7
 10X_P7_7_CTCGAGGAGTTATCGC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,30.735308096307026,13.934397812458178,10X_P7_7
 10X_P7_7_CTCGAGGCATTCTTAC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-5.795845828657356,-6.937528606721591,10X_P7_7
 10X_P7_7_CTCGAGGGTTCAACCA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,30.221563848149778,-12.703921412647677,10X_P7_7
@@ -2227,7 +2227,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_CTTTGCGGTTCCACAA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-15.715565329296535,-14.452666389512917,10X_P7_7
 10X_P7_7_GAAACTCAGACCTTTG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,24.485033491266623,-12.8064328501968,10X_P7_7
 10X_P7_7_GAACATCTCGCCTGTT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,26.772041535009482,-18.245300438506284,10X_P7_7
-10X_P7_7_GAACATCTCGTAGGTT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.6332434393034823,-34.22558431646819,10X_P7_7
+10X_P7_7_GAACATCTCGTAGGTT,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.6332434393034823,-34.22558431646819,10X_P7_7
 10X_P7_7_GAACCTATCACCCGAG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-17.031380454846154,-16.1339971093349,10X_P7_7
 10X_P7_7_GAACGGAGTAAGTGTA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.45514767529816,-19.17469937565677,10X_P7_7
 10X_P7_7_GAACGGAGTCTGGTCG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-18.325831372310446,-17.24731868814967,10X_P7_7
@@ -2246,7 +2246,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_GACCAATCATGGTCAT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-6.637113541655609,4.340354927505832,10X_P7_7
 10X_P7_7_GACCTGGAGCGATATA,Bladder,,leukocyte,CL:0000738,Monocyte/Macrophage,6,F,3-F-56,-12.670384756721447,46.269500401010234,10X_P7_7
 10X_P7_7_GACCTGGTCCAAATGC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-16.799620354513216,-1.775627560539645,10X_P7_7
-10X_P7_7_GACGCGTTCCACGTTC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.107041487117568,-31.435894585410598,10X_P7_7
+10X_P7_7_GACGCGTTCCACGTTC,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.107041487117568,-31.435894585410598,10X_P7_7
 10X_P7_7_GACGGCTGTTGAGTTC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.631215710518596,-15.41302907352254,10X_P7_7
 10X_P7_7_GACGTGCCACTAGTAC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-12.698311000953069,-9.090829809197258,10X_P7_7
 10X_P7_7_GACGTTAAGCCGTCGT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,24.40834824178024,-2.3215402376657255,10X_P7_7
@@ -2271,7 +2271,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_GCAAACTGTGCACCAC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,33.327519521459976,1.488569918280648,10X_P7_7
 10X_P7_7_GCACTCTAGATACACA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,27.719639330253194,9.744964840939014,10X_P7_7
 10X_P7_7_GCACTCTCAGTCAGCC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-14.369575363240338,0.786289391875741,10X_P7_7
-10X_P7_7_GCAGCCAAGCACACAG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-6.999542289836658,-31.15364187539727,10X_P7_7
+10X_P7_7_GCAGCCAAGCACACAG,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-6.999542289836658,-31.15364187539727,10X_P7_7
 10X_P7_7_GCATACACAAGTCTGT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,F,3-F-56,22.103137467662155,0.8044007153509384,10X_P7_7
 10X_P7_7_GCATGATAGACGACGT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,19.57080427964153,-10.579573902280396,10X_P7_7
 10X_P7_7_GCATGATGTCCATCCT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,33.594529592782266,-14.896986013022909,10X_P7_7
@@ -2280,10 +2280,10 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_GCATGTACAATACGCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-19.14742618944899,-20.224288050951262,10X_P7_7
 10X_P7_7_GCCAAATCATGGGACA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-15.565965142614306,-13.169007364858283,10X_P7_7
 10X_P7_7_GCCTCTAGTGTCGCTG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,32.278284955399705,0.7445013746036597,10X_P7_7
-10X_P7_7_GCGCAACCAGTATCTG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-3.5201226453623655,-35.16288068107019,10X_P7_7
+10X_P7_7_GCGCAACCAGTATCTG,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-3.5201226453623655,-35.16288068107019,10X_P7_7
 10X_P7_7_GCGCAACTCAGCGACC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-9.005310296088242,0.4711758047456009,10X_P7_7
 10X_P7_7_GCGCCAACAATGGAAT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,25.52268026214165,-15.637106231161853,10X_P7_7
-10X_P7_7_GCGCCAATCGAATCCA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-4.368981110632078,-33.777576928166916,10X_P7_7
+10X_P7_7_GCGCCAATCGAATCCA,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-4.368981110632078,-33.777576928166916,10X_P7_7
 10X_P7_7_GCGGGTTGTCATACTG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-6.736128061360166,-6.732208141293795,10X_P7_7
 10X_P7_7_GCTCCTAAGGCTATCT,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,35.207354877435655,6.239110449582771,10X_P7_7
 10X_P7_7_GCTGGGTGTAAAGGAG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-12.975627107467593,-0.9550360430610939,10X_P7_7
@@ -2363,7 +2363,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_GTTAAGCTCACAGGCC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,28.967678078817546,-21.906785875697516,10X_P7_7
 10X_P7_7_GTTAAGCTCGTGTAGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-8.446489708197108,-8.475469565024996,10X_P7_7
 10X_P7_7_GTTACAGAGAACAATC,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,28.404713236647563,1.281930905363705,10X_P7_7
-10X_P7_7_GTTACAGCAAGGACAC,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.648598390552048,-30.97712608179261,10X_P7_7
+10X_P7_7_GTTACAGCAAGGACAC,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.648598390552048,-30.97712608179261,10X_P7_7
 10X_P7_7_GTTCATTCACCTTGTC,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-11.133645141823743,-5.279369108161931,10X_P7_7
 10X_P7_7_GTTCATTGTACGAAAT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,33.76498371721338,-15.821235949823064,10X_P7_7
 10X_P7_7_GTTCGGGGTGACGGTA,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,25.413818364273403,-8.205534073557047,10X_P7_7
@@ -2389,10 +2389,10 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_TAGACCATCTCTGCTG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-20.112009482715997,-19.827037235347763,10X_P7_7
 10X_P7_7_TAGAGCTAGCACGCCT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,25.342859878459613,-19.52839170413273,10X_P7_7
 10X_P7_7_TAGTGGTAGTGCGATG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,23.662658062333755,-13.684447107502226,10X_P7_7
-10X_P7_7_TAGTGGTTCTGTACGA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.600865547787567,-30.932525954734547,10X_P7_7
+10X_P7_7_TAGTGGTTCTGTACGA,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.600865547787567,-30.932525954734547,10X_P7_7
 10X_P7_7_TAGTTGGAGAGTGAGA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,30.331082923873563,11.696589215135598,10X_P7_7
 10X_P7_7_TAGTTGGTCCGCTGTT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-14.245324119446984,-2.253359921123945,10X_P7_7
-10X_P7_7_TATCAGGTCGGACAAG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.500053260114606,-30.456156902587377,10X_P7_7
+10X_P7_7_TATCAGGTCGGACAAG,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.500053260114606,-30.456156902587377,10X_P7_7
 10X_P7_7_TATCTCAAGAATGTTG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-18.14770048860213,-16.50844086658143,10X_P7_7
 10X_P7_7_TATGCCCAGATCACGG,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,29.019004077976433,-22.588858339344366,10X_P7_7
 10X_P7_7_TATTACCGTCTCCACT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-12.803760616899098,-7.05292075195454,10X_P7_7
@@ -2421,8 +2421,8 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_TCTCTAACAAGCCTAT,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,28.059465359449383,-22.182377627305208,10X_P7_7
 10X_P7_7_TCTGAGAAGGTACTCT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-13.507820663359501,1.1567394944989327,10X_P7_7
 10X_P7_7_TCTGAGAGTTAGGGTG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-11.101570499355018,-1.9990698819987465,10X_P7_7
-10X_P7_7_TCTGGAAAGCATGGCA,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-5.131537105419183,-33.60271318212819,10X_P7_7
-10X_P7_7_TCTGGAACATACTACG,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-4.484004494158314,-34.67763798195123,10X_P7_7
+10X_P7_7_TCTGGAAAGCATGGCA,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-5.131537105419183,-33.60271318212819,10X_P7_7
+10X_P7_7_TCTGGAACATACTACG,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-4.484004494158314,-34.67763798195123,10X_P7_7
 10X_P7_7_TCTGGAATCACGCGGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-12.8791570234097,-9.34441453067427,10X_P7_7
 10X_P7_7_TCTGGAATCCGCGTTT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-13.29860170963393,-0.8810921131300585,10X_P7_7
 10X_P7_7_TCTTCGGAGTACGTAA,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,3,F,3-F-56,16.482209784296337,-0.9668588118769614,10X_P7_7
@@ -2493,7 +2493,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_7_TTGGAACAGTAGATGT,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-13.726959321322587,-3.8134808977694625,10X_P7_7
 10X_P7_7_TTGGAACGTCTAGTCA,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,0,F,3-F-56,-18.046390660555943,-17.59978036574157,10X_P7_7
 10X_P7_7_TTGGAACGTGTCGCTG,Bladder,,bladder urothelial cell,CL:1001428,Luminal bladder epithelial cell,4,F,3-F-56,28.110141769643928,9.417482220096382,10X_P7_7
-10X_P7_7_TTGTAGGCACTTGGAT,Bladder,,endothelial cell,CL:0000115,endothelial cell,7,F,3-F-56,-7.088833005658587,-31.19958344862797,10X_P7_7
+10X_P7_7_TTGTAGGCACTTGGAT,Bladder,,endothelial cell,CL:0000115,NA,7,F,3-F-56,-7.088833005658587,-31.19958344862797,10X_P7_7
 10X_P7_7_TTGTAGGTCATGTAGC,Bladder,,bladder urothelial cell,CL:1001428,Basal bladder epithelial cell,1,F,3-F-56,27.779001118342315,-23.217406200229522,10X_P7_7
 10X_P7_7_TTTACTGGTGTTGAGG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-7.469491354049015,-8.290851681962073,10X_P7_7
 10X_P7_7_TTTCCTCCATACCATG,Bladder,,bladder cell,CL:1001319,Bladder mesenchymal cell,5,F,3-F-56,-6.691862814131701,-2.0526202489453476,10X_P7_7
