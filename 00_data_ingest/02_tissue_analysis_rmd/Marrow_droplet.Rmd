@@ -254,7 +254,7 @@ head(tiss@meta.data)
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtissA, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = subtissA, do.return = TRUE, group.by = "channel")
 ```
 
 # Final coloring
@@ -345,7 +345,7 @@ tiss = stash_subtiss_in_tiss(tiss, subtissB)
 
 Color by metadata, like plate barcode, to check for batch effects.
 ```{r}
-TSNEPlot(object = subtissB, do.return = TRUE, group.by = "plate.barcode")
+TSNEPlot(object = subtissB, do.return = TRUE, group.by = "channel")
 ```
 
 # Final coloring
