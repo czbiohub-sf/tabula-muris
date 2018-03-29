@@ -147,7 +147,7 @@ free_annotation <- c("Bladder mesenchymal cell",
                      "Luminal bladder epithelial cell",
                      "Bladder mesenchymal cell",
                      "Monocyte/Macrophage",
-                     "endothelial cell")
+                     NA)
 
 
 cell_ontology_class <- c("bladder cell", 
