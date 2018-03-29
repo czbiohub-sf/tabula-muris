@@ -223,7 +223,7 @@ class TeXGenerator:
                 unit = unit.title()
                 gene1 = gene1.title()
                 gene2 = gene2.title()
-                tex = f'{unit} \emph{{{gene1}}} $\\times$ \emph{{{gene2}}}'
+                tex = f'{unit} \emph{{{gene1}}} \\texttimes \emph{{{gene2}}}'
         else:
             tex = ''
         return tex
