@@ -158,7 +158,7 @@ free_annotation <- c(
  "basal cells", 
  "suprabasal differentiated", 
  "filiform differentiated", 
- "Langerhans cells"
+ NA
  )
 cell_ontology_class <- c(
 "basal cell of epidermis", 
