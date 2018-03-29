@@ -116,7 +116,7 @@ tiss <- StashIdent(object = tiss, save.name = "cluster.ids")
 
 # enumerate current cluster IDs and the labels for them
 cluster.ids <- c(0, 1, 2, 3, 4, 5)
-free_annotation <- c("endothelial cell", "fibroblast", NA, "erythrocyte", "endocardial cell", "cardiac muscle cell")
+free_annotation <- c(NA, NA, NA, NA, NA, NA)
 cell_ontology_class = c("endothelial cell", "fibroblast", NA, "erythrocyte", "endocardial cell", "cardiac muscle cell")
 
 validate_cell_ontology(cell_ontology_class)
@@ -268,7 +268,7 @@ If some of the clusters you find in the subset deserve additional cell_ontology_
 
 ```{r}
 sub.cluster.ids <- c(0, 1, 2)
-sub.free_annotation <- c("fibroblast", "fibroblast", "smooth muscle cell")
+sub.free_annotation <- c(NA, NA, NA)
 sub.cell_ontology_class <- c("fibroblast", "fibroblast", "smooth muscle cell")
 
 subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
