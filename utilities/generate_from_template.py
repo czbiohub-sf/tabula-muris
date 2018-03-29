@@ -48,7 +48,7 @@ def clean_name(name):
 
 def code_to_codeblock(code):
     return f'''
-```{{r optipng='-o1'}}
+```{{r optipng='-o7'}}
 {code}
 ```
 '''
