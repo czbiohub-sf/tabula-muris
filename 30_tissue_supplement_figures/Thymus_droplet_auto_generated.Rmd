@@ -34,7 +34,7 @@ genes_to_check = c("C3", "Cd14", "Cd19", "Cd27", "Cd3d", "Cd3e", "Cd3g", "Cd4", 
 
 # Make TSNEPlots, DotPlots and Ridgeplots of data
 
-```{r use-optipng, optipng=''}
+```{r use-optipng, optipng='-o7'}
 dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
     group.bys = group.bys, method = method)
 ```
