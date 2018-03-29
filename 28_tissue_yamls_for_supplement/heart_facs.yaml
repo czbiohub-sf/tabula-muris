@@ -28,6 +28,6 @@ SUBSET:
     - Postn
     GROUPBY: null
     NPCS: 5
-    PERPLEXITY: 25
+    PERPLEXITY: 20
     RES: 1
 TISSUE: Heart
