@@ -29,7 +29,7 @@ additional.group.bys = sort(c("subtissue"))
 
 group.bys = c(standard.group.bys, additional.group.bys)
 
-genes_to_check = c("Aldh1l1", "Aqp4", "Ascl1", "Calb1", "Cldn5", "Cspg4", "Dcx", "Des", "Dlx2", "Eno2", "Gad1", "Gjc2", "Ly6c1", "Mab21l1", "Mag", "Mcam", "Mobp", "Mog", "Mop", "Neurod6", "Ocln", "Pdgfra", "Pdgfrb", "Pecam1", "Rbfox3", "Reln", "Slc17a7", "Slc1a3", "Slco1c1", "Snap25", "Susd5")
+genes_to_check = c("Aldh1l1", "Aqp4", "Ascl1", "Calb1", "Cldn5", "Cspg4", "Dcx", "Des", "Dlx2", "Eno2", "Gad1", "Gjc2", "Ly6c1", "Mab21l1", "Mag", "Mcam", "Mobp", "Mog", "Mpo", "Neurod6", "Ocln", "Pdgfra", "Pdgfrb", "Pecam1", "Rbfox3", "Reln", "Slc17a7", "Slc1a3", "Slco1c1", "Snap25", "Susd5")
 ```
 
 # Make TSNEPlots, DotPlots and Ridgeplots of data
