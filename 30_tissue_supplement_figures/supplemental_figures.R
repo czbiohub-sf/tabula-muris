@@ -129,11 +129,8 @@ ridgeplot_and_save = function(tiss,
   } else {
     # Make sure cluster ids are numeric so they're sorted properly
     tiss@meta.data[, group.by] = as.numeric(tiss@meta.data[, group.by])
-    group.by.plus = group.by
   }
   
-  
-
   
   if (length(suffix) == 0) {
     suffix = paste0(i, '-of-', n)
@@ -170,11 +167,11 @@ ridgeplot_and_save = function(tiss,
   ggsave(filename,
          width = 16,
          height = nRow * ridge_height)
-
-    genes_filename = sub('.pdf', '_genes.txt', filename)
-    write(c(genes[1], genes[length(genes)]), genes_filename)
-
-
+  
+  genes_filename = sub('.pdf', '_genes.txt', filename)
+  write(c(genes[1], genes[length(genes)]), genes_filename)
+  
+  
   return(filename)
 }
 
@@ -219,7 +216,7 @@ tsne_and_legend = function(tiss,
     group.by.plus = group.by
   }
   
-
+  
   legend_filename = make_filename(save_folder, prefix, group.by, 'tsneplot_legend')
   # Plot TSNE again just to steal the legend
   p = TSNEPlot(
@@ -269,6 +266,61 @@ get_colors = function(tiss, group.by) {
     colors.use = NULL
   }
   return (colors.use)
+}
+
+dotplot_and_save = function(tiss,
+                            save_folder,
+                            prefix,
+                            group.by,
+                            genes,
+                            i = 0,
+                            n = 0,
+                            suffix = NULL,
+                            method = 'facs') {
+  # Add letter to the string labels groupby for legends
+  if (group.by != 'cluster.ids') {
+    labels = sort(unique(tiss@meta.data[, group.by]))
+    letters = LETTERS[seq(1, length(labels))]
+    # Many of the strings are too long so we use numbers instead. The color
+    # scheme is the same as the TSNE as long as we sort alphabetically.
+    # Make a temporary copy of the column to store the original strings
+    tiss@meta.data[, 'tmp'] = tiss@meta.data[, group.by]
+    tiss@meta.data[, group.by] = plyr::mapvalues(x = tiss@meta.data[, 'tmp'],
+                                                 from = labels,
+                                                 to = letters)
+  } else {
+    # Make sure cluster ids are numeric so they're sorted properly
+    tiss@meta.data[, group.by] = as.numeric(tiss@meta.data[, group.by])
+  }
+  
+  
+  if (length(suffix) == 0) {
+    suffix = paste0(i, '-of-', n)
+  }
+  
+  # Dotplot - enrichment of gene expression in group.by with dot size
+  filename = make_filename(save_folder,
+                           prefix,
+                           group.by,
+                           paste('dotplot', suffix, sep = '_'))
+  # Use rev(genes) to reverse the order because dotplot does Right to Left instead of left to right
+  p = DotPlot(
+    tiss,
+    rev(genes),
+    col.max = 2.5,
+    plot.legend = T,
+    do.return = T,
+    group.by = group.by,
+    cols.use = dotplot.cols.use,
+  )
+  # ) + scale_y_discrete(trans='reverse')
+  # ) #+ scale_y_reverse()
+  #   # Reverse the yscale so the clusters appear in ascending instead of descending order
+  # ) + scale_y_discrete(limits = rev(levels(ident.use)))
+  ggsave(filename, width = 13.75, height = 10)
+  genes_filename = sub('.pdf', '_genes.txt', filename)
+  write(c(genes[1], genes[length(genes)]), genes_filename)
+  return(filename)
 }
 
 # Make all supplemental figures for a tiss object
@@ -332,45 +384,31 @@ dot_tsne_ridge = function(tiss,
       
       genes = chunked_genes[[i]]
       
-      
-      # Set height of ridgeplots
-      ridge_height = 5.5
-      
-      # Dotplot - enrichment of gene expression in group.by with dot size
-      filename = make_filename(save_folder,
-                               prefix,
-                               group.by,
-                               paste0('dotplot_', i, '-of-', n_chunks))
-      # Use rev(genes) to reverse the order because dotplot does Right to Left instead of left to right
-      p = DotPlot(
+      dotplot_and_save(
         tiss,
-        rev(genes),
-        col.max = 2.5,
-        plot.legend = T,
-        do.return = T,
-        group.by = group.by,
-        cols.use = dotplot.cols.use,
+        save_folder,
+        prefix,
+        group.by,
+        genes,
+        i = i,
+        n = n_chunks,
+        method = method
       )
-      # ) + scale_y_discrete(trans='reverse')
-      # ) #+ scale_y_reverse()
-      #   # Reverse the yscale so the clusters appear in ascending instead of descending order
-      # ) + scale_y_discrete(limits = rev(levels(ident.use)))
-      ggsave(filename, width = 13.75, height = 10)
-        genes_filename = sub('.pdf', '_genes.txt', filename)
-      write(c(genes[1], genes[length(genes)]), genes_filename)
-      # dev.off()
       
-      ridgeplot_and_save(tiss,
-                         save_folder,
-                         prefix,
-                         group.by,
-                         genes,
-                         colors.use,
-                         i=i,
-                         n=n_chunks, method=method)
+      ridgeplot_and_save(
+        tiss,
+        save_folder,
+        prefix,
+        group.by,
+        genes,
+        colors.use,
+        i = i,
+        n = n_chunks,
+        method = method
+      )
       # dev.off()
     }
     
-
+    
   }
 }
