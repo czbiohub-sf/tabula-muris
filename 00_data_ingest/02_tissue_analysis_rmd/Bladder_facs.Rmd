@@ -56,14 +56,6 @@ TSNEPlot(object = tiss, do.label = T)
 ```
 
 
-
-## Compare to previous annotations
-```{r}
-tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs")
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
-TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_free_annotation")
-```
-
 Check expression of genes of interset.
 
 ```{r, echo=FALSE, fig.height=12, fig.width=8}
