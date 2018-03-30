@@ -42,7 +42,8 @@ METHOD: droplet
 NPCS: 10
 RES: 3.5
 SUBSET:
-  HEPATOCYTES:
+  SUBSETA:
+    NAME: Hepatocytes
     FILTER_COLUMN: cell_ontology_class
     FILTER_VALUE: hepatocyte
     GENES:
