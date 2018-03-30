@@ -28,4 +28,4 @@ skin_heart: create_R_files_from_Rmds
 	ls -1 *.R | grep facs | grep -E 'Skin|Heart' | xargs -P ${CORES} -I{} bash -c "R -f {} >{}.out 2>{}.err"
 
 trachea: create_R_files_from_Rmds
-	ls -1 *.R | grep facs | grep -E 'Trachea' | xargs -P ${CORES} -I{} bash -c "R -f {} >{}.out 2>{}.err"
+	ls -1 *.R | grep droplet | grep -E 'Trachea' | xargs -P ${CORES} -I{} bash -c "R -f {} >{}.out 2>{}.err"
