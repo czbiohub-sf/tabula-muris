@@ -137,9 +137,13 @@ ggsave(filename, width = 8, height = 4)
 dev.off()
 ''')
 
+    prefix = subset
+    if name is not None:
+        prefix += f'-{name}'
+
     rmarkdown += '## tSNE, dotplots, and ridgeplots of this subset'
     rmarkdown += code_to_codeblock(f'''dot_tsne_ridge({subset}.tiss, {subset}.genes_to_check,
-    save_folder, prefix = "{subset}", group.bys = {subset}.group.bys, 
+    save_folder, prefix = "{prefix}", group.bys = {subset}.group.bys, 
     "{method}")
 ''')
 
