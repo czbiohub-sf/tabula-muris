@@ -99,7 +99,7 @@ write(paste("Number of cells in {subset} subset:", length({subset}.cells.use)), 
     rmarkdown += '\n### Highlight which cells are in this subset'
     rmarkdown += code_to_codeblock(f'''colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "{subset}"] = "(Not in subset)"
-tiss@meta.data[{subset}.cells.use, "{subset}"] = "{subset}" 
+tiss@meta.data[{subset}.tiss@cell.names "{subset}"] = "{subset}" 
 filename = make_filename(save_folder, prefix="{subset}", 'highlighted', 
     'tsneplot_allcells')
 p = TSNEPlot(
