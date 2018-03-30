@@ -29,7 +29,7 @@ ORDER_DEFAULTS = {'subset': SUBSET_ORDER, 'plottype': PLOT_ORDER,
                   'groupby': GROUPBY_ORDER}
 
 FIGURE_FOLDER = '30_tissue_supplement_figures'
-PATTERN = '^(?P<subset>[a-zA-Z\d]+(-)?(?<subset_name>[a-zA-Z]+)?)_(?P<groupby>[\w\->]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9_]+)?.pdf$'
+PATTERN = '^(?P<subset>[a-zA-Z\d]+(-)?(?P<subset_name>[a-zA-Z]+)?)_(?P<groupby>[\w\->]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9_]+)?.pdf$'
 
 SUBSECTION = r"""
 \subsection{SUBSET, labeled by GROUPBY}
