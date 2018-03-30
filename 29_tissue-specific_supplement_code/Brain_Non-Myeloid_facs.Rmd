@@ -225,7 +225,7 @@ write_caption("Key defining genes for the Inflamed (Venous) and Notch (Arterial)
 filename = make_filename(save_folder, prefix, 'subtissue', 'ridgeplot')
 filename = ridgeplot_and_save(tiss, save_folder, prefix='Neurons',
     group.by='subtissue',
-    genes=genes_to_check, colors.use=brewer.pal(11,'Paired'), method=method)
+    genes=genes_check, colors.use=brewer.pal(11,'Paired'), method=method)
 write_caption("Key defining genes for the Inflamed (Venous) and Notch (Arterial) populations.", filename)
 ```
 
