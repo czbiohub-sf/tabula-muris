@@ -4,7 +4,7 @@ RMDS := $(wildcard *.Rmd)
 CORES=32
 
 clean:
-	rm -rf *.out *.err *html *_files
+	rm -rf *.out *.err *_files
 
 all: clean
 	export LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 ../../utilities/run_rmds.py
