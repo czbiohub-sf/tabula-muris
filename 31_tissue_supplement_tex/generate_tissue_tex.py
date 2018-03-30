@@ -236,7 +236,6 @@ class TeXGenerator:
             tex = ''
         return tex
 
-
     @property
     def plot_shows(self):
         if self.plottype == 'tsneplot':
@@ -350,8 +349,6 @@ class TeXGenerator:
 \end{{table}}
 '''
         return tex
-
-
 
 
 @click.command()
