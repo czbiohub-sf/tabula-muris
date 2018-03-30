@@ -78,6 +78,46 @@ def get_category_order(column, defaults):
     return categories
 
 
+def get_subset_annotation(subset, annotation, yaml_data, groupby):
+    if annotation is None:
+        return None
+    if subset.lower().startswith('subset'):
+        letter = subset.lower().split('subset')[-1][0].upper()
+        subset_col = 'subset' + letter
+        try:
+            subset_annotation = annotation.loc[annotation[subset_col]]
+        except KeyError:
+            sys.stderr.write(
+                f'{subset_col} not found in {tissue} {method}!!!\n')
+            subset_annotation = annotation
+    elif subset != 'allcells':
+        try:
+            subset_yaml = yaml_data['SUBSET'][groupby.upper()]
+            print(subset_yaml)
+            # Add table of counts
+            column = subset_yaml['FILTER_COLUMN']
+            value = subset_yaml['FILTER_VALUE']
+
+            if len(re.findall('\d', value)) > 0:
+                # There's integers in the value
+                if value.startswith('c'):
+                # This is an R vector
+                    values = list(map(int, re.findall('(\d+)', 'c(11,12)')))
+                    subset_annotation = annotation[column].isin(values)
+                    return subset_annotation
+                else:
+                    value = int(value)
+        except KeyError:
+            column = 'cell_ontology_class'
+            value = subset.lower().replace('_', ' ').rstrip('s')
+            if value.endswith('cell'):
+                value = value.split('cell')[0] + ' cell'
+        subset_annotation = annotation.query(f'{column} == "{value}"')
+    else:
+        subset_annotation = annotation
+    return subset_annotation
+
+
 def fix_dtypes(parameters, cols=('subset', 'groupby', 'plottype'),
                int_cols=('i', 'n')):
     """Ensures first group is always TSNE of allcells + cell_ontology_class"""
@@ -489,29 +529,8 @@ def cli(figure_folder, tissue, method):
             if j == 0 and tissue != 'Microbiome':
                 tex += tex_generator.subsection_tex
 
-                if subset.lower().startswith('subset'):
-                    letter = subset.lower().split('subset')[-1][0].upper()
-                    subset_col = 'subset' + letter
-                    try:
-                        subset_annotation = annotation.loc[annotation[subset_col]]
-                    except KeyError:
-                        sys.stderr.write(f'{subset_col} not found in {tissue} {method}!!!\n')
-                        subset_annotation = annotation
-                elif subset != 'allcells':
-                    try:
-                        subset_yaml = yaml_data['SUBSET'][groupby.upper()]
-                        print(subset_yaml)
-                        # Add table of counts
-                        column = subset_yaml['FILTER_COLUMN']
-                        value = subset_yaml['FILTER_VALUE']
-                    except KeyError:
-                        column = 'cell_ontology_class'
-                        value = subset.lower().replace('_', ' ').rstrip('s')
-                        if value.endswith('cell'):
-                            value = value.split('cell')[0] + ' cell'
-                    subset_annotation = annotation.query(f'{column} == "{value}"')
-                else:
-                    subset_annotation = annotation
+                subset_annotation = get_subset_annotation(
+                    subset, annotation, yaml_data, groupby)
 
                 if 'expression' not in groupby_col:
                     try:

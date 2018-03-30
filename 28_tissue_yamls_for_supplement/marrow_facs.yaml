@@ -206,7 +206,7 @@ SUBSET:
     NPCS: 4
     RES: 1
   SUBSETB:
-    FILTER_COLUMN: cluster.ids
+    FILTER_COLUMN: subsetA_cluster.ids
     FILTER_VALUE: 0
     GENES:
     - A430084P05Rik
