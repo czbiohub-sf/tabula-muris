@@ -78,13 +78,19 @@ def get_category_order(column, defaults):
     return categories
 
 
-def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
+def fix_dtypes(parameters, cols=('subset', 'groupby', 'plottype'),
+               int_cols=('i', 'n')):
     """Ensures first group is always TSNE of allcells + cell_ontology_class"""
     for col in cols:
         defaults = ORDER_DEFAULTS[col]
         categories = get_category_order(parameters[col], defaults)
         parameters[col] = pd.Categorical(parameters[col],
                                          categories=categories)
+    for col in int_cols:
+        try:
+            parameters[col] = parameters[col].astype(int)
+        except ValueError:
+            pass
     return parameters
 
 
@@ -100,8 +106,8 @@ class TeXGenerator:
         self.i = i
         self.n = n
         self.labels = labels
-        self.extra = extra
-        self.subset_name = subset_name
+        self.extra = extra if not pd.isnull(extra) else None
+        self.subset_name = subset_name if not pd.isnull(subset_name) else None
 
     @property
     def is_iterative(self):
@@ -135,7 +141,8 @@ class TeXGenerator:
     def subset_tex(self):
         if self.subset.lower().endswith('cells'):
             subset = self.subset.lower().split('cells')[0]
-            return subset + ' cells'
+            subset = subset.title()
+            return subset + ' Cells'
         elif 'subset' in self.subset.lower():
             split = self.subset.lower().split('subset')
             subset = 'Subset ' + split[-1].upper()
@@ -155,10 +162,12 @@ class TeXGenerator:
             gene_name = groupby.split('>')[0]
             groupby = f'\emph{{{gene_name}}} \\textgreater 0'
             return groupby
-        if groupby.lower() != 'cluster ids':
+        if 'cluster ids' not in groupby.lower():
             groupby = groupby.title()
-        else:
+        elif groupby.lower() == 'cluster ids':
             groupby = 'Cluster IDs'
+        else:
+            groupby = groupby.lower().split('cluster ids')[0] + ' Cluster IDs'
         return f'\emph{{{groupby}}}'
 
     @property
@@ -167,7 +176,7 @@ class TeXGenerator:
         if self.groupby != 'highlighted':
             if self.subset_name is not None:
                 title += f' ({self.subset_name})'
-            title += ', labeled by {self.groupby_tex}'
+            title += f', labeled by {self.groupby_tex}'
         else:
             title += ', highlighted from All Cells tSNE'
         return title
@@ -407,7 +416,7 @@ def cli(figure_folder, tissue, method):
 
         parameters = basenames.str.extractall(PATTERN)
         parameters.index = parameters.index.droplevel(-1)
-        parameters = add_categorical_order(parameters)
+        parameters = fix_dtypes(parameters)
         # print(parameters)
 
         # Remove legend figures because they're auto-added
@@ -481,7 +490,7 @@ def cli(figure_folder, tissue, method):
                 tex += tex_generator.subsection_tex
 
                 if subset.lower().startswith('subset'):
-                    letter = subset.lower().split('subset')[-1].upper()
+                    letter = subset.lower().split('subset')[-1][0].upper()
                     subset_col = 'subset' + letter
                     try:
                         subset_annotation = annotation.loc[annotation[subset_col]]
