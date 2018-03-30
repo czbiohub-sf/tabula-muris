@@ -47,38 +47,38 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 #write.csv(tiss.markers, filename)
 ```
 
-## Subset: BASAL
+## Subset: SUBSETA
 
-## Subset: "Basal"
+## Subset: "SubsetA" (Basal)
 ```{r optipng='-o7'}
-Basal.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "basal cell"]
-write(paste("Number of cells in Basal subset:", length(Basal.cells.use)), stderr())
-Basal.n.pcs = 10
-Basal.res.use = 0.5
-Basal.perplexity = 30
-Basal.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
-Basal.group.bys = c(group.bys, "sasal_cluster.ids")
-Basal.tiss = SubsetData(tiss, cells.use=Basal.cells.use, )
-Basal.tiss <- Basal.tiss %>% ScaleData() %>% 
+SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "basal cell"]
+write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
+SubsetA.n.pcs = 10
+SubsetA.res.use = 0.5
+SubsetA.perplexity = 30
+SubsetA.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
+SubsetA.group.bys = c(group.bys, "subsetA_cluster.ids")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-Basal.tiss <- Basal.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Basal.n.pcs, 
-    resolution = Basal.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:Basal.n.pcs, seed.use = 10, perplexity=Basal.perplexity)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
+    resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
 
 ```
 
 ### Highlight which cells are in this subset
 ```{r optipng='-o7'}
 colors.use = c('LightGray', 'Coral')
-tiss@meta.data[, "Basal"] = "(Not in subset)"
-tiss@meta.data[Basal.cells.use, "Basal"] = "Basal" 
-filename = make_filename(save_folder, prefix="Basal", 'highlighted', 
+tiss@meta.data[, "SubsetA"] = "(Not in subset)"
+tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
-  group.by = "Basal",
+  group.by = "SubsetA",
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
@@ -87,13 +87,13 @@ p = TSNEPlot(
     xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(filename, width = 4, height = 4)
 
-filename = make_filename(save_folder, prefix="Basal", 'highlighted', 
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells_legend')
 # Plot TSNE again just to steal the legend
 p = TSNEPlot(
     object = tiss,
     do.return = TRUE,
-    group.by = "Basal",
+    group.by = "SubsetA",
     no.axes = TRUE,
     pt.size = 1,
     no.legend = FALSE,
@@ -112,8 +112,8 @@ dev.off()
 ```
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
-dot_tsne_ridge(Basal.tiss, Basal.genes_to_check,
-    save_folder, prefix = "Basal", group.bys = Basal.group.bys, 
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA-Basal", group.bys = SubsetA.group.bys, 
     "facs")
 
 ```
