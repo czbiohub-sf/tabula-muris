@@ -269,7 +269,7 @@ sub.cell_ontology_class <- c("epithelial cell","epithelial cell", "epithelial ce
 sub.free_annotation = c(NA, NA, NA, NA, NA)
 
 subtiss = stash_annotations(subtiss, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
-stash_subtiss_in_tiss(tiss, subtiss)
+tiss = stash_subtiss_in_tiss(tiss, subtiss)
 
 TSNEPlot(object = subtiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
