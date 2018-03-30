@@ -313,6 +313,12 @@ new.cluster.ids <- c("Capillary/BBB-maintenance", "Capillary/BBB-maintenance","A
 ECs@ident <- plyr::mapvalues(x = ECs@ident, from = current.cluster.ids, to = new.cluster.ids)
 ECs<-StashIdent(object=ECs, save.name="Annotation") ## for more clusters
 
+
+filename = here('00_data_ingest', paste(tissue_of_interest, 'EndothelialCells',
+    "seurat_tiss.Robj", sep='_'))
+print(filename)
+save(ECs, file=filename)
+
 filename = make_filename(save_folder, prefix, group.by='function_and_vessel_type', plottype='tsneplot')
 TSNEPlot(object = ECs, do.label = T, pt.size = 3, colors.use = brewer.pal(8,'Set2'), do.return=TRUE) + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
 tsne_and_legend(ECs, save_folder, prefix, group.by, colors.use=brewer.pal(8,'Set2'),  do.label = T)
