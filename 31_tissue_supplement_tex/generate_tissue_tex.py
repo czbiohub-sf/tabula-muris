@@ -281,7 +281,7 @@ class TeXGenerator:
         if self.plottype == 'ridgeplot':
             return 'width=.65\\textwidth'
         if self.plottype == 'dotplot':
-            return 'angle=90, height=.65\\textheight'
+            return 'angle=90, height=.6\\textheight'
         else:
             return 'width=.6\\textwidth'
 
