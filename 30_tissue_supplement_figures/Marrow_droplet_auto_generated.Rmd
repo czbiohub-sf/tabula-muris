@@ -72,7 +72,7 @@ SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 ```{r optipng='-o7'}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetA"] = "(Not in subset)"
-tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
+tiss@meta.data[SubsetA.tiss@cell.names "SubsetA"] = "SubsetA" 
 filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells')
 p = TSNEPlot(
@@ -143,7 +143,7 @@ SubsetB.tiss <- SubsetB.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 ```{r optipng='-o7'}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetB"] = "(Not in subset)"
-tiss@meta.data[SubsetB.cells.use, "SubsetB"] = "SubsetB" 
+tiss@meta.data[SubsetB.tiss@cell.names "SubsetB"] = "SubsetB" 
 filename = make_filename(save_folder, prefix="SubsetB", 'highlighted', 
     'tsneplot_allcells')
 p = TSNEPlot(
