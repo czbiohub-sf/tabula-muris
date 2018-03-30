@@ -29,3 +29,6 @@ skin_heart: create_R_files_from_Rmds
 
 trachea: create_R_files_from_Rmds
 	ls -1 *.R | grep droplet | grep -E 'Trachea' | xargs -P ${CORES} -I{} bash -c "R -f {} >{}.out 2>{}.err"
+
+mammary: create_R_files_from_Rmds
+	ls -1 *.R | grep facs | grep -E 'Mammary' | xargs -P ${CORES} -I{} bash -c "R -f {} >{}.out 2>{}.err"
