@@ -19,8 +19,8 @@ NPCS: 10
 RES: 0.5
 SUBSET:
   SUBSETA:
-    FILTER_COLUMN: cell_ontology_class
-    FILTER_VALUE: smooth muscle cell
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: 7
     GENES:
     - Cnn1
     - Kcnj8
@@ -28,6 +28,6 @@ SUBSET:
     - Postn
     GROUPBY: null
     NPCS: 5
-    PERPLEXITY: 20
+    PERPLEXITY: 25
     RES: 1
 TISSUE: Heart
