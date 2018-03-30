@@ -56,7 +56,7 @@ ggplot(delta.2, aes(Hhex, Neurog3, color = Neurog3 > 0))+ geom_point() + geom_ru
 ggsave(filename, dpi=300)
 dev.off()
 write_caption("Scatter plot of all delta cells reveals that \\emph{Neurog3} and \\emph{Hhex} mark three distinct groups of
-delta cells, i.e. \\emph{Neurog3}$^+$\\emph{Hhex}$^\\text{neg}$, \\emph{Neurog3}$$^\\text{neg}$$\\emph{Hhex}$^+$, and \\emph{Neurog3}$^+$\\emph{Hhex}$^+$.", filename)
+delta cells, i.e. \\emph{Neurog3}$^+$\\emph{Hhex}$^\\text{neg}$, \\emph{Neurog3}$^\\text{neg}$\\emph{Hhex}$^+$, and \\emph{Neurog3}$^+$\\emph{Hhex}$^+$.", filename)
 
 filename = make_filename(save_folder, prefix, 'mouse.id', 'scatterplot_raw_Neurog3-x-Hhex')
 ggplot(delta.2, aes(x=Hhex, y=Neurog3, color = mouse.id)) + geom_point() + geom_rug(sides = "bl")
