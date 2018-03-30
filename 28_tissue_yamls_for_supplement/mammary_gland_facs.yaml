@@ -33,23 +33,4 @@ GROUPBY: null
 METHOD: facs
 NPCS: 10
 RES: 0.5
-SUBSET:
-  BASAL:
-    FILTER_COLUMN: cell_ontology_class
-    FILTER_VALUE: basal cell
-    GENES:
-    - Areg
-    - Cited1
-    - Csn3
-    - Fos
-    - Id1
-    - Id2
-    - Igfbp2
-    - Igfpb4
-    - Prlr
-    - Procr
-    - Vcam1
-    GROUPBY: null
-    NPCS: 10
-    RES: 0.5
 TISSUE: Mammary_Gland
