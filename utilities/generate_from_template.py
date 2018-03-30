@@ -17,6 +17,7 @@ import re
 import yaml
 import click
 
+
 TISSUE = "TISSUE"
 METHOD = "METHOD"
 ADDITIONAL_CODE = 'ADDITIONAL_CODE'
@@ -54,10 +55,13 @@ def code_to_codeblock(code):
 '''
 
 
-def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
-               groupby, perplexity):
+def add_subset(subset, method, filter_column, filter_value, res, npcs, genes,
+               groupby, perplexity, name=None):
     """Add R code blocks for subsetting and reclustering"""
-    name = clean_name(name)
+    subset = clean_name(subset)
+
+    # Column name is lowercase "s"
+    subset_cluster_ids = 's' + subset[1:] + '_cluster.ids'
 
     # If there are no digits in the label, then this is a string so stringify
     try:
@@ -67,22 +71,25 @@ def add_subset(name, method, filter_column, filter_value, res, npcs, genes,
         # This is an integer, no modification needed
         pass
 
-    rmarkdown = f'## Subset: "{name}"'
+    rmarkdown = f'## Subset: "{subset}"'
+    if name is not None:
+        rmarkdown += f' ({name})'
 
     filter = f'rownames(tiss@meta.data)[tiss@meta.data${filter_column} == {filter_value}]'
-    rmarkdown += code_to_codeblock(f"""{name}.cells.use = {filter}
-write(paste("Number of cells in {name} subset:", length({name}.cells.use)), stderr())
-{name}.n.pcs = {npcs}
-{name}.res.use = {res}
-{name}.perplexity = {perplexity}
-{name}.genes_to_check = c({stringify_list(genes)})
-{name}.tiss = SubsetData(tiss, cells.use={name}.cells.use, )
-{name}.tiss <- {name}.tiss %>% ScaleData() %>% 
+    rmarkdown += code_to_codeblock(f"""{subset}.cells.use = {filter}
+write(paste("Number of cells in {subset} subset:", length({subset}.cells.use)), stderr())
+{subset}.n.pcs = {npcs}
+{subset}.res.use = {res}
+{subset}.perplexity = {perplexity}
+{subset}.genes_to_check = c({stringify_list(genes)})
+{subset}.group.bys = c(group.bys, "{subset_cluster_ids}")
+{subset}.tiss = SubsetData(tiss, cells.use={subset}.cells.use, )
+{subset}.tiss <- {subset}.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-{name}.tiss <- {name}.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:{name}.n.pcs, 
-    resolution = {name}.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:{name}.n.pcs, seed.use = 10, perplexity={name}.perplexity)
+{subset}.tiss <- {subset}.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:{subset}.n.pcs, 
+    resolution = {subset}.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:{subset}.n.pcs, seed.use = 10, perplexity={subset}.perplexity)
 """)
     if groupby is not None:
         # Append this subset's groupby to the list
@@ -91,14 +98,14 @@ write(paste("Number of cells in {name} subset:", length({name}.cells.use)), stde
 
     rmarkdown += '\n### Highlight which cells are in this subset'
     rmarkdown += code_to_codeblock(f'''colors.use = c('LightGray', 'Coral')
-tiss@meta.data[, "{name}"] = "(Not in subset)"
-tiss@meta.data[{name}.cells.use, "{name}"] = "{name}" 
-filename = make_filename(save_folder, prefix="{name}", 'highlighted', 
+tiss@meta.data[, "{subset}"] = "(Not in subset)"
+tiss@meta.data[{subset}.cells.use, "{subset}"] = "{subset}" 
+filename = make_filename(save_folder, prefix="{subset}", 'highlighted', 
     'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
-  group.by = "{name}",
+  group.by = "{subset}",
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
@@ -107,13 +114,13 @@ p = TSNEPlot(
     xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(filename, width = 4, height = 4)
 
-filename = make_filename(save_folder, prefix="{name}", 'highlighted', 
+filename = make_filename(save_folder, prefix="{subset}", 'highlighted', 
     'tsneplot_allcells_legend')
 # Plot TSNE again just to steal the legend
 p = TSNEPlot(
     object = tiss,
     do.return = TRUE,
-    group.by = "{name}",
+    group.by = "{subset}",
     no.axes = TRUE,
     pt.size = 1,
     no.legend = FALSE,
@@ -131,8 +138,9 @@ dev.off()
 ''')
 
     rmarkdown += '## tSNE, dotplots, and ridgeplots of this subset'
-    rmarkdown += code_to_codeblock(f'''dot_tsne_ridge({name}.tiss, {name}.genes_to_check,
-    save_folder, prefix = "{name}", group.bys = group.bys, "{method}")
+    rmarkdown += code_to_codeblock(f'''dot_tsne_ridge({subset}.tiss, {subset}.genes_to_check,
+    save_folder, prefix = "{subset}", group.bys = {subset}.group.bys, 
+    "{method}")
 ''')
 
     return rmarkdown
@@ -150,6 +158,7 @@ def main(parameters_yaml, template_file='Template.Rmd',
     with open(parameters_yaml) as f:
         parameters = yaml.load(f)
 
+    tissue = parameters[TISSUE]
     method = parameters[METHOD]
 
     with open(template_file) as f:
@@ -159,7 +168,7 @@ def main(parameters_yaml, template_file='Template.Rmd',
         if parameter == ADDITIONAL_CODE:
             # If ADDITIONAL_CODE is set to True
             if value:
-                basename = parameters[TISSUE] + "_" + parameters[METHOD] + '.Rmd'
+                basename = tissue + "_" + method + '.Rmd'
                 filename = os.path.join(
                     '..', CODE_FOLDER, basename)
                 with open(filename) as g:
@@ -172,8 +181,12 @@ def main(parameters_yaml, template_file='Template.Rmd',
                 # Set defaults if they're not already
                 for k, v in DEFAULTS.items():
                     kv.setdefault(k, v)
+
+
                 subset_code = add_subset(name, method, **kv)
                 template += f'\n## Subset: {name}\n\n{subset_code}'
+
+
         elif value is not None:
             if parameter == GENES:
                 value = stringify_list(value)
