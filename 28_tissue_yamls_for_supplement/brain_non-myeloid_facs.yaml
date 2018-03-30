@@ -39,8 +39,8 @@ RES: 0.5
 SUBSET:
   SUBSETA:
     NAME: Astrocytes
-    FILTER_COLUMN: cell_ontology_class
-    FILTER_VALUE: astrocyte
+    FILTER_COLUMN: cluster.ids
+    FILTER_VALUE: c(2)
     GENES:
     - A2m
     - Aldh1l1
