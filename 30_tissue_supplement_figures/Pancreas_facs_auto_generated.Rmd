@@ -151,7 +151,7 @@ SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use =
 ```{r optipng='-o7'}
 colors.use = c('LightGray', 'Coral')
 tiss@meta.data[, "SubsetA"] = "(Not in subset)"
-tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
+tiss@meta.data[SubsetA.tiss@cell.names "SubsetA"] = "SubsetA" 
 filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells')
 p = TSNEPlot(
