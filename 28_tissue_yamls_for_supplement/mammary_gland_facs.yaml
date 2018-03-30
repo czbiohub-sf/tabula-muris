@@ -34,7 +34,8 @@ METHOD: facs
 NPCS: 10
 RES: 0.5
 SUBSET:
-  BASAL:
+  SUBSETA:
+    NAME: Basal
     FILTER_COLUMN: cell_ontology_class
     FILTER_VALUE: basal cell
     GENES:
