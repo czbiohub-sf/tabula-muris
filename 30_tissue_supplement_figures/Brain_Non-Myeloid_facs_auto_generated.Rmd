@@ -338,23 +338,24 @@ dev.off()
 write_caption("Key defining genes for function and vessel type.", filename)
 ```
 
-## Subset: ASTROCYTES
+## Subset: SUBSETA
 
-## Subset: "Astrocytes"
+## Subset: "SubsetA" (Astrocytes)
 ```{r optipng='-o7'}
-Astrocytes.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "astrocyte"]
-write(paste("Number of cells in Astrocytes subset:", length(Astrocytes.cells.use)), stderr())
-Astrocytes.n.pcs = 10
-Astrocytes.res.use = 1
-Astrocytes.perplexity = 30
-Astrocytes.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Gfap", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2", "Vim")
-Astrocytes.tiss = SubsetData(tiss, cells.use=Astrocytes.cells.use, )
-Astrocytes.tiss <- Astrocytes.tiss %>% ScaleData() %>% 
+SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "astrocyte"]
+write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
+SubsetA.n.pcs = 10
+SubsetA.res.use = 1
+SubsetA.perplexity = 30
+SubsetA.genes_to_check = c("A2m", "Aldh1l1", "Aqp4", "Gdf10", "Gfap", "Naga", "Nbl1", "Nsdhl", "Slc1a3", "St6galnac5", "Tnfaip2", "Vim")
+SubsetA.group.bys = c(group.bys, "subsetA_cluster.ids")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-Astrocytes.tiss <- Astrocytes.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Astrocytes.n.pcs, 
-    resolution = Astrocytes.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:Astrocytes.n.pcs, seed.use = 10, perplexity=Astrocytes.perplexity)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
+    resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
 
 ```
 
@@ -366,14 +367,14 @@ group.bys = c(group.bys, "subtissue")
 ### Highlight which cells are in this subset
 ```{r optipng='-o7'}
 colors.use = c('LightGray', 'Coral')
-tiss@meta.data[, "Astrocytes"] = "(Not in subset)"
-tiss@meta.data[Astrocytes.cells.use, "Astrocytes"] = "Astrocytes" 
-filename = make_filename(save_folder, prefix="Astrocytes", 'highlighted', 
+tiss@meta.data[, "SubsetA"] = "(Not in subset)"
+tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
-  group.by = "Astrocytes",
+  group.by = "SubsetA",
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
@@ -382,13 +383,13 @@ p = TSNEPlot(
     xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(filename, width = 4, height = 4)
 
-filename = make_filename(save_folder, prefix="Astrocytes", 'highlighted', 
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells_legend')
 # Plot TSNE again just to steal the legend
 p = TSNEPlot(
     object = tiss,
     do.return = TRUE,
-    group.by = "Astrocytes",
+    group.by = "SubsetA",
     no.axes = TRUE,
     pt.size = 1,
     no.legend = FALSE,
@@ -407,7 +408,8 @@ dev.off()
 ```
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
-dot_tsne_ridge(Astrocytes.tiss, Astrocytes.genes_to_check,
-    save_folder, prefix = "Astrocytes", group.bys = group.bys, "facs")
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA-Astrocytes", group.bys = SubsetA.group.bys, 
+    "facs")
 
 ```

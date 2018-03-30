@@ -136,6 +136,7 @@ SubsetA.n.pcs = 8
 SubsetA.res.use = 1
 SubsetA.perplexity = 30
 SubsetA.genes_to_check = c("Ang", "Arg1", "Arx", "Cd9", "Chga", "Dpp10", "Folr1", "Gcg", "Gfra3", "Ghrl", "Hhex", "Irx1", "Isl1", "Mafb", "Pdx1", "Ppy", "Slc38a5", "Spp1", "Sst", "Tspan8", "Vsig1")
+SubsetA.group.bys = c(group.bys, "subsetA_cluster.ids")
 SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
 SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
@@ -191,6 +192,7 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
-    save_folder, prefix = "SubsetA", group.bys = group.bys, "facs")
+    save_folder, prefix = "SubsetA", group.bys = SubsetA.group.bys, 
+    "facs")
 
 ```

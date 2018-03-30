@@ -61,6 +61,7 @@ Basal.n.pcs = 10
 Basal.res.use = 0.5
 Basal.perplexity = 30
 Basal.genes_to_check = c("Areg", "Cited1", "Csn3", "Fos", "Id1", "Id2", "Igfbp2", "Igfpb4", "Prlr", "Procr", "Vcam1")
+Basal.group.bys = c(group.bys, "sasal_cluster.ids")
 Basal.tiss = SubsetData(tiss, cells.use=Basal.cells.use, )
 Basal.tiss <- Basal.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
@@ -116,6 +117,7 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
 dot_tsne_ridge(Basal.tiss, Basal.genes_to_check,
-    save_folder, prefix = "Basal", group.bys = group.bys, "facs")
+    save_folder, prefix = "Basal", group.bys = Basal.group.bys, 
+    "facs")
 
 ```

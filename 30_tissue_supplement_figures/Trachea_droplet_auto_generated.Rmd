@@ -51,37 +51,38 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 #write.csv(tiss.markers, filename)
 ```
 
-## Subset: EPITHELIAL
+## Subset: SUBSETA
 
-## Subset: "Epithelial"
+## Subset: "SubsetA" (Epithelial)
 ```{r optipng='-o7'}
-Epithelial.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "epithelial cell"]
-write(paste("Number of cells in Epithelial subset:", length(Epithelial.cells.use)), stderr())
-Epithelial.n.pcs = 2
-Epithelial.res.use = 0.2
-Epithelial.perplexity = 30
-Epithelial.genes_to_check = c("Foxj1", "Krt14", "Krt5", "Scgb1a1")
-Epithelial.tiss = SubsetData(tiss, cells.use=Epithelial.cells.use, )
-Epithelial.tiss <- Epithelial.tiss %>% ScaleData() %>% 
+SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "epithelial cell"]
+write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
+SubsetA.n.pcs = 2
+SubsetA.res.use = 0.2
+SubsetA.perplexity = 30
+SubsetA.genes_to_check = c("Foxj1", "Krt14", "Krt5", "Scgb1a1")
+SubsetA.group.bys = c(group.bys, "subsetA_cluster.ids")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
   RunPCA(do.print = FALSE)
-Epithelial.tiss <- Epithelial.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:Epithelial.n.pcs, 
-    resolution = Epithelial.res.use, print.output = 0, save.SNN = TRUE) %>%
-    RunTSNE(dims.use = 1:Epithelial.n.pcs, seed.use = 10, perplexity=Epithelial.perplexity)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
+    resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
 
 ```
 
 ### Highlight which cells are in this subset
 ```{r optipng='-o7'}
 colors.use = c('LightGray', 'Coral')
-tiss@meta.data[, "Epithelial"] = "(Not in subset)"
-tiss@meta.data[Epithelial.cells.use, "Epithelial"] = "Epithelial" 
-filename = make_filename(save_folder, prefix="Epithelial", 'highlighted', 
+tiss@meta.data[, "SubsetA"] = "(Not in subset)"
+tiss@meta.data[SubsetA.cells.use, "SubsetA"] = "SubsetA" 
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells')
 p = TSNEPlot(
   object = tiss,
   do.return = TRUE,
-  group.by = "Epithelial",
+  group.by = "SubsetA",
   no.axes = TRUE,
   pt.size = 1,
   no.legend = TRUE,
@@ -90,13 +91,13 @@ p = TSNEPlot(
     xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(filename, width = 4, height = 4)
 
-filename = make_filename(save_folder, prefix="Epithelial", 'highlighted', 
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
     'tsneplot_allcells_legend')
 # Plot TSNE again just to steal the legend
 p = TSNEPlot(
     object = tiss,
     do.return = TRUE,
-    group.by = "Epithelial",
+    group.by = "SubsetA",
     no.axes = TRUE,
     pt.size = 1,
     no.legend = FALSE,
@@ -115,7 +116,8 @@ dev.off()
 ```
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
-dot_tsne_ridge(Epithelial.tiss, Epithelial.genes_to_check,
-    save_folder, prefix = "Epithelial", group.bys = group.bys, "droplet")
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA-Epithelial", group.bys = SubsetA.group.bys, 
+    "droplet")
 
 ```

@@ -61,6 +61,7 @@ SubsetA.n.pcs = 6
 SubsetA.res.use = 0.5
 SubsetA.perplexity = 30
 SubsetA.genes_to_check = c("A430084P05Rik", "Adamts14", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cma1", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Emr1", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgax", "Itgb7", "Khdc1a", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ncr1", "Ngp", "Nkg7", "Pax5", "Pld4", "Prf1", "Rag1", "Rag2", "Rrm2", "Serpinb9", "Sh2d1b1", "Stmn1", "Styk1", "Tcf7", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
+SubsetA.group.bys = c(group.bys, "subsetA_cluster.ids")
 SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
 SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
@@ -116,7 +117,8 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
-    save_folder, prefix = "SubsetA", group.bys = group.bys, "droplet")
+    save_folder, prefix = "SubsetA", group.bys = SubsetA.group.bys, 
+    "droplet")
 
 ```
 
@@ -130,6 +132,7 @@ SubsetB.n.pcs = 3
 SubsetB.res.use = 1
 SubsetB.perplexity = 30
 SubsetB.genes_to_check = c("A430084P05Rik", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il10", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgb7", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ngp", "Nkg7", "Pld4", "Prf1", "Rag2", "Rrm2", "Serpinb9", "Stmn1", "Tcf7", "Tgfb1", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
+SubsetB.group.bys = c(group.bys, "subsetB_cluster.ids")
 SubsetB.tiss = SubsetData(tiss, cells.use=SubsetB.cells.use, )
 SubsetB.tiss <- SubsetB.tiss %>% ScaleData() %>% 
   FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
@@ -185,6 +188,7 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
 dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
-    save_folder, prefix = "SubsetB", group.bys = group.bys, "droplet")
+    save_folder, prefix = "SubsetB", group.bys = SubsetB.group.bys, 
+    "droplet")
 
 ```
