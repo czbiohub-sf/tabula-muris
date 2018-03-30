@@ -241,7 +241,6 @@ Color by cell ontology class on the original TSNE.
 
 ```{r}
 TSNEPlot(object = subtissA, do.label = TRUE, do.return = TRUE, group.by = "cell_ontology_class")
-TSNEPlot(object = subtissA, do.label = TRUE, do.return = TRUE, group.by = "free_annotation")
 ```
 
 
