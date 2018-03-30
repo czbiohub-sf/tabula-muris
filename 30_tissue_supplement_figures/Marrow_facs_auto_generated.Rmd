@@ -126,7 +126,7 @@ dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
 
 ## Subset: "SubsetB"
 ```{r optipng='-o7'}
-SubsetB.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 0]
+SubsetB.cells.use = rownames(tiss@meta.data)[tiss@meta.data$subsetA_cluster.ids == 0]
 write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), stderr())
 SubsetB.n.pcs = 3
 SubsetB.res.use = 1
