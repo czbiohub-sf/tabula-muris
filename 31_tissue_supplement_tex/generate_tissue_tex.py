@@ -29,7 +29,7 @@ ORDER_DEFAULTS = {'subset': SUBSET_ORDER, 'plottype': PLOT_ORDER,
                   'groupby': GROUPBY_ORDER}
 
 FIGURE_FOLDER = '30_tissue_supplement_figures'
-PATTERN = '^(?P<subset>[a-zA-Z\d]+)_(?P<groupby>[\w\->]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9_]+)?.pdf$'
+PATTERN = '^(?P<subset>[a-zA-Z\d]+(-)?(?<subset_name>[a-zA-Z]+)?)_(?P<groupby>[\w\->]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9_]+)?.pdf$'
 
 SUBSECTION = r"""
 \subsection{SUBSET, labeled by GROUPBY}
@@ -90,7 +90,7 @@ def add_categorical_order(parameters, cols=('subset', 'groupby', 'plottype')):
 
 class TeXGenerator:
     def __init__(self, pdf, plottype, tissue, method, subset, groupby, i=None,
-                 n=None, labels=None, extra=None):
+                 n=None, labels=None, extra=None, subset_name=None):
         self.pdf = pdf
         self.plottype = plottype
         self.tissue = tissue
@@ -101,6 +101,7 @@ class TeXGenerator:
         self.n = n
         self.labels = labels
         self.extra = extra
+        self.subset_name = subset_name
 
     @property
     def is_iterative(self):
@@ -161,14 +162,21 @@ class TeXGenerator:
         return f'\emph{{{groupby}}}'
 
     @property
-    def subsection_tex(self):
+    def subsection_title(self):
+        title = self.subset_tex
         if self.groupby != 'highlighted':
-            tex = SUBSECTION.replace('GROUPBY', self.groupby_tex)
-            tex = tex.replace("SUBSET", self.subset_tex.title())
+            if self.subset_name is not None:
+                title += f' ({self.subset_name})'
+            title += ', labeled by {self.groupby_tex}'
         else:
-            tex = f'\subsection{{{self.subset_tex.title()}, ' \
-                  f'highlighted from All Cells tSNE}}'
-        return tex
+            title += ', highlighted from All Cells tSNE'
+        return title
+
+    @property
+    def subsection_tex(self):
+        return f'''
+\subsection{{{self.subsection_title}}}
+'''
 
     @property
     def labels_tex(self):
@@ -429,6 +437,12 @@ def cli(figure_folder, tissue, method):
 \clearpage
 '''
 
+            try:
+                subset_name = row['subset_name'].iloc[0]
+            except KeyError:
+                subset_name = None
+
+
             groupby_col = groupby.replace('-', '.')
             try:
                 labels = unique_sorted(annotation[groupby_col])
@@ -453,7 +467,8 @@ def cli(figure_folder, tissue, method):
             tex_generator = TeXGenerator(pdf, plottype, tissue,
                                         method, subset, groupby,
                                         i=i, n=n,
-                                        labels=labels, extra=extra)
+                                        labels=labels, extra=extra,
+                                         subset_name=subset_name)
 
             # Weird hack for adding sections
             if prev_groupby != groupby or prev_subset != subset:
