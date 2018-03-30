@@ -18,7 +18,8 @@ METHOD: droplet
 NPCS: 3
 RES: 0.1
 SUBSET:
-  EPITHELIAL:
+  SUBSETA:
+    NAME: Epithelial
     FILTER_COLUMN: cell_ontology_class
     FILTER_VALUE: epithelial cell
     GENES:
