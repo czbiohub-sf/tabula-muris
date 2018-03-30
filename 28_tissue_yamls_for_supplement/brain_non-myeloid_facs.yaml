@@ -40,7 +40,7 @@ SUBSET:
   SUBSETA:
     NAME: Astrocytes
     FILTER_COLUMN: cluster.ids
-    FILTER_VALUE: c(2)
+    FILTER_VALUE: 2
     GENES:
     - A2m
     - Aldh1l1
