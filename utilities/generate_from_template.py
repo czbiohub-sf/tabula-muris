@@ -154,37 +154,38 @@ def main(parameters_yaml, template_file='Template.Rmd',
 
     with open(template_file) as f:
         template = f.read()
-        for parameter, value in parameters.items():
-            if parameter == ADDITIONAL_CODE:
-                # If ADDITIONAL_CODE is set to True
-                if value:
-                    basename = parameters[TISSUE] + "_" + parameters[METHOD] + '.Rmd'
-                    filename = os.path.join(
-                        '..', CODE_FOLDER, basename)
-                    with open(filename) as g:
-                        template += g.read()
 
-            elif parameter == SUBSET:
-                for name, kv in value.items():
-                    # Make all the keys have lowercase names
-                    kv = {k.lower(): v for k, v in kv.items()}
-                    # Set defaults if they're not already
-                    for k, v in DEFAULTS.items():
-                        kv.setdefault(k, v)
-                    subset_code = add_subset(name, method, **kv)
-                    template += f'\n## Subset: {name}\n\n{subset_code}'
-            elif value is not None:
-                if parameter == GENES:
-                    value = stringify_list(value)
-                if parameter == GROUPBY:
-                    value = stringify_list([value])
-                template = template.replace("{" + parameter + "}", str(value))
-            else:
-                template = template.replace("{" + parameter + "}", '')
+    for parameter, value in parameters.items():
+        if parameter == ADDITIONAL_CODE:
+            # If ADDITIONAL_CODE is set to True
+            if value:
+                basename = parameters[TISSUE] + "_" + parameters[METHOD] + '.Rmd'
+                filename = os.path.join(
+                    '..', CODE_FOLDER, basename)
+                with open(filename) as g:
+                    template += g.read()
 
-        if ADDITIONAL_CODE not in parameters:
-            template = template.replace('{' + ADDITIONAL_CODE + '}',
-                                        '# No additional code')
+        elif parameter == SUBSET:
+            for name, kv in value.items():
+                # Make all the keys have lowercase names
+                kv = {k.lower(): v for k, v in kv.items()}
+                # Set defaults if they're not already
+                for k, v in DEFAULTS.items():
+                    kv.setdefault(k, v)
+                subset_code = add_subset(name, method, **kv)
+                template += f'\n## Subset: {name}\n\n{subset_code}'
+        elif value is not None:
+            if parameter == GENES:
+                value = stringify_list(value)
+            if parameter == GROUPBY:
+                value = stringify_list([value])
+            template = template.replace("{" + parameter + "}", str(value))
+        else:
+            template = template.replace("{" + parameter + "}", '')
+
+    if ADDITIONAL_CODE not in parameters:
+        template = template.replace('{' + ADDITIONAL_CODE + '}',
+                                    '# No additional code')
 
     outfile = parameters[TISSUE] + "_" + parameters[METHOD] + suffix
     with open(outfile, 'w') as f:
