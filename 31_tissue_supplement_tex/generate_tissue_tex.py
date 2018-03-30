@@ -145,7 +145,9 @@ class TeXGenerator:
             return subset + ' Cells'
         elif 'subset' in self.subset.lower():
             split = self.subset.lower().split('subset')
-            subset = 'Subset ' + split[-1].upper()
+            subset = 'Subset ' + split[-1].upper()[0]
+            if self.subset_name is not None:
+                subset += f' ({self.subset_name})'
             return subset
         else:
             return self.subset
@@ -167,15 +169,13 @@ class TeXGenerator:
         elif groupby.lower() == 'cluster ids':
             groupby = 'Cluster IDs'
         else:
-            groupby = groupby.lower().split('cluster ids')[0] + ' Cluster IDs'
+            groupby = f'{self.subset} Cluster IDs'
         return f'\emph{{{groupby}}}'
 
     @property
     def subsection_title(self):
         title = self.subset_tex
         if self.groupby != 'highlighted':
-            if self.subset_name is not None:
-                title += f' ({self.subset_name})'
             title += f', labeled by {self.groupby_tex}'
         else:
             title += ', highlighted from All Cells tSNE'
