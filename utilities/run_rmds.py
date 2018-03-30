@@ -22,7 +22,8 @@ export LANG=en_US.UTF-8
 
 @click.command()
 @click.option('--folder', default='.')
-def main(folder):
+@click.option('--search', default=None)
+def main(folder, search):
     """Run all *.Rmd files in a folder and render to HTML"""
     globber = os.path.join(folder, '*.Rmd')
     rmds = glob.iglob(globber)
@@ -30,6 +31,10 @@ def main(folder):
     for rmd in rmds:
         # Skip the template because it won't work anyway due to syntax errors
         if rmd.endswith("Template.Rmd"):
+            continue
+
+        # Check that search string is in filename
+        if search is not None and search not in rmd:
             continue
         click.echo(f'Starting {rmd} ...')
         stdout = rmd + '.out'
