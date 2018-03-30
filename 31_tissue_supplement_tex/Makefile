@@ -96,4 +96,5 @@ obj/$(PROJECT).pdf: obj/$(PROJECT).aux $(if $(BIB_FILES), obj/$(PROJECT).bbl)
 	pdflatex $(PDFLATEX_FLAGS) $(PROJECT)
 	# Rerun a last time to adjust page numbers
 	pdflatex $(PDFLATEX_FLAGS) $(PROJECT)
+	pdflatex $(PDFLATEX_FLAGS) $(PROJECT)
 
