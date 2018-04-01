@@ -121,6 +121,7 @@ NPCS: 18
 RES: 0.5
 SUBSET:
   SUBSETA:
+    NAME: T cells, Natural Killer cells, Natural Killer T cells
     FILTER_COLUMN: cluster.ids
     FILTER_VALUE: c(11,12)
     GENES:
@@ -206,6 +207,7 @@ SUBSET:
     NPCS: 4
     RES: 1
   SUBSETB:
+    NAME: Regulatory Immature T cell
     FILTER_COLUMN: subsetA_cluster.ids
     FILTER_VALUE: 0
     GENES:
@@ -283,6 +285,7 @@ SUBSET:
     NPCS: 3
     RES: 1
   SUBSETC:
+    NAME: Late pro-B cell
     FILTER_COLUMN: cluster.ids
     FILTER_VALUE: 8
     GENES:
@@ -359,6 +362,7 @@ SUBSET:
     NPCS: 4
     RES: 1
   SUBSETD:
+    NAME: Hematopoietic precursor cells
     FILTER_COLUMN: cluster.ids
     FILTER_VALUE: 0
     GENES:
@@ -454,6 +458,7 @@ SUBSET:
     NPCS: 20
     RES: 1
   SUBSETE:
+    NAME: Granulocyte monocyte progenitor cells and monocytes
     FILTER_COLUMN: cluster.ids
     FILTER_VALUE: 7
     GENES:
