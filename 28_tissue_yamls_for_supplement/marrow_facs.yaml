@@ -283,6 +283,7 @@ SUBSET:
     - Vpreb3
     GROUPBY: null
     NPCS: 3
+    PERPLEXITY: 12
     RES: 1
   SUBSETC:
     NAME: Late pro-B cell
