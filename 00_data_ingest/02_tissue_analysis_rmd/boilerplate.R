@@ -102,7 +102,7 @@ stash_annotations = function(tiss, cluster.ids, free_annotation, cell_ontology_c
 
 stash_subtiss_in_tiss = function(tiss, subtiss){
   
-  sub.cells = rownames(subtiss@meta.data)
+  sub.cells = subtiss@cell.names
   
   # Save which cells were in this subset
   subset_cols = sort(grep("subset", colnames(tiss@meta.data), perl=TRUE, value=TRUE))
@@ -123,7 +123,7 @@ stash_subtiss_in_tiss = function(tiss, subtiss){
 
   # Save the cluster ids for the subset
   tiss@meta.data[, subset_id_col] = NA
-  tiss@meta.data[sub.cells, subset_id_col] = subtiss@ident
+  tiss@meta.data[sub.cells, subset_id_col] = as.numeric(as.vector(subtiss@ident))
 
   tiss@meta.data[sub.cells, 'free_annotation'] = subtiss@meta.data[,'free_annotation']
   tiss@meta.data[sub.cells, 'cell_ontology_class'] = subtiss@meta.data[,'cell_ontology_class']
