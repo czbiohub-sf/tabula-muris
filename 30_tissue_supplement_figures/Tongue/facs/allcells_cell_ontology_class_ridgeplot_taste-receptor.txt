@@ -1,1 +1,1 @@
-Key genes identifying taste receptor cells.
+Key genes identifying taste receptor cells. Ridgeplot showing gene expression enrichment in \emph{Cell Ontology Class} labels in All Cells of Tongue Droplet. A: basal cell of epidermis, B: keratinocyte, C: Langerhans cell.
