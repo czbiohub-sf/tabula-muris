@@ -49,7 +49,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: SUBSETA
 
-## Subset: "SubsetA"
+## Subset: "SubsetA" (T cells, Natural Killer cells, Natural Killer T cells)
 ```{r optipng='-o7'}
 SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == c(11,12)]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
@@ -113,14 +113,14 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
 dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
-    save_folder, prefix = "SubsetA", group.bys = SubsetA.group.bys, 
+    save_folder, prefix = "SubsetA-T cells, Natural Killer cells, Natural Killer T cells", group.bys = SubsetA.group.bys, 
     "facs")
 
 ```
 
 ## Subset: SUBSETB
 
-## Subset: "SubsetB"
+## Subset: "SubsetB" (Regulatory Immature T cell)
 ```{r optipng='-o7'}
 SubsetB.cells.use = rownames(tiss@meta.data)[tiss@meta.data$subsetA_cluster.ids == 0]
 write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), stderr())
@@ -184,14 +184,14 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
 dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
-    save_folder, prefix = "SubsetB", group.bys = SubsetB.group.bys, 
+    save_folder, prefix = "SubsetB-Regulatory Immature T cell", group.bys = SubsetB.group.bys, 
     "facs")
 
 ```
 
 ## Subset: SUBSETC
 
-## Subset: "SubsetC"
+## Subset: "SubsetC" (Late pro-B cell)
 ```{r optipng='-o7'}
 SubsetC.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 8]
 write(paste("Number of cells in SubsetC subset:", length(SubsetC.cells.use)), stderr())
@@ -255,14 +255,14 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
 dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
-    save_folder, prefix = "SubsetC", group.bys = SubsetC.group.bys, 
+    save_folder, prefix = "SubsetC-Late pro-B cell", group.bys = SubsetC.group.bys, 
     "facs")
 
 ```
 
 ## Subset: SUBSETD
 
-## Subset: "SubsetD"
+## Subset: "SubsetD" (Hematopoietic precursor cells)
 ```{r optipng='-o7'}
 SubsetD.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 0]
 write(paste("Number of cells in SubsetD subset:", length(SubsetD.cells.use)), stderr())
@@ -326,14 +326,14 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
 dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
-    save_folder, prefix = "SubsetD", group.bys = SubsetD.group.bys, 
+    save_folder, prefix = "SubsetD-Hematopoietic precursor cells", group.bys = SubsetD.group.bys, 
     "facs")
 
 ```
 
 ## Subset: SUBSETE
 
-## Subset: "SubsetE"
+## Subset: "SubsetE" (Granulocyte monocyte progenitor cells and monocytes)
 ```{r optipng='-o7'}
 SubsetE.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 7]
 write(paste("Number of cells in SubsetE subset:", length(SubsetE.cells.use)), stderr())
@@ -397,7 +397,7 @@ dev.off()
 ## tSNE, dotplots, and ridgeplots of this subset
 ```{r optipng='-o7'}
 dot_tsne_ridge(SubsetE.tiss, SubsetE.genes_to_check,
-    save_folder, prefix = "SubsetE", group.bys = SubsetE.group.bys, 
+    save_folder, prefix = "SubsetE-Granulocyte monocyte progenitor cells and monocytes", group.bys = SubsetE.group.bys, 
     "facs")
 
 ```
