@@ -6,5 +6,5 @@ genes_to_check = c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7')
 filename = ridgeplot_and_save(tiss, save_folder, prefix='allcells',
     group.by='cell_ontology_class',
     genes=genes_to_check, suffix='taste-receptor', method=method)
-write_caption("Key genes identifying taste receptor cells. Ridgeplot showing gene expression enrichment in \emph{Cell Ontology Class} labels in All Cells of Tongue FACS. A: basal cell of epidermis, B: keratinocyte", filename)
+write_caption("Key genes identifying taste receptor cells. Ridgeplot showing gene expression enrichment in \\emph{Cell Ontology Class} labels in All Cells of Tongue Droplet. A: basal cell of epidermis, B: keratinocyte, C: Langerhans cell.", filename)
 ```
