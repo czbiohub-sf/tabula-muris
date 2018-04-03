@@ -29,7 +29,7 @@ ORDER_DEFAULTS = {'subset': SUBSET_ORDER, 'plottype': PLOT_ORDER,
                   'groupby': GROUPBY_ORDER}
 
 FIGURE_FOLDER = '30_tissue_supplement_figures'
-PATTERN = '^(?P<subset>[a-zA-Z\d]+(-)?(?P<subset_name>[a-zA-Z]+)?)_(?P<groupby>[\w\->]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9_]+)?.pdf$'
+PATTERN = '^(?P<subset>[a-zA-Z\d]+(-)?(?P<subset_name>[a-zA-Z ]+)?)_(?P<groupby>[\w\->]+)_(?P<plottype>[a-z]+plot)(_?:(?P<i>\d+)\-of\-(?P<n>\d+))?_?(?P<extra>[a-z\-A-Z0-9_]+)?.pdf$'
 
 SUBSECTION = r"""
 \subsection{SUBSET, labeled by GROUPBY}
@@ -37,6 +37,12 @@ SUBSECTION = r"""
 
 ENDMATTER = r"\end{document}"
 
+
+def escape_pdf(pdf):
+    """Allow for filenames with spaces"""
+    prefix = pdf.split('.pdf')[0]
+    escaped_pdf = '{"' + prefix + '"}' + '.pdf'
+    return escaped_pdf
 
 def texify(s):
     """Convert a string to be TeX compatible"""
@@ -346,7 +352,8 @@ class TeXGenerator:
         if self.plottype == 'tsneplot' and not('expression' in self.groupby):
             pdf = self.pdf.replace('.pdf', '_legend.pdf')
             if os.path.exists(pdf):
-                return f'\includegraphics[{self.graphics_options}]{{{pdf}}}'
+                escaped_pdf = escape_pdf(pdf)
+                return f'\includegraphics[{self.graphics_options}]{{{escaped_pdf}}}'
             else:
                 return ''
         else:
@@ -363,11 +370,12 @@ class TeXGenerator:
 
     @property
     def figure_tex(self):
+        escaped_pdf = escape_pdf(self.pdf)
         code = f"""
 \subsubsection{{{self.subsubsection_title}}}
 \\begin{{figure}}[h]
 \centering
-\includegraphics[{self.graphics_options}]{{{self.pdf}}}
+\includegraphics[{self.graphics_options}]{{{escaped_pdf}}}
 {self.legend}
 {self.caption}
 \end{{figure}}
