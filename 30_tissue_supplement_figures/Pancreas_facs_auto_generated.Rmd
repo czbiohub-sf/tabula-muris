@@ -126,7 +126,13 @@ write_caption("\\emph{Prss53} transcripts are only detected in islet beta cells.
 
 ## Subset: "SubsetA"
 ```{r optipng='-o7'}
-SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == c(1,2,5)]
+in_subset = tiss@meta.data$cluster.ids == c(1,2,5)
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetA.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 8
 SubsetA.res.use = 1

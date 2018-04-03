@@ -342,7 +342,13 @@ write_caption("Key defining genes for function and vessel type.", filename)
 
 ## Subset: "SubsetA" (Astrocytes)
 ```{r optipng='-o7'}
-SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 2]
+in_subset = tiss@meta.data$cluster.ids == 2
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetA.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 10
 SubsetA.res.use = 1
