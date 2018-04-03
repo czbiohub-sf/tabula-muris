@@ -55,7 +55,13 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: "SubsetA"
 ```{r optipng='-o7'}
-SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 2]
+in_subset = tiss@meta.data$cluster.ids == 2
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetA.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 6
 SubsetA.res.use = 0.5
@@ -126,7 +132,13 @@ dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
 
 ## Subset: "SubsetB"
 ```{r optipng='-o7'}
-SubsetB.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 11]
+in_subset = tiss@meta.data$cluster.ids == 11
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetB.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), stderr())
 SubsetB.n.pcs = 3
 SubsetB.res.use = 1

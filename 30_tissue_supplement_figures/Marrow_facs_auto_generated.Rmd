@@ -55,7 +55,13 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: "SubsetA" (T cells, Natural Killer cells, Natural Killer T cells)
 ```{r optipng='-o7'}
-SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == c(11,12)]
+in_subset = tiss@meta.data$cluster.ids == c(11,12)
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetA.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 4
 SubsetA.res.use = 1
@@ -126,11 +132,17 @@ dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
 
 ## Subset: "SubsetB" (Regulatory Immature T cell)
 ```{r optipng='-o7'}
-SubsetB.cells.use = rownames(tiss@meta.data)[tiss@meta.data$subsetA_cluster.ids == 0]
+in_subset = tiss@meta.data$subsetA_cluster.ids == 0
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetB.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), stderr())
 SubsetB.n.pcs = 3
 SubsetB.res.use = 1
-SubsetB.perplexity = 30
+SubsetB.perplexity = 12
 SubsetB.genes_to_check = c("A430084P05Rik", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il10", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgb7", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ngp", "Nkg7", "Pld4", "Prf1", "Rag2", "Rrm2", "Serpinb9", "Stmn1", "Tcf7", "Tgfb1", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
 SubsetB.group.bys = c(group.bys, "subsetB_cluster.ids")
 SubsetB.tiss = SubsetData(tiss, cells.use=SubsetB.cells.use, )
@@ -197,7 +209,13 @@ dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
 
 ## Subset: "SubsetC" (Late pro-B cell)
 ```{r optipng='-o7'}
-SubsetC.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 8]
+in_subset = tiss@meta.data$cluster.ids == 8
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetC.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetC subset:", length(SubsetC.cells.use)), stderr())
 SubsetC.n.pcs = 4
 SubsetC.res.use = 1
@@ -268,7 +286,13 @@ dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
 
 ## Subset: "SubsetD" (Hematopoietic precursor cells)
 ```{r optipng='-o7'}
-SubsetD.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 0]
+in_subset = tiss@meta.data$cluster.ids == 0
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetD.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetD subset:", length(SubsetD.cells.use)), stderr())
 SubsetD.n.pcs = 20
 SubsetD.res.use = 1
@@ -339,7 +363,13 @@ dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
 
 ## Subset: "SubsetE" (Granulocyte monocyte progenitor cells and monocytes)
 ```{r optipng='-o7'}
-SubsetE.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cluster.ids == 7]
+in_subset = tiss@meta.data$cluster.ids == 7
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetE.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetE subset:", length(SubsetE.cells.use)), stderr())
 SubsetE.n.pcs = 20
 SubsetE.res.use = 1

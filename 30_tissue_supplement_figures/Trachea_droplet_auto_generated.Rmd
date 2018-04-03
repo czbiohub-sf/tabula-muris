@@ -55,7 +55,13 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: "SubsetA" (Epithelial)
 ```{r optipng='-o7'}
-SubsetA.cells.use = rownames(tiss@meta.data)[tiss@meta.data$cell_ontology_class == "epithelial cell"]
+in_subset = tiss@meta.data$cell_ontology_class == "epithelial cell"
+in_subset[is.na(in_subset)] = FALSE
+
+```
+
+```{r optipng='-o7'}
+SubsetA.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 2
 SubsetA.res.use = 0.2
