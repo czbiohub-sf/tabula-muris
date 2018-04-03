@@ -78,7 +78,7 @@ def add_subset(subset, method, filter_column, filter_value, res, npcs, genes,
 in_{subset}[is.na(in_{subset})] = FALSE
 ''')
 
-    rmarkdown += code_to_codeblock(f"""{subset}.cells.use = tiss@cell.names[in_subset]
+    rmarkdown += code_to_codeblock(f"""{subset}.cells.use = tiss@cell.names[in_{subset}]
 write(paste("Number of cells in {subset} subset:", length({subset}.cells.use)), stderr())
 {subset}.n.pcs = {npcs}
 {subset}.res.use = {res}
