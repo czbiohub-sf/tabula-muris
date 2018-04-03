@@ -61,7 +61,7 @@ in_SubsetA[is.na(in_SubsetA)] = FALSE
 ```
 
 ```{r optipng='-o7'}
-SubsetA.cells.use = tiss@cell.names[in_subset]
+SubsetA.cells.use = tiss@cell.names[in_SubsetA]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 4
 SubsetA.res.use = 1
@@ -138,7 +138,7 @@ in_SubsetB[is.na(in_SubsetB)] = FALSE
 ```
 
 ```{r optipng='-o7'}
-SubsetB.cells.use = tiss@cell.names[in_subset]
+SubsetB.cells.use = tiss@cell.names[in_SubsetB]
 write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), stderr())
 SubsetB.n.pcs = 3
 SubsetB.res.use = 1
@@ -215,7 +215,7 @@ in_SubsetC[is.na(in_SubsetC)] = FALSE
 ```
 
 ```{r optipng='-o7'}
-SubsetC.cells.use = tiss@cell.names[in_subset]
+SubsetC.cells.use = tiss@cell.names[in_SubsetC]
 write(paste("Number of cells in SubsetC subset:", length(SubsetC.cells.use)), stderr())
 SubsetC.n.pcs = 4
 SubsetC.res.use = 1
@@ -292,7 +292,7 @@ in_SubsetD[is.na(in_SubsetD)] = FALSE
 ```
 
 ```{r optipng='-o7'}
-SubsetD.cells.use = tiss@cell.names[in_subset]
+SubsetD.cells.use = tiss@cell.names[in_SubsetD]
 write(paste("Number of cells in SubsetD subset:", length(SubsetD.cells.use)), stderr())
 SubsetD.n.pcs = 20
 SubsetD.res.use = 1
@@ -369,7 +369,7 @@ in_SubsetE[is.na(in_SubsetE)] = FALSE
 ```
 
 ```{r optipng='-o7'}
-SubsetE.cells.use = tiss@cell.names[in_subset]
+SubsetE.cells.use = tiss@cell.names[in_SubsetE]
 write(paste("Number of cells in SubsetE subset:", length(SubsetE.cells.use)), stderr())
 SubsetE.n.pcs = 20
 SubsetE.res.use = 1
