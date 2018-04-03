@@ -55,8 +55,8 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: "SubsetA" (T cells, Natural Killer cells, Natural Killer T cells)
 ```{r optipng='-o7'}
-in_subset = tiss@meta.data$cluster.ids == c(11,12)
-in_subset[is.na(in_subset)] = FALSE
+in_SubsetA = tiss@meta.data$cluster.ids == c(11,12)
+in_SubsetA[is.na(in_SubsetA)] = FALSE
 
 ```
 
@@ -132,8 +132,8 @@ dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
 
 ## Subset: "SubsetB" (Regulatory Immature T cell)
 ```{r optipng='-o7'}
-in_subset = tiss@meta.data$subsetA_cluster.ids == 0
-in_subset[is.na(in_subset)] = FALSE
+in_SubsetB = tiss@meta.data$subsetA_cluster.ids == 0
+in_SubsetB[is.na(in_SubsetB)] = FALSE
 
 ```
 
@@ -209,8 +209,8 @@ dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
 
 ## Subset: "SubsetC" (Late pro-B cell)
 ```{r optipng='-o7'}
-in_subset = tiss@meta.data$cluster.ids == 8
-in_subset[is.na(in_subset)] = FALSE
+in_SubsetC = tiss@meta.data$cluster.ids == 8
+in_SubsetC[is.na(in_SubsetC)] = FALSE
 
 ```
 
@@ -286,8 +286,8 @@ dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
 
 ## Subset: "SubsetD" (Hematopoietic precursor cells)
 ```{r optipng='-o7'}
-in_subset = tiss@meta.data$cluster.ids == 0
-in_subset[is.na(in_subset)] = FALSE
+in_SubsetD = tiss@meta.data$cluster.ids == 0
+in_SubsetD[is.na(in_SubsetD)] = FALSE
 
 ```
 
@@ -363,8 +363,8 @@ dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
 
 ## Subset: "SubsetE" (Granulocyte monocyte progenitor cells and monocytes)
 ```{r optipng='-o7'}
-in_subset = tiss@meta.data$cluster.ids == 7
-in_subset[is.na(in_subset)] = FALSE
+in_SubsetE = tiss@meta.data$cluster.ids == 7
+in_SubsetE[is.na(in_SubsetE)] = FALSE
 
 ```
 

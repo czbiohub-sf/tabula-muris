@@ -55,8 +55,8 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: "SubsetA" (Basal)
 ```{r optipng='-o7'}
-in_subset = tiss@meta.data$cell_ontology_class == "basal cell"
-in_subset[is.na(in_subset)] = FALSE
+in_SubsetA = tiss@meta.data$cell_ontology_class == "basal cell"
+in_SubsetA[is.na(in_SubsetA)] = FALSE
 
 ```
 

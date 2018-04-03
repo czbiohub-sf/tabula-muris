@@ -130,8 +130,8 @@ write_caption("\\emph{Prss53} transcripts are only detected in islet beta cells.
 
 ## Subset: "SubsetA"
 ```{r optipng='-o7'}
-in_subset = tiss@meta.data$cluster.ids == c(1,2,5)
-in_subset[is.na(in_subset)] = FALSE
+in_SubsetA = tiss@meta.data$cluster.ids == c(1,2,5)
+in_SubsetA[is.na(in_SubsetA)] = FALSE
 
 ```
 

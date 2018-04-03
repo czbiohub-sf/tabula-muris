@@ -55,8 +55,8 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 
 ## Subset: "SubsetA"
 ```{r optipng='-o7'}
-in_subset = tiss@meta.data$cluster.ids == 2
-in_subset[is.na(in_subset)] = FALSE
+in_SubsetA = tiss@meta.data$cluster.ids == 2
+in_SubsetA[is.na(in_SubsetA)] = FALSE
 
 ```
 
@@ -132,8 +132,8 @@ dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
 
 ## Subset: "SubsetB"
 ```{r optipng='-o7'}
-in_subset = tiss@meta.data$cluster.ids == 11
-in_subset[is.na(in_subset)] = FALSE
+in_SubsetB = tiss@meta.data$cluster.ids == 11
+in_SubsetB[is.na(in_SubsetB)] = FALSE
 
 ```
 
