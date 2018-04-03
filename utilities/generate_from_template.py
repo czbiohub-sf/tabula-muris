@@ -74,8 +74,8 @@ def add_subset(subset, method, filter_column, filter_value, res, npcs, genes,
     if name is not None:
         rmarkdown += f' ({name})'
 
-    rmarkdown += code_to_codeblock(f'''in_subset = tiss@meta.data${filter_column} == {filter_value}
-in_subset[is.na(in_subset)] = FALSE
+    rmarkdown += code_to_codeblock(f'''in_{subset} = tiss@meta.data${filter_column} == {filter_value}
+in_{subset}[is.na(in_{subset})] = FALSE
 ''')
 
     rmarkdown += code_to_codeblock(f"""{subset}.cells.use = tiss@cell.names[in_subset]
