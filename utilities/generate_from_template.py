@@ -6,7 +6,6 @@
 # for that organ and method.
 
 # Usage: generate_from_template.py parameter_file.yaml
-import sys
 # import locale
 #
 # locale.setlocale(locale.LC_ALL, 'en_US.utf8')
@@ -75,8 +74,11 @@ def add_subset(subset, method, filter_column, filter_value, res, npcs, genes,
     if name is not None:
         rmarkdown += f' ({name})'
 
-    filter = f'rownames(tiss@meta.data)[tiss@meta.data${filter_column} == {filter_value}]'
-    rmarkdown += code_to_codeblock(f"""{subset}.cells.use = {filter}
+    rmarkdown += code_to_codeblock(f'''in_subset = tiss@meta.data${filter_column} == {filter_value}
+in_subset[is.na(in_subset)] = FALSE
+''')
+
+    rmarkdown += code_to_codeblock(f"""{subset}.cells.use = tiss@cell.names[in_subset]
 write(paste("Number of cells in {subset} subset:", length({subset}.cells.use)), stderr())
 {subset}.n.pcs = {npcs}
 {subset}.res.use = {res}
