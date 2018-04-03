@@ -348,7 +348,7 @@ in_SubsetA[is.na(in_SubsetA)] = FALSE
 ```
 
 ```{r optipng='-o7'}
-SubsetA.cells.use = tiss@cell.names[in_subset]
+SubsetA.cells.use = tiss@cell.names[in_SubsetA]
 write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
 SubsetA.n.pcs = 10
 SubsetA.res.use = 1
