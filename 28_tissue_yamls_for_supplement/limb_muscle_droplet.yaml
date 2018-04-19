@@ -19,7 +19,7 @@ GENES:
 - Ptprc
 - Sox9
 - Vcam1
-GROUPBY: null
+GROUPBY: mouse.id
 METHOD: droplet
 NPCS: 15
 RES: 1
