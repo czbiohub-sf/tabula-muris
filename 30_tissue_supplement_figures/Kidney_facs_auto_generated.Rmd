@@ -25,6 +25,10 @@ tissue_of_interest = 'Kidney'
 filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
 load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 
+# Make sure cluster ids are numeric
+tiss@meta.data[, 'cluster.ids'] = as.numeric(tiss@meta.data[, 'cluster.ids'])
+
+
 additional.group.bys = sort(c())
 
 group.bys = c(standard.group.bys, additional.group.bys)
