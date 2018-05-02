@@ -30,7 +30,7 @@ facs_robj = c(
   'facs_Trachea_seurat_tiss.Robj'
 )
 
-cleaned_annotations = read.csv(here('00_data_ingest', '18_global_annotation_csv', 'annotations_FACS.csv'), row.names=1)
+cleaned_annotations = read.csv(here('00_data_ingest', '18_global_annotation_csv', 'annotations_facs.csv'), row.names=1)
 
 
 plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {

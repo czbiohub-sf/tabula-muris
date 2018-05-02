@@ -49,5 +49,34 @@ find_markers("Spleen", "droplet", "cell_ontology_class")
 
 find_markers("Thymus", "facs", "cell_ontology_class")
 find_markers("Thymus", "droplet", "cell_ontology_class")
+
+find_markers("Brain_Non-Myeloid", "facs", "cell_ontology_class")
 ```
 
+```{r}
+library(openxlsx)
+library(stringr)
+
+list_cell_type_markers <- function(tissue, method){
+  filename = here('22_markers', paste0(method,"_", tissue, "_cell_ontology_class_markers.csv"))
+  markers <- read.csv(file = filename)
+  filename = here('22_markers', paste0(method,"_", tissue, "_cell_ontology_class_classes.csv"))
+  types <- read.csv(file = filename)
+  types <- as.matrix(types$x)
+  
+  wb <- createWorkbook(tissue)
+
+  for(i in 1:length(types)){
+    dataframe = markers[markers$cluster==i-1,]
+    dataframe = dataframe[,c(8,3,6)]
+    sheetname <- str_sub(types[i],1,30)
+    addWorksheet(wb,sheetname)
+    writeData(wb, sheet = sheetname, dataframe,rowNames = FALSE)
+  }
+
+saveWorkbook(wb,paste0(tissue,".xlsx"),overwrite = TRUE)
+
+}
+
+list_cell_type_markers("Brain_Non-Myeloid", "facs")
+```

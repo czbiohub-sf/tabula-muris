@@ -35,7 +35,7 @@ If you want to start from the raw gene-cell counts tables, then first download t
 bash 00_data_ingest/download_data.sh
 ```
 
-This will download two zip files,`droplet_raw_data.zip` and `facs_raw_data.zip` and unzip them into the folder structure described below. Then you'll have two folders in `00_data_ingest` (the location is important - everything here depends on the folder structure). 
+This will download two zip files, `droplet_raw_data.zip` and `facs_raw_data.zip` and unzip them into the folder structure described below. Then you'll have two folders in `00_data_ingest` (the location is important - everything here depends on the folder structure). 
 
 
 #### FACS
@@ -110,7 +110,7 @@ Now your droplet folders should look like this:
 └── metadata_droplet.csv
 ```
 
-All of the `*-10X_*` folders contain a `barcodes.tsv`, `genes.tsv`, and `matrix.mtx` file as output by cellranger from 10X genomics.
+All of the `*-10X_*` folders contain a `barcodes.tsv`, `genes.tsv` and `matrix.mtx` file as output by cellranger from 10X genomics.
 
 ```
 01_droplet_raw_data/droplet/Bladder-10X_P4_3
@@ -225,5 +225,5 @@ tabula_muris/
 From Guoji Guo's lab at Zhejiang University School of Medicine in China
 
 - [MCA Data Analysis](https://github.com/ggjlab/mca_data_analysis)
-- [scMCA](https://github.com/ggjlab/scMCA) - An simple R package for large scale data (large DGE) from Mouse Cell Atlas ,to alleviate burdens of our main Server
+- [scMCA](https://github.com/ggjlab/scMCA) - An simple R package for large scale data (large DGE) from Mouse Cell Atlas, to alleviate burdens of our main Server
 
