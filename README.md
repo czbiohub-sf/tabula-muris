@@ -225,5 +225,5 @@ tabula_muris/
 From Guoji Guo's lab at Zhejiang University School of Medicine in China
 
 - [MCA Data Analysis](https://github.com/ggjlab/mca_data_analysis)
-- [scMCA](https://github.com/ggjlab/scMCA) - An simple R package for large scale data (large DGE) from Mouse Cell Atlas, to alleviate burdens of our main Server
+- [scMCA](https://github.com/ggjlab/scMCA) - R package for analysing the Mouse Cell Atlas data
 
