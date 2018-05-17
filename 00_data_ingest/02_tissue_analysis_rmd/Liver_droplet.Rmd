@@ -150,7 +150,7 @@ free_annotation <- c(
   NA,
   "endothelial cells",
   "bile duct epithelial cells",
-  NA)
+  "immune cells")
 
 cell_ontology_class <- c(
   "hepatocyte",
