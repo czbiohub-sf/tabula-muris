@@ -384,6 +384,7 @@ class TeXGenerator:
         return code
 
     def make_table_tex(self, counts):
+        print(f"\t\t--- Adding table to {self.subset} per {self.groupby} ---")
         tex = f'\subsubsection{{Table of cell counts in {self.subset_tex}, per {self.groupby_tex}}}'
         tex += r"""\begin{table}[h]
 \centering
@@ -498,8 +499,11 @@ def cli(figure_folder, tissue, method):
 
 
             groupby_col = groupby.replace('-', '.')
+            subset_annotation = get_subset_annotation(
+                subset, annotation, yaml_data, groupby)
+
             try:
-                labels = unique_sorted(annotation[groupby_col])
+                labels = unique_sorted(subset_annotation[groupby_col])
             except (KeyError, TypeError):
                 # KeyError: groupby_col is not in annotation dataframe columns
                 # TypeError: annotation is None
@@ -518,6 +522,9 @@ def cli(figure_folder, tissue, method):
                 extra = None
             # elif extra != '1-of-1':
             #     extra = None
+
+
+
             tex_generator = TeXGenerator(pdf, plottype, tissue,
                                         method, subset, groupby,
                                         i=i, n=n,
@@ -537,13 +544,11 @@ def cli(figure_folder, tissue, method):
             if j == 0 and tissue != 'Microbiome':
                 tex += tex_generator.subsection_tex
 
-                subset_annotation = get_subset_annotation(
-                    subset, annotation, yaml_data, groupby)
-
                 if 'expression' not in groupby_col:
                     try:
                         counts = subset_annotation.fillna("NA").groupby(groupby_col).size()
-                        tex += tex_generator.make_table_tex(counts)
+                        if not counts.empty:
+                            tex += tex_generator.make_table_tex(counts)
                     except KeyError:
                         # This is a custom plot and doesn't have a groupby
                         pass
