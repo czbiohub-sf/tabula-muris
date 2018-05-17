@@ -12,12 +12,17 @@ library(tidyr)
 library(parallel)
 library(cba)
 
-tabula.dir <- "../../../tabula-muris/"
+library(here)
+
+
 ```
 
 # Load Seurat object of data
 ```{r}
-load("../../data/All_seurat_tiss.Robj")
+tiss <- load(here('00_data_ingest', '11_global_robj','FACS_all.Robj'))
+
+# tabula.dir <- "../../../tabula-muris/"
+# load("../../data/All_seurat_tiss.Robj")
 ```
 
 # Load metadata and add to Seurat object
@@ -32,7 +37,8 @@ metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class)
 # make "annotation.2"
 metadata  <- metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
 
-tissue_colors <- read.csv(file.path(tabula.dir,'00_data_ingest/15_color_palette/tissue_colors.csv'))
+# tissue_colors <- read.csv(file.path(tabula.dir,'00_data_ingest/15_color_palette/tissue_colors.csv'))
+tissue_colors <- read.csv(here('00_data_ingest', '15_color_palette','tissue_colors.csv'))
 colnames(tissue_colors) <- c('tissue','tiss.color')
 tissue_colors$tissue <- make.names(tissue_colors$tissue)
 
@@ -69,7 +75,10 @@ genes.expr <- names(x[x > 5])
 tf.names <- tf.names[tf.names %in% genes.expr]
 
 # Remove IEGs
-iegs <- as.character(read.csv(file.path(tabula.dir,"00_data_ingest/20_dissociation_genes/genes_affected_by_dissociation_unix.csv"), header = T)[,1])
+# iegs <- as.character(read.csv(file.path(tabula.dir,"00_data_ingest/20_dissociation_genes/genes_affected_by_dissociation_unix.csv"), header = T)[,1])
+
+iegs <- as.character(read.csv(here('00_data_ingest','20_dissociation_genes','genes_affected_by_dissociation_unix.csv'), header = T)[,1])
+
 tf.names <- tf.names[!tf.names %in% iegs]
 length(tf.names)
 ```
