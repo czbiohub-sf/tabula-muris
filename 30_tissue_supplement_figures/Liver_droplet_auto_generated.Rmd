@@ -66,7 +66,7 @@ write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), st
 SubsetA.n.pcs = 8
 SubsetA.res.use = 0.5
 SubsetA.perplexity = 30
-SubsetA.genes_to_check = c("A1bg", "Cyp2c69", "Cyp2d9", "Mup1", "Mup12", "Mup20", "Mup21", "Xist")
+SubsetA.genes_to_check = c("Alb", "Apoa1", "Ass1", "Cdh1", "Cyp2e1", "Cyp2f2", "Glul", "Gstp1", "Gulo", "Hal", "Hamp", "Oat", "Pck1", "Serpina1c", "Ttr", "Ubb")
 SubsetA.group.bys = c(group.bys, "subsetA_cluster.ids")
 SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
 SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
@@ -76,11 +76,6 @@ SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use =
     resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
     RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
 
-```
-
-### Append this subset's groupby to the list
-```{r optipng='-o7'}
-group.bys = c(group.bys, "mouse.sex")
 ```
 
 ### Highlight which cells are in this subset

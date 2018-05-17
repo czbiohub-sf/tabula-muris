@@ -120,10 +120,10 @@ write_caption("Delta heterogeneity is observed in every individual mouse.", file
 Figure 3.
 ```{r}
 filename = make_filename(save_folder, prefix, 'expression', 'tsneplot')
-FeaturePlot(tiss, c('Prss53', 'Slc2a2', 'Nkx6-1','Ins2'), cols.use = c("grey","blue"))
+FeaturePlot(tiss, c('Prss53', 'Slc2a2', 'Nkx6-1','Ins2'), cols.use = c("grey","blue"), no.legend = FALSE)
 ggsave(filename, dpi=300)
 dev.off()
-write_caption("\\emph{Prss53} transcripts are only detected in islet beta cells.", filename)
+write_caption("Expression of \\emph{Prss53} as shown on t-SNE embedding of Pancreas FACS cells.", filename)
 ```
 
 ## Subset: SUBSETA
