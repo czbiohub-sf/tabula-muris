@@ -501,6 +501,8 @@ def cli(figure_folder, tissue, method):
             groupby_col = groupby.replace('-', '.')
             subset_annotation = get_subset_annotation(
                 subset, annotation, yaml_data, groupby)
+            if 'cluster.ids' in groupby_col:
+                subset_annotation[groupby_col] == subset_annotation[groupby_col].astype(int)
 
             try:
                 labels = unique_sorted(subset_annotation[groupby_col])
