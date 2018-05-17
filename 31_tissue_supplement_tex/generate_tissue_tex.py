@@ -501,11 +501,21 @@ def cli(figure_folder, tissue, method):
             groupby_col = groupby.replace('-', '.')
             subset_annotation = get_subset_annotation(
                 subset, annotation, yaml_data, groupby)
+
+            if groupby_col == 'free_annotation':
+                groupby_plus = 'free_annotation_plus'
+                # Concatenate the cell ontology class and free annotation
+                subset_annotation[groupby_plus] = \
+                    subset_annotation['cell_ontology_class'] + ": " \
+                    + subset_annotation['free_annotation']
+            else:
+                groupby_plus = groupby_col
+
             if 'cluster.ids' in groupby_col:
-                subset_annotation[groupby_col] == subset_annotation[groupby_col].astype(int)
+                subset_annotation[groupby_col] = subset_annotation[groupby_col].astype(int)
 
             try:
-                labels = unique_sorted(subset_annotation[groupby_col])
+                labels = unique_sorted(subset_annotation[groupby_plus])
             except (KeyError, TypeError):
                 # KeyError: groupby_col is not in annotation dataframe columns
                 # TypeError: annotation is None
@@ -546,9 +556,9 @@ def cli(figure_folder, tissue, method):
             if j == 0 and tissue != 'Microbiome':
                 tex += tex_generator.subsection_tex
 
-                if 'expression' not in groupby_col:
+                if 'expression' not in groupby_plus:
                     try:
-                        counts = subset_annotation.fillna("NA").groupby(groupby_col).size()
+                        counts = subset_annotation.fillna("NA").groupby(groupby_plus).size()
                         if not counts.empty:
                             tex += tex_generator.make_table_tex(counts)
                     except KeyError:
