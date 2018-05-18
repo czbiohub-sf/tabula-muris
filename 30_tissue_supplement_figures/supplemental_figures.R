@@ -158,7 +158,8 @@ violinplot_and_save = function(tiss,
   )
   for (i in seq(1, length(plots))) {
     p = plots[[i]]
-    p = p + xlab(expression_unit) + scale_x_continuous(breaks = pretty_breaks(n = 4)) + scale_y_discrete(limits = rev(levels(group.by))) + coord_flip()
+    p = p + coord_flip()
+      p = p + xlab(expression_unit) + scale_x_continuous(breaks = pretty_breaks(n = 4)) + scale_y_discrete(limits = rev(levels(group.by)))
     p = add_black_na(p, group.by, colors.use, plottype = 'ridge')
     plots[[i]] = p
   }
