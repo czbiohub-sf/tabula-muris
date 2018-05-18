@@ -53,7 +53,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## To identify excititory, inhibitory, and NPCs
 ```
 genes_to_check = c('Slc17a7','Neurod6','Mab21l1','Gad1','Reln','Calb1','Dcx','Dlx2','Ascl1','Hes5')
-filename = ridgeplot_and_save(tiss, save_folder, prefix='Neurons',
+filename = violinplot_and_save(tiss, save_folder, prefix='Neurons',
     group.by='cell_ontology_class',
     genes=genes_to_check, method=method)
   write_caption("Subclustering of the neuronal cluster identifies excititory neurons, inhibitory neurons, and neural precursor cells.", filename)
