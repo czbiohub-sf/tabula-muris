@@ -22,7 +22,7 @@ def is_int(s):
     return INT_RE.match(str(s)) is not None
 
 SUBSET_ORDER = 'allcells',
-PLOT_ORDER = 'tsneplot', 'ridgeplot', 'dotplot'
+PLOT_ORDER = 'tsneplot', 'violinplot', 'ridgeplot', 'dotplot'
 GROUPBY_ORDER = ('highlighted', 'cell_ontology_class', 'cluster-ids',
                  'free_annotation')
 ORDER_DEFAULTS = {'subset': SUBSET_ORDER, 'plottype': PLOT_ORDER,
