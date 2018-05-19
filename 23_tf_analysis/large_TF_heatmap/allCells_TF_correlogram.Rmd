@@ -13,6 +13,7 @@ library(parallel)
 library(cba)
 
 library(here)
+library(RColorBrewer)
 
 
 ```
@@ -112,6 +113,35 @@ group_averages <- function(mat, groups){
 Revision changes: correlations are calculated on the celltype/tissue group averages (arithmetic mean of log1p values),
 rather than on single cells from subsampled dataset as in the initial submission.
 ```{r}
+output.tf.cor <- function(data, pval_cutoff, avg_logFC_cutoff, nmarkers.per.celltype, markerfile="TF_markers.csv",height=10){
+  
+  # read in markers
+  markers <- read.csv(markerfile, row.names = 1)
+  markers$gene <- rownames(markers)
+  markers$avg_logFC <- as.numeric(as.character(markers$avg_logFC))
+  markers$p_val <- as.numeric(as.character(markers$p_val))
+  
+  print(head(markers))
+  
+  # Get top genes by cell type
+  genes.use <- as.character(unique(markers %>% dplyr::group_by(cluster) %>% 
+                      filter(gene %in% tf.names, p_val < pval_cutoff, avg_logFC > avg_logFC_cutoff) %>% 
+                      dplyr::top_n(n=nmarkers.per.celltype, wt=avg_logFC) %>% 
+                      pull(gene)))
+
+  print(paste("genes plotted: ",length(genes.use)))
+  # Calculate correlations
+  # mat.use <- t(as.matrix(tiss@data[genes.use, ]))
+  
+  # use cell type averages instead (changed for revision)
+  annotation.2.means <- group_averages(data@data, data@ident)
+  mat.use <- t(annotation.2.means[genes.use, ])
+  tf.cor    <- cor(mat.use)
+  
+  return(tf.cor)
+}
+
+
 # cluster genes based on expression correlation and plot correlogram
 # returns output of barb.cormap, which includes the list of genes in the order they appear in the correlogram
 plot.correlogram <- function(data, pval_cutoff, avg_logFC_cutoff, nmarkers.per.celltype, markerfile="TF_markers.csv",height=10){
@@ -223,6 +253,51 @@ res=FindAllMarkers(tiss.subsamp, genes.use = tf.names,
 write.csv(res, "TF_markers.csv")
 ```
 # compute and plot correlations
+```{r}
+get_upper_tri <- function(cormat){
+    cormat[upper.tri(cormat)]<- NA
+    return(cormat)
+}
+
+reorder_cormat <- function(cormat){
+# Use correlation between variables as distance
+dd <- as.dist((1-cormat)/2)
+hc <- hclust(dd)
+cormat <-cormat[hc$order, hc$order]
+}
+
+
+tf.cor.all <- output.tf.cor(data = tiss.subsamp, pval_cutoff = 10^-3.5, avg_logFC_cutoff = 0.15, nmarkers.per.celltype = 6, height = 30)
+reorder_tf.cor.all <- reorder_cormat(tf.cor.all)
+upper_tf.cor.all <- get_upper_tri(reorder_tf.cor.all)
+
+
+melted_tf.cor.all <- melt(upper_tf.cor.all)
+
+# ggplot(data = melted_tf.cor.all, aes(x=Var1, y=Var2, fill=value)) + 
+  # geom_tile()
+
+ggplot(data = melted_tf.cor.all, aes(Var2, Var1, fill = value))+
+  geom_tile(color = "white")+
+  scale_fill_gradient2(low = "white", high = "blue", mid = "white", na.value="white",
+   midpoint = 0,  limit = c(-1,1), space = "Lab", 
+                       name="Pearson\nCorrelation") +
+  theme_minimal()+ 
+  theme(axis.text.x = element_text(angle = 90, vjust = 1, 
+                                   size = 0, hjust = 1))+
+  coord_fixed()+ 
+  
+  theme(text=element_text(size=4),
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  axis.text.y = element_text(size = rel(1), angle = 0),
+  legend.position="none")
+ggsave("tf_cor_all.pdf", plot = last_plot(), device = "pdf", path = NULL,
+  scale = 1, width = 20, height = 20, units = "cm",
+  dpi = 150, limitsize = FALSE)
+```
+
+
 ```{r}
 correlo.all <- plot.correlogram(data = tiss.subsamp, pval_cutoff = 10^-3.5, avg_logFC_cutoff = 0.15, nmarkers.per.celltype = 6, height = 30)
 ```
