@@ -61,7 +61,7 @@ rownames(tiss@scale.data) <- make.names(rownames(tiss@scale.data))
 gc()
 ```
 
-# Load TFs 
+# Load TFs
 ```{r}
 # (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
 tfs      <- fread('../GO_term_summary_20171110_222852.csv')
@@ -71,7 +71,7 @@ tf.names <- tf.names[tf.names %in% rownames(tiss@data)]
 length(tf.names)
 
 # remove genes with very low expression in data
-x=apply(as.matrix(tiss@data[tf.names, ]) > 0, 1, sum) 
+x=apply(as.matrix(tiss@data[tf.names, ]) > 0, 1, sum)
 genes.expr <- names(x[x > 5])
 tf.names <- tf.names[tf.names %in% genes.expr]
 
@@ -90,7 +90,7 @@ tiss.subsamp <- SubsetData(tiss, max.cells.per.ident = 60, subset.raw = T)
 head(unique(tiss.subsamp@meta.data$annotation.2))
 ```
 
-# Set identity to 
+# Set identity to
 
 # Function to calculate per-cell type expression averages
 ```{r}
@@ -114,30 +114,30 @@ Revision changes: correlations are calculated on the celltype/tissue group avera
 rather than on single cells from subsampled dataset as in the initial submission.
 ```{r}
 output.tf.cor <- function(data, pval_cutoff, avg_logFC_cutoff, nmarkers.per.celltype, markerfile="TF_markers.csv",height=10){
-  
+
   # read in markers
   markers <- read.csv(markerfile, row.names = 1)
   markers$gene <- rownames(markers)
   markers$avg_logFC <- as.numeric(as.character(markers$avg_logFC))
   markers$p_val <- as.numeric(as.character(markers$p_val))
-  
+
   print(head(markers))
-  
+
   # Get top genes by cell type
-  genes.use <- as.character(unique(markers %>% dplyr::group_by(cluster) %>% 
-                      filter(gene %in% tf.names, p_val < pval_cutoff, avg_logFC > avg_logFC_cutoff) %>% 
-                      dplyr::top_n(n=nmarkers.per.celltype, wt=avg_logFC) %>% 
+  genes.use <- as.character(unique(markers %>% dplyr::group_by(cluster) %>%
+                      filter(gene %in% tf.names, p_val < pval_cutoff, avg_logFC > avg_logFC_cutoff) %>%
+                      dplyr::top_n(n=nmarkers.per.celltype, wt=avg_logFC) %>%
                       pull(gene)))
 
   print(paste("genes plotted: ",length(genes.use)))
   # Calculate correlations
   # mat.use <- t(as.matrix(tiss@data[genes.use, ]))
-  
+
   # use cell type averages instead (changed for revision)
   annotation.2.means <- group_averages(data@data, data@ident)
   mat.use <- t(annotation.2.means[genes.use, ])
   tf.cor    <- cor(mat.use)
-  
+
   return(tf.cor)
 }
 
@@ -145,25 +145,25 @@ output.tf.cor <- function(data, pval_cutoff, avg_logFC_cutoff, nmarkers.per.cell
 # cluster genes based on expression correlation and plot correlogram
 # returns output of barb.cormap, which includes the list of genes in the order they appear in the correlogram
 plot.correlogram <- function(data, pval_cutoff, avg_logFC_cutoff, nmarkers.per.celltype, markerfile="TF_markers.csv",height=10){
-  
+
   # read in markers
   markers <- read.csv(markerfile, row.names = 1)
   markers$gene <- rownames(markers)
   markers$avg_logFC <- as.numeric(as.character(markers$avg_logFC))
   markers$p_val <- as.numeric(as.character(markers$p_val))
-  
+
   print(head(markers))
-  
+
   # Get top genes by cell type
-  genes.use <- as.character(unique(markers %>% dplyr::group_by(cluster) %>% 
-                      filter(gene %in% tf.names, p_val < pval_cutoff, avg_logFC > avg_logFC_cutoff) %>% 
-                      dplyr::top_n(n=nmarkers.per.celltype, wt=avg_logFC) %>% 
+  genes.use <- as.character(unique(markers %>% dplyr::group_by(cluster) %>%
+                      filter(gene %in% tf.names, p_val < pval_cutoff, avg_logFC > avg_logFC_cutoff) %>%
+                      dplyr::top_n(n=nmarkers.per.celltype, wt=avg_logFC) %>%
                       pull(gene)))
 
   print(paste("genes plotted: ",length(genes.use)))
   # Calculate correlations
   # mat.use <- t(as.matrix(tiss@data[genes.use, ]))
-  
+
   # use cell type averages instead (changed for revision)
   annotation.2.means <- group_averages(data@data, data@ident)
   mat.use <- t(annotation.2.means[genes.use, ])
@@ -174,11 +174,11 @@ plot.correlogram <- function(data, pval_cutoff, avg_logFC_cutoff, nmarkers.per.c
   enrich.score <- enrich.score[, 2:ncol(enrich.score)]
   # change rownames to the cell type and tissue that each gene is enriched in (ordering by avg_logFC above)
   topIDenriched   <- sapply(colnames(tf.cor), function(x) {
-    names(sort(t(enrich.score)[, x],  decreasing = T))[1]}) 
+    names(sort(t(enrich.score)[, x],  decreasing = T))[1]})
   colnames(tf.cor) <- topIDenriched
-  
+
   correlo.out <- barb.cormap(tf.cor,  'TF_cormap.pdf', height =height, width = height)
-  
+
   # Generate row colors of heatmap corresponding to highest-expressing cell type
   topID.plotorder <- correlo.out[[2]]
   meta.summary <- data@meta.data %>% distinct(tissue, cell_ontology_class, tiss.color, annotation.2)
@@ -187,7 +187,7 @@ plot.correlogram <- function(data, pval_cutoff, avg_logFC_cutoff, nmarkers.per.c
   tmp <- colorRampPalette(brewer.pal(min(ntypes, 11), 'Paired'))(ntypes)
   annot_colors <- data.frame(annot.colors = tmp, cell_ontology_class = unique(meta.summary$cell_ontology_class))
   write.csv(annot_colors, file=paste0('annotColors.csv'))
-  
+
   print(head(annot_colors))
   meta.summary <- merge(meta.summary, annot_colors, by = 'cell_ontology_class')
   print(head(meta.summary))
@@ -227,10 +227,10 @@ barb.cormap <- function(mat.cor,fname,width=12,height=12,method="complete",cex=0
 
   optimal.row <- order.optimal(rowdist,hr.cor$merge)
   optimal.col <- order.optimal(coldist,hc.cor$merge)
- 
+
   ord.row <- optimal.row$order
   ord.col <- optimal.col$order
-  
+
   plt = levelplot(mat.cor[ord.row,ord.col],xlab=NULL,ylab=NULL,
                   at=do.breaks(c(mincor-0.01,maxcor+0.01),19),scales=list(x=list(rot=90),cex=cex),
                   colorkey=list(space="top"),
@@ -238,7 +238,7 @@ barb.cormap <- function(mat.cor,fname,width=12,height=12,method="complete",cex=0
   pdf(fname,width=width,height=height)
     print(plt)
   dev.off()
-  
+
   return(list(rownames(mat.cor[ord.row, ]), colnames(mat.cor[, ord.col]), plt, hc.cor, hr.cor))
 }
 
@@ -274,19 +274,19 @@ upper_tf.cor.all <- get_upper_tri(reorder_tf.cor.all)
 
 melted_tf.cor.all <- melt(upper_tf.cor.all)
 
-# ggplot(data = melted_tf.cor.all, aes(x=Var1, y=Var2, fill=value)) + 
+# ggplot(data = melted_tf.cor.all, aes(x=Var1, y=Var2, fill=value)) +
   # geom_tile()
 
 ggplot(data = melted_tf.cor.all, aes(Var2, Var1, fill = value))+
   geom_tile(color = "white")+
   scale_fill_gradient2(low = "white", high = "blue", mid = "white", na.value="white",
-   midpoint = 0,  limit = c(-1,1), space = "Lab", 
+   midpoint = 0,  limit = c(-1,1), space = "Lab",
                        name="Pearson\nCorrelation") +
-  theme_minimal()+ 
-  theme(axis.text.x = element_text(angle = 90, vjust = 1, 
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, vjust = 1,
                                    size = 0, hjust = 1))+
-  coord_fixed()+ 
-  
+  coord_fixed()+
+
   theme(text=element_text(size=4),
   axis.title.x = element_blank(),
   axis.title.y = element_blank(),
@@ -301,5 +301,3 @@ ggsave("tf_cor_all.pdf", plot = last_plot(), device = "pdf", path = NULL,
 ```{r}
 correlo.all <- plot.correlogram(data = tiss.subsamp, pval_cutoff = 10^-3.5, avg_logFC_cutoff = 0.15, nmarkers.per.celltype = 6, height = 30)
 ```
-
-
