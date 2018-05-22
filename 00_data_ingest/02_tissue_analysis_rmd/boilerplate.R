@@ -235,9 +235,11 @@ save_annotation_csv = function(tiss, tissue_of_interest, method='facs', addition
             
 }
 
-compare_previous_annotation = function(tiss, tissue_of_interest, method='facs'){
-  filename = here('00_data_ingest', '03_tissue_annotation_csv', 
-                  paste0(tissue_of_interest, "_", method, "_annotation.csv"))
+compare_previous_annotation = function(tiss, tissue_of_interest, method='facs', filename=NULL){
+  if (is.null(filename)){
+    filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_", method, "_annotation.csv"))
+  }
   if (file.exists(filename)){
     previous_annotation = read.csv(filename, stringsAsFactors = FALSE)
     cols = c('free_annotation', 'cell_ontology_class')

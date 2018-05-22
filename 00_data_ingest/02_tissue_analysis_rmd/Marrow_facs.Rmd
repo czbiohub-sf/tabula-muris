@@ -56,14 +56,13 @@ TSNEPlot(object = tiss, do.label = T)
 ```
 ## Compare to previous annotations
 ```{r, fig.height=4, fig.width=8}
-tiss = compare_previous_annotation(tiss, tissue_of_interest, "facs")
+method = "facs"
+tiss = compare_previous_annotation(tiss, tissue_of_interest, method, filename = here('00_data_ingest', '03_tissue_annotation_csv', 
+                    paste0(tissue_of_interest, "_", method, "_annotation_rahul.csv")))
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_cell_ontology_class")
 TSNEPlot(object = tiss, do.return = TRUE, group.by = "previous_free_annotation")
 ```
 
-```{r}
-previous_annotation_table(tiss)
-```
 
 
 
@@ -73,7 +72,7 @@ Check expression of genes of interset.
 genes_to_check = c('Itgam', 'Il7r', 'Kit', 'Atxn1', 'Fcgr3', 'Flt3', 'Cd34', 'Slamf1', 'Gpr56', 'Stmn1', 'Mki67', 'Tmem176b',  'Itgal', 'Itgax', 'Emr1', 'Cd68', 'Cd69', 'Fcgr4', 'Mpeg1', 'Itgb2', 'Ahnak', 'Pld4', 'Cd3e', 'Cd4', 'Cd8a', 'Ly6d', 'Cd27', 'Cr2', 'Fcer2a', 'Cd2', 'Cd7', 'Mme', 'Thy1', 'Klrb1a', 'S100a11', 'Ltf', 'Ngp', 'Fcer1g', 'Pglyrp1', 'Lcn2', 'Camp', 'Hp', 'Ly6g6c', 'Ly6g6e', 'Ptprc', 'Cd19', 'Ms4a1', 'Cox6a2', 'Irf8', 'Cd74', 'Chchd10', 'Cnp', 'Cd79a', 'Cd79b', 'Vpreb1', 'Vpreb3', 'Cd38', 'Cd22', 'Cd24a', 'Cd40', 'Cd48', 'Cd53', 'Cd81', 'Cd84', 'Cxcr4', 'Cxcr5', 'Ccr6', 'Cd200', 'Ly9', 'Abcb1b', 'Tlr9', 'Slamf6', 'H2-Ea-ps', 'Pax5', 'Foxo1', 'Klf4', 'Klf9', 'Mitf', 'Pou2af1', 'Zbtb16', 'Spib', 'Spn', 'Dntt', 'Rag1', 'Rag2', 'Il2ra', 'Pdzk1ip1', 'Ly6a', 'Itga2b', 'Fos', 'Junb', 'Myl10', 'Jun', 'Mn1', 'S100a9', 'Ccl9', 'Tcf3', 'Ebf1', 'Ikzf1', 'Sfpi1', 'Cd1d1', 'Egr2', 'Cd14', 'Mpl', 'Il3ra', 'Bpgm', 'Beta-s', 'Hbb-b2', 'Cpa3', 'Fcer1a', 'Mcpt8', 'Ccl3', 'Gata1', 'Gata2', 'Cebpa')
 #genes_to_check = c('Alb', 'Cyp2f2', 'Cyp2e1', 'Hamp')
 
-FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
+# FeaturePlot(tiss, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 Dotplots let you see the intensity of exppression and the fraction of cells expressing for each of your genes of interest.
@@ -114,6 +113,9 @@ table(tiss@ident)
 ## Assigning cell type identity to clusters
 
 At a coarse level, we can use canonical markers to match the unbiased clustering to known cell types:
+```{r}
+previous_annotation_table(tiss)
+```
 
 
 ```{r}
@@ -127,14 +129,14 @@ free_annotation <- c(NA, NA, "pre-B cell (Philadelphia nomenclature)",
 cell_ontology_class <-c(
   NA, # Cluster 0 is a mix of progenitors and precursors
   "naive B cell", 
-  "pro-B cell", 
+  "precursor B cell", 
   "granulocyte", 
   "hematopoietic precursor cell", 
   "granulocyte",
   "immature B cell", 
   NA, # Cluster 7 is a mix of monocytes and granulocyte progenitors
   "late pro-B cell", 
-  "hematopoietic precursor cell",
+  "granulocytopoietic cell",
   "macrophage",
   NA, # Cluster 11 is a mix of T, NKT and B cells
   NA # Cluster 12 is a mix of basophil, B cells, immature NK cells, mature NK cells, pre-natural killer cells
@@ -142,8 +144,7 @@ cell_ontology_class <-c(
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 
-
-
+data.frame(cluster.ids, cell_ontology_class, free_annotation)
 TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
@@ -224,7 +225,7 @@ previous_annotation_table(subtissA)
 ```{r, echo=FALSE, fig.height=102, fig.width=15}
 genes_to_check = c('Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Ncr1', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag1', 'Rag2', 'Dntt', 'Pax5', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Emr1', 'Adamts14', 'Itgax', 'Styk1', 'Ugt1a7c', 'Khdc1a', 'Car5b', 'Gzma', 'Cma1', 'A430084P05Rik', 'Ccl4', 'Sh2d1b1', 'Ncam1', 'Klra1', 'Cd34', 'Il2rb', 'Itga4', 'Itgb7')
 
-FeaturePlot(subtissA, genes_to_check, pt.size = 1, nCol = 3)
+# # FeaturePlot(subtissA, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 
@@ -241,13 +242,15 @@ table(FetchData(subtissA, c('mouse.id','ident')) %>% droplevels())
 
 ```{r}
 sub.cluster.ids <- c(0, 1, 2, 3, 4, 5, 6)
-sub.free_annotation <- c("regulatory_immature T cell", "mature natural killer cell", "Cd3e+_Klrb1+ B cell",  "immature NK T cell", NA, "immature natural killer cell", "pre-natural killer cell")
+sub.free_annotation <- c("regulatory and immature T cell", NA, "Cd3e+ Klrb1+ B cell",  NA, NA, NA, NA)
 ""
 sub.cell_ontology_class <-c("T cell", "mature natural killer cell","B cell",  "immature NK T cell", "immature natural killer cell", "basophil",  "pre-natural killer cell")
 
 subtissA = stash_annotations(subtissA, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
 tiss = stash_subtiss_in_tiss(tiss, subtissA)
 head(tiss@meta.data)
+
+data.frame(sub.cluster.ids, sub.cell_ontology_class, sub.free_annotation)
 ```
 
 ## Checking for batch effects
@@ -285,7 +288,7 @@ subtissB <- subtissB %>% ScaleData() %>%
 ```
 
 ```{r}
-PCHeatmap(object = subtissB, pc.use = 1:3, cells.use = 170, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
+PCHeatmap(object = subtissB, pc.use = 1:3, cells.use = 150, do.balanced = TRUE, label.columns = FALSE, num.genes = 8)
 PCElbowPlot(subtissB)
 ```
 
@@ -319,7 +322,7 @@ Check expression of genes of interset.
 ```{r, echo=FALSE, fig.height=84, fig.width=15}
 genes_to_check = c('Cd6','Il7r','Ctla4','Cd8b1', 'Cd69', 'Cxcr6', 'Cd4', 'Cd8a', 'Cd8b1', 'Ccr7', 'Tcf7', 'Lef1', 'Mmp9', 'Tnfrsf4', 'Foxp3', 'Lcn2', 'Klrc1', 'Cd160', 'Ctla2a', 'Tyrobp', 'Cd3e', 'Klrb1a', 'Klrb1c', 'Prf1', 'Serpinb9', 'Lyz2', 'Ngp', 'Hp', 'Ly6c2', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag2', 'Dntt', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Pld4', 'Cd68', 'Mpeg1', 'Ugt1a7c', 'Car5b', 'Gzma', 'A430084P05Rik', 'Ccl4', 'Ncam1', 'Klra1', 'Cd34', 'Itga4', 'Itgb7', 'Tgfb1', 'Il10')
 
-FeaturePlot(subtissB, genes_to_check, pt.size = 1, nCol = 3)
+# FeaturePlot(subtissB, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 
@@ -336,13 +339,19 @@ table(FetchData(subtissB, c('mouse.id','ident')) %>% droplevels())
 ```
 
 ```{r}
-sub.cluster.ids <- c(0, 1, 2)
-sub.free_annotation <-c("immature T cell", "immature T cell", "regulatory T cell")
+previous_annotation_table(subtissB)
+```
 
-sub.cell_ontology_class <-c("immature T cell", "immature T cell", "regulatory T cell")
+
+```{r}
+sub.cluster.ids <- c(0, 1, 2)
+sub.free_annotation <-c(NA, NA, NA)
+
+sub.cell_ontology_class <-c("immature T cell", "regulatory T cell", "immature T cell")
 
 subtissB = stash_annotations(subtissB, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
 tiss = stash_subtiss_in_tiss(tiss, subtissB)
+data.frame(sub.cluster.ids, sub.cell_ontology_class, sub.free_annotation)
 ```
 
 
@@ -414,7 +423,7 @@ Check expression of genes of interset.
 # ```
 ```{r}
 genes_to_check = c('Dntt')
-FeaturePlot(subtissC, genes_to_check, pt.size = 1, nCol = 3)
+# FeaturePlot(subtissC, genes_to_check, pt.size = 1, nCol = 3)
 DotPlot(subtissC, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 
 ```
@@ -424,12 +433,12 @@ DotPlot(subtissC, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T)
 ```{r, echo=FALSE, fig.height=102, fig.width=15}
 genes_to_check = c('Il7r', 'Cd69', 'Lyz2', 'Tbxa2r', 'Vpreb1', 'Vpreb2', 'Igll1', 'Vpreb3', 'Cd79a', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Stmn1', 'Top2a', 'Mki67', 'Rrm2', 'Nkg7', 'Cd1d1', 'Egr2', 'Cd19', 'Ms4a1', 'Chchd10', 'Cnp', 'Rag1', 'Rag2', 'Dntt', 'Pax5', 'Il2ra', 'Cxcr5', 'Ccr6', 'Cr2', 'Cd22', 'Vpreb3', 'Mki67', 'Stmn1', 'Il2rb', 'Cdc20', 'Ube2c', 'Ccnb1', 'Cenpf', 'Kpna2', 'Tcf3', 'Ebf1', 'Ikzf1', 'Sfpi1', 'Slco4a1', 'Zfp810', 'Ska1', 'Kif18a', 'Depdc1b', 'Btg2', 'S100a8', 'Serinc5', 'Srm', 'Smyd2', 'Comtd1', 'Erg', 'Arpp21', 'Mmrn1', 'Kdm5b', 'Grb7', 'Acy3', 'Ung', 'Cybb', 'Klhl15', 'E2f1', 'Troap', 'Eri2', 'Ltb')
 
-FeaturePlot(subtissC, genes_to_check, pt.size = 1, nCol = 3)
+# FeaturePlot(subtissC, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 
 ```{r, echo=FALSE, fig.height=8, fig.width=10}
-#DotPlot(subtissC, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+DotPlot(subtissC, unique(genes_to_check), col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
 The multitude of clusters of each type correspond mostly to individual animals/sexes.
@@ -439,14 +448,13 @@ table(FetchData(subtissC, c('mouse.id','ident')) %>% droplevels())
 ```
 
 ```{r}
-sub.cluster.ids <- c(0, 1, 2, 3, 4, 5)
+sub.cluster.ids <- c(0, 1, 2, 3, 4)
 sub.free_annotation <-
   c(
   "Dntt- late pro-B cell",
   "Dntt- late pro-B cell",
   "Dntt- late pro-B cell",
   "Dntt+ late pro-B cell",
-  "Dntt- late pro-B cell",
   "Dntt+ late pro-B cell"
   )
   
@@ -456,12 +464,12 @@ sub.free_annotation <-
   "late pro-B cell",
   "late pro-B cell",
   "late pro-B cell",
-  "late pro-B cell",
   "late pro-B cell"
   )
   
 subtissC = stash_annotations(subtissC, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
 tiss = stash_subtiss_in_tiss(tiss, subtissC)
+data.frame(sub.cluster.ids, sub.cell_ontology_class, sub.free_annotation)
 ```
 
 ```{r}
@@ -540,13 +548,13 @@ Check expression of genes of interset.
 ```{r, echo=FALSE, fig.height=120, fig.width=15}
 genes_to_check = sort(unique(c('Il7r', 'Kit', 'Atxn1', 'Cd34', 'Slamf1', 'Flt3', 'Cd63', 'Myl12b', 'Muc13', 'Sdsl', 'Stat3', 'Wtap', 'Mpl', 'Txnip', 'Ltb', 'Pdzk1ip1', 'Esam', 'Cish', 'Tyms', 'Tk1', '2810417H13Rik', 'Rrm2', 'Uhrf1', 'Tuba1b', 'Myl10', 'Junb', 'Fos', 'Ier2', 'Dusp1', 'Ly6a', 'Ube2c', 'Ccnb2', 'Ccnb1', 'Cdc20', 'Ccna2', 'Flt3', 'Dntt', 'Gm11428', 'Ncf1', 'Mn1', 'H2-Ob', 'Ctsg', 'Ccl9', 'Sell', 'Hk3', 'Cd48', 'Gata1', 'Mfsd2b', 'Tuba8', 'Itga2b', 'Apoe', 'Pf4', 'Elane', 'Ms4a3', 'Ctsg', 'Mpo', 'Prtn3', 'Cd69', 'Ccr7', 'Ctla2a', 'Tyrobp', 'Serpinb9', 'Lyz2', 'Hp', 'Ly6c2', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Rrm2', 'Nkg7', 'Cd1d1', 'Chchd10', 'Cnp', 'Rag2', 'Dntt', 'Mki67', 'Stmn1', 'Gimap8', 'Jhdm1d', 'Kif11', 'Spag5', 'Xist', 'Tsix', 'Notch2', 'Slc39a1', 'Socs3', 'Vldlr', 'Mcm4', 'Ung')))
 
-# FeaturePlot(subtissD, genes_to_check, pt.size = 1, nCol = 3)
+# # FeaturePlot(subtissD, genes_to_check, pt.size = 1, nCol = 3)
 
 ```
 
 
 ```{r, echo=FALSE, fig.height=8, fig.width=10}
-DotPlot(subtissD, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
+# DotPlot(subtissD, genes_to_check, col.max = 2.5, plot.legend = T, do.return = T) + coord_flip()
 ```
 
 
@@ -572,6 +580,7 @@ sub.cell_ontology_class <- c(
 subtissD = stash_annotations(subtissD, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
 tiss = stash_subtiss_in_tiss(tiss, subtissD)
 head(tiss@meta.data)
+data.frame(sub.cluster.ids, sub.cell_ontology_class, sub.free_annotation)
 ```
 
 ```{r}
@@ -661,7 +670,7 @@ Check expression of genes of interset.
 ```{r, echo=FALSE, fig.height=138, fig.width=15}
 genes_to_check = c('Hoxb5', 'Trib3', 'Neo1', 'Il7r', 'Kit', 'Atxn1', 'Cd34', 'Slamf1', 'Flt3', 'Cd63', 'Myl12b', 'Muc13', 'Sdsl', 'Stat3', 'Wtap', 'Mpl', 'Txnip', 'Ltb', 'Pdzk1ip1', 'Esam', 'Cish', 'Tyms', 'Tk1', '2810417H13Rik', 'Rrm2', 'Uhrf1', 'Tuba1b', 'Myl10', 'Junb', 'Fos', 'Ier2', 'Dusp1', 'Ly6a', 'Ube2c', 'Ccnb2', 'Ccnb1', 'Cdc20', 'Ccna2', 'Dntt', 'Gm11428', 'Ncf1', 'Mn1', 'H2-Ob', 'Ctsg', 'Mpo', 'Ccl9', 'Sell', 'Hk3', 'Cd48', 'Gata1', 'Mfsd2b', 'Tuba8', 'Itga2b', 'Apoe', 'Pf4', 'Elane', 'Ms4a3', 'Ctsg', 'Prtn3', 'Cd69', 'Ccr7', 'Ctla2a', 'Tyrobp', 'Serpinb9', 'Lyz2', 'Hp', 'Ly6c2', 'Cd74', 'H2-Aa', 'H2-Ab1', 'Cd79b', 'H2-Eb1', 'Ccna2', 'Top2a', 'Nkg7', 'Cd1d1', 'Chchd10', 'Cnp', 'Rag1',  'Rag2', 'Dntt', 'Mki67', 'Stmn1', 'Gimap8', 'Jhdm1d', 'Kif11', 'Spag5', 'Xist', 'Tsix', 'Notch2', 'Slc39a1', 'Socs3', 'Vldlr', 'Mcm4', 'Ung', 'Fam102a', 'Ccl4', 'Pyy', 'Ak4',  'Prc1', 'Cenpf', 'Prr11', 'Lhcgr', 'Tgm2', 'Abcg3', 'Ccne2', 'Pask', 'Nsg1', 'Bok', 'Klf1', 'Treml1')
 
-FeaturePlot(subtissE, genes_to_check, pt.size = 1, nCol = 3)
+# FeaturePlot(subtissE, genes_to_check, pt.size = 1, nCol = 3)
 ```
 
 
@@ -684,8 +693,8 @@ sub.cell_ontology_class <-
   c(
   "monocyte",
   "monocyte",
-  "granulocyte monocyte progenitor cell",
-  "monocyte"
+  "monocyte",
+  "granulocyte monocyte progenitor cell"
   )
 
 subtissE = stash_annotations(subtissE, sub.cluster.ids, sub.free_annotation, sub.cell_ontology_class)
