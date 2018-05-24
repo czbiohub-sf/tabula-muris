@@ -131,7 +131,7 @@ cell_ontology_class <-c(
   "naive B cell", 
   "precursor B cell", 
   "granulocyte", 
-  "Slamf1-negative multipotent progenitor cellSlamf1-negative multipotent progenitor cellsu", 
+  "Slamf1-negative multipotent progenitor cell", 
   "granulocyte",
   "immature B cell", 
   NA, # Cluster 7 is a mix of monocytes and granulocyte progenitors
