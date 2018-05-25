@@ -506,10 +506,12 @@ def cli(figure_folder, tissue, method):
 
             if groupby_col == 'free_annotation':
                 groupby_plus = 'free_annotation_plus'
-                # Concatenate the cell ontology class and free annotation
+                # Concatenate the cell ontology class and free annotation, if
+                # free_annotation is not NA
                 subset_annotation[groupby_plus] = \
-                    subset_annotation['cell_ontology_class'] + ": " \
-                    + subset_annotation['free_annotation']
+                    subset_annotation['cell_ontology_class'].fillna("NA") \
+                    + subset_annotation['free_annotation'].map(
+                        lambda x: ': ' + x if pd.notnull(x) else "")
             else:
                 groupby_plus = groupby_col
 
