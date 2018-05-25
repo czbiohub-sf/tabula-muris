@@ -14,6 +14,7 @@ rmd: clean
 
 clean:
 	rm -rf *.out *.err
+	rm -rf *html
 	rm -rf */
 
 run_rmd: clean
