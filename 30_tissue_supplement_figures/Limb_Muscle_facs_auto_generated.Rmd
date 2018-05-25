@@ -28,6 +28,13 @@ load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 # Make sure cluster ids are numeric
 tiss@meta.data[, 'cluster.ids'] = as.numeric(tiss@meta.data[, 'cluster.ids'])
 
+# Concatenate original cell ontology class to free annotation
+cell_ontology_class = replace_na(tiss@meta.data$cell_ontology_class, "NA")
+free_annotation = sapply(tiss@meta.data$free_annotation,
+    function(x) { if (is.na(x)) {return('')} else return(paste(":", x))},
+    USE.NAMES = FALSE)
+tiss@meta.data[, "free_annotation"] = paste(cell_ontology_class,
+    free_annotation, sep='')
 
 additional.group.bys = sort(c("mouse.id"))
 
