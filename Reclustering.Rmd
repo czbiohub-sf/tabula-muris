@@ -1,0 +1,339 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+load('~/src/tabula-muris/00_data_ingest/11_global_robj/FACS_all.Robj')
+```
+
+```{r}
+library(clustree)
+
+n.pcs = 43
+```
+
+First, we recluster at higher resolutions. One may inspect to what extent the clusters containing mixtures of cell types and tissues hold together.
+
+```{r}
+tiss_FACS <- FindClusters(tiss_FACS, reduction.type = "pca", dims.use = 1:n.pcs, 
+                          resolution = c(2,4,8), save.SNN = TRUE, n.start = 3)
+```
+
+We get more clusters at higher resolution:
+
+```{r}
+tiss_FACS@meta.data %>% summarize(r1 = length(unique(res.1)), r2 = length(unique(res.2)), r4 = length(unique(res.4)), r8 = length(unique(res.8)))
+```
+
+```{r}
+cluster_composition <- function(j){
+  tiss_FACS@meta.data %>% filter(cluster == j) %>% group_by(cell_ontology_class, tissue) %>% count() %>% filter(n>5)
+}
+cluster_decomposition <- function(j){
+  tiss_FACS@meta.data %>% filter(cluster == j) %>% group_by(res.8, cell_ontology_class, tissue) %>% count() %>% filter(n>5)
+}
+```
+
+
+```{r}
+recluster <- function(j, resolutions = c(0.5, 1, 2), perplexity = 30){
+  cells = tiss_FACS@meta.data %>% filter(cluster == j) %>% pull(cell)
+  tiss = SubsetData(tiss_FACS, cells.use = cells)
+  
+  tiss <- process_tissue(tiss, 1e6)
+  
+  sub.pcs <- 10
+  tiss <- FindClusters(tiss, dims.use = 1:10, resolution = resolutions, print.output = 1, save.SNN = TRUE, n.start = 3)
+  tiss <- RunTSNE(tiss, dims.use = 1:sub.pcs, perplexity = perplexity)
+  
+  tiss
+}
+```
+
+## Cluster 53
+
+Cluster #53 is annotated as “astrocyte”, “epithelial cell of the trachea” and “ciliated columnar cell of the tracheobroncal tree”.
+
+```{r}
+cluster_composition(53)
+```
+
+It holds together at higher resolution.
+
+```{r}
+cluster_decomposition(53)
+```
+
+When we subset and recompute variable genes and PCs, the cell types do all separate.
+
+```{r}
+tiss53 = recluster(53, c(0.5, 1), perplexity = 5)
+TSNEPlot(tiss53, group.by = 'cell_ontology_class')
+```
+
+
+
+
+### Cluster 31
+
+Cluster #31 is “mesenchymal cell”, “stromal cell”, “endothelial cell”, “pancreatic stellate cell”, “myofibroblast”, “brain pericyte” and “smooth muscle cell”.
+
+
+```{r}
+cluster_composition(31)
+```
+
+```{r}
+cluster_decomposition(31)
+```
+
+```{r}
+tiss31 = recluster(31, c(0.5, 1, 2), perplexity = 25)
+TSNEPlot(tiss31, group.by = 'cell_ontology_class')
+TSNEPlot(tiss31, group.by = 'ident')
+```
+
+## Cluster 32
+
+Cluster #32 are “astrocyte”, “Bergmann glia” and “oligodendrocyte”. 
+
+
+```{r}
+cluster_composition(32)
+```
+
+These populations remain mixed even at increased resolution.
+
+```{r}
+cluster_decomposition(32)
+```
+
+When we subcluster, the Bergmann Glia do separate, with the exception of a few cells.
+
+```{r}
+tiss32 = recluster(32, c(0.5, 1, 2), perplexity = 25)
+TSNEPlot(tiss32, group.by = 'cell_ontology_class')
+TSNEPlot(tiss32, group.by = 'ident')
+```
+
+
+
+## Cluster 1
+
+A large cluster of potential progenitors.
+
+```{r}
+cluster_composition(1)
+```
+
+It separates into subpopulations which are still mixed between tissue and organ.
+
+```{r}
+cluster_decomposition(1)
+```
+
+Upon reclustering, there is still substantial mixing between some tissues.
+
+```{r}
+tiss1 = recluster(1, c(0.5, 1, 2), perplexity = 25)
+TSNEPlot(tiss1, group.by = 'cell_ontology_class')
+TSNEPlot(tiss1, group.by = 'ident')
+TSNEPlot(tiss1, group.by = 'tissue')
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+tiss_FACS@meta.data %>% filter(cluster == 31) %>% group_by(cell_ontology_class, tissue) %>% count() %>% filter(n > 5)
+```
+
+```{r}
+tiss_FACS@meta.data %>% filter(cluster == 31) %>% group_by( res.8, cell_ontology_class) %>% count() %>% filter(n > 5)
+```
+
+
+
+```{r}
+cells = tiss_FACS@meta.data %>% filter(cluster == 31) %>% pull(cell)
+subtiss = SubsetData(tiss_FACS, cells.use = cells)
+```
+
+```{r}
+cells = tiss_FACS@meta.data %>% filter(cluster == 14) %>% pull(cell)
+tiss14 = SubsetData(tiss_FACS, cells.use = cells)
+```
+
+```{r}
+tiss14 <- process_tissue(tiss14, 1e6)
+```
+
+```{r}
+PCAPlot(tiss14, group.by = 'cell_ontology_class')
+PCElbowPlot(tiss14)
+```
+
+```{r}
+tiss14 <- RunTSNE(tiss14, dims.use = 1:10)
+```
+
+```{r}
+TSNEPlot(tiss14, group.by = 'cell_ontology_class')
+```
+
+```{r}
+tiss14 <- FindClusters(tiss14, dims.use = 1:10, resolution = c(1,2,3))
+```
+
+```{r}
+tiss14@meta.data %>% group_by(res.1, cell_ontology_class) %>% 
+  count() %>% filter(n > 5)
+```
+
+
+
+```{r}
+tiss_FACS
+tiss_FACS <- FindClusters(tiss_FACS, dims.use = 1:n.pcs, resolution = c(2,4,8), )
+```
+
+
+
+```{r}
+res.used <- c(seq(0.1,1,by=0.2), seq(1, 4, by = 0.5)) # Change for different resolution
+res.used = seq(5, 10, by = 1)
+for(i in res.used){
+print(i)
+tiss_FACS <- FindClusters(object = tiss_FACS, reduction.type = "pca", dims.use = 1:n.pcs, 
+    resolution = i, print.output = 1, save.SNN = TRUE, n.start = 3)
+	}
+```
+
+
+```{r}
+getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+```
+
+
+```{r}
+clus.tree.out <- clustree(tiss_FACS, prefix = 'res.0', node_colour = "cell_ontology_class", node_colour_aggr = "getmode")+
+    theme(legend.position = "bottom")
+
+clus.tree.out <- clustree(tiss_FACS)+
+    theme(legend.position = "bottom")
+
+ggsave(clus.tree.out, file = "all_tree.png", width = 30, height = 40)
+```
+
+```{r, fig.width = 50, fig.height = 80}
+clus.tree.out
+```
+
+```{r}
+ids = tiss_FACS@meta.data %>% 
+  mutate(res.4 = as.numeric(res.4)) %>% group_by(res.4) %>% summarize(co = getmode(cell_ontology_class))
+View(ids)
+```
+
+
+```{r}
+colnames(tiss_FACS@meta.data)
+```
+
+
+```{r}
+ggsave(clus.tree.out, filename = "", width = 10, height = 10)
+```
+
+# Heatmap Comparison
+
+```{r}
+cluster_membership = FetchData(tiss_FACS, vars.all = c('cell_ontology_class','tissue', 'cluster')) %>% 
+  drop_na(cell_ontology_class) %>% 
+  mutate(anno_and_tissue = paste0(cell_ontology_class, " (", str_replace(tissue, "_", " "), ")")) %>% 
+  drop_na(anno_and_tissue) %>% 
+  group_by(anno_and_tissue, cluster) %>% 
+  summarize(count = n()) %>% filter(count > 5) 
+```
+
+```{r}
+cluster_membership %>% dplyr::arrange(cluster)
+```
+
+At resolution 1, we have a cluster containing X. This is separated by resolution 4.
+
+* Cluster 0: microglia and macrophages separate
+* Cluster 1, various mesenchymal cells and stromal cells, does split, but the new ones are also well mixed. What genes define the population?
+* Cluster 3, the professional antigen presenting cells from thymus are still sticking around...
+* Cluster 4 mostly fibroblasts, some of which may be cardiac muscle cells (judging by a later split)
+* Cluster 9 had a small astrocyte population amid the oligodendrocytes, and it separates/joins the Bergmann glia by round 4
+* Bergmann glia and astrocytes do stay together. 
+* Cluster 13, containing skeletal muscle satellite cells and a few tracheal epithelial cells do stay together,
+perhaps the latter population is genuinely different.
+* Cluster 14, which was of some concern, had Brush cells, basal cells, cardiac neurons, endos, enterendocrine cells, epithelial cells, microglia, etc.
+
+```{r}
+tiss_FACS@meta.data %>% filter(cluster == '14') %>% group_by(cell_ontology_class) %>% count() %>% arrange(-n)
+
+tiss_FACS@meta.data %>% filter(cluster == '14') %>% group_by(res.4, cell_ontology_class) %>% count() %>% ungroup() %>%
+  spread(key = (res.4), value = n) %>% arrange()
+```
+
+```{r}
+
+```
+
+
+```{r}
+tiss_FACS@ident <- tiss_FACS@meta.data[['cluster']]
+names(tiss_FACS@ident) <- rownames(tiss_FACS@meta.data)
+
+
+mesenchymal_markers = FindMarkers(tiss_FACS, ident.1 = 14, test.use = 'roc', max.cells.per.ident = 100, print.bar = T)
+```
+```{r}
+tiss_FACS@meta.data['cluster']
+str(tiss@ident)
+str(tiss_FACS@ident)
+```
+
+```{r}
+FetchData(tiss_FACS, c('cluster', 'Cd79a', 'cell_ontology_class')) %>% filter(cell_ontology_class == 'B cell' & cluster == 14)
+```
+
+
+```{r}
+mesenchymal_markers
+```
+
+```{r}
+tiss_FACS@meta.data %>% group_by(cluster) %>% summarize(m = mean(nGene))
+FetchData(tiss_FACS, c('Rn45s', 'cluster', 'nGene', 'percent.ercc')) %>% group_by(cluster) %>% summarize(m = mean(nGene), rn = mean(Rn45s), pe = mean(percent.ercc))
+
+VlnPlot(tiss_FACS, c('Rn45s')) + coord_flip()
+```
+
+
+```{r, fig.height = 20}
+DotPlot(tiss_FACS, rownames(mesenchymal_markers)[1:10], do.return = T)
+```
+
+
