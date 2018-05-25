@@ -1,10 +1,13 @@
 ## ------------------------------------------------------------------------
 library(Seurat)
+library(cowplot)
 library(tidyverse)
 library(here)
 library(parallel)
 library(foreach)
 library(pryr)
+library(gridExtra)
+library(grid)
 
 ## ------------------------------------------------------------------------
 source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
@@ -18,8 +21,15 @@ meta_display_names_facs = c("Cell Ontology Class", "Free Annotation", "Sex", "Mo
 metas_droplet = c("cell_ontology_class", "free_annotation", "mouse.sex", "mouse.id", "subtissue", "channel")
 meta_display_names_droplet = c("Cell Ontology Class", "Free Annotation", "Sex", "Mouse Id", "Subtissue", "Channel")
 
+# Most recent updates are only for Cell Ontology Class with respect to the metadata.
+metas_facs = c("cell_ontology_class")
+meta_display_names_facs = c("Cell Ontology Class")
 
-number_of_cores = 72
+metas_droplet = c("cell_ontology_class")
+meta_display_names_droplet = c("Cell Ontology Class")
+
+
+number_of_cores = 16
 
 ## ------------------------------------------------------------------------
 plotgene_tsne <- function(tiss, gene, tissue, method){
@@ -53,13 +63,63 @@ plotgene_vln <- function(tiss, gene, tissue, method, meta="cell_ontology_class",
     mutate(metadataclass = str_wrap(tiss@meta.data[,meta], width=25)) %>% 
     pull(metadataclass)
   
-  VlnPlot(tiss, gene, group.by = meta) +
+  data.use <- data.frame(FetchData(object = tiss, vars.all = gene), check.names = F)
+
+  tiss@ident <- as.factor(x = FetchData(
+    object = tiss,
+    vars.all = meta
+  )[tiss@cell.names, 1])
+    
+  ident <- factor(
+      x = tiss@ident,
+      levels = names(x = sort(x = tapply(
+        X = data.use[, gene],
+        INDEX = tiss@ident,
+        FUN = mean
+      ))))
+  names(ident) = tiss@cell.names
+  
+  tiss@ident = ident
+  
+  data = data.frame(data = data.use[,], ident = ident)
+  
+  summary_table = data %>% group_by(ident) %>% summarize(
+    mean = round(mean(data), 2),
+    median = round(median(data), 2), 
+    median_gt_zero = round(median(data[data > 0]), 2),
+    number_of_cells = n(), 
+    percent_zero = round(length(data[data == 0])/n() * 100, 2),
+    percent_gt_0 = round(length(data[data > 0])/n() * 100, 2)
+  )
+  summary_table = summary_table[rev(order(summary_table$mean)),]
+  names(summary_table) = c('Tissue', 'Mean', 'Median', 'Median > 0', '# cells', '% 0', '% > 0')
+  
+  table_plot = tableGrob(summary_table, rows = NULL)
+  table_plot$heights = unit(rep(1/(1.01*nrow(table_plot)), 1.01*nrow(table_plot)), "npc")
+  table_plot$widths = unit.pmax(table_plot$widths, unit(2, "lines"))
+
+  vplot = VlnPlot(tiss, gene) +
   xlab(meta_display_name) + ylab(paste0("Expression: ", legend_name)) + ggtitle("") +
-  coord_flip()
-  ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene,"-vln", ".png")), width = width, height = height, limitsize = FALSE)
+  coord_flip() + scale_y_continuous(sec.axis = dup_axis())
+  vplot = ggplotGrob(vplot)
+
+  plots <- plot_grid(vplot, table_plot)
+  
+  ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene, "-vln", ".png")), plot = plots, width = width, height = height, limitsize = FALSE)
+  
+  bwplot = ggplot(data=data.use, mapping = aes(x = factor(ident), y = data.use)) +
+  geom_boxplot(mapping = aes(fill = ident)) + coord_flip() +
+  theme(legend.position="none") +
+  xlab("Tissue Class") + ylab("ln(1+CP10k)") + ggtitle("") +
+  scale_y_continuous(sec.axis = dup_axis())
+  
+  plots <- plot_grid(bwplot, table_plot)
+  
+  ggsave(here('21_website','images', paste0("All", "-", method, "-", gene, "-baw", ".png")), plot = plots, width = width, height = height, limitsize = FALSE)
+
 }
 
-plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index){
+plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index, should_label = FALSE){
   meta = metas[index]
   legend_name = meta_display_names[index]
 
@@ -77,8 +137,8 @@ plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index){
   if (tissue == "All") {
     FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
       geom_point(size = 0.5) +
-      xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
       scale_colour_discrete(name = legend_name) +
+      xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
       xlab("tSNE 1") + ylab("tSNE 2")
   } else {
     FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
@@ -106,13 +166,13 @@ tissue_plots <- function(tissue, method){
   }
   
   
-  gene_only_plotgene_tsne = pryr::partial(plotgene_tsne, tiss=tiss, tissue=tissue, method=method)
+  #gene_only_plotgene_tsne = pryr::partial(plotgene_tsne, tiss=tiss, tissue=tissue, method=method)
   gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue=tissue, method=method)
-  meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue=tissue, method=method, metas=metas, meta_display_names=meta_display_names)
+  #meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue=tissue, method=method, metas=metas, meta_display_names=meta_display_names)
 
-  mclapply(genes, gene_only_plotgene_tsne, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  #mclapply(genes, gene_only_plotgene_tsne, mc.preschedule=TRUE, mc.cores=number_of_cores)
   mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
-  mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  #mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
 }
 
 tissue_plots_all <- function(method) {
@@ -122,7 +182,9 @@ tissue_plots_all <- function(method) {
   metas_droplet = c("tissue", "mouse.sex", "mouse.id", "channel")
   meta_display_names_droplet = c("Tissue", "Sex", "Mouse Id", "Channel")
 
-  load(here("00_data_ingest","11_global_robj", paste0(method, "_all.Robj")))
+  if (!exists("tiss_droplet")) {
+    load(here("00_data_ingest","11_global_robj", paste0(method, "_all.Robj")))
+  }
   
   if (tolower(method) == "facs") {
     metas = metas_facs
@@ -138,17 +200,17 @@ tissue_plots_all <- function(method) {
   
   # Create the RHS plot.
   tiss@meta.data['tissueclass'] = FetchData(tiss, c('tissue', 'cell_ontology_class')) %>% 
-                                  transmute(tissueclass = str_wrap(paste0(tissue, ": ", cell_ontology_class), width = 20)) %>% 
+                                  transmute(tissueclass = tools::toTitleCase(str_wrap(paste0(cell_ontology_class, " (", tissue, ")"), width = 20))) %>% 
                                   pull(tissueclass)
   
-  meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue="All", method=tolower(method), metas=metas, meta_display_names=meta_display_names)
-  mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  #meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue="All", method=tolower(method), metas=metas, meta_display_names=meta_display_names)
+  #mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
   
-  gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue="All", method=tolower(method), meta="tissueclass", meta_display_name="Tissue Class", width=14, height=80)
+  gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue="All", method=tolower(method), meta="tissueclass", meta_display_name="Tissue Class", width=22, height=80)
   mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
   
-  gene_only_plotgene_tsne = pryr::partial(plotgene_tsne, tiss=tiss, tissue="All", method=tolower(method))
-  mclapply(genes, gene_only_plotgene_tsne, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  #gene_only_plotgene_tsne = pryr::partial(plotgene_tsne, tiss=tiss, tissue="All", method=tolower(method))
+  #mclapply(genes, gene_only_plotgene_tsne, mc.preschedule=TRUE, mc.cores=number_of_cores)
 }
 
 ## ------------------------------------------------------------------------
