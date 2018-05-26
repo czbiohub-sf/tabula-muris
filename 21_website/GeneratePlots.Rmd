@@ -23,12 +23,6 @@ source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 ```{r}
 genes = read_csv("gene_list.csv", col_names = c("gene_names"))$gene_names
 
-metas_facs = c("cell_ontology_class", "free_annotation", "mouse.sex", "mouse.id", "subtissue", "plate.barcode")
-meta_display_names_facs = c("Cell Ontology Class", "Free Annotation", "Sex", "Mouse Id", "Subtissue", "Plate Barcode")
-
-metas_droplet = c("cell_ontology_class", "free_annotation", "mouse.sex", "mouse.id", "subtissue", "channel")
-meta_display_names_droplet = c("Cell Ontology Class", "Free Annotation", "Sex", "Mouse Id", "Subtissue", "Channel")
-
 # Most recent updates are only for Cell Ontology Class with respect to the metadata.
 metas_facs = c("cell_ontology_class")
 meta_display_names_facs = c("Cell Ontology Class")
@@ -52,65 +46,65 @@ Functions for making figures for genes and for metadata.
 plotgene_tsne <- function(tiss, gene, tissue, method){
   gene_R_safe = paste0("`",gene,"`")
   if(method == "facs"){
-    legend_name = "ln(1+CPM)"
+	legend_name = "ln(1+CPM)"
   }  else{
-    legend_name = "ln(1+CP10k)"
+	legend_name = "ln(1+CP10k)"
   }
   lims = FetchData(tiss, c('tSNE_1', 'tSNE_2', gene)) %>% summarize(xmin = min(tSNE_1), xmax = max(tSNE_1), ymin = min(tSNE_2), ymax = max(tSNE_2))
   plot_min = min(lims$xmin, lims$ymin)
   plot_max = max(lims$xmax, lims$ymax)
   FetchData(tiss, c('tSNE_1', 'tSNE_2', gene)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = gene_R_safe)) +
-    geom_point(size = 0.5) +
-    scale_colour_gradient(low = "lightgrey", high = "blue", name = legend_name) +
-    xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
-    xlab("tSNE 1") + ylab("tSNE 2")
+	geom_point(size = 0.5) +
+	scale_colour_gradient(low = "lightgrey", high = "blue", name = legend_name) +
+	xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+	xlab("tSNE 1") + ylab("tSNE 2")
 
   ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene,"-tsne", ".png")))
 }
 
 plotgene_vln <- function(tiss, gene, tissue, method, meta="cell_ontology_class", meta_display_name="Cell Ontology Class", width=14, height=7){
   if(method == "facs"){
-    legend_name = "ln(1+CPM)"
+	legend_name = "ln(1+CPM)"
   }  else{
-    legend_name = "ln(1+CP10k)"
+	legend_name = "ln(1+CP10k)"
   }
-  
-  tiss@meta.data[meta] = 
-  FetchData(tiss, meta) %>% 
-    mutate(metadataclass = str_wrap(tiss@meta.data[,meta], width=25)) %>% 
-    pull(metadataclass)
-  
+
+  tiss@meta.data[meta] =
+  FetchData(tiss, meta) %>%
+	mutate(metadataclass = str_wrap(tiss@meta.data[,meta], width=25)) %>%
+	pull(metadataclass)
+
   data.use <- data.frame(FetchData(object = tiss, vars.all = gene), check.names = F)
 
   tiss@ident <- as.factor(x = FetchData(
-    object = tiss,
-    vars.all = meta
+	object = tiss,
+	vars.all = meta
   )[tiss@cell.names, 1])
-    
+
   ident <- factor(
-      x = tiss@ident,
-      levels = names(x = sort(x = tapply(
-        X = data.use[, gene],
-        INDEX = tiss@ident,
-        FUN = mean
-      ))))
+	  x = tiss@ident,
+	  levels = names(x = sort(x = tapply(
+		X = data.use[, gene],
+		INDEX = tiss@ident,
+		FUN = mean
+	  ))))
   names(ident) = tiss@cell.names
-  
+
   tiss@ident = ident
-  
+
   data = data.frame(data = data.use[,], ident = ident)
-  
+
   summary_table = data %>% group_by(ident) %>% summarize(
-    mean = round(mean(data), 2),
-    median = round(median(data), 2), 
-    median_gt_zero = round(median(data[data > 0]), 2),
-    number_of_cells = n(), 
-    percent_zero = round(length(data[data == 0])/n() * 100, 2),
-    percent_gt_0 = round(length(data[data > 0])/n() * 100, 2)
+	mean = round(mean(data), 2),
+	median = round(median(data), 2),
+	median_gt_zero = round(median(data[data > 0]), 2),
+	number_of_cells = n(),
+	percent_zero = round(length(data[data == 0])/n() * 100, 2),
+	percent_gt_0 = round(length(data[data > 0])/n() * 100, 2)
   )
   summary_table = summary_table[rev(order(summary_table$mean)),]
   names(summary_table) = c('Tissue', 'Mean', 'Median', 'Median > 0', '# cells', '% 0', '% > 0')
-  
+
   table_plot = tableGrob(summary_table, rows = NULL)
   table_plot$heights = unit(rep(1/(1.01*nrow(table_plot)), 1.01*nrow(table_plot)), "npc")
   table_plot$widths = unit.pmax(table_plot$widths, unit(2, "lines"))
@@ -121,22 +115,22 @@ plotgene_vln <- function(tiss, gene, tissue, method, meta="cell_ontology_class",
   vplot = ggplotGrob(vplot)
 
   plots <- plot_grid(vplot, table_plot)
-  
+
   ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene, "-vln", ".png")), plot = plots, width = width, height = height, limitsize = FALSE)
-  
+
   bwplot = ggplot(data=data.use, mapping = aes(x = factor(ident), y = data.use)) +
   geom_boxplot(mapping = aes(fill = ident)) + coord_flip() +
   theme(legend.position="none") +
   xlab("Tissue Class") + ylab("ln(1+CP10k)") + ggtitle("") +
   scale_y_continuous(sec.axis = dup_axis())
-  
+
   plots <- plot_grid(bwplot, table_plot)
-  
+
   ggsave(here('21_website','images', paste0("All", "-", method, "-", gene, "-baw", ".png")), plot = plots, width = width, height = height, limitsize = FALSE)
 
 }
 
-plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index, should_label = FALSE){
+plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index){
   meta = metas[index]
   legend_name = meta_display_names[index]
 
@@ -145,24 +139,30 @@ plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index, sho
   plot_max = max(lims$xmax, lims$ymax)
 
   meta_R_safe = paste0("`",meta,"`")
-  
-  tiss@meta.data[meta] = 
-  FetchData(tiss, meta) %>% 
-    mutate(metadataclass = str_wrap(tiss@meta.data[,meta], width=25)) %>% 
-    pull(metadataclass)
-  
+
+  tiss@meta.data[meta] =
+  FetchData(tiss, meta) %>%
+	mutate(metadataclass = str_wrap(tiss@meta.data[,meta], width=25)) %>%
+	pull(metadataclass)
+
+  plot_data = FetchData(tiss, c('tSNE_1', 'tSNE_2', meta))
+
   if (tissue == "All") {
-    FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
-      geom_point(size = 0.5) +
-      scale_colour_discrete(name = legend_name) +
-      xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
-      xlab("tSNE 1") + ylab("tSNE 2")
+	plot_data %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
+	  geom_point(size = 0.5) +
+	  scale_colour_discrete(name = legend_name) +
+	  xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+	  xlab("tSNE 1") + ylab("tSNE 2")
   } else {
-    FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
-      geom_point(size = 0.5) +
-      xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
-      scale_colour_discrete(name = legend_name) + theme(legend.key.height = unit(1, "cm")) +
-      xlab("tSNE 1") + ylab("tSNE 2")
+	centers = plot_data %>% group_by(cell_ontology_class=.[, meta]) %>% summarize(x=mean(tSNE_1), y=mean(tSNE_2))
+	plot_data %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
+	  #geom_point(data = centers, mapping = aes(x = x, y = y), size = 0, alpha = 0) +
+	 	#geom_text(aes(label=)) +
+	  #geom_text(data = centers, mapping = aes(label=seq(1, dim(centers)[1]), x=x, y=y)) +
+	  geom_point(size = 0.5) +
+	  xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+	  #scale_colour_discrete(name = legend_name) + theme(legend.key.height = unit(1, "cm")) +
+	  xlab("tSNE 1") + ylab("tSNE 2")
   }
 
   ggsave(here('21_website',"images", paste0(tissue, "-", method, "-", meta, "-tsne.png")))
@@ -175,23 +175,23 @@ tissue_plots <- function(tissue, method){
   load(here("00_data_ingest","04_tissue_robj_generated", paste0(method, "_", tissue, "_", "seurat_tiss.Robj")))
 
   if (tolower(method) == "facs") {
-    metas = metas_facs
-    meta_display_names = meta_display_names_facs
+	metas = metas_facs
+	meta_display_names = meta_display_names_facs
   } else if (method == "droplet") {
-    metas = metas_droplet
-    meta_display_names = meta_display_names_droplet
+	metas = metas_droplet
+	meta_display_names = meta_display_names_droplet
   } else {
-    stop("Unknown method type.")
+	stop("Unknown method type.")
   }
-  
-  
+
+
   #gene_only_plotgene_tsne = pryr::partial(plotgene_tsne, tiss=tiss, tissue=tissue, method=method)
-  gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue=tissue, method=method)
-  #meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue=tissue, method=method, metas=metas, meta_display_names=meta_display_names)
+  #gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue=tissue, method=method)
+  meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue=tissue, method=method, metas=metas, meta_display_names=meta_display_names)
 
   #mclapply(genes, gene_only_plotgene_tsne, mc.preschedule=TRUE, mc.cores=number_of_cores)
-  mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
-  #mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  #mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
 }
 
 tissue_plots_all <- function(method) {
@@ -202,32 +202,32 @@ tissue_plots_all <- function(method) {
   meta_display_names_droplet = c("Tissue", "Sex", "Mouse Id", "Channel")
 
   if (!exists("tiss_droplet")) {
-    load(here("00_data_ingest","11_global_robj", paste0(method, "_all.Robj")))
+	load(here("00_data_ingest","11_global_robj", paste0(method, "_all.Robj")))
   }
-  
+
   if (tolower(method) == "facs") {
-    metas = metas_facs
-    tiss = tiss_FACS
-    meta_display_names = meta_display_names_facs
+	metas = metas_facs
+	tiss = tiss_FACS
+	meta_display_names = meta_display_names_facs
   } else if (method == "droplet") {
-    metas = metas_droplet
-    meta_display_names = meta_display_names_droplet
-    tiss=tiss_droplet
+	metas = metas_droplet
+	meta_display_names = meta_display_names_droplet
+	tiss=tiss_droplet
   } else {
-    stop("Unknown method type.")
+	stop("Unknown method type.")
   }
-  
+
   # Create the RHS plot.
-  tiss@meta.data['tissueclass'] = FetchData(tiss, c('tissue', 'cell_ontology_class')) %>% 
-                                  transmute(tissueclass = tools::toTitleCase(str_wrap(paste0(cell_ontology_class, " (", tissue, ")"), width = 20))) %>% 
-                                  pull(tissueclass)
-  
-  #meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue="All", method=tolower(method), metas=metas, meta_display_names=meta_display_names)
-  #mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
-  
-  gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue="All", method=tolower(method), meta="tissueclass", meta_display_name="Tissue Class", width=22, height=80)
-  mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
-  
+  tiss@meta.data['tissueclass'] = FetchData(tiss, c('tissue', 'cell_ontology_class')) %>%
+								  transmute(tissueclass = tools::toTitleCase(str_wrap(paste0(cell_ontology_class, " (", tissue, ")"), width = 20))) %>%
+								  pull(tissueclass)
+
+  meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue="All", method=tolower(method), metas=metas, meta_display_names=meta_display_names)
+  mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
+
+  #gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue="All", method=tolower(method), meta="tissueclass", meta_display_name="Tissue Class", width=22, height=80)
+  #mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
+
   #gene_only_plotgene_tsne = pryr::partial(plotgene_tsne, tiss=tiss, tissue="All", method=tolower(method))
   #mclapply(genes, gene_only_plotgene_tsne, mc.preschedule=TRUE, mc.cores=number_of_cores)
 }
@@ -237,40 +237,40 @@ tissue_plots_all <- function(method) {
 ptm <- proc.time()
 
 tissue_plots("Marrow", "facs")
-tissue_plots("Limb_Muscle", "droplet")
-tissue_plots("Mammary_Gland", "droplet")
-tissue_plots("Brain_Non-Myeloid", "facs")
-tissue_plots("Fat", "facs")
-tissue_plots("Tongue", "droplet")
-tissue_plots("Kidney", "facs")
-tissue_plots("Lung", "facs")
-tissue_plots("Heart_and_Aorta", "droplet")
-tissue_plots("Tongue", "facs")
-tissue_plots("Brain_Myeloid", "facs")
-tissue_plots("Pancreas", "facs")
-tissue_plots("Marrow", "droplet")
-tissue_plots("Spleen", "droplet")
-tissue_plots("Trachea", "facs")
-tissue_plots("Skin", "facs")
-tissue_plots("Diaphragm", "facs")
-tissue_plots("Liver", "droplet")
-tissue_plots("Mammary_Gland", "facs")
-tissue_plots("Thymus", "droplet")
-tissue_plots("Spleen", "facs")
-tissue_plots("Trachea", "droplet")
-tissue_plots("Heart", "facs")
-tissue_plots("Large_Intestine", "facs")
-tissue_plots("Kidney", "droplet")
-tissue_plots("Limb_Muscle", "facs")
-tissue_plots("Liver", "facs")
-tissue_plots("Bladder", "facs")
-tissue_plots("Aorta", "facs")
-tissue_plots("Lung", "droplet")
-tissue_plots("Thymus", "facs")
-tissue_plots("Bladder", "droplet")
-
-tissue_plots_all("droplet")
-tissue_plots_all("FACS")
+#tissue_plots("Limb_Muscle", "droplet")
+#tissue_plots("Mammary_Gland", "droplet")
+#tissue_plots("Brain_Non-Myeloid", "facs")
+#tissue_plots("Fat", "facs")
+#tissue_plots("Tongue", "droplet")
+#tissue_plots("Kidney", "facs")
+#tissue_plots("Lung", "facs")
+#tissue_plots("Heart_and_Aorta", "droplet")
+#tissue_plots("Tongue", "facs")
+#tissue_plots("Brain_Myeloid", "facs")
+#tissue_plots("Pancreas", "facs")
+#tissue_plots("Marrow", "droplet")
+#tissue_plots("Spleen", "droplet")
+#tissue_plots("Trachea", "facs")
+#tissue_plots("Skin", "facs")
+#tissue_plots("Diaphragm", "facs")
+#tissue_plots("Liver", "droplet")
+#tissue_plots("Mammary_Gland", "facs")
+#tissue_plots("Thymus", "droplet")
+#tissue_plots("Spleen", "facs")
+#tissue_plots("Trachea", "droplet")
+#tissue_plots("Heart", "facs")
+#tissue_plots("Large_Intestine", "facs")
+#tissue_plots("Kidney", "droplet")
+#tissue_plots("Limb_Muscle", "facs")
+#tissue_plots("Liver", "facs")
+#tissue_plots("Bladder", "facs")
+#tissue_plots("Aorta", "facs")
+#tissue_plots("Lung", "droplet")
+#tissue_plots("Thymus", "facs")
+#tissue_plots("Bladder", "droplet")
+#
+#tissue_plots_all("droplet")
+#tissue_plots_all("FACS")
 
 proc.time() - ptm
 ```
