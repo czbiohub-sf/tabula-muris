@@ -262,45 +262,47 @@ barb.cormap <- function(mat.cor,fname,width=12,height=12,method="complete",cex=0
 
 ## tSNE plotting functions
 ```{r}
-make.tSNE <- function(data, cell.type, n.pcs=10, calc.PCA.only = F, subset.cells = F){
+make.tSNE <- function(object, cell.type, n.pcs=10, calc.PCA.only = F, subset.cells = F){
   
-  dir=cell.type
-  if(!file.exists(dir)) system(paste0('mkdir ',dir))
+  if(!file.exists(cell.type)) system(paste0('mkdir ',cell.type))
 
   cells.use <- as.character(read.csv(file.path(cell.type,'cells_all.csv'))[,1])
-  tiss.use <- SubsetData(data, cells.use = cells.use)
-  tiss.use <- SetAllIdent(tiss.use, 'annotation.2')
+  object <- SubsetData(object, cells.use = cells.use)
+  object <- SetAllIdent(object, 'annotation.2')
 
   if(subset.cells){
     cells.use = as.character(read.csv(paste0('cells_',cell.type,'.csv'))[,1])
-    tiss.use <- SubsetData(tiss, cells.use = cells.use)
+    object <- SubsetData(tiss, cells.use = cells.use)
   }
   
-  tiss.use <- FindVariableGenes(object = tiss.use, do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5)
-  tiss.use@var.genes <- tiss.use@var.genes[!tiss@var.genes %in% iegs]
+  object <- NormalizeData(object = object, scale.factor = 1e6, display.progress = F)
+  object <- ScaleData(object = object, display.progress = F)
+  object <- FindVariableGenes(object = object, do.plot = F, x.high.cutoff = Inf, y.cutoff = 0.5, display.progress = F)
+  object@var.genes <- object@var.genes[!tiss@var.genes %in% iegs]
 
-  tiss.use <- RunPCA(object = tiss.use, do.print = FALSE)
-  tiss.use <- ProjectPCA(object = tiss.use, do.print = FALSE)
-  print(PCElbowPlot(object = tiss.use))
+  object <- RunPCA(object = object, do.print = FALSE)
+  object <- ProjectPCA(object = object, do.print = FALSE)
+  print(PCElbowPlot(object = object))
 
   if(!calc.PCA.only){
-    tiss.use <- RunTSNE(object = tiss.use, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
-    TSNEPlot(object = tiss.use, do.label = T)
+    object <- RunTSNE(object = object, dims.use = 1:n.pcs, seed.use = 10, perplexity=30)
+    TSNEPlot(object = object, do.label = T)
   }
   
-  write.csv(GetCellEmbeddings(tiss.use, reduction.type = 'tsne'), file = file.path(cell.type,'tsne.csv'))
+  write.csv(GetCellEmbeddings(object, reduction.type = 'tsne'), file = file.path(cell.type,'tsne.csv'))
 
 }
 
-plot.tsne.annot <- function(cell.type){
-  dir=cell.type
-  tsne <- fread(file.path(dir, 'tsne.csv'))
-  setnames(tsne,  c('cell.name','tSNE_1','tSNE_2'))
+plot.tsne.annot <- function(object, cell.type){
+  tsne <- read.csv(file.path(cell.type, 'tsne.csv'), row.names = 1)
 
-  meta.plot <- merge(tsne, tiss@meta.data, by = 'cell.name')
+  object <- SubsetData(object, cells.use = rownames(tsne))
+  object <- SetAllIdent(object, 'annotation.2')
+  
+  meta.plot <- cbind(tsne[object@cell.names, ], object@meta.data)
 
   p=ggplot(meta.plot, aes(tSNE_1, tSNE_2, color = tiss.color)) + 
-    geom_point() +
+    geom_point(size=.7) +
     coord_fixed() +
     scale_color_identity()+
     theme(axis.line=element_blank(),axis.text.x=element_blank(),
@@ -309,46 +311,35 @@ plot.tsne.annot <- function(cell.type){
           axis.title.y=element_blank(),legend.position="none",
           panel.background=element_blank(),panel.border=element_blank(),panel.grid.major=element_blank(),
           panel.grid.minor=element_blank(),plot.background=element_blank())
-  save_plot(file.path(cell.type,'tsne_tissue.pdf'),p)
+  save_plot(file.path(cell.type,'tsne_tissueColor.pdf'),p)
 
-  p=ggplot(meta.plot, aes(tSNE_1, tSNE_2, color = annotation)) + 
-    geom_point() +
+  p=ggplot(meta.plot, aes(tSNE_1, tSNE_2, color = cell_ontology_class)) + 
+    geom_point(size=.7) +
     coord_fixed() +
-    scale_color_brewer(palette = 'Paired') +
     theme(axis.line=element_blank(),axis.text.x=element_blank(),
           axis.text.y=element_blank(),axis.ticks=element_blank(),
           axis.title.x=element_blank(),
-          axis.title.y=element_blank(),legend.position="none",
+          axis.title.y=element_blank(),
           panel.background=element_blank(),panel.border=element_blank(),panel.grid.major=element_blank(),
-          panel.grid.minor=element_blank(),plot.background=element_blank())
-    save_plot(file.path(cell.type,'tsne_annotation.pdf'),p)
+          panel.grid.minor=element_blank(),plot.background=element_blank(),
+          legend.text = element_text(size = 5), legend.title = element_text(size=6))
+    save_plot(file.path(cell.type,'tsne_cell_ontology_class.pdf'),p, base_aspect_ratio = 1.7)
 
 }
 
-plot.tsne.markers <- function(cell.type, pval_cutoff, avg_logFC_cutoff, nmarkers.per.celltype){
+# plot tsne colored by gene expression of select markers
+plot.tsne.markers <- function(object, cell.type, genes.plot){
 
-  # plot tsne with tissue colors
-  tsne <- fread(file.path(cell.type,'tsne.csv'))
-  setnames(tsne,  c('cell.name','tSNE_1','tSNE_2'))
-
-  metadata <- as.data.table(tiss@meta.data)
-
-  markers <- read.csv(paste0('diffexpr_',cell.type,'.csv'))
-  markers <- markers %>% filter(!gene %like% "-")
-  genes.use <- as.character(unique(markers %>% group_by(cluster) %>% 
-                        filter(gene %in% tf.names) %>%
-                        filter(p_val < pval_cutoff, avg_logFC > avg_logFC_cutoff) %>% 
-                        top_n(n=nmarkers.per.celltype, wt=avg_logFC) %>% 
-                        pull(gene)))
+  tsne <- read.csv(file.path(cell.type, 'tsne.csv'), row.names = 1)
+  genes.plot <- genes.plot[genes.plot %in% rownames(object@data)]
   
-  expr.data <- data.table(cell.name=tsne$cell.name, t(as.matrix(tiss@data[genes.use, tsne$cell.name])))
-  tsne.genes <- merge(tsne, expr.data, by='cell.name')
+  expr.data <- data.frame(row.names = rownames(tsne), t(as.matrix(object@data[genes.plot, rownames(tsne)])))
+  
+  # merge tsne and gene expression dataframes
+  tsne.genes <- cbind(tsne[rownames(expr.data), ], expr.data)
 
-  genes.fixednames <- gsub("-", ".", genes.use)
-  genes.translate <- data.frame(gene.fixed=genes.fixednames, row.names = genes.use)
-  genes.translate$gene.fixed <- as.character(genes.translate$gene.fixed)
-  plt.list <- lapply(genes.use, function(x) {
-    p=ggplot(tsne.genes, aes_string('tSNE_1', 'tSNE_2', color=genes.translate[x, 'gene.fixed'])) + 
+  plt.list <- lapply(genes.plot, function(x) {
+    p=ggplot(tsne.genes, aes_string('tSNE_1', 'tSNE_2', color=x)) + 
     geom_point() +
     scale_color_gradient(low = 'grey80', high='firebrick4') +
     theme(axis.line=element_blank(),axis.text.x=element_blank(),
@@ -362,15 +353,15 @@ plot.tsne.markers <- function(cell.type, pval_cutoff, avg_logFC_cutoff, nmarkers
     return(p)
   })
   
-  plt=plot_grid(plotlist = plt.list, align = 'hv', nrow=ceiling(sqrt(length(genes.use))), ncol = ceiling(sqrt(length(genes.use))))
-  save_plot(file.path(cell.type,'tsne_markerGenes.pdf'), plt,  nrow=ceiling(sqrt(length(genes.use))), ncol = ceiling(sqrt(length(genes.use))))
+  plt=plot_grid(plotlist = plt.list, align = 'hv', nrow=ceiling(sqrt(length(genes.plot))), ncol = ceiling(sqrt(length(genes.plot))))
+  save_plot(file.path(cell.type,'tsne_geneExpr.pdf'), plt,  nrow=ceiling(sqrt(length(genes.plot))), ncol = ceiling(sqrt(length(genes.plot))))
 
 }
 
 ```
 
 
-# Calculate differentially-expressed genes across tissues w/in a broad cell class.
+# Calculate differentially-expressed TFs across tissues w/in a broad cell class.
 Cells are subsampled here which speeds up the calculation. The subsampled cells are saved and used to generate the correlation plots in the next function. This next part is critical because the correlation is done using individual cells as datapoints and not across cell type averages, so the cells must be subsampled to avoid subtypes with many cells overtaking correlation. 
 ```{r}
 celltype.diffexpr(data = tiss, cell.type = 'endothelial', max.cells.per.ident = 60, n.cores = 4)
@@ -378,7 +369,7 @@ celltype.diffexpr(data = tiss, cell.type = 'epithelial', max.cells.per.ident = 6
 celltype.diffexpr(data = tiss, cell.type = 'stromal', max.cells.per.ident = 100, n.cores = 4)
 ```
 
-
+# Plot correlograms of DE TFs within broad cell classes
 ```{r}
 # low pval/expr diff cutoffs
 corr.endo=plot.correlogram('endothelial', 1e-7, 0.3, 8, height=8)
@@ -387,5 +378,32 @@ corr.epith=plot.correlogram('epithelial', 1e-7, 0.35, 8)
 
 corr.strom=plot.correlogram('stromal', 1e-7, 0.3, 8)
  
+```
+
+# Plot tSNE plots of DE TFs
+
+Calculate tSNE DR
+```{r}
+make.tSNE(tiss,'endothelial', n.pcs=10) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
+make.tSNE(tiss,'epithelial', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
+make.tSNE(tiss,'stromal', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
+
+```
+
+
+
+```{r}
+plot.tsne.annot(tiss,'endothelial')
+genes.plot <- c("Foxq1","Pbx1","Gata4","Meox2")
+plot.tsne.markers(tiss, 'endothelial', genes.plot)
+
+
+plot.tsne.annot(tiss,'epithelial')
+# genes.plot <- c("Foxq1","Pbx1","Gata4","Meox2")
+# plot.tsne.markers(tiss, 'epithelial', genes.plot)
+
+plot.tsne.annot(tiss,'stromal')
+# genes.plot <- c("Foxq1","Pbx1","Gata4","Meox2")
+# plot.tsne.markers(tiss, 'stromal', genes.plot)
 ```
 
