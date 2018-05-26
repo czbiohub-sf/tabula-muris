@@ -182,8 +182,61 @@ metadata %>% filter(tissue=="Brain_Non.Myeloid") %>% distinct(cell_ontology_clas
 ```
 
 
-# Can we predict what the best factors will be of a given candidate pool?
+# Does our data tell us anything interesting about the relationships between TF and efficiency? 
+Data from Tsunemoto et al, 2018
 ```{r}
+require(data.table)
+eff.mat <- fread("Tsunemoto_reprog_efficiencies.csv")
+eff.dt <- melt.data.table(eff.mat, id.vars = "V1", variable.name = "TF_1", value.name = "efficiency")
+setnames(eff.dt, c("TF_2","TF_1","efficiency"))
+eff.dt <- eff.dt[,.(TF_1,TF_2,efficiency)]
+
+eff.dt[,efficiency:=0.01*efficiency]
+eff.dt[, TF.duo := paste(TF_1, TF_2, sep = "_")]
+eff.dt
+
 
 ```
+
+# Does "Neuron" rank predict efficiency?
+```{r}
+# First, scale each gene's fraction to 1
+fractions.scaled <- fractions / apply(fractions, 2, max)
+
+eff.dt <- eff.dt[TF_1 %in% rownames(fractions)][TF_2 %in% rownames(fractions)]
+
+require(doMC)
+neuron.ranks=data.table()
+for(TF.duo in eff.dt[,(TF.duo)]) {
+  tfs <- strsplit(TF.duo, split = "_")[[1]]
+  tf1 <- tfs[1]
+  tf2 <- tfs[2]
+  
+  if((tf1 == "None") && (tf2 == "None")){
+    neuron.rank=NA
+  }else{
+    if(tf1 == "None"){
+      ranks <- rank(fractions.scaled[tf2,])
+    }else if(tf2 == "None"){
+      ranks <- rank(fractions.scaled[tf1,])
+    
+    }else{
+      ranks <- rank(fractions.scaled[tf1,] + fractions.scaled[tf2,])
+    }
+    neuron.rank <- ranks[which(names(ranks)=="Brain_Non.Myeloid__neuron")]
+  }
+  
+  neuron.ranks <- rbind(neuron.ranks, data.table(TF.duo, neuron.rank))
+}
+
+neuron.ranks <- merge(neuron.ranks, eff.dt, by = "TF.duo")
+```
+```{r}
+ggplot(neuron.ranks, aes(efficiency, neuron.rank)) + geom_point()
+cor.test(neuron.ranks[,efficiency], neuron.ranks[, neuron.rank], method = "spearman")
+
+```
+
+
+
 
