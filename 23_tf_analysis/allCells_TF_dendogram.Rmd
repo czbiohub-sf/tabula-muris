@@ -28,9 +28,12 @@ library(dendextend)
 library(circlize)
 
 
+library(ontologyIndex)
+library(ontologyPlot)
+library(ontologySimilarity)
 # library(devtools)
 # install_github("cvarrichio/Matrix.utils")
-library(Matrix.utils)
+# library(Matrix.utils)
 ```
 
 # Load Seurat object of data
@@ -45,40 +48,31 @@ tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
 #tissFACS <- CreateSeuratObject(raw.data = tm.facs.matrix, meta.data = tm.facs.metadata)
 ```
 
-# Load metadata and add to Seurat object
-<!-- Loads Seurat object and list of TFs -->
-<!-- Makes "annotation.2" metadata field which is tissue__cell_ontology_class. This is the field used to separate cells into classes for finding markers and doing correlations. -->
-<!-- ```{r} -->
-<!-- metadata <- read.csv('../TM_facs_metadata.csv') -->
-<!-- metadata <- metadata %>%  filter(cell_ontology_class!='unknown' & !is.na(tissue) & !is.na(cell_ontology_class)) -->
-<!-- metadata$tissue <- make.names(metadata$tissue) -->
-<!-- metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class) -->
+# Load ontology 
+```{r}
 
-<!-- # make "annotation.2" -->
-<!-- metadata  <- metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class)) -->
+co = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
 
-<!-- # tissue_colors <- read.csv(file.path(tabula.dir,'00_data_ingest/15_color_palette/tissue_colors.csv')) -->
-<!-- tissue_colors <- read.csv(here('00_data_ingest', '15_color_palette','tissue_colors.csv')) -->
-<!-- colnames(tissue_colors) <- c('tissue','tiss.color') -->
-<!-- tissue_colors$tissue <- make.names(tissue_colors$tissue) -->
+```
+Since an ontology is just a collection of `is_a` relationships, the most straightforward distance between nodes will be a function of the two sets of attributes posessed by the nodes.
 
-<!-- metadata <- merge(metadata, tissue_colors, by = 'tissue') -->
+The number of unshared attributes (the set disjunction) can be easily computed as (union - intersection) of the ancestor sets. In the case of a tree, this is just the tree distance.
 
-<!-- rownames(metadata) <- metadata$cell # need this to add to Seurat object -->
-<!-- metadata <- metadata[tiss@cell.names, ] -->
+```{r}
+ont_dist <- function(ontology, id1, id2){
+  anc1 = get_ancestors(ontology, id1)
+  anc2 = get_ancestors(ontology, id2)
+  length(union(anc1, anc2)) - length(intersect(anc1, anc2))
+}
+```
 
-<!-- # Add metadata -->
-<!-- tiss <- AddMetaData(tiss, metadata) -->
-<!-- sum(is.na(tiss@meta.data$annotation.2)) -->
-<!-- length(unique(tiss@meta.data$annotation.2)) -->
-<!-- tiss <- SetAllIdent(tiss, 'annotation.2') -->
+Since it's not a tree, though, the distance is somewhat larger.
 
-<!-- # Make gene names R compatible -->
-<!-- rownames(tiss@data) <- make.names(rownames(tiss@data)) -->
-<!-- rownames(tiss@raw.data) <- make.names(rownames(tiss@raw.data)) -->
-<!-- rownames(tiss@scale.data) <- make.names(rownames(tiss@scale.data)) -->
-<!-- gc() -->
-<!-- ``` -->
+```{r}
+plot_common_tree <- function(t1, t2){
+  onto_plot(co, terms = intersection_with_descendants(co, "CL:0000548", union(get_ancestors(co, t1), get_ancestors(co, t2))))
+}
+```
 
 # Load TFs 
 ```{r}
@@ -149,240 +143,6 @@ inflams.names <- inflams.names[!inflams.names %in% iegs]
 length(inflams.names)
 ```
 
-# Calculate TFs stats
-```{r}
-# tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% unique(tfs$Symbol),]
-
-tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
-tm.facs.matrix.tfs <- as.data.frame(t(as.matrix(tm.facs.matrix.tfs)))
-
-# plot overall expression levels
-expTFs <- tm.facs.matrix.tfs>0
-expTFscounts <- colSums(expTFs, na.rm = TRUE, dims = 1)
-sumexpTFs <- colSums(tm.facs.matrix.tfs, na.rm = TRUE, dims = 1)
-avgexpTFs <- sumexpTFs/expTFscounts
-
-expAll <- rowSums(tm.facs.matrix>0, na.rm = TRUE, dims = 1)
-statsAll <- rowSums(tm.facs.matrix, na.rm = TRUE, dims = 1)
-avgexpAll <- statsAll/expAll
-
-carrots <- data.frame(avgexpTFs)
-colnames(carrots) <- "expression"
-cukes <- data.frame(avgexpAll)
-colnames(cukes) <- "expression"
-#Now, combine your two dataframes into one.  First make a new column in each that will be a variable to identify where they came from later.
-carrots$type <- 'tfs'
-cukes$type <- 'all'
-#and combine into your new data frame vegLengths
-vegLengths <- rbind(carrots, cukes)
-ggplot(vegLengths, aes(log(expression), fill = type)) + geom_density(alpha = 0.5)
-ggsave("tf_vs_all_globalexpression.pdf", plot = last_plot(), device = "pdf", path = NULL,
-  scale = 1, width = 20, height = 20, units = "cm",
-  dpi = 150, limitsize = FALSE)
-
-```
-
-# Calculate RNA splicing factors stats
-```{r}
-# tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% unique(tfs$Symbol),]
-
-tm.facs.matrix.rna.sfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% rna.sfs.names,]
-tm.facs.matrix.rna.sfs <- as.data.frame(t(as.matrix(tm.facs.matrix.rna.sfs)))
-
-# plot overall expression levels
-expRNAs <- tm.facs.matrix.rna.sfs>0
-expRNAscounts <- colSums(expRNAs, na.rm = TRUE, dims = 1)
-sumexpRNAs <- colSums(tm.facs.matrix.rna.sfs, na.rm = TRUE, dims = 1)
-avgexpRNAs <- sumexpRNAs/expRNAscounts
-
-expAll <- rowSums(tm.facs.matrix>0, na.rm = TRUE, dims = 1)
-statsAll <- rowSums(tm.facs.matrix, na.rm = TRUE, dims = 1)
-avgexpAll <- statsAll/expAll
-
-carrots <- data.frame(avgexpRNAs)
-colnames(carrots) <- "expression"
-cukes <- data.frame(avgexpAll)
-colnames(cukes) <- "expression"
-#Now, combine your two dataframes into one.  First make a new column in each that will be a variable to identify where they came from later.
-carrots$type <- 'RNAs'
-cukes$type <- 'all'
-#and combine into your new data frame vegLengths
-vegLengths <- rbind(carrots, cukes)
-ggplot(vegLengths, aes(log(expression), fill = type)) + geom_density(alpha = 0.5)
-ggsave("RNAs_vs_all_globalexpression.pdf", plot = last_plot(), device = "pdf", path = NULL,
-  scale = 1, width = 20, height = 20, units = "cm",
-  dpi = 150, limitsize = FALSE)
-
-```
-
-# Calculate inflammatory genes stats
-```{r}
-# tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% unique(tfs$Symbol),]
-
-tm.facs.matrix.inflams <- tm.facs.matrix[rownames(tm.facs.matrix) %in% inflams.names,]
-tm.facs.matrix.inflams <- as.data.frame(t(as.matrix(tm.facs.matrix.inflams)))
-
-# plot overall expression levels
-expIGs <- tm.facs.matrix.inflams>0
-expIGscounts <- colSums(expIGs, na.rm = TRUE, dims = 1)
-sumexpIGs <- colSums(tm.facs.matrix.inflams, na.rm = TRUE, dims = 1)
-avgexpIGs <- sumexpIGs/expIGscounts
-
-expAll <- rowSums(tm.facs.matrix>0, na.rm = TRUE, dims = 1)
-statsAll <- rowSums(tm.facs.matrix, na.rm = TRUE, dims = 1)
-avgexpAll <- statsAll/expAll
-
-carrots <- data.frame(avgexpIGs)
-colnames(carrots) <- "expression"
-cukes <- data.frame(avgexpAll)
-colnames(cukes) <- "expression"
-#Now, combine your two dataframes into one.  First make a new column in each that will be a variable to identify where they came from later.
-carrots$type <- 'inflammatory genes'
-cukes$type <- 'all'
-#and combine into your new data frame vegLengths
-vegLengths <- rbind(carrots, cukes)
-ggplot(vegLengths, aes(log(expression), fill = type)) + geom_density(alpha = 0.5)
-ggsave("tf_vs_all_globalexpression.pdf", plot = last_plot(), device = "pdf", path = NULL,
-  scale = 1, width = 20, height = 20, units = "cm",
-  dpi = 150, limitsize = FALSE)
-
-```
-# Global gene expression range comparissons - FACS data
-```{r, Global gene expression range comparissons - FACS data}
-# get the data
-tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
-tm.facs.matrix.tfs <- as.data.frame(t(as.matrix(tm.facs.matrix.tfs)))
-
-tm.facs.matrix.rna.sfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% rna.sfs.names,]
-tm.facs.matrix.rna.sfs <- as.data.frame(t(as.matrix(tm.facs.matrix.rna.sfs)))
-
-tm.facs.matrix.inflams <- tm.facs.matrix[rownames(tm.facs.matrix) %in% inflams.names,]
-tm.facs.matrix.inflams <- as.data.frame(t(as.matrix(tm.facs.matrix.inflams)))
-
-# get the stats
-expTFs <- tm.facs.matrix.tfs>0
-expTFscounts <- colSums(expTFs, na.rm = TRUE, dims = 1)
-sumexpTFs <- colSums(tm.facs.matrix.tfs, na.rm = TRUE, dims = 1)
-avgexpTFs <- sumexpTFs/expTFscounts
-# avgexpTFs <- colMeans(tm.facs.matrix.tfs, na.rm = TRUE, dims = 1)
-
-carrotsTFs <- data.frame(avgexpTFs)
-colnames(carrotsTFs) <- "expression"
-
-
-expRNAs <- tm.facs.matrix.rna.sfs>0
-expRNAscounts <- colSums(expRNAs, na.rm = TRUE, dims = 1)
-sumexpRNAs <- colSums(tm.facs.matrix.rna.sfs, na.rm = TRUE, dims = 1)
-avgexpRNAs <- sumexpRNAs/expRNAscounts
-# avgexpRNAs <- colMeans(tm.facs.matrix.rna.sfs, na.rm = TRUE, dims = 1)
-
-carrotsRNA <- data.frame(avgexpRNAs)
-colnames(carrotsRNA) <- "expression"
-
-
-expIGs <- tm.facs.matrix.inflams>0
-expIGscounts <- colSums(expIGs, na.rm = TRUE, dims = 1)
-sumexpIGs <- colSums(tm.facs.matrix.inflams, na.rm = TRUE, dims = 1)
-avgexpIGs <- sumexpIGs/expIGscounts
-# avgexpIGs <- colMeans(tm.facs.matrix.inflams, na.rm = TRUE, dims = 1)
-
-carrotsIGs <- data.frame(avgexpIGs)
-colnames(carrotsIGs) <- "expression"
-
-
-expAll <- rowSums(tm.facs.matrix>0, na.rm = TRUE, dims = 1)
-statsAll <- rowSums(tm.facs.matrix, na.rm = TRUE, dims = 1)
-avgexpAll <- statsAll/expAll
-# avgexpAll <- rowMeans(tm.facs.matrix, na.rm = TRUE, dims = 1)
-
-cukes <- data.frame(avgexpAll)
-colnames(cukes) <- "expression"
-
-#Now, combine your two dataframes into one.  First make a new column in each that will be a variable to identify where they came from later.
-carrotsTFs$type <- 'Transcription factors'
-carrotsRNA$type <- 'RNA splicing factors'
-carrotsIGs$type <- 'Inflammation related genes'
-cukes$type <- 'all'
-#and combine into your new data frame vegLengths
-vegLengths <- rbind(carrotsTFs, carrotsRNA, carrotsIGs, cukes)
-ggplot(vegLengths, aes(log(expression), fill = type)) + geom_density(alpha = 0.5)
-ggsave("specialgroups_vs_all_globalexpression_FACS.pdf", plot = last_plot(), device = "pdf", path = NULL,
-  scale = 1, width = 20, height = 20, units = "cm",
-  dpi = 150, limitsize = FALSE)
-
-
-
-# htfs <- hist(statsTFs,
-#              breaks=c(seq(0, 200, length.out = 50),400,600), col = "red")
-# hall <- hist(statsAll,
-#              breaks=c(seq(0, 200, length.out = 50),20000,130000), col = "red")
-
-
-```
-# Global gene expression range comparissons - 10x data
-```{r, Global gene expression range comparissons - 10x data}
-# get the data
-tm.droplet.matrix.tfs <- tm.droplet.matrix[rownames(tm.droplet.matrix) %in% tf.names,]
-tm.droplet.matrix.tfs <- as.data.frame(t(as.matrix(tm.droplet.matrix.tfs)))
-
-tm.droplet.matrix.rna.sfs <- tm.droplet.matrix[rownames(tm.droplet.matrix) %in% rna.sfs.names,]
-tm.droplet.matrix.rna.sfs <- as.data.frame(t(as.matrix(tm.droplet.matrix.rna.sfs)))
-
-tm.droplet.matrix.inflams <- tm.droplet.matrix[rownames(tm.droplet.matrix) %in% inflams.names,]
-tm.droplet.matrix.inflams <- as.data.frame(t(as.matrix(tm.droplet.matrix.inflams)))
-
-# get the stats
-expTFs <- tm.droplet.matrix.tfs>0
-expTFscounts <- colSums(expTFs, na.rm = TRUE, dims = 1)
-sumexpTFs <- colSums(tm.droplet.matrix.tfs, na.rm = TRUE, dims = 1)
-avgexpTFs <- sumexpTFs/expTFscounts
-# avgexpTFs <- colMeans(tm.droplet.matrix.tfs, na.rm = TRUE, dims = 1)
-
-carrotsTFs <- data.frame(avgexpTFs)
-colnames(carrotsTFs) <- "expression"
-
-
-expRNAs <- tm.droplet.matrix.rna.sfs>0
-expRNAscounts <- colSums(expRNAs, na.rm = TRUE, dims = 1)
-sumexpRNAs <- colSums(tm.droplet.matrix.rna.sfs, na.rm = TRUE, dims = 1)
-avgexpRNAs <- sumexpRNAs/expRNAscounts
-# avgexpRNAs <- colMeans(tm.droplet.matrix.rna.sfs, na.rm = TRUE, dims = 1)
-
-carrotsRNA <- data.frame(avgexpRNAs)
-colnames(carrotsRNA) <- "expression"
-
-
-expIGs <- tm.droplet.matrix.inflams>0
-expIGscounts <- colSums(expIGs, na.rm = TRUE, dims = 1)
-sumexpIGs <- colSums(tm.droplet.matrix.inflams, na.rm = TRUE, dims = 1)
-avgexpIGs <- sumexpIGs/expIGscounts
-# avgexpIGs <- colMeans(tm.droplet.matrix.inflams, na.rm = TRUE, dims = 1)
-
-carrotsIGs <- data.frame(avgexpIGs)
-colnames(carrotsIGs) <- "expression"
-
-
-expAll <- rowSums(tm.droplet.matrix>0, na.rm = TRUE, dims = 1)
-statsAll <- rowSums(tm.droplet.matrix, na.rm = TRUE, dims = 1)
-avgexpAll <- statsAll/expAll
-# avgexpAll <- rowMeans(tm.droplet.matrix, na.rm = TRUE, dims = 1)
-
-cukes <- data.frame(avgexpAll)
-colnames(cukes) <- "expression"
-
-#Now, combine your two dataframes into one.  First make a new column in each that will be a variable to identify where they came from later.
-carrotsTFs$type <- 'Transcription factors'
-carrotsRNA$type <- 'RNA splicing factors'
-carrotsIGs$type <- 'Inflammation related genes'
-cukes$type <- 'all'
-#and combine into your new data frame vegLengths
-vegLengths <- rbind(carrotsTFs, carrotsRNA, carrotsIGs, cukes)
-ggplot(vegLengths, aes(log(expression), fill = type)) + geom_density(alpha = 0.5)
-ggsave("specialgroups_vs_all_globalexpression_10x_with0s.pdf", plot = last_plot(), device = "pdf", path = NULL,
-  scale = 1, width = 20, height = 20, units = "cm",
-  dpi = 150, limitsize = FALSE)
-
-```
 
 # Calculate global dendogram - FACS with TFs
 ```{r}
@@ -437,19 +197,94 @@ labels(dnorm)
 # 
 # 
 # dnorm <- dist(as.matrix(as.data.frame(lapply(tm.facs.matrix.tfs.cellids.norm, as.numeric))), method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
-hnorm <- hclust(dnorm, method = "complete", members = NULL)
-plot(hnorm, labels = tm.facs.matrix.tfs.cellids$factors, hang = 0.1, check = TRUE,
+hnorm <- hclust(dnorm, method = "ward.D2", members = NULL)
+plot(hnorm,  hang = 0.1, check = TRUE,
      axes = TRUE, frame.plot = FALSE, ann = FALSE,
      main = "Cluster Dendrogram",
      sub = NULL, xlab = "", ylab = "", which.plots=2, cex=.5)
 
-# create a dendrogram
-hc <- hclust(dnorm)#, method = "complete", members = NULL)
-#hc$labels = tm.facs.matrix.tfs.cellids$factors
-dend <- as.dendrogram(hc)
-head(labels(dend))
+# # create a dendrogram
+# hc <- hclust(dnorm)#, method = "complete", members = NULL)
+# #hc$labels = tm.facs.matrix.tfs.cellids$factors
+# dend <- as.dendrogram(hc)
+# head(labels(dend))
 
-# calculate ont_dist
+```
+
+
+# Calculate global dendogram - FACS with RNAs
+```{r}
+
+tm.facs.matrix.rna.sfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% rna.sfs.names,]
+tm.facs.matrix.rna.sfs <- as.data.frame(t(as.matrix(tm.facs.matrix.rna.sfs)))
+
+
+tm.facs.matrix.rna.sfs$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+#tm.facs.matrix.tfs$tissues <- as.factor(tm.facs.metadata$tissue)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.rna.sfs.cellids <- tm.facs.matrix.rna.sfs %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.rna.sfs[1:320])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.rna.sfs.cellids.norm = tm.facs.matrix.rna.sfs.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.rna.sfs.cellids[i,2:321])
+  for (j in 2:321){
+    tm.facs.matrix.rna.sfs.cellids.norm[i,j] = tm.facs.matrix.rna.sfs.cellids[i,j]/jaux
+  }
+}
+# tm.facs.matrix.rna.sfs.cellids.norm <- tm.facs.matrix.rna.sfs.cellids.norm[,-1]
+tm.facs.matrix.rna.sfs.cellids.norm <- as.data.frame(tm.facs.matrix.rna.sfs.cellids.norm)
+tm.facs.matrix.rna.sfs.cellids.norm <- subset(tm.facs.matrix.rna.sfs.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.rna.sfs.cellids.norm) <- tm.facs.matrix.rna.sfs.cellids.norm$factors
+tm.facs.matrix.rna.sfs.cellids.norm <- tm.facs.matrix.rna.sfs.cellids.norm[,-1]
+dnormRNA <- dist(tm.facs.matrix.rna.sfs.cellids.norm)
+labels(dnormRNA)
+
+hnormRNA <- hclust(dnormRNA, method = "ward.D2", members = NULL)
+dend3 <- hnormRNA %>% as.dendrogram
+# hmcol = colorRampPalette(brewer.pal(9, "RdBu"))(100)
+#heatmap.2(as.matrix(as.data.frame(lapply(tm.facs.matrix.tfs.cellids.norm, as.numeric))),scale="column",trace = "none",col = hmcol, dendrogram = "both", labRow = tm.facs.matrix.tfs.cellids$factors, labCol = FALSE)
+
+d <- dist(as.matrix(as.data.frame(lapply(tm.facs.matrix.rna.sfs.cellids[,-1], as.numeric))), method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
+h <- hclust(d, method = "complete", members = NULL)
+plot(h, labels = tm.facs.matrix.rna.sfs.cellids$factors, hang = 0.1, check = TRUE,
+     axes = TRUE, frame.plot = FALSE, ann = FALSE,
+     main = "Cluster Dendrogram",
+     sub = NULL, xlab = "", ylab = "", which.plots=2, cex=.5)
+
+
+dnorm <- dist(as.matrix(as.data.frame(lapply(tm.facs.matrix.rna.sfs.cellids.norm, as.numeric))), method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
+hnorm <- hclust(dnorm, method = "complete", members = NULL)
+plot(hnorm, labels = tm.facs.matrix.rna.sfs.cellids$factors, hang = 0.1, check = TRUE,
+     axes = TRUE, frame.plot = FALSE, ann = FALSE,
+     main = "Cluster Dendrogram",
+     sub = NULL, xlab = "", ylab = "", which.plots=2, cex=.5)
+
+# #convert cluster object to use with ggplot
+# dendr <- dendro_data(h, type="rectangle") 
+# 
+# #your own labels (now rownames) are supplied in geom_text() and label=label
+# ggplot() + 
+#   geom_segment(data=segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) + 
+#   geom_text(data=label(dendr), aes(x=x, y=y, label=tm.facs.matrix.tfs.cellids$factors, hjust=0), size=3) +
+#   coord_flip() + scale_y_reverse(expand=c(0.2, 0)) + 
+#   theme(axis.line.y=element_blank(),
+#         axis.ticks.y=element_blank(),
+#         axis.text.y=element_blank(),
+#         axis.title.y=element_blank(),
+#         panel.background=element_rect(fill="white"),
+#         panel.grid=element_blank())
+# ggsave("tf_dendro_all.pdf", plot = last_plot(), device = "pdf", path = NULL,
+#   scale = 1, width = 20, height = 20, units = "cm",
+#   dpi = 150, limitsize = FALSE)
+
+```
+
+# Calculate ont_dist
+```{r}
 tm.facs.ids <- unique(tm.facs.metadata$cell_ontology_id[!is.na(tm.facs.metadata$cell_ontology_id)])
 onto_plot(co, terms=tm.facs.ids)
 
@@ -479,59 +314,53 @@ for (i in 1:length(honto$labels)){
   honto$labels[i] <-  honto$labels[[i]]
 }
 
+```
+
+# Compute and compare dendrogram
+# Tanglegram
+```{r fig.height = 15, fig.width = 25}
 
 dend1 <- honto %>% as.dendrogram
 labels(dend1) <- labels(honto)
 dend2 <- hnorm %>% as.dendrogram
 dend12 <- dendlist(dend1, dend2)
+dend13 <- dendlist(dend1, dend3)
+dend_diff(dend1, dend2)
 # dend12 %>% untangle %>% tanglegram
 dend12 %>% tanglegram(common_subtrees_color_branches = TRUE)
-dend12 %>% tanglegram
+dend12 %>% tanglegram(lab.cex = 1, lwd = .5,edge.lwd = NULL,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,
+                      columns_width = c(15, 5, 15),main_left = "Ontology",main_right = "TFs", dLeaf = 1,type = "r")#,  
+ margin_inner= 3.5, center = TRUE,
+  dLeaf = -0.1, xlim = c(5.1,0), columns_width= c(5,1,5),
+   )
+tanglegram(dend1 , dend2, sort = TRUE)
 
+set.seed(3958)
+x <- dend12 %>% untangle(method = "random", R = 10) 
+x %>% plot(main = paste("entanglement =", round(entanglement(x), 2)))
 
-
+x <- dend12 %>% untangle(method = "step2side") 
+x %>% plot(main = paste("entanglement =", round(entanglement(x), 2)))
 
 # compare the 2 trees
-dend.comp <- all.equal(dend, dend.sc, use.edge.length = FALSE, use.tip.label.order = FALSE, use.tip.label = TRUE, use.topology = FALSE, tolerance = .Machine$double.eps^0.5, scale = NULL)
-
-# modify the dendrogram to have some colors in the branches and labels
-dend <- dend %>% 
-   color_branches(k=18) %>% 
-   color_labels
-plot(dend, main = "A color for every state")
-
-plot(as.phylo(hc), type = "fan", cex = .2)
-
-
-# plot the radial plot
-par(mar = rep(0,4))
-plot(dend, labels = tm.facs.matrix.tfs.cellids$factors, hang = 0.1, check = TRUE,
-     axes = TRUE, frame.plot = FALSE, ann = FALSE,
-     main = "Cluster Dendrogram",
-     sub = NULL, xlab = "", ylab = "", which.plots=2, cex=.5)
-# circlize_dendrogram(dend, dend_track_height = 0.8) 
-circlize_dendrogram(dend, labels_track_height = NA, dend_track_height = .3) 
-
-#convert cluster object to use with ggplot
-dendr <- dendro_data(hnorm, type="rectangle")
-ggdendrogram(hnorm)
-#your own labels (now rownames) are supplied in geom_text() and label=label
-ggplot() +
-  geom_segment(data=segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) +
-  geom_text(data=label(dendr), aes(x=x, y=y, label=tm.facs.matrix.tfs.cellids$factors, hjust=0), size=3) +
-  coord_flip() + 
-  scale_y_reverse(expand=c(0.2, 0)) +
-  theme(axis.line.y=element_blank(),
-        axis.ticks.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.title.y=element_blank(),
-        panel.background=element_rect(fill="white"),
-        panel.grid=element_blank())
-# ggsave("tf_dendro_all.pdf", plot = last_plot(), device = "pdf", path = NULL,
-#   scale = 1, width = 20, height = 20, units = "cm",
-#   dpi = 150, limitsize = FALSE)
+dend.comp <- all.equal(dend1, dend2, use.edge.length = FALSE, use.tip.label.order = FALSE, use.tip.label = TRUE, use.topology = FALSE, tolerance = .Machine$double.eps^0.5, scale = NULL)
 
 ```
+Calculate BK distance
+
+```{r}
+FM_index(cutree(honto, k=3), cutree(hnorm, k=3)) 
+cor_cophenetic(dend1, dend2)
+cor_bakers_gamma(dend1, dend2)
+cor_bakers_gamma(dend1, dend3)
+Bk_plot(dend1, dend1, main = "CORRECT Bk plot \n(based on dendrograms)")
+Bk_plot(dend1, dend2, main = "CORRECT Bk plot \n(based on dendrograms)")
+Bk_plot(dend1, dend3, main = "CORRECT Bk plot \n(based on dendrograms)")
+
+
+```
+
+
 
 # Calculate global dendogram - single cells FACS
 ```{r}
@@ -736,68 +565,8 @@ plot(hnorm, labels = tm.droplet.matrix.tfs.cellids$factors, hang = 0.1, check = 
 #   dpi = 150, limitsize = FALSE)
 
 ```
-# Calculate global dendogram - FACS with RNAs
-```{r}
-
-tm.facs.matrix.rna.sfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% rna.sfs.names,]
-tm.facs.matrix.rna.sfs <- as.data.frame(t(as.matrix(tm.facs.matrix.rna.sfs)))
 
 
-tm.facs.matrix.rna.sfs$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
-#tm.facs.matrix.tfs$tissues <- as.factor(tm.facs.metadata$tissue)
-
-# consider only TFs that are not affected by dissociation
-tm.facs.matrix.rna.sfs.cellids <- tm.facs.matrix.rna.sfs %>% 
-  group_by(factors) %>%
-  summarise_at(vars(colnames(tm.facs.matrix.rna.sfs[1:320])),funs(sum(., na.rm=TRUE)))
-
-
-tm.facs.matrix.rna.sfs.cellids.norm = tm.facs.matrix.rna.sfs.cellids
-for (i in 1:82){
-  jaux = sum(tm.facs.matrix.rna.sfs.cellids[i,2:321])
-  for (j in 2:321){
-    tm.facs.matrix.rna.sfs.cellids.norm[i,j] = tm.facs.matrix.rna.sfs.cellids[i,j]/jaux
-  }
-}
-tm.facs.matrix.rna.sfs.cellids.norm <- tm.facs.matrix.rna.sfs.cellids.norm[,-1]
-
-hmcol = colorRampPalette(brewer.pal(9, "RdBu"))(100)
-#heatmap.2(as.matrix(as.data.frame(lapply(tm.facs.matrix.tfs.cellids.norm, as.numeric))),scale="column",trace = "none",col = hmcol, dendrogram = "both", labRow = tm.facs.matrix.tfs.cellids$factors, labCol = FALSE)
-
-d <- dist(as.matrix(as.data.frame(lapply(tm.facs.matrix.rna.sfs.cellids[,-1], as.numeric))), method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
-h <- hclust(d, method = "complete", members = NULL)
-plot(h, labels = tm.facs.matrix.rna.sfs.cellids$factors, hang = 0.1, check = TRUE,
-     axes = TRUE, frame.plot = FALSE, ann = FALSE,
-     main = "Cluster Dendrogram",
-     sub = NULL, xlab = "", ylab = "", which.plots=2, cex=.5)
-
-
-dnorm <- dist(as.matrix(as.data.frame(lapply(tm.facs.matrix.rna.sfs.cellids.norm, as.numeric))), method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
-hnorm <- hclust(dnorm, method = "complete", members = NULL)
-plot(hnorm, labels = tm.facs.matrix.rna.sfs.cellids$factors, hang = 0.1, check = TRUE,
-     axes = TRUE, frame.plot = FALSE, ann = FALSE,
-     main = "Cluster Dendrogram",
-     sub = NULL, xlab = "", ylab = "", which.plots=2, cex=.5)
-
-# #convert cluster object to use with ggplot
-# dendr <- dendro_data(h, type="rectangle") 
-# 
-# #your own labels (now rownames) are supplied in geom_text() and label=label
-# ggplot() + 
-#   geom_segment(data=segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) + 
-#   geom_text(data=label(dendr), aes(x=x, y=y, label=tm.facs.matrix.tfs.cellids$factors, hjust=0), size=3) +
-#   coord_flip() + scale_y_reverse(expand=c(0.2, 0)) + 
-#   theme(axis.line.y=element_blank(),
-#         axis.ticks.y=element_blank(),
-#         axis.text.y=element_blank(),
-#         axis.title.y=element_blank(),
-#         panel.background=element_rect(fill="white"),
-#         panel.grid=element_blank())
-# ggsave("tf_dendro_all.pdf", plot = last_plot(), device = "pdf", path = NULL,
-#   scale = 1, width = 20, height = 20, units = "cm",
-#   dpi = 150, limitsize = FALSE)
-
-```
 # Calculate global dendogram - 10x with RNAs
 ```{r}
 
@@ -996,240 +765,44 @@ heatmap.2(DF)
 
 
 
-# Subsample data
+
+Other code for plotting dendrograms
 ```{r}
-tiss.subsamp <- SubsetData(tiss, max.cells.per.ident = 60, subset.raw = T)
-head(unique(tiss.subsamp@meta.data$annotation.2))
-```
+# modify the dendrogram to have some colors in the branches and labels
+dend <- dend %>% 
+   color_branches(k=18) %>% 
+   color_labels
+plot(dend, main = "A color for every state")
 
-# Set identity to 
-
-# Function to calculate per-cell type expression averages
-```{r}
-group_averages <- function(mat, groups){
-  group_names = unique(groups)
-  means = matrix(0, dim(mat)[1], length(group_names))
-  colnames(means) = group_names
-  rownames(means) = rownames(mat)
-  for(group in group_names){
-    means[,group] = Matrix::rowMeans(mat[,groups == group,drop=FALSE])
-  }
-  means
-}
-
-# annotation.2.means <- group_averages(tiss.subsamp@data, tiss@ident)
-
-```
-
-# Correlation + plotting functions
-Revision changes: correlations are calculated on the celltype/tissue group averages (arithmetic mean of log1p values),
-rather than on single cells from subsampled dataset as in the initial submission.
-```{r}
-output.tf.cor <- function(data, pval_cutoff, avg_logFC_cutoff, nmarkers.per.celltype, markerfile="TF_markers.csv",height=10){
-  
-  # read in markers
-  markers <- read.csv(markerfile, row.names = 1)
-  markers$gene <- rownames(markers)
-  markers$avg_logFC <- as.numeric(as.character(markers$avg_logFC))
-  markers$p_val <- as.numeric(as.character(markers$p_val))
-  
-  print(head(markers))
-  
-  # Get top genes by cell type
-  genes.use <- as.character(unique(markers %>% dplyr::group_by(cluster) %>% 
-                      filter(gene %in% tf.names, p_val < pval_cutoff, avg_logFC > avg_logFC_cutoff) %>% 
-                      dplyr::top_n(n=nmarkers.per.celltype, wt=avg_logFC) %>% 
-                      pull(gene)))
-
-  print(paste("genes plotted: ",length(genes.use)))
-  # Calculate correlations
-  # mat.use <- t(as.matrix(tiss@data[genes.use, ]))
-  
-  # use cell type averages instead (changed for revision)
-  annotation.2.means <- group_averages(data@data, data@ident)
-  mat.use <- t(annotation.2.means[genes.use, ])
-  tf.cor    <- cor(mat.use)
-  
-  return(tf.cor)
-}
+plot(as.phylo(hc), type = "fan", cex = .2)
 
 
-# cluster genes based on expression correlation and plot correlogram
-# returns output of barb.cormap, which includes the list of genes in the order they appear in the correlogram
-plot.correlogram <- function(data, pval_cutoff, avg_logFC_cutoff, nmarkers.per.celltype, markerfile="TF_markers.csv",height=10){
-  
-  # read in markers
-  markers <- read.csv(markerfile, row.names = 1)
-  markers$gene <- rownames(markers)
-  markers$avg_logFC <- as.numeric(as.character(markers$avg_logFC))
-  markers$p_val <- as.numeric(as.character(markers$p_val))
-  
-  print(head(markers))
-  
-  # Get top genes by cell type
-  genes.use <- as.character(unique(markers %>% dplyr::group_by(cluster) %>% 
-                      filter(gene %in% tf.names, p_val < pval_cutoff, avg_logFC > avg_logFC_cutoff) %>% 
-                      dplyr::top_n(n=nmarkers.per.celltype, wt=avg_logFC) %>% 
-                      pull(gene)))
+# plot the radial plot
+par(mar = rep(0,4))
+plot(dend, labels = tm.facs.matrix.tfs.cellids$factors, hang = 0.1, check = TRUE,
+     axes = TRUE, frame.plot = FALSE, ann = FALSE,
+     main = "Cluster Dendrogram",
+     sub = NULL, xlab = "", ylab = "", which.plots=2, cex=.5)
+# circlize_dendrogram(dend, dend_track_height = 0.8) 
+circlize_dendrogram(dend, labels_track_height = NA, dend_track_height = .3) 
 
-  print(paste("genes plotted: ",length(genes.use)))
-  # Calculate correlations
-  # mat.use <- t(as.matrix(tiss@data[genes.use, ]))
-  
-  # use cell type averages instead (changed for revision)
-  annotation.2.means <- group_averages(data@data, data@ident)
-  mat.use <- t(annotation.2.means[genes.use, ])
-  tf.cor    <- cor(mat.use)
-  print(colnames(tf.cor))
-  enrich.score <- dcast(markers, gene ~ cluster, value.var = 'avg_logFC')
-  rownames(enrich.score) <- enrich.score[,"gene"]
-  enrich.score <- enrich.score[, 2:ncol(enrich.score)]
-  # change rownames to the cell type and tissue that each gene is enriched in (ordering by avg_logFC above)
-  topIDenriched   <- sapply(colnames(tf.cor), function(x) {
-    names(sort(t(enrich.score)[, x],  decreasing = T))[1]}) 
-  colnames(tf.cor) <- topIDenriched
-  
-  correlo.out <- barb.cormap(tf.cor,  'TF_cormap.pdf', height =height, width = height)
-  
-  # Generate row colors of heatmap corresponding to highest-expressing cell type
-  topID.plotorder <- correlo.out[[2]]
-  meta.summary <- data@meta.data %>% distinct(tissue, cell_ontology_class, tiss.color, annotation.2)
-  print(head(meta.summary))
-  ntypes=length(unique(meta.summary$cell_ontology_class))
-  tmp <- colorRampPalette(brewer.pal(min(ntypes, 11), 'Paired'))(ntypes)
-  annot_colors <- data.frame(annot.colors = tmp, cell_ontology_class = unique(meta.summary$cell_ontology_class))
-  write.csv(annot_colors, file=paste0('annotColors.csv'))
-  
-  print(head(annot_colors))
-  meta.summary <- merge(meta.summary, annot_colors, by = 'cell_ontology_class')
-  print(head(meta.summary))
-
-  plot.colors <- data.frame(annotation.2 = topID.plotorder)
-  print(head(plot.colors))
-
-  plot.colors <- merge(plot.colors, meta.summary %>% select(annotation.2, annot.colors, tiss.color), by = 'annotation.2')
-  print((plot.colors))
-  plot.colors <- plot.colors[match(topID.plotorder, plot.colors$annotation.2), ]
-  print((plot.colors))
-  plot.colors$ymin <- 0.1*(0:(nrow(plot.colors)-1))
-  plot.colors$ymax <- 0.1*(1:(nrow(plot.colors)))
-  print((plot.colors))
-  plot.colors$tiss.color <- toupper(plot.colors$tiss.color)
-    plot.colors$annot.colors <- toupper(plot.colors$annot.colors)
-
-
-  require(grDevices)
-  pdf( 'TF_cormap_rowcolors_AnnotRight_TissueLeft.pdf', height = 10, width = 4)
-    plot(c(0, 2), c(0, max(plot.colors$ymax) + 1), type = "n", xlab = "", ylab = "",
-         main = "plot colors")
-    rect(0,plot.colors$ymin, 1 , plot.colors$ymax, col = plot.colors$annot.colors, border = NA)
-    rect(1,plot.colors$ymin, 2 , plot.colors$ymax, col = plot.colors$tiss.color, border = NA)
-  dev.off()
-
-  return(correlo.out)
-}
-
-barb.cormap <- function(mat.cor,fname,width=12,height=12,method="complete",cex=0.5,mincor=-1,maxcor=1){
-  require(lattice)
-  require(cba)
-  rowdist <- dist(mat.cor)
-  coldist <- dist(mat.cor, by_rows = F)
-  hc.cor <- hclust(coldist, method=method)
-  hr.cor <- hclust(rowdist, method=method)
-
-  optimal.row <- order.optimal(rowdist,hr.cor$merge)
-  optimal.col <- order.optimal(coldist,hc.cor$merge)
- 
-  ord.row <- optimal.row$order
-  ord.col <- optimal.col$order
-  
-  plt = levelplot(mat.cor[ord.row,ord.col],xlab=NULL,ylab=NULL,
-                  at=do.breaks(c(mincor-0.01,maxcor+0.01),19),scales=list(x=list(rot=90),cex=cex),
-                  colorkey=list(space="top"),
-                  col.regions=colorRampPalette(c("dodgerblue4", "dodgerblue", "white", "lightcoral", "firebrick4"), space="Lab"))
-  pdf(fname,width=width,height=height)
-    print(plt)
-  dev.off()
-  
-  return(list(rownames(mat.cor[ord.row, ]), colnames(mat.cor[, ord.col]), plt, hc.cor, hr.cor))
-}
+#convert cluster object to use with ggplot
+dendr <- dendro_data(hnorm, type="rectangle")
+ggdendrogram(hnorm)
+#your own labels (now rownames) are supplied in geom_text() and label=label
+ggplot() +
+  geom_segment(data=segment(dendr), aes(x=x, y=y, xend=xend, yend=yend)) +
+  geom_text(data=label(dendr), aes(x=x, y=y, label=tm.facs.matrix.tfs.cellids$factors, hjust=0), size=3) +
+  coord_flip() + 
+  scale_y_reverse(expand=c(0.2, 0)) +
+  theme(axis.line.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.title.y=element_blank(),
+        panel.background=element_rect(fill="white"),
+        panel.grid=element_blank())
+# ggsave("tf_dendro_all.pdf", plot = last_plot(), device = "pdf", path = NULL,
+#   scale = 1, width = 20, height = 20, units = "cm",
+#   dpi = 150, limitsize = FALSE)
 
 ```
-
-# All cell types TF
-Make a list of TFs with cell type specificity to use for correlation analysis.
-Version 3 (preparing for final revision, 5/16/18): Seurat FindAllMarkers is faster. FindMarkers now uses much more memory and cannot be easily parallelized w/o crashing (even w/64GB RAM). FindAllMarkers uses 18GB RAM. -->
-```{r}
-res=FindAllMarkers(tiss.subsamp, genes.use = tf.names,
-                   only.pos = T, test.use = "wilcox", min.diff.pct = 0.1, print.bar = F, do.print = T)
-write.csv(res, "TF_markers.csv")
-```
-
-```{r}
-aux <- dcast(res, gene ~ cluster, value.var = "p_val")
-rownames(aux) <- aux[,1]
-aux <- aux[,-1]
-DF  <-  as.matrix(as.data.frame(lapply(aux, as.numeric)))
-DF <- -log(DF,10)
-DF[is.na(DF)] <- 0
-
-dd <- dist(DF, method = "euclidean")
-hc <- hclust(dd, method = "ward.D2")
-
-heatmap.2(DF)
-aux <- t(aux)
-colnames(aux) <- aux[1,]
-aux <- aux[-1,]
-```
-
-# compute and plot correlations
-```{r}
-get_upper_tri <- function(cormat){
-    cormat[upper.tri(cormat)]<- NA
-    return(cormat)
-}
-
-reorder_cormat <- function(cormat){
-# Use correlation between variables as distance
-dd <- as.dist((1-cormat)/2)
-hc <- hclust(dd)
-cormat <-cormat[hc$order, hc$order]
-}
-
-
-tf.cor.all <- output.tf.cor(data = tiss.subsamp, pval_cutoff = 10^-3.5, avg_logFC_cutoff = 0.15, nmarkers.per.celltype = 6, height = 30)
-reorder_tf.cor.all <- reorder_cormat(tf.cor.all)
-upper_tf.cor.all <- get_upper_tri(reorder_tf.cor.all)
-
-
-melted_tf.cor.all <- melt(upper_tf.cor.all)
-
-# ggplot(data = melted_tf.cor.all, aes(x=Var1, y=Var2, fill=value)) + 
-  # geom_tile()
-
-ggplot(data = melted_tf.cor.all, aes(Var2, Var1, fill = value))+
-  geom_tile(color = "white")+
-  scale_fill_gradient2(low = "white", high = "blue", mid = "white", na.value="white",
-   midpoint = 0,  limit = c(-1,1), space = "Lab", 
-                       name="Pearson\nCorrelation") +
-  theme_minimal()+ 
-  theme(axis.text.x = element_text(angle = 90, vjust = 1, 
-                                   size = 0, hjust = 1))+
-  coord_fixed()+ 
-  
-  theme(text=element_text(size=4),
-  axis.title.x = element_blank(),
-  axis.title.y = element_blank(),
-  axis.text.y = element_text(size = rel(1), angle = 0),
-  legend.position="none")
-ggsave("tf_cor_all.pdf", plot = last_plot(), device = "pdf", path = NULL,
-  scale = 1, width = 20, height = 20, units = "cm",
-  dpi = 150, limitsize = FALSE)
-```
-
-
-```{r}
-correlo.all <- plot.correlogram(data = tiss.subsamp, pval_cutoff = 10^-3.5, avg_logFC_cutoff = 0.15, nmarkers.per.celltype = 6, height = 30)
-```
-
-
