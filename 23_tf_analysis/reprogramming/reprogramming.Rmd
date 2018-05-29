@@ -1,0 +1,242 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+require(Seurat)
+```
+
+
+```{r}
+load("../../data/All_seurat_tiss.Robj")
+
+metadata <- read.csv('../../data/TM_facs_metadata.csv')
+metadata <- metadata %>%  filter(cell_ontology_class!='unknown' & !is.na(tissue) & !is.na(cell_ontology_class))
+metadata$tissue <- make.names(metadata$tissue)
+metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class)
+
+# make "annotation.2"
+metadata  <- metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
+
+tissue_colors <- read.csv(file.path(tabula.dir,'00_data_ingest/15_color_palette/tissue_colors.csv'))
+colnames(tissue_colors) <- c('tissue','tiss.color')
+tissue_colors$tissue <- make.names(tissue_colors$tissue)
+
+metadata <- merge(metadata, tissue_colors, by = 'tissue')
+
+rownames(metadata) <- metadata$cell # need this to add to Seurat object
+metadata <- metadata[tiss@cell.names, ]
+
+# Add metadata
+tiss <- AddMetaData(tiss, metadata)
+sum(is.na(tiss@meta.data$annotation.2))
+length(unique(tiss@meta.data$annotation.2))
+tiss <- SetAllIdent(tiss, 'annotation.2')
+
+# Make gene names R compatible
+rownames(tiss@data) <- make.names(rownames(tiss@data))
+rownames(tiss@raw.data) <- make.names(rownames(tiss@raw.data))
+rownames(tiss@scale.data) <- make.names(rownames(tiss@scale.data))
+gc()
+```
+
+# Functions: average and fraction expressing per group
+```{r}
+group_averages <- function(mat, groups){
+  group_names = unique(groups)
+  means = matrix(0, dim(mat)[1], length(group_names))
+  colnames(means) = group_names
+  rownames(means) = rownames(mat)
+  for(group in group_names){
+    means[,group] = Matrix::rowMeans(mat[,groups == group,drop=FALSE])
+  }
+  means
+}
+
+group_fractions <- function(mat, groups, thresh=0){
+  group_names = unique(groups)
+  fractions = matrix(0, dim(mat)[1], length(group_names))
+  colnames(fractions) = group_names
+  rownames(fractions) = rownames(mat)
+  mat.bin <- mat > thresh
+  for(group in group_names){
+    fractions[,group] = Matrix::rowMeans(mat.bin[,groups == group,drop=FALSE])
+  }
+  fractions
+}
+
+```
+
+
+# Calculate fractions
+```{r}
+tiss <- SetAllIdent(tiss, 'annotation.2')
+
+fractions <- group_fractions(tiss@data, tiss@ident)
+write.csv(fractions, "fractions.csv")
+```
+
+# Get all cell types expressing all genes above minimum fraction
+```{r}
+# A.k.a "BAM"
+print("Target cell type: neuron")
+thresh=0.1
+genes <- c("Pou3f2","Ascl1","Myt1l")
+colnames(fractions)[colSums(fractions[genes, ] > thresh) == length(genes)]
+
+# A.k.a "BAZ"
+print("Target cell type: neuron")
+thresh=.1
+genes <- c("Pou3f2","Ascl1","Zic1")
+colnames(fractions)[colSums(fractions[genes, ] > thresh) == length(genes)]
+
+# Classic Cardiomyocyte protocol
+print("Target cell type: Cardiomyocyte")
+thresh=.2
+genes <- c("Gata4","Tbx5","Mef2c")
+colnames(fractions)[colSums(fractions[genes, ] > thresh) == length(genes)]
+
+# More recent Cardiomyocyte differentiation (https://doi.org/10.1016/j.yjmcc.2013.04.004)
+print("Target cell type: Cardiomyocyte")
+thresh=.2
+genes <-c("Hand2", "Nkx2.5", "Gata4", "Mef2c", "Tbx5")
+colnames(fractions)[colSums(fractions[genes, ] > thresh) == length(genes)]
+
+# Liver results: none of the protocols uniquely specify liver
+# Liver hepatocyte protocol (although only a single Fox gene was used in first publication; no difference observed btwn all 3)
+print("Target cell type: Hepatocyte")
+thresh=.3
+genes <- c("Hnf4a","Foxa1","Foxa2","Foxa3")
+colnames(fractions)[colSums(fractions[genes, ] > thresh) == length(genes)]
+
+# Mouse hepatocyte differentiation from fibroblasts (doi:10.1038/nature10116)
+print("Target cell type: Hepatocyte")
+thresh=.2
+genes <- c("Hnf1a","Gata4","Foxa3")
+colnames(fractions)[colSums(fractions[genes, ] > thresh) == length(genes)]
+
+
+# Other liver hepatocyte protocol
+print("Target cell type: Hepatocyte")
+thresh=.4
+genes <- c("Hnf4a","Cebpb","Foxa2")
+colnames(fractions)[colSums(fractions[genes, ] > thresh) == length(genes)]
+
+# Note: Pou5f1 is not detected in any cells even though it is in the annotation
+# This makes sense as we do not have any pluripotent stem cells annotated in the data
+print("Target cell type: Pluripotent stem cell")
+thresh=.2
+genes <- c("Myc","Sox2","Klf4","Pou5f1")
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+# No NSCs annotated in our data so it should not be used to look for NSC-TFs
+# print("Target cell type: Neural stem cell")
+# thresh=.05
+# genes <- c("Myc","Sox2","Klf4","Tcf3","Pou3f4")
+# colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+# The first direct reprogramming protocol from '87 (doi:10.1016/0092-8674(87)90585-X)
+print("Target cell type: Myoblast")
+thresh=.3
+genes <- c("Myod1")
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+# TFs for MEF-Oligodendrocyte reprogramming (10.1038/nbt.2564)
+print("Target cell type: Oligodendrocyte")
+thresh=.3
+genes <- c("Sox10","Olig2","Zfp536")
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+
+# TFs that turn B cells into macrophages (doi:10.1016/S0092-8674(04)00419-2)
+print("Target cell type: Macrophage (from B cells)")
+thresh=.8
+genes <- c("Cebpa","Cebpb")
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+
+# TFs that turn exocrine cells into beta cells (in vivo reprogramming) (doi:10.1038/nature07314)
+print("Target cell type: Beta cell (in vivo, from exocrine cells)")
+thresh=.05
+genes <- c("Neurog3","Pdx1","Mafa")
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+
+# TFs for conversion of human cells to endothelial cells (doi:10.1073/pnas.1413234112)
+print("Target cell type: human endothelial cells")
+thresh=.05
+genes <- c("Etv2")
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+# TFs for conversion of human cells to osteoblasts (10.1073/pnas.1420713112)
+print("Target cell type: human osteoblasts")
+thresh=.01
+genes <- c("Runx2","Sp7","Mycl1")
+# genes[!genes %in% rownames(fractions)]
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+
+metadata %>% distinct(tissue)
+metadata %>% filter(tissue=="Brain_Non.Myeloid") %>% distinct(cell_ontology_class)
+```
+
+
+# Does our data tell us anything interesting about the relationships between TF and efficiency? 
+Data from Tsunemoto et al, 2018
+```{r}
+require(data.table)
+eff.mat <- fread("Tsunemoto_reprog_efficiencies.csv")
+eff.dt <- melt.data.table(eff.mat, id.vars = "V1", variable.name = "TF_1", value.name = "efficiency")
+setnames(eff.dt, c("TF_2","TF_1","efficiency"))
+eff.dt <- eff.dt[,.(TF_1,TF_2,efficiency)]
+
+eff.dt[,efficiency:=0.01*efficiency]
+eff.dt[, TF.duo := paste(TF_1, TF_2, sep = "_")]
+eff.dt
+
+
+```
+
+# Does "Neuron" rank predict efficiency?
+```{r}
+# First, scale each gene's fraction to 1
+fractions.scaled <- fractions / apply(fractions, 2, max)
+
+eff.dt <- eff.dt[TF_1 %in% rownames(fractions)][TF_2 %in% rownames(fractions)]
+
+require(doMC)
+neuron.ranks=data.table()
+for(TF.duo in eff.dt[,(TF.duo)]) {
+  tfs <- strsplit(TF.duo, split = "_")[[1]]
+  tf1 <- tfs[1]
+  tf2 <- tfs[2]
+  
+  if((tf1 == "None") && (tf2 == "None")){
+    neuron.rank=NA
+  }else{
+    if(tf1 == "None"){
+      ranks <- rank(fractions.scaled[tf2,])
+    }else if(tf2 == "None"){
+      ranks <- rank(fractions.scaled[tf1,])
+    
+    }else{
+      ranks <- rank(fractions.scaled[tf1,] + fractions.scaled[tf2,])
+    }
+    neuron.rank <- ranks[which(names(ranks)=="Brain_Non.Myeloid__neuron")]
+  }
+  
+  neuron.ranks <- rbind(neuron.ranks, data.table(TF.duo, neuron.rank))
+}
+
+neuron.ranks <- merge(neuron.ranks, eff.dt, by = "TF.duo")
+```
+```{r}
+ggplot(neuron.ranks, aes(efficiency, neuron.rank)) + geom_point()
+cor.test(neuron.ranks[,efficiency], neuron.ranks[, neuron.rank], method = "spearman")
+
+```
+
+
+
+
