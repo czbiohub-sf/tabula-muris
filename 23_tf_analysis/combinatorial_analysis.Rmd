@@ -16,9 +16,10 @@ tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,match(tm.facs.metadata$cell[!is.na(tm.
 rownames(tm.facs.metadata) = tm.facs.metadata$cell
 tm.facs.metadata.tfs <- tm.facs.metadata
 tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
-tissFACStfs <- SubsetData(tissFACStfs, max.cells.per.ident = 60, subset.raw = T)
+tissFACStfs <- SubsetData(tissFACStfs, max.cells.per.ident = 100, subset.raw = T)
 
 tm.facs.matrix.tfsRF <- t(as.matrix(tissFACStfs@data))
+auxRF_factors <- tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)]
 RF_factors <- as.factor(tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)])
 levels(RF_factors) <- 1:length(levels(RF_factors))
 cell <- as.numeric(RF_factors)
@@ -53,7 +54,7 @@ rownames(sig.eset) <- RF_factors
 csc <- rep(hmcol[50],30)
 csc[RF_factors=='T'] <- hmcol[200] 
   # column side color will be dark for T and light for B
-heatmap(sig.eset,scale="col", col=hmcol)#,ColSideColors=csc)
+heatmap(sig.eset,scale="col", col=hmcol, labRow = auxRF_factors )#,ColSideColors=csc)
 
 varselRF.tissFACS <- varSelRF(tm.facs.matrix.tfsRF, RF_factors, c.sd = 1, mtryFactor = 1, ntree = 5000,
          ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2,
