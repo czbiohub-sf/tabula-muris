@@ -145,23 +145,22 @@ plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index){
 	mutate(metadataclass = str_wrap(tiss@meta.data[,meta], width=25)) %>%
 	pull(metadataclass)
 
-  plot_data = FetchData(tiss, c('tSNE_1', 'tSNE_2', meta))
-
   if (tissue == "All") {
-	plot_data %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
-	  geom_point(size = 0.5) +
+  tiss %>% TSNEPlot(do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class', do.return = T) +
 	  scale_colour_discrete(name = legend_name) +
 	  xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
 	  xlab("tSNE 1") + ylab("tSNE 2")
   } else {
-	centers = plot_data %>% group_by(cell_ontology_class=.[, meta]) %>% summarize(x=mean(tSNE_1), y=mean(tSNE_2))
-	plot_data %>% ggplot(aes_string(x = 'tSNE_1', y = 'tSNE_2', color = meta_R_safe)) +
-	  #geom_point(data = centers, mapping = aes(x = x, y = y), size = 0, alpha = 0) +
-	 	#geom_text(aes(label=)) +
-	  #geom_text(data = centers, mapping = aes(label=seq(1, dim(centers)[1]), x=x, y=y)) +
-	  geom_point(size = 0.5) +
+	  plot_data = tiss %>% TSNEPlot(pt.size = 0.2, group.by='cell_ontology_class', do.return = T, do.bare = T) 
+      
+    centers = plot_data$data %>% group_by(ident) %>% summarize(x = median(x = x), y = median(x = y))
+  
+    plot_data +
+    geom_point(data = centers, mapping = aes(x = x, y = y), size = 0, alpha = 0) +
+    geom_text(data = centers, mapping = aes(label = ident), size = 2.8) +
 	  xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
-	  #scale_colour_discrete(name = legend_name) + theme(legend.key.height = unit(1, "cm")) +
+	  scale_colour_discrete(name = legend_name) + theme(legend.key.height = unit(1, "cm")) +
+    scale_size(range = c(min(plot_data$data$pt.size), max(plot_data$data$pt.size))) +
 	  xlab("tSNE 1") + ylab("tSNE 2")
   }
 
@@ -237,40 +236,72 @@ tissue_plots_all <- function(method) {
 ptm <- proc.time()
 
 tissue_plots("Marrow", "facs")
-#tissue_plots("Limb_Muscle", "droplet")
-#tissue_plots("Mammary_Gland", "droplet")
-#tissue_plots("Brain_Non-Myeloid", "facs")
-#tissue_plots("Fat", "facs")
-#tissue_plots("Tongue", "droplet")
-#tissue_plots("Kidney", "facs")
-#tissue_plots("Lung", "facs")
-#tissue_plots("Heart_and_Aorta", "droplet")
-#tissue_plots("Tongue", "facs")
-#tissue_plots("Brain_Myeloid", "facs")
-#tissue_plots("Pancreas", "facs")
-#tissue_plots("Marrow", "droplet")
-#tissue_plots("Spleen", "droplet")
-#tissue_plots("Trachea", "facs")
-#tissue_plots("Skin", "facs")
-#tissue_plots("Diaphragm", "facs")
-#tissue_plots("Liver", "droplet")
-#tissue_plots("Mammary_Gland", "facs")
-#tissue_plots("Thymus", "droplet")
-#tissue_plots("Spleen", "facs")
-#tissue_plots("Trachea", "droplet")
-#tissue_plots("Heart", "facs")
-#tissue_plots("Large_Intestine", "facs")
-#tissue_plots("Kidney", "droplet")
-#tissue_plots("Limb_Muscle", "facs")
-#tissue_plots("Liver", "facs")
-#tissue_plots("Bladder", "facs")
-#tissue_plots("Aorta", "facs")
-#tissue_plots("Lung", "droplet")
-#tissue_plots("Thymus", "facs")
-#tissue_plots("Bladder", "droplet")
-#
+tissue_plots("Limb_Muscle", "droplet")
+tissue_plots("Mammary_Gland", "droplet")
+tissue_plots("Brain_Non-Myeloid", "facs")
+tissue_plots("Fat", "facs")
+tissue_plots("Tongue", "droplet")
+tissue_plots("Kidney", "facs")
+tissue_plots("Lung", "facs")
+tissue_plots("Heart_and_Aorta", "droplet")
+tissue_plots("Tongue", "facs")
+tissue_plots("Brain_Myeloid", "facs")
+tissue_plots("Pancreas", "facs")
+tissue_plots("Marrow", "droplet")
+tissue_plots("Spleen", "droplet")
+tissue_plots("Trachea", "facs")
+tissue_plots("Skin", "facs")
+tissue_plots("Diaphragm", "facs")
+tissue_plots("Liver", "droplet")
+tissue_plots("Mammary_Gland", "facs")
+tissue_plots("Thymus", "droplet")
+tissue_plots("Spleen", "facs")
+tissue_plots("Trachea", "droplet")
+tissue_plots("Heart", "facs")
+tissue_plots("Large_Intestine", "facs")
+tissue_plots("Kidney", "droplet")
+tissue_plots("Limb_Muscle", "facs")
+tissue_plots("Liver", "facs")
+tissue_plots("Bladder", "facs")
+tissue_plots("Aorta", "facs")
+tissue_plots("Lung", "droplet")
+tissue_plots("Thymus", "facs")
+tissue_plots("Bladder", "droplet")
+
 #tissue_plots_all("droplet")
 #tissue_plots_all("FACS")
 
 proc.time() - ptm
 ```
+```{r}
+method = "droplet"
+tissue = "Limb_Muscle"
+#load(here("00_data_ingest","04_tissue_robj_generated", paste0(method, "_", tissue, "_", "seurat_tiss.Robj")))
+
+meta = "cell_ontology_class"
+legend_name = "Cell Ontology Class"
+
+lims = FetchData(tiss, c('tSNE_1', 'tSNE_2', meta)) %>% summarize(xmin = min(tSNE_1), xmax = max(tSNE_1), ymin = min(tSNE_2), ymax = max(tSNE_2))
+plot_min = min(lims$xmin, lims$ymin) - 5
+plot_max = max(lims$xmax, lims$ymax) + 5
+
+meta_R_safe = paste0("`",meta,"`")
+
+tiss@meta.data[meta] =
+FetchData(tiss, meta) %>%
+mutate(metadataclass = str_wrap(tiss@meta.data[,meta], width=25)) %>%
+pull(metadataclass)
+
+plot_data = tiss %>% TSNEPlot(group.by='cell_ontology_class', do.return = T, do.bare = T) 
+  
+centers = plot_data$data %>% group_by(ident) %>% summarize(x = median(x = x), y = median(x = y))
+
+plot_data +
+geom_point(data = centers, mapping = aes(x = x, y = y), size = 0, alpha = 0) +
+geom_text(data = centers, mapping = aes(label = ident), size = 2.5) +
+xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
+scale_colour_discrete(name = legend_name) + theme(legend.key.height = unit(1, "cm")) +
+scale_size(range = c(min(plot_data$data$pt.size), max(plot_data$data$pt.size))) +
+xlab("tSNE 1") + ylab("tSNE 2")
+```
+
