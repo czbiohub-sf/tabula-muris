@@ -7,74 +7,170 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
-```{r}
+```{r load libraries}
+library(Seurat)
+library(cowplot)
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(parallel)
+library(cba)
+library(here)
+library(RColorBrewer)
+library(tidyverse)
+library(openxlsx)
+library(gplots)
+library(reshape2)
+
+library(ggplot2)
+library(ggdendro)
+library(scales)
+library(wordspace)
+
 library(varSelRF)
 set.seed(644685)
 
+```
+
+```{r load tabula muris data}
+# tm.droplet.matrix = readRDS(here("data-tabula-muris", "TM_droplet_mat.rds"))
+# tm.droplet.metadata = read_csv(here("data-tabula-muris", "TM_droplet_metadata.csv"))
+
+
+tm.facs.matrix = readRDS(here("data-tabula-muris", "TM_facs_mat.rds"))
+tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
+
+```
+
+
+```{r load TFs}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+tfs      <- read.csv(here('23_tf_analysis','GO_term_summary_20171110_222852.csv'))
+tf.names <- as.character( tfs %>% distinct(Symbol) %>% pull(Symbol) )
+tf.names <- make.names(tf.names)
+#tf.names <- tf.names[tf.names %in% rownames(tissFACS@data)]
+length(tf.names)
+
+# # remove genes with very low expression in data
+# x=apply(as.matrix(tissFACS@data[tf.names, ]) > 0, 1, sum) 
+# genes.expr <- names(x[x > 5])
+# tf.names <- tf.names[tf.names %in% genes.expr]
+
+# Remove IEGs
+# iegs <- as.character(read.csv(file.path(tabula.dir,"00_data_ingest/20_dissociation_genes/genes_affected_by_dissociation_unix.csv"), header = T)[,1])
+
+iegs <- as.character(read.csv(here('00_data_ingest','20_dissociation_genes','genes_affected_by_dissociation_unix.csv'), header = T)[,1])
+
+tf.names <- tf.names[!tf.names %in% iegs]
+length(tf.names)
+```
+
+
+```{r prepare data for varselRF}
 tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
 tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,match(tm.facs.metadata$cell[!is.na(tm.facs.metadata$cell_ontology_class)],colnames(tm.facs.matrix))]
 
 rownames(tm.facs.metadata) = tm.facs.metadata$cell
 tm.facs.metadata.tfs <- tm.facs.metadata
 tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
-tissFACStfs <- SubsetData(tissFACStfs, max.cells.per.ident = 3000, subset.raw = T)
+tissFACStfs <- SubsetData(tissFACStfs, max.cells.per.ident = 100, subset.raw = T)
 
-tm.facs.matrix.tfsRF <- t(as.matrix(tissFACStfs@data))
-auxRF_factors <- tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)]
-RF_factors <- as.factor(tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)])
-levels(RF_factors) <- 1:length(levels(RF_factors))
-cell <- as.numeric(RF_factors)
+tm.facs.matrix.tfsRF <- as.matrix(tissFACStfs@data)
+#auxRF_factors <- tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)]
+RF_factors <- tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)]
+#levels(RF_factors) <- 1:length(levels(RF_factors))
+#cell <- as.numeric(RF_factors)
 
 dim(tm.facs.matrix.tfsRF)
-
 length(RF_factors)
 
-rf <- randomForest(x = tm.facs.matrix.tfsRF, y = RF_factors,ntree=10)
+#rf <- randomForest(x = tm.facs.matrix.tfsRF, y = RF_factors,ntree=10)
 # Make variable importance plot
-varImpPlot(rf, n.var=25, main='ALL Subset Results')
+#varImpPlot(rf, n.var=25, main='ALL Subset Results')
 
-# Get names of most important genes
-imp.temp <- importance(rf)
-t <- order(imp.temp,decreasing=TRUE)
-gn.imp <- rownames(imp.temp)[t]
-  # these are in order most...least important
+# # Get names of most important genes
+# imp.temp <- importance(rf)
+# t <- order(imp.temp,decreasing=TRUE)
+# gn.imp <- rownames(imp.temp)[t]
+#   # these are in order most...least important
 
-# Get expression values for 25 most important genes
-gn.25 <- gn.imp[1:25] # vector of top 25 genes, in order
-t <- is.element(colnames(tm.facs.matrix.tfsRF),gn.25)
-sig.eset <- tm.facs.matrix.tfsRF[,t] 
-  # matrix of expression values, 
-  # not necessarily in order of importance
+# # Get expression values for 25 most important genes
+# gn.25 <- gn.imp[1:25] # vector of top 25 genes, in order
+# t <- is.element(colnames(tm.facs.matrix.tfsRF),gn.25)
+# sig.eset <- tm.facs.matrix.tfsRF[,t] 
+#   # matrix of expression values, 
+#   # not necessarily in order of importance
+# 
+# # Make a heatmap, with group differences obvious on plot
+# # (similar to Notes 2.3)
+# library(RColorBrewer)
+# hmcol <- colorRampPalette(brewer.pal(9,"Reds"))(256)
+# rownames(sig.eset) <- RF_factors
+#   # This will label the heatmap columns
+# csc <- rep(hmcol[50],30)
+# csc[RF_factors=='T'] <- hmcol[200] 
+#   # column side color will be dark for T and light for B
+# heatmap(sig.eset,scale="col", col=hmcol, labRow = auxRF_factors )#,ColSideColors=csc)
 
-# Make a heatmap, with group differences obvious on plot
-# (similar to Notes 2.3)
-library(RColorBrewer)
-hmcol <- colorRampPalette(brewer.pal(9,"Reds"))(256)
-rownames(sig.eset) <- RF_factors
-  # This will label the heatmap columns
-csc <- rep(hmcol[50],30)
-csc[RF_factors=='T'] <- hmcol[200] 
-  # column side color will be dark for T and light for B
-heatmap(sig.eset,scale="col", col=hmcol, labRow = auxRF_factors )#,ColSideColors=csc)
+varselRF.tissFACS <- varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = FALSE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
 
-varselRF.tissFACS.nowholerange <- varSelRF(tm.facs.matrix.tfsRF, RF_factors, c.sd = 1, mtryFactor = 1, ntree = 5000,
-         ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2,
-         whole.range = FALSE, recompute.var.imp = FALSE, verbose = TRUE,
-         returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
 varselRF.tissFACS
 summary(varselRF.tissFACS)
-plot(varselRF.tissFACS)
+#plot(varselRF.tissFACS)
 plot(varselRF.tissFACS, nvar = NULL, which = c(1, 2))
 
-rf.vs1 <- varSelRF(tm.facs.matrix.tfsRF, RF_factors, c.sd = 1, mtryFactor = 1, ntree = 200, ntreeIterat = 100,
-                   vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = TRUE, recompute.var.imp = FALSE, verbose = TRUE
-returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = FALSE)
+rf.sig.gn <- varselRF.tissFACS$selected.vars
+# Visualize these two genes
+exp.gn.1 <- tm.facs.matrix.tfsRF[rownames(tm.facs.matrix.tfsRF)==rf.sig.gn[1],]
+exp.gn.2 <- tm.facs.matrix.tfsRF[rownames(tm.facs.matrix.tfsRF)==rf.sig.gn[2],]
+use.pch <- RF_factors#c(rep(1,15),rep(16,15)) # Define plotting chars.
+use.col <- as.numeric(as.factor(RF_factors)) # Define plotting colors
+plot(exp.gn.1,exp.gn.2, xlab=rf.sig.gn[1], ylab=rf.sig.gn[2],main='subset results', cex.main=1.5, cex.lab=1.5,col=use.col)#, pch=use.pch,cex=2)
+legend('bottomright',RF_factors,col=use.col)#,pch=as.factor(RF_factors),cex=1.5)
 
+# make scatterplot matrix, with points colored by cell type
+t.rf <- is.element(rownames(tm.facs.matrix.tfsRF),rf.sig.gn)
+rf.eset <- t(tm.facs.matrix.tfsRF[t.rf,])
+ # this rf.eset has rows for obs and columns for 3 genes
+use.pch <- RF_factors
+use.col <- as.numeric(as.factor(RF_factors))+1
 
-rf.vsb <- varSelRFBoot(tm.facs.matrix.tfsRF, RF_factors[!is_empty(RF_factors)],
+pairs(rf.eset,col=use.col,cex=1.)#,pch=use.pch
+plot(rf.eset[,1], xlab = "Training set",ylab = colnames(rf.eset)[1],col=use.col)
+
+aux <- varselRF.tissFACS$firstForest$importance
+for(i in 1:dim(aux)[2]){
+  plot(aux[,i], xlab = "TFs",ylab = colnames(aux)[i])
+}
+
+plot(aux[,2], xlab = "TFs",ylab = colnames(aux)[1])
+# pairs function makes scatterplot matrix of rf.eset cols.
+#
+# Now - make a profile plot (parallel coordinates plot)
+library(MASS)
+parcoord(rf.eset, col=as.numeric(as.factor(RF_factors))+1, lty=as.numeric(as.factor(RF_factors))+1,
+  lwd=3, var.label=TRUE)
+legend(1.2,.15,RF_factors,lty=as.numeric(as.factor(RF_factors)),
+       lwd=3,col=as.numeric(as.factor(RF_factors)),bty='n')
+
+# # Scatterplot Matrices from the lattice Package 
+# library(lattice)
+# splom(rf.eset, groups=rf.gn)#, data= tm.facs.matrix.tfsRF)#, panel=panel.superpose)#, 
+#    # key=list(title="Three Cylinder Options",
+#    # columns=23,
+#    # points=list(pch=super.sym$pch[1:3],
+#    # col=super.sym$col[1:3]),
+#    # text=list(c("4 Cylinder","6 Cylinder","8 Cylinder"))))
+# 
+library(GGally)
+ggpairs(as.data.frame(rf.eset[,1:3]),aes(colour = RF_factors, alpha = 0.4))#,lower=list(continuous='smooth'), diag=list(continuous='density'), axisLabels = 'show')
+# 
+ggpairs(as.data.frame(varselRF.tissFACS$firstForest$importance[,1:10]))
+
+varselRF.boot.tissFACS <- varSelRFBoot(t(tm.facs.matrix.tfsRF), as.factor(RF_factors),
                        bootnumber = 10,
                        usingCluster = FALSE,
-                       srf = rf.vs1)
+                       srf = varselRF.tissFACS)
 rf.vsb
 summary(rf.vsb)
 
@@ -87,49 +183,12 @@ plot(varselRF.tissFACS, oobProb = TRUE,
 rfsel <- varselRF.tissFACS#.nowholerange
 # Make variable importance plot
 varImpPlot(rfsel$firstForest, n.var=25, main='ALL Subset Results')
-rf.sig.gn <- rfsel$selected.vars
 
-# Visualize these two genes
-exp.gn.1 <- tm.facs.matrix.tfsRF[,colnames(tm.facs.matrix.tfsRF)==rf.sig.gn[1]]
-exp.gn.2 <- tm.facs.matrix.tfsRF[,colnames(tm.facs.matrix.tfsRF)==rf.sig.gn[2]]
-use.pch <- RF_factors#c(rep(1,15),rep(16,15)) # Define plotting chars.
-use.col <- c(rep(1,15),rep(2,15)) # Define plotting colors
-plot(exp.gn.1,exp.gn.2,col=hmcol,main='subset results',
-  cex.main=1.5, cex.lab=1.5, xlab=rf.sig.gn[1],
-  ylab=rf.sig.gn[2])#, pch=use.pch,cex=2)
-legend('bottomright',as.list(RF_factors),pch=c(1,16),col=c(1,2),cex=1.5)
 
 
 rf.gn <- varselRF.tissFACS$selected.vars
 
-# # make scatterplot matrix, with points colored by cell type
-t.rf <- is.element(colnames(tm.facs.matrix.tfsRF),rf.gn)
-rf.eset <- t(tm.facs.matrix.tfsRF[,t.rf])
-#  # this rf.eset has rows for obs and columns for 3 genes
-# use.pch <- c(rep(1,95),rep(16,33))
-# use.col <- cell+1
-# 
-# pairs(rf.eset,col=use.col,pch=use.pch,cex=1.)
-#  # pairs function makes scatterplot matrix of rf.eset cols.
-#
-# # Scatterplot Matrices from the lattice Package 
-# library(lattice)
-# splom(rf.eset, groups=rf.gn)#, data= tm.facs.matrix.tfsRF)#, panel=panel.superpose)#, 
-#    # key=list(title="Three Cylinder Options",
-#    # columns=23,
-#    # points=list(pch=super.sym$pch[1:3],
-#    # col=super.sym$col[1:3]),
-#    # text=list(c("4 Cylinder","6 Cylinder","8 Cylinder"))))
-# 
-# library(GGally)
-# ggpairs(as.data.frame(rf.eset))#,lower=list(continuous='smooth'), diag=list(continuous='density'), axisLabels = 'show')
-# 
-# # Now - make a profile plot (parallel coordinates plot)
-# library(MASS)
-# parcoord(rf.eset, col=cell+1, lty=cell+1, 
-#   lwd=3, var.label=TRUE)
-# legend(1.2,.15,RF_factors,lty=c(1,2),
-#        lwd=3,col=c(1,2),bty='n')
+
 
 ```
 
