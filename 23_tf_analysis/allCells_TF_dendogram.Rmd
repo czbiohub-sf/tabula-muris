@@ -22,7 +22,7 @@ library(ggplot2)
 library(ggdendro)
 library(scales)
 library(wordspace)
-library(GMD)
+#library(GMD)
 
 library(dendextend)
 library(circlize)
