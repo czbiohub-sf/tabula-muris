@@ -3,6 +3,7 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+# Load data and metadata
 ```{r}
 require(Seurat)
 ```
@@ -40,6 +41,11 @@ rownames(tiss@raw.data) <- make.names(rownames(tiss@raw.data))
 rownames(tiss@scale.data) <- make.names(rownames(tiss@scale.data))
 gc()
 ```
+
+```{r}
+tiss@meta.data %>% filter(cell_ontology_class=="neuron") %>% distinct(free_annotation)
+```
+
 
 # Functions: average and fraction expressing per group
 ```{r}
@@ -221,7 +227,7 @@ for(TF.duo in eff.dt[,(TF.duo)]) {
       ranks <- rank(fractions.scaled[tf1,])
     
     }else{
-      ranks <- rank(fractions.scaled[tf1,] + fractions.scaled[tf2,])
+      ranks <- rank(fractions.scaled[tf1,] * fractions.scaled[tf2,])
     }
     neuron.rank <- ranks[which(names(ranks)=="Brain_Non.Myeloid__neuron")]
   }
@@ -231,12 +237,51 @@ for(TF.duo in eff.dt[,(TF.duo)]) {
 
 neuron.ranks <- merge(neuron.ranks, eff.dt, by = "TF.duo")
 ```
+
+
 ```{r}
 ggplot(neuron.ranks, aes(efficiency, neuron.rank)) + geom_point()
+ggplot(neuron.ranks, aes(log10(efficiency), neuron.rank)) + geom_point()
+
 cor.test(neuron.ranks[,efficiency], neuron.ranks[, neuron.rank], method = "spearman")
 
 ```
 
+Tsunemoto discusses how they find "transcription factors that are not recognized as promoting neuronal identity (such as POU5F1, also known as OCT4)" useful for differentiation.
+
+However, we detect Oct4 as being a particularly good marker among the POU TFs. 
+```{r, fig.height=6}
+p1=ggplot(neuron.ranks, aes(TF_1, TF_2, fill=neuron.rank)) + geom_tile()+
+  theme(axis.text.x = element_blank())
+p2=ggplot(neuron.ranks, aes(TF_1, TF_2, fill=-log10(efficiency))) + geom_tile()
+p2=ggplot(neuron.ranks, aes(TF_1, TF_2, fill=efficiency)) + geom_tile() +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+
+plot_grid(p1, p2, ncol=1, nrow=2, align='h')
+```
+
+Gedankenexperiment: what if Tsunemoto et al. had used this analysis to narrow their pool of candidate duos?
+The distribution of ranks is clearly bimodal, so what would their success rate have been had they taken only pairs fromt the best mode? 
+```{r}
+ggplot(neuron.ranks, aes(neuron.rank, ..count..))+geom_histogram()
+neuron.ranks[neuron.rank < 60, duo.type := "good_duo"]
+neuron.ranks[neuron.rank > 60, duo.type := "bad_duo"]
+
+ggplot(neuron.ranks, aes(duo.type, log10(efficiency+.001), fill=duo.type))+geom_violin() +
+  geom_jitter(width = .2, alpha=.3)+
+  theme(legend.position = "none")+
+  ylab("efficiency (log10)")+
+  xlab("")
+
+ggplot(neuron.ranks, aes(duo.type, efficiency, fill=duo.type))+geom_violin() +
+  geom_jitter(width = .2, alpha=.3)+
+  theme(legend.position = "none")+
+  ylab("efficiency")+
+  xlab("")
+
+wilcox.test(efficiency ~ duo.type, data = neuron.ranks)
+
+```
 
 
-
+The tile plot above could be a really useful way to visualize how pairs of TFs generate cell type specificity. Can it be extended to 3 or 4 dimensions? Maybe 3 dimensions...
