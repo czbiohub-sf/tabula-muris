@@ -1,0 +1,500 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r load libraries}
+library(Seurat)
+library(cowplot)
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(parallel)
+library(cba)
+library(here)
+library(RColorBrewer)
+library(tidyverse)
+library(openxlsx)
+library(gplots)
+library(reshape2)
+
+library(ggplot2)
+library(ggdendro)
+library(scales)
+library(wordspace)
+
+library(varSelRF)
+set.seed(644685)
+
+```
+
+```{r load tabula muris data}
+# tm.droplet.matrix = readRDS(here("data-tabula-muris", "TM_droplet_mat.rds"))
+# tm.droplet.metadata = read_csv(here("data-tabula-muris", "TM_droplet_metadata.csv"))
+
+
+tm.facs.matrix = readRDS(here("data-tabula-muris", "TM_facs_mat.rds"))
+tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
+
+```
+
+
+```{r load TFs}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+tfs      <- read.csv(here('23_tf_analysis','GO_term_summary_20171110_222852.csv'))
+tf.names <- as.character( tfs %>% distinct(Symbol) %>% pull(Symbol) )
+tf.names <- make.names(tf.names)
+#tf.names <- tf.names[tf.names %in% rownames(tissFACS@data)]
+length(tf.names)
+
+# # remove genes with very low expression in data
+# x=apply(as.matrix(tissFACS@data[tf.names, ]) > 0, 1, sum) 
+# genes.expr <- names(x[x > 5])
+# tf.names <- tf.names[tf.names %in% genes.expr]
+
+# Remove IEGs
+# iegs <- as.character(read.csv(file.path(tabula.dir,"00_data_ingest/20_dissociation_genes/genes_affected_by_dissociation_unix.csv"), header = T)[,1])
+
+iegs <- as.character(read.csv(here('00_data_ingest','20_dissociation_genes','genes_affected_by_dissociation_unix.csv'), header = T)[,1])
+
+tf.names <- tf.names[!tf.names %in% iegs]
+length(tf.names)
+```
+
+
+```{r prepare data for varselRF}
+tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
+tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,match(tm.facs.metadata$cell[!is.na(tm.facs.metadata$cell_ontology_class)],colnames(tm.facs.matrix))]
+
+rownames(tm.facs.metadata) = tm.facs.metadata$cell
+tm.facs.metadata.tfs <- tm.facs.metadata
+tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
+tissFACStfs <- SubsetData(tissFACStfs, max.cells.per.ident = 100, subset.raw = T)
+
+tm.facs.matrix.tfsRF <- as.matrix(tissFACStfs@data)
+#auxRF_factors <- tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)]
+RF_factors <- tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)]
+#levels(RF_factors) <- 1:length(levels(RF_factors))
+#cell <- as.numeric(RF_factors)
+
+dim(tm.facs.matrix.tfsRF)
+length(RF_factors)
+
+#rf <- randomForest(x = tm.facs.matrix.tfsRF, y = RF_factors,ntree=10)
+# Make variable importance plot
+#varImpPlot(rf, n.var=25, main='ALL Subset Results')
+
+# # Get names of most important genes
+# imp.temp <- importance(rf)
+# t <- order(imp.temp,decreasing=TRUE)
+# gn.imp <- rownames(imp.temp)[t]
+#   # these are in order most...least important
+
+# # Get expression values for 25 most important genes
+# gn.25 <- gn.imp[1:25] # vector of top 25 genes, in order
+# t <- is.element(colnames(tm.facs.matrix.tfsRF),gn.25)
+# sig.eset <- tm.facs.matrix.tfsRF[,t] 
+#   # matrix of expression values, 
+#   # not necessarily in order of importance
+# 
+# # Make a heatmap, with group differences obvious on plot
+# # (similar to Notes 2.3)
+# library(RColorBrewer)
+# hmcol <- colorRampPalette(brewer.pal(9,"Reds"))(256)
+# rownames(sig.eset) <- RF_factors
+#   # This will label the heatmap columns
+# csc <- rep(hmcol[50],30)
+# csc[RF_factors=='T'] <- hmcol[200] 
+#   # column side color will be dark for T and light for B
+# heatmap(sig.eset,scale="col", col=hmcol, labRow = auxRF_factors )#,ColSideColors=csc)
+
+varselRF.tissFACS <- varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = FALSE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+
+varselRF.tissFACS
+summary(varselRF.tissFACS)
+#plot(varselRF.tissFACS)
+plot(varselRF.tissFACS, nvar = NULL, which = c(1, 2))
+
+rf.sig.gn <- varselRF.tissFACS$selected.vars
+# Visualize these two genes
+exp.gn.1 <- tm.facs.matrix.tfsRF[rownames(tm.facs.matrix.tfsRF)==rf.sig.gn[1],]
+exp.gn.2 <- tm.facs.matrix.tfsRF[rownames(tm.facs.matrix.tfsRF)==rf.sig.gn[2],]
+use.pch <- RF_factors#c(rep(1,15),rep(16,15)) # Define plotting chars.
+use.col <- as.numeric(as.factor(RF_factors)) # Define plotting colors
+plot(exp.gn.1,exp.gn.2, xlab=rf.sig.gn[1], ylab=rf.sig.gn[2],main='subset results', cex.main=1.5, cex.lab=1.5,col=use.col)#, pch=use.pch,cex=2)
+legend('bottomright',RF_factors,col=use.col)#,pch=as.factor(RF_factors),cex=1.5)
+
+# make scatterplot matrix, with points colored by cell type
+t.rf <- is.element(rownames(tm.facs.matrix.tfsRF),rf.sig.gn)
+rf.eset <- t(tm.facs.matrix.tfsRF[t.rf,])
+ # this rf.eset has rows for obs and columns for 3 genes
+use.pch <- RF_factors
+use.col <- as.numeric(as.factor(RF_factors))+1
+
+pairs(rf.eset,col=use.col,cex=1.)#,pch=use.pch
+plot(rf.eset[,1], xlab = "Training set",ylab = colnames(rf.eset)[1],col=use.col)
+
+aux <- varselRF.tissFACS$firstForest$importance
+for(i in 1:dim(aux)[2]){
+  plot(aux[,i], xlab = "TFs",ylab = colnames(aux)[i])
+}
+
+plot(aux[,2], xlab = "TFs",ylab = colnames(aux)[1])
+# pairs function makes scatterplot matrix of rf.eset cols.
+#
+# Now - make a profile plot (parallel coordinates plot)
+library(MASS)
+parcoord(rf.eset, col=as.numeric(as.factor(RF_factors))+1, lty=as.numeric(as.factor(RF_factors))+1,
+  lwd=3, var.label=TRUE)
+legend(1.2,.15,RF_factors,lty=as.numeric(as.factor(RF_factors)),
+       lwd=3,col=as.numeric(as.factor(RF_factors)),bty='n')
+
+# # Scatterplot Matrices from the lattice Package 
+# library(lattice)
+# splom(rf.eset, groups=rf.gn)#, data= tm.facs.matrix.tfsRF)#, panel=panel.superpose)#, 
+#    # key=list(title="Three Cylinder Options",
+#    # columns=23,
+#    # points=list(pch=super.sym$pch[1:3],
+#    # col=super.sym$col[1:3]),
+#    # text=list(c("4 Cylinder","6 Cylinder","8 Cylinder"))))
+# 
+library(GGally)
+ggpairs(as.data.frame(rf.eset[,1:3]),aes(colour = RF_factors, alpha = 0.4))#,lower=list(continuous='smooth'), diag=list(continuous='density'), axisLabels = 'show')
+# 
+ggpairs(as.data.frame(varselRF.tissFACS$firstForest$importance[,1:10]))
+
+varselRF.boot.tissFACS <- varSelRFBoot(t(tm.facs.matrix.tfsRF), as.factor(RF_factors),
+                       bootnumber = 10,
+                       usingCluster = FALSE,
+                       srf = varselRF.tissFACS)
+rf.vsb
+summary(rf.vsb)
+
+plot(varselRF.tissFACS, oobProb = TRUE,
+     oobProbBoxPlot = FALSE,
+     ErrorNum = TRUE,
+     subject.names = NULL,
+     class.to.plot = NULL)
+
+rfsel <- varselRF.tissFACS#.nowholerange
+# Make variable importance plot
+varImpPlot(rfsel$firstForest, n.var=25, main='ALL Subset Results')
+
+
+
+rf.gn <- varselRF.tissFACS$selected.vars
+
+
+
+```
+
+```{r}
+
+#####
+##### Slide 13
+#####
+
+### First prepare objects for RF
+### (similar to slide 13 of Notes 3.3)
+
+# load data
+library(affy); library(ALL); data(ALL)
+
+# obtain subset of data; similar to slide 11 of Notes 3.2
+# (here, filter genes on raw scale, then return to log scale)
+# also, keep 30 arrays here JUST for computational 
+# convenience (in-class)
+library(genefilter); e.mat <- 2^(exprs(ALL)[,c(81:110)])
+ffun <- filterfun(pOverA(0.20,100))
+t.fil <- genefilter(e.mat,ffun)
+small.eset <- log2(e.mat[t.fil,])
+dim(small.eset) # 4400 genes, 30 arrays (15 B and 15 T)
+
+group <- c(rep('B',15),rep('T',15)) 
+ # group classification, in order
+
+
+#####
+##### Slide 14
+#####
+
+# One RF
+library(randomForest)
+set.seed(1234)
+print(date())
+rf <- randomForest(x=t(small.eset),y=as.factor(group),
+      ntree=10000)
+print(date()) # about 20 seconds
+
+
+# Make variable importance plot
+varImpPlot(rf, n.var=25, main='ALL Subset Results')
+
+# Get names of most important genes
+imp.temp <- importance(rf)
+t <- order(imp.temp,decreasing=TRUE)
+gn.imp <- rownames(imp.temp)[t]
+  # these are in order most...least important
+
+#####
+##### Slide 15
+#####
+
+# Get expression values for 25 most important genes
+gn.25 <- gn.imp[1:25] # vector of top 25 genes, in order
+t <- is.element(rownames(small.eset),gn.25)
+sig.eset <- small.eset[t,] 
+  # matrix of expression values, 
+  # not necessarily in order of importance
+
+# Make a heatmap, with group differences obvious on plot
+# (similar to Notes 2.3)
+library(RColorBrewer)
+hmcol <- colorRampPalette(brewer.pal(9,"Reds"))(256)
+colnames(sig.eset) <- group 
+  # This will label the heatmap columns
+csc <- rep(hmcol[50],30)
+csc[group=='T'] <- hmcol[200] 
+  # column side color will be dark for T and light for B
+heatmap(sig.eset,scale="row", col=hmcol,ColSideColors=csc)
+
+
+#####
+##### Slide 18 
+#####
+
+# Look at variable selection
+library(varSelRF)
+set.seed(1234)
+print(date())
+rfsel <- varSelRF(t(small.eset),as.factor(group),
+ ntree=10000, ntreeIterat=2000, vars.drop.frac=0.2) 
+print(date()) # 40 seconds
+# rfsel$firstForest is the same as the slide 14 rf object
+rf.sig.gn <- rfsel$selected.vars # "38147_at" "38319_at" 
+# set.seed(123) above gives genes: "2059_s_at" "38319_at"
+
+# Visualize these two genes
+exp.gn.1 <- small.eset[rownames(small.eset)==rf.sig.gn[1],]
+exp.gn.2 <- small.eset[rownames(small.eset)==rf.sig.gn[2],]
+use.pch <- c(rep(1,15),rep(16,15)) # Define plotting chars.
+use.col <- c(rep(1,15),rep(2,15)) # Define plotting colors
+plot(exp.gn.1,exp.gn.2,col=use.col,main='30 subset arrays',
+  cex.main=1.5, cex.lab=1.5, xlab=rf.sig.gn[1],
+  ylab=rf.sig.gn[2], pch=use.pch,cex=2)
+legend('bottomright',
+       c('B-cell','T-cell'),pch=c(1,16),col=c(1,2),cex=1.5)
+
+
+#####
+##### Slide 19 
+#####
+
+# Did this overfit these 30 arrays?
+
+# Look at JUST the other 98 
+# (first 80 are B-cell, last 18 are T-cell)
+
+eset.2 <- exprs(ALL)[,c(1:80,111:128)]
+group.2 <- c(rep(0,80),rep(1,18))
+exp.gn.1 <- eset.2[rownames(eset.2)==rf.sig.gn[1],]
+exp.gn.2 <- eset.2[rownames(eset.2)==rf.sig.gn[2],]
+use.pch.2 <- c(rep(1,80),rep(16,18))
+use.col.2 <- c(rep(1,80),rep(2,18))
+plot(exp.gn.1,exp.gn.2,col=use.col.2, 
+  main='non-subset arrays', cex.main=1.5,cex=2, cex.lab=1.5,
+  xlab=rf.sig.gn[1], ylab=rf.sig.gn[2], pch=use.pch.2)
+legend('bottomright',
+       c('B-cell','T-cell'),pch=c(1,16),col=c(1,2),cex=1.5)
+
+
+#####
+##### Slide 21
+#####
+
+# RF variable selection with full data set
+
+# set seed and define initial objects
+set.seed(123)
+eset <- exprs(ALL) # 12625 genes, 128 arrays
+cell <- c(rep(0,95),rep(1,33))  
+  # first 95 are B-cell; last 33 are T-cell
+
+print(date())
+rf.big <- varSelRF(t(eset),as.factor(cell),
+  ntree=10000, ntreeIterat=2000, vars.drop.frac=0.2) 
+print(date())  # about 9 minutes
+
+rf.gn <- rf.big$selected.vars 
+  #   "33039_at" "35016_at" "38319_at"
+
+
+#####
+##### Slide 22
+#####
+
+# make scatterplot matrix, with points colored by cell type
+t.rf <- is.element(rownames(eset),rf.gn)
+rf.eset <- t(eset[t.rf,])
+ # this rf.eset has rows for obs and columns for 3 genes
+use.pch <- c(rep(1,95),rep(16,33))
+use.col <- cell+1
+pairs(rf.eset,col=use.col,pch=use.pch,cex=1.5)
+ # pairs function makes scatterplot matrix of rf.eset cols.
+
+# Now - make a profile plot (parallel coordinates plot)
+library(MASS)
+parcoord(rf.eset, col=cell+1, lty=cell+1, 
+  lwd=3, var.label=TRUE)
+legend(1.2,.15,c('B-cell','T-cell'),lty=c(1,2),
+       lwd=3,col=c(1,2),bty='n')
+
+```
+
+```{r}
+[1] "Initial OOB error: mean = 0.267; sd = 0.0081"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236014  172.9    5684620  303.6   5684620  303.6
+Vcells 449233930 3427.4  662921760 5057.7 652194075 4975.9
+[1] "..... iteration 1; OOB error: mean = 0.266; sd = 0.0081; num. vars = 813"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236822  172.9    5684620  303.6   5684620  303.6
+Vcells 461998350 3524.8  662921760 5057.7 652194075 4975.9
+[1] "..... iteration 2; OOB error: mean = 0.262; sd = 0.008; num. vars = 650"
+[1] "gc inside loop of varSelRF"
+            used (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3237552  173    5684620  303.6   5684620  303.6
+Vcells 474732374 3622  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 3; OOB error: mean = 0.2573; sd = 0.008; num. vars = 520"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3237260  172.9    5684620  303.6   5684620  303.6
+Vcells 474353143 3619.1  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 4; OOB error: mean = 0.2543; sd = 0.008; num. vars = 416"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3237027  172.9    5684620  303.6   5684620  303.6
+Vcells 474156161 3617.6  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 5; OOB error: mean = 0.2493; sd = 0.0079; num. vars = 333"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236841  172.9    5684620  303.6   5684620  303.6
+Vcells 473805376 3614.9  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 6; OOB error: mean = 0.2467; sd = 0.0079; num. vars = 266"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236692  172.9    5684620  303.6   5684620  303.6
+Vcells 473244744 3610.6  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 7; OOB error: mean = 0.2487; sd = 0.0079; num. vars = 213"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236573  172.9    5684620  303.6   5684620  303.6
+Vcells 473216239 3610.4  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 8; OOB error: mean = 0.2493; sd = 0.0079; num. vars = 170"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236478  172.9    5684620  303.6   5684620  303.6
+Vcells 473201834 3610.3  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 9; OOB error: mean = 0.2473; sd = 0.0079; num. vars = 136"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236402  172.9    5684620  303.6   5684620  303.6
+Vcells 473313509 3611.1  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 10; OOB error: mean = 0.254; sd = 0.0079; num. vars = 109"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236342  172.9    5684620  303.6   5684620  303.6
+Vcells 473495254 3612.5  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 11; OOB error: mean = 0.2557; sd = 0.008; num. vars = 87"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236294  172.9    5684620  303.6   5684620  303.6
+Vcells 473607048 3613.4  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 12; OOB error: mean = 0.2637; sd = 0.008; num. vars = 70"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236256  172.9    5684620  303.6   5684620  303.6
+Vcells 473914884 3615.7  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 13; OOB error: mean = 0.2797; sd = 0.0082; num. vars = 56"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236226  172.9    5684620  303.6   5684620  303.6
+Vcells 474236752 3618.2  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 14; OOB error: mean = 0.3043; sd = 0.0084; num. vars = 45"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236202  172.9    5684620  303.6   5684620  303.6
+Vcells 474348646 3619.0  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 15; OOB error: mean = 0.3337; sd = 0.0086; num. vars = 36"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236183  172.9    5684620  303.6   5684620  303.6
+Vcells 474474561 3620.0  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 16; OOB error: mean = 0.3643; sd = 0.0088; num. vars = 29"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236168  172.9    5684620  303.6   5684620  303.6
+Vcells 474054494 3616.8  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 17; OOB error: mean = 0.3847; sd = 0.0089; num. vars = 23"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236156  172.9    5684620  303.6   5684620  303.6
+Vcells 472836443 3607.5  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 18; OOB error: mean = 0.4077; sd = 0.009; num. vars = 18"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236146  172.9    5684620  303.6   5684620  303.6
+Vcells 471912400 3600.5  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 19; OOB error: mean = 0.4367; sd = 0.0091; num. vars = 14"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236138  172.9    5684620  303.6   5684620  303.6
+Vcells 470932369 3593.0  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 20; OOB error: mean = 0.4867; sd = 0.0091; num. vars = 11"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236132  172.9    5684620  303.6   5684620  303.6
+Vcells 471646362 3598.4  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 21; OOB error: mean = 0.5223; sd = 0.0091; num. vars = 9"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236128  172.9    5684620  303.6   5684620  303.6
+Vcells 472430373 3604.4  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 22; OOB error: mean = 0.5893; sd = 0.009; num. vars = 7"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236125  172.9    5684620  303.6   5684620  303.6
+Vcells 468930333 3577.7  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 23; OOB error: mean = 0.6203; sd = 0.0089; num. vars = 6"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236123  172.9    5684620  303.6   5684620  303.6
+Vcells 466032302 3555.6  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 24; OOB error: mean = 0.6567; sd = 0.0087; num. vars = 5"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236122  172.9    5684620  303.6   5684620  303.6
+Vcells 466900308 3562.2  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 25; OOB error: mean = 0.6917; sd = 0.0084; num. vars = 4"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236121  172.9    5684620  303.6   5684620  303.6
+Vcells 466634288 3560.2  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 26; OOB error: mean = 0.719; sd = 0.0082; num. vars = 3"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236120  172.9    5684620  303.6   5684620  303.6
+Vcells 461860272 3523.8  795586112 6069.9 652194075 4975.9
+[1] "..... iteration 27; OOB error: mean = 0.808; sd = 0.0072; num. vars = 2"
+[1] "gc inside loop of varSelRF"
+            used   (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3236119  172.9    5684620  303.6   5684620  303.6
+Vcells 459396261 3505.0  795586112 6069.9 652194075 4975.9
+```
+
