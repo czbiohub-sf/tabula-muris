@@ -361,22 +361,24 @@ summary(varselRF.tissFACS.all.wr)
 plot(varselRF.tissFACS.all.wr, nvar = NULL, which = c(1, 2))
 varImpPlot(varselRF.tissFACS.all.wr$firstForest, n.var=25, main='first forest')
 
+
+# plot tree
+library(party)
+plot(varselRF.tissFACS.all$rf.model)
+
 # write csv
 library(openxlsx)
 library(stringr)
-
 wb <- createWorkbook("rf.model.all")
-
-  
-    cell.type.markers <- importance.matrix[importance.matrix[,i]>0,2]
-    pos.markers <- length(cell.type.markers)
-    sort.markers <- sort(cell.type.markers, decreasing = TRUE)
-    cell.type.markers <- as.data.frame(sort.markers[1:round(.01*pos.markers)])
-    colnames(cell.type.markers) <- "importance"
-    sheetname <- "rf.model"
-    addWorksheet(wb,sheetname)
-    writeData(wb, sheet = sheetname, cell.type.markers,rowNames = TRUE)
-
+sheetname <- "rf.model"
+addWorksheet(wb,sheetname)
+writeData(wb, sheet = sheetname, as.data.frame(apply(varselRF.tissFACS.all$rf.model$importance,decreasing = TRUE,2,sort)),rowNames = TRUE)
+sheetname <- "factors.cell.type.organ"
+addWorksheet(wb,sheetname)
+writeData(wb, sheet = sheetname, unique(varselRF.tissFACS.all$rf.model$predicted),rowNames = TRUE)
+sheetname <- "confusion.matrix"
+addWorksheet(wb,sheetname)
+writeData(wb, sheet = sheetname, varselRF.tissFACS.all$rf.model$confusion,rowNames = TRUE)
 saveWorkbook(wb,"rf.model.all.xlsx",overwrite = TRUE)
 
 ```
