@@ -292,3 +292,112 @@ legend(1.2,.15,c('B-cell','T-cell'),lty=c(1,2),
 
 ```
 
+```{r varselRF all}
+tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
+tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,match(tm.facs.metadata$cell[!is.na(tm.facs.metadata$cell_ontology_class)],colnames(tm.facs.matrix))]
+
+rownames(tm.facs.metadata) = tm.facs.metadata$cell
+tm.facs.metadata.tfs <- tm.facs.metadata
+
+tm.facs.metadata.tfs$factors <- paste(tm.facs.metadata$cell_ontology_class, tm.facs.metadata$tissue, sep="__")
+
+# cell.type.tissue <- unique(tm.facs.metadata.tfs$factors[!is.na(tm.facs.metadata.tfs$cell_ontology_class)])
+# 
+# for (varselrf.id in 1:length(cell.type.tissue)){
+#   
+#   print(varselrf.id)
+  # tm.facs.metadata.tfs$varSelRF <- tm.facs.metadata.tfs$factors
+  # 
+  # tm.facs.metadata.tfs$varSelRF[tm.facs.metadata.tfs$varSelRF != cell.type.tissue[varselrf.id]] <- "A"
+  # tm.facs.metadata.tfs$varSelRF[tm.facs.metadata.tfs$varSelRF == cell.type.tissue[varselrf.id]] <- "B"
+
+tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
+tissFACStfs <- SetAllIdent(object = tissFACStfs, id = "factors")
+tissFACStfs <- SubsetData(tissFACStfs, max.cells.per.ident = 25, subset.raw = T)
+
+tm.facs.matrix.tfsRF <- as.matrix(tissFACStfs@data)
+
+RF_factors <- tissFACStfs@meta.data$factors
+
+dim(tm.facs.matrix.tfsRF)
+length(unique(RF_factors))
+
+
+varselRF.tissFACS.all.wr <- varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = TRUE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+
+varselRF.tissFACS.all <- varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = FALSE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+
+# cell.type.tissue.name <- paste("varselRF.tissFACS",cell.type.tissue[varselrf.id], sep = ".")
+# cell.type.tissue.name.wr <- paste("varselRF.tissFACS.wr",cell.type.tissue[varselrf.id], sep = ".")
+# assign(cell.type.tissue.name, varselRF.tissFACS)
+# assign(cell.type.tissue.name.wr, varselRF.tissFACS.wr)
+#   
+  #varselRF.tissFACS
+  #summary(varselRF.tissFACS)
+  #plot(varselRF.tissFACS, nvar = NULL, which = c(1, 2))
+  #varImpPlot(varselRF.tissFACS$firstForest, n.var=25, main='ALL Subset Results')
+#}
+
+```
+
+
+
+
+
+```{r varselRF plots and outputs}
+varselRF.tissFACS.all.wr # result of varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = TRUE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+
+varselRF.tissFACS.all # result of varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = FALSE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+
+varselRF.tissFACS.all
+summary(varselRF.tissFACS.all)
+plot(varselRF.tissFACS.all, nvar = NULL, which = c(1, 2))
+varImpPlot(varselRF.tissFACS.all$firstForest, n.var=25, main='first forest')
+varImpPlot(varselRF.tissFACS.all$rf.model, n.var=25, main='rf model')
+write.csv(as.data.frame(apply(varselRF.tissFACS.all$rf.model$importance,decreasing = TRUE,2,sort)), file = "rf.model.all.csv")
+
+varselRF.tissFACS.all.wr
+summary(varselRF.tissFACS.all.wr)
+plot(varselRF.tissFACS.all.wr, nvar = NULL, which = c(1, 2))
+varImpPlot(varselRF.tissFACS.all.wr$firstForest, n.var=25, main='first forest')
+
+# write csv
+library(openxlsx)
+library(stringr)
+
+wb <- createWorkbook("rf.model.all")
+
+  
+    cell.type.markers <- importance.matrix[importance.matrix[,i]>0,2]
+    pos.markers <- length(cell.type.markers)
+    sort.markers <- sort(cell.type.markers, decreasing = TRUE)
+    cell.type.markers <- as.data.frame(sort.markers[1:round(.01*pos.markers)])
+    colnames(cell.type.markers) <- "importance"
+    sheetname <- "rf.model"
+    addWorksheet(wb,sheetname)
+    writeData(wb, sheet = sheetname, cell.type.markers,rowNames = TRUE)
+
+saveWorkbook(wb,"rf.model.all.xlsx",overwrite = TRUE)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
