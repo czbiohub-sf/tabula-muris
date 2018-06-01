@@ -44,6 +44,8 @@ gc()
 
 ```{r}
 tiss@meta.data %>% filter(cell_ontology_class=="neuron") %>% distinct(free_annotation)
+tiss@meta.data %>% filter(tissue=="Brain_Non.Myeloid") %>% distinct(cell_ontology_class)
+
 ```
 
 
@@ -83,7 +85,7 @@ fractions <- group_fractions(tiss@data, tiss@ident)
 write.csv(fractions, "fractions.csv")
 ```
 
-# Get all cell types expressing all genes above minimum fraction
+# Analyze cell type specificity of genes from known TF reprogramming protocols
 ```{r}
 # A.k.a "BAM"
 print("Target cell type: neuron")
@@ -188,13 +190,19 @@ metadata %>% filter(tissue=="Brain_Non.Myeloid") %>% distinct(cell_ontology_clas
 ```
 
 
-# Does our data tell us anything interesting about the relationships between TF and efficiency? 
+# Correlation of reprogramming efficiency and cell type specificity of TF combos
+
+##Z-scores, Tsunemoto et al. TF pair screen from
 Data from Tsunemoto et al, 2018
 ```{r}
 require(data.table)
-eff.mat <- fread("Tsunemoto_reprog_efficiencies.csv")
-eff.dt <- melt.data.table(eff.mat, id.vars = "V1", variable.name = "TF_1", value.name = "efficiency")
+require(Hmisc)
+eff.mat <- read.csv("Tsunemoto_reprog_efficiencies.csv")
+eff.dt <- melt.data.table(as.data.table(eff.mat), id.vars = "X", variable.name = "TF_1", value.name = "efficiency")
 setnames(eff.dt, c("TF_2","TF_1","efficiency"))
+
+eff.dt[, TF_1 := capitalize(tolower(TF_1))]
+eff.dt[, TF_2 := capitalize(tolower(TF_2))]
 eff.dt <- eff.dt[,.(TF_1,TF_2,efficiency)]
 
 eff.dt[,efficiency:=0.01*efficiency]
@@ -204,10 +212,107 @@ eff.dt
 
 ```
 
-# Does "Neuron" rank predict efficiency?
+Score each TF combo by how highly neurons score based on a "coexpression score".
+Coexpression score = scaled.fraction(TF1) * scaled.fraction(TF2)
+
+Not convinced rank is a good metric (due to ties, etc) - how about z-score?
 ```{r}
-# First, scale each gene's fraction to 1
-fractions.scaled <- fractions / apply(fractions, 2, max)
+# First, divide each gene by the maximum fraction OR 0.1, whichever is larger.
+max.fractions <- apply(fractions, 2, max)
+max.fractions[max.fractions < 0.1] <- 0.1
+fractions.scaled <- fractions / max.fractions
+
+eff.dt <- eff.dt[TF_1 %in% rownames(fractions)][TF_2 %in% rownames(fractions)]
+
+require(doMC)
+neuron.scores=data.table()
+for(TF.duo in eff.dt[,(TF.duo)]) {
+  tfs <- strsplit(TF.duo, split = "_")[[1]]
+  tf1 <- tfs[1]
+  tf2 <- tfs[2]
+  
+  if((tf1 == "None") && (tf2 == "None")){
+    neuron.score=NA
+  }else{
+    if(tf1 == "None"){
+      scores <- scale(fractions.scaled[tf2,])
+    }else if(tf2 == "None"){
+      scores <- scale(fractions.scaled[tf1,])
+    
+    }else{
+      scores <- scale(fractions.scaled[tf1,] * fractions.scaled[tf2,])
+    }
+    scores <- as.numeric(scores)
+    names(scores) <- colnames(fractions.scaled)
+    neuron.score <- scores[which(names(scores)=="Brain_Non.Myeloid__neuron")]
+  }
+  
+  neuron.scores <- rbind(neuron.scores, data.table(TF.duo, neuron.score))
+}
+
+neuron.scores <- merge(neuron.scores, eff.dt, by = "TF.duo")
+```
+
+
+```{r}
+ggplot(neuron.scores, aes(efficiency, neuron.score)) + geom_point()
+ggplot(neuron.scores, aes(log10(efficiency), neuron.score)) + geom_point()
+
+cor.test(neuron.scores[,efficiency], neuron.scores[, neuron.score], method = "spearman")
+```
+
+Tsunemoto discusses how they find "transcription factors that are not recognized as promoting neuronal identity (such as POU5F1, also known as OCT4)" useful for differentiation.
+
+However, we detect Oct4 as being a particularly good marker among the POU TFs. 
+```{r, fig.height=6}
+p1=ggplot(neuron.scores, aes(TF_1, TF_2, fill=neuron.score)) + geom_tile()+
+  theme(axis.text.x = element_blank())
+p2=ggplot(neuron.scores, aes(TF_1, TF_2, fill=log10(efficiency))) + geom_tile()+
+    theme(axis.text.x = element_text(angle=45, hjust=1))
+
+p2=ggplot(neuron.scores, aes(TF_1, TF_2, fill=efficiency)) + geom_tile() +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+
+plot_grid(p1, p2, ncol=1, nrow=2, align='h')
+```
+
+Gedankenexperiment: what if Tsunemoto et al. had used this analysis to narrow their pool of candidate duos?
+The distribution of scores is clearly bimodal, so what would their success rate have been had they taken only pairs fromt the best mode? 
+```{r}
+ggplot(neuron.scores, aes(neuron.score, ..count..))+geom_histogram()
+neuron.scores[neuron.score < 8, duo.type := "lowScore"]
+neuron.scores[neuron.score > 8, duo.type := "highScore"]
+
+ggplot(neuron.scores, aes(duo.type, log10(efficiency+.001), fill=duo.type))+geom_violin() +
+  geom_jitter(width = .2, alpha=.3)+
+  theme(legend.position = "none")+
+  ylab("efficiency (log10)")+
+  xlab("")
+
+ggplot(neuron.scores, aes(duo.type, efficiency, fill=duo.type))+geom_violin() +
+  geom_jitter(width = .2, alpha=.3)+
+  theme(legend.position = "none")+
+  ylab("efficiency")+
+  xlab("")
+
+wilcox.test(efficiency ~ duo.type, data = neuron.scores)
+
+```
+
+```{r}
+
+```
+
+## Rank scores, Tsunemoto et al. TF pair screen from
+Score each TF combo by how highly neurons score based on a "coexpression score".
+Coexpression rank = rank(scaled.fraction(TF1) * scaled.fraction(TF2))
+
+Result: there is actually a negative dependence - TF combos that give a high rank for neuron specificity are somewhat less likely to make for a good TF protocol
+```{r}
+# First, divide each gene by the maximum fraction OR 0.1, whichever is larger.
+max.fractions <- apply(fractions, 2, max)
+max.fractions[max.fractions < 0.1] <- 0.1
+fractions.scaled <- fractions / max.fractions
 
 eff.dt <- eff.dt[TF_1 %in% rownames(fractions)][TF_2 %in% rownames(fractions)]
 
@@ -222,9 +327,9 @@ for(TF.duo in eff.dt[,(TF.duo)]) {
     neuron.rank=NA
   }else{
     if(tf1 == "None"){
-      ranks <- rank(fractions.scaled[tf2,])
+      ranks <- scale(fractions.scaled[tf2,])
     }else if(tf2 == "None"){
-      ranks <- rank(fractions.scaled[tf1,])
+      ranks <- scale(fractions.scaled[tf1,])
     
     }else{
       ranks <- rank(fractions.scaled[tf1,] * fractions.scaled[tf2,])
@@ -244,7 +349,6 @@ ggplot(neuron.ranks, aes(efficiency, neuron.rank)) + geom_point()
 ggplot(neuron.ranks, aes(log10(efficiency), neuron.rank)) + geom_point()
 
 cor.test(neuron.ranks[,efficiency], neuron.ranks[, neuron.rank], method = "spearman")
-
 ```
 
 Tsunemoto discusses how they find "transcription factors that are not recognized as promoting neuronal identity (such as POU5F1, also known as OCT4)" useful for differentiation.
@@ -253,7 +357,9 @@ However, we detect Oct4 as being a particularly good marker among the POU TFs.
 ```{r, fig.height=6}
 p1=ggplot(neuron.ranks, aes(TF_1, TF_2, fill=neuron.rank)) + geom_tile()+
   theme(axis.text.x = element_blank())
-p2=ggplot(neuron.ranks, aes(TF_1, TF_2, fill=-log10(efficiency))) + geom_tile()
+p2=ggplot(neuron.ranks, aes(TF_1, TF_2, fill=log10(efficiency))) + geom_tile()+
+    theme(axis.text.x = element_text(angle=45, hjust=1))
+
 p2=ggplot(neuron.ranks, aes(TF_1, TF_2, fill=efficiency)) + geom_tile() +
   theme(axis.text.x = element_text(angle=45, hjust=1))
 
@@ -261,11 +367,11 @@ plot_grid(p1, p2, ncol=1, nrow=2, align='h')
 ```
 
 Gedankenexperiment: what if Tsunemoto et al. had used this analysis to narrow their pool of candidate duos?
-The distribution of ranks is clearly bimodal, so what would their success rate have been had they taken only pairs fromt the best mode? 
+The distribution of scores is clearly bimodal, so what would their success rate have been had they taken only pairs fromt the best mode? 
 ```{r}
 ggplot(neuron.ranks, aes(neuron.rank, ..count..))+geom_histogram()
-neuron.ranks[neuron.rank < 60, duo.type := "good_duo"]
-neuron.ranks[neuron.rank > 60, duo.type := "bad_duo"]
+neuron.ranks[neuron.rank < 80, duo.type := "lowRank"]
+neuron.ranks[neuron.rank > 80, duo.type := "highRank"]
 
 ggplot(neuron.ranks, aes(duo.type, log10(efficiency+.001), fill=duo.type))+geom_violin() +
   geom_jitter(width = .2, alpha=.3)+
@@ -284,4 +390,119 @@ wilcox.test(efficiency ~ duo.type, data = neuron.ranks)
 ```
 
 
-The tile plot above could be a really useful way to visualize how pairs of TFs generate cell type specificity. Can it be extended to 3 or 4 dimensions? Maybe 3 dimensions...
+
+
+## Vierbuchen et al., 
+Data from Tsunemoto et al, 2018
+```{r}
+require(data.table)
+eff.dt <- fread("Vierbuchen_Fig5A_digitized.csv")
+setnames(eff.dt, c("Bar", "mean_Tuj1_cells"))
+eff.dt[, TF_combo := c("5F","BAM","BAZ","AMO",'AOZ','ABO','AMZ','BMZ','BMO','BOZ','MOZ','Gfp')]
+eff.dt <- eff.dt[2:(nrow(eff.dt)-1)]
+
+eff.dt[substr(TF_combo, 1,1)=="B", TF_1:="Pou3f2"]
+eff.dt[substr(TF_combo, 2,2)=="B", TF_2:="Pou3f2"]
+eff.dt[substr(TF_combo, 3,3)=="B", TF_3:="Pou3f2"]
+
+eff.dt[substr(TF_combo, 1,1)=="A", TF_1:="Ascl1"]
+eff.dt[substr(TF_combo, 2,2)=="A", TF_2:="Ascl1"]
+eff.dt[substr(TF_combo, 3,3)=="A", TF_3:="Ascl1"]
+
+eff.dt[substr(TF_combo, 1,1)=="M", TF_1:="Myt1l"]
+eff.dt[substr(TF_combo, 2,2)=="M", TF_2:="Myt1l"]
+eff.dt[substr(TF_combo, 3,3)=="M", TF_3:="Myt1l"]
+
+eff.dt[substr(TF_combo, 1,1)=="Z", TF_1:="Zic1"]
+eff.dt[substr(TF_combo, 2,2)=="Z", TF_2:="Zic1"]
+eff.dt[substr(TF_combo, 3,3)=="Z", TF_3:="Zic1"]
+
+eff.dt[substr(TF_combo, 1,1)=="O", TF_1:="Olig2"]
+eff.dt[substr(TF_combo, 2,2)=="O", TF_2:="Olig2"]
+eff.dt[substr(TF_combo, 3,3)=="O", TF_3:="Olig2"]
+
+eff.dt[, TF_combo := paste(TF_1, TF_2, TF_3, sep="_")]
+eff.dt
+```
+
+Score each TF combo by how highly neurons score based on a "coexpression score".
+Coexpression score = scaled.fraction(TF1) * scaled.fraction(TF2)
+
+```{r}
+# First, scale each gene's fraction to 1
+max.fractions <- apply(fractions, 2, max)
+max.fractions[max.fractions < 0.1] <- 0.1
+fractions.scaled <- fractions / max.fractions
+
+
+eff.dt <- eff.dt[TF_1 %in% rownames(fractions)][TF_2 %in% rownames(fractions)][TF_3 %in% rownames(fractions)]
+
+require(doMC)
+neuron.scores=data.table()
+for(i in 1:nrow(eff.dt)) {
+  tf1 <- eff.dt[["TF_1"]][i]
+  tf2 <- eff.dt[["TF_2"]][i]
+  tf3 <- eff.dt[["TF_3"]][i]
+  
+  scores <- scale(fractions.scaled[tf1,] * fractions.scaled[tf2,] * fractions.scaled[tf3,])
+  scores <- as.numeric(scores)
+  names(scores) <- colnames(fractions.scaled)
+  neuron.score <- scores[which(names(scores)=="Brain_Non.Myeloid__neuron")]
+
+  neuron.scores <- rbind(neuron.scores, data.table(tf1, tf2, tf3, neuron.score))
+}
+neuron.scores[, TF_combo := paste(tf1, tf2, tf3, sep="_")]
+
+neuron.scores <- merge(neuron.scores[,.(TF_combo, neuron.score)], eff.dt, by = "TF_combo")
+neuron.scores
+```
+
+
+
+```{r}
+ggplot(neuron.scores,aes(neuron.score, mean_Tuj1_cells))+
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+```{r}
+# First, scale each gene's fraction to 1
+max.fractions <- apply(fractions, 2, max)
+max.fractions[max.fractions < 0.1] <- 0.1
+fractions.scaled <- fractions / max.fractions
+
+
+eff.dt <- eff.dt[TF_1 %in% rownames(fractions)][TF_2 %in% rownames(fractions)][TF_3 %in% rownames(fractions)]
+
+require(doMC)
+neuron.scores=data.table()
+for(i in 1:nrow(eff.dt)) {
+  tf1 <- eff.dt[["TF_1"]][i]
+  tf2 <- eff.dt[["TF_2"]][i]
+  tf3 <- eff.dt[["TF_3"]][i]
+  
+  scores <- rank(fractions.scaled[tf1,] * fractions.scaled[tf2,] * fractions.scaled[tf3,], ties.method = )
+  scores <- as.numeric(scores)
+  names(scores) <- colnames(fractions.scaled)
+  neuron.score <- scores[which(names(scores)=="Brain_Non.Myeloid__neuron")]
+
+  neuron.scores <- rbind(neuron.scores, data.table(tf1, tf2, tf3, neuron.score))
+}
+neuron.scores[, TF_combo := paste(tf1, tf2, tf3, sep="_")]
+
+neuron.scores <- merge(neuron.scores[,.(TF_combo, neuron.score)], eff.dt, by = "TF_combo")
+neuron.scores
+```
+
+
+## Predictivity scores
+Score TF combos by how accurately you can predict neuronal class by that combo of genes. 
+```{r}
+tm.subsampled <- SubsetData(tiss, max.cells.per.ident = 50, subset.raw = T)
+# tm.subsampled@ident <- factor(NA, levels = c("neuron","other"))
+# tm.subsampled@ident[tm.subsampled@meta.data$cell_ontology_class=="neuron"] <- "neuron"
+# tm.subsampled@ident[tm.subsampled@meta.data$cell_ontology_class!="neuron"] <- "other"
+# 
+
+rfc <- Seurat::BuildRFClassifier(tm.subsampled, training.genes = c("Ascl1","Myt1l","Pou3f2"))
+```

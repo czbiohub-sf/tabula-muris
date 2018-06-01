@@ -4,6 +4,7 @@ output: html_notebook
 ---
 
 ```{r}
+rm(list=ls())
 library(Seurat)
 library(cowplot)
 library(data.table)
@@ -107,10 +108,6 @@ write.csv(epith.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.nam
 cell.type = "stromal"
 system(paste("mkdir",cell.type))
 
-strom.labels <- tiss@meta.data %>% filter(cell_ontology_class %in% c('stromal', 'fibroblasts', 'mesenchymal','mesenchymal_stem','stromal_stem'))
-strom.labels %>% distinct(tissue, cell_ontology_class)
-
-
 strom.labels <- bind_rows(tiss@meta.data %>% filter(annotation.2 %like% 'strom'), 
                           tiss@meta.data %>% filter(annotation.2 %like% 'fibro'),
                           tiss@meta.data %>% filter(annotation.2 %like% 'mesen'))
@@ -118,6 +115,21 @@ strom.labels %>% distinct(tissue, cell_ontology_class, annotation.2)
 strom.cells.all <- unique(as.character(strom.labels %>% pull(cell)))
 write.csv(strom.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.names = F)
 
+
+cell.type = "bcell"
+system(paste("mkdir",cell.type))
+bcell.labels <- tiss@meta.data %>% filter(cell_ontology_class %like% "B.cell")
+bcell.labels %>% distinct(tissue, cell_ontology_class, free_annotation)
+bcell.cells.all <- unique(as.character(bcell.labels %>% pull(cell)))
+write.csv(bcell.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.names = F)
+
+
+cell.type = "tcell"
+system(paste("mkdir",cell.type))
+tcell.labels <- tiss@meta.data %>% filter(cell_ontology_class %like% "T.cell")
+tcell.labels %>% distinct(tissue, cell_ontology_class, free_annotation)
+tcell.cells.all <- unique(as.character(tcell.labels %>% pull(cell)))
+write.csv(tcell.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.names = F)
 ```
 
 # Functions
@@ -367,6 +379,9 @@ Cells are subsampled here which speeds up the calculation. The subsampled cells 
 celltype.diffexpr(data = tiss, cell.type = 'endothelial', max.cells.per.ident = 60, n.cores = 4)
 celltype.diffexpr(data = tiss, cell.type = 'epithelial', max.cells.per.ident = 60, n.cores = 4)
 celltype.diffexpr(data = tiss, cell.type = 'stromal', max.cells.per.ident = 100, n.cores = 4)
+
+celltype.diffexpr(data = tiss, cell.type = 'bcell', max.cells.per.ident = 100, n.cores = 4)
+celltype.diffexpr(data = tiss, cell.type = 'tcell', max.cells.per.ident = 100, n.cores = 4)
 ```
 
 # Plot correlograms of DE TFs within broad cell classes
@@ -374,10 +389,14 @@ celltype.diffexpr(data = tiss, cell.type = 'stromal', max.cells.per.ident = 100,
 # low pval/expr diff cutoffs
 corr.endo=plot.correlogram('endothelial', 1e-7, 0.3, 8, height=8)
 
-corr.epith=plot.correlogram('epithelial', 1e-7, 0.35, 8)
+corr.epith=plot.correlogram('epithelial', 1e-7, 0.3, 4)
 
 corr.strom=plot.correlogram('stromal', 1e-7, 0.3, 8)
  
+corr.bcell=plot.correlogram('bcell', 1e-7, 0.3, 8)
+
+corr.tcell=plot.correlogram('tcell', 1e-7, 0.3, 8)
+
 ```
 
 # Plot tSNE plots of DE TFs
@@ -388,6 +407,8 @@ make.tSNE(tiss,'endothelial', n.pcs=10) # re-runs all the steps including normal
 make.tSNE(tiss,'epithelial', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
 make.tSNE(tiss,'stromal', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
 
+make.tSNE(tiss,'bcell', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
+make.tSNE(tiss,'tcell', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
 ```
 
 
@@ -405,5 +426,9 @@ plot.tsne.annot(tiss,'epithelial')
 plot.tsne.annot(tiss,'stromal')
 # genes.plot <- c("Foxq1","Pbx1","Gata4","Meox2")
 # plot.tsne.markers(tiss, 'stromal', genes.plot)
+
+plot.tsne.annot(tiss,'bcell')
+plot.tsne.annot(tiss,'tcell')
+
 ```
 
