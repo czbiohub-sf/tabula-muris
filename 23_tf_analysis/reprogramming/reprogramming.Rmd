@@ -11,8 +11,11 @@ require(Seurat)
 
 ```{r}
 load("../../data/All_seurat_tiss.Robj")
+```
 
-metadata <- read.csv('../../data/TM_facs_metadata.csv')
+
+```{r}
+metadata <- read.csv('../../TM_facs_metadata.csv')
 metadata <- metadata %>%  filter(cell_ontology_class!='unknown' & !is.na(tissue) & !is.na(cell_ontology_class))
 metadata$tissue <- make.names(metadata$tissue)
 metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class)
@@ -20,6 +23,10 @@ metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class)
 # make "annotation.2"
 metadata  <- metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
 
+
+```
+
+```{r}
 tissue_colors <- read.csv(file.path(tabula.dir,'00_data_ingest/15_color_palette/tissue_colors.csv'))
 colnames(tissue_colors) <- c('tissue','tiss.color')
 tissue_colors$tissue <- make.names(tissue_colors$tissue)
@@ -50,6 +57,7 @@ tiss@meta.data %>% filter(tissue=="Brain_Non.Myeloid") %>% distinct(cell_ontolog
 
 
 # Functions: average and fraction expressing per group
+
 ```{r}
 group_averages <- function(mat, groups){
   group_names = unique(groups)
@@ -86,6 +94,11 @@ write.csv(fractions, "fractions.csv")
 ```
 
 # Analyze cell type specificity of genes from known TF reprogramming protocols
+```{r}
+fractions <- read.csv("fractions.csv", row.names = 1)
+```
+
+
 ```{r}
 # A.k.a "BAM"
 print("Target cell type: neuron")
@@ -157,6 +170,23 @@ genes <- c("Sox10","Olig2","Zfp536")
 colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
 
 
+# 10.1016/j.stem.2017.08.020
+# Target cell type: fetal intestinal progenitor cells
+genes <- c("Hnf4a","Foxa3","Gata6","Cdx2")
+genes <- genes[genes %in% rownames(fractions)]
+print(genes)
+thresh=.4
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+# target cell type: hematopoeitic progenitors
+# 10.1016/j.celrep.2014.11.002
+genes <- c("Erg","Gata2","Lmo2","Runx1","Tal1")
+genes <- genes[genes %in% rownames(fractions)]
+print(genes)
+thresh=.4
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+
+
 # TFs that turn B cells into macrophages (doi:10.1016/S0092-8674(04)00419-2)
 print("Target cell type: Macrophage (from B cells)")
 thresh=.8
@@ -185,8 +215,7 @@ genes <- c("Runx2","Sp7","Mycl1")
 colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
 
 
-metadata %>% distinct(tissue)
-metadata %>% filter(tissue=="Brain_Non.Myeloid") %>% distinct(cell_ontology_class)
+
 ```
 
 
