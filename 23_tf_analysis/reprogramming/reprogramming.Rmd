@@ -15,7 +15,7 @@ load("../../data/All_seurat_tiss.Robj")
 
 
 ```{r}
-metadata <- read.csv('../../TM_facs_metadata.csv')
+metadata <- read.csv('../../data/TM_facs_metadata.csv')
 metadata <- metadata %>%  filter(cell_ontology_class!='unknown' & !is.na(tissue) & !is.na(cell_ontology_class))
 metadata$tissue <- make.names(metadata$tissue)
 metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class)
@@ -151,7 +151,7 @@ thresh=.2
 genes <- c("Myc","Sox2","Klf4","Pou5f1")
 colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
 
-# No NSCs annotated in our data so it should not be used to look for NSC-TFs
+# NSCs are annotated in the free_annotation group but not in the cell ontology, so this will be excluded for now
 # print("Target cell type: Neural stem cell")
 # thresh=.05
 # genes <- c("Myc","Sox2","Klf4","Tcf3","Pou3f4")
@@ -199,7 +199,10 @@ print("Target cell type: Beta cell (in vivo, from exocrine cells)")
 thresh=.05
 genes <- c("Neurog3","Pdx1","Mafa")
 colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
+```
 
+Human cell-specific conversion protocols
+```{r}
 
 # TFs for conversion of human cells to endothelial cells (doi:10.1073/pnas.1413234112)
 print("Target cell type: human endothelial cells")
@@ -214,6 +217,12 @@ genes <- c("Runx2","Sp7","Mycl1")
 # genes[!genes %in% rownames(fractions)]
 colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
 
+# TFs for conversion of human cells to osteoblasts (10.1073/pnas.1420713112)
+print("Target cell type: human osteoblasts")
+thresh=.01
+genes <- c("Pou5f1")
+# genes[!genes %in% rownames(fractions)]
+colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)]
 
 
 ```
@@ -535,3 +544,15 @@ tm.subsampled <- SubsetData(tiss, max.cells.per.ident = 50, subset.raw = T)
 
 rfc <- Seurat::BuildRFClassifier(tm.subsampled, training.genes = c("Ascl1","Myt1l","Pou3f2"))
 ```
+
+# Output a table for the paper
+```{r}
+known.protocols <- read.csv("known_reprogramming_protocols.csv")
+known.protocols <- known.protocols %>% filter(genes != "", !is.na(Fraction_Expressing_Threshold))
+output <- known.protocols %>% select(CellType, Genes, Organism, Fraction_Expressing_Threshold,Match, Celltypes_above_threshold, DOI)
+output
+write.csv(output, file="reprogramming_analysis_table.csv")
+
+
+```
+
