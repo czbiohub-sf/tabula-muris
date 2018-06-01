@@ -38,6 +38,7 @@ number_of_cores = 16
 number_of_cores = 1 # RStudio does not handle multiprocessing very well.
 
 genes = c("Chga", "Ins1", "Gcg", "Actb", "Pecam1", "Ptprc", "Cd4", 'Myf5', 'Myod1', 'Pdgfra')
+genes = c("1100001G20Rik")
 ```
 
 Functions for making figures for genes and for metadata.
@@ -105,28 +106,29 @@ plotgene_vln <- function(tiss, gene, tissue, method, meta="cell_ontology_class",
   summary_table = summary_table[rev(order(summary_table$mean)),]
   names(summary_table) = c('Tissue', 'Mean', 'Median', 'Median > 0', '# cells', '% 0', '% > 0')
 
-  table_plot = tableGrob(summary_table, rows = NULL)
+  table_plot = tableGrob(summary_table, rows = NULL, theme = ttheme_default(base_size=7))
   table_plot$heights = unit(rep(1/(1.01*nrow(table_plot)), 1.01*nrow(table_plot)), "npc")
-  table_plot$widths = unit.pmax(table_plot$widths, unit(2, "lines"))
+  table_plot$widths = unit.pmax(rep(table_plot$widths*1), unit(2, "lines"))
 
   vplot = VlnPlot(tiss, gene) +
   xlab(meta_display_name) + ylab(paste0("Expression: ", legend_name)) + ggtitle("") +
+  theme(text = element_text(size=8)) +
   coord_flip() + scale_y_continuous(sec.axis = dup_axis())
   vplot = ggplotGrob(vplot)
 
-  plots <- plot_grid(vplot, table_plot)
+  plots <- plot_grid(vplot, table_plot, rel_widths = c(2, 1))
 
   ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene, "-vln", ".png")), plot = plots, width = width, height = height, limitsize = FALSE)
 
   bwplot = ggplot(data=data.use, mapping = aes(x = factor(ident), y = data.use)) +
   geom_boxplot(mapping = aes(fill = ident)) + coord_flip() +
-  theme(legend.position="none") +
+  theme(legend.position="none", text = element_text(size=8)) +
   xlab("Tissue Class") + ylab("ln(1+CP10k)") + ggtitle("") +
   scale_y_continuous(sec.axis = dup_axis())
 
-  plots <- plot_grid(bwplot, table_plot)
+  plots <- plot_grid(bwplot, table_plot, rel_widths = c(2, 1))
 
-  ggsave(here('21_website','images', paste0("All", "-", method, "-", gene, "-baw", ".png")), plot = plots, width = width, height = height, limitsize = FALSE)
+  ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene, "-baw", ".png")), plot = plots, width = width, height = height, limitsize = FALSE)
 
 }
 
@@ -151,13 +153,13 @@ plotmeta <- function(tiss, tissue, method, metas, meta_display_names, index){
 	  xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
 	  xlab("tSNE 1") + ylab("tSNE 2")
   } else {
-	  plot_data = tiss %>% TSNEPlot(pt.size = 0.2, group.by='cell_ontology_class', do.return = T, do.bare = T) 
+	  plot_data = tiss %>% TSNEPlot(group.by='cell_ontology_class', do.return = T, do.bare = T) 
       
     centers = plot_data$data %>% group_by(ident) %>% summarize(x = median(x = x), y = median(x = y))
   
     plot_data +
     geom_point(data = centers, mapping = aes(x = x, y = y), size = 0, alpha = 0) +
-    geom_text(data = centers, mapping = aes(label = ident), size = 2.8) +
+    geom_text(data = centers, mapping = aes(label = ident), size = 2.7) +
 	  xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
 	  scale_colour_discrete(name = legend_name) + theme(legend.key.height = unit(1, "cm")) +
     scale_size(range = c(min(plot_data$data$pt.size), max(plot_data$data$pt.size))) +
@@ -185,12 +187,12 @@ tissue_plots <- function(tissue, method){
 
 
   #gene_only_plotgene_tsne = pryr::partial(plotgene_tsne, tiss=tiss, tissue=tissue, method=method)
-  #gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue=tissue, method=method)
-  meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue=tissue, method=method, metas=metas, meta_display_names=meta_display_names)
+  gene_only_plotgene_vln = pryr::partial(plotgene_vln, tiss=tiss, tissue=tissue, method=method)
+  #meta_only_plotmeta = pryr::partial(plotmeta, tiss=tiss, tissue=tissue, method=method, metas=metas, meta_display_names=meta_display_names)
 
   #mclapply(genes, gene_only_plotgene_tsne, mc.preschedule=TRUE, mc.cores=number_of_cores)
-  #mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
-  mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  mclapply(genes, gene_only_plotgene_vln, mc.preschedule=TRUE, mc.cores=number_of_cores)
+  #mclapply(1:length(metas), meta_only_plotmeta, mc.preschedule=TRUE, mc.cores=number_of_cores)
 }
 
 tissue_plots_all <- function(method) {
@@ -235,38 +237,38 @@ tissue_plots_all <- function(method) {
 ```{r}
 ptm <- proc.time()
 
-tissue_plots("Marrow", "facs")
+#tissue_plots("Marrow", "facs")
 tissue_plots("Limb_Muscle", "droplet")
-tissue_plots("Mammary_Gland", "droplet")
-tissue_plots("Brain_Non-Myeloid", "facs")
-tissue_plots("Fat", "facs")
-tissue_plots("Tongue", "droplet")
-tissue_plots("Kidney", "facs")
-tissue_plots("Lung", "facs")
-tissue_plots("Heart_and_Aorta", "droplet")
-tissue_plots("Tongue", "facs")
-tissue_plots("Brain_Myeloid", "facs")
-tissue_plots("Pancreas", "facs")
-tissue_plots("Marrow", "droplet")
-tissue_plots("Spleen", "droplet")
-tissue_plots("Trachea", "facs")
-tissue_plots("Skin", "facs")
-tissue_plots("Diaphragm", "facs")
-tissue_plots("Liver", "droplet")
-tissue_plots("Mammary_Gland", "facs")
-tissue_plots("Thymus", "droplet")
-tissue_plots("Spleen", "facs")
-tissue_plots("Trachea", "droplet")
-tissue_plots("Heart", "facs")
-tissue_plots("Large_Intestine", "facs")
-tissue_plots("Kidney", "droplet")
-tissue_plots("Limb_Muscle", "facs")
-tissue_plots("Liver", "facs")
-tissue_plots("Bladder", "facs")
-tissue_plots("Aorta", "facs")
-tissue_plots("Lung", "droplet")
-tissue_plots("Thymus", "facs")
-tissue_plots("Bladder", "droplet")
+#tissue_plots("Mammary_Gland", "droplet")
+#tissue_plots("Brain_Non-Myeloid", "facs")
+#tissue_plots("Fat", "facs")
+#tissue_plots("Tongue", "droplet")
+#tissue_plots("Kidney", "facs")
+#tissue_plots("Lung", "facs")
+#tissue_plots("Heart_and_Aorta", "droplet")
+#tissue_plots("Tongue", "facs")
+#tissue_plots("Brain_Myeloid", "facs")
+#tissue_plots("Pancreas", "facs")
+#tissue_plots("Marrow", "droplet")
+#tissue_plots("Spleen", "droplet")
+#tissue_plots("Trachea", "facs")
+#tissue_plots("Skin", "facs")
+#tissue_plots("Diaphragm", "facs")
+#tissue_plots("Liver", "droplet")
+#tissue_plots("Mammary_Gland", "facs")
+#tissue_plots("Thymus", "droplet")
+#tissue_plots("Spleen", "facs")
+#tissue_plots("Trachea", "droplet")
+#tissue_plots("Heart", "facs")
+#tissue_plots("Large_Intestine", "facs")
+#tissue_plots("Kidney", "droplet")
+#tissue_plots("Limb_Muscle", "facs")
+#tissue_plots("Liver", "facs")
+#tissue_plots("Bladder", "facs")
+#tissue_plots("Aorta", "facs")
+#tissue_plots("Lung", "droplet")
+#tissue_plots("Thymus", "facs")
+#tissue_plots("Bladder", "droplet")
 
 #tissue_plots_all("droplet")
 #tissue_plots_all("FACS")
