@@ -185,16 +185,16 @@ class TeXGenerator:
 
     @property
     def subset_tex(self):
-        if self.subset.lower().endswith('cells'):
-            subset = self.subset.lower().split('cells')[0]
-            subset = subset.title()
-            return subset + ' Cells'
-        elif 'subset' in self.subset.lower():
+        if 'subset' in self.subset.lower():
             split = self.subset.lower().split('subset')
             subset = 'Subset ' + split[-1].upper()[0]
             if self.subset_name is not None:
                 subset += f' ({self.subset_name})'
             return subset
+        elif self.subset.lower().endswith('cells'):
+            subset = self.subset.lower().split('cells')[0]
+            subset = subset.title()
+            return subset + ' Cells'
         else:
             return self.subset
 
