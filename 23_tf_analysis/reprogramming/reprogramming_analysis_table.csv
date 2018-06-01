@@ -6,7 +6,7 @@
 "5","Hepatocytes","Hnf4a;Foxa1","Mouse",0.3,TRUE,"Large_Intestine__epithelial.cell.of.large.intestine;Large_Intestine__large.intestine.goblet.cell;Liver__hepatocyte","doi:10.1038/nature10263"
 "6","Hepatocytes","Hnf1a;Gata4;Foxa3","Mouse",0.2,TRUE,"Liver__hepatocyte","doi:10.1038/nature10116"
 "7","Hepatocytes","Hnf4a;Cebpa;Nr1i2","Mouse",0.4,TRUE,"Large_Intestine__large.intestine.goblet.cell;Liver__hepatocyte","doi.org/10.1016/j.ejcb.2015.10.003"
-"8","iPSC","Myc;Klf4;Sox2;Pou5f1","Mouse",0.1,FALSE,"None","10.1016/j.cell.2006.07.024"
+"8","iPSC","Myc;Klf4;Sox2;Pou5f1","Mouse",0.1,NA,"None","10.1016/j.cell.2006.07.024"
 "9","Muscle","Myod1","Mouse",0.3,TRUE,"Limb_Muscle__skeletal.muscle.satellite.cell;Limb_Muscle__skeletal.muscle.satellite.stem.cell","10.1016/0092-8674(87)90585-X"
 "10","Macrophages","Cebpa;Cebpb","Mouse",0.8,FALSE,"Marrow__basophil;Marrow__granulocyte.monocyte.progenitor.cell;Tongue__keratinocyte","10.1016/S0092-8674(04)00419-2"
 "11","Beta_cells","Neurog3;Pdx1;Mafa","Mouse",0.05,TRUE,"Pancreas__type.B.pancreatic.cell","10.1038/nature07314"

@@ -9,7 +9,7 @@ Hepatocytes,,Hnf4a;Foxa2,MEF;Adult dermal fibroblasts,Mouse,0.003,Alb;Cdh1,Gene 
 Hepatocytes,,Hnf4a;Foxa3,MEF;Adult dermal fibroblasts,Mouse,0.003,Alb;Cdh1,Gene panels;Drug metabolism;Rescue of liver failure mice;EM,Sekiya_2011,doi:10.1038/nature10263,"Started with 12 genes related to hepatocyte diff during liver dev. Hnf4a was a ‚Äúcritical‚Äù factor (like Ascl1 in Vierbuchen_2010). Afp is expressed in the iHep cells, indicating immature phenotype",,,,
 Hepatocytes,,Hnf1a;Gata4;Foxa3,,Mouse,,,,,doi:10.1038/nature10116,,,0.2,Liver__hepatocyte,T
 Hepatocytes,,Hnf4a;Cebpa;Nr1i2,,Mouse,,,,,doi.org/10.1016/j.ejcb.2015.10.003,,,0.4,Large_Intestine__large.intestine.goblet.cell;Liver__hepatocyte,T
-iPSC,,Myc;Klf4;Sox2;Pou5f1,MEF,Mouse,,Colony number,Colony formation;Teratoma formation;Microarray,Takahashi_2006,10.1016/j.cell.2006.07.024,Started with 24 genes. Leave-one-out to ID critical factors. 4 factors better than 3,,0.1,None,F
+iPSC,,Myc;Klf4;Sox2;Pou5f1,MEF,Mouse,,Colony number,Colony formation;Teratoma formation;Microarray,Takahashi_2006,10.1016/j.cell.2006.07.024,Started with 24 genes. Leave-one-out to ID critical factors. 4 factors better than 3,,0.1,None,NA
 Muscle,,Myod1,MEF,Mouse,,,,,10.1016/0092-8674(87)90585-X,,,0.3,Limb_Muscle__skeletal.muscle.satellite.cell;Limb_Muscle__skeletal.muscle.satellite.stem.cell,T
 Macrophages,,Cebpa;Cebpb,Bcell,Mouse,,,,,10.1016/S0092-8674(04)00419-2,,,0.8,Marrow__basophil;Marrow__granulocyte.monocyte.progenitor.cell;Tongue__keratinocyte,F
 Beta_cells,,Neurog3;Pdx1;Mafa,Exocrine cells,Mouse,,,,,10.1038/nature07314,in vivo reprogramming from exocrine cells,,0.05,Pancreas__type.B.pancreatic.cell,T
