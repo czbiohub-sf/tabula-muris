@@ -126,7 +126,7 @@ plotgene_vln <- function(tiss, gene, tissue, method, meta="cell_ontology_class",
 
   plots <- plot_grid(bwplot, table_plot)
 
-  ggsave(here('21_website','images', paste0("All", "-", method, "-", gene, "-baw", ".png")), plot = plots, width = width, height = height, limitsize = FALSE)
+  ggsave(here('21_website','images', paste0(tissue, "-", method, "-", gene, "-baw", ".png")), plot = plots, width = width, height = height, limitsize = FALSE)
 
 }
 
