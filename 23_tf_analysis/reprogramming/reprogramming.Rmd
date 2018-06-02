@@ -240,14 +240,6 @@ write.csv(output, file="reprogramming_analysis_table.csv")
 ```
 
 
-# P-value analysis of cell type specificity
 
-```{r}
-markers <- read.csv("../large_TF_heatmap/TF_markers.csv", row.names = 1)
-markers
-
-reprogramming <- read.csv("reprogramming_analysis_table.csv")
-reprogramming
-```
 
 
