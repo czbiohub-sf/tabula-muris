@@ -137,7 +137,7 @@ cell_ontology_class <- c(
   "epithelial cell of proximal tubule",
   "epithelial cell of proximal tubule",
   "macrophage", 
-   "natural killer cell")
+   "leukocyte")
 
 free_annotation <- c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
 

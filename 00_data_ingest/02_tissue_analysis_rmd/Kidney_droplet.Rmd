@@ -142,7 +142,7 @@ cell_ontology_class <-
     "kidney collecting duct epithelial cell", 
     "mesangial cell", 
     "kidney cell", 
-    "natural killer cell"
+    "leukocyte"
   )
 
 free_annotation <- rep(NA, max(as.numeric(tiss@ident)))
