@@ -353,6 +353,7 @@ plot.tsne.markers <- function(object, cell.type, genes.plot){
   plt.list <- lapply(genes.plot, function(x) {
     p=ggplot(tsne.genes, aes_string('tSNE_1', 'tSNE_2', color=x)) + 
     geom_point() +
+      coord_fixed()+
     scale_color_gradient(low = 'grey80', high='firebrick4') +
     theme(axis.line=element_blank(),axis.text.x=element_blank(),
           axis.text.y=element_blank(),axis.ticks=element_blank(),
@@ -412,23 +413,23 @@ make.tSNE(tiss,'tcell', n.pcs=15) # re-runs all the steps including normalizatio
 ```
 
 
-
+# Gene-tSNE plots
 ```{r}
 plot.tsne.annot(tiss,'endothelial')
 genes.plot <- c("Foxq1","Pbx1","Gata4","Meox2")
 plot.tsne.markers(tiss, 'endothelial', genes.plot)
 
-
 plot.tsne.annot(tiss,'epithelial')
-# genes.plot <- c("Foxq1","Pbx1","Gata4","Meox2")
-# plot.tsne.markers(tiss, 'epithelial', genes.plot)
+genes.plot <- c("Sox4","Foxq1","Lhx2","Pax9")
+plot.tsne.markers(tiss, 'epithelial', genes.plot)
 
-plot.tsne.annot(tiss,'stromal')
-# genes.plot <- c("Foxq1","Pbx1","Gata4","Meox2")
-# plot.tsne.markers(tiss, 'stromal', genes.plot)
-
-plot.tsne.annot(tiss,'bcell')
 plot.tsne.annot(tiss,'tcell')
+genes.plot <- c("Sox4","Foxp3","Nr4a2","Eomes")
+plot.tsne.markers(tiss, 'tcell', genes.plot)
+# 
+plot.tsne.annot(tiss,'bcell')
+genes.plot <- c("Sox4","Gata3","Tbx21","Crem")
+plot.tsne.markers(tiss, 'bcell', genes.plot)
 
 ```
 
