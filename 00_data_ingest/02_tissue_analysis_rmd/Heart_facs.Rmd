@@ -148,7 +148,7 @@ cell_ontology_class  <-
    "endocardial cell",
   "cardiac muscle cell",
   "leukocyte",
-  "cardiac neuron"
+  NA
   )
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)

@@ -14,7 +14,8 @@ rmd: clean
 
 clean:
 	rm -rf *.out *.err
-#	rm -rf */
+	rm -rf *html
+	rm -rf */
 
 run_rmd: clean
 	cp -r ../27_tissue_additional_figures/* .

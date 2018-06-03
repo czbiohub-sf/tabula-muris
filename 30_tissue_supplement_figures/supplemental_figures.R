@@ -95,7 +95,7 @@ get_valid_genes = function(tiss, genes_to_check) {
   return(genes_to_check)
 }
 
-ridgeplot_and_save = function(tiss,
+violinplot_and_save = function(tiss,
                               save_folder,
                               prefix,
                               group.by,
@@ -138,15 +138,15 @@ ridgeplot_and_save = function(tiss,
   filename = make_filename(save_folder,
                            prefix,
                            group.by,
-                           paste('ridgeplot', suffix, sep = '_'))
+                           paste('violinplot', suffix, sep = '_'))
   # Adjust canvas size so the plots are the same size no matter how many genes
   nCol = 3
   nRow = ceiling(length(genes) / nCol)
   
-  # Set height of ridgeplots
+  # Set height of violinplots
   ridge_height = 5.5
   
-  plots = RidgePlot(
+  plots = VlnPlot(
     tiss,
     genes,
     group.by = group.by,
@@ -158,7 +158,8 @@ ridgeplot_and_save = function(tiss,
   )
   for (i in seq(1, length(plots))) {
     p = plots[[i]]
-    p = p + xlab(expression_unit) + scale_x_continuous(breaks = pretty_breaks(n = 4)) + scale_y_discrete(limits = rev(levels(group.by)))
+    p = p + coord_flip()
+      p = p + ylab(expression_unit) + scale_x_discrete(limits = rev(levels(group.by))) + scale_y_continuous(breaks = pretty_breaks(n = 4))
     p = add_black_na(p, group.by, colors.use, plottype = 'ridge')
     plots[[i]] = p
   }
@@ -395,7 +396,7 @@ dot_tsne_ridge = function(tiss,
         method = method
       )
       
-      ridgeplot_and_save(
+      violinplot_and_save(
         tiss,
         save_folder,
         prefix,

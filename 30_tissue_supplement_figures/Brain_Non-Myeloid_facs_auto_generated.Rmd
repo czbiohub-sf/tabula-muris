@@ -28,6 +28,15 @@ load(here('00_data_ingest', '04_tissue_robj_generated', filename))
 # Make sure cluster ids are numeric
 tiss@meta.data[, 'cluster.ids'] = as.numeric(tiss@meta.data[, 'cluster.ids'])
 
+# Concatenate original cell ontology class to free annotation
+cell_ontology_class = tiss@meta.data$cell_ontology_class
+cell_ontology_class[is.na(cell_ontology_class)] = "NA"
+
+free_annotation = sapply(tiss@meta.data$free_annotation,
+    function(x) { if (is.na(x)) {return('')} else return(paste(":", x))},
+    USE.NAMES = FALSE)
+tiss@meta.data[, "free_annotation"] = paste(cell_ontology_class,
+    free_annotation, sep='')
 
 additional.group.bys = sort(c("subtissue"))
 
@@ -53,7 +62,7 @@ dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
 ## To identify excititory, inhibitory, and NPCs
 ```
 genes_to_check = c('Slc17a7','Neurod6','Mab21l1','Gad1','Reln','Calb1','Dcx','Dlx2','Ascl1','Hes5')
-filename = ridgeplot_and_save(tiss, save_folder, prefix='Neurons',
+filename = violinplot_and_save(tiss, save_folder, prefix='Neurons',
     group.by='cell_ontology_class',
     genes=genes_to_check, method=method)
   write_caption("Subclustering of the neuronal cluster identifies excititory neurons, inhibitory neurons, and neural precursor cells.", filename)
@@ -275,7 +284,7 @@ dev.off()
 write_caption("Key defining genes for the Inflamed (Venous) and Notch (Arterial) populations.", filename)
 
 filename = make_filename(save_folder, prefix, 'subtissue', 'ridgeplot')
-filename = ridgeplot_and_save(tiss, save_folder, prefix='Neurons',
+filename = violinplot_and_save(tiss, save_folder, prefix=prefix,
     group.by='subtissue',
     genes=genes_check, colors.use=brewer.pal(11,'Paired'), method=method)
 write_caption("Key defining genes for the Inflamed (Venous) and Notch (Arterial) populations.", filename)
@@ -320,7 +329,8 @@ print(filename)
 save(ECs, file=filename)
 
 filename = make_filename(save_folder, prefix, group.by='function_and_vessel_type', plottype='tsneplot')
-TSNEPlot(object = ECs, do.label = T, pt.size = 3, colors.use = brewer.pal(8,'Set2'), do.return=TRUE) + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
+TSNEPlot(object = ECs, do.label = FALSE, pt.size = 3, colors.use = brewer.pal(8,'Set2'),
+    do.return=TRUE) + labs(x = "tSNE 1", y="tSNE 2")+ theme(axis.title.x = element_text(colour = "black", size=16), axis.title.y = element_text(colour = "black", size=16), legend.text=element_text(size=13))
 ggsave(filename, dpi=300)
 #dev.off()
 write_caption("Subclustering of endothelial cells colored by function and vessel type.", filename)
@@ -331,12 +341,14 @@ Make Dot plot based top defining genes for each annotated endothelial cluster
 ```{r}
 filename = make_filename(save_folder, prefix, group.by='function_and_vessel_type', plottype='featureplot')
 features.plot <- c("Vwf","Flt4","Nr2f2","Ephb4","Car4","Slc16a1","Tfrc","Efnb2","Jag1","Bmx")
+FeaturePlot(ECs, features.plot=features.plot, pt.size = 2, no.axes = T,
+    cols.use = c("lightgray", "red"), dark.theme = F, no.legend = FALSE)
 ggsave(filename, dpi=300)
 #dev.off()
 write_caption("Key defining genes for function and vessel type.", filename)
 
 filename = make_filename(save_folder, prefix, group.by='function_and_vessel_type', plottype='dotplot')
-DotPlot(object = ECs, genes.plot = features.plot, plot.legend = TRUE,group.by = "Annotation", x.lab.rot = T)
+DotPlot(object = ECs, genes.plot = features.plot, plot.legend = TRUE,group.by = "Annotation", x.lab.rot = F)
 ggsave(filename, dpi=300)
 #dev.off()
 write_caption("Key defining genes for function and vessel type.", filename)

@@ -47,15 +47,23 @@ SUBSET:
     FILTER_COLUMN: cell_ontology_class
     FILTER_VALUE: hepatocyte
     GENES:
-    - A1bg
-    - Cyp2c69
-    - Cyp2d9
-    - Mup1
-    - Mup12
-    - Mup20
-    - Mup21
-    - Xist
-    GROUPBY: mouse.sex
+    - Alb
+    - Apoa1
+    - Ass1
+    - Cdh1
+    - Cyp2e1
+    - Cyp2f2
+    - Glul
+    - Gstp1
+    - Gulo
+    - Hal
+    - Hamp
+    - Oat
+    - Pck1
+    - Serpina1c
+    - Ttr
+    - Ubb
+    GROUPBY: null
     NPCS: 8
     RES: 0.5
 TISSUE: Liver

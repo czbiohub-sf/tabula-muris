@@ -2,7 +2,7 @@
 ```{r}
 genes_to_check = c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7')
 
-filename = ridgeplot_and_save(tiss, save_folder, prefix='allcells',
+filename = violinplot_and_save(tiss, save_folder, prefix='allcells',
     group.by='cell_ontology_class',
     genes=genes_to_check, suffix='taste-receptor', method=method)
 

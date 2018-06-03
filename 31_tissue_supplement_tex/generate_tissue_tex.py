@@ -22,7 +22,7 @@ def is_int(s):
     return INT_RE.match(str(s)) is not None
 
 SUBSET_ORDER = 'allcells',
-PLOT_ORDER = 'tsneplot', 'ridgeplot', 'dotplot'
+PLOT_ORDER = 'tsneplot', 'violinplot', 'ridgeplot', 'dotplot'
 GROUPBY_ORDER = ('highlighted', 'cell_ontology_class', 'cluster-ids',
                  'free_annotation')
 ORDER_DEFAULTS = {'subset': SUBSET_ORDER, 'plottype': PLOT_ORDER,
@@ -185,16 +185,16 @@ class TeXGenerator:
 
     @property
     def subset_tex(self):
-        if self.subset.lower().endswith('cells'):
-            subset = self.subset.lower().split('cells')[0]
-            subset = subset.title()
-            return subset + ' Cells'
-        elif 'subset' in self.subset.lower():
+        if 'subset' in self.subset.lower():
             split = self.subset.lower().split('subset')
             subset = 'Subset ' + split[-1].upper()[0]
             if self.subset_name is not None:
                 subset += f' ({self.subset_name})'
             return subset
+        elif self.subset.lower().endswith('cells'):
+            subset = self.subset.lower().split('cells')[0]
+            subset = subset.title()
+            return subset + ' Cells'
         else:
             return self.subset
 
@@ -344,6 +344,8 @@ class TeXGenerator:
             return 'width=.65\\textwidth'
         if self.plottype == 'dotplot':
             return 'angle=90, height=.6\\textheight'
+        elif self.plottype == "barplot":
+            return 'width=\\textwidth'
         else:
             return 'width=.6\\textwidth'
 
@@ -384,6 +386,7 @@ class TeXGenerator:
         return code
 
     def make_table_tex(self, counts):
+        print(f"\t\t--- Adding table to {self.subset} per {self.groupby} ---")
         tex = f'\subsubsection{{Table of cell counts in {self.subset_tex}, per {self.groupby_tex}}}'
         tex += r"""\begin{table}[h]
 \centering
@@ -498,8 +501,25 @@ def cli(figure_folder, tissue, method):
 
 
             groupby_col = groupby.replace('-', '.')
+            subset_annotation = get_subset_annotation(
+                subset, annotation, yaml_data, groupby)
+
+            if groupby_col == 'free_annotation':
+                groupby_plus = 'free_annotation_plus'
+                # Concatenate the cell ontology class and free annotation, if
+                # free_annotation is not NA
+                subset_annotation[groupby_plus] = \
+                    subset_annotation['cell_ontology_class'].fillna("NA") \
+                    + subset_annotation['free_annotation'].map(
+                        lambda x: ': ' + x if pd.notnull(x) else "")
+            else:
+                groupby_plus = groupby_col
+
+            if 'cluster.ids' in groupby_col:
+                subset_annotation[groupby_col] = subset_annotation[groupby_col].astype(int)
+
             try:
-                labels = unique_sorted(annotation[groupby_col])
+                labels = unique_sorted(subset_annotation[groupby_plus])
             except (KeyError, TypeError):
                 # KeyError: groupby_col is not in annotation dataframe columns
                 # TypeError: annotation is None
@@ -518,6 +538,9 @@ def cli(figure_folder, tissue, method):
                 extra = None
             # elif extra != '1-of-1':
             #     extra = None
+
+
+
             tex_generator = TeXGenerator(pdf, plottype, tissue,
                                         method, subset, groupby,
                                         i=i, n=n,
@@ -537,13 +560,11 @@ def cli(figure_folder, tissue, method):
             if j == 0 and tissue != 'Microbiome':
                 tex += tex_generator.subsection_tex
 
-                subset_annotation = get_subset_annotation(
-                    subset, annotation, yaml_data, groupby)
-
-                if 'expression' not in groupby_col:
+                if 'expression' not in groupby_plus:
                     try:
-                        counts = subset_annotation.fillna("NA").groupby(groupby_col).size()
-                        tex += tex_generator.make_table_tex(counts)
+                        counts = subset_annotation.fillna("NA").groupby(groupby_plus).size()
+                        if not counts.empty:
+                            tex += tex_generator.make_table_tex(counts)
                     except KeyError:
                         # This is a custom plot and doesn't have a groupby
                         pass
