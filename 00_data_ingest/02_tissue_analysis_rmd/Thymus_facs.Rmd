@@ -100,7 +100,7 @@ cell_ontology_class <-c("immature T cell",
                         "immature T cell",
                         "immature T cell",
                         "immature T cell",
-                        "professional antigen presenting cell",
+                        "leukocyte",
                         "immature T cell",
                         "DN1 thymic pro-T cell")
 

@@ -111,7 +111,7 @@ cell_ontology_class <-c("immature T cell",
                         "immature T cell",
                         "DN1 thymic pro-T cell",
                         "immature T cell",
-                        "professional antigen presenting cell")
+                        "leukocyte")
 
 tiss = stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_class)
 ```
