@@ -124,8 +124,8 @@ free_annotation <- c(
    "ductal cell", 
    NA,
    "beta cell", 
-   "endothelial cell", 
-   "immune cell", 
+   NA,
+   NA,
    "stellate cell")
 
 cell_ontology_class <-c(
