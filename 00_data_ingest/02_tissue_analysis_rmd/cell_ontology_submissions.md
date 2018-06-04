@@ -751,6 +751,8 @@ FACS and droplet free annotation tables in the "Details" below.
 
 ## Lung
 
+@ktravaglini
+
 ### FACS *and* Droplet
 
 - [ ] multiciliated cells `is_a` [ciliated columnar cell of tracheobronchial tree](http://purl.obolibrary.org/obo/CL_0002145)
@@ -763,6 +765,8 @@ FACS and droplet free annotation tables in the "Details" below.
 - [ ] alveolar epithelial type 2 cells `synonym` [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063)
 
 ## Mammary Gland
+
+@sikandars
 
 ### FACS *and* Droplet
 
@@ -785,6 +789,8 @@ FACS and droplet free annotation tables in the "Details" below.
 
 
 ## Pancreas
+
+@YtheRookie
 
 ### FACS
 
@@ -816,6 +822,8 @@ FACS and droplet free annotation tables in the "Details" below.
 
 ## Thymus
 
+@pknguyen1
+
 ### FACS *and* Droplet
 
 - [ ] double negative 1 (DN1) thymocyte `synonym` [DN1 thymic pro-T cell](http://purl.obolibrary.org/obo/CL_0000894)
@@ -832,6 +840,8 @@ FACS and droplet free annotation tables in the "Details" below.
 - [ ] DN4-DP transition Cd69 negative rapidly dividing thymocyte `is_a` [immature T cell](http://purl.obolibrary.org/obo/CL_0002420)
 
 ## Tongue
+
+@melocactus
 
 ### FACS
 
