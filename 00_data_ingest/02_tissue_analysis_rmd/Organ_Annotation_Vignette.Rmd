@@ -1,5 +1,5 @@
 ---
-title: "Tissue Annotation Vignette"
+title: "Organ Annotation Vignette"
 output:
   pdf_document: default
   html_notebook: default
@@ -12,10 +12,10 @@ source(here("00_data_ingest", "02_tissue_analysis_rmd", "boilerplate.R"))
 
 ## Preprocess
 
-Enter the name of the tissue you want to analyze.
+Enter the name of the organ you want to analyze.
 
 ```{r}
-tissue_of_interest = "Liver"
+organ_of_interest = "Liver"
 ```
 
 ```{r, include=FALSE}
@@ -27,7 +27,7 @@ colnames(plate_metadata)[1] <- "plate.barcode"
 
 
 # Load the gene names and set the metadata columns by opening the first file
-filename = here('00_data_ingest', '00_facs_raw_data', 'FACS', paste0(tissue_of_interest, '-counts.csv'))
+filename = here('00_data_ingest', '00_facs_raw_data', 'FACS', paste0(organ_of_interest, '-counts.csv'))
 
 raw.data = read.csv(filename, sep=",", row.names=1)
 
@@ -53,7 +53,7 @@ ercc.index <- grep(pattern = "^ERCC-", x = rownames(x = raw.data), value = FALSE
 raw.data <- raw.data[-ercc.index,]
 
 # Create the Seurat object with all the data
-tiss <- CreateSeuratObject(raw.data = raw.data, project = tissue_of_interest)
+tiss <- CreateSeuratObject(raw.data = raw.data, project = organ_of_interest)
 tiss <- AddMetaData(object = tiss, meta.data)
 tiss <- AddMetaData(object = tiss, percent.ercc, col.name = "percent.ercc")
 
@@ -264,7 +264,7 @@ TSNEPlot(object = tiss, group.by = "cell_ontology_class")
 
 ```{r}
 #filename = here('00_data_ingest', '04_tissue_robj_generated', 
-#                     paste0("facs_", tissue_of_interest, "_seurat_tiss.Robj"))
+#                     paste0("facs_", organ_of_interest, "_seurat_tiss.Robj"))
 #print(filename)
 #save(tiss, file=filename)
 ```
@@ -272,14 +272,14 @@ TSNEPlot(object = tiss, group.by = "cell_ontology_class")
 ```{r}
 # To reload a saved object
 #filename = here('00_data_ingest', '04_tissue_robj_generated',
-#                      paste0("facs_", tissue_of_interest, "_seurat_subtiss.Robj"))
+#                      paste0("facs_", organ_of_interest, "_seurat_subtiss.Robj"))
 #load(file=filename)
 ```
 
 # Export the final metadata
 
 ```{r}
-#save_annotation_csv(tiss, tissue_of_interest, "facs")
+#save_annotation_csv(tiss, organ_of_interest, "facs")
 ```
 
 
