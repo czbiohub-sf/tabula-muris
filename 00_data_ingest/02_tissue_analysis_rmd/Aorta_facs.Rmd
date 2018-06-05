@@ -114,7 +114,7 @@ tiss <- stash_annotations(tiss, cluster.ids, free_annotation, cell_ontology_clas
 ```
 
 ```{r}
-TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='free_annotation')
+TSNEPlot(object = tiss, do.label = TRUE, pt.size = 0.5, group.by='cell_ontology_class')
 ```
 
 # Save the Robject for later

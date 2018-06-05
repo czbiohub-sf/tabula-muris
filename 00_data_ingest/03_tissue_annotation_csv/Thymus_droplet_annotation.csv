@@ -3,13 +3,13 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_AAACCTGAGAGTCTGG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,7.392279193024059,-5.28168620401007,10X_P7_11
 10X_P7_11_AAACCTGCAGGAATGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-19.93071005852727,0.31608829573770814,10X_P7_11
 10X_P7_11_AAACCTGGTACCGTAT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-16.32143562801723,15.412883292177892,10X_P7_11
-10X_P7_11_AAACGGGGTCAAACTC,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.683444889185298,-23.83132327446652,10X_P7_11
+10X_P7_11_AAACGGGGTCAAACTC,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.683444889185298,-23.83132327446652,10X_P7_11
 10X_P7_11_AAACGGGGTCGGCTCA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-9.81963215550339,-16.81298363517255,10X_P7_11
 10X_P7_11_AAACGGGTCCCGGATG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-15.57728186342236,-15.794643866383385,10X_P7_11
 10X_P7_11_AAAGATGAGACCCACC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-14.06099576068494,5.814575009155162,10X_P7_11
 10X_P7_11_AAAGATGAGTAGATGT,Thymus,,immature T cell,CL:0002420,DN3-DN4 thymocytes,7,F,3-F-56,-34.77406159986366,-11.096171269799466,10X_P7_11
 10X_P7_11_AAAGATGCAACAACCT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-8.369939294529633,-17.618345068272916,10X_P7_11
-10X_P7_11_AAAGATGCACATCCGG,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.86000164437509,-23.609965745882594,10X_P7_11
+10X_P7_11_AAAGATGCACATCCGG,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.86000164437509,-23.609965745882594,10X_P7_11
 10X_P7_11_AAAGATGTCACAGGCC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-7.991677226853201,15.120997180238682,10X_P7_11
 10X_P7_11_AAAGCAAAGGTGGGTT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,15.151127402621976,-8.590672083101888,10X_P7_11
 10X_P7_11_AAAGCAACAAGCGAGT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,25.10579638670195,1.9111032008568862,10X_P7_11
@@ -38,7 +38,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_AACTCCCAGCCCAGCT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-7.122939624814877,18.427457999421183,10X_P7_11
 10X_P7_11_AACTCCCAGTCCAGGA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-13.008956580921405,-20.02450318168052,10X_P7_11
 10X_P7_11_AACTCCCGTCGGGTCT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,22.31028609407034,7.457627622823408,10X_P7_11
-10X_P7_11_AACTCTTCACACTGCG,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,6.489984545009339,-24.34636741114904,10X_P7_11
+10X_P7_11_AACTCTTCACACTGCG,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,6.489984545009339,-24.34636741114904,10X_P7_11
 10X_P7_11_AACTCTTGTGGGTCAA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,21.967499443305165,17.881618494202993,10X_P7_11
 10X_P7_11_AACTCTTTCATCATTC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-9.888381256401283,-13.624532069206676,10X_P7_11
 10X_P7_11_AACTCTTTCTTACCTA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-14.535018478741296,20.722836223474648,10X_P7_11
@@ -90,7 +90,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_ACATCAGAGATGGCGT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-14.639681419383615,-0.05092596866128033,10X_P7_11
 10X_P7_11_ACATCAGAGGAACTGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,0.9232867758065955,17.074650846091323,10X_P7_11
 10X_P7_11_ACATCAGGTGCACTTA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-13.777940677603784,-1.2201392083282534,10X_P7_11
-10X_P7_11_ACATCAGTCGTGGGAA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,6.911063660633637,-25.08157296203803,10X_P7_11
+10X_P7_11_ACATCAGTCGTGGGAA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,6.911063660633637,-25.08157296203803,10X_P7_11
 10X_P7_11_ACCAGTAAGCAGACTG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,11.59466636705684,-2.3882947724435852,10X_P7_11
 10X_P7_11_ACCAGTACACGAGAGT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,8.537368694040724,-8.641390638755853,10X_P7_11
 10X_P7_11_ACCAGTAGTCCCTTGT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,11.571119330304676,-9.027931975278854,10X_P7_11
@@ -133,7 +133,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_ACGGAGATCTCGCTTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-7.169459111246682,19.712441764654585,10X_P7_11
 10X_P7_11_ACGGCCATCATAACCG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,20.291954582396365,-5.530968537286084,10X_P7_11
 10X_P7_11_ACGGGCTGTCGATTGT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,13.885473581771404,18.230569251338856,10X_P7_11
-10X_P7_11_ACGGGCTGTTGGGACA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,6.320203523299329,-25.59445396432549,10X_P7_11
+10X_P7_11_ACGGGCTGTTGGGACA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,6.320203523299329,-25.59445396432549,10X_P7_11
 10X_P7_11_ACGGGCTTCAATCACG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,18.136607450875047,-7.74670664691577,10X_P7_11
 10X_P7_11_ACGGGCTTCTCCTATA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,19.977103905960362,10.607804263263581,10X_P7_11
 10X_P7_11_ACGGGTCCAGCTATTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-20.326356463742442,-2.579975822541192,10X_P7_11
@@ -171,7 +171,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_AGAATAGTCCTCAACC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-20.375750936716265,18.39884500962621,10X_P7_11
 10X_P7_11_AGACGTTAGGCGATAC,Thymus,,DN1 thymic pro-T cell,CL:0000894,DN1 thymocytes,6,F,3-F-56,-0.8094544717162319,-30.221289052365787,10X_P7_11
 10X_P7_11_AGACGTTGTCCTGCTT,Thymus,,immature T cell,CL:0002420,DN3-DN4 thymocytes,7,F,3-F-56,-33.64069810502975,-11.42191928809504,10X_P7_11
-10X_P7_11_AGAGCGACAGGCTGAA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.063612162866871,-26.090445959508003,10X_P7_11
+10X_P7_11_AGAGCGACAGGCTGAA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.063612162866871,-26.090445959508003,10X_P7_11
 10X_P7_11_AGAGCGAGTTCACCTC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-5.689403114653507,-22.573027981299635,10X_P7_11
 10X_P7_11_AGAGCGAGTTGGTGGA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-6.6136474017268965,-25.387658891424277,10X_P7_11
 10X_P7_11_AGAGCGATCAGTTGAC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,11.720431357142946,-1.8062138451793175,10X_P7_11
@@ -194,7 +194,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_AGCCTAACACGGCGTT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-14.815776594924927,-6.583947300506857,10X_P7_11
 10X_P7_11_AGCCTAAGTAATCGTC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,6.168063042750574,17.03632165509798,10X_P7_11
 10X_P7_11_AGCCTAAGTCATCGGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-20.59904252257755,-0.265308017905545,10X_P7_11
-10X_P7_11_AGCCTAATCCTGCTTG,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.4835485452105495,-25.146463176270895,10X_P7_11
+10X_P7_11_AGCCTAATCCTGCTTG,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.4835485452105495,-25.146463176270895,10X_P7_11
 10X_P7_11_AGCGGTCGTGCAGTAG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-8.177965133441825,-17.339435297743467,10X_P7_11
 10X_P7_11_AGCGTCGAGGCATGGT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-0.8782124803559038,14.259194419998465,10X_P7_11
 10X_P7_11_AGCGTCGGTCAAAGCG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,18.076789929422326,-7.880167355453632,10X_P7_11
@@ -259,13 +259,13 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_AGTTGGTTCTTGCATT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,24.88038586809327,10.498353688681524,10X_P7_11
 10X_P7_11_ATAACGCAGGCAGGTT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,15.560258542061572,-6.156879425574458,10X_P7_11
 10X_P7_11_ATAACGCCAAGCGAGT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,9.736124654367977,-3.7759245833014385,10X_P7_11
-10X_P7_11_ATAACGCGTAGCTGCC,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.82493553781893,-23.65849976338486,10X_P7_11
+10X_P7_11_ATAACGCGTAGCTGCC,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.82493553781893,-23.65849976338486,10X_P7_11
 10X_P7_11_ATAAGAGAGAACAACT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-10.209490740361693,-19.47314068973186,10X_P7_11
 10X_P7_11_ATAAGAGCACCCAGTG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,24.707996172796186,-1.1728560678781932,10X_P7_11
-10X_P7_11_ATAAGAGCACCGTTGG,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.813472201713658,-23.098621334015395,10X_P7_11
+10X_P7_11_ATAAGAGCACCGTTGG,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.813472201713658,-23.098621334015395,10X_P7_11
 10X_P7_11_ATAAGAGGTGCAGGTA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,7.4078217049478265,-5.566556798420329,10X_P7_11
 10X_P7_11_ATAAGAGTCTGGCGTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-6.38638888544754,10.615340462816384,10X_P7_11
-10X_P7_11_ATAGACCAGGCTAGCA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.802423388814441,-23.78880313334924,10X_P7_11
+10X_P7_11_ATAGACCAGGCTAGCA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.802423388814441,-23.78880313334924,10X_P7_11
 10X_P7_11_ATAGACCCACGCTTTC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,10.640255416724102,-6.177837008594942,10X_P7_11
 10X_P7_11_ATAGACCGTGTCCTCT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,22.028478079791874,10.009041528734725,10X_P7_11
 10X_P7_11_ATAGACCTCAGAAATG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-10.371871831034063,-14.554989115120751,10X_P7_11
@@ -286,11 +286,11 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_ATCCGAACACGTCAGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-18.67137675149328,-1.7769541765690986,10X_P7_11
 10X_P7_11_ATCCGAACATGTAGTC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,0.440090778286616,-12.719324390045324,10X_P7_11
 10X_P7_11_ATCCGAAGTAGCTTGT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-10.173270224026933,-20.07715070480652,10X_P7_11
-10X_P7_11_ATCCGAAGTAGGCATG,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.452952481469789,-25.26088986586,10X_P7_11
+10X_P7_11_ATCCGAAGTAGGCATG,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.452952481469789,-25.26088986586,10X_P7_11
 10X_P7_11_ATCCGAATCTTGACGA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-10.447692771981874,12.8148123632176,10X_P7_11
 10X_P7_11_ATCGAGTAGACAAAGG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-1.9188200480971065,-28.385162251430028,10X_P7_11
 10X_P7_11_ATCGAGTAGATTACCC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-7.627661473702296,-23.928673041314937,10X_P7_11
-10X_P7_11_ATCTACTAGCTGTTCA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.591227706283276,-25.781382848282075,10X_P7_11
+10X_P7_11_ATCTACTAGCTGTTCA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.591227706283276,-25.781382848282075,10X_P7_11
 10X_P7_11_ATCTACTGTCCAAGTT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,15.045097123245293,18.964775782975824,10X_P7_11
 10X_P7_11_ATCTACTGTCCGAACC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,19.26315671031219,18.25341934974156,10X_P7_11
 10X_P7_11_ATCTGCCGTTACGGAG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,14.000687462976225,17.583814094252897,10X_P7_11
@@ -314,7 +314,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_ATGTGTGTCGTACGGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,13.25481179714571,19.222485207590204,10X_P7_11
 10X_P7_11_ATGTGTGTCTCCAACC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,11.263276525112362,4.143805944938965,10X_P7_11
 10X_P7_11_ATGTGTGTCTTAGAGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-24.141542450199893,-1.405681950746765,10X_P7_11
-10X_P7_11_ATTACTCAGACAGAGA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.369316400554293,-25.791828755686076,10X_P7_11
+10X_P7_11_ATTACTCAGACAGAGA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.369316400554293,-25.791828755686076,10X_P7_11
 10X_P7_11_ATTACTCCAACGCACC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-10.101520233001686,-16.454485958024847,10X_P7_11
 10X_P7_11_ATTATCCAGTGCAAGC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,19.717609321767288,0.0771089829208875,10X_P7_11
 10X_P7_11_ATTATCCTCAAGGTAA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-11.203334859068796,9.924656090209258,10X_P7_11
@@ -327,7 +327,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_ATTGGTGGTGCCTGTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-15.884025088938458,10.03218276352409,10X_P7_11
 10X_P7_11_ATTTCTGCACTTAAGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-19.83790554410998,-1.170042235099178,10X_P7_11
 10X_P7_11_ATTTCTGGTCAAAGCG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,1.4876097451355954,15.152657584450566,10X_P7_11
-10X_P7_11_ATTTCTGTCCTAAGTG,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.782675958355155,-23.544873339826847,10X_P7_11
+10X_P7_11_ATTTCTGTCCTAAGTG,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.782675958355155,-23.544873339826847,10X_P7_11
 10X_P7_11_CAACCAACATGATCCA,Thymus,,immature T cell,CL:0002420,DN3-DN4 thymocytes,7,F,3-F-56,-11.30325072859392,-27.661672906661536,10X_P7_11
 10X_P7_11_CAACCAAGTAGCTTGT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-9.152131681927466,-21.500172077570795,10X_P7_11
 10X_P7_11_CAACCAATCCCATTAT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-8.448473545229596,-21.084769275137685,10X_P7_11
@@ -394,7 +394,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_CAGAGAGAGGGTGTGT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-6.797616066725984,-18.631439147167363,10X_P7_11
 10X_P7_11_CAGAGAGAGTGGAGAA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-18.54634758488541,15.59605572686944,10X_P7_11
 10X_P7_11_CAGAGAGAGTGTGGCA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-15.335534801543297,3.4333771094151198,10X_P7_11
-10X_P7_11_CAGAGAGCAAGACGTG,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.193741697917849,-23.784180122688955,10X_P7_11
+10X_P7_11_CAGAGAGCAAGACGTG,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.193741697917849,-23.784180122688955,10X_P7_11
 10X_P7_11_CAGAGAGGTCTCCACT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,19.139844970398688,12.348144932633284,10X_P7_11
 10X_P7_11_CAGAGAGTCACTCCTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-17.82648415491096,14.011391990565228,10X_P7_11
 10X_P7_11_CAGAGAGTCGTCACGG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-17.603152101681548,0.6710494464109111,10X_P7_11
@@ -405,7 +405,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_CAGCATAAGTGGTAGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-15.281511862724338,-10.383878811287989,10X_P7_11
 10X_P7_11_CAGCCGAAGCTCCTCT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-10.878997427458344,11.19031328371626,10X_P7_11
 10X_P7_11_CAGCCGACATCGGGTC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-1.3139245809233795,-27.30986305655876,10X_P7_11
-10X_P7_11_CAGCGACTCCTTCAAT,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.63029553859861,-23.59488101415266,10X_P7_11
+10X_P7_11_CAGCGACTCCTTCAAT,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.63029553859861,-23.59488101415266,10X_P7_11
 10X_P7_11_CAGCTAAGTACACCGC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-14.477022098843433,-16.713638005129532,10X_P7_11
 10X_P7_11_CAGCTAATCCTCTAGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,18.311830636893706,10.339225485332252,10X_P7_11
 10X_P7_11_CAGCTGGAGGGATCTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-6.210416426605587,13.93839456866463,10X_P7_11
@@ -494,7 +494,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_CCCTCCTTCACCGTAA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-11.460852109720074,-13.631505962469532,10X_P7_11
 10X_P7_11_CCGGGATAGAGCTTCT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-13.314812142773565,-20.67443220499484,10X_P7_11
 10X_P7_11_CCGGGATAGATACACA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,9.728225664674857,18.53793888598016,10X_P7_11
-10X_P7_11_CCGGGATTCTTTACGT,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,6.907937054502546,-23.65280525788786,10X_P7_11
+10X_P7_11_CCGGGATTCTTTACGT,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,6.907937054502546,-23.65280525788786,10X_P7_11
 10X_P7_11_CCGGTAGGTAACGACG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,24.505252685564802,-0.16037665853349165,10X_P7_11
 10X_P7_11_CCGGTAGGTTTGGGCC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-18.950914965911135,-1.0893328110677816,10X_P7_11
 10X_P7_11_CCGGTAGTCAGGCGAA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,18.044642217067082,16.738422684063746,10X_P7_11
@@ -530,7 +530,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_CCTTCCCTCTGTTTGT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-15.454687762115693,15.500127277000542,10X_P7_11
 10X_P7_11_CCTTCGACAGATCGGA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-15.042527937047442,-0.9688646864060869,10X_P7_11
 10X_P7_11_CCTTCGACAGCCTGTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,17.439763576897608,17.141886211010114,10X_P7_11
-10X_P7_11_CCTTCGACAGTTCATG,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.150873866690574,-25.160084907937115,10X_P7_11
+10X_P7_11_CCTTCGACAGTTCATG,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.150873866690574,-25.160084907937115,10X_P7_11
 10X_P7_11_CCTTCGATCAGAGACG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,17.514155106280764,11.269611113305457,10X_P7_11
 10X_P7_11_CCTTTCTCATTGTGCA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,15.679180812022615,3.9979673255930743,10X_P7_11
 10X_P7_11_CCTTTCTGTAGCGTCC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,21.63889325405241,-4.526406574384699,10X_P7_11
@@ -557,7 +557,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_CGAGCACGTGCATCTA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-5.184771760916845,-21.95517308801249,10X_P7_11
 10X_P7_11_CGATCGGAGCCACGTC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-17.62880951687499,-2.7040874513611723,10X_P7_11
 10X_P7_11_CGATGGCCAGATCTGT,Thymus,,immature T cell,CL:0002420,DN3-DN4 thymocytes,7,F,3-F-56,-17.187341198977236,-15.172710970998901,10X_P7_11
-10X_P7_11_CGATGGCGTAACGTTC,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.085271515866477,-23.857754609422496,10X_P7_11
+10X_P7_11_CGATGGCGTAACGTTC,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.085271515866477,-23.857754609422496,10X_P7_11
 10X_P7_11_CGATGTAAGATGGGTC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,12.172647574526849,-11.20010787176699,10X_P7_11
 10X_P7_11_CGATGTAAGTGACATA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,23.21845140143299,-5.587581151866597,10X_P7_11
 10X_P7_11_CGATGTAGTATTACCG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-14.212421410461745,-11.072949376911694,10X_P7_11
@@ -641,7 +641,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_CGTTAGAGTCTCCACT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,13.713668209462503,-9.475311323554312,10X_P7_11
 10X_P7_11_CGTTCTGAGATCCGAG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,9.65430511901159,18.27210961196276,10X_P7_11
 10X_P7_11_CGTTCTGGTACGAAAT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-9.730703887357828,-13.034220031837584,10X_P7_11
-10X_P7_11_CGTTCTGGTATCAGTC,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,6.6157085204665105,-24.698975679697114,10X_P7_11
+10X_P7_11_CGTTCTGGTATCAGTC,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,6.6157085204665105,-24.698975679697114,10X_P7_11
 10X_P7_11_CGTTCTGTCAAGATCC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-12.522455384978178,20.085043831397545,10X_P7_11
 10X_P7_11_CGTTGGGTCATCGCTC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-13.417080707262286,14.872469434088487,10X_P7_11
 10X_P7_11_CGTTGGGTCGGCGCAT,Thymus,,immature T cell,CL:0002420,DN3-DN4 thymocytes,7,F,3-F-56,-34.882480417551264,-12.168366092251105,10X_P7_11
@@ -657,7 +657,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_CTAAGACCAATCCGAT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-1.332506047312413,15.766668162169502,10X_P7_11
 10X_P7_11_CTAAGACGTTGAGGTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-20.344819294851224,16.525390860112736,10X_P7_11
 10X_P7_11_CTAATGGGTCTCAACA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-7.784802922497809,-14.540652918872803,10X_P7_11
-10X_P7_11_CTACACCAGCTCCTCT,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.016656544590114,-24.779535149430505,10X_P7_11
+10X_P7_11_CTACACCAGCTCCTCT,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.016656544590114,-24.779535149430505,10X_P7_11
 10X_P7_11_CTACACCCAAACCCAT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-10.350211169118387,-18.18568792513847,10X_P7_11
 10X_P7_11_CTACACCCAAGAAGAG,Thymus,,DN1 thymic pro-T cell,CL:0000894,DN1 thymocytes,6,F,3-F-56,1.4846987636376188,-30.175663994428227,10X_P7_11
 10X_P7_11_CTACACCGTCTCTCTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-20.51763353792153,18.24394848994338,10X_P7_11
@@ -779,12 +779,12 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_GAACATCTCTGATTCT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-17.490106402522155,-1.1074107915142695,10X_P7_11
 10X_P7_11_GAACCTAAGAGCTGGT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-4.102277153059141,-19.498775917107807,10X_P7_11
 10X_P7_11_GAACCTAAGCCAGTAG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,24.02606299097923,-6.126314791037231,10X_P7_11
-10X_P7_11_GAACCTACAGCCAGAA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.431732455568123,-25.361461910926067,10X_P7_11
+10X_P7_11_GAACCTACAGCCAGAA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.431732455568123,-25.361461910926067,10X_P7_11
 10X_P7_11_GAACCTATCGGATGTT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,2.488185536094909,17.202041381984913,10X_P7_11
 10X_P7_11_GAACGGACATATGGTC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-18.741038525729916,12.624405603923595,10X_P7_11
 10X_P7_11_GAACGGACATCACGAT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,7.946905530916966,-4.127191529146775,10X_P7_11
 10X_P7_11_GAAGCAGAGATCGATA,Thymus,,DN1 thymic pro-T cell,CL:0000894,DN1 thymocytes,6,F,3-F-56,-0.6996011435016328,-31.93256055373501,10X_P7_11
-10X_P7_11_GAAGCAGAGCTGATAA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,9.145245642760198,-23.8101288136596,10X_P7_11
+10X_P7_11_GAAGCAGAGCTGATAA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,9.145245642760198,-23.8101288136596,10X_P7_11
 10X_P7_11_GAAGCAGGTCAAACTC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,1.4085980550691293,16.46049293090766,10X_P7_11
 10X_P7_11_GAAGCAGGTCTAGTCA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-8.633019012100592,-18.17578552768003,10X_P7_11
 10X_P7_11_GAATAAGAGACAATAC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-6.964676255675172,13.209028533665482,10X_P7_11
@@ -903,7 +903,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_GCCAAATAGCAGCGTA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-10.942952334171062,-20.57000492308145,10X_P7_11
 10X_P7_11_GCCAAATCACAGCGTC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,18.268888589830382,-6.674309292335358,10X_P7_11
 10X_P7_11_GCCAAATGTCGTGGCT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-10.644490438066528,15.8654392559375,10X_P7_11
-10X_P7_11_GCCAAATTCCTACAGA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,6.938788187964184,-25.758836261077917,10X_P7_11
+10X_P7_11_GCCAAATTCCTACAGA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,6.938788187964184,-25.758836261077917,10X_P7_11
 10X_P7_11_GCCAAATTCTGTGCAA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,28.408829291767287,6.700992919999794,10X_P7_11
 10X_P7_11_GCGACCAAGGCCGAAT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-16.56055237483353,-3.652692018437027,10X_P7_11
 10X_P7_11_GCGACCAGTTAAGAAC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-14.027871547877071,-3.0162174861275246,10X_P7_11
@@ -967,7 +967,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_GGACAGACAGGTCTCG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,6.814098673088368,-2.5400605562433562,10X_P7_11
 10X_P7_11_GGACAGACATCTGGTA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,0.08445447821426533,-13.900702630170407,10X_P7_11
 10X_P7_11_GGACATTAGGAATGGA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,27.58286026838452,1.9938471312484947,10X_P7_11
-10X_P7_11_GGACATTCAAGACGTG,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,7.286758271243012,-24.688322514264172,10X_P7_11
+10X_P7_11_GGACATTCAAGACGTG,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,7.286758271243012,-24.688322514264172,10X_P7_11
 10X_P7_11_GGACATTCAAGCGCTC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,27.173203659337673,4.639292099939225,10X_P7_11
 10X_P7_11_GGACATTGTGTATGGG,Thymus,,DN1 thymic pro-T cell,CL:0000894,DN1 thymocytes,6,F,3-F-56,-0.8929107366519274,-30.195306159692286,10X_P7_11
 10X_P7_11_GGACATTTCAGCCTAA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-11.81706506293099,14.757503353561024,10X_P7_11
@@ -1064,7 +1064,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_GTAGTCAGTATAAACG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,13.733141373625456,18.02767319070188,10X_P7_11
 10X_P7_11_GTAGTCAGTCTAGCCG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-11.841168684261865,-10.919553220926845,10X_P7_11
 10X_P7_11_GTAGTCAGTGATAAGT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-17.226973384983996,19.57517107126512,10X_P7_11
-10X_P7_11_GTATTCTCATCGATGT,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.947636824821998,-23.59561098591553,10X_P7_11
+10X_P7_11_GTATTCTCATCGATGT,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.947636824821998,-23.59561098591553,10X_P7_11
 10X_P7_11_GTATTCTGTGACCAAG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,14.55581415437749,-9.505707922269774,10X_P7_11
 10X_P7_11_GTATTCTTCCAACCAA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,27.14091163207163,0.5626360420753099,10X_P7_11
 10X_P7_11_GTCAAGTAGGAGTTGC,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-13.887847950408242,-14.018178781599802,10X_P7_11
@@ -1122,7 +1122,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_GTTTCTAGTTCGTCTC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-10.142235917648271,10.886647014062026,10X_P7_11
 10X_P7_11_TAAACCGAGAGTCGGT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-18.63323352963079,17.8580662326209,10X_P7_11
 10X_P7_11_TAAACCGGTCATCGGC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,2.6242383820261015,17.937254925632963,10X_P7_11
-10X_P7_11_TAAACCGGTGGTTTCA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.829811290964136,-23.580996440646867,10X_P7_11
+10X_P7_11_TAAACCGGTGGTTTCA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.829811290964136,-23.580996440646867,10X_P7_11
 10X_P7_11_TAAACCGTCGCAAACT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-12.668754017377555,16.531093957376683,10X_P7_11
 10X_P7_11_TAAGAGACATTAACCG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,24.942949086828552,0.0331857905017121,10X_P7_11
 10X_P7_11_TAAGCGTAGAGTAAGG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-23.091201373675208,-0.8231187412963631,10X_P7_11
@@ -1135,7 +1135,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_TAAGTGCGTCTCCACT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,12.134813197203368,-8.013044231081404,10X_P7_11
 10X_P7_11_TACACGAAGGGATCTG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,13.719273304187698,-10.532088789680103,10X_P7_11
 10X_P7_11_TACACGAGTAATAGCA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,14.984658332692232,1.5161246568126265,10X_P7_11
-10X_P7_11_TACAGTGAGATATGGT,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,5.663477411733855,-25.027772109906266,10X_P7_11
+10X_P7_11_TACAGTGAGATATGGT,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,5.663477411733855,-25.027772109906266,10X_P7_11
 10X_P7_11_TACAGTGAGGACACCA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-13.362665363261163,-9.057033051697656,10X_P7_11
 10X_P7_11_TACAGTGGTGATGTGG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-9.02385747357931,-7.789755231088708,10X_P7_11
 10X_P7_11_TACCTATAGAATGTGT,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,6.514302906318425,1.888324120325411,10X_P7_11
@@ -1320,7 +1320,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_TGCGCAGAGTGGGATC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-21.524280521318577,-1.0959338003574994,10X_P7_11
 10X_P7_11_TGCGCAGGTGCGCTTG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-5.36771486731142,-24.383623080169002,10X_P7_11
 10X_P7_11_TGCGCAGTCTTAACCT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,14.98132041718086,18.69972325711529,10X_P7_11
-10X_P7_11_TGCGGGTAGCATCATC,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,6.9651031119481734,-25.56605298992053,10X_P7_11
+10X_P7_11_TGCGGGTAGCATCATC,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,6.9651031119481734,-25.56605298992053,10X_P7_11
 10X_P7_11_TGCGGGTGTAAATACG,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 negative rapidly dividing thymocytes,1,F,3-F-56,23.51474907809653,-4.789670858962181,10X_P7_11
 10X_P7_11_TGCGTGGAGGTTACCT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-21.601436241682336,17.29380760437849,10X_P7_11
 10X_P7_11_TGCGTGGCACGGTAAG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,10.135764420474228,18.993090863843747,10X_P7_11
@@ -1364,7 +1364,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_TTAACTCAGTGTACTC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,17.43530542962898,10.655982023924308,10X_P7_11
 10X_P7_11_TTAACTCTCTCCTATA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,-3.07604872693357,-13.657127700208271,10X_P7_11
 10X_P7_11_TTAGGACCATCCCACT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-1.0601230944124829,12.663218836088303,10X_P7_11
-10X_P7_11_TTAGGCACAGGCAGTA,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,8.867462384218525,-23.51535789962451,10X_P7_11
+10X_P7_11_TTAGGCACAGGCAGTA,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,8.867462384218525,-23.51535789962451,10X_P7_11
 10X_P7_11_TTAGGCAGTCATATCG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,21.395847744024348,13.638364485060599,10X_P7_11
 10X_P7_11_TTAGGCATCGAGAGCA,Thymus,,immature T cell,CL:0002420,DN4-DP transition Cd69 low thymocytes,2,F,3-F-56,0.11241143017918233,-14.832598138269281,10X_P7_11
 10X_P7_11_TTAGGCATCTGAGGGA,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69_negative thymocytes,0,F,3-F-56,-14.48382706748449,11.768152046604845,10X_P7_11
@@ -1378,7 +1378,7 @@ cell,tissue,subtissue,cell_ontology_class,cell_ontology_id,free_annotation,clust
 10X_P7_11_TTCGAAGAGGAGTACC,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-21.953146005295192,-0.7774089817164731,10X_P7_11
 10X_P7_11_TTCGAAGTCCGCAGTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,18.00551571578221,18.314363611780237,10X_P7_11
 10X_P7_11_TTCGGTCGTCCAAGTT,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,4,F,3-F-56,-14.022352554782303,-14.3060654179833,10X_P7_11
-10X_P7_11_TTCGGTCTCATGTGGT,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cells,8,F,3-F-56,5.798413332575738,-25.193798194568295,10X_P7_11
+10X_P7_11_TTCGGTCTCATGTGGT,Thymus,,leukocyte,CL:0000738,antigen presenting cells,8,F,3-F-56,5.798413332575738,-25.193798194568295,10X_P7_11
 10X_P7_11_TTCGGTCTCCCAACGG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3-F-56,18.938902035378742,7.492825950204738,10X_P7_11
 10X_P7_11_TTCTACAGTCATACTG,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,5,F,3-F-56,2.22977028481975,16.83437987537831,10X_P7_11
 10X_P7_11_TTCTCAACATGTTGAC,Thymus,,DN1 thymic pro-T cell,CL:0000894,DN1 thymocytes,6,F,3-F-56,-0.43284455424774343,-31.979540275847242,10X_P7_11
