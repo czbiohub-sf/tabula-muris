@@ -4,7 +4,7 @@ A1.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 A1.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-8.136618653378006,8.869856908935573,MAA000607
 A1.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_11_M,-6.176114579333859,33.45313321690831,MAA000880
 A10.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,12.862218314579573,-8.716355341840371,B000827
-A10.B003291.3_39_F.1.1,Thymus,Flowthrough,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,17.96877039127103,10.826026721396467,B003291
+A10.B003291.3_39_F.1.1,Thymus,Flowthrough,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,17.96877039127103,10.826026721396467,B003291
 A10.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-16.236278398654957,5.245851474854687,MAA000607
 A10.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_8_M,-4.4933001212321555,35.2414287233489,MAA000609
 A10.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_11_M,20.476307433426776,-13.95126825566637,MAA000880
@@ -49,7 +49,7 @@ A20.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition
 A21.B000827.3_38_F.1.1,Thymus,Flowthrough,DN1 thymic pro-T cell,CL:0000894,DN1 thymocytes,7,F,3_38_F,32.14199741973394,-7.8126571472668065,B000827
 A21.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-8.85389760986296,1.6826210169392162,MAA000607
 A21.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_8_M,-2.2334018475116992,32.31115208499341,MAA000609
-A21.MAA000880.3_11_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_11_M,14.743378941939051,9.681425071841884,MAA000880
+A21.MAA000880.3_11_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_11_M,14.743378941939051,9.681425071841884,MAA000880
 A22.B000827.3_38_F.1.1,Thymus,Flowthrough,DN1 thymic pro-T cell,CL:0000894,DN1 thymocytes,7,F,3_38_F,32.15744271899753,-9.774151195858629,B000827
 A22.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,-0.16002166696777223,-4.97922101193804,MAA000607
 A22.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_8_M,-17.271650513636416,-2.5616724235708515,MAA000609
@@ -59,7 +59,7 @@ A3.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition C
 A3.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_8_M,-3.245719555511926,25.458163920956494,MAA000609
 A4.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-4.362770200285398,3.8096559917952484,B003291
 A4.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-15.448639188536086,5.786474008536211,MAA000607
-A5.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,8.16930410432615,9.813258869957975,B003285
+A5.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,8.16930410432615,9.813258869957975,B003285
 A5.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-22.76792352010208,-7.249809602127289,B003291
 A5.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-2.819225894668786,8.139601600278548,MAA000607
 A6.B003285.3_38_F.1.1,Thymus,Epithelium,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_38_F,-15.895354728457743,-9.279476257555586,B003285
@@ -72,10 +72,10 @@ A7.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition C
 A7.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_8_M,20.518486304063003,-10.08534733591615,MAA000609
 A7.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_11_M,9.140830259477942,-15.98905980029875,MAA000880
 A8.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,22.163429814265374,-5.656544164088567,B000827
-A8.B003291.3_39_F.1.1,Thymus,Flowthrough,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,17.98489625046108,10.7797190612304,B003291
+A8.B003291.3_39_F.1.1,Thymus,Flowthrough,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,17.98489625046108,10.7797190612304,B003291
 A8.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-13.392683198035858,6.740524647282928,MAA000607
 A8.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_8_M,-11.893899172792993,-5.702373444350325,MAA000609
-A8.MAA000880.3_11_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_11_M,18.161267842298955,10.51590574667673,MAA000880
+A8.MAA000880.3_11_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_11_M,18.161267842298955,10.51590574667673,MAA000880
 A9.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,4,F,3_39_F,-18.81363611844703,-12.43022572598548,B003291
 A9.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_9_M,24.93192943348029,3.175257916515864,MAA000607
 A9.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thyomcytes,6,M,3_8_M,-7.503650300321684,14.075857504308223,MAA000609
@@ -138,7 +138,7 @@ B3.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition C
 B4.B003291.3_39_F.1.1,Thymus,Flowthrough,DN1 thymic pro-T cell,CL:0000894,DN1 thymocytes,7,F,3_39_F,31.991421547955763,-7.795564439596522,B003291
 B4.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_9_M,17.446392269756352,-5.097273513272647,MAA000607
 B5.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,26.567148502459272,-5.821014808310352,B000827
-B5.B003284.3_39_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,8.326216478827986,9.98614225251299,B003284
+B5.B003284.3_39_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,8.326216478827986,9.98614225251299,B003284
 B5.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-21.57387951898663,-8.71387467888545,B003291
 B5.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_9_M,-4.476289798270308,33.49286121372064,MAA000607
 B5.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_8_M,-3.527508249737351,27.4301076981457,MAA000609
@@ -147,7 +147,7 @@ B6.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 B6.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-4.124590780929153,11.063121950212917,MAA000607
 B7.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,15.717664200799975,-0.7717278653278501,B000827
 B7.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-7.408788178218209,2.6358185468190944,B003291
-B7.MAA000607.3_9_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_9_M,17.672256713933866,11.021484868533486,MAA000607
+B7.MAA000607.3_9_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_9_M,17.672256713933866,11.021484868533486,MAA000607
 B8.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,11.918376455962512,-4.966872350970691,B000827
 B8.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3_39_F,-3.132270367898296,26.07765932670531,B003291
 B8.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_9_M,22.792089060179283,-3.7328671517294993,MAA000607
@@ -176,7 +176,7 @@ C13.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in t
 C13.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,-2.9151770048145726,-8.106223581878135,MAA000607
 C13.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_11_M,15.539652172950786,-14.636169886538308,MAA000880
 C14.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-17.187793617677123,-7.272572678113767,B003291
-C14.MAA000607.3_9_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_9_M,-0.13925471414644194,8.320133901999949,MAA000607
+C14.MAA000607.3_9_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_9_M,-0.13925471414644194,8.320133901999949,MAA000607
 C14.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_11_M,-13.61742389022323,-6.2136950851000154,MAA000880
 C15.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,26.876118487325783,-3.185653580921265,B000827
 C15.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3_39_F,-4.777451162952409,30.29604309343541,B003291
@@ -213,10 +213,10 @@ C3.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 C3.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_9_M,-6.031023014802881,36.36613897793478,MAA000607
 C4.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,26.137046427468324,-4.376922994844298,B000827
 C4.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-22.25868129786406,-2.6964888853576334,B003291
-C4.MAA000607.3_9_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_9_M,14.584617588175036,9.610989663180254,MAA000607
+C4.MAA000607.3_9_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_9_M,14.584617588175036,9.610989663180254,MAA000607
 C5.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-14.192744548329207,-7.001903953106155,B003291
 C5.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,16.047004367477594,1.4634159333259116,MAA000607
-C6.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,4.486268016419447,4.63067772721148,B003285
+C6.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,4.486268016419447,4.63067772721148,B003285
 C6.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_39_F,4.706572627620935,-4.198489033537327,B003291
 C6.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,8.366776700466474,-0.42432186839895997,MAA000607
 C6.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,4,M,3_8_M,-16.36214003978956,-19.474873654319282,MAA000609
@@ -238,7 +238,7 @@ D10.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition 
 D10.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_11_M,-14.375261262641526,2.608198546394367,MAA000880
 D11.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-10.262894666697385,8.021278611018449,B003291
 D11.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-7.39058530417956,-3.8482838409916873,MAA000607
-D11.MAA000609.3_8_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_8_M,14.884762612326794,9.747131421528396,MAA000609
+D11.MAA000609.3_8_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_8_M,14.884762612326794,9.747131421528396,MAA000609
 D11.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_11_M,3.634831977242138,-10.60288252684027,MAA000880
 D12.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,14.31418909061752,-11.585859171837521,B000827
 D12.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-16.636142401416713,-4.854158300054038,B003291
@@ -254,7 +254,7 @@ D14.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in t
 D14.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-13.767695755830289,2.1992212934501305,MAA000607
 D14.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_11_M,8.916634015674324,-16.972962435082334,MAA000880
 D15.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,8.703683099576208,-10.11444696684193,B000827
-D15.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,-0.12405185057956951,4.57732970088482,B003285
+D15.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,-0.12405185057956951,4.57732970088482,B003285
 D15.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-17.80331660927435,0.034470698273752064,B003291
 D15.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-18.202807252991622,6.674078547422843,MAA000607
 D15.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,4,M,3_11_M,-3.3373576710567234,-9.417990083314717,MAA000880
@@ -289,7 +289,7 @@ D3.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 D3.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,10.831177587894704,0.9152450548736857,MAA000607
 D4.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,21.485542263936654,-11.727026621309351,B000827
 D4.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-19.79009085556031,-4.96361462717902,B003291
-D4.MAA000607.3_9_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_9_M,17.806942042799548,11.031410597798043,MAA000607
+D4.MAA000607.3_9_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_9_M,17.806942042799548,11.031410597798043,MAA000607
 D5.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,12.311772305373848,-5.691927813378874,B000827
 D5.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-22.110865715993146,-2.8891183838373626,B003291
 D5.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-17.11827061076866,7.950713907774014,MAA000607
@@ -367,11 +367,11 @@ E5.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 E5.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-10.119956646279949,14.198013146192292,B003291
 E5.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_9_M,-3.3602295567189664,34.10628675279679,MAA000607
 E6.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,26.231858177852995,2.15648333830367,B000827
-E6.B003284.3_39_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,17.536372972435743,11.208192305067884,B003284
+E6.B003284.3_39_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,17.536372972435743,11.208192305067884,B003284
 E6.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thyomcytes,6,F,3_39_F,-8.101057473303099,14.78334741318763,B003291
 E6.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-9.449819410243197,5.5882721639816655,MAA000607
 E7.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,10.63071830086772,-5.612121092924988,B000827
-E7.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,8.177355329615075,9.82267054369874,B003285
+E7.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,8.177355329615075,9.82267054369874,B003285
 E7.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-15.873212541446987,-10.715226416640071,B003291
 E7.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-10.672180089785833,2.0727395291561312,MAA000607
 E8.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,18.68031068305577,-3.4230740680094183,B000827
@@ -393,9 +393,9 @@ F10.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition
 F11.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,23.985608593093097,-10.7041600036295,B000827
 F11.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-17.491000665133686,-0.2994198707941498,B003291
 F11.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-7.216916661027137,10.395815766311486,MAA000607
-F11.MAA000880.3_11_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_11_M,4.849767478381913,2.989007933870046,MAA000880
+F11.MAA000880.3_11_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_11_M,4.849767478381913,2.989007933870046,MAA000880
 F12.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,13.239503496712775,-3.0658619663570983,B000827
-F12.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,8.279371517364318,9.934806408976907,B003285
+F12.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,8.279371517364318,9.934806408976907,B003285
 F12.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-8.281628654057487,9.84402389363116,B003291
 F12.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_9_M,23.613287814401858,3.3325831099349505,MAA000607
 F12.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_11_M,7.34773089463686,-15.504729760018305,MAA000880
@@ -457,7 +457,7 @@ F7.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition C
 F8.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,20.529995359558775,-4.896615947885079,B000827
 F8.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-23.30399934040509,-3.7492153887030892,B003291
 F8.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-8.888839931350285,2.08745497901713,MAA000607
-F9.B000827.3_38_F.1.1,Thymus,Flowthrough,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,17.85864163180534,10.832810977631237,B000827
+F9.B000827.3_38_F.1.1,Thymus,Flowthrough,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,17.85864163180534,10.832810977631237,B000827
 F9.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-24.339970643285326,-2.3401599665122723,B003291
 F9.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,3.9470280933720776,-3.9716705993213246,MAA000607
 F9.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_8_M,-23.15577195237888,-5.2222435682672534,MAA000609
@@ -524,7 +524,7 @@ G4.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 G4.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-17.101774877347246,-2.4434852859347513,B003291
 G4.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,-4.795814627366313,-2.8378309427648998,MAA000607
 G5.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,5.647066521721806,-9.276237946211529,B000827
-G5.B003291.3_39_F.1.1,Thymus,Flowthrough,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,17.939527637166503,10.835778140283756,B003291
+G5.B003291.3_39_F.1.1,Thymus,Flowthrough,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,17.939527637166503,10.835778140283756,B003291
 G5.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-13.549548899088375,12.741086308134243,MAA000607
 G6.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,12.456911337264039,-0.4303457581138542,B000827
 G6.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-8.977956662847928,8.106523659511673,B003291
@@ -540,8 +540,8 @@ G9.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 G9.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-20.329613440277686,-5.3435891472843515,B003291
 G9.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-8.531186946666192,4.658399729019005,MAA000607
 H1.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,19.423753240329,-11.58205850196187,B000827
-H1.B003291.3_39_F.1.1,Thymus,Flowthrough,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,-0.035150181173132636,8.317088290931105,B003291
-H1.MAA000607.3_9_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_9_M,14.759358424718073,9.68627918252697,MAA000607
+H1.B003291.3_39_F.1.1,Thymus,Flowthrough,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,-0.035150181173132636,8.317088290931105,B003291
+H1.MAA000607.3_9_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_9_M,14.759358424718073,9.68627918252697,MAA000607
 H10.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,26.76724223858388,-2.845575073832047,B000827
 H10.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-16.68527156407831,0.6413474509099416,B003291
 H10.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-10.755205117582504,-6.789197830176958,MAA000607
@@ -562,7 +562,7 @@ H14.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in t
 H14.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-12.04853611511131,10.14598519382362,MAA000607
 H14.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_11_M,-4.718851799340169,26.81014680876991,MAA000880
 H15.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,23.991370995838935,-9.788531582507682,B000827
-H15.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,2.8107728352862695,4.611412531815039,B003285
+H15.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,2.8107728352862695,4.611412531815039,B003285
 H15.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-22.093165753293334,-8.157052318111885,B003291
 H15.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-19.668413072745608,6.617242144496657,MAA000607
 H15.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_11_M,-6.402573948582026,30.65860689578591,MAA000880
@@ -578,7 +578,7 @@ H18.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in t
 H18.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-6.930243112689545,4.463757759248586,MAA000607
 H18.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_11_M,-6.714300090749547,34.19468286810433,MAA000880
 H19.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,19.764921171021385,-4.57430613073134,B000827
-H19.B003291.3_39_F.1.1,Thymus,Flowthrough,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,14.828699871540122,9.716887027997828,B003291
+H19.B003291.3_39_F.1.1,Thymus,Flowthrough,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,14.828699871540122,9.716887027997828,B003291
 H19.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,7.163350050273101,1.6985142233732118,MAA000607
 H2.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,17.298914775534204,-10.771095156093407,B000827
 H2.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3_39_F,-2.84673765846499,32.979124063848055,B003291
@@ -589,7 +589,7 @@ H20.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition 
 H21.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,11.09885411189477,-2.7549852117078992,B000827
 H21.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,4,F,3_39_F,-20.677468540226386,-14.305884861405245,B003291
 H21.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,12.338379112567505,1.8242730847055255,MAA000607
-H21.MAA000880.3_11_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_11_M,15.622081746089895,-2.953492898178728,MAA000880
+H21.MAA000880.3_11_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_11_M,15.622081746089895,-2.953492898178728,MAA000880
 H22.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,25.004372435568353,0.6953057019965931,B000827
 H22.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,4,F,3_39_F,-18.181272649156966,-15.193530260721905,B003291
 H22.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-7.496081972502334,11.039852189417738,MAA000607
@@ -619,7 +619,7 @@ H9.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 H9.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-11.35214299851057,7.729919603216995,MAA000607
 H9.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_8_M,-18.475485949398756,1.6066227695903825,MAA000609
 I1.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,7.344985800003562,-9.139383267433903,B000827
-I1.B003284.3_39_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,8.31065803662824,9.96649427806003,B003284
+I1.B003284.3_39_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,8.31065803662824,9.96649427806003,B003284
 I1.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,F,3_39_F,-3.2492291306612358,25.227532456298743,B003291
 I10.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,25.06951306777892,-6.036624840581976,B000827
 I10.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_39_F,-0.8585667021919158,-5.335879688625269,B003291
@@ -673,13 +673,13 @@ I22.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in t
 I22.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-16.117852134763424,-6.849420596362705,B003291
 I22.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,12.321166905370404,0.5270483302458877,MAA000607
 I22.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_8_M,-20.690211223936902,1.0680195957005132,MAA000609
-I22.MAA000880.3_11_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_11_M,17.971708407180625,10.804458690772728,MAA000880
+I22.MAA000880.3_11_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_11_M,17.971708407180625,10.804458690772728,MAA000880
 I3.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,9.166386621848046,-6.395021349434498,B000827
 I3.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-16.875630674571408,0.8572836696788158,B003291
 I3.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thyomcytes,6,M,3_9_M,-6.834049718000353,16.805475711128434,MAA000607
 I3.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_8_M,-5.718024217844099,32.90354918766152,MAA000609
 I4.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,17.1893427194097,1.3717820371110379,B000827
-I4.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,8.159122426937317,9.807222079015103,B003285
+I4.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,8.159122426937317,9.807222079015103,B003285
 I4.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-13.343448588482866,-2.8495149665344974,B003291
 I4.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thyomcytes,6,M,3_9_M,-7.611354206926669,17.000579702216054,MAA000607
 I4.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_8_M,-4.567716804399708,31.300892504791058,MAA000609
@@ -691,9 +691,9 @@ I6.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 I6.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_9_M,22.489573117987447,2.6136324463325082,MAA000607
 I7.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,20.493429984014654,-9.025723431653642,B000827
 I7.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-18.655083198557804,-4.979707869887969,B003291
-I7.MAA000607.3_9_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_9_M,17.66983001507761,11.043114719272829,MAA000607
+I7.MAA000607.3_9_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_9_M,17.66983001507761,11.043114719272829,MAA000607
 I8.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,17.85210633095766,-11.653280676132635,B000827
-I8.B003284.3_39_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,8.128815922492665,9.787267686162139,B003284
+I8.B003284.3_39_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,8.128815922492665,9.787267686162139,B003284
 I8.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-11.161239023554748,11.771190393564908,B003291
 I8.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,-1.1141331181266412,-6.469937684062586,MAA000607
 I8.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thyomcytes,6,M,3_8_M,-6.232498683612649,16.8505021118121,MAA000609
@@ -746,7 +746,7 @@ J18.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition 
 J18.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thyomcytes,6,M,3_8_M,-3.350398944910183,20.408701239023177,MAA000609
 J18.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_11_M,2.691259989955577,-14.623678864244308,MAA000880
 J19.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,19.44415204097762,-10.242448876241356,B000827
-J19.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,5.899369254085379,4.046534615261618,B003285
+J19.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,5.899369254085379,4.046534615261618,B003285
 J19.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,4,F,3_39_F,-19.24578783241017,-11.975006223867537,B003291
 J19.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_9_M,-2.7809169689195867,28.20034273879493,MAA000607
 J19.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_8_M,7.887231523430772,-0.3776584146576324,MAA000609
@@ -784,7 +784,7 @@ J7.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 J7.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_9_M,-4.121466731641857,28.211557444553893,MAA000607
 J8.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,23.78667510428764,-10.58830162915651,B000827
 J8.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-6.117588549681272,-0.913498512730025,B003291
-J8.MAA000607.3_9_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_9_M,17.91662513455415,10.873331251333534,MAA000607
+J8.MAA000607.3_9_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_9_M,17.91662513455415,10.873331251333534,MAA000607
 J8.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_8_M,-11.258562617754814,-2.753302063672672,MAA000609
 J9.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,18.887526157046427,-2.0490171696419983,B000827
 J9.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-16.42294017843421,2.07797835333019,B003291
@@ -807,7 +807,7 @@ K12.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in t
 K12.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_9_M,19.73840776866113,-0.25492481376617016,MAA000607
 K12.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_8_M,-1.9338914416176038,8.437258671458688,MAA000609
 K13.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,23.783125123248254,-5.143201189387562,B000827
-K13.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,8.243093521804656,9.894125762352225,B003285
+K13.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,8.243093521804656,9.894125762352225,B003285
 K13.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_39_F,-0.6189152503476809,-8.391949545897825,B003291
 K13.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-7.1256591066332735,2.6409506885630707,MAA000607
 K13.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_8_M,-6.725984391777517,-6.1967492989839235,MAA000609
@@ -931,7 +931,7 @@ L2.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 L2.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-11.999012727469607,-8.12867518270974,B003291
 L2.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-1.8033412029586875,4.3136524913469705,MAA000607
 L20.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,21.087920751934288,-1.6302973338864164,B000827
-L20.B003291.3_39_F.1.1,Thymus,Flowthrough,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,18.11059212781284,10.636452373782795,B003291
+L20.B003291.3_39_F.1.1,Thymus,Flowthrough,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,18.11059212781284,10.636452373782795,B003291
 L20.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_9_M,21.002756624505825,-2.3961618967921448,MAA000607
 L20.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_8_M,-12.337067698073012,5.551277413528544,MAA000609
 L20.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,4,M,3_11_M,-17.09900605851391,-19.385092186935218,MAA000880
@@ -960,7 +960,7 @@ L7.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 L7.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,-0.16311251055663104,-6.219865885204926,MAA000607
 L7.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_8_M,-2.7455759011160836,26.360188352492383,MAA000609
 L8.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,13.100360578201265,-8.727708135884033,B000827
-L8.B003284.3_39_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,17.891956767234586,10.849185307341946,B003284
+L8.B003284.3_39_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,17.891956767234586,10.849185307341946,B003284
 L8.B003285.3_38_F.1.1,Thymus,Epithelium,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_38_F,-14.336404380887279,10.029165180695259,B003285
 L8.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_39_F,-3.6304734602451707,-6.978428534156307,B003291
 L8.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_9_M,-2.535330144535744,32.03503214767449,MAA000607
@@ -1008,7 +1008,7 @@ M16.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in t
 M16.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,10.049092206119893,1.6992862777013893,MAA000607
 M16.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_11_M,4.57200628680025,-14.43559521829724,MAA000880
 M17.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,21.608443006600464,-10.578749390170975,B000827
-M17.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,8.255619738989239,9.910077733671349,B003285
+M17.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,8.255619738989239,9.910077733671349,B003285
 M17.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-19.131387261733785,0.43722342139816506,B003291
 M17.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,M,3_9_M,19.573434868325723,-10.70990368897324,MAA000607
 M17.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,4,M,3_11_M,-18.086572858395435,-17.006256630937525,MAA000880
@@ -1053,7 +1053,7 @@ M6.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 M6.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-17.740778602579212,1.2817527016098302,B003291
 M6.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-5.25336699337864,10.677808881972854,MAA000607
 M7.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,18.474598043893863,-5.82876075929793,B000827
-M7.B003284.3_39_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,-2.7311208322752374,11.293472281366773,B003284
+M7.B003284.3_39_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,-2.7311208322752374,11.293472281366773,B003284
 M7.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-22.857977255303208,-7.004045952541769,B003291
 M7.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-10.251896429019519,-4.7636871788491275,MAA000607
 M7.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thyomcytes,6,M,3_8_M,19.59524882790401,4.927956520471715,MAA000609
@@ -1083,7 +1083,7 @@ N12.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition 
 N12.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_11_M,3.8694548960285355,-16.11117410506502,MAA000880
 N13.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,19.90748074201458,-8.451889525550659,B000827
 N13.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-15.901315852406297,-8.807885987266163,B003291
-N13.MAA000607.3_9_M.1.1,Thymus,,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,M,3_9_M,-0.16064439450727486,8.321778908441983,MAA000607
+N13.MAA000607.3_9_M.1.1,Thymus,,leukocyte,CL:0000738,antigen presenting cell,5,M,3_9_M,-0.16064439450727486,8.321778908441983,MAA000607
 N13.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_11_M,4.32928841918719,-12.403331278936605,MAA000880
 N14.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,16.549029784511568,-8.943459206178991,B000827
 N14.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-7.925528658518855,10.738367721199412,B003291
@@ -1138,7 +1138,7 @@ N5.B000827.3_38_F.1.1,Thymus,Flowthrough,DN1 thymic pro-T cell,CL:0000894,DN1 th
 N5.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-22.736918609029573,-3.505807867123692,B003291
 N5.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,M,3_9_M,-6.709579847618655,-3.7836903234866597,MAA000607
 N6.B000827.3_38_F.1.1,Thymus,Flowthrough,DN1 thymic pro-T cell,CL:0000894,DN1 thymocytes,7,F,3_38_F,29.630376108453188,-7.749077045116654,B000827
-N6.B003284.3_39_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,4.475355580194544,4.785276938637658,B003284
+N6.B003284.3_39_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,4.475355580194544,4.785276938637658,B003284
 N6.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-15.760452150893597,-12.12671885408962,B003291
 N6.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,8.14604590235762,-1.9377709468379136,MAA000607
 N6.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_8_M,-4.837193574879737,29.44916896624739,MAA000609
@@ -1233,7 +1233,7 @@ O4.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in tr
 O4.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-15.013004655403929,1.2965204128559142,B003291
 O4.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_9_M,-1.6778681509465712,30.538777149234,MAA000607
 O5.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,F,3_38_F,11.114910558476913,-3.3248515579740485,B000827
-O5.B003284.3_39_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_39_F,8.691536589638112,10.35374200923395,B003284
+O5.B003284.3_39_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_39_F,8.691536589638112,10.35374200923395,B003284
 O5.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-13.23213617860905,9.743172533666517,B003291
 O5.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_9_M,-3.472373754548418,28.291091561494046,MAA000607
 O6.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,19.51753996820646,-2.437856691226565,B000827
@@ -1260,7 +1260,7 @@ P10.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in t
 P10.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,4.500720214957837,-7.2739551842517916,MAA000607
 P10.MAA000880.3_11_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_11_M,-1.314380142991221,22.76876338384357,MAA000880
 P11.B000827.3_38_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,2,F,3_38_F,15.137322732958408,-10.260132846417621,B000827
-P11.B003285.3_38_F.1.1,Thymus,Epithelium,professional antigen presenting cell,CL:0000145,antigen presenting cell,5,F,3_38_F,6.001842676013777,3.590658529360872,B003285
+P11.B003285.3_38_F.1.1,Thymus,Epithelium,leukocyte,CL:0000738,antigen presenting cell,5,F,3_38_F,6.001842676013777,3.590658529360872,B003285
 P11.B003291.3_39_F.1.1,Thymus,Flowthrough,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative thymocytes,0,F,3_39_F,-18.14936184439266,-3.313767698280903,B003291
 P11.MAA000607.3_9_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 positive thymocytes,1,M,3_9_M,5.108342977403859,-5.694400612883629,MAA000607
 P11.MAA000609.3_8_M.1.1,Thymus,,immature T cell,CL:0002420,DN4-DP in transition Cd69 negative rapidly dividing thymocytes,3,M,3_8_M,-3.431144734637543,28.891279430723692,MAA000609
