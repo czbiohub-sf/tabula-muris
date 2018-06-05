@@ -8,6 +8,4 @@ connect_ndnd_figures:
 	sshfs olga@ndnd.czbiohub.org:/home/olga/tabula-muris/30_tissue_supplement_figures $HOME/tabula-muris-supplemental
 
 download_data:
-	pushd 00_data_ingest
-	bash download_data.sh
-	popd
+	bash 00_data_ingest/download_data.sh
