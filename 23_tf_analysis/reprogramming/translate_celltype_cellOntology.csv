@@ -1,0 +1,16 @@
+CellType,Cell_Ontology_Class
+Neuron,neuron
+Neuron,neuron
+Cardiomyocyte,cardiac.muscle.cell
+Cardiomyocyte,cardiac.muscle.cell
+Hepatocytes,hepatocyte
+Hepatocytes,hepatocyte
+Hepatocytes,hepatocyte
+Muscle,skeletal.muscle.satellite.cell;skeletal.muscle.satellite.stem.cell
+Macrophages,macrophage
+Beta_cells,type.B.pancreatic.cell
+Osteoblasts,
+Endothelial,endothelial.cell
+Oligodendrocyte,oligodendrocyte
+Fetal_Intestine_Progenitor_Cells,epithelial.cell.of.large.intestine
+Hematopoietic_progenitors,Slamf1.positive.multipotent.progenitor.cell;Slamf1.negative.multipotent.progenitor.cell
