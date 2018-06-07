@@ -1,6 +1,17 @@
 
 # Generate all Rmds from template
 YAMLS := $(wildcard ../28_tissue_yamls_for_supplement/*yaml)
+RMDS := $(wildcard *.Rmd)
+CORES=32
+
+figures: create_R_files_from_Rmds
+	ls -1 *.R | grep -v boiler | grep -v Template | xargs -P ${CORES} -I{} bash -c "R -f {} >{}.out 2>{}.err"
+
+create_R_files_from_Rmds: clean
+	for RMD in $(RMDS); do \
+		echo $$RMD; \
+		echo "library(knitr); purl('$$RMD')" | R --vanilla; \
+	done
 
 clean_rmd:
 	rm -rf *_auto_generated.Rmd
