@@ -253,22 +253,27 @@ colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)
 
 # Output a table for the paper
 ```{r}
-known.protocols <- read.csv("known_reprogramming_protocols.csv")
+known.protocols <- read_csv("known_reprogramming_protocols.csv")
+celltype.translate <- read_csv("translate_celltype_cellOntology.csv")
+celltype.translate <- distinct(celltype.translate)
 known.protocols <- known.protocols %>% filter(genes != "", !is.na(Fraction_Expressing_Threshold))
-output <- known.protocols %>% select(CellType, Genes, Organism, Fraction_Expressing_Threshold,Match, Celltypes_above_threshold, DOI)
+known.protocols <- inner_join(known.protocols, celltype.translate, by="CellType")
+output <- known.protocols %>% select(CellType, Genes, Organism, Cell_Ontology_Class, DOI)
 output
-write.csv(output, file="reprogramming_analysis_table.csv")
+write_csv(output, path="reprogramming_analysis_table.csv")
 
 
 ```
 
 # Scoring cell types by TF coexpression
 ```{r}
-known.protocols <- read.csv("reprogramming_analysis_table.csv", row.names = 1)
+known.protocols <- read_csv("reprogramming_analysis_table.csv")
+known.protocols <- known.protocols %>% filter(!is.na(Cell_Ontology_Class))
 fractions <- read.csv("fractions.csv", row.names = 1)
 tfs.used <- capitalize(tolower(unlist(lapply(as.character(known.protocols$Genes), strsplit, split=";"))))
 
 fractions <- fractions[tfs.used, ]
+
 ```
 
 
@@ -278,10 +283,11 @@ max.fractions <- apply(fractions, 1, max)
 max.fractions[max.fractions < 0.1] <- 0.1
 fractions.scaled <- fractions / max.fractions
 
+known.protocols$Rank_of_Expected_Type <- NA
+# Annotate known reprogramming protocols with rank of "expected" cell type. In the case of multiple expected cell types, use the rank of the highest cell type.
 Genesets <- character(0)
 for(i in 1:nrow(known.protocols)) {
   
-  # target.type <- known.protocols$CellType[i]
   Geneset <- known.protocols$Genes[i]
   Geneset <- gsub(pattern = ";",replacement = "__", x=Geneset)
   Genesets <- c(Geneset,Genesets)
@@ -292,8 +298,8 @@ for(i in 1:nrow(known.protocols)) {
   for(tf in tfs){
     coexpr.score <- coexpr.score * fractions.scaled[tf,]
   }
-  coexpr.ranks <- rank(coexpr.score)
-  # # neuron.rank <- ranks[which(names(ranks)=="Brain_Non.Myeloid__neuron")]
+  coexpr.ranks <- rank(-coexpr.score) # highest expressor will have lowest rank
+  
   if(i==1) {
     all.coexpr.ranks <- coexpr.ranks
     all.coexpr.score <- coexpr.score
@@ -303,15 +309,22 @@ for(i in 1:nrow(known.protocols)) {
 
   }
 
+  celltypes.expected <- strsplit(as.character(known.protocols$Cell_Ontology_Class[i]), split = ";")[[1]]
+  
+  # get all tiss__cell_ontology_class combinations that match the expected cell_ontology_class
+  # e.g. endothelial.cell is in multiple tissues and thus has multiple annotations
+  all.annots <- as.character(tm.facs.metadata %>% filter(cell_ontology_class %in% celltypes.expected) %>% distinct(annotation.2) %>% pull(annotation.2))
+  
+  # get minimum rank of expected tissue-cell ontology combos
+  rank.expected=min(coexpr.ranks[names(coexpr.ranks) %in% all.annots])
+  known.protocols$Rank_of_Expected_Type[i] <- rank.expected
 }
 rownames(all.coexpr.ranks) <- Genesets
 rownames(all.coexpr.score) <- Genesets
-# neuron.ranks <- merge(neuron.ranks, eff.dt, by = "TF.duo")
-for(x in rownames(all.coexpr.score)){
-  pdf(paste0(x,".pdf"))
-  print(hist(all.coexpr.score[x,]))
-  dev.off()
-}
+
+known.protocols <- known.protocols %>% select(CellType, Genes, Organism, Rank_of_Expected_Type, DOI)
+write_csv(known.protocols, path = "reprogramming_analysis_table.csv")
+
 ```
 
 
