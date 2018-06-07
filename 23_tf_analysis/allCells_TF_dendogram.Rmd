@@ -45,6 +45,8 @@ tm.droplet.metadata = read_csv(here("data-tabula-muris", "TM_droplet_metadata.cs
 
 tm.facs.matrix = readRDS(here("data-tabula-muris", "TM_facs_mat.rds"))
 tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
+rownames(tm.facs.metadata) <- tm.facs.metadata$cell
+# tm.facs.metadata <- tm.facs.metadata[,-1]
 #tissFACS <- CreateSeuratObject(raw.data = tm.facs.matrix, meta.data = tm.facs.metadata)
 ```
 
@@ -97,6 +99,29 @@ tf.names <- tf.names[!tf.names %in% iegs]
 length(tf.names)
 ```
 
+# Load cell surface markers 
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+csms      <- read.csv(here('23_tf_analysis','GO_term_summary_20180604_183150.csv'))
+csms.names <- as.character( csms %>% distinct(Symbol) %>% pull(Symbol) )
+csms.names <- make.names(csms.names)
+#tf.names <- tf.names[tf.names %in% rownames(tissFACS@data)]
+length(csms.names)
+
+# # remove genes with very low expression in data
+# x=apply(as.matrix(tissFACS@data[tf.names, ]) > 0, 1, sum) 
+# genes.expr <- names(x[x > 5])
+# tf.names <- tf.names[tf.names %in% genes.expr]
+
+# Remove IEGs
+# iegs <- as.character(read.csv(file.path(tabula.dir,"00_data_ingest/20_dissociation_genes/genes_affected_by_dissociation_unix.csv"), header = T)[,1])
+
+iegs <- as.character(read.csv(here('00_data_ingest','20_dissociation_genes','genes_affected_by_dissociation_unix.csv'), header = T)[,1])
+
+csms.names <- csms.names[!csms.names %in% iegs]
+csms.names <- c(csms.names,rna.sfs.names)
+length(csms.names)
+```
 # Load RNA splicing factors 
 ```{r}
 # (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
@@ -160,23 +185,23 @@ tm.facs.matrix.tfs.cellids <- tm.facs.matrix.tfs %>%
   summarise_at(vars(colnames(tm.facs.matrix.tfs[1:1016])),funs(sum(., na.rm=TRUE)))
 
 
-# tm.facs.matrix.tfs.cellids.norm = tm.facs.matrix.tfs.cellids
-# for (i in 1:82){
-#   jaux = sum(tm.facs.matrix.tfs.cellids[i,2:1017])
-#   for (j in 2:1017){
-#     tm.facs.matrix.tfs.cellids.norm[i,j] = tm.facs.matrix.tfs.cellids[i,j]/jaux
-#   }
-# }
-# # tm.facs.matrix.tfs.cellids.norm <- tm.facs.matrix.tfs.cellids.norm[,2:1017]
-
-
 tm.facs.matrix.tfs.cellids.norm = tm.facs.matrix.tfs.cellids
-for (i in 1:130){
+for (i in 1:82){
   jaux = sum(tm.facs.matrix.tfs.cellids[i,2:1017])
   for (j in 2:1017){
     tm.facs.matrix.tfs.cellids.norm[i,j] = tm.facs.matrix.tfs.cellids[i,j]/jaux
   }
 }
+
+
+# tm.facs.matrix.tfs.cellids.norm = tm.facs.matrix.tfs.cellids
+# for (i in 1:130){
+#   jaux = sum(tm.facs.matrix.tfs.cellids[i,2:1017])
+#   for (j in 2:1017){
+#     tm.facs.matrix.tfs.cellids.norm[i,j] = tm.facs.matrix.tfs.cellids[i,j]/jaux
+#   }
+# }
+
 tm.facs.matrix.tfs.cellids.norm <- as.data.frame(tm.facs.matrix.tfs.cellids.norm)
 tm.facs.matrix.tfs.cellids.norm <- subset(tm.facs.matrix.tfs.cellids.norm,!is.na(factors))
 rownames(tm.facs.matrix.tfs.cellids.norm) <- tm.facs.matrix.tfs.cellids.norm$factors
@@ -198,7 +223,7 @@ labels(dnorm)
 # 
 # dnorm <- dist(as.matrix(as.data.frame(lapply(tm.facs.matrix.tfs.cellids.norm, as.numeric))), method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
 hnorm <- hclust(dnorm, method = "ward.D2", members = NULL)
-pdf("onto_TFs.pdf", width=20, height=8)
+pdf("new_onto_TFs.pdf", width=20, height=8)
 plot(hnorm,  hang = 0.1, check = TRUE,
      axes = TRUE, frame.plot = FALSE, ann = FALSE,
      main = "Cluster Dendrogram",
@@ -227,6 +252,106 @@ colLab <- function(n) {
 clusDendro = dendrapply(as.dendrogram(hnorm), colLab)
 # make plot
 plot(clusDendro, main = "Cool Dendrogram", type = "triangle")
+```
+
+
+
+# Calculate global dendogram - FACS with Cell Surface Markers
+```{r}
+
+tm.facs.matrix.csms <- tm.facs.matrix[rownames(tm.facs.matrix) %in% csms.names,]
+tm.facs.matrix.csms <- as.data.frame(t(as.matrix(tm.facs.matrix.csms)))
+
+tm.facs.matrix.csms$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+# tm.facs.matrix.tfs$factors <- as.factor(tm.facs.metadata$cell_ontology_id)
+# tm.facs.matrix.tfs$factors <- paste(tm.facs.metadata$cell_ontology_class, tm.facs.metadata$tissue, sep="_")
+
+# # consider only TFs that are not affected by dissociation
+# tm.facs.matrix.csms.cellids <- tm.facs.matrix.csms %>% 
+#   group_by(factors) %>%
+#   summarise_at(vars(colnames(tm.facs.matrix.csms[1:770])),funs(sum(., na.rm=TRUE)))
+# 
+# 
+# tm.facs.matrix.csms.cellids.norm = tm.facs.matrix.csms.cellids
+# for (i in 1:82){
+#   jaux = sum(tm.facs.matrix.csms.cellids[i,2:770])
+#   for (j in 2:770){
+#     tm.facs.matrix.csms.cellids.norm[i,j] = tm.facs.matrix.csms.cellids[i,j]/jaux
+#   }
+# }
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.csms.cellids <- tm.facs.matrix.csms %>%
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.csms[1:1086])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.csms.cellids.norm = tm.facs.matrix.csms.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.csms.cellids[i,2:1086])
+  for (j in 2:1086){
+    tm.facs.matrix.csms.cellids.norm[i,j] = tm.facs.matrix.csms.cellids[i,j]/jaux
+  }
+}
+
+
+# tm.facs.matrix.csms.cellids.norm = tm.facs.matrix.csms.cellids
+# for (i in 1:130){
+#   jaux = sum(tm.facs.matrix.csms.cellids[i,2:1017])
+#   for (j in 2:1017){
+#     tm.facs.matrix.csms.cellids.norm[i,j] = tm.facs.matrix.csms.cellids[i,j]/jaux
+#   }
+# }
+tm.facs.matrix.csms.cellids.norm <- as.data.frame(tm.facs.matrix.csms.cellids.norm)
+tm.facs.matrix.csms.cellids.norm <- subset(tm.facs.matrix.csms.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.csms.cellids.norm) <- tm.facs.matrix.csms.cellids.norm$factors
+tm.facs.matrix.csms.cellids.norm <- tm.facs.matrix.csms.cellids.norm[,-1]
+dnorm.csms <- dist(tm.facs.matrix.csms.cellids.norm)
+labels(dnorm.csms)
+#tm.facs.matrix.tfs.cellids.norm <- tm.facs.matrix.tfs.cellids.norm[,2:1017]
+
+# hmcol = colorRampPalette(brewer.pal(9, "RdBu"))(100)
+#heatmap.2(as.matrix(as.data.frame(lapply(tm.facs.matrix.tfs.cellids.norm, as.numeric))),scale="column",trace = "none",col = hmcol, dendrogram = "both", labRow = tm.facs.matrix.tfs.cellids$factors, labCol = FALSE)
+
+# d <- dist(as.matrix(as.data.frame(lapply(tm.facs.matrix.tfs.cellids[,-1], as.numeric))), method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
+# h <- hclust(d, method = "complete", members = NULL)
+# plot(h, labels = tm.facs.matrix.tfs.cellids$factors, hang = 0.1, check = TRUE,
+#      axes = TRUE, frame.plot = FALSE, ann = FALSE,
+#      main = "Cluster Dendrogram",
+#      sub = NULL, xlab = "", ylab = "", which.plots=2, cex=.5)
+# 
+# 
+# dnorm <- dist(as.matrix(as.data.frame(lapply(tm.facs.matrix.tfs.cellids.norm, as.numeric))), method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
+hnorm.csms <- hclust(dnorm.csms, method = "ward.D2", members = NULL)
+pdf("new_onto_CSMs_RNAsfs.pdf", width=20, height=8)
+plot(hnorm.csms,  hang = 0.1, check = TRUE,
+     axes = TRUE, frame.plot = FALSE, ann = FALSE,
+     main = "Cluster Dendrogram",
+     sub = NULL, xlab = "", ylab = "", which.plots=2, cex=.5)
+dev.off()
+
+# # create a dendrogram
+# hc <- hclust(dnorm)#, method = "complete", members = NULL)
+# #hc$labels = tm.facs.matrix.tfs.cellids$factors
+# dend <- as.dendrogram(hc)
+# head(labels(dend))
+
+labelColors = c("#CDB380", "#036564", "#EB6841", "#EDC951")
+# cut dendrogram in 4 clusters
+clusMember = cutree(hnorm.csms, 4)#unique(as.factor(tm.facs.metadata$tissue))
+# function to get color labels
+colLab <- function(n) {
+    if (is.leaf(n)) {
+        a <- attributes(n)
+        labCol <- labelColors[clusMember[which(names(clusMember) == a$label)]]
+        attr(n, "nodePar") <- c(a$nodePar, lab.col = labCol)
+    }
+    n
+}
+# using dendrapply
+clusDendro.csms = dendrapply(as.dendrogram(hnorm.csms), colLab)
+# make plot
+plot(clusDendro.csms, main = "Cool Dendrogram", type = "triangle")
 ```
 
 
@@ -272,8 +397,8 @@ tm.facs.matrix.rna.sfs.cellids.norm <- tm.facs.matrix.rna.sfs.cellids.norm[,-1]
 dnormRNA <- dist(tm.facs.matrix.rna.sfs.cellids.norm)
 labels(dnormRNA)
 
-hnormRNA <- hclust(dnormRNA, method = "ward.D2", members = NULL)
-dend3 <- hnormRNA %>% as.dendrogram
+hnorm.rna.sfs <- hclust(dnormRNA, method = "ward.D2", members = NULL)
+# dend3 <- hnormRNA %>% as.dendrogram
 # hmcol = colorRampPalette(brewer.pal(9, "RdBu"))(100)
 #heatmap.2(as.matrix(as.data.frame(lapply(tm.facs.matrix.tfs.cellids.norm, as.numeric))),scale="column",trace = "none",col = hmcol, dendrogram = "both", labRow = tm.facs.matrix.tfs.cellids$factors, labCol = FALSE)
 
@@ -316,10 +441,17 @@ dend3 <- hnormRNA %>% as.dendrogram
 ```{r}
 tm.facs.ids <- unique(tm.facs.metadata$cell_ontology_id[!is.na(tm.facs.metadata$cell_ontology_id)])
 #tm.facs.ids <- tm.facs.ids[tm.facs.ids != ""]
+tm.droplet.ids <- unique(tm.droplet.metadata$cell_ontology_id[!is.na(tm.droplet.metadata$cell_ontology_id)])
 
-pdf("onto_plot.pdf", width=20, height=8)
-onto_plot(co, terms = tm.facs.ids,edge_attributes=list(color="black", lty="dashed"),term_sets = tm.facs.ids, frequencies=get_term_frequencies(co, term_sets),
-    fillcolor=colour_by_frequency, fontsize = 20)
+pdf("new_onto_plot.pdf", width=20, height=8)
+onto_plot(co, terms = tm.facs.ids,edge_attributes=list(color="black", lty="dashed"),term_sets = tm.facs.ids, frequencies=get_term_frequencies(co, term_sets), fillcolor=colour_by_frequency(co,tm.facs.ids,tm.facs.ids,colour_func = colorRampPalette(t(c("#FFFFCC", "#FFEDA0" ,"#FED976", "#FEB24C" ,"#FD8D3C", "#FC4E2A" ,"#E31A1C")))), fontsize = 20) 
+
+#colorRampPalette(c("Yellow", "Green", "#0099FF"))
+
+dev.off()
+
+pdf("onto_plot_10x.pdf", width=20, height=8)
+onto_plot(co, terms = tm.droplet.ids,edge_attributes=list(color="black", lty="dashed"),term_sets = tm.droplet.ids, frequencies=get_term_frequencies(co, term_sets), fillcolor=colour_by_frequency(co,tm.droplet.ids,tm.droplet.ids,colour_func = colorRampPalette(c("#FFFFCC", "#FFEDA0" ,"#FED976", "#FEB24C" ,"#FD8D3C", "#FC4E2A" ,"#E31A1C"))), fontsize = 20) 
 dev.off()
 
 
@@ -342,7 +474,7 @@ colnames(D) = co$name[tm.facs.ids]
 d = as.dist(D)
 
 honto <- hclust(d, method = "ward.D2")
-pdf("cluster_dendogram.pdf", width=6, height=3)
+pdf("new_cluster_dendogram.pdf", width=6, height=3)
 plot(honto, hang = 0.1, check = TRUE,
      axes = TRUE, frame.plot = FALSE, ann = FALSE,
      main = "Cluster Dendrogram",
@@ -361,8 +493,13 @@ dev.off()
 dend1 <- honto %>% as.dendrogram
 labels(dend1) <- labels(honto)
 dend2 <- hnorm %>% as.dendrogram
+dend3 <- hnorm.csms %>% as.dendrogram
+dend4 <- hnorm.rna.sfs %>% as.dendrogram
+dend5 <- hnorm.csms %>% as.dendrogram
 dend12 <- dendlist(dend1, dend2)
 dend13 <- dendlist(dend1, dend3)
+dend14 <- dendlist(dend1, dend4)
+dend15 <- dendlist(dend1, dend5)
 dend_diff(dend1, dend2)
 # dend12 %>% untangle %>% tanglegram
 dend12 %>% tanglegram(lab.cex = 1.2, lwd = 1,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,columns_width = c(15, 5, 15),main_left = "Ontology",main_right = "TFs",margin_inner= 25)
@@ -381,12 +518,31 @@ x <- dend12 %>% untangle(method = "random", R = 10)
 x %>% plot(main = paste("entanglement =", round(entanglement(x), 2)))
 
 x <- dend12 %>% untangle(method = "step2side") 
+y <- dend13 %>% untangle(method = "step2side") 
+z <- dend14 %>% untangle(method = "step2side")  
+w <- dend15 %>% untangle(method = "step2side") 
 x %>% plot(main = paste("entanglement =", round(entanglement(x), 2)))
 
-pdf("tanglegram_onto_tfs.pdf", width=50, height=30)
+pdf("new_tanglegram_onto_tfs.pdf", width=50, height=30)
 x %>% tanglegram(lab.cex = 1.2, lwd = 1,edge.lwd = NULL,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,columns_width = c(15, 10, 15),
                       main_left = "Cell Ontology",main_right = "Transcription factors",margin_inner= 22,main = paste("entanglement =", round(entanglement(x), 2)))#,  , dLeaf = -1,type = "r"
 dev.off()
+
+pdf("new_tanglegram_onto_csms.pdf", width=50, height=30)
+y %>% tanglegram(lab.cex = 1.2, lwd = 1,edge.lwd = NULL,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,columns_width = c(15, 10, 15),
+                      main_left = "Cell Ontology",main_right = "Cell Surface Markers",margin_inner= 22,main = paste("entanglement =", round(entanglement(y), 2)))#,  , dLeaf = -1,type = "r"
+dev.off()
+
+pdf("new_tanglegram_onto_rna_sfs.pdf", width=50, height=30)
+z %>% tanglegram(lab.cex = 1.2, lwd = 1,edge.lwd = NULL,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,columns_width = c(15, 10, 15),
+                      main_left = "Cell Ontology",main_right = "RNA splicing factors",margin_inner= 22,main = paste("entanglement =", round(entanglement(z), 2)))#,  , dLeaf = -1,type = "r"
+dev.off()
+
+pdf("new_tanglegram_onto_csms_rna_sfs.pdf", width=50, height=30)
+w %>% tanglegram(lab.cex = 1.2, lwd = 1,edge.lwd = NULL,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,columns_width = c(15, 10, 15),
+                      main_left = "Cell Ontology",main_right = "Cell Surface Markers & RNA splicing factors",margin_inner= 22,main = paste("entanglement =", round(entanglement(w), 2)))#,  , dLeaf = -1,type = "r"
+dev.off()
+
 # compare the 2 trees
 dend.comp <- all.equal(dend1, dend2, use.edge.length = FALSE, use.tip.label.order = FALSE, use.tip.label = TRUE, use.topology = FALSE, tolerance = .Machine$double.eps^0.5, scale = NULL)
 
