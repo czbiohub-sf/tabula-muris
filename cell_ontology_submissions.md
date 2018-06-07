@@ -744,10 +744,10 @@ FACS and droplet free annotation tables in the "Details" below.
 
 ### Droplet
 
-- [ ] bile duct epithelial cells `is_a` duct epithelial cell
-- [ ] Periportal hepatocyte `is_a` hepatocyte
-- [ ] Midlobular hepatocyte `is_a` hepatocyte
-- [ ] Pericentral hepatocyte `is_a` hepatocyte
+- [ ] bile duct epithelial cells `is_a` [duct epithelial cell](http://purl.obolibrary.org/obo/CL_0000068)
+- [ ] Periportal hepatocyte `is_a` [hepatocyte](http://purl.obolibrary.org/obo/CL_0000182)
+- [ ] Midlobular hepatocyte `is_a` [hepatocyte](http://purl.obolibrary.org/obo/CL_0000182)
+- [ ] Pericentral hepatocyte `is_a` [hepatocyte](http://purl.obolibrary.org/obo/CL_0000182)
 
 ## Lung
 
