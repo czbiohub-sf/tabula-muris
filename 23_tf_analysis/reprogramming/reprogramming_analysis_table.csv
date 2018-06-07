@@ -1,0 +1,15 @@
+CellType,Genes,Organism,Rank_of_Expected_Type,DOI
+Neuron,Pou3f2;Ascl1;Myt1l,Mouse,2,doi:10.1038/nature08797
+Neuron,Pou3f2;Ascl1;Zic1,Mouse,2,doi:10.1038/nature08797
+Cardiomyocyte,Gata4;Tbx5;Mef2c,Mouse,1,https://doi.org/10.1016/j.cell.2010.07.002
+Cardiomyocyte,Hand2;Nkx2.5;Gata4;Mef2c;Tbx5,Mouse,1,https://doi.org/10.1016/j.yjmcc.2013.04.004
+Hepatocytes,Hnf4a;Foxa1,Mouse,5,doi:10.1038/nature10263
+Hepatocytes,Hnf1a;Gata4;Foxa3,Mouse,1,doi:10.1038/nature10116
+Hepatocytes,Hnf4a;Cebpa;Nr1i2,Mouse,1,doi.org/10.1016/j.ejcb.2015.10.003
+Muscle,Myod1,Mouse,1,10.1016/0092-8674(87)90585-X
+Macrophages,Cebpa;Cebpb,Mouse,17,10.1016/S0092-8674(04)00419-2
+Beta_cells,Neurog3;Pdx1;Mafa,Mouse,1,10.1038/nature07314
+Endothelial,ETV2,Human,11,10.1073/pnas.1413234112
+Oligodendrocyte,Sox10;Olig2;Zfp536,Mouse,1,10.1038/nbt.2564
+Fetal_Intestine_Progenitor_Cells,Hnf4a;Foxa3;Gata6;Cdx2,Mouse,2,10.1016/j.stem.2017.08.020
+Hematopoietic_progenitors,Erg;Gata2;Lmo2;Runx1;Tal1,Mouse,4,10.1016/j.celrep.2014.11.002
