@@ -10,71 +10,104 @@ library(cowplot)
 library(data.table)
 library(dplyr)
 library(tidyr)
+library(readr)
 library(parallel)
 library(cba)
 library(RColorBrewer)
 
-tabula.dir <- "../../../tabula-muris/"
 ```
 
 # Load Seurat object of data
 ```{r}
-load("../../data/All_seurat_tiss.Robj")
+# load("../../data/All_seurat_tiss.Robj")
 ```
 
 # Load metadata and add to Seurat object
 Loads Seurat object and list of TFs
 Makes "annotation.2" metadata field which is tissue__cell_ontology_class. This is the field used to separate cells into classes for finding markers and doing correlations.
 ```{r}
-metadata <- read.csv('../TM_facs_metadata.csv')
-metadata <- metadata %>%  filter(cell_ontology_class!='unknown' & !is.na(tissue) & !is.na(cell_ontology_class))
-metadata$tissue <- make.names(metadata$tissue)
-metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class)
+# metadata <- read.csv('../TM_facs_metadata.csv')
+# metadata <- metadata %>%  filter(cell_ontology_class!='unknown' & !is.na(tissue) & !is.na(cell_ontology_class))
+# metadata$tissue <- make.names(metadata$tissue)
+# metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class)
+# 
+# # make "annotation.2"
+# metadata  <- metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
+# 
+# tissue_colors <- read.csv(file.path(tabula.dir,'00_data_ingest/15_color_palette/tissue_colors.csv'))
+# colnames(tissue_colors) <- c('tissue','tiss.color')
+# tissue_colors$tissue <- make.names(tissue_colors$tissue)
+# 
+# metadata <- merge(metadata, tissue_colors, by = 'tissue')
+# 
+# rownames(metadata) <- metadata$cell # need this to add to Seurat object
+# metadata <- metadata[tiss@cell.names, ]
+# 
+# # Add metadata
+# tiss <- AddMetaData(tiss, metadata)
+# sum(is.na(tiss@meta.data$annotation.2))
+# length(unique(tiss@meta.data$annotation.2))
+# tiss <- SetAllIdent(tiss, 'annotation.2')
+# 
+# # Make gene names R compatible
+# rownames(tiss@data) <- make.names(rownames(tiss@data))
+# rownames(tiss@raw.data) <- make.names(rownames(tiss@raw.data))
+# rownames(tiss@scale.data) <- make.names(rownames(tiss@scale.data))
+# gc()
+```
 
+
+```{r load tabula muris data}
+tm.facs.matrix = readRDS(here("data-tabula-muris", "TM_facs_mat.rds"))
+rownames(tm.facs.matrix) <- make.names(rownames(tm.facs.matrix))
+tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
+
+tm.facs.metadata <- tm.facs.metadata %>% filter(!is.na(tissue), !is.na(cell_ontology_class), !is.na(cell_ontology_id))
+tm.facs.metadata <- tm.facs.metadata %>% filter(cell %in% colnames(tm.facs.matrix))
+
+tm.facs.metadata$tissue <- make.names(tm.facs.metadata$tissue)
+tm.facs.metadata$cell_ontology_class <- make.names(tm.facs.metadata$cell_ontology_class)
 # make "annotation.2"
-metadata  <- metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
+tm.facs.metadata  <- tm.facs.metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
 
-tissue_colors <- read.csv(file.path(tabula.dir,'00_data_ingest/15_color_palette/tissue_colors.csv'))
+
+tissue_colors <- read_csv(here('00_data_ingest/15_color_palette/tissue_colors.csv'))
 colnames(tissue_colors) <- c('tissue','tiss.color')
 tissue_colors$tissue <- make.names(tissue_colors$tissue)
 
-metadata <- merge(metadata, tissue_colors, by = 'tissue')
+tm.facs.metadata <- inner_join(tm.facs.metadata, tissue_colors, by = 'tissue')
 
-rownames(metadata) <- metadata$cell # need this to add to Seurat object
-metadata <- metadata[tiss@cell.names, ]
-
-# Add metadata
-tiss <- AddMetaData(tiss, metadata)
-sum(is.na(tiss@meta.data$annotation.2))
-length(unique(tiss@meta.data$annotation.2))
-tiss <- SetAllIdent(tiss, 'annotation.2')
-
-# Make gene names R compatible
-rownames(tiss@data) <- make.names(rownames(tiss@data))
-rownames(tiss@raw.data) <- make.names(rownames(tiss@raw.data))
-rownames(tiss@scale.data) <- make.names(rownames(tiss@scale.data))
-gc()
 ```
-
 
 # Load TFs 
 ```{r}
 # (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
-tfs      <- fread('../GO_term_summary_20171110_222852.csv')
+tfs      <- read.csv(here('23_tf_analysis','GO_term_summary_20171110_222852.csv'))
 tf.names <- as.character( tfs %>% distinct(Symbol) %>% pull(Symbol) )
 tf.names <- make.names(tf.names)
-tf.names <- tf.names[tf.names %in% rownames(tiss@data)]
+tf.names <- tf.names[tf.names %in% rownames(tm.facs.matrix)]
 length(tf.names)
 
-# remove genes with very low expression in data
-x=apply(as.matrix(tiss@data[tf.names, ]) > 0, 1, sum) 
-genes.expr <- names(x[x > 5])
-tf.names <- tf.names[tf.names %in% genes.expr]
+# Remove dissociation-related genes
+iegs <- as.character(read.csv(here('00_data_ingest','20_dissociation_genes','genes_affected_by_dissociation_unix.csv'), header = T)[,1])
+iegs <- iegs[!iegs=="Cebpb"]
 
-# Remove IEGs
-iegs <- as.character(read.csv(file.path(tabula.dir,"00_data_ingest/20_dissociation_genes/genes_affected_by_dissociation_unix.csv"), header = T)[,1])
 tf.names <- tf.names[!tf.names %in% iegs]
 length(tf.names)
+```
+
+```{r prepare data for TF analysis}
+tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
+tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,colnames(tm.facs.matrix.tfs) %in% tm.facs.metadata$cell]
+tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,tm.facs.metadata$cell]
+
+rownames(tm.facs.metadata) = tm.facs.metadata$cell
+tm.facs.metadata.tfs <- tm.facs.metadata
+tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
+tissFACS <- CreateSeuratObject(raw.data = tm.facs.matrix, meta.data = tm.facs.metadata)
+tissFACS <- NormalizeData(object = tissFACS, scale.factor = 1e6)
+
+
 ```
 
 
@@ -84,7 +117,7 @@ For cross-tissue analysis of broad cell classes
 # endothelial
 cell.type = "endothelial"
 system(paste("mkdir",cell.type))
-endo.labels <- tiss@meta.data %>% filter( (cell_ontology_class %like% 'endoth') | (cell_ontology_class %like% "endocard"))
+endo.labels <- tissFACS@meta.data %>% filter( (cell_ontology_class %like% 'endoth') | (cell_ontology_class %like% "endocard"))
 endo.labels %>% distinct(tissue, cell_ontology_class, annotation.2)
 endo.cells.all <- unique(as.character(endo.labels %>% pull(cell)))
 write.csv(endo.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.names = F)
@@ -93,11 +126,11 @@ write.csv(endo.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.name
 cell.type = "epithelial"
 system(paste("mkdir",cell.type))
 
-epith.labels <- bind_rows(tiss@meta.data %>% filter(cell_ontology_class %like% 'epith'), 
-                          tiss@meta.data %>% filter(cell_ontology_class %like% 'basal'),
-                          tiss@meta.data %>% filter(cell_ontology_class %like% 'keratino'),
-                           tiss@meta.data %>% filter(cell_ontology_class %like% 'epiderm'),
-                          tiss@meta.data %>% filter(cell_ontology_class %like% 'urothelial'))
+epith.labels <- bind_rows(tissFACS@meta.data %>% filter(cell_ontology_class %like% 'epith'), 
+                          tissFACS@meta.data %>% filter(cell_ontology_class %like% 'basal'),
+                          tissFACS@meta.data %>% filter(cell_ontology_class %like% 'keratino'),
+                           tissFACS@meta.data %>% filter(cell_ontology_class %like% 'epiderm'),
+                          tissFACS@meta.data %>% filter(cell_ontology_class %like% 'urothelial'))
 epith.labels %>% distinct(tissue, cell_ontology_class, annotation.2)
 epith.cells.all <- unique(as.character(epith.labels %>% pull(cell)))
 write.csv(epith.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.names = F)
@@ -108,9 +141,9 @@ write.csv(epith.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.nam
 cell.type = "stromal"
 system(paste("mkdir",cell.type))
 
-strom.labels <- bind_rows(tiss@meta.data %>% filter(annotation.2 %like% 'strom'), 
-                          tiss@meta.data %>% filter(annotation.2 %like% 'fibro'),
-                          tiss@meta.data %>% filter(annotation.2 %like% 'mesen'))
+strom.labels <- bind_rows(tissFACS@meta.data %>% filter(annotation.2 %like% 'strom'), 
+                          tissFACS@meta.data %>% filter(annotation.2 %like% 'fibro'),
+                          tissFACS@meta.data %>% filter(annotation.2 %like% 'mesen'))
 strom.labels %>% distinct(tissue, cell_ontology_class, annotation.2)
 strom.cells.all <- unique(as.character(strom.labels %>% pull(cell)))
 write.csv(strom.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.names = F)
@@ -118,7 +151,7 @@ write.csv(strom.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.nam
 
 cell.type = "bcell"
 system(paste("mkdir",cell.type))
-bcell.labels <- tiss@meta.data %>% filter(cell_ontology_class %like% "B.cell")
+bcell.labels <- tissFACS@meta.data %>% filter(cell_ontology_class %like% "B.cell")
 bcell.labels %>% distinct(tissue, cell_ontology_class, free_annotation)
 bcell.cells.all <- unique(as.character(bcell.labels %>% pull(cell)))
 write.csv(bcell.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.names = F)
@@ -126,7 +159,7 @@ write.csv(bcell.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.nam
 
 cell.type = "tcell"
 system(paste("mkdir",cell.type))
-tcell.labels <- tiss@meta.data %>% filter(cell_ontology_class %like% "T.cell")
+tcell.labels <- tissFACS@meta.data %>% filter(cell_ontology_class %like% "T.cell")
 tcell.labels %>% distinct(tissue, cell_ontology_class, free_annotation)
 tcell.cells.all <- unique(as.character(tcell.labels %>% pull(cell)))
 write.csv(tcell.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.names = F)
@@ -135,22 +168,30 @@ write.csv(tcell.cells.all, file = file.path(cell.type, 'cells_all.csv'), row.nam
 # Functions
 ## Differential expression function
 ```{r}
+# data=tissFACStfs
+# cell.type="endothelial"
+# max.cells.per.ident=50 
+# n.cores=4
 # calculates positively-enriched TFs only
 celltype.diffexpr <- function(data, cell.type, max.cells.per.ident=50, n.cores=2){
   cells.use <- as.character(read.csv(file.path(cell.type,'cells_all.csv'))[,1])
   
-  print(head(cells.use))
-  tiss.use <- SubsetData(data, cells.use = cells.use)
+  # print(head(cells.use))
+  tiss.use <- SubsetData(data, cells.use = cells.use, subset.raw = T)
   tiss.use <- SetAllIdent(tiss.use, 'annotation.2')
   tiss.use <- SubsetData(tiss.use, max.cells.per.ident = max.cells.per.ident)
 
   print(table(tiss.use@ident))
-  require(parallel)
-  markers <- do.call(rbind, mclapply(unique(tiss.use@ident), function(x) {
+  markers <- do.call(rbind, mclapply(unique(as.character(tiss.use@ident)), function(x) {
     # In the version of Seurat for initial MACA pub (Seurat_2.0.1)
     # uses object@data as input for statistical test
-    res=FindMarkers(tiss.use, ident.1 = x, only.pos = T, test.use="wilcox", min.diff.pct = 0.1, do.print=T, genes.use=tf.names)
-    gc()
+    res=FindMarkers(tiss.use, 
+                    ident.1 = x, 
+                    only.pos = T, 
+                    test.use="wilcox", 
+                    # min.diff.pct = 0.1, 
+                    genes.use=tf.names, 
+                    print.bar = F)
     res$cluster = x
     res$gene = rownames(res)
     return(res)}, mc.cores = n.cores))
@@ -168,7 +209,7 @@ celltype.diffexpr <- function(data, cell.type, max.cells.per.ident=50, n.cores=2
 ```{r}
 
 # returns output of barb.cormap (de)
-plot.correlogram <- function(cell.type, pval_cutoff, avg_logFC_cutoff, nmarkers.per.celltype, height=10){
+plot.correlogram <- function(object, cell.type, pval_cutoff, avg_logFC_cutoff, nmarkers.per.celltype, height=10){
   markers <- read.csv(file.path(cell.type, 'diffexpr.csv'))
   markers$avg_logFC <- as.numeric(as.character(markers$avg_logFC))
 
@@ -182,7 +223,7 @@ plot.correlogram <- function(cell.type, pval_cutoff, avg_logFC_cutoff, nmarkers.
 
   
   cells.use = as.character(read.csv(file.path(cell.type, 'cells_subsamp.csv'))[,1])
-  tiss.use <- SubsetData(tiss, cells.use = cells.use)
+  tiss.use <- SubsetData(object, cells.use = cells.use)
   tiss.use <- SetAllIdent(tiss.use, 'annotation.2')
 
   # plot heatmap of top cell-type-specific genes
@@ -284,13 +325,13 @@ make.tSNE <- function(object, cell.type, n.pcs=10, calc.PCA.only = F, subset.cel
 
   if(subset.cells){
     cells.use = as.character(read.csv(paste0('cells_',cell.type,'.csv'))[,1])
-    object <- SubsetData(tiss, cells.use = cells.use)
+    object <- SubsetData(object, cells.use = cells.use)
   }
   
   object <- NormalizeData(object = object, scale.factor = 1e6, display.progress = F)
   object <- ScaleData(object = object, display.progress = F)
   object <- FindVariableGenes(object = object, do.plot = F, x.high.cutoff = Inf, y.cutoff = 0.5, display.progress = F)
-  object@var.genes <- object@var.genes[!tiss@var.genes %in% iegs]
+  object@var.genes <- object@var.genes[!object@var.genes %in% iegs]
 
   object <- RunPCA(object = object, do.print = FALSE)
   object <- ProjectPCA(object = object, do.print = FALSE)
@@ -377,26 +418,26 @@ plot.tsne.markers <- function(object, cell.type, genes.plot){
 # Calculate differentially-expressed TFs across tissues w/in a broad cell class.
 Cells are subsampled here which speeds up the calculation. The subsampled cells are saved and used to generate the correlation plots in the next function. This next part is critical because the correlation is done using individual cells as datapoints and not across cell type averages, so the cells must be subsampled to avoid subtypes with many cells overtaking correlation. 
 ```{r}
-celltype.diffexpr(data = tiss, cell.type = 'endothelial', max.cells.per.ident = 60, n.cores = 4)
-celltype.diffexpr(data = tiss, cell.type = 'epithelial', max.cells.per.ident = 60, n.cores = 4)
-celltype.diffexpr(data = tiss, cell.type = 'stromal', max.cells.per.ident = 100, n.cores = 4)
+celltype.diffexpr(data = tissFACS, cell.type = 'endothelial', max.cells.per.ident = 60, n.cores = 4)
+celltype.diffexpr(data = tissFACS, cell.type = 'epithelial', max.cells.per.ident = 60, n.cores = 4)
+# celltype.diffexpr(data = tissFACStfs, cell.type = 'stromal', max.cells.per.ident = 100, n.cores = 4)
 
-celltype.diffexpr(data = tiss, cell.type = 'bcell', max.cells.per.ident = 100, n.cores = 4)
-celltype.diffexpr(data = tiss, cell.type = 'tcell', max.cells.per.ident = 100, n.cores = 4)
+celltype.diffexpr(data = tissFACS, cell.type = 'bcell', max.cells.per.ident = 100, n.cores = 4)
+celltype.diffexpr(data = tissFACS, cell.type = 'tcell', max.cells.per.ident = 100, n.cores = 4)
 ```
 
 # Plot correlograms of DE TFs within broad cell classes
 ```{r}
 # low pval/expr diff cutoffs
-corr.endo=plot.correlogram('endothelial', 1e-7, 0.3, 8, height=8)
+corr.endo=plot.correlogram(tissFACS, 'endothelial', 1e-7, 0.3, 8, height=8)
 
-corr.epith=plot.correlogram('epithelial', 1e-7, 0.3, 4)
+corr.epith=plot.correlogram(tissFACS, 'epithelial', 1e-7, 0.3, 4)
 
-corr.strom=plot.correlogram('stromal', 1e-7, 0.3, 8)
+# corr.strom=plot.correlogram(tissFACStfs, 'stromal', 1e-7, 0.3, 8)
  
-corr.bcell=plot.correlogram('bcell', 1e-7, 0.3, 8)
+corr.bcell=plot.correlogram(tissFACS, 'bcell', 1e-7, 0.3, 8)
 
-corr.tcell=plot.correlogram('tcell', 1e-7, 0.3, 8)
+corr.tcell=plot.correlogram(tissFACS, 'tcell', 1e-7, 0.3, 8)
 
 ```
 
@@ -404,32 +445,32 @@ corr.tcell=plot.correlogram('tcell', 1e-7, 0.3, 8)
 
 Calculate tSNE DR
 ```{r}
-make.tSNE(tiss,'endothelial', n.pcs=10) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
-make.tSNE(tiss,'epithelial', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
-make.tSNE(tiss,'stromal', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
+make.tSNE(tissFACS,'endothelial', n.pcs=10) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
+make.tSNE(tissFACS,'epithelial', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
+# make.tSNE(tissFACS,'stromal', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
 
-make.tSNE(tiss,'bcell', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
-make.tSNE(tiss,'tcell', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
+make.tSNE(tissFACS,'bcell', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
+make.tSNE(tissFACS,'tcell', n.pcs=15) # re-runs all the steps including normalization to generate the tSNE dimensionality reduction
 ```
 
 
 # Gene-tSNE plots
 ```{r}
-plot.tsne.annot(tiss,'endothelial')
-genes.plot <- c("Foxq1","Pbx1","Gata4","Meox2")
-plot.tsne.markers(tiss, 'endothelial', genes.plot)
+  plot.tsne.annot(tissFACS,'endothelial')
+  genes.plot <- c("Foxq1","Pbx1","Gata4","Meox2")
+  plot.tsne.markers(tissFACS, 'endothelial', genes.plot)
 
-plot.tsne.annot(tiss,'epithelial')
+plot.tsne.annot(tissFACS,'epithelial')
 genes.plot <- c("Sox4","Foxq1","Lhx2","Pax9")
-plot.tsne.markers(tiss, 'epithelial', genes.plot)
+plot.tsne.markers(tissFACS, 'epithelial', genes.plot)
 
-plot.tsne.annot(tiss,'tcell')
+plot.tsne.annot(tissFACS,'tcell')
 genes.plot <- c("Sox4","Foxp3","Nr4a2","Eomes")
-plot.tsne.markers(tiss, 'tcell', genes.plot)
+plot.tsne.markers(tissFACS, 'tcell', genes.plot)
 # 
-plot.tsne.annot(tiss,'bcell')
+plot.tsne.annot(tissFACS,'bcell')
 genes.plot <- c("Sox4","Gata3","Tbx21","Crem")
-plot.tsne.markers(tiss, 'bcell', genes.plot)
+plot.tsne.markers(tissFACS, 'bcell', genes.plot)
 
 ```
 
