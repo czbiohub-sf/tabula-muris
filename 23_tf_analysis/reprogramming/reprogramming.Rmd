@@ -5,54 +5,75 @@ output: html_notebook
 
 # Load data and metadata
 ```{r}
+rm(list=ls())
 require(Seurat)
+require(dplyr)
+require(data.table)
+require(Hmisc)
+require(doMC)
+library(here)
+library(dplyr)
+library(tidyr)
+library(readr)
+
+
+set.seed(644685)
+
 ```
 
 
-```{r}
-load("../../data/All_seurat_tiss.Robj")
-```
+```{r load tabula muris data}
+tm.facs.matrix = readRDS(here("data-tabula-muris", "TM_facs_mat.rds"))
+rownames(tm.facs.matrix) <- make.names(rownames(tm.facs.matrix))
+tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
 
+tm.facs.metadata <- tm.facs.metadata %>% filter(!is.na(tissue), !is.na(cell_ontology_class), !is.na(cell_ontology_id))
+tm.facs.metadata <- tm.facs.metadata %>% filter(cell %in% colnames(tm.facs.matrix))
 
-```{r}
-metadata <- read.csv('../../data/TM_facs_metadata.csv')
-metadata <- metadata %>%  filter(cell_ontology_class!='unknown' & !is.na(tissue) & !is.na(cell_ontology_class))
-metadata$tissue <- make.names(metadata$tissue)
-metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class)
-
+tm.facs.metadata$tissue <- make.names(tm.facs.metadata$tissue)
+tm.facs.metadata$cell_ontology_class <- make.names(tm.facs.metadata$cell_ontology_class)
 # make "annotation.2"
-metadata  <- metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
+tm.facs.metadata  <- tm.facs.metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
 
 
-```
-
-```{r}
-tissue_colors <- read.csv(file.path(tabula.dir,'00_data_ingest/15_color_palette/tissue_colors.csv'))
+tissue_colors <- read_csv(here('00_data_ingest/15_color_palette/tissue_colors.csv'))
 colnames(tissue_colors) <- c('tissue','tiss.color')
 tissue_colors$tissue <- make.names(tissue_colors$tissue)
 
-metadata <- merge(metadata, tissue_colors, by = 'tissue')
+tm.facs.metadata <- inner_join(tm.facs.metadata, tissue_colors, by = 'tissue')
 
-rownames(metadata) <- metadata$cell # need this to add to Seurat object
-metadata <- metadata[tiss@cell.names, ]
-
-# Add metadata
-tiss <- AddMetaData(tiss, metadata)
-sum(is.na(tiss@meta.data$annotation.2))
-length(unique(tiss@meta.data$annotation.2))
-tiss <- SetAllIdent(tiss, 'annotation.2')
-
-# Make gene names R compatible
-rownames(tiss@data) <- make.names(rownames(tiss@data))
-rownames(tiss@raw.data) <- make.names(rownames(tiss@raw.data))
-rownames(tiss@scale.data) <- make.names(rownames(tiss@scale.data))
-gc()
 ```
 
-```{r}
-tiss@meta.data %>% filter(cell_ontology_class=="neuron") %>% distinct(free_annotation)
-tiss@meta.data %>% filter(tissue=="Brain_Non.Myeloid") %>% distinct(cell_ontology_class)
 
+```{r load TFs}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+tfs      <- read.csv(here('23_tf_analysis','GO_term_summary_20171110_222852.csv'))
+tf.names <- as.character( tfs %>% distinct(Symbol) %>% pull(Symbol) )
+tf.names <- make.names(tf.names)
+tf.names <- tf.names[tf.names %in% rownames(tm.facs.matrix)]
+length(tf.names)
+
+# # remove genes that are not detected
+# x=apply(as.matrix(tissFACS@data[tf.names, ]) > 0, 1, sum) 
+# genes.expr <- names(x[x > 5])
+# tf.names <- tf.names[tf.names %in% genes.expr]
+
+# Remove dissociation-related genes
+iegs <- as.character(read.csv(here('00_data_ingest','20_dissociation_genes','genes_affected_by_dissociation_unix.csv'), header = T)[,1])
+iegs <- iegs[!iegs=="Cebpb"]
+
+tf.names <- tf.names[!tf.names %in% iegs]
+length(tf.names)
+```
+
+```{r prepare data for TF analysis}
+tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
+tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,colnames(tm.facs.matrix.tfs) %in% tm.facs.metadata$cell]
+tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,tm.facs.metadata$cell]
+
+rownames(tm.facs.metadata) = tm.facs.metadata$cell
+tm.facs.metadata.tfs <- tm.facs.metadata
+tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
 ```
 
 
@@ -87,9 +108,9 @@ group_fractions <- function(mat, groups, thresh=0){
 
 # Calculate fractions
 ```{r}
-tiss <- SetAllIdent(tiss, 'annotation.2')
+tissFACStfs <- SetAllIdent(tissFACStfs, 'annotation.2')
 
-fractions <- group_fractions(tiss@data, tiss@ident)
+fractions <- group_fractions(tissFACStfs@data, tissFACStfs@ident)
 write.csv(fractions, "fractions.csv")
 ```
 
@@ -142,6 +163,8 @@ colnames(fractions)[colSums(fractions[genes, ] > thresh) == length(genes)]
 print("Target cell type: Hepatocyte")
 thresh=.4
 genes <- c("Hnf4a","Cebpb","Foxa2")
+genes <- genes[genes %in% rownames(fractions)]
+
 colnames(fractions)[colSums(fractions[genes, ] > thresh) == length(genes)]
 
 # Note: Pou5f1 is not detected in any cells even though it is in the annotation
@@ -238,6 +261,59 @@ write.csv(output, file="reprogramming_analysis_table.csv")
 
 
 ```
+
+# Scoring cell types by TF coexpression
+```{r}
+known.protocols <- read.csv("reprogramming_analysis_table.csv", row.names = 1)
+fractions <- read.csv("fractions.csv", row.names = 1)
+tfs.used <- capitalize(tolower(unlist(lapply(as.character(known.protocols$Genes), strsplit, split=";"))))
+
+fractions <- fractions[tfs.used, ]
+```
+
+
+```{r}
+# First, divide each gene/celltype fraction by the maximum fraction per gene OR 0.1, whichever is larger.
+max.fractions <- apply(fractions, 1, max)
+max.fractions[max.fractions < 0.1] <- 0.1
+fractions.scaled <- fractions / max.fractions
+
+Genesets <- character(0)
+for(i in 1:nrow(known.protocols)) {
+  
+  # target.type <- known.protocols$CellType[i]
+  Geneset <- known.protocols$Genes[i]
+  Geneset <- gsub(pattern = ";",replacement = "__", x=Geneset)
+  Genesets <- c(Geneset,Genesets)
+  
+  tfs <- capitalize(tolower(strsplit(Geneset, split="__")[[1]]))
+  
+  coexpr.score <- 0*fractions.scaled[1,] + 1
+  for(tf in tfs){
+    coexpr.score <- coexpr.score * fractions.scaled[tf,]
+  }
+  coexpr.ranks <- rank(coexpr.score)
+  # # neuron.rank <- ranks[which(names(ranks)=="Brain_Non.Myeloid__neuron")]
+  if(i==1) {
+    all.coexpr.ranks <- coexpr.ranks
+    all.coexpr.score <- coexpr.score
+  } else{
+    all.coexpr.ranks <- rbind(all.coexpr.ranks, coexpr.ranks)
+    all.coexpr.score <- rbind(all.coexpr.score, coexpr.score)
+
+  }
+
+}
+rownames(all.coexpr.ranks) <- Genesets
+rownames(all.coexpr.score) <- Genesets
+# neuron.ranks <- merge(neuron.ranks, eff.dt, by = "TF.duo")
+for(x in rownames(all.coexpr.score)){
+  pdf(paste0(x,".pdf"))
+  print(hist(all.coexpr.score[x,]))
+  dev.off()
+}
+```
+
 
 
 
