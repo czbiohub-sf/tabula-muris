@@ -51,9 +51,11 @@ plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {
     no.axes = TRUE,
     alpha = 0.5,
     do.return = TRUE,
-    colors.use=colors.use
+    # colors.use=colors.use, 
+    na.rm=FALSE
+    # vector.friendly=TRUE
   ) #+ geom_point(alpha = 0.1)
-  p + labs(title=title)
+  p + labs(title=title) + scale_colour_manual(values = colors.use, na.value='black')
   ggsave(here('02_figure2',
     paste0(
       'figure2b_tsne_',
