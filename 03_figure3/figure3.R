@@ -17,9 +17,6 @@ hmap_df <- FetchData(tiss_FACS, vars.all = c('cell_ontology_class','tissue', 'cl
   summarize(count = n()) %>% filter(count > 5) %>% 
   spread(key=cluster, value = count, fill = 0)
 
-## ------------------------------------------------------------------------
-dim(hmap_mat)
-
 ## ---- fig.width = 15, fig.height = 45------------------------------------
 hmap_mat <- as.data.frame(hmap_df %>% ungroup() %>% select(-anno_and_tissue))
 row.names(hmap_mat) <- hmap_df$anno_and_tissue
