@@ -1,28 +1,18 @@
----
-title: "Supplementary Figure 5"
-output: html_document
----
-
-TSNE of all droplet cells
-
-```{r}
+## ------------------------------------------------------------------------
 library(tidyverse)
 library(stringr)
 library(Seurat)
 library(viridis)
 library(here)
-```
 
-```{r}
+## ------------------------------------------------------------------------
 load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
-```
 
-```{r}
+## ------------------------------------------------------------------------
 tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colors.csv"))
 tissue_colors <- rename(tissue_colors, tissue = X1)
-```
 
-```{r, fig.width = 8, fig.height = 6}
+## ---- fig.width = 8, fig.height = 6--------------------------------------
 lims = FetchData(tiss_droplet, c('tSNE_1', 'tSNE_2')) %>% summarize(xmin = min(tSNE_1), xmax = max(tSNE_1), ymin = min(tSNE_2), ymax = max(tSNE_2))
 
 plot_min = min(lims$xmin, lims$ymin)
@@ -44,11 +34,10 @@ TSNEPlot(tiss_droplet, do.label = T, pt.size = 0.1, do.return = T)  +
   xlab("tSNE 1") + ylab("tSNE 2")
 
 ggsave(here("15_supplementary_figure5","droplet_tsne_by_cluster.pdf"), width = 14, height = 7, units = "in")
-```
 
-```{r, fig.width = 8, fig.height = 6}
+## ---- fig.width = 8, fig.height = 6--------------------------------------
 TSNEPlot(tiss_droplet, group.by = 'cell_ontology_class', do.label = T, pt.size = 0.1, do.return = T) +
   xlim(plot_min, plot_max) + ylim(plot_min, plot_max) + coord_fixed(ratio = 1) +
   xlab("tSNE 1") + ylab("tSNE 2")
 ggsave(here("15_supplementary_figure5","droplet_tsne_by_cell_ontology_class.pdf"), width = 40, height = 25, units = "in")
-```
+
