@@ -35,12 +35,13 @@ tm.facs.metadata$cell_ontology_class <- make.names(tm.facs.metadata$cell_ontolog
 # make "annotation.2"
 tm.facs.metadata  <- tm.facs.metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
 
-
 tissue_colors <- read_csv(here('00_data_ingest/15_color_palette/tissue_colors.csv'))
 colnames(tissue_colors) <- c('tissue','tiss.color')
 tissue_colors$tissue <- make.names(tissue_colors$tissue)
 
 tm.facs.metadata <- inner_join(tm.facs.metadata, tissue_colors, by = 'tissue')
+
+tm.facs.matrix <- tm.facs.matrix[, tm.facs.metadata$cell]
 
 ```
 
@@ -67,13 +68,9 @@ length(tf.names)
 ```
 
 ```{r prepare data for TF analysis}
-tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
-tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,colnames(tm.facs.matrix.tfs) %in% tm.facs.metadata$cell]
-tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,tm.facs.metadata$cell]
-
 rownames(tm.facs.metadata) = tm.facs.metadata$cell
-tm.facs.metadata.tfs <- tm.facs.metadata
-tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
+tissFACS <- CreateSeuratObject(raw.data = tm.facs.matrix, meta.data = tm.facs.metadata)
+tissFACS <- NormalizeData(tissFACS, scale.factor = 1e6)
 ```
 
 
@@ -91,7 +88,8 @@ group_averages <- function(mat, groups){
   means
 }
 
-group_fractions <- function(mat, groups, thresh=0){
+# thresh = 1 is a cutoff of ~2 reads per million in ln(1+cpm) space
+group_fractions <- function(mat, groups, thresh=1){
   group_names = unique(groups)
   fractions = matrix(0, dim(mat)[1], length(group_names))
   colnames(fractions) = group_names
@@ -108,9 +106,9 @@ group_fractions <- function(mat, groups, thresh=0){
 
 # Calculate fractions
 ```{r}
-tissFACStfs <- SetAllIdent(tissFACStfs, 'annotation.2')
+tissFACS <- SetAllIdent(tissFACS, 'annotation.2')
 
-fractions <- group_fractions(tissFACStfs@data, tissFACStfs@ident)
+fractions <- group_fractions(tissFACS@data[tf.names, ], tissFACS@ident)
 write.csv(fractions, "fractions.csv")
 ```
 
@@ -256,7 +254,7 @@ colnames(fractions)[colSums(fractions[genes, ,drop=F] > thresh) == length(genes)
 known.protocols <- read_csv("known_reprogramming_protocols.csv")
 celltype.translate <- read_csv("translate_celltype_cellOntology.csv")
 celltype.translate <- distinct(celltype.translate)
-known.protocols <- known.protocols %>% filter(genes != "", !is.na(Fraction_Expressing_Threshold))
+known.protocols <- known.protocols %>% filter(Genes != "", !is.na(Fraction_Expressing_Threshold))
 known.protocols <- inner_join(known.protocols, celltype.translate, by="CellType")
 output <- known.protocols %>% select(CellType, Genes, Organism, Cell_Ontology_Class, DOI)
 output
