@@ -11,6 +11,9 @@ load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
 tiss = tiss_FACS
 tissX = tiss_droplet
 
+tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colors.csv"))
+tissue_colors <- rename(tissue_colors, tissue = X1)
+
 ## ---- fig.width = 8, fig.height = 6--------------------------------------
 FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
   ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
