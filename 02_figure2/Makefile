@@ -1,0 +1,4 @@
+CORES=32
+
+all:
+	ls -1 *.R | xargs -P ${CORES} -I{} bash -c "R -f {} >{}.out 2>{}.err"
