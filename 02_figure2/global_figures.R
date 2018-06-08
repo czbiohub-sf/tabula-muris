@@ -5,6 +5,7 @@ library(Seurat)
 library(viridis)
 library(here)
 
+
 load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
 load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
 
@@ -22,7 +23,7 @@ FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>%
                         guide = "legend") + 
   guides(colour = guide_legend(override.aes = list(size=2)))
 
-#ggsave('figures/tsne_by_tissue_plates.pdf', width = 14, height = 7, units = "in")
+#ggsave('tsne_by_tissue_plates.pdf', width = 14, height = 7, units = "in")
 
 ## ---- fig.width = 8, fid.height = 6--------------------------------------
 FetchData(tissX, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
@@ -32,7 +33,7 @@ FetchData(tissX, vars.all = c('tSNE_1','tSNE_2', 'color')) %>%
                         guide = "legend") + 
   guides(colour = guide_legend(override.aes = list(size=2)))
 
-ggsave('figures/tsne_by_tissue_tenx.pdf', width = 14, height = 7, units = "in")
+ggsave('tsne_by_tissue_tenx.pdf', width = 14, height = 7, units = "in")
 
 ## ------------------------------------------------------------------------
 hmap_df <- FetchData(tiss, vars.all = c('cell_ontology_class','anno_tissue', 'cluster')) %>% 

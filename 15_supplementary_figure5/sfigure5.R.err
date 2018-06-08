@@ -1,0 +1,37 @@
+── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──
+✔ ggplot2 2.2.1     ✔ purrr   0.2.4
+✔ tibble  1.4.1     ✔ dplyr   0.7.4
+✔ tidyr   0.7.2     ✔ stringr 1.2.0
+✔ readr   1.1.1     ✔ forcats 0.2.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+Loading required package: cowplot
+
+Attaching package: ‘cowplot’
+
+The following object is masked from ‘package:ggplot2’:
+
+    ggsave
+
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:tidyr’:
+
+    expand
+
+Loading required package: viridisLite
+here() starts at /home/olga/tabula-muris
+Parsed with column specification:
+cols(
+  X1 = col_character(),
+  color = col_character()
+)
+Warning message:
+Missing column names filled in: 'X1' [1] 
+Warning message:
+Removed 1 rows containing missing values (geom_text). 
+Warning message:
+Removed 1 rows containing missing values (geom_text). 
