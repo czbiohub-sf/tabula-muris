@@ -14,7 +14,7 @@ library(viridis)
 ```
 
 ```{r}
-load(file=here("00_data_ingest", "global_robj", "FACS_all.Robj"))
+load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
 ```
 
 ```{r}
