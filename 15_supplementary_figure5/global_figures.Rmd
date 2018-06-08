@@ -17,6 +17,9 @@ load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
 
 tiss = tiss_FACS
 tissX = tiss_droplet
+
+tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colors.csv"))
+tissue_colors <- rename(tissue_colors, tissue = X1)
 ```
 
 # Global TSNE
