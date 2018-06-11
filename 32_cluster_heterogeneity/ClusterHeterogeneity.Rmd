@@ -1,0 +1,238 @@
+---
+title: "Cluster Compactness"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(Seurat)
+library(here)
+load(here('00_data_ingest','11_global_robj','FACS_all.Robj'))
+```
+
+## Compactness
+
+We can measure the heterogeneity of a cluster by the average distance between pairs of its members.
+We can measure the 'mixing' of groups within a population (eg cell types w/in a cluster) by the average distance between pairs of points in each population.
+
+```{r}
+avg_pairwise_distance <- function(mat, n_samples = 1000){
+  n = dim(mat)[1]
+  total_distance = 0
+  for(s in 1:n_samples){
+    samples = sample(n,2)
+    diff = mat[samples[1],] - mat[samples[2],]
+    distance = sqrt(sum(diff**2))
+    total_distance = total_distance + distance
+  }
+  average_distance = total_distance/n_samples
+  average_distance
+}
+
+# test on identity matrix, where all pairwise distances are sqrt(2)
+test_mat = matrix(c(1,0,0,0,1,0,0,0,1), nrow = 3)
+avg_pairwise_distance(test_mat)
+
+# n.pcs
+avg_cluster_distance <- function(j, n.pcs = 100){
+  cells = tiss_FACS@meta.data %>% filter(cluster == j) %>% pull(cell)
+  
+  mat = tiss_FACS@dr$pca@cell.embeddings[cells, 1:n.pcs]
+  avg_pairwise_distance(mat)
+}
+
+avg_pairwise_distance2 <- function(mat1, mat2, n_samples = 1000){
+  n1 = dim(mat1)[1]
+  n2 = dim(mat2)[1]
+  total_distance = 0
+  for(s in 1:n_samples){
+    sample1 = sample(n1, 1)
+    sample2 = sample(n2, 1)
+    diff = mat1[sample1,] - mat2[sample2,]
+    distance = sqrt(sum(diff**2))
+    total_distance = total_distance + distance
+  }
+  average_distance = total_distance/n_samples
+  average_distance
+}
+
+test_mat_1 = matrix(c(1, 1.1, 0, 0.1), ncol = 2)
+test_mat_2 = matrix(c(0, 0.1, 1, 1.1), ncol = 2)
+avg_pairwise_distance2(test_mat_1, test_mat_2)
+
+avg_pairwise_distance_set <- function(mat, ids, n_samples = 1000, min_id_size = 1, verbose = F){
+  id_list = unique(ids)
+  # Keep only those ids occuring at least twice
+  id_list = id_list[sapply(id_list, function(x){
+      if(sum(ids == x) < min_id_size){
+        if(verbose){
+        print(paste0("Too few instances of ", x))
+        }
+        FALSE
+      }
+      else{
+        TRUE
+      }
+    }
+    )]
+  
+  n_ids = length(id_list)
+
+  distance_mat = matrix(NA, nrow = n_ids, ncol = n_ids)
+  rownames(distance_mat) = id_list
+  colnames(distance_mat) = id_list
+  for(i in 1:length(id_list)){
+    id_1 = id_list[i]
+    # First do the self-distances
+    mat_1 = mat[ids == id_1,]
+    distance_mat[i,i] = avg_pairwise_distance(mat[ids == id_1,])
+    if(i < length(id_list)){
+      for(j in (i+1):length(id_list)){
+        id_2 = id_list[j]
+        mat_2 = mat[ids == id_2,]
+        distance_mat[i,j] = avg_pairwise_distance2(mat_1, mat_2)
+        distance_mat[j,i] = distance_mat[i,j]
+      }
+    }
+  }
+  distance_mat
+}
+
+avg_pairwise_distance_set(rbind(test_mat_1, test_mat_2), c('a','a','b','b'), min_id_size = 2)
+
+average_cluster_differences_set <- function(j, n.pcs = 100, 
+                                            min_id_size = 5, dropna = T){
+  cluster_metadata = tiss_FACS@meta.data %>% filter(cluster == j & (!(dropna & is.na(cell_ontology_class))))
+  
+  cells = cluster_metadata %>% pull(cell)
+  
+  mat = tiss_FACS@dr$pca@cell.embeddings[cells, 1:n.pcs]
+
+  class_sizes = cluster_metadata %>% 
+    mutate(cell_ontology_class = 
+             ifelse(is.na(cell_ontology_class), "NA", cell_ontology_class)) %>%
+    mutate(class = paste0(cell_ontology_class, " (", tissue, ")")) %>% group_by(class) %>%
+    count() %>% mutate(class_with_size = paste0(class, " (", n,")"))
+  
+  
+  classes = cluster_metadata %>% 
+    mutate(cell_ontology_class = 
+             ifelse(is.na(cell_ontology_class), "NA", cell_ontology_class)) %>%
+    mutate(class = paste0(cell_ontology_class, " (", tissue, ")")) %>% 
+    pull(class)
+  
+  classes = plyr::mapvalues(x = classes, 
+                            from = class_sizes$class,
+                            to = class_sizes$class_with_size)
+  
+  avg_pairwise_distance_set(mat, classes, min_id_size = min_id_size)
+}
+```
+
+
+```{r}
+library(gplots)
+library(viridis)
+
+plot_dist <- function(dists, relative = TRUE, xmin = 10, xmax = 40){
+  ncol = 100
+  n_types = dim(dists)[1]
+  if(relative){
+    heatmap.2(dists, trace = "none", margins=c(50,50), col = viridis(ncol), 
+            symm = TRUE, revC = TRUE, breaks = seq(xmin, xmax, (xmax - xmin)/ncol), dendrogram = "none", density.info = "none")
+  }
+  else{
+    heatmap.2(dists, trace = "none", margins=c(50,50), col = viridis(ncol), 
+            symm = TRUE, revC = TRUE)
+  }
+}
+```
+
+Compute the average distance between all pairs of points.
+
+```{r}
+global_avg = avg_pairwise_distance(tiss_FACS@dr$pca@cell.embeddings[, 1:100], n_samples = 10000)
+```
+
+Produce all plots.
+
+```{r}
+for (i in 0:53){
+  dists = average_cluster_differences_set(i, min_id_size = 5)
+  if(dim(dists)[1] > 1){
+    pdf(here('32_cluster_heterogeneity', 'figures', paste0("cluster_breakdown_", i, ".pdf")), width = 20, height = 20)
+    plot_dist(dists, xmax = global_avg)
+    dev.off()
+  }
+}
+```
+
+## Statistics for manuscript
+
+Cells in cluster 3, and breakdown.
+```{r}
+tiss_FACS@meta.data %>% filter(cluster == 3) %>% count()
+tiss_FACS@meta.data %>% filter(cluster == 3) %>% group_by(cell_ontology_class)  %>% count() %>% filter(n > 5)
+```
+
+The Thymus cells in cluster 3 express _Pecam1_.
+
+```{r}
+FetchData(tiss_FACS, c('cell_ontology_class', 'cluster', 'Pecam1', 'tissue')) %>% 
+  filter(cluster == 3 & tissue == 'Thymus')
+```
+
+```{r}
+distances = sapply(0:53, function(i) {average_cluster_differences_set(i, min_id_size = 5)}, simplify = F)
+```
+
+```{r}
+geo_normalize <- function(dists){
+  dists / (sqrt(diag(dists)) %o% sqrt(diag(dists)))
+}
+normalized_distances = lapply(distances, geo_normalize)
+```
+
+We discuss 2,3,48,24 in the text.
+
+```{r, fig.width = 30, fig.height = 30}
+cluster = 2
+plot_dist(normalized_distances[[cluster + 1]], relative = T, xmax = 3, xmin = 1)
+plot_dist(distances[[cluster + 1]], relative = T, xmax = 40)
+```
+
+```{r}
+positive_examples = c(1, 2, 3, 48, 24)
+negative_examples = c(31, 32, 14, 53, 35, 9, 21, 41)
+```
+
+Add filter to include only things with multiple tissues...that leaves just 25 clusters.
+
+```{r}
+tissue_count = tiss_FACS@meta.data %>% group_by(cluster, tissue) %>% count() %>% filter(n >= 5) %>% ungroup() %>%
+  group_by(cluster) %>% count() %>% rename(tissues = nn) %>% ungroup() %>% mutate(cluster = as.character(cluster))
+tissue_count
+```
+
+Distributions of heterogeneity scores.
+
+```{r}
+max_dist = sapply(distances, max)/global_avg
+avg_dist = sapply(distances, mean)
+worst_dist = sapply(normalized_distances, max)
+df = tibble(cluster = as.character(0:53),
+            max_dist = max_dist,
+            worst_dist = worst_dist, 
+            n_types = sapply(distances, function(x){dim(x)[1]}),
+            rank = rank(max_dist)
+            )
+df = df %>% left_join(tissue_count, by = 'cluster')
+```
+
+```{r}
+df %>% filter(tissues > 1) %>% ggplot(aes(fct_reorder(cluster, rank), max_dist)) + geom_bar(stat = 'identity') +
+   geom_hline(aes(yintercept = 1.0)) + ylab('heterogeneity score') + xlab('cluster')
+ggsave(here('32_cluster_heterogeneity', 'figures', 'heterogeneity_score.pdf'))
+```
+
+
