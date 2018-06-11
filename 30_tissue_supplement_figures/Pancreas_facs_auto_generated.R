@@ -1,0 +1,182 @@
+## ----setup---------------------------------------------------------------
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+
+## ------------------------------------------------------------------------
+library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
+save_folder = here('30_tissue_supplement_figures', 'Pancreas', 'facs')
+dir.create(save_folder, recursive=TRUE)
+method = "facs"
+
+tissue_of_interest = 'Pancreas'
+filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+# Make sure cluster ids are numeric
+tiss@meta.data[, 'cluster.ids'] = as.numeric(tiss@meta.data[, 'cluster.ids'])
+
+# Concatenate original cell ontology class to free annotation
+cell_ontology_class = tiss@meta.data$cell_ontology_class
+cell_ontology_class[is.na(cell_ontology_class)] = "NA"
+
+free_annotation = sapply(tiss@meta.data$free_annotation,
+    function(x) { if (is.na(x)) {return('')} else return(paste(":", x))},
+    USE.NAMES = FALSE)
+tiss@meta.data[, "free_annotation"] = paste(cell_ontology_class,
+    free_annotation, sep='')
+
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = c("Amy2b", "Arx", "Cdh5", "Chga", "Cpa1", "Gcg", "Ghrl", "Hhex", "Hnf1b", "Ins1", "Ins2", "Isl1", "Kdr", "Krt19", "Mafa", "Mafb", "Neurog3", "Nkx6-1", "Pdgfra", "Pdgfrb", "Pdx1", "Pecam1", "Ppy", "Prss53", "Ptf1a", "Ptprc", "Slc2a2", "Spp1", "Sst")
+
+## ----use-optipng, optipng='-o7'------------------------------------------
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
+    group.bys = group.bys, method = method)
+
+## ------------------------------------------------------------------------
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#write.csv(tiss.markers, filename)
+
+## ------------------------------------------------------------------------
+filename = make_filename(save_folder, 'allcells', 'cell_ontology_class', 'ridgeplot_scaled_Ppy')
+RidgePlot(tiss, c('Ppy'), group.by = "cell_ontology_class")
+ggsave(filename, dpi=300)
+dev.off()
+write_caption("The transcript of PP cell signature hormone, \\emph{Ppy}, is detected in delta cells at high levels.", filename)
+
+## ------------------------------------------------------------------------
+prefix = 'DeltaCells'
+
+#Subset delta cells for analysis
+anno = 'pancreatic D cell'
+cells.to.use = tiss@cell.names[which(tiss@meta.data$cell_ontology_class == anno)]
+delta <- SubsetData(object = tiss, cells.use = cells.to.use, do.center = F, do.scale = F)
+
+#2a - using scaled data.
+
+filename = make_filename(save_folder, 'allcells', 'cell_ontology_class', 'ridgeplot_scaled_Neurog3')
+RidgePlot(tiss,'Neurog3', group.by = "cell_ontology_class")
+ggsave(filename, dpi=300)
+dev.off()
+write_caption("\\emph{Neurog3} transcripts are detected in islet, a few alpha, beta, and the majority of delta cells.", filename)
+
+delta.1=FetchData(delta, c("ident", "mouse.id","cell_ontology_class", "mouse.sex", "plate.barcode", "subtissue", "percent.ercc", "percent.ribo","nGene", "nReads","Sst","Pdx1","Hhex","Neurog3", "Ins2", "Gcg", "Ppy","Actb","Gapdh"))
+delta.1$mouse.id <- as.factor(delta.1$mouse.id)
+
+filename = file.path(save_folder, paste(prefix, 'Neurog3_expression', 'scatterplot_scaled_Neurog3-x-Hhex'))
+filename = make_filename(save_folder, prefix, 'Neurog3>0', 'scatterplot_scaled_Neurog3-x-Hhex')
+ggplot(delta.1, aes(Hhex, Neurog3, color = Neurog3 > 0))+ geom_point() + geom_rug(sides="bl")
+ggsave(filename, dpi=300)
+dev.off()
+write_caption("Scatter plot of all delta cells reveals that \\emph{Neurog3} and \\emph{Hhex} mark three distinct groups of
+delta cells, i.e. \\emph{Neurog3}$^+$\\emph{Hhex}$^\\text{neg}$, \\emph{Neurog3}$^\\text{neg}$\\emph{Hhex}$^+$, and \\emph{Neurog3}$^+$\\emph{Hhex}$^+$.", filename)
+
+filename = make_filename(save_folder, prefix, 'mouse.id', 'scatterplot_scaled_Neurog3-x-Hhex')
+ggplot(delta.1, aes(x=Hhex, y=Neurog3, color = mouse.id)) + geom_point() + geom_rug(sides = "bl")
+ggsave(filename, dpi=300)
+dev.off()
+write_caption("Delta heterogeneity is observed in every individual mouse.", filename)
+
+#2b - using raw data.
+filename = make_filename(save_folder, 'allcells', 'cell_ontology_class', 'ridgeplot_raw_Neurog3')
+RidgePlot(tiss,'Neurog3', group.by = "cell_ontology_class", use.raw = TRUE)
+ggsave(filename, dpi=300)
+dev.off()
+write_caption("\\emph{Neurog3} transcripts are detected in islet, a few alpha, beta, and the majority of delta cells.", filename)
+
+delta.2=FetchData(delta, c("ident", "mouse.id","cell_ontology_class", "mouse.sex", "plate.barcode", "subtissue", "percent.ercc", "percent.ribo", "nGene", "nReads", "Sst", "Pdx1", "Hhex", "Neurog3", "Ins2", "Gcg", "Ppy", "Actb", "Gapdh"), use.raw = TRUE)
+delta.2$mouse.id <- as.factor(delta.2$mouse.id)
+
+filename = make_filename(save_folder, prefix, 'Neurog3>0', 'scatterplot_raw_Neurog3-x-Hhex')
+ggplot(delta.2, aes(Hhex, Neurog3, color = Neurog3 > 0))+ geom_point() + geom_rug(sides="bl")
+ggsave(filename, dpi=300)
+dev.off()
+write_caption("Scatter plot of all delta cells reveals that \\emph{Neurog3} and \\emph{Hhex} mark three distinct groups of
+delta cells, i.e. \\emph{Neurog3}$^+$\\emph{Hhex}$^\\text{neg}$, \\emph{Neurog3}$^\\text{neg}$\\emph{Hhex}$^+$, and \\emph{Neurog3}$^+$\\emph{Hhex}$^+$.", filename)
+
+filename = make_filename(save_folder, prefix, 'mouse.id', 'scatterplot_raw_Neurog3-x-Hhex')
+ggplot(delta.2, aes(x=Hhex, y=Neurog3, color = mouse.id)) + geom_point() + geom_rug(sides = "bl")
+ggsave(filename, dpi=300)
+dev.off()
+write_caption("Delta heterogeneity is observed in every individual mouse.", filename)
+
+## ------------------------------------------------------------------------
+filename = make_filename(save_folder, prefix, 'expression', 'tsneplot')
+FeaturePlot(tiss, c('Prss53', 'Slc2a2', 'Nkx6-1','Ins2'), cols.use = c("grey","blue"), no.legend = FALSE)
+ggsave(filename, dpi=300)
+dev.off()
+write_caption("Expression of \\emph{Prss53} as shown on t-SNE embedding of Pancreas FACS cells.", filename)
+
+## ----optipng='-o7'-------------------------------------------------------
+in_SubsetA = tiss@meta.data$cluster.ids == c(1,2,5)
+in_SubsetA[is.na(in_SubsetA)] = FALSE
+
+
+## ----optipng='-o7'-------------------------------------------------------
+SubsetA.cells.use = tiss@cell.names[in_SubsetA]
+write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
+SubsetA.n.pcs = 8
+SubsetA.res.use = 1
+SubsetA.perplexity = 30
+SubsetA.genes_to_check = c("Ang", "Arg1", "Arx", "Cd9", "Chga", "Dpp10", "Folr1", "Gcg", "Gfra3", "Ghrl", "Hhex", "Irx1", "Isl1", "Mafb", "Pdx1", "Ppy", "Slc38a5", "Spp1", "Sst", "Tspan8", "Vsig1")
+SubsetA.group.bys = c(group.bys, "subsetA_cluster.ids")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
+    resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
+
+
+## ----optipng='-o7'-------------------------------------------------------
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetA"] = "(Not in subset)"
+tiss@meta.data[SubsetA.tiss@cell.names, "SubsetA"] = "SubsetA" 
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
+    'tsneplot_allcells')
+p = TSNEPlot(
+  object = tiss,
+  do.return = TRUE,
+  group.by = "SubsetA",
+  no.axes = TRUE,
+  pt.size = 1,
+  no.legend = TRUE,
+  colors.use = colors.use
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = "SubsetA",
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
+
+
+## ----optipng='-o7'-------------------------------------------------------
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA", group.bys = SubsetA.group.bys, 
+    "facs")
+
+

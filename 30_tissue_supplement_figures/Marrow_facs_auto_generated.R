@@ -1,0 +1,388 @@
+## ----setup---------------------------------------------------------------
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+
+## ------------------------------------------------------------------------
+library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
+save_folder = here('30_tissue_supplement_figures', 'Marrow', 'facs')
+dir.create(save_folder, recursive=TRUE)
+method = "facs"
+
+tissue_of_interest = 'Marrow'
+filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+# Make sure cluster ids are numeric
+tiss@meta.data[, 'cluster.ids'] = as.numeric(tiss@meta.data[, 'cluster.ids'])
+
+# Concatenate original cell ontology class to free annotation
+cell_ontology_class = tiss@meta.data$cell_ontology_class
+cell_ontology_class[is.na(cell_ontology_class)] = "NA"
+
+free_annotation = sapply(tiss@meta.data$free_annotation,
+    function(x) { if (is.na(x)) {return('')} else return(paste(":", x))},
+    USE.NAMES = FALSE)
+tiss@meta.data[, "free_annotation"] = paste(cell_ontology_class,
+    free_annotation, sep='')
+
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = c("Abcb1b", "Ahnak", "Atxn1", "Beta-s", "Bpgm", "Camp", "Ccl3", "Ccl9", "Ccr6", "Cd14", "Cd19", "Cd1d1", "Cd2", "Cd200", "Cd22", "Cd24a", "Cd27", "Cd34", "Cd38", "Cd3e", "Cd4", "Cd40", "Cd48", "Cd53", "Cd68", "Cd69", "Cd7", "Cd74", "Cd79a", "Cd79b", "Cd81", "Cd84", "Cd8a", "Cebpa", "Chchd10", "Cnp", "Cox6a2", "Cpa3", "Cr2", "Cxcr4", "Cxcr5", "Dntt", "Ebf1", "Egr2", "Emr1", "Fcer1a", "Fcer1g", "Fcer2a", "Fcgr3", "Fcgr4", "Flt3", "Fos", "Foxo1", "Gata1", "Gata2", "Gpr56", "H2-Ea-ps", "Hbb-b2", "Hp", "Ikzf1", "Il2ra", "Il3ra", "Il7r", "Irf8", "Itga2b", "Itgal", "Itgam", "Itgax", "Itgb2", "Jun", "Junb", "Kit", "Klf4", "Klf9", "Klrb1a", "Lcn2", "Ltf", "Ly6a", "Ly6d", "Ly6g6c", "Ly6g6e", "Ly9", "Mcpt8", "Mitf", "Mki67", "Mme", "Mn1", "Mpeg1", "Mpl", "Ms4a1", "Myl10", "Ngp", "Pax5", "Pdzk1ip1", "Pglyrp1", "Pld4", "Pou2af1", "Ptprc", "Rag1", "Rag2", "S100a11", "S100a9", "Sfpi1", "Slamf1", "Slamf6", "Spib", "Spn", "Stmn1", "Tcf3", "Thy1", "Tlr9", "Tmem176b", "Vpreb1", "Vpreb3", "Zbtb16")
+
+## ----use-optipng, optipng='-o7'------------------------------------------
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
+    group.bys = group.bys, method = method)
+
+## ------------------------------------------------------------------------
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#write.csv(tiss.markers, filename)
+
+## ----optipng='-o7'-------------------------------------------------------
+in_SubsetA = tiss@meta.data$cluster.ids == c(11,12)
+in_SubsetA[is.na(in_SubsetA)] = FALSE
+
+
+## ----optipng='-o7'-------------------------------------------------------
+SubsetA.cells.use = tiss@cell.names[in_SubsetA]
+write(paste("Number of cells in SubsetA subset:", length(SubsetA.cells.use)), stderr())
+SubsetA.n.pcs = 4
+SubsetA.res.use = 1
+SubsetA.perplexity = 30
+SubsetA.genes_to_check = c("A430084P05Rik", "Adamts14", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cma1", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Emr1", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgax", "Itgb7", "Khdc1a", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ncr1", "Ngp", "Nkg7", "Pax5", "Pld4", "Prf1", "Rag1", "Rag2", "Rrm2", "Serpinb9", "Sh2d1b1", "Stmn1", "Styk1", "Tcf7", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
+SubsetA.group.bys = c(group.bys, "subsetA_cluster.ids")
+SubsetA.tiss = SubsetData(tiss, cells.use=SubsetA.cells.use, )
+SubsetA.tiss <- SubsetA.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetA.tiss <- SubsetA.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetA.n.pcs, 
+    resolution = SubsetA.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetA.n.pcs, seed.use = 10, perplexity=SubsetA.perplexity)
+
+
+## ----optipng='-o7'-------------------------------------------------------
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetA"] = "(Not in subset)"
+tiss@meta.data[SubsetA.tiss@cell.names, "SubsetA"] = "SubsetA" 
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
+    'tsneplot_allcells')
+p = TSNEPlot(
+  object = tiss,
+  do.return = TRUE,
+  group.by = "SubsetA",
+  no.axes = TRUE,
+  pt.size = 1,
+  no.legend = TRUE,
+  colors.use = colors.use
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetA", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = "SubsetA",
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
+
+
+## ----optipng='-o7'-------------------------------------------------------
+dot_tsne_ridge(SubsetA.tiss, SubsetA.genes_to_check,
+    save_folder, prefix = "SubsetA-T cells, Natural Killer cells, Natural Killer T cells", group.bys = SubsetA.group.bys, 
+    "facs")
+
+
+## ----optipng='-o7'-------------------------------------------------------
+in_SubsetB = tiss@meta.data$subsetA_cluster.ids == 0
+in_SubsetB[is.na(in_SubsetB)] = FALSE
+
+
+## ----optipng='-o7'-------------------------------------------------------
+SubsetB.cells.use = tiss@cell.names[in_SubsetB]
+write(paste("Number of cells in SubsetB subset:", length(SubsetB.cells.use)), stderr())
+SubsetB.n.pcs = 3
+SubsetB.res.use = 1
+SubsetB.perplexity = 12
+SubsetB.genes_to_check = c("A430084P05Rik", "Car5b", "Ccl4", "Ccna2", "Ccr6", "Ccr7", "Cd160", "Cd19", "Cd1d1", "Cd22", "Cd34", "Cd3e", "Cd4", "Cd6", "Cd68", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cd8a", "Cd8b1", "Chchd10", "Cnp", "Cr2", "Ctla2a", "Ctla4", "Cxcr5", "Cxcr6", "Dntt", "Egr2", "Foxp3", "Gzma", "H2-Aa", "H2-Ab1", "H2-Eb1", "Hp", "Il10", "Il2ra", "Il2rb", "Il7r", "Itga4", "Itgb7", "Klra1", "Klrb1a", "Klrb1c", "Klrc1", "Lcn2", "Lef1", "Ly6c2", "Lyz2", "Mki67", "Mmp9", "Mpeg1", "Ms4a1", "Ncam1", "Ngp", "Nkg7", "Pld4", "Prf1", "Rag2", "Rrm2", "Serpinb9", "Stmn1", "Tcf7", "Tgfb1", "Tnfrsf4", "Top2a", "Tyrobp", "Ugt1a7c", "Vpreb3")
+SubsetB.group.bys = c(group.bys, "subsetB_cluster.ids")
+SubsetB.tiss = SubsetData(tiss, cells.use=SubsetB.cells.use, )
+SubsetB.tiss <- SubsetB.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetB.tiss <- SubsetB.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetB.n.pcs, 
+    resolution = SubsetB.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetB.n.pcs, seed.use = 10, perplexity=SubsetB.perplexity)
+
+
+## ----optipng='-o7'-------------------------------------------------------
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetB"] = "(Not in subset)"
+tiss@meta.data[SubsetB.tiss@cell.names, "SubsetB"] = "SubsetB" 
+filename = make_filename(save_folder, prefix="SubsetB", 'highlighted', 
+    'tsneplot_allcells')
+p = TSNEPlot(
+  object = tiss,
+  do.return = TRUE,
+  group.by = "SubsetB",
+  no.axes = TRUE,
+  pt.size = 1,
+  no.legend = TRUE,
+  colors.use = colors.use
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetB", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = "SubsetB",
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
+
+
+## ----optipng='-o7'-------------------------------------------------------
+dot_tsne_ridge(SubsetB.tiss, SubsetB.genes_to_check,
+    save_folder, prefix = "SubsetB-Regulatory Immature T cell", group.bys = SubsetB.group.bys, 
+    "facs")
+
+
+## ----optipng='-o7'-------------------------------------------------------
+in_SubsetC = tiss@meta.data$cluster.ids == 8
+in_SubsetC[is.na(in_SubsetC)] = FALSE
+
+
+## ----optipng='-o7'-------------------------------------------------------
+SubsetC.cells.use = tiss@cell.names[in_SubsetC]
+write(paste("Number of cells in SubsetC subset:", length(SubsetC.cells.use)), stderr())
+SubsetC.n.pcs = 4
+SubsetC.res.use = 1
+SubsetC.perplexity = 30
+SubsetC.genes_to_check = c("Acy3", "Arpp21", "Btg2", "Ccna2", "Ccnb1", "Ccr6", "Cd19", "Cd1d1", "Cd22", "Cd69", "Cd74", "Cd79a", "Cd79b", "Cdc20", "Cenpf", "Chchd10", "Cnp", "Comtd1", "Cr2", "Cxcr5", "Cybb", "Depdc1b", "Dntt", "E2f1", "Ebf1", "Egr2", "Erg", "Eri2", "Grb7", "H2-Aa", "H2-Ab1", "H2-Eb1", "Igll1", "Ikzf1", "Il2ra", "Il2rb", "Il7r", "Kdm5b", "Kif18a", "Klhl15", "Kpna2", "Ltb", "Lyz2", "Mki67", "Mmrn1", "Ms4a1", "Nkg7", "Pax5", "Rag1", "Rag2", "Rrm2", "S100a8", "Serinc5", "Sfpi1", "Ska1", "Slco4a1", "Smyd2", "Srm", "Stmn1", "Tbxa2r", "Tcf3", "Top2a", "Troap", "Ube2c", "Ung", "Vpreb1", "Vpreb2", "Vpreb3", "Zfp810")
+SubsetC.group.bys = c(group.bys, "subsetC_cluster.ids")
+SubsetC.tiss = SubsetData(tiss, cells.use=SubsetC.cells.use, )
+SubsetC.tiss <- SubsetC.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetC.tiss <- SubsetC.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetC.n.pcs, 
+    resolution = SubsetC.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetC.n.pcs, seed.use = 10, perplexity=SubsetC.perplexity)
+
+
+## ----optipng='-o7'-------------------------------------------------------
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetC"] = "(Not in subset)"
+tiss@meta.data[SubsetC.tiss@cell.names, "SubsetC"] = "SubsetC" 
+filename = make_filename(save_folder, prefix="SubsetC", 'highlighted', 
+    'tsneplot_allcells')
+p = TSNEPlot(
+  object = tiss,
+  do.return = TRUE,
+  group.by = "SubsetC",
+  no.axes = TRUE,
+  pt.size = 1,
+  no.legend = TRUE,
+  colors.use = colors.use
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetC", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = "SubsetC",
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
+
+
+## ----optipng='-o7'-------------------------------------------------------
+dot_tsne_ridge(SubsetC.tiss, SubsetC.genes_to_check,
+    save_folder, prefix = "SubsetC-Late pro-B cell", group.bys = SubsetC.group.bys, 
+    "facs")
+
+
+## ----optipng='-o7'-------------------------------------------------------
+in_SubsetD = tiss@meta.data$cluster.ids == 0
+in_SubsetD[is.na(in_SubsetD)] = FALSE
+
+
+## ----optipng='-o7'-------------------------------------------------------
+SubsetD.cells.use = tiss@cell.names[in_SubsetD]
+write(paste("Number of cells in SubsetD subset:", length(SubsetD.cells.use)), stderr())
+SubsetD.n.pcs = 20
+SubsetD.res.use = 1
+SubsetD.perplexity = 30
+SubsetD.genes_to_check = c("2810417H13Rik", "Apoe", "Atxn1", "Ccl9", "Ccna2", "Ccnb1", "Ccnb2", "Ccr7", "Cd1d1", "Cd34", "Cd48", "Cd63", "Cd69", "Cd74", "Cd79b", "Cdc20", "Chchd10", "Cish", "Cnp", "Ctla2a", "Ctsg", "Dntt", "Dusp1", "Elane", "Esam", "Flt3", "Fos", "Gata1", "Gimap8", "Gm11428", "H2-Aa", "H2-Ab1", "H2-Eb1", "H2-Ob", "Hk3", "Hp", "Ier2", "Il7r", "Itga2b", "Jhdm1d", "Junb", "Kif11", "Kit", "Ltb", "Ly6a", "Ly6c2", "Lyz2", "Mcm4", "Mfsd2b", "Mki67", "Mn1", "Mpl", "Mpo", "Ms4a3", "Muc13", "Myl10", "Myl12b", "Ncf1", "Nkg7", "Notch2", "Pdzk1ip1", "Pf4", "Prtn3", "Rag2", "Rrm2", "Sdsl", "Sell", "Serpinb9", "Slamf1", "Slc39a1", "Socs3", "Spag5", "Stat3", "Stmn1", "Tk1", "Top2a", "Tsix", "Tuba1b", "Tuba8", "Txnip", "Tyms", "Tyrobp", "Ube2c", "Uhrf1", "Ung", "Vldlr", "Wtap", "Xist")
+SubsetD.group.bys = c(group.bys, "subsetD_cluster.ids")
+SubsetD.tiss = SubsetData(tiss, cells.use=SubsetD.cells.use, )
+SubsetD.tiss <- SubsetD.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetD.tiss <- SubsetD.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetD.n.pcs, 
+    resolution = SubsetD.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetD.n.pcs, seed.use = 10, perplexity=SubsetD.perplexity)
+
+
+## ----optipng='-o7'-------------------------------------------------------
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetD"] = "(Not in subset)"
+tiss@meta.data[SubsetD.tiss@cell.names, "SubsetD"] = "SubsetD" 
+filename = make_filename(save_folder, prefix="SubsetD", 'highlighted', 
+    'tsneplot_allcells')
+p = TSNEPlot(
+  object = tiss,
+  do.return = TRUE,
+  group.by = "SubsetD",
+  no.axes = TRUE,
+  pt.size = 1,
+  no.legend = TRUE,
+  colors.use = colors.use
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetD", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = "SubsetD",
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
+
+
+## ----optipng='-o7'-------------------------------------------------------
+dot_tsne_ridge(SubsetD.tiss, SubsetD.genes_to_check,
+    save_folder, prefix = "SubsetD-Hematopoietic precursor cells", group.bys = SubsetD.group.bys, 
+    "facs")
+
+
+## ----optipng='-o7'-------------------------------------------------------
+in_SubsetE = tiss@meta.data$cluster.ids == 7
+in_SubsetE[is.na(in_SubsetE)] = FALSE
+
+
+## ----optipng='-o7'-------------------------------------------------------
+SubsetE.cells.use = tiss@cell.names[in_SubsetE]
+write(paste("Number of cells in SubsetE subset:", length(SubsetE.cells.use)), stderr())
+SubsetE.n.pcs = 20
+SubsetE.res.use = 1
+SubsetE.perplexity = 30
+SubsetE.genes_to_check = c("2810417H13Rik", "Abcg3", "Ak4", "Apoe", "Atxn1", "Bok", "Ccl4", "Ccl9", "Ccna2", "Ccnb1", "Ccnb2", "Ccne2", "Ccr7", "Cd1d1", "Cd34", "Cd48", "Cd63", "Cd69", "Cd74", "Cd79b", "Cdc20", "Cenpf", "Chchd10", "Cish", "Cnp", "Ctla2a", "Ctsg", "Dntt", "Dusp1", "Elane", "Esam", "Fam102a", "Flt3", "Fos", "Gata1", "Gimap8", "Gm11428", "H2-Aa", "H2-Ab1", "H2-Eb1", "H2-Ob", "Hk3", "Hoxb5", "Hp", "Ier2", "Il7r", "Itga2b", "Jhdm1d", "Junb", "Kif11", "Kit", "Klf1", "Lhcgr", "Ltb", "Ly6a", "Ly6c2", "Lyz2", "Mcm4", "Mfsd2b", "Mki67", "Mn1", "Mpl", "Mpo", "Ms4a3", "Muc13", "Myl10", "Myl12b", "Ncf1", "Neo1", "Nkg7", "Notch2", "Nsg1", "Pask", "Pdzk1ip1", "Pf4", "Prc1", "Prr11", "Prtn3", "Pyy", "Rag1", "Rag2", "Rrm2", "Sdsl", "Sell", "Serpinb9", "Slamf1", "Slc39a1", "Socs3", "Spag5", "Stat3", "Stmn1", "Tgm2", "Tk1", "Top2a", "Treml1", "Trib3", "Tsix", "Tuba1b", "Tuba8", "Txnip", "Tyms", "Tyrobp", "Ube2c", "Uhrf1", "Ung", "Vldlr", "Wtap", "Xist")
+SubsetE.group.bys = c(group.bys, "subsetE_cluster.ids")
+SubsetE.tiss = SubsetData(tiss, cells.use=SubsetE.cells.use, )
+SubsetE.tiss <- SubsetE.tiss %>% ScaleData() %>% 
+  FindVariableGenes(do.plot = TRUE, x.high.cutoff = Inf, y.cutoff = 0.5) %>%
+  RunPCA(do.print = FALSE)
+SubsetE.tiss <- SubsetE.tiss %>% FindClusters(reduction.type = "pca", dims.use = 1:SubsetE.n.pcs, 
+    resolution = SubsetE.res.use, print.output = 0, save.SNN = TRUE) %>%
+    RunTSNE(dims.use = 1:SubsetE.n.pcs, seed.use = 10, perplexity=SubsetE.perplexity)
+
+
+## ----optipng='-o7'-------------------------------------------------------
+colors.use = c('LightGray', 'Coral')
+tiss@meta.data[, "SubsetE"] = "(Not in subset)"
+tiss@meta.data[SubsetE.tiss@cell.names, "SubsetE"] = "SubsetE" 
+filename = make_filename(save_folder, prefix="SubsetE", 'highlighted', 
+    'tsneplot_allcells')
+p = TSNEPlot(
+  object = tiss,
+  do.return = TRUE,
+  group.by = "SubsetE",
+  no.axes = TRUE,
+  pt.size = 1,
+  no.legend = TRUE,
+  colors.use = colors.use
+) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+ggsave(filename, width = 4, height = 4)
+
+filename = make_filename(save_folder, prefix="SubsetE", 'highlighted', 
+    'tsneplot_allcells_legend')
+# Plot TSNE again just to steal the legend
+p = TSNEPlot(
+    object = tiss,
+    do.return = TRUE,
+    group.by = "SubsetE",
+    no.axes = TRUE,
+    pt.size = 1,
+    no.legend = FALSE,
+    label.size = 8,
+    colors.use = colors.use
+    ) + coord_fixed(ratio = 1) +
+    xlab("tSNE 1") + ylab("tSNE 2")
+
+# Initialize an empty canvas!
+ggdraw()
+# Draw only the legend
+ggdraw(g_legend(p))
+ggsave(filename, width = 8, height = 4)
+dev.off()
+
+
+## ----optipng='-o7'-------------------------------------------------------
+dot_tsne_ridge(SubsetE.tiss, SubsetE.genes_to_check,
+    save_folder, prefix = "SubsetE-Granulocyte monocyte progenitor cells and monocytes", group.bys = SubsetE.group.bys, 
+    "facs")
+
+
