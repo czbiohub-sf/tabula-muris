@@ -1,9 +1,4 @@
----
-title: "Global Figures"
-output: html_notebook
----
-
-```{r}
+## ------------------------------------------------------------------------
 library(tidyverse)
 library(stringr)
 library(Seurat)
@@ -19,11 +14,8 @@ tissX = tiss_droplet
 
 tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colors.csv"))
 tissue_colors <- rename(tissue_colors, tissue = X1)
-```
 
-# Global TSNE
-
-```{r, fig.width = 8, fig.height = 6}
+## ---- fig.width = 8, fig.height = 6--------------------------------------
 FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
   ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
    scale_color_identity(breaks = tissue_colors$color, 
@@ -32,9 +24,8 @@ FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>%
   guides(colour = guide_legend(override.aes = list(size=2)))
 
 #ggsave('tsne_by_tissue_plates.pdf', width = 14, height = 7, units = "in")
-```
 
-```{r, fig.width = 8, fid.height = 6}
+## ---- fig.width = 8, fid.height = 6--------------------------------------
 FetchData(tissX, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
   ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
    scale_color_identity(breaks = tissue_colors$color, 
@@ -43,11 +34,8 @@ FetchData(tissX, vars.all = c('tSNE_1','tSNE_2', 'color')) %>%
   guides(colour = guide_legend(override.aes = list(size=2)))
 
 ggsave('tsne_by_tissue_tenx.pdf', width = 14, height = 7, units = "in")
-```
 
-# Heatmaps for big clustering
-
-```{r}
+## ------------------------------------------------------------------------
 hmap_df <- FetchData(tiss, vars.all = c('cell_ontology_class','anno_tissue', 'cluster')) %>% 
   drop_na(cell_ontology_class) %>% 
   mutate(anno_and_tissue = paste0(cell_ontology_class, " (", anno_tissue, ")")) %>% 
@@ -55,20 +43,13 @@ hmap_df <- FetchData(tiss, vars.all = c('cell_ontology_class','anno_tissue', 'cl
   group_by(anno_and_tissue, cluster) %>% 
   summarize(count = n()) %>% filter(count > 5) %>% 
   spread(key=cluster, value = count, fill = 0)
-```
 
-```{r}
+## ------------------------------------------------------------------------
 #save(hmap_df, file = 'save/hmap_df.Robj')
-```
 
-
-Do we see mixing of tissues and cell types in the top-level clustering?
-
-
-```{r, fig.width = 15, fig.height = 45}
+## ---- fig.width = 15, fig.height = 45------------------------------------
 hmap_mat <- as.data.frame(hmap_df %>% ungroup() %>% select(-anno_and_tissue))
 row.names(hmap_mat) <- hmap_df$anno_and_tissue
 
 gplots::heatmap.2(as.matrix(log10(hmap_mat+1)), col = viridis(100), trace = "none", margins=c(10,36), Colv=TRUE, dendrogram = "row", cexRow = 2.0, cexCol = 2.0, key = FALSE, keysize = 0.05, distfun=function(x) as.dist(1-cor(t(x))))
-```
 

@@ -1,0 +1,162 @@
+
+R version 3.4.3 (2017-11-30) -- "Kite-Eating Tree"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+Microsoft R Open 3.4.3
+The enhanced R distribution from Microsoft
+Microsoft packages Copyright (C) 2017 Microsoft Corporation
+
+Using the Intel MKL for parallel mathematical computing (using 64 cores).
+
+Default CRAN mirror snapshot taken on 2018-01-01.
+See: https://mran.microsoft.com/.
+
+> rm(list=ls())
+> 
+> 
+> library(Seurat)
+> library(cowplot)
+> library("RColorBrewer")
+> library(here)
+> 
+> droplet_robj = c(
++   'droplet_Bladder_seurat_tiss.Robj',
++   'droplet_Heart_and_Aorta_seurat_tiss.Robj',
++   'droplet_Kidney_seurat_tiss.Robj',
++   'droplet_Liver_seurat_tiss.Robj',
++   'droplet_Lung_seurat_tiss.Robj',
++   'droplet_Mammary_Gland_seurat_tiss.Robj',
++   'droplet_Marrow_seurat_tiss.Robj',
++   'droplet_Limb_Muscle_seurat_tiss.Robj',
++   'droplet_Spleen_seurat_tiss.Robj',
++   'droplet_Thymus_seurat_tiss.Robj',
++   'droplet_Tongue_seurat_tiss.Robj',
++   'droplet_Trachea_seurat_tiss.Robj'
++ )
+> 
+> 
+> cleaned_annotations = read.csv(here('00_data_ingest', '18_global_annotation_csv', 'annotations_droplet.csv'), row.names=1)
+> 
+> 
+> plot_annotated_tsne = function(tiss, object_name, tissue_of_interest) {
++   title = sub("_", " ", tissue_of_interest)
++   n_annotations = dim(unique(tiss@meta.data['cell_ontology_class']))[1]
++   if (n_annotations > 8){
++     colors.use = c(brewer.pal(8, 'Set2'), brewer.pal(8, 'Dark2'), brewer.pal(8, 'Pastel2'))
++   } else{
++     colors.use = brewer.pal(max(n_annotations, 3), 'Set2')
++   }
++   p = TSNEPlot(
++     object = tiss,
++     do.label = FALSE,
++     pt.size = 0.05,
++     group.by = 'cell_ontology_class',
++     no.legend = TRUE,
++     no.axes = TRUE,
++     alpha = 0.5,
++     do.return = TRUE,
++ #    colors.use=colors.use
++   ) #+ geom_point(alpha = 0.1)
++   p + labs(title=title) + scale_colour_manual(values = colors.use, na.value='black')
++   ggsave(here('15_supplementary_figure5',
++               paste0(
++                 'supplementary_figure5_tsne_',
++                 tissue_of_interest,
++                 '.pdf'
++               )),
++          width = 2,
++          height = 2
++   )
++   return(p)
++ }
+> 
+> #object_tissue = c("Lung")
+> 
+> platform = 'droplet'
+> 
+> for (robject in droplet_robj){
++   load(here('00_data_ingest', '04_tissue_robj_generated', robject))
++   print(ls())
++   tissue_of_interest = sub('_seurat_tiss.Robj', '', sub(paste0(platform, "_"), '', robject))
++   print(c("tissue of interest:", tissue_of_interest))
++   
++   tissue_annotations = cleaned_annotations[cleaned_annotations$tissue == tissue_of_interest, ]
++   
++   # if( any(tissue_of_interest == object_tissue)){
++   #   # Reassign metadata with cleaned annotations and plot TSNE
++   #   tissue.10X@meta.data = tissue_annotations
++   #   p = plot_annotated_tsne(tissue.10X, object_name, tissue_of_interest)
++   #   rm(list=c('tissue.10X', 'tissue_of_interest'))
++   # } else{
++   #   # Reassign metadata with cleaned annotations and plot TSNE
++   #   tiss@meta.data = tissue_annotations
++   #   p = plot_annotated_tsne(tiss, object_name, tissue_of_interest)
++   #   rm(list=c('tiss', 'tissue_of_interest'))
++   # }
++   
++   p = plot_annotated_tsne(tiss, object_name, tissue_of_interest)
++   rm(list=c('tiss', 'tissue_of_interest'))
++ }
+[1] "cleaned_annotations" "droplet_robj"        "platform"           
+[4] "plot_annotated_tsne" "robject"             "tiss"               
+[1] "tissue of interest:" "Bladder"            
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Heart_and_Aorta"    
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Kidney"             
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Liver"              
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Lung"               
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Mammary_Gland"      
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Marrow"             
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Limb_Muscle"        
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Spleen"             
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Thymus"             
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Tongue"             
+[1] "cleaned_annotations" "droplet_robj"        "p"                  
+[4] "platform"            "plot_annotated_tsne" "robject"            
+[7] "tiss"                "tissue_annotations" 
+[1] "tissue of interest:" "Trachea"            
+> 
