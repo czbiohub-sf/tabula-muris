@@ -1,0 +1,27 @@
+## ------------------------------------------------------------------------
+library(tidyverse)
+library(stringr)
+library(here)
+library(Seurat)
+library(viridis)
+
+## ------------------------------------------------------------------------
+load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
+
+## ------------------------------------------------------------------------
+hmap_df <- FetchData(tiss_FACS, vars.all = c('cell_ontology_class','tissue', 'cluster')) %>% 
+  drop_na(cell_ontology_class) %>% 
+  mutate(anno_and_tissue = paste0(cell_ontology_class, " (", tissue, ")")) %>% 
+  drop_na(anno_and_tissue) %>% 
+  group_by(anno_and_tissue, cluster) %>% 
+  summarize(count = n()) %>% filter(count > 5) %>% 
+  spread(key=cluster, value = count, fill = 0)
+
+## ---- fig.width = 15, fig.height = 45------------------------------------
+hmap_mat <- as.data.frame(hmap_df %>% ungroup() %>% select(-anno_and_tissue))
+row.names(hmap_mat) <- hmap_df$anno_and_tissue
+
+pdf(here("03_figure3","heatmap.pdf"), width=20, height = 45)
+gplots::heatmap.2(as.matrix(log10(hmap_mat+1)), col = colorRampPalette(c("white", "red"))(10), trace = "none", margins=c(10,36), Colv=TRUE, dendrogram = "row", cexRow = 2.0, cexCol = 2.0, key = FALSE, keysize = 0.05, distfun=function(x) as.dist(1-cor(t(x))))
+dev.off()
+

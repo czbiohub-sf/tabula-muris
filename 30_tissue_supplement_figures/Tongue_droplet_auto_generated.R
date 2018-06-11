@@ -1,0 +1,52 @@
+## ----setup---------------------------------------------------------------
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+
+## ------------------------------------------------------------------------
+library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
+save_folder = here('30_tissue_supplement_figures', 'Tongue', 'droplet')
+dir.create(save_folder, recursive=TRUE)
+method = "droplet"
+
+tissue_of_interest = 'Tongue'
+filename = paste0('droplet_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+# Make sure cluster ids are numeric
+tiss@meta.data[, 'cluster.ids'] = as.numeric(tiss@meta.data[, 'cluster.ids'])
+
+# Concatenate original cell ontology class to free annotation
+cell_ontology_class = tiss@meta.data$cell_ontology_class
+cell_ontology_class[is.na(cell_ontology_class)] = "NA"
+
+free_annotation = sapply(tiss@meta.data$free_annotation,
+    function(x) { if (is.na(x)) {return('')} else return(paste(":", x))},
+    USE.NAMES = FALSE)
+tiss@meta.data[, "free_annotation"] = paste(cell_ontology_class,
+    free_annotation, sep='')
+
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = c("Cdc20", "Hoxc13", "Krt10", "Krt13", "Krt14", "Krt15", "Krt19", "Krt36", "Krt4", "Krt5", "Krt8", "Krt84", "Mki67", "P2rx7", "Sbsn", "Tas1r1", "Tas1r2", "Tas1r3", "Top2a")
+
+## ----use-optipng, optipng='-o7'------------------------------------------
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
+    group.bys = group.bys, method = method)
+
+## ------------------------------------------------------------------------
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#write.csv(tiss.markers, filename)
+
+## ------------------------------------------------------------------------
+genes_to_check = c('Krt8', 'Krt19', 'Tas1r1', 'Tas1r2', 'Tas1r3', 'P2rx7')
+
+filename = violinplot_and_save(tiss, save_folder, prefix='allcells',
+    group.by='cell_ontology_class',
+    genes=genes_to_check, suffix='taste-receptor', method=method)
+
+write_caption("Key genes identifying taste receptor cells. Ridgeplot showing gene expression enrichment in \\emph{Cell Ontology Class} labels in All Cells of Tongue Droplet. A: basal cell of epidermis, B: keratinocyte, C: Langerhans cell.", filename)
+

@@ -1,0 +1,73 @@
+
+R version 3.4.3 (2017-11-30) -- "Kite-Eating Tree"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+Microsoft R Open 3.4.3
+The enhanced R distribution from Microsoft
+Microsoft packages Copyright (C) 2017 Microsoft Corporation
+
+Using the Intel MKL for parallel mathematical computing (using 64 cores).
+
+Default CRAN mirror snapshot taken on 2018-01-01.
+See: https://mran.microsoft.com/.
+
+> ## ------------------------------------------------------------------------
+> library(tidyverse)
+> library(stringr)
+> library(Seurat)
+> library(viridis)
+> library(here)
+> 
+> 
+> load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
+> load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
+> 
+> tiss = tiss_FACS
+> tissX = tiss_droplet
+> 
+> tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colors.csv"))
+> tissue_colors <- rename(tissue_colors, tissue = X1)
+> 
+> ## ---- fig.width = 8, fig.height = 6--------------------------------------
+> FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
++   ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
++    scale_color_identity(breaks = tissue_colors$color, 
++                         labels = tissue_colors$anno_tissue, 
++                         guide = "legend") + 
++   guides(colour = guide_legend(override.aes = list(size=2)))
+> 
+> #ggsave('tsne_by_tissue_plates.pdf', width = 14, height = 7, units = "in")
+> 
+> ## ---- fig.width = 8, fid.height = 6--------------------------------------
+> FetchData(tissX, vars.all = c('tSNE_1','tSNE_2', 'color')) %>% 
++   ggplot(aes(x = tSNE_1, y = tSNE_2)) + geom_point(aes(color = color), size=0.1) +
++    scale_color_identity(breaks = tissue_colors$color, 
++                         labels = tissue_colors$anno_tissue, 
++                         guide = "legend") + 
++   guides(colour = guide_legend(override.aes = list(size=2)))
+> 
+> ggsave('tsne_by_tissue_tenx.pdf', width = 14, height = 7, units = "in")
+> 
+> ## ------------------------------------------------------------------------
+> hmap_df <- FetchData(tiss, vars.all = c('cell_ontology_class','anno_tissue', 'cluster')) %>% 
++   drop_na(cell_ontology_class) %>% 
++   mutate(anno_and_tissue = paste0(cell_ontology_class, " (", anno_tissue, ")")) %>% 
++   drop_na(anno_and_tissue) %>% 
++   group_by(anno_and_tissue, cluster) %>% 
++   summarize(count = n()) %>% filter(count > 5) %>% 
++   spread(key=cluster, value = count, fill = 0)

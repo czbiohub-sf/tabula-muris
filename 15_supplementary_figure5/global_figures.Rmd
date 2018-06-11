@@ -8,6 +8,17 @@ library(tidyverse)
 library(stringr)
 library(Seurat)
 library(viridis)
+library(here)
+
+
+load(file=here("00_data_ingest", "11_global_robj", "droplet_all.Robj"))
+load(file=here("00_data_ingest", "11_global_robj", "FACS_all.Robj"))
+
+tiss = tiss_FACS
+tissX = tiss_droplet
+
+tissue_colors = read_csv(here("00_data_ingest", "15_color_palette", "tissue_colors.csv"))
+tissue_colors <- rename(tissue_colors, tissue = X1)
 ```
 
 # Global TSNE
@@ -20,7 +31,7 @@ FetchData(tiss, vars.all = c('tSNE_1','tSNE_2', 'color')) %>%
                         guide = "legend") + 
   guides(colour = guide_legend(override.aes = list(size=2)))
 
-#ggsave('figures/tsne_by_tissue_plates.pdf', width = 14, height = 7, units = "in")
+#ggsave('tsne_by_tissue_plates.pdf', width = 14, height = 7, units = "in")
 ```
 
 ```{r, fig.width = 8, fid.height = 6}
@@ -31,7 +42,7 @@ FetchData(tissX, vars.all = c('tSNE_1','tSNE_2', 'color')) %>%
                         guide = "legend") + 
   guides(colour = guide_legend(override.aes = list(size=2)))
 
-ggsave('figures/tsne_by_tissue_tenx.pdf', width = 14, height = 7, units = "in")
+ggsave('tsne_by_tissue_tenx.pdf', width = 14, height = 7, units = "in")
 ```
 
 # Heatmaps for big clustering

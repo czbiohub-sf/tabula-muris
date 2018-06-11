@@ -1,0 +1,43 @@
+## ----setup---------------------------------------------------------------
+library(knitr)
+knit_hooks$set(optipng = hook_optipng)
+
+## ------------------------------------------------------------------------
+library(here)
+source(here('30_tissue_supplement_figures', 'supplemental_figures.R'))
+save_folder = here('30_tissue_supplement_figures', 'Aorta', 'facs')
+dir.create(save_folder, recursive=TRUE)
+method = "facs"
+
+tissue_of_interest = 'Aorta'
+filename = paste0('facs_',tissue_of_interest, '_seurat_tiss.Robj')
+load(here('00_data_ingest', '04_tissue_robj_generated', filename))
+
+# Make sure cluster ids are numeric
+tiss@meta.data[, 'cluster.ids'] = as.numeric(tiss@meta.data[, 'cluster.ids'])
+
+# Concatenate original cell ontology class to free annotation
+cell_ontology_class = tiss@meta.data$cell_ontology_class
+cell_ontology_class[is.na(cell_ontology_class)] = "NA"
+
+free_annotation = sapply(tiss@meta.data$free_annotation,
+    function(x) { if (is.na(x)) {return('')} else return(paste(":", x))},
+    USE.NAMES = FALSE)
+tiss@meta.data[, "free_annotation"] = paste(cell_ontology_class,
+    free_annotation, sep='')
+
+additional.group.bys = sort(c())
+
+group.bys = c(standard.group.bys, additional.group.bys)
+
+genes_to_check = c("Acta2", "Adipor1", "Alas2", "Car3", "Cav1", "Cd14", "Cd19", "Cd34", "Cd3e", "Cd74", "Cd86", "Cdh5", "Col1a1", "Col1a2", "Col3a1", "Col6a3", "Dcn", "Ddr2", "Eln", "Epcam", "Esm1", "Fabp4", "Fap", "Fn1", "Gypa", "H2-Aa", "H2-Ab1", "Hbb", "H2-Eb1", "Icam1", "Kit", "Krt5", "Krt8", "Laptm5", "Myh11", "Myocd", "Pdgfra", "Pecam1", "Ptprc", "S100a4", "Selplg", "Sox18", "Syk", "Tagln", "Tek", "Timp2", "Vcam1", "Vegfa", "Vim", "Vwf")
+
+## ----use-optipng, optipng='-o7'------------------------------------------
+dot_tsne_ridge(tiss, genes_to_check, save_folder, prefix = prefix,
+    group.bys = group.bys, method = method)
+
+## ------------------------------------------------------------------------
+#tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+#filename = file.path(save_folder, paste(prefix, 'findallmarkers.csv', sep='_'))
+#write.csv(tiss.markers, filename)
+
