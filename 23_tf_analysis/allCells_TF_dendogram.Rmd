@@ -45,7 +45,6 @@ tm.droplet.metadata = read_csv(here("data-tabula-muris", "TM_droplet_metadata.cs
 
 tm.facs.matrix = readRDS(here("data-tabula-muris", "TM_facs_mat.rds"))
 tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
-rownames(tm.facs.metadata) <- tm.facs.metadata$cell
 # tm.facs.metadata <- tm.facs.metadata[,-1]
 #tissFACS <- CreateSeuratObject(raw.data = tm.facs.matrix, meta.data = tm.facs.metadata)
 ```
@@ -444,13 +443,13 @@ tm.facs.ids <- unique(tm.facs.metadata$cell_ontology_id[!is.na(tm.facs.metadata$
 tm.droplet.ids <- unique(tm.droplet.metadata$cell_ontology_id[!is.na(tm.droplet.metadata$cell_ontology_id)])
 
 pdf("new_onto_plot.pdf", width=20, height=8)
-onto_plot(co, terms = tm.facs.ids,edge_attributes=list(color="black", lty="dashed"),term_sets = tm.facs.ids, frequencies=get_term_frequencies(co, term_sets), fillcolor=colour_by_frequency(co,tm.facs.ids,tm.facs.ids,colour_func = colorRampPalette(t(c("#FFFFCC", "#FFEDA0" ,"#FED976", "#FEB24C" ,"#FD8D3C", "#FC4E2A" ,"#E31A1C")))), fontsize = 20) 
+onto_plot(co, terms = tm.facs.ids,edge_attributes=list(color="black", lty="dashed"),term_sets = tm.facs.ids, frequencies=get_term_frequencies(co, term_sets), fillcolor=colour_by_frequency(co,tm.facs.ids,tm.facs.ids,colour_func = colorRampPalette(c("#FFFFCC", "#FFEDA0" ,"#FED976", "#FEB24C" ,"#FD8D3C", "#FC4E2A" ,"#E31A1C"))), fontsize = 20) 
 
 #colorRampPalette(c("Yellow", "Green", "#0099FF"))
 
 dev.off()
 
-pdf("onto_plot_10x.pdf", width=20, height=8)
+pdf("new_onto_plot_10x.pdf", width=20, height=8)
 onto_plot(co, terms = tm.droplet.ids,edge_attributes=list(color="black", lty="dashed"),term_sets = tm.droplet.ids, frequencies=get_term_frequencies(co, term_sets), fillcolor=colour_by_frequency(co,tm.droplet.ids,tm.droplet.ids,colour_func = colorRampPalette(c("#FFFFCC", "#FFEDA0" ,"#FED976", "#FEB24C" ,"#FD8D3C", "#FC4E2A" ,"#E31A1C"))), fontsize = 20) 
 dev.off()
 
@@ -483,6 +482,22 @@ plot(honto, hang = 0.1, check = TRUE,
 for (i in 1:length(honto$labels)){
   honto$labels[i] <-  honto$labels[[i]]
 }
+dev.off()
+```
+```{r}
+color.bar <- function(lut, min, max=-min, nticks=11, ticks=seq(min, max, len=nticks), title='') {
+    scale = (length(lut)-1)/(max-min)
+
+    dev.new(width=1.75, height=5)
+    plot(c(0,10), c(min,max), type='n', bty='n', xaxt='n', xlab='', yaxt='n', ylab='', main=title)
+    axis(2, ticks, las=1)
+    for (i in 1:(length(lut)-1)) {
+     y = (i-1)/scale + min
+     rect(0,y,10,y+1/scale, col=lut[i], border=NA)
+    }
+}
+pdf("colorbar_onto_plot.pdf", width=20, height=8)
+color.bar(colorRampPalette(c("#FFFFCC", "#FFEDA0" ,"#FED976", "#FEB24C" ,"#FD8D3C", "#FC4E2A" ,"#E31A1C"))(100),0,100)
 dev.off()
 ```
 

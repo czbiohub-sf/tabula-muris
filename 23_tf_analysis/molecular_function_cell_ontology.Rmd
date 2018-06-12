@@ -1,0 +1,620 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(Seurat)
+library(cowplot)
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(parallel)
+library(cba)
+library(here)
+library(RColorBrewer)
+library(tidyverse)
+library(openxlsx)
+library(gplots)
+library(reshape2)
+
+library(ggplot2)
+library(ggdendro)
+library(scales)
+library(wordspace)
+
+library(dendextend)
+library(circlize)
+
+
+library(ontologyIndex)
+library(ontologyPlot)
+library(ontologySimilarity)
+```
+
+# Load Seurat object of data
+```{r}
+# tm.droplet.matrix = readRDS(here("data-tabula-muris", "TM_droplet_mat.rds"))
+# tm.droplet.metadata = read_csv(here("data-tabula-muris", "TM_droplet_metadata.csv"))
+
+tm.facs.matrix = readRDS(here("data-tabula-muris", "TM_facs_mat.rds"))
+tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
+```
+
+# Load ontology 
+```{r}
+
+co = get_ontology('https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-basic.obo', extract_tags='everything')
+
+```
+Since an ontology is just a collection of `is_a` relationships, the most straightforward distance between nodes will be a function of the two sets of attributes posessed by the nodes.
+
+The number of unshared attributes (the set disjunction) can be easily computed as (union - intersection) of the ancestor sets. In the case of a tree, this is just the tree distance.
+
+```{r}
+ont_dist <- function(ontology, id1, id2){
+  anc1 = get_ancestors(ontology, id1)
+  anc2 = get_ancestors(ontology, id2)
+  length(union(anc1, anc2)) - length(intersect(anc1, anc2))
+}
+```
+
+Since it's not a tree, though, the distance is somewhat larger.
+
+```{r}
+plot_common_tree <- function(t1, t2){
+  onto_plot(co, terms = intersection_with_descendants(co, "CL:0000548", union(get_ancestors(co, t1), get_ancestors(co, t2))))
+}
+```
+
+# Load TFs 
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+tfs      <- read.csv(here('23_tf_analysis','GO_term_summary_20171110_222852.csv'))
+tf.names <- as.character( tfs %>% distinct(Symbol) %>% pull(Symbol) )
+tf.names <- make.names(tf.names)
+length(tf.names)
+
+iegs <- as.character(read.csv(here('00_data_ingest','20_dissociation_genes','genes_affected_by_dissociation_unix.csv'), header = T)[,1])
+
+tf.names <- tf.names[!tf.names %in% iegs]
+length(tf.names)
+```
+
+# Load Transporter activity 
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+transporter.activity      <- read.csv(here('23_tf_analysis','GO_term_summary_20180608_203636.csv'))
+transporter.activity.names <- as.character( transporter.activity %>% distinct(Symbol) %>% pull(Symbol) )
+transporter.activity.names <- make.names(transporter.activity.names)
+length(transporter.activity.names)
+
+transporter.activity.names <- transporter.activity.names[!transporter.activity.names %in% iegs]
+length(transporter.activity.names)
+```
+
+# Load molecular function regulator
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+mfr      <- read.csv(here('23_tf_analysis','GO_term_summary_20180608_202846.csv'))
+mfr.names <- as.character( mfr %>% distinct(Symbol) %>% pull(Symbol) )
+mfr.names <- make.names(mfr.names)
+length(mfr.names)
+
+mfr.names <- mfr.names[!mfr.names %in% iegs]
+length(mfr.names)
+```
+
+# Load structural molecular activity
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+sma      <- read.csv(here('23_tf_analysis','GO_term_summary_20180608_202931.csv'))
+sma.names <- as.character( sma %>% distinct(Symbol) %>% pull(Symbol) )
+sma.names <- make.names(sma.names)
+length(sma.names)
+
+sma.names <- sma.names[!sma.names %in% iegs]
+length(sma.names)
+```
+
+# Load molecular transducer activity
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+mta      <- read.csv(here('23_tf_analysis','GO_term_summary_20180608_202922.csv'))
+mta.names <- as.character( mta %>% distinct(Symbol) %>% pull(Symbol) )
+mta.names <- make.names(mta.names)
+length(mta.names)
+
+mta.names <- mta.names[!mta.names %in% iegs]
+length(mta.names)
+```
+
+# Load catalytic activity
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+catalytic.activity      <- read.csv(here('23_tf_analysis','GO_term_summary_20180608_202835.csv'))
+catalytic.activity.names <- as.character( catalytic.activity %>% distinct(Symbol) %>% pull(Symbol) )
+catalytic.activity.names <- make.names(catalytic.activity.names)
+length(catalytic.activity.names)
+
+catalytic.activity.names <- catalytic.activity.names[!catalytic.activity.names %in% iegs]
+length(catalytic.activity.names)
+```
+
+# Load transcription regulator activity
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+tra      <- read.csv(here('23_tf_analysis','GO_term_summary_20180608_202952.csv'))
+tra.names <- as.character( tra %>% distinct(Symbol) %>% pull(Symbol) )
+tra.names <- make.names(tra.names)
+length(tra.names)
+
+tra.names <- tra.names[!tra.names %in% iegs]
+length(tra.names)
+```
+
+# Load binding
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+binding      <- read.csv(here('23_tf_analysis','GO_term_summary_20180608_203841.csv'))
+binding.names <- as.character( binding %>% distinct(Symbol) %>% pull(Symbol) )
+binding.names <- make.names(binding.names)
+length(binding.names)
+
+binding.names <- binding.names[!binding.names %in% iegs]
+length(binding.names)
+```
+
+
+# Load cell surface markers 
+```{r}
+csms      <- read.csv(here('23_tf_analysis','GO_term_summary_20180604_183150.csv'))
+csms.names <- as.character( csms %>% distinct(Symbol) %>% pull(Symbol) )
+csms.names <- make.names(csms.names)
+length(csms.names)
+
+csms.names <- csms.names[!csms.names %in% iegs]
+length(csms.names)
+```
+# Load RNA splicing factors 
+```{r}
+rna.sfs      <- read.csv(here('23_tf_analysis','GO_term_summary_20171214_190641.csv'))
+rna.sfs.names <- as.character( rna.sfs %>% distinct(Symbol) %>% pull(Symbol) )
+rna.sfs.names <- make.names(rna.sfs.names)
+length(rna.sfs.names)
+
+rna.sfs.names <- rna.sfs.names[!rna.sfs.names %in% iegs]
+length(rna.sfs.names)
+```
+
+
+# Calculate global dendogram - FACS with TFs
+```{r}
+
+tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
+tm.facs.matrix.tfs <- as.data.frame(t(as.matrix(tm.facs.matrix.tfs)))
+
+tm.facs.matrix.tfs$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.tfs.cellids <- tm.facs.matrix.tfs %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.tfs[1:1016])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.tfs.cellids.norm = tm.facs.matrix.tfs.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.tfs.cellids[i,2:1017])
+  for (j in 2:1017){
+    tm.facs.matrix.tfs.cellids.norm[i,j] = tm.facs.matrix.tfs.cellids[i,j]/jaux
+  }
+}
+
+tm.facs.matrix.tfs.cellids.norm <- as.data.frame(tm.facs.matrix.tfs.cellids.norm)
+tm.facs.matrix.tfs.cellids.norm <- subset(tm.facs.matrix.tfs.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.tfs.cellids.norm) <- tm.facs.matrix.tfs.cellids.norm$factors
+tm.facs.matrix.tfs.cellids.norm <- tm.facs.matrix.tfs.cellids.norm[,-1]
+dnorm <- dist(tm.facs.matrix.tfs.cellids.norm)
+labels(dnorm)
+
+hnorm.tfs <- hclust(dnorm, method = "ward.D2", members = NULL)
+```
+
+
+# Calculate global dendogram - FACS with transporter activity
+```{r}
+
+tm.facs.matrix.transporter.activity <- tm.facs.matrix[rownames(tm.facs.matrix) %in% transporter.activity.names,]
+tm.facs.matrix.transporter.activity <- as.data.frame(t(as.matrix(tm.facs.matrix.transporter.activity)))
+
+tm.facs.matrix.transporter.activity$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.transporter.activity.cellids <- tm.facs.matrix.transporter.activity %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.transporter.activity[1:1089])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.transporter.activity.cellids.norm = tm.facs.matrix.transporter.activity.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.transporter.activity.cellids[i,2:1090])
+  for (j in 2:1090){
+    tm.facs.matrix.transporter.activity.cellids.norm[i,j] = tm.facs.matrix.transporter.activity.cellids[i,j]/jaux
+  }
+}
+
+tm.facs.matrix.transporter.activity.cellids.norm <- as.data.frame(tm.facs.matrix.transporter.activity.cellids.norm)
+tm.facs.matrix.transporter.activity.cellids.norm <- subset(tm.facs.matrix.transporter.activity.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.transporter.activity.cellids.norm) <- tm.facs.matrix.transporter.activity.cellids.norm$factors
+tm.facs.matrix.transporter.activity.cellids.norm <- tm.facs.matrix.transporter.activity.cellids.norm[,-1]
+dnorm <- dist(tm.facs.matrix.transporter.activity.cellids.norm)
+hnorm.transporter.activity <- hclust(dnorm, method = "ward.D2", members = NULL)
+```
+
+# Calculate global dendogram - FACS with molecular function regulator
+```{r}
+
+tm.facs.matrix.mfr <- tm.facs.matrix[rownames(tm.facs.matrix) %in% mfr.names,]
+tm.facs.matrix.mfr <- as.data.frame(t(as.matrix(tm.facs.matrix.mfr)))
+
+tm.facs.matrix.mfr$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.mfr.cellids <- tm.facs.matrix.mfr %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.mfr[1:1560])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.mfr.cellids.norm = tm.facs.matrix.mfr.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.mfr.cellids[i,2:1561])
+  for (j in 2:1561){
+    tm.facs.matrix.mfr.cellids.norm[i,j] = tm.facs.matrix.mfr.cellids[i,j]/jaux
+  }
+}
+
+tm.facs.matrix.mfr.cellids.norm <- as.data.frame(tm.facs.matrix.mfr.cellids.norm)
+tm.facs.matrix.mfr.cellids.norm <- subset(tm.facs.matrix.mfr.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.mfr.cellids.norm) <- tm.facs.matrix.mfr.cellids.norm$factors
+tm.facs.matrix.mfr.cellids.norm <- tm.facs.matrix.mfr.cellids.norm[,-1]
+dnorm <- dist(tm.facs.matrix.mfr.cellids.norm)
+hnorm.mfr <- hclust(dnorm, method = "ward.D2", members = NULL)
+```
+
+# Calculate global dendogram - FACS with structural molecular activity
+```{r}
+
+tm.facs.matrix.sma <- tm.facs.matrix[rownames(tm.facs.matrix) %in% sma.names,]
+tm.facs.matrix.sma <- as.data.frame(t(as.matrix(tm.facs.matrix.sma)))
+
+tm.facs.matrix.sma$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.sma.cellids <- tm.facs.matrix.sma %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.sma[1:527])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.sma.cellids.norm = tm.facs.matrix.sma.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.sma.cellids[i,2:528])
+  for (j in 2:528){
+    tm.facs.matrix.sma.cellids.norm[i,j] = tm.facs.matrix.sma.cellids[i,j]/jaux
+  }
+}
+
+tm.facs.matrix.sma.cellids.norm <- as.data.frame(tm.facs.matrix.sma.cellids.norm)
+tm.facs.matrix.sma.cellids.norm <- subset(tm.facs.matrix.sma.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.sma.cellids.norm) <- tm.facs.matrix.sma.cellids.norm$factors
+tm.facs.matrix.sma.cellids.norm <- tm.facs.matrix.sma.cellids.norm[,-1]
+dnorm <- dist(tm.facs.matrix.sma.cellids.norm)
+hnorm.sma <- hclust(dnorm, method = "ward.D2", members = NULL)
+```
+
+# Calculate global dendogram - FACS with molecular transducer activity
+```{r}
+
+tm.facs.matrix.mta <- tm.facs.matrix[rownames(tm.facs.matrix) %in% mta.names,]
+tm.facs.matrix.mta <- as.data.frame(t(as.matrix(tm.facs.matrix.mta)))
+
+tm.facs.matrix.mta$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.mta.cellids <- tm.facs.matrix.mta %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.mta[1:2109])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.mta.cellids.norm = tm.facs.matrix.mta.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.mta.cellids[i,2:2110])
+  for (j in 2:2110){
+    tm.facs.matrix.mta.cellids.norm[i,j] = tm.facs.matrix.mta.cellids[i,j]/jaux
+  }
+}
+
+tm.facs.matrix.mta.cellids.norm <- as.data.frame(tm.facs.matrix.mta.cellids.norm)
+tm.facs.matrix.mta.cellids.norm <- subset(tm.facs.matrix.mta.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.mta.cellids.norm) <- tm.facs.matrix.mta.cellids.norm$factors
+tm.facs.matrix.mta.cellids.norm <- tm.facs.matrix.mta.cellids.norm[,-1]
+dnorm <- dist(tm.facs.matrix.mta.cellids.norm)
+hnorm.mta <- hclust(dnorm, method = "ward.D2", members = NULL)
+```
+
+# Calculate global dendogram - FACS with catalytic activity
+```{r}
+
+tm.facs.matrix.catalytic.activity <- tm.facs.matrix[rownames(tm.facs.matrix) %in% catalytic.activity.names,]
+tm.facs.matrix.catalytic.activity <- as.data.frame(t(as.matrix(tm.facs.matrix.catalytic.activity)))
+
+tm.facs.matrix.catalytic.activity$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.catalytic.activity.cellids <- tm.facs.matrix.catalytic.activity %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.catalytic.activity[1:5229])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.catalytic.activity.cellids.norm = tm.facs.matrix.catalytic.activity.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.catalytic.activity.cellids[i,2:5230])
+  for (j in 2:5230){
+    tm.facs.matrix.catalytic.activity.cellids.norm[i,j] = tm.facs.matrix.catalytic.activity.cellids[i,j]/jaux
+  }
+}
+
+tm.facs.matrix.catalytic.activity.cellids.norm <- as.data.frame(tm.facs.matrix.catalytic.activity.cellids.norm)
+tm.facs.matrix.catalytic.activity.cellids.norm <- subset(tm.facs.matrix.catalytic.activity.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.catalytic.activity.cellids.norm) <- tm.facs.matrix.catalytic.activity.cellids.norm$factors
+tm.facs.matrix.catalytic.activity.cellids.norm <- tm.facs.matrix.catalytic.activity.cellids.norm[,-1]
+dnorm <- dist(tm.facs.matrix.catalytic.activity.cellids.norm)
+hnorm.catalytic.activity <- hclust(dnorm, method = "ward.D2", members = NULL)
+```
+
+# Calculate global dendogram - FACS with transcription regulator activity
+```{r}
+
+tm.facs.matrix.tra <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tra.names,]
+tm.facs.matrix.tra <- as.data.frame(t(as.matrix(tm.facs.matrix.tra)))
+
+tm.facs.matrix.tra$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.tra.cellids <- tm.facs.matrix.tra %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.tra[1:1285])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.tra.cellids.norm = tm.facs.matrix.tra.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.tra.cellids[i,2:1286])
+  for (j in 2:1286){
+    tm.facs.matrix.tra.cellids.norm[i,j] = tm.facs.matrix.tra.cellids[i,j]/jaux
+  }
+}
+
+tm.facs.matrix.tra.cellids.norm <- as.data.frame(tm.facs.matrix.tra.cellids.norm)
+tm.facs.matrix.tra.cellids.norm <- subset(tm.facs.matrix.tra.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.tra.cellids.norm) <- tm.facs.matrix.tra.cellids.norm$factors
+tm.facs.matrix.tra.cellids.norm <- tm.facs.matrix.tra.cellids.norm[,-1]
+dnorm <- dist(tm.facs.matrix.tra.cellids.norm)
+hnorm.tra <- hclust(dnorm, method = "ward.D2", members = NULL)
+```
+
+# Calculate global dendogram - FACS with binding
+```{r}
+
+tm.facs.matrix.binding <- tm.facs.matrix[rownames(tm.facs.matrix) %in% binding.names,]
+tm.facs.matrix.binding <- as.data.frame(t(as.matrix(tm.facs.matrix.binding)))
+
+tm.facs.matrix.binding$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.binding.cellids <- tm.facs.matrix.binding %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.binding[1:1016])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.binding.cellids.norm = tm.facs.matrix.binding.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.binding.cellids[i,2:1017])
+  for (j in 2:1017){
+    tm.facs.matrix.binding.cellids.norm[i,j] = tm.facs.matrix.binding.cellids[i,j]/jaux
+  }
+}
+
+tm.facs.matrix.binding.cellids.norm <- as.data.frame(tm.facs.matrix.binding.cellids.norm)
+tm.facs.matrix.binding.cellids.norm <- subset(tm.facs.matrix.binding.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.binding.cellids.norm) <- tm.facs.matrix.binding.cellids.norm$factors
+tm.facs.matrix.binding.cellids.norm <- tm.facs.matrix.binding.cellids.norm[,-1]
+dnorm <- dist(tm.facs.matrix.binding.cellids.norm)
+hnorm.binding <- hclust(dnorm, method = "ward.D2", members = NULL)
+```
+
+
+
+# Calculate global dendogram - FACS with Cell Surface Markers
+```{r}
+
+tm.facs.matrix.csms <- tm.facs.matrix[rownames(tm.facs.matrix) %in% csms.names,]
+tm.facs.matrix.csms <- as.data.frame(t(as.matrix(tm.facs.matrix.csms)))
+
+tm.facs.matrix.csms$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.csms.cellids <- tm.facs.matrix.csms %>%
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.csms[1:1086])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.csms.cellids.norm = tm.facs.matrix.csms.cellids
+for (i in 1:82){
+  jaux = sum(tm.facs.matrix.csms.cellids[i,2:1086])
+  for (j in 2:1086){
+    tm.facs.matrix.csms.cellids.norm[i,j] = tm.facs.matrix.csms.cellids[i,j]/jaux
+  }
+}
+
+
+tm.facs.matrix.csms.cellids.norm <- as.data.frame(tm.facs.matrix.csms.cellids.norm)
+tm.facs.matrix.csms.cellids.norm <- subset(tm.facs.matrix.csms.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.csms.cellids.norm) <- tm.facs.matrix.csms.cellids.norm$factors
+tm.facs.matrix.csms.cellids.norm <- tm.facs.matrix.csms.cellids.norm[,-1]
+dnorm.csms <- dist(tm.facs.matrix.csms.cellids.norm)
+labels(dnorm.csms)
+
+hnorm.csms <- hclust(dnorm.csms, method = "ward.D2", members = NULL)
+
+```
+
+
+# Calculate global dendogram - FACS with RNAs
+```{r}
+
+tm.facs.matrix.rna.sfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% rna.sfs.names,]
+tm.facs.matrix.rna.sfs <- as.data.frame(t(as.matrix(tm.facs.matrix.rna.sfs)))
+
+
+tm.facs.matrix.rna.sfs$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
+
+# consider only TFs that are not affected by dissociation
+tm.facs.matrix.rna.sfs.cellids <- tm.facs.matrix.rna.sfs %>% 
+  group_by(factors) %>%
+  summarise_at(vars(colnames(tm.facs.matrix.rna.sfs[1:320])),funs(sum(., na.rm=TRUE)))
+
+
+tm.facs.matrix.rna.sfs.cellids.norm = tm.facs.matrix.rna.sfs.cellids
+for (i in 1:130){
+  jaux = sum(tm.facs.matrix.rna.sfs.cellids[i,2:321])
+  for (j in 2:321){
+    tm.facs.matrix.rna.sfs.cellids.norm[i,j] = tm.facs.matrix.rna.sfs.cellids[i,j]/jaux
+  }
+}
+
+tm.facs.matrix.rna.sfs.cellids.norm <- as.data.frame(tm.facs.matrix.rna.sfs.cellids.norm)
+tm.facs.matrix.rna.sfs.cellids.norm <- subset(tm.facs.matrix.rna.sfs.cellids.norm,!is.na(factors))
+rownames(tm.facs.matrix.rna.sfs.cellids.norm) <- tm.facs.matrix.rna.sfs.cellids.norm$factors
+tm.facs.matrix.rna.sfs.cellids.norm <- tm.facs.matrix.rna.sfs.cellids.norm[,-1]
+dnormRNA <- dist(tm.facs.matrix.rna.sfs.cellids.norm)
+labels(dnormRNA)
+
+hnorm.rna.sfs <- hclust(dnormRNA, method = "ward.D2", members = NULL)
+
+```
+
+# Calculate ont_dist
+```{r}
+tm.facs.ids <- unique(tm.facs.metadata$cell_ontology_id[!is.na(tm.facs.metadata$cell_ontology_id)])
+
+
+sim_mat <- get_sim_grid(ontology=co, term_sets=list(tm.facs.ids))
+sim_mat
+
+nids = length(tm.facs.ids)
+D = matrix(nrow = nids, ncol = nids)
+for (i in 1:nids){
+  for(j in 1:nids){
+    D[i,j] = ont_dist(co, tm.facs.ids[i], tm.facs.ids[j])
+  }
+}
+rownames(D) = co$name[tm.facs.ids]
+colnames(D) = co$name[tm.facs.ids]
+d = as.dist(D)
+
+honto <- hclust(d, method = "ward.D2")
+```
+
+# Compute and compare dendrogram
+# Tanglegram
+```{r fig.height = 15, fig.width = 25}
+
+dend1 <- honto %>% as.dendrogram
+labels(dend1) <- labels(honto)
+
+dend.tfs <- hnorm.tfs %>% as.dendrogram
+dend.ta <- hnorm.transporter.activity %>% as.dendrogram
+dend.mfr <- hnorm.mfr %>% as.dendrogram
+dend.sma <- hnorm.sma %>% as.dendrogram
+dend.mta <- hnorm.mta %>% as.dendrogram
+dend.ca <- hnorm.catalytic.activity %>% as.dendrogram
+dend.tra <- hnorm.tra %>% as.dendrogram
+dend.bind <- hnorm.binding %>% as.dendrogram
+dend.rna.sfs <- hnorm.rna.sfs %>% as.dendrogram
+dend.csms <- hnorm.csms %>% as.dendrogram
+
+listdend.tfs <- dendlist(dend1, dend.tfs)
+listdend.ta <- dendlist(dend1, dend.ta)
+listdend.mfr <- dendlist(dend1, dend.mfr)
+listdend.sma <- dendlist(dend1, dend.sma)
+listdend.mta <- dendlist(dend1, dend.mta)
+listdend.ca <- dendlist(dend1, dend.ca)
+listdend.tra <- dendlist(dend1, dend.tra)
+listdend.bind <- dendlist(dend1, dend.bind)
+listdend.rna.sfs <- dendlist(dend1, dend.rna.sfs)
+listdend.csms <- dendlist(dend1, dend.csms)
+
+
+set.seed(3958)
+
+entangle.listdend.tfs <- listdend.tfs %>% untangle(method = "step2side") 
+entangle.listdend.ta <- listdend.ta %>% untangle(method = "step2side") 
+entangle.listdend.mfr <- listdend.mfr %>% untangle(method = "step2side")  
+entangle.listdend.sma <- listdend.sma %>% untangle(method = "step2side") 
+entangle.listdend.mta <- listdend.mta %>% untangle(method = "step2side") 
+entangle.listdend.ca <- listdend.ca %>% untangle(method = "step2side") 
+entangle.listdend.tra <- listdend.tra %>% untangle(method = "step2side")  
+entangle.listdend.bind <- listdend.bind %>% untangle(method = "step2side") 
+entangle.listdend.rna.sfs <- listdend.rna.sfs %>% untangle(method = "step2side") 
+entangle.listdend.csms <- listdend.csms %>% untangle(method = "step2side") 
+
+pdf("entanglements.pdf", width = 50, height = 30)
+barplot(c(round(entanglement(entangle.listdend.ta),2),
+              round(entanglement(entangle.listdend.mfr),2),
+              round(entanglement(entangle.listdend.sma),2),
+              round(entanglement(entangle.listdend.mta),2),
+              round(entanglement(entangle.listdend.tra),2)), main="Entanglements", horiz=FALSE,
+        names.arg=c("Transporter Activity", "Molecular Function Regulator", "Structural Molecular Activity","Molecular Transducer Activity","Trancription Regulator Activity"),
+        xlab = "Entanglement",
+        col=brewer.pal(10,"Spectral"))
+dev.off()
+
+pdf("new_tanglegram_onto_tfs.pdf", width=50, height=30)
+x %>% tanglegram(lab.cex = 1.2, lwd = 1,edge.lwd = NULL,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,columns_width = c(15, 10, 15),
+                      main_left = "Cell Ontology",main_right = "Transcription factors",margin_inner= 22,main = paste("entanglement =", round(entanglement(x), 2)))#,  , dLeaf = -1,type = "r"
+dev.off()
+
+pdf("new_tanglegram_onto_csms.pdf", width=50, height=30)
+y %>% tanglegram(lab.cex = 1.2, lwd = 1,edge.lwd = NULL,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,columns_width = c(15, 10, 15),
+                      main_left = "Cell Ontology",main_right = "Cell Surface Markers",margin_inner= 22,main = paste("entanglement =", round(entanglement(y), 2)))#,  , dLeaf = -1,type = "r"
+dev.off()
+
+pdf("new_tanglegram_onto_rna_sfs.pdf", width=50, height=30)
+z %>% tanglegram(lab.cex = 1.2, lwd = 1,edge.lwd = NULL,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,columns_width = c(15, 10, 15),
+                      main_left = "Cell Ontology",main_right = "RNA splicing factors",margin_inner= 22,main = paste("entanglement =", round(entanglement(z), 2)))#,  , dLeaf = -1,type = "r"
+dev.off()
+
+pdf("new_tanglegram_onto_csms_rna_sfs.pdf", width=50, height=30)
+w %>% tanglegram(lab.cex = 1.2, lwd = 1,edge.lwd = NULL,common_subtrees_color_branches = TRUE,common_subtrees_color_lines = TRUE,columns_width = c(15, 10, 15),
+                      main_left = "Cell Ontology",main_right = "Cell Surface Markers & RNA splicing factors",margin_inner= 22,main = paste("entanglement =", round(entanglement(w), 2)))#,  , dLeaf = -1,type = "r"
+dev.off()
+
+# compare the 2 trees
+dend.comp <- all.equal(dend1, dend2, use.edge.length = FALSE, use.tip.label.order = FALSE, use.tip.label = TRUE, use.topology = FALSE, tolerance = .Machine$double.eps^0.5, scale = NULL)
+
+```
+Calculate BK distance
+
+```{r}
+FM_index(cutree(honto, k=3), cutree(hnorm, k=3)) 
+cor_cophenetic(dend1, dend2)
+cor_bakers_gamma(dend1, dend2)
+cor_bakers_gamma(dend1, dend3)
+Bk_plot(dend1, dend1, main = "CORRECT Bk plot \n(based on dendrograms)")
+Bk_plot(dend1, dend2, main = "CORRECT Bk plot \n(based on dendrograms)")
+Bk_plot(dend1, dend3, main = "CORRECT Bk plot \n(based on dendrograms)")
+
+
+```
+
+
+
