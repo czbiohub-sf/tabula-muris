@@ -356,145 +356,101 @@ legend(1.2,.15,c('B-cell','T-cell'),lty=c(1,2),
 ```
 
 ```{r}
-[1] "Initial OOB error: mean = 0.267; sd = 0.0081"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236014  172.9    5684620  303.6   5684620  303.6
-Vcells 449233930 3427.4  662921760 5057.7 652194075 4975.9
-[1] "..... iteration 1; OOB error: mean = 0.266; sd = 0.0081; num. vars = 813"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236822  172.9    5684620  303.6   5684620  303.6
-Vcells 461998350 3524.8  662921760 5057.7 652194075 4975.9
-[1] "..... iteration 2; OOB error: mean = 0.262; sd = 0.008; num. vars = 650"
-[1] "gc inside loop of varSelRF"
-            used (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3237552  173    5684620  303.6   5684620  303.6
-Vcells 474732374 3622  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 3; OOB error: mean = 0.2573; sd = 0.008; num. vars = 520"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3237260  172.9    5684620  303.6   5684620  303.6
-Vcells 474353143 3619.1  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 4; OOB error: mean = 0.2543; sd = 0.008; num. vars = 416"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3237027  172.9    5684620  303.6   5684620  303.6
-Vcells 474156161 3617.6  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 5; OOB error: mean = 0.2493; sd = 0.0079; num. vars = 333"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236841  172.9    5684620  303.6   5684620  303.6
-Vcells 473805376 3614.9  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 6; OOB error: mean = 0.2467; sd = 0.0079; num. vars = 266"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236692  172.9    5684620  303.6   5684620  303.6
-Vcells 473244744 3610.6  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 7; OOB error: mean = 0.2487; sd = 0.0079; num. vars = 213"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236573  172.9    5684620  303.6   5684620  303.6
-Vcells 473216239 3610.4  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 8; OOB error: mean = 0.2493; sd = 0.0079; num. vars = 170"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236478  172.9    5684620  303.6   5684620  303.6
-Vcells 473201834 3610.3  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 9; OOB error: mean = 0.2473; sd = 0.0079; num. vars = 136"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236402  172.9    5684620  303.6   5684620  303.6
-Vcells 473313509 3611.1  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 10; OOB error: mean = 0.254; sd = 0.0079; num. vars = 109"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236342  172.9    5684620  303.6   5684620  303.6
-Vcells 473495254 3612.5  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 11; OOB error: mean = 0.2557; sd = 0.008; num. vars = 87"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236294  172.9    5684620  303.6   5684620  303.6
-Vcells 473607048 3613.4  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 12; OOB error: mean = 0.2637; sd = 0.008; num. vars = 70"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236256  172.9    5684620  303.6   5684620  303.6
-Vcells 473914884 3615.7  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 13; OOB error: mean = 0.2797; sd = 0.0082; num. vars = 56"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236226  172.9    5684620  303.6   5684620  303.6
-Vcells 474236752 3618.2  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 14; OOB error: mean = 0.3043; sd = 0.0084; num. vars = 45"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236202  172.9    5684620  303.6   5684620  303.6
-Vcells 474348646 3619.0  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 15; OOB error: mean = 0.3337; sd = 0.0086; num. vars = 36"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236183  172.9    5684620  303.6   5684620  303.6
-Vcells 474474561 3620.0  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 16; OOB error: mean = 0.3643; sd = 0.0088; num. vars = 29"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236168  172.9    5684620  303.6   5684620  303.6
-Vcells 474054494 3616.8  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 17; OOB error: mean = 0.3847; sd = 0.0089; num. vars = 23"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236156  172.9    5684620  303.6   5684620  303.6
-Vcells 472836443 3607.5  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 18; OOB error: mean = 0.4077; sd = 0.009; num. vars = 18"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236146  172.9    5684620  303.6   5684620  303.6
-Vcells 471912400 3600.5  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 19; OOB error: mean = 0.4367; sd = 0.0091; num. vars = 14"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236138  172.9    5684620  303.6   5684620  303.6
-Vcells 470932369 3593.0  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 20; OOB error: mean = 0.4867; sd = 0.0091; num. vars = 11"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236132  172.9    5684620  303.6   5684620  303.6
-Vcells 471646362 3598.4  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 21; OOB error: mean = 0.5223; sd = 0.0091; num. vars = 9"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236128  172.9    5684620  303.6   5684620  303.6
-Vcells 472430373 3604.4  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 22; OOB error: mean = 0.5893; sd = 0.009; num. vars = 7"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236125  172.9    5684620  303.6   5684620  303.6
-Vcells 468930333 3577.7  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 23; OOB error: mean = 0.6203; sd = 0.0089; num. vars = 6"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236123  172.9    5684620  303.6   5684620  303.6
-Vcells 466032302 3555.6  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 24; OOB error: mean = 0.6567; sd = 0.0087; num. vars = 5"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236122  172.9    5684620  303.6   5684620  303.6
-Vcells 466900308 3562.2  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 25; OOB error: mean = 0.6917; sd = 0.0084; num. vars = 4"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236121  172.9    5684620  303.6   5684620  303.6
-Vcells 466634288 3560.2  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 26; OOB error: mean = 0.719; sd = 0.0082; num. vars = 3"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236120  172.9    5684620  303.6   5684620  303.6
-Vcells 461860272 3523.8  795586112 6069.9 652194075 4975.9
-[1] "..... iteration 27; OOB error: mean = 0.808; sd = 0.0072; num. vars = 2"
-[1] "gc inside loop of varSelRF"
-            used   (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   3236119  172.9    5684620  303.6   5684620  303.6
-Vcells 459396261 3505.0  795586112 6069.9 652194075 4975.9
+
+library(openxlsx)
+library(stringr)
+library(Matrix)
+
+matrix <- read.xlsx('Extended_Data_Table_4.xlsx',rowNames = TRUE)
+corrmatrix <- diag(x = 1, dim(matrix)[1], dim(matrix)[1])
+rownames(corrmatrix) <- rownames(matrix)
+colnames(corrmatrix) <- rownames(matrix)
+for (i in 1:(dim(matrix)[1]-1)){
+  for (k in (i+1):dim(matrix)[1]){
+    aux = 0
+    for (j in 1:dim(matrix)[2]){
+      if (!is.na(matrix[i,j]) && !is.na(matrix[k,j])){
+        aux = aux + 1
+      }
+    } 
+    corrmatrix[i,k] = aux/dim(matrix)[2]
+    }
+}
+
+matrixaux <- ifelse(is.na(matrix),0,1)
+matrixauxsums <- sort(rowSums(matrixaux),decreasing = TRUE)
+matrixauxsums <- matrixauxsums[matrixauxsums==1]
+head(matrixauxsums)
+
+
+corrmatrix2 <- diag(x = 1, dim(matrix)[1], dim(matrix)[1])
+rownames(corrmatrix2) <- rownames(matrix)
+colnames(corrmatrix2) <- rownames(matrix)
+matrixaux2 <- ifelse(is.na(matrix),0,1)
+matrixaux2sums <- rowSums(matrixaux2)
+for (i in 1:(dim(matrix)[1]-1)){
+  for (k in (i+1):dim(matrix)[1]){
+    aux = 0
+    for (j in 1:dim(matrix)[2]){
+      if (!is.na(matrix[i,j]) && !is.na(matrix[k,j])){
+        aux = aux + 1
+      }
+    } 
+    corrmatrix2[i,k] = aux/matrixaux2sums[i]
+    corrmatrix2[k,i] = aux/matrixaux2sums[k]
+    }
+}
+
+genenames <- rownames(corrmatrix2)
+genefriends <- genenames[corrmatrix2[,1]==1]
+# colnames(genefriends) <- colnames(corrmatrix2)[1]
+for (i in 2:3){#dim(corrmatrix2)[2]){
+  morefriends <- genenames[corrmatrix2[,i]==1]
+  # colnames(morefriends) <- colnames(corrmatrix2)[i]
+  if (i==2){
+    n <- max(length(genefriends), length(morefriends))
+    length(genefriends) <- n                      
+  }
+  if (i>2){
+    n <- max(dim(genefriends)[1], length(morefriends))
+    genefriends <- sapply(genefriends, function(x) {
+      length(x) <- n
+      x
+    })             
+  }
+  
+  length(morefriends) <- n
+  genefriends <- cbind(genefriends,morefriends) 
+}
+genefriends <- as.data.frame(genefriends)
+colnames(genefriends) <- genenames
+
+for (i in 1:dim(corrmatrix2)[1]){
+  for (j in 1:dim(corrmatrix2)[2]){
+    if (corrmatrix2[i,j] == corrmatrix2[j,i]){
+      print(colnames(corrmatrix2)[i])
+    }    
+  }
+}
+
+library(reshape2)
+get_upper_tri <- function(cormat){
+    cormat[lower.tri(cormat)]<- NA
+    return(cormat)
+}
+upper_tri <- get_upper_tri(corrmatrix)
+melted_cormat <- melt(upper_tri, na.rm = TRUE)
+
+corrmatrixsums <- rowSums(corrmatrix)
+corrmatrixsums <- corrmatrixsums>1
+smallcorrmatrix <- corrmatrix[,corrmatrixsums]
+dim(smallcorrmatrix)
+
+dnorm <- dist(smallcorrmatrix)
+hnorm <- hclust(dnorm, method = "ward.D2", members = NULL)
+dend.corrmatrix <- hnorm %>% as.dendrogram
+
+library(ggcorrplot)
+ggcorrplot(corrmatrix, type = "upper")
 ```
 
