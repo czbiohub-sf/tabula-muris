@@ -217,13 +217,3 @@ tabula_muris/
 | Tongue              | Yes              | Yes                         |
 | Trachea             | Yes              | Yes                         |
 
-
-## Other mouse cell atlas efforts
-
-### "Mouse Cell Atlas"
-
-From Guoji Guo's lab at Zhejiang University School of Medicine in China
-
-- [MCA Data Analysis](https://github.com/ggjlab/mca_data_analysis)
-- [scMCA](https://github.com/ggjlab/scMCA) - R package for analysing the Mouse Cell Atlas data
-
