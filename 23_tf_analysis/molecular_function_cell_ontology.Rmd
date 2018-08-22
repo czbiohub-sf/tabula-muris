@@ -412,13 +412,13 @@ tm.facs.matrix.binding$factors <- as.factor(tm.facs.metadata$cell_ontology_class
 # consider only TFs that are not affected by dissociation
 tm.facs.matrix.binding.cellids <- tm.facs.matrix.binding %>% 
   group_by(factors) %>%
-  summarise_at(vars(colnames(tm.facs.matrix.binding[1:1016])),funs(sum(., na.rm=TRUE)))
+  summarise_at(vars(colnames(tm.facs.matrix.binding[1:11546])),funs(sum(., na.rm=TRUE)))
 
 
 tm.facs.matrix.binding.cellids.norm = tm.facs.matrix.binding.cellids
 for (i in 1:82){
-  jaux = sum(tm.facs.matrix.binding.cellids[i,2:1017])
-  for (j in 2:1017){
+  jaux = sum(tm.facs.matrix.binding.cellids[i,2:11547])
+  for (j in 2:11547){
     tm.facs.matrix.binding.cellids.norm[i,j] = tm.facs.matrix.binding.cellids[i,j]/jaux
   }
 }
@@ -444,13 +444,13 @@ tm.facs.matrix.csms$factors <- as.factor(tm.facs.metadata$cell_ontology_class)
 # consider only TFs that are not affected by dissociation
 tm.facs.matrix.csms.cellids <- tm.facs.matrix.csms %>%
   group_by(factors) %>%
-  summarise_at(vars(colnames(tm.facs.matrix.csms[1:1086])),funs(sum(., na.rm=TRUE)))
+  summarise_at(vars(colnames(tm.facs.matrix.csms[1:770])),funs(sum(., na.rm=TRUE)))
 
 
 tm.facs.matrix.csms.cellids.norm = tm.facs.matrix.csms.cellids
 for (i in 1:82){
-  jaux = sum(tm.facs.matrix.csms.cellids[i,2:1086])
-  for (j in 2:1086){
+  jaux = sum(tm.facs.matrix.csms.cellids[i,2:771])
+  for (j in 2:771){
     tm.facs.matrix.csms.cellids.norm[i,j] = tm.facs.matrix.csms.cellids[i,j]/jaux
   }
 }
@@ -568,14 +568,41 @@ entangle.listdend.rna.sfs <- listdend.rna.sfs %>% untangle(method = "step2side")
 entangle.listdend.csms <- listdend.csms %>% untangle(method = "step2side") 
 
 pdf("entanglements.pdf", width = 50, height = 30)
-barplot(c(round(entanglement(entangle.listdend.ta),2),
-              round(entanglement(entangle.listdend.mfr),2),
-              round(entanglement(entangle.listdend.sma),2),
-              round(entanglement(entangle.listdend.mta),2),
-              round(entanglement(entangle.listdend.tra),2)), main="Entanglements", horiz=FALSE,
-        names.arg=c("Transporter Activity", "Molecular Function Regulator", "Structural Molecular Activity","Molecular Transducer Activity","Trancription Regulator Activity"),
+barplot(c(round(entanglement(entangle.listdend.tfs),2),
+          round(entanglement(entangle.listdend.ta),2),
+          round(entanglement(entangle.listdend.mfr),2),
+          round(entanglement(entangle.listdend.sma),2),
+          round(entanglement(entangle.listdend.mta),2),
+          round(entanglement(entangle.listdend.ca),2),
+          round(entanglement(entangle.listdend.tra),2),
+          round(entanglement(entangle.listdend.bind),2),
+          round(entanglement(entangle.listdend.rna.sfs),2),
+          round(entanglement(entangle.listdend.csms),2)), 
+        main="Entanglements", horiz=FALSE,
         xlab = "Entanglement",
-        col=brewer.pal(10,"Spectral"))
+        names.arg=c(sprintf("Transcription Factors (n = %s)",length(tf.names)), 
+                    sprintf("Transporter Activity (n = %s)",length(transporter.activity.names)),
+                    sprintf("Molecular Function Regulator (n = %s)",length(mfr.names)), 
+                    sprintf("Structural Molecular Activity (n = %s)",length(sma.names)), 
+                    sprintf("Molecular Transducer Activity (n = %s)",length(mta.names)), 
+                    sprintf("Catalytic Activity (n = %s)",length(catalytic.activity.names)), 
+                    sprintf("Trancription Regulator Activity (n = %s)",length(tra.names)), 
+                    sprintf("Binding (n = %s)",length(binding.names)), 
+                    sprintf("RNA Splicing Factors (n = %s)",length(rna.sfs.names)), 
+                    sprintf("Cell Surface Markers (n = %s)",length(csms.names))),
+        col=brewer.pal(10,"Spectral"),
+        cex.axis=1.5, cex.names=1.5,
+        ylim=c(0,1.1*max(c(round(entanglement(entangle.listdend.tfs),2),
+          round(entanglement(entangle.listdend.ta),2),
+          round(entanglement(entangle.listdend.mfr),2),
+          round(entanglement(entangle.listdend.sma),2),
+          round(entanglement(entangle.listdend.mta),2),
+          round(entanglement(entangle.listdend.ca),2),
+          round(entanglement(entangle.listdend.tra),2),
+          round(entanglement(entangle.listdend.bind),2),
+          round(entanglement(entangle.listdend.rna.sfs),2),
+          round(entanglement(entangle.listdend.csms),2))))
+        )
 dev.off()
 
 pdf("new_tanglegram_onto_tfs.pdf", width=50, height=30)
