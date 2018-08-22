@@ -1,0 +1,135 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r load libraries}
+library(Seurat)
+library(cowplot)
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(plyr)
+library(parallel)
+library(cba)
+library(here)
+library(RColorBrewer)
+library(tidyverse)
+library(openxlsx)
+library(gplots)
+library(reshape2)
+
+library(ggplot2)
+library(ggdendro)
+library(scales)
+library(wordspace)
+
+library(varSelRF)
+set.seed(644685)
+
+```
+
+```{r load your data here data, using tabula muris facs as eg}
+
+tm.facs.matrix = readRDS(here("data-tabula-muris", "TM_facs_mat.rds"))
+tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
+
+```
+
+```{r Remove IEGs}
+# identify genes affected by dissociation
+iegs <- as.character(read.csv(here('00_data_ingest','20_dissociation_genes','genes_affected_by_dissociation_unix.csv'), header = T)[,1])
+```
+
+
+```{r load TFs}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+tfs      <- read.csv(here('23_tf_analysis','GO_term_summary_20171110_222852.csv'))
+tf.names <- as.character( tfs %>% distinct(Symbol) %>% pull(Symbol) )
+tf.names <- make.names(tf.names)
+length(tf.names)
+
+
+tf.names <- tf.names[!tf.names %in% iegs]
+length(tf.names)
+```
+
+
+```{r varselRF one against all}
+# get only the genes that are TFs
+tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
+tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,match(tm.facs.metadata$cell[!is.na(tm.facs.metadata$cell_ontology_class)],colnames(tm.facs.matrix))]
+
+rownames(tm.facs.metadata) = tm.facs.metadata$cell
+tm.facs.metadata.tfs <- tm.facs.metadata
+
+# create a new metadata column to have `cell_ontology_class_tissue`
+tm.facs.metadata.tfs$factors <- paste(tm.facs.metadata$cell_ontology_class, tm.facs.metadata$tissue, sep="_")
+# create a list out of those factors
+cell.type.tissue <- unique(tm.facs.metadata.tfs$factors[!is.na(tm.facs.metadata.tfs$cell_ontology_class)])
+
+# and iterate over all `cell_ontology_class_tissue`
+for (varselrf.id in 1:length(cell.type.tissue)){
+  # print here is useful to keep track in case there are many  values `cell_ontology_class_tissue`
+  print(varselrf.id)
+  tm.facs.metadata.tfs$varSelRF <- tm.facs.metadata.tfs$factors
+  
+  # Group A is the not of interest "rest"
+  tm.facs.metadata.tfs$varSelRF[tm.facs.metadata.tfs$varSelRF != cell.type.tissue[varselrf.id]] <- "A"
+  # Group B is the  `cell_ontology_class_tissue` of interest: the order matters!
+  tm.facs.metadata.tfs$varSelRF[tm.facs.metadata.tfs$varSelRF == cell.type.tissue[varselrf.id]] <- "B"
+
+  tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
+  tissFACStfs <- NormalizeData(object = tissFACStfs, normalization.method = "LogNormalize", scale.factor = 10000)
+  # after creating the Seurat Objects it's important to reset the idents
+  tissFACStfs <- SetAllIdent(object = tissFACStfs, id = "varSelRF")
+  tissFACStfs <- SubsetData(tissFACStfs, max.cells.per.ident = 100, subset.raw = T)
+
+  # get data in shape for varselRF
+  tm.facs.matrix.tfsRF <- as.matrix(tissFACStfs@data)
+  RF_factors <- tissFACStfs@meta.data$varSelRF
+  
+  varselRF.tissFACS <- varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = FALSE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+  
+  # assign results to easy-to-relate-to-names
+  cell.type.tissue.name <- paste("varselRF.tissFACS",cell.type.tissue[varselrf.id], sep = ".")
+  assign(cell.type.tissue.name, varselRF.tissFACS)
+  
+}
+
+```
+
+```{r output varselRf one vs all}
+
+# write xlsx file with one tab per  `cell_ontology_class_tissue` of interest
+library(openxlsx)
+library(stringr)
+
+wb <- createWorkbook("rf.model.one.vs.all")
+
+for (varselrf.id in 1:length(cell.type.tissue)){
+  sheetname <- cell.type.tissue[varselrf.id]
+  sheetname <- str_sub(sheetname,1,25)
+  sheetname <- paste(sheetname,varselrf.id,sep=".")
+  addWorksheet(wb,sheetname)
+  varselRF.tissFACS <- get(paste("varselRF.tissFACS",cell.type.tissue[varselrf.id], sep = "."))
+  writeData(wb, sheet = sheetname, as.data.frame(apply(varselRF.tissFACS$rf.model$importance,decreasing = TRUE,2,sort)),rowNames = TRUE)
+}
+
+saveWorkbook(wb,"rf.model.one.vs.all.allgenes.xlsx",overwrite = TRUE)
+
+
+# get some practical egs
+pdf("varselRF.tissFACS.muscle.pdf", width=2, height=2)
+varImpPlot(`varselRF.tissFACS.skeletal muscle satellite stem cell_Limb_Muscle`$rf.model, n.var=10, main='Random forest model',cex=.5)
+dev.off()
+pdf("varselRF.tissFACS.hepatocyte.pdf", width=2, height=2)
+varImpPlot(varselRF.tissFACS.hepatocyte_Liver$rf.model, n.var=10, main='Random forest model',cex=.5)
+dev.off()
+pdf("varselRF.tissFACS.oligodendrocyte.pdf", width=2, height=2)
+varImpPlot(`varselRF.tissFACS.oligodendrocyte_Brain_Non-Myeloid`$rf.model, n.var=10, main='Random forest model',cex=.5)
+dev.off()
