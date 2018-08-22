@@ -1,6 +1,7 @@
 # Launches all notebooks as a background process. Only recommended to be used on high-powered computers!
 
 RMDS := $(wildcard *.Rmd)
+VIGNETTE_RMDS := $(wildcard *Vignette*.Rmd)
 CORES=32
 
 clean:
@@ -32,3 +33,9 @@ trachea: create_R_files_from_Rmds
 
 marrow: create_R_files_from_Rmds
 	ls -1 *.R | grep facs | grep -E 'Marrow' | xargs -P ${CORES} -I{} bash -c "R -f {} >{}.out 2>{}.err"
+
+vignette:
+	for RMD in $(VIGNETTE_RMDS); do \
+		echo $$RMD; \
+		echo "rmarkdown::render('$$RMD', clean=TRUE)" | R --slave > $$RMD.out 2>$$RMD.err & \
+	done
