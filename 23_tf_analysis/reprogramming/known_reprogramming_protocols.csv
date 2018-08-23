@@ -1,0 +1,34 @@
+CellType,Subtype,Genes,Origin cell type,Organism,Efficiency,OutputMarkers,OtherOutputMetrics,Citation,DOI,Notes,Use of novel induction protocol,Fraction_Expressing_Threshold,Celltypes_above_threshold,Match
+Neuron,Excitatory,Pou3f2;Ascl1;Myt1l,MEF;TTF,Mouse,0.05,Tubb3;Mapt;Map2;Syn1,Morphology;Electrophysiology,Vierbuchen_2010,doi:10.1038/nature08797,started with 19 genes,,0.1,Brain_Non.Myeloid__neuron;Brain_Non.Myeloid__oligodendrocyte.precursor.cell,T
+Neuron,Excitatory,Pou3f2;Ascl1;Zic1,MEF;TTF,Mouse,0.05,"Tubb3;;Mat;,Map2",Morphology;Electrophysiology,Vierbuchen_2010,doi:10.1038/nature08797,started with 19 genes,,0.1,Brain_Non.Myeloid__Bergmann.glial.cell;Brain_Non.Myeloid__neuron,T
+Cardiomyocyte,,Gata4;Tbx5;Mef2c,"Neonatal Cardiac fibroblasts, neonatal TTF",Mouse,0.15,Myh6;Actn2;Actc1,,Ieda_2010,https://doi.org/10.1016/j.cell.2010.07.002,,,0.2,Heart__cardiac.muscle.cell,T
+Cardiomyocyte,,Hand2;Nkx2.5;Gata4;Mef2c;Tbx5,,Mouse,,,,,https://doi.org/10.1016/j.yjmcc.2013.04.004,,,0.2,Heart__cardiac.muscle.cell,T
+Hematopoietic_progenitors,,POU5F1,Adult dermal fibroblasts;Neonatal foreskin fibroblasts,Human,0.4,CD45,Histology;Colony formation;Phagocytosis;Transplantation,Szabo_2010,doi:10.1038/nature09591,"Used growth factors (Flt3 ligand, SCF) to increase efficiency. Bypasses iPSC state. Then use known factors to direct specific hematopoietic lineages",Hard to generate mature hepatocytes,,,
+Hepatocytes,,Hnf4a;Foxa1,MEF;Adult dermal fibroblasts,Mouse,0.003,Alb;Cdh1,Gene panels;Drug metabolism;Rescue of Fah KO mice,Sekiya_2011,doi:10.1038/nature10263,Started with 12 genes related to hepatocyte diff during liver dev. Hnf4a was a ‚Äúcritical‚Äù factor (like Ascl1 in Vierbuchen_2010),Hard to generate mature hepatocytes,0.3,Large_Intestine__epithelial.cell.of.large.intestine;Large_Intestine__large.intestine.goblet.cell;Liver__hepatocyte,T
+Hepatocytes,,Hnf4a;Foxa2,MEF;Adult dermal fibroblasts,Mouse,0.003,Alb;Cdh1,Gene panels;Drug metabolism;Rescue of Fah KO mice,Sekiya_2011,doi:10.1038/nature10263,Started with 12 genes related to hepatocyte diff during liver dev. Hnf4a was a ‚Äúcritical‚Äù factor (like Ascl1 in Vierbuchen_2010),Hard to generate mature hepatocytes,,,
+Hepatocytes,,Hnf4a;Foxa3,MEF;Adult dermal fibroblasts,Mouse,0.003,Alb;Cdh1,Gene panels;Drug metabolism;Rescue of liver failure mice;EM,Sekiya_2011,doi:10.1038/nature10263,"Started with 12 genes related to hepatocyte diff during liver dev. Hnf4a was a ‚Äúcritical‚Äù factor (like Ascl1 in Vierbuchen_2010). Afp is expressed in the iHep cells, indicating immature phenotype",,,,
+Hepatocytes,,Hnf1a;Gata4;Foxa3,,Mouse,,,,,doi:10.1038/nature10116,,,0.2,Liver__hepatocyte,T
+Hepatocytes,,Hnf4a;Cebpa;Nr1i2,,Mouse,,,,,doi.org/10.1016/j.ejcb.2015.10.003,,,0.4,Large_Intestine__large.intestine.goblet.cell;Liver__hepatocyte,T
+iPSC,,Myc;Klf4;Sox2;Pou5f1,MEF,Mouse,,Colony number,Colony formation;Teratoma formation;Microarray,Takahashi_2006,10.1016/j.cell.2006.07.024,Started with 24 genes. Leave-one-out to ID critical factors. 4 factors better than 3,,0.1,None,NA
+Muscle,,Myod1,MEF,Mouse,,,,,10.1016/0092-8674(87)90585-X,,,0.3,Limb_Muscle__skeletal.muscle.satellite.cell;Limb_Muscle__skeletal.muscle.satellite.stem.cell,T
+Macrophages,,Cebpa;Cebpb,Bcell,Mouse,,,,,10.1016/S0092-8674(04)00419-2,,,0.8,Marrow__basophil;Marrow__granulocyte.monocyte.progenitor.cell;Tongue__keratinocyte,F
+Beta_cells,,Neurog3;Pdx1;Mafa,Exocrine cells,Mouse,,,,,10.1038/nature07314,in vivo reprogramming from exocrine cells,,0.05,Pancreas__type.B.pancreatic.cell,T
+Neuron_DA,,,Fibroblast,Mouse,,,,,10.1038/nature10284,,,,,
+Neuron_DA,,,Fibroblast,Human,,,,,10.1038/nature10284,,,,,
+Neural_Stem_Cell,,Myc;Sox2;Klf4;Tcf3;Pou3f4,Fibroblast,Mouse,,,,,10.1016/J.STEM.2012.02.021,,,,,
+Neuron_Motor,,,ESC,,,,,,,,,,,
+Neuron_Serotonin,,,Fibroblast,Human,,,,,10.1038/mp.2015.101,,,,,
+Neuron_Striatal,,,Fibroblast,Human,,,,,10.1016/J.NEURON.2014.10.016,,,,,
+Neuron_PNS_Sensory,,,Fibroblast,Mouse,,,,,10.1038/nn.3887,,,,,
+Neuron_PNS_Sensory,,,Fibroblast,Human,,,,,10.1038/nn.3887,,,,,
+Neuron_Forebrain_INH,,,Fibroblast,Mouse,,,,,10.1016/j.stem.2015.09.002,,,,,
+Osteoblasts,,RUNX2;SP7;MYCL1,Fibroblast,Human,,,,,10.1073/pnas.1420713112,,,0.01,Brain_Non.Myeloid__oligodendrocyte;Brain_Non.Myeloid__neuron;Heart__erythrocyte;Marrow__basophil,F
+Endothelial,,ETV2,Fibroblast,Human,,,,,10.1073/pnas.1413234112,,,0.05,None,F
+Endothelial_KidneyTubular,,﻿Emx2;Hnf1b;Hnf4a;Pax8,Fibroblast,Mouse,,,,,10.1038/ncb3437,,,,,
+Endothelial_KidneyTubular,,﻿Emx2;Hnf1b;Hnf4a;Pax8,Fibroblast,Human,,,,,10.1038/ncb3437,,,,,
+Oligodendrocyte,,Sox10;Olig2;Zfp536,Fibroblast,Mouse,,,,,10.1038/nbt.2564,,,0.3,Brain_Non.Myeloid__oligodendrocyte,T
+Neural_Stem_Cell,,Sox2,Fibroblast,Mouse,,,,,10.1016/j.stem.2012.05.018,,,,,
+Neuron,,Neurod1,Astrocyte,,,,,,﻿10.1016/j.stem.2013.12.001,in vivo reprogramming from astrocytes,,,,
+Fetal_Intestine_Progenitor_Cells,,Hnf4a;Foxa3;Gata6;Cdx2,Fibroblast,Mouse,,,,,10.1016/j.stem.2017.08.020,,,0.4,Large_Intestine__epithelial.cell.of.large.intestine;Large_Intestine__large.intestine.goblet.cell,T
+Leydig_Cells,,Dmrt1;Gata4;Nr5a1,Fibroblast,Mouse,,,,,10.1016/j.stemcr.2016.11.010,,,,,
+Hematopoietic_progenitors,,Erg;Gata2;Lmo2;Runx1;Tal1,Fibroblast,Mouse,,,,,10.1016/j.celrep.2014.11.002,,,0.4,Marrow__Slamf1.positive.multipotent.progenitor.cell;Marrow__Slamf1.negative.multipotent.progenitor.cell;Marrow__common.lymphoid.progenitor;Marrow__megakaryocyte.erythroid.progenitor.cell,T

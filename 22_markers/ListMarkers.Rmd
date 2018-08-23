@@ -1,0 +1,82 @@
+---
+title: "Find markers by cell type"
+output: html_notebook
+---
+
+```{r}
+library(here)
+
+find_markers <- function(tissue, method, annotation){
+  filename = here('00_data_ingest', '04_tissue_robj_generated', 
+                       paste0(method,"_", tissue, "_seurat_tiss.Robj"))
+  load(file=filename)
+  
+  annotations = tiss@meta.data[,annotation]
+  unique_annotations = unique(annotations)
+  enumerated_annotations = 0:(length(unique_annotations)-1)
+  
+  annotation_ident = as.factor(plyr::mapvalues(x = annotations, from = unique_annotations, to = enumerated_annotations))
+  names(annotation_ident) = names(tiss@ident)
+  tiss@ident = annotation_ident
+  tiss.markers <- FindAllMarkers(object = tiss, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+  
+  write.csv(tiss.markers, file = here("22_markers",paste0(method, "_", tissue, "_", annotation, "_markers.csv")))
+  write.csv(unique_annotations, file = here("22_markers", paste0(method, "_", tissue, "_", annotation, "_classes.csv")))
+}
+```
+
+```{r}
+find_markers("Bladder", "facs", "cell_ontology_class")
+find_markers("Bladder", "droplet", "cell_ontology_class")
+
+find_markers("Kidney", "facs", "cell_ontology_class")
+find_markers("Kidney", "droplet", "cell_ontology_class")
+
+find_markers("Liver", "facs", "cell_ontology_class")
+find_markers("Liver", "droplet", "cell_ontology_class")
+
+find_markers("Lung", "facs", "cell_ontology_class")
+find_markers("Lung", "droplet", "cell_ontology_class")
+
+find_markers("Marrow", "facs", "cell_ontology_class")
+find_markers("Marrow", "droplet", "cell_ontology_class")
+
+find_markers("Limb_Muscle", "facs", "cell_ontology_class")
+find_markers("Limb_Muscle", "droplet", "cell_ontology_class")
+
+find_markers("Spleen", "facs", "cell_ontology_class")
+find_markers("Spleen", "droplet", "cell_ontology_class")
+
+find_markers("Thymus", "facs", "cell_ontology_class")
+find_markers("Thymus", "droplet", "cell_ontology_class")
+
+find_markers("Brain_Non-Myeloid", "facs", "cell_ontology_class")
+```
+
+```{r}
+library(openxlsx)
+library(stringr)
+
+list_cell_type_markers <- function(tissue, method){
+  filename = here('22_markers', paste0(method,"_", tissue, "_cell_ontology_class_markers.csv"))
+  markers <- read.csv(file = filename)
+  filename = here('22_markers', paste0(method,"_", tissue, "_cell_ontology_class_classes.csv"))
+  types <- read.csv(file = filename)
+  types <- as.matrix(types$x)
+  
+  wb <- createWorkbook(tissue)
+
+  for(i in 1:length(types)){
+    dataframe = markers[markers$cluster==i-1,]
+    dataframe = dataframe[,c(8,3,6)]
+    sheetname <- str_sub(types[i],1,30)
+    addWorksheet(wb,sheetname)
+    writeData(wb, sheet = sheetname, dataframe,rowNames = FALSE)
+  }
+
+saveWorkbook(wb,paste0(tissue,".xlsx"),overwrite = TRUE)
+
+}
+
+list_cell_type_markers("Brain_Non-Myeloid", "facs")
+```

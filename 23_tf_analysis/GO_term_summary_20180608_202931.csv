@@ -1,0 +1,724 @@
+﻿MGI Gene/Marker ID,Symbol,Name,Chr,Qualifier,Annotated Term,Context,Proteoform,Evidence,Inferred From,Reference(s)
+MGI:1924020,2010005H15Rik,RIKEN cDNA 2010005H15 gene,16,,structural molecule activity,,,ISO,P01040 ,J:164563 
+MGI:1916780,2310002L09Rik,RIKEN cDNA 2310002L09 gene,4,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:1913783,2310050C09Rik,RIKEN cDNA 2310050C09 gene,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:99602,Acan,aggrecan,7,,extracellular matrix structural constituent,,,IBA,PTN001105676 ,J:161428 
+MGI:87904,Actb,"actin, beta",5,,structural constituent of postsynaptic actin cytoskeleton,,,ISO,P60709 ,J:164563 
+MGI:87906,Actg1,"actin, gamma, cytoplasmic 1",11,,structural constituent of cytoskeleton,,,IDA,,J:92541 
+MGI:1913963,Actr2,ARP2 actin-related protein 2,11,,structural constituent of cytoskeleton,,,ISO,P61160 ,J:164563 
+MGI:1921367,Actr3,ARP3 actin-related protein 3,1,,structural constituent of cytoskeleton,,,ISO,P61158 ,J:164563 
+MGI:87918,Add1,adducin 1 (alpha),5,,structural molecule activity,,,IDA,,J:71029 
+MGI:87919,Add2,adducin 2 (beta),6,,structural molecule activity,,,IDA,,J:71029 
+MGI:1351615,Add3,adducin 3 (gamma),19,,structural molecule activity,,,IDA,,J:71029 
+MGI:1316648,Ahnak,AHNAK nucleoprotein (desmoyokin),19,,structural molecule activity conferring elasticity,happens in skeletal muscle tissue,,IMP,,J:165850 
+MGI:2385237,Aimp2,aminoacyl tRNA synthetase complex-interacting multifunctional protein 2,5,,protein-containing complex scaffold activity,,,IMP,,J:93041 
+MGI:104729,Akap1,A kinase (PRKA) anchor protein 1,11,,protein-containing complex scaffold activity,,,ISO,RGD:620826 ,J:155856 
+MGI:2685104,Akap5,A kinase (PRKA) anchor protein 5,12,,protein-containing complex scaffold activity,,,ISO,RGD:620829 ,J:155856 
+MGI:3050566,Akap6,A kinase (PRKA) anchor protein 6,12,,protein-containing complex scaffold activity,,,ISO,RGD:69412 ,J:155856 
+MGI:1859150,Akap7,A kinase (PRKA) anchor protein 7,10,,protein-containing complex scaffold activity,,,ISO,RGD:1303071 ,J:155856 
+MGI:2178217,Akap9,A kinase (PRKA) anchor protein (yotiao) 9,5,,protein-containing complex scaffold activity,,,IEA,IPR028745 ,J:72247 
+MGI:2684060,Akap11,A kinase (PRKA) anchor protein 11,14,,protein-containing complex scaffold activity,,,ISO,RGD:2079 ,J:155856 
+MGI:1932576,Akap12,A kinase (PRKA) anchor protein (gravin) 12,10,,receptor signaling complex scaffold activity,,,TAS,,J:67308 
+MGI:2676556,Akap13,A kinase (PRKA) anchor protein 13,7,,MAP-kinase scaffold activity,,,ISO,RGD:727893 ,J:155856 
+MGI:2676556,Akap13,A kinase (PRKA) anchor protein 13,7,,MAP-kinase scaffold activity,,,ISO,Q12802 ,J:164563 
+MGI:2676556,Akap13,A kinase (PRKA) anchor protein 13,7,,protein-containing complex scaffold activity,,,ISO,Q12802 ,J:164563 
+MGI:2676556,Akap13,A kinase (PRKA) anchor protein 13,7,,protein-containing complex scaffold activity,,,ISO,RGD:727893 ,J:155856 
+MGI:104655,Ambn,ameloblastin,5,,extracellular matrix structural constituent conferring compression resistance,,,TAS,,J:50559 
+MGI:104655,Ambn,ameloblastin,5,,structural constituent of tooth enamel,,,IEA,IPR007798 ,J:72247 
+MGI:88005,Amelx,"amelogenin, X-linked",X,,structural constituent of tooth enamel,,,IBA,PTN000004954 ,J:161428 
+MGI:88005,Amelx,"amelogenin, X-linked",X,,structural constituent of tooth enamel,,,ISO,Q99218 ,J:164563 
+MGI:88026,Ank3,"ankyrin 3, epithelial",10,,structural constituent of cytoskeleton,,,ISO,Q12955 ,J:164563 
+MGI:96819,Anxa1,annexin A1,19,,structural molecule activity,,,ISO,P04083 ,J:164563 
+MGI:1343142,Arpc1b,"actin related protein 2/3 complex, subunit 1B",5,,structural constituent of cytoskeleton,,,ISO,O15143 ,J:164563 
+MGI:1923959,Arpc2,"actin related protein 2/3 complex, subunit 2",1,,structural constituent of cytoskeleton,,,IBA,PTN000248611 ,J:161428 
+MGI:1923959,Arpc2,"actin related protein 2/3 complex, subunit 2",1,,structural constituent of cytoskeleton,,,ISO,O15144 ,J:164563 
+MGI:1928375,Arpc3,"actin related protein 2/3 complex, subunit 3",5,,structural constituent of cytoskeleton,,,ISO,O15145 ,J:164563 
+MGI:1915339,Arpc4,"actin related protein 2/3 complex, subunit 4",6,,structural constituent of cytoskeleton,,,ISO,P59998 ,J:164563 
+MGI:1915021,Arpc5,"actin related protein 2/3 complex, subunit 5",1,,structural constituent of cytoskeleton,,,ISO,O15511 ,J:164563 
+MGI:99474,Arrb2,"arrestin, beta 2",11,,protein-containing complex scaffold activity,,,ISO,P32121 ,J:164563 
+MGI:1096327,Axin1,axin 1,17,,protein-containing complex scaffold activity,,,IMP,,J:109361 
+MGI:1096327,Axin1,axin 1,17,,protein-containing complex scaffold activity,,,ISO,O15169 ,J:164563 
+MGI:1096327,Axin1,axin 1,17,,receptor signaling complex scaffold activity,,,IEA,IPR029797 ,J:72247 
+MGI:1096385,Bcan,brevican,3,,extracellular matrix structural constituent,,,IBA,PTN001105676 ,J:161428 
+MGI:101770,Bfsp1,"beaded filament structural protein 1, in lens-CP94",2,,structural constituent of eye lens,happens in lens fiber,,IDA,,J:85243 
+MGI:101770,Bfsp1,"beaded filament structural protein 1, in lens-CP94",2,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1333828,Bfsp2,"beaded filament structural protein 2, phakinin",9,,structural constituent of eye lens,,,IDA,,J:115522 
+MGI:1333828,Bfsp2,"beaded filament structural protein 2, phakinin",9,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:88156,Bglap,bone gamma carboxyglutamate protein,3,,structural constituent of bone,,,ISO,RGD:2206 ,J:155856 
+MGI:88157,Bglap2,bone gamma-carboxyglutamate protein 2,3,,structural constituent of bone,,,ISO,RGD:2206 ,J:155856 
+MGI:88155,Bglap3,bone gamma-carboxyglutamate protein 3,3,,structural constituent of bone,,,ISO,RGD:2206 ,J:155856 
+MGI:1346013,Bves,blood vessel epicardial substance,10,,structural molecule activity,,,ISO,Q8NE79 ,J:164563 
+MGI:107437,Capn3,calpain 3,2,,protein-containing complex scaffold activity,,,IMP,,J:140035 
+MGI:107437,Capn3,calpain 3,2,,structural constituent of muscle,,,IMP,,J:140035 
+MGI:102709,Cav1,"caveolin 1, caveolae protein",6,,protein-containing complex scaffold activity,,,IDA,,J:215922 
+MGI:102709,Cav1,"caveolin 1, caveolae protein",6,,structural molecule activity,,,ISO,Q03135 ,J:164563 
+MGI:107571,Cav2,caveolin 2,6,,protein-containing complex scaffold activity,,,IDA,,J:217289 
+MGI:107570,Cav3,caveolin 3,6,,protein-containing complex scaffold activity,,,ISO,RGD:2281 ,J:155856 
+MGI:107570,Cav3,caveolin 3,6,,protein-containing complex scaffold activity,,,ISO,P56539 ,J:164563 
+MGI:1889510,Cdc42se1,CDC42 small effector 1,3,,structural molecule activity,,,IBA,PTN001004344 ,J:161428 
+MGI:1919979,Cdc42se2,CDC42 small effector 2,11,,structural molecule activity,,,IBA,PTN001004344 ,J:161428 
+MGI:1919979,Cdc42se2,CDC42 small effector 2,11,,structural molecule activity,,,ISO,Q9NRR3 ,J:164563 
+MGI:1913325,Chchd3,coiled-coil-helix-coiled-coil-helix domain containing 3,6,,protein-containing complex scaffold activity,,,IMP,,J:173140 
+MGI:1276109,Cldn1,claudin 1,16,,structural molecule activity,,,IEA,IPR003548 IPR006187 IPR017974 ,J:72247 
+MGI:1276110,Cldn2,claudin 2,X,,structural molecule activity,,,IEA,IPR005411 IPR006187 IPR017974 ,J:72247 
+MGI:1329044,Cldn3,claudin 3,5,,structural molecule activity,,,IEA,IPR003549 IPR006187 IPR017974 ,J:72247 
+MGI:1313314,Cldn4,claudin 4,5,,structural molecule activity,,,IEA,IPR003550 IPR006187 IPR017974 ,J:72247 
+MGI:1276112,Cldn5,claudin 5,16,,structural molecule activity,,,IEA,IPR003551 IPR006187 IPR017974 ,J:72247 
+MGI:1859284,Cldn6,claudin 6,17,,structural molecule activity,,,IEA,IPR003925 IPR006187 IPR017974 ,J:72247 
+MGI:1859285,Cldn7,claudin 7,11,,structural molecule activity,,,IEA,IPR003552 IPR006187 IPR017974 ,J:72247 
+MGI:1859286,Cldn8,claudin 8,16,,structural molecule activity,,,IEA,IPR003926 IPR006187 IPR017974 ,J:72247 
+MGI:1913100,Cldn9,claudin 9,17,,structural molecule activity,,,IDA,,J:117344 
+MGI:1913101,Cldn10,claudin 10,14,,structural molecule activity,,,IEA,IPR003554 IPR006187 IPR017974 ,J:72247 
+MGI:106925,Cldn11,claudin 11,3,,structural molecule activity,,,IEA,IPR003555 IPR006187 IPR017974 ,J:72247 
+MGI:1929288,Cldn12,claudin 12,5,,structural molecule activity,,,IEA,IPR017974 ,J:72247 
+MGI:1913102,Cldn13,claudin 13,5,,structural molecule activity,,,IEA,IPR006187 IPR017974 ,J:72247 
+MGI:1860425,Cldn14,claudin 14,16,,structural molecule activity,,,IEA,IPR003556 IPR006187 IPR017974 ,J:72247 
+MGI:1913103,Cldn15,claudin 15,5,,structural molecule activity,,,IEA,IPR006187 IPR008094 IPR017974 ,J:72247 
+MGI:2148742,Cldn16,claudin 16,16,,structural molecule activity,,,IEA,IPR003927 IPR006187 IPR017974 ,J:72247 
+MGI:2652030,Cldn17,claudin 17,16,,structural molecule activity,,,IEA,IPR006187 IPR017974 ,J:72247 
+MGI:1929209,Cldn18,claudin 18,9,,structural molecule activity,,,IEA,IPR003928 IPR006187 IPR017974 ,J:72247 
+MGI:3033992,Cldn19,claudin 19,4,,structural molecule activity,,,IMP,MGI:3583804 ,J:99659 
+MGI:1922927,Cldn22,claudin 22,8,,structural molecule activity,,,IEA,IPR006187 IPR017974 ,J:72247 
+MGI:1919158,Cldn23,claudin 23,8,,structural molecule activity,,,IEA,IPR006187 IPR017974 ,J:72247 
+MGI:894297,Clta,"clathrin, light polypeptide (Lca)",4,,structural molecule activity,,,IBA,PTN000067451 ,J:161428 
+MGI:1921575,Cltb,"clathrin, light polypeptide (Lcb)",13,,structural molecule activity,,,IBA,PTN000067451 ,J:161428 
+MGI:2388633,Cltc,"clathrin, heavy polypeptide (Hc)",11,,structural molecule activity,,,IEA,IPR015348 IPR016025 ,J:72247 
+MGI:2447167,Cmtm8,CKLF-like MARVEL transmembrane domain containing 8,9,,structural constituent of myelin sheath,,,IBA,PTN000512260 ,J:161428 
+MGI:2442402,Cnot1,"CCR4-NOT transcription complex, subunit 1",8,,protein-containing complex scaffold activity,,,IBA,PTN000322838 ,J:161428 
+MGI:2442402,Cnot1,"CCR4-NOT transcription complex, subunit 1",8,,protein-containing complex scaffold activity,,,ISO,A5YKK6 ,J:164563 
+MGI:88467,Col1a1,"collagen, type I, alpha 1",11,,extracellular matrix structural constituent,,,IDA,,J:113133 
+MGI:88468,Col1a2,"collagen, type I, alpha 2",6,,extracellular matrix structural constituent,,,IEA,IPR000885 ,J:72247 
+MGI:88452,Col2a1,"collagen, type II, alpha 1",15,,extracellular matrix structural constituent,,,IEA,IPR000885 ,J:72247 
+MGI:88453,Col3a1,"collagen, type III, alpha 1",1,,extracellular matrix structural constituent,,,ISO,P02461 ,J:164563 
+MGI:88454,Col4a1,"collagen, type IV, alpha 1",8,,extracellular matrix structural constituent,,,ISO,P02462 ,J:164563 
+MGI:88455,Col4a2,"collagen, type IV, alpha 2",8,,extracellular matrix structural constituent,,,IEA,IPR001442 IPR036954 ,J:72247 
+MGI:104688,Col4a3,"collagen, type IV, alpha 3",1,,extracellular matrix structural constituent,,,IEA,IPR001442 IPR036954 ,J:72247 
+MGI:104687,Col4a4,"collagen, type IV, alpha 4",1,,extracellular matrix structural constituent,,,IPI,P55268 ,J:21122 
+MGI:104687,Col4a4,"collagen, type IV, alpha 4",1,,extracellular matrix structural constituent,,,ISO,P53420 ,J:164563 
+MGI:2152695,Col4a6,"collagen, type IV, alpha 6",X,,structural molecule activity,,,IDA,,J:70987 
+MGI:88457,Col5a1,"collagen, type V, alpha 1",2,,extracellular matrix structural constituent,,,IDA,,J:113133 
+MGI:88458,Col5a2,"collagen, type V, alpha 2",1,,extracellular matrix structural constituent,,,IEA,IPR000885 ,J:72247 
+MGI:1858212,Col5a3,"collagen, type V, alpha 3",9,,structural molecule activity,,,ISS,,J:61325 
+MGI:88446,Col11a1,"collagen, type XI, alpha 1",3,,extracellular matrix structural constituent,,,IEA,IPR000885 ,J:72247 
+MGI:88447,Col11a2,"collagen, type XI, alpha 2",17,,extracellular matrix structural constituent,,,IC,GO:0005581 ,J:128357 
+MGI:1918605,Col24a1,"collagen, type XXIV, alpha 1",3,,extracellular matrix structural constituent,,,IEA,IPR000885 ,J:72247 
+MGI:2672118,Col27a1,"collagen, type XXVII, alpha 1",4,,extracellular matrix structural constituent,happens in long bone epiphyseal plate,,IDA,,J:182341 
+MGI:88469,Comp,cartilage oligomeric matrix protein,8,,extracellular matrix structural constituent,,,ISO,RGD:2378 ,J:155856 
+MGI:1334462,Copa,coatomer protein complex subunit alpha,1,,structural molecule activity,,,IEA,IPR006692 IPR010714 ,J:72247 
+MGI:1917599,Copb1,"coatomer protein complex, subunit beta 1",7,,structural molecule activity,,,IEA,IPR011710 ,J:72247 
+MGI:1354962,Copb2,"coatomer protein complex, subunit beta 2 (beta prime)",9,,structural molecule activity,,,IEA,IPR006692 ,J:72247 
+MGI:1891702,Cope,"coatomer protein complex, subunit epsilon",8,,structural molecule activity,,,IEA,IPR006822 ,J:72247 
+MGI:1858696,Copg1,"coatomer protein complex, subunit gamma 1",6,,structural molecule activity,,,IEA,IPR013040 IPR037067 ,J:72247 
+MGI:1858683,Copg2,"coatomer protein complex, subunit gamma 2",6,,structural molecule activity,,,IEA,IPR013040 IPR037067 ,J:72247 
+MGI:104841,Cpox,coproporphyrinogen oxidase,16,,structural constituent of eye lens,,,IMP,MGI:97287 ,J:80817 
+MGI:3529431,Crocc,"ciliary rootlet coiled-coil, rootletin",4,,structural molecule activity,,,IDA,,J:80161 
+MGI:3529431,Crocc,"ciliary rootlet coiled-coil, rootletin",4,,structural molecule activity,"is a part of camera-type eye photoreceptor cell,is a part of retina|is a part of tracheal epithelial cell,is a part of trachea",,IMP,MGI:3580447 ,J:98885 
+MGI:88515,Cryaa,"crystallin, alpha A",17,,structural constituent of eye lens,,,TAS,,J:86897 
+MGI:88516,Cryab,"crystallin, alpha B",9,,structural constituent of eye lens,,,TAS,,J:86897 
+MGI:88518,Cryba1,"crystallin, beta A1",11,,structural constituent of eye lens,,,TAS,,J:87461 
+MGI:104336,Cryba2,"crystallin, beta A2",1,,structural constituent of eye lens,,,TAS,,J:87461 
+MGI:102716,Cryba4,"crystallin, beta A4",5,,structural constituent of eye lens,,,ISO,RGD:61962 ,J:155856 
+MGI:104992,Crybb1,"crystallin, beta B1",5,,structural constituent of eye lens,,,ISO,RGD:2416 ,J:155856 
+MGI:88519,Crybb2,"crystallin, beta B2",5,,structural constituent of eye lens,,,IDA,,J:8166 
+MGI:102717,Crybb3,"crystallin, beta B3",5,,structural constituent of eye lens,,,ISO,RGD:61980 ,J:155856 
+MGI:88521,Cryga,"crystallin, gamma A",1,,structural constituent of eye lens,,,IEA,KW-0273 ,J:60000 
+MGI:88522,Crygb,"crystallin, gamma B",1,,structural constituent of eye lens,,,IDA,,J:115522 
+MGI:88523,Crygc,"crystallin, gamma C",1,,structural constituent of eye lens,,,TAS,,J:73804 
+MGI:88524,Crygd,"crystallin, gamma D",1,,structural constituent of eye lens,,,IDA,,J:126881 
+MGI:88524,Crygd,"crystallin, gamma D",1,,structural constituent of eye lens,,,ISO,RGD:2422 ,J:155856 
+MGI:88525,Cryge,"crystallin, gamma E",1,,structural constituent of eye lens,,,IEA,KW-0273 ,J:60000 
+MGI:88526,Crygf,"crystallin, gamma F",1,,structural constituent of eye lens,,,IEA,KW-0273 ,J:60000 
+MGI:2449167,Crygn,"crystallin, gamma N",5,,structural constituent of eye lens,,,IEA,KW-0273 ,J:60000 
+MGI:1298216,Crygs,"crystallin, gamma S",16,,structural constituent of eye lens,,,IMP,MGI:2181679 ,J:77271 
+MGI:1330824,Csrp3,cysteine and glycine-rich protein 3,7,,structural constituent of muscle,happens in UBERON:0002494,,IMP,,J:80992 
+MGI:1330824,Csrp3,cysteine and glycine-rich protein 3,7,,structural constituent of muscle,,,ISO,P50461 ,J:164563 
+MGI:3524930,Csta1,cystatin A1,16,,structural molecule activity,,,ISO,P01040 ,J:164563 
+MGI:88274,Ctnna1,"catenin (cadherin associated protein), alpha 1",18,,structural molecule activity,,,IEA,IPR000633 ,J:72247 
+MGI:88275,Ctnna2,"catenin (cadherin associated protein), alpha 2",6,,structural molecule activity,,,IEA,IPR000633 ,J:72247 
+MGI:101864,Dag1,dystroglycan 1,9,,structural constituent of muscle,,,ISO,Q14118 ,J:164563 
+MGI:1929538,Dap3,death associated protein 3,3,,structural constituent of ribosome,,,IBA,PTN000301682 ,J:161428 
+MGI:94885,Des,desmin,1,,structural constituent of cytoskeleton,,,TAS,,J:10629 
+MGI:94885,Des,desmin,1,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:2447658,Disc1,disrupted in schizophrenia 1,8,,protein-containing complex scaffold activity,,,IDA,,J:143215 
+MGI:107231,Dlg1,discs large MAGUK scaffold protein 1,16,,protein-containing complex scaffold activity,happens in T cell,,IMP,,J:96052 
+MGI:1277959,Dlg4,discs large MAGUK scaffold protein 4,11,,structural molecule activity,,,NAS,,J:89778 
+MGI:3039563,Dlgap3,DLG associated protein 3,4,,protein-containing complex scaffold activity,,,ISO,RGD:708349 ,J:155856 
+MGI:94909,Dmd,"dystrophin, muscular dystrophy",X,,structural constituent of muscle,,,ISO,P11532 ,J:164563 
+MGI:109611,Dsp,desmoplakin,13,,structural molecule activity,,,ISO,P15924 ,J:164563 
+MGI:1915332,Dusp19,dual specificity phosphatase 19,2,,MAP-kinase scaffold activity,,,IDA,,J:77617 
+MGI:2140220,Ecpas,Ecm29 proteasome adaptor and scaffold,4,,protein-containing complex scaffold activity,,,IEA,IPR024372 ,J:72247 
+MGI:95317,Eln,elastin,5,,extracellular matrix structural constituent,,,IEA,IPR003979 ,J:72247 
+MGI:1926189,Emilin1,elastin microfibril interfacer 1,5,,extracellular matrix constituent conferring elasticity,,,IMP,MGI:3028845 ,J:87574 
+MGI:1333772,Enam,enamelin,5,,structural constituent of tooth enamel,,,IDA,,J:223123 
+MGI:95401,Epb41,erythrocyte membrane protein band 4.1,4,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:95401,Epb41,erythrocyte membrane protein band 4.1,4,,structural molecule activity,,,IEA,IPR008379 ,J:72247 
+MGI:103010,Epb41l1,erythrocyte membrane protein band 4.1 like 1,2,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:103010,Epb41l1,erythrocyte membrane protein band 4.1 like 1,2,,structural molecule activity,,,IEA,IPR008379 ,J:72247 
+MGI:103009,Epb41l2,erythrocyte membrane protein band 4.1 like 2,10,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:103009,Epb41l2,erythrocyte membrane protein band 4.1 like 2,10,,structural molecule activity,,,IEA,IPR008379 ,J:72247 
+MGI:103008,Epb41l3,erythrocyte membrane protein band 4.1 like 3,17,,structural constituent of cytoskeleton,happens in neuron,,TAS,,J:177866 
+MGI:103008,Epb41l3,erythrocyte membrane protein band 4.1 like 3,17,,structural molecule activity,,,IEA,IPR008379 ,J:72247 
+MGI:103007,Epb41l4a,erythrocyte membrane protein band 4.1 like 4a,18,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:1859149,Epb41l4b,erythrocyte membrane protein band 4.1 like 4b,4,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:103006,Epb41l5,erythrocyte membrane protein band 4.1 like 5,1,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:107507,Evpl,envoplakin,11,,structural molecule activity,,,ISO,Q92817 ,J:164563 
+MGI:95487,Fbln1,fibulin 1,15,,extracellular matrix structural constituent,,,ISO,P23142 ,J:164563 
+MGI:95489,Fbn1,fibrillin 1,2,,extracellular matrix structural constituent,,,IBA,PTN001170450 ,J:161428 
+MGI:95489,Fbn1,fibrillin 1,2,,extracellular matrix structural constituent,,,ISO,P35555 ,J:164563 
+MGI:95490,Fbn2,fibrillin 2,18,,extracellular matrix structural constituent,,,IBA,PTN001170450 ,J:161428 
+MGI:1316726,Fga,fibrinogen alpha chain,3,,structural molecule activity,,,ISO,P02671 ,J:164563 
+MGI:99501,Fgb,fibrinogen beta chain,3,,structural molecule activity,,,ISO,P02675 ,J:164563 
+MGI:95526,Fgg,fibrinogen gamma chain,3,,structural molecule activity,,,ISO,P02679 ,J:164563 
+MGI:95553,Flg,filaggrin,3,,structural constituent of epidermis,,,IDA,,J:202807 
+MGI:95553,Flg,filaggrin,3,,structural molecule activity,,,IEA,IPR003303 ,J:72247 
+MGI:2442466,Frmd3,FERM domain containing 3,4,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:2442557,Frmd5,FERM domain containing 5,2,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:2442579,Frmd6,FERM domain containing 6,12,,structural constituent of cytoskeleton,,,IBA,PTN001150527 ,J:161428 
+MGI:95697,Gfap,glial fibrillary acidic protein,11,,structural constituent of cytoskeleton,,,ISO,RGD:2679 ,J:155856 
+MGI:95697,Gfap,glial fibrillary acidic protein,11,,structural molecule activity,,,IMP,MGI:2384719 ,J:78341 
+MGI:3780170,Gm2000,predicted gene 2000,1,,structural constituent of ribosome,,,IEA,IPR001854 IPR018254 IPR036049 ,J:72247 
+MGI:3644404,Gm5093,predicted gene 5093,17,,structural constituent of ribosome,,,IBA,PTN000242048 ,J:161428 
+MGI:3646583,Gm5218,predicted gene 5218,15,,structural constituent of ribosome,,,IBA,PTN000306390 ,J:161428 
+MGI:3649053,Gm6096,predicted gene 6096,7,,structural constituent of ribosome,,,IBA,PTN000178698 ,J:161428 
+MGI:4937064,Gm17430,"predicted gene, 17430",18,,structural constituent of ribosome,,,IBA,PTN000846433 ,J:161428 
+MGI:4937303,Gm17669,"predicted gene, 17669",18,,structural constituent of ribosome,,,IBA,PTN000306390 ,J:161428 
+MGI:5547774,Gm28038,"predicted gene, 28038",2,,structural constituent of nuclear pore,,,IBA,PTN001265616 ,J:161428 
+MGI:5611347,Gm38119,"predicted gene, 38119",3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:109602,Gphn,gephyrin,12,,protein-containing complex scaffold activity,,,ISO,RGD:69194 ,J:155856 
+MGI:1921303,Grip1,glutamate receptor interacting protein 1,10,,receptor signaling complex scaffold activity,,,IEA,IPR030026 ,J:72247 
+MGI:1337006,Hapln1,hyaluronan and proteoglycan link protein 1,13,,extracellular matrix structural constituent,,,IBA,PTN001105676 ,J:161428 
+MGI:2137300,Hapln2,hyaluronan and proteoglycan link protein 2,3,,extracellular matrix structural constituent,,,IBA,PTN001105676 ,J:161428 
+MGI:1914916,Hapln3,hyaluronan and proteoglycan link protein 3,7,,extracellular matrix structural constituent,,,IBA,PTN001105676 ,J:161428 
+MGI:2679531,Hapln4,hyaluronan and proteoglycan link protein 4,8,,extracellular matrix structural constituent,,,IBA,PTN001105676 ,J:161428 
+MGI:1298210,Hcn2,"hyperpolarization-activated, cyclic nucleotide-gated K+ 2",10,,protein-containing complex scaffold activity,,,ISO,RGD:620689 ,J:155856 
+MGI:1347345,Homer1,homer scaffolding protein 1,13,,protein-containing complex scaffold activity,,,ISO,RGD:628725 ,J:155856 
+MGI:1347354,Homer2,homer scaffolding protein 2,7,,GKAP/Homer scaffold activity,,,IDA,,J:57662 
+MGI:1916503,Hspb2,heat shock protein 2,9,,structural constituent of eye lens,,,IEA,IPR003090 ,J:72247 
+MGI:2685325,Hspb6,"heat shock protein, alpha-crystallin-related, B6",7,,structural constituent of eye lens,,,IEA,IPR003090 ,J:72247 
+MGI:2444516,Iffo1,intermediate filament family orphan 1,6,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:2140675,Iffo2,intermediate filament family orphan 2,4,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:3044955,Impg2,interphotoreceptor matrix proteoglycan 2,16,,extracellular matrix structural constituent,,,IEA,IPR032975 ,J:72247 
+MGI:96568,Ina,"internexin neuronal intermediate filament protein, alpha",19,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1922928,Ippk,"inositol 1,3,4,5,6-pentakisphosphate 2-kinase",13,,protein-containing complex scaffold activity,,,ISO,Q9H8X2 ,J:164563 
+MGI:1916296,Isca1,iron-sulfur cluster assembly 1,13,,structural molecule activity,,,IEA,IPR016092 ,J:72247 
+MGI:1921566,Isca2,iron-sulfur cluster assembly 2,12,,structural molecule activity,,,IEA,IPR016092 ,J:72247 
+MGI:1913633,Iscu,iron-sulfur cluster assembly enzyme,5,,protein-containing complex scaffold activity,,,ISO,Q9H1K1 ,J:164563 
+MGI:1338069,Itsn1,intersectin 1 (SH3 domain protein 1A),16,,protein-containing complex scaffold activity,,,ISO,Q15811 ,J:164563 
+MGI:1891495,Jph1,junctophilin 1,1,,structural constituent of muscle,,,IMP,,J:128787 
+MGI:1891495,Jph1,junctophilin 1,1,,structural constituent of muscle,,,IMP,MGI:2183252 ,J:78141 
+MGI:96650,Jup,junction plakoglobin,11,,structural molecule activity,,,ISO,RGD:620412 ,J:155856 
+MGI:2678948,Klhl17,kelch-like 17,4,,protein-containing complex scaffold activity,,,ISO,RGD:708444 ,J:155856 
+MGI:96698,Krt1,keratin 1,15,,structural constituent of epidermis,,,ISO,P04264 ,J:164563 
+MGI:96698,Krt1,keratin 1,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:96699,Krt2,keratin 2,15,,structural molecule activity,"happens in keratinocyte,happens in epidermis suprabasal layer",,IMP,MGI:4363845 ,J:214772 
+MGI:96701,Krt4,keratin 4,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:96702,Krt5,keratin 5,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1100845,Krt6a,keratin 6A,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:96704,Krt7,keratin 7,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:96705,Krt8,keratin 8,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:96696,Krt9,keratin 9,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:96685,Krt10,keratin 10,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:96687,Krt12,keratin 12,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:101925,Krt13,keratin 13,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:96688,Krt14,keratin 14,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:96689,Krt15,keratin 15,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:96690,Krt16,keratin 16,11,,structural constituent of cytoskeleton,,,IDA,,J:80753 
+MGI:96690,Krt16,keratin 16,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:96691,Krt17,keratin 17,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:96692,Krt18,keratin 18,15,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:96693,Krt19,keratin 19,11,,structural constituent of muscle,,,ISO,P08727 ,J:164563 
+MGI:96693,Krt19,keratin 19,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1914059,Krt20,keratin 20,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:2148866,Krt23,keratin 23,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1922956,Krt24,keratin 24,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1918060,Krt25,keratin 25,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:2444913,Krt26,keratin 26,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1339999,Krt27,keratin 27,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1918093,Krt28,keratin 28,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1309993,Krt31,keratin 31,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1309995,Krt32,keratin 32,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1919138,Krt33a,keratin 33A,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1309991,Krt33b,keratin 33B,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1309994,Krt34,keratin 34,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1858899,Krt35,keratin 35,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:109364,Krt36,keratin 36,11,,structural constituent of epidermis,,,IDA,,J:2252 
+MGI:109364,Krt36,keratin 36,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:3588208,Krt39,keratin 39,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:3629968,Krt40,keratin 40,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1915489,Krt42,keratin 42,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1861586,Krt71,keratin 71,15,,structural constituent of cytoskeleton,,,TAS,,J:61862 
+MGI:1861586,Krt71,keratin 71,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:2146034,Krt72,keratin 72,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:3607712,Krt73,keratin 73,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:3629975,Krt74,keratin 74,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1923500,Krt75,keratin 75,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1924305,Krt76,keratin 76,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:3588209,Krt77,keratin 77,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:2385030,Krt79,keratin 79,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1921377,Krt80,keratin 80,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1928858,Krt81,keratin 81,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:2149248,Krt82,keratin 82,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:96700,Krt84,keratin 84,15,,structural constituent of epidermis,,,IDA,,J:2252 
+MGI:96700,Krt84,keratin 84,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1859268,Krt85,keratin 85,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:109362,Krt86,keratin 86,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:3665486,Krt87,keratin 87,15,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:2442728,Krt222,keratin 222,11,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1916723,Krtap3-1,keratin associated protein 3-1,11,,structural molecule activity,,,IEA,IPR007659 ,J:72247 
+MGI:105051,Ksr1,kinase suppressor of ras 1,11,,MAP-kinase scaffold activity,,,IDA,,J:150410 
+MGI:105051,Ksr1,kinase suppressor of ras 1,11,,MAP-kinase scaffold activity,,,IMP,,J:230400 J:231274 
+MGI:3610315,Ksr2,kinase suppressor of ras 2,5,,MAP-kinase scaffold activity,,,IDA,,J:150410 
+MGI:109343,Lad1,ladinin,1,,structural molecule activity,,,IBA,PTN000273496 ,J:161428 
+MGI:99892,Lama1,"laminin, alpha 1",17,,extracellular matrix structural constituent,,,IDA,,J:76344 
+MGI:96743,Lamb1,laminin B1,12,,extracellular matrix structural constituent,,,ISO,P07942 ,J:164563 
+MGI:99914,Lamc1,"laminin, gamma 1",1,,extracellular matrix structural constituent,,,ISO,P11047 ,J:164563 
+MGI:1913758,Lamtor1,"late endosomal/lysosomal adaptor, MAPK and MTOR activator 1",7,contributes_to,protein-containing complex scaffold activity,,,ISO,Q6IAA8 ,J:164563 
+MGI:1932697,Lamtor2,"late endosomal/lysosomal adaptor, MAPK and MTOR activator 2",3,,protein-containing complex scaffold activity,,,IBA,PTN001779392 ,J:161428 
+MGI:1932697,Lamtor2,"late endosomal/lysosomal adaptor, MAPK and MTOR activator 2",3,contributes_to,protein-containing complex scaffold activity,,,ISO,Q9Y2Q5 ,J:164563 
+MGI:1929467,Lamtor3,"late endosomal/lysosomal adaptor, MAPK and MTOR activator 3",3,contributes_to,protein-containing complex scaffold activity,,,ISO,Q9UHA4 ,J:164563 
+MGI:1913346,Lamtor4,"late endosomal/lysosomal adaptor, MAPK and MTOR activator 4",5,contributes_to,protein-containing complex scaffold activity,,,ISO,Q0VGL1 ,J:164563 
+MGI:1915826,Lamtor5,"late endosomal/lysosomal adaptor, MAPK and MTOR activator 5",3,contributes_to,protein-containing complex scaffold activity,,,ISO,O43504 ,J:164563 
+MGI:1914377,Lce1a1,late cornified envelope 1A1,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1920972,Lce1a2,late cornified envelope 1A2,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1915970,Lce1b,late cornified envelope 1B,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1920969,Lce1c,late cornified envelope 1C,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1916861,Lce1d,late cornified envelope 1D,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1915944,Lce1e,late cornified envelope 1E,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1915078,Lce1f,late cornified envelope 1F,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1913445,Lce1g,late cornified envelope 1G,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1914968,Lce1h,late cornified envelope 1H,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1923835,Lce1i,late cornified envelope 1I,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:3702532,Lce1j,late cornified envelope 1J,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:3702534,Lce1k,late cornified envelope 1K,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1920980,Lce1l,late cornified envelope 1L,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1913453,Lce1m,late cornified envelope 1M,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:3645650,Lce3a,late cornified envelope 3A,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1913594,Lce3b,late cornified envelope 3B,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:2135932,Lce3c,late cornified envelope 3C,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:3642919,Lce3d,late cornified envelope 3D,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1916764,Lce3e,late cornified envelope 3E,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1916770,Lce3f,late cornified envelope 3F,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:2140175,Ldlrap1,low density lipoprotein receptor adaptor protein 1,4,,receptor signaling complex scaffold activity,,,ISO,Q5SW96 ,J:164563 
+MGI:1916582,Lelp1,late cornified envelope-like proline-rich 1,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:104698,Lim2,lens intrinsic membrane protein 2,7,,structural constituent of eye lens,,,TAS,,J:46338 
+MGI:96794,Lmna,lamin A,3,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:96795,Lmnb1,lamin B1,18,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:96796,Lmnb2,lamin B2,10,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1921321,Lmntd1,lamin tail domain containing 1,6,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:96816,Lor,loricrin,3,,structural constituent of cytoskeleton,,,IDA,,J:17951 
+MGI:96816,Lor,loricrin,3,,structural constituent of epidermis,,,IDA,,J:17951 J:65187 
+MGI:1913975,Lrrk2,leucine-rich repeat kinase 2,15,,receptor signaling complex scaffold activity,"is a part of positive regulation of canonical Wnt signaling pathway,uses Wnt signalosome",,IC,GO:0005515 GO:1904713 ,J:188340 
+MGI:1203522,Magi1,"membrane associated guanylate kinase, WW and PDZ domain containing 1",6,,protein-containing complex scaffold activity,,,IEA,IPR030033 ,J:72247 
+MGI:1354953,Magi2,"membrane associated guanylate kinase, WW and PDZ domain containing 2",5,,protein-containing complex scaffold activity,,,IEA,IPR030036 ,J:72247 
+MGI:1354953,Magi2,"membrane associated guanylate kinase, WW and PDZ domain containing 2",5,,receptor signaling complex scaffold activity,,,ISO,Q86UL8 ,J:164563 
+MGI:1354953,Magi2,"membrane associated guanylate kinase, WW and PDZ domain containing 2",5,,receptor signaling complex scaffold activity,,,NAS,,J:60559 
+MGI:1923484,Magi3,"membrane associated guanylate kinase, WW and PDZ domain containing 3",3,,protein-containing complex scaffold activity,,,IEA,IPR030035 ,J:72247 
+MGI:892970,Mal,"myelin and lymphocyte protein, T cell differentiation protein",2,,structural constituent of myelin sheath,,,IBA,PTN000512260 ,J:161428 
+MGI:892970,Mal,"myelin and lymphocyte protein, T cell differentiation protein",2,,structural constituent of myelin sheath,,,ISO,RGD:3037 ,J:155856 
+MGI:892970,Mal,"myelin and lymphocyte protein, T cell differentiation protein",2,,structural constituent of myelin sheath,,,ISO,P21145 ,J:164563 
+MGI:2146021,Mal2,"mal, T cell differentiation protein 2",15,,structural constituent of myelin sheath,,,IBA,PTN000512260 ,J:161428 
+MGI:2385152,Mall,"mal, T cell differentiation protein-like",2,,structural constituent of myelin sheath,,,IBA,PTN000512260 ,J:161428 
+MGI:1346867,Map2k2,mitogen-activated protein kinase kinase 2,10,,protein-containing complex scaffold activity,,,IDA,,J:175345 
+MGI:1328328,Map7,microtubule-associated protein 7,10,,structural molecule activity,,,IBA,PTN001030845 ,J:161428 
+MGI:2384297,Map7d1,MAP7 domain containing 1,4,,structural molecule activity,,,IBA,PTN001030845 ,J:161428 
+MGI:1917474,Map7d2,MAP7 domain containing 2,X,,structural molecule activity,,,IBA,PTN001030845 ,J:161428 
+MGI:2445051,Map7d3,MAP7 domain containing 3,X,,structural molecule activity,,,IBA,PTN001030845 ,J:161428 
+MGI:1309464,Mapk8ip1,mitogen-activated protein kinase 8 interacting protein 1,2,,MAP-kinase scaffold activity,,,ISO,RGD:70937 ,J:155856 
+MGI:1309464,Mapk8ip1,mitogen-activated protein kinase 8 interacting protein 1,2,,MAP-kinase scaffold activity,,,ISO,Q9UQF2 ,J:164563 
+MGI:1309464,Mapk8ip1,mitogen-activated protein kinase 8 interacting protein 1,2,,MAP-kinase scaffold activity,,,NAS,,J:77616 
+MGI:1926555,Mapk8ip2,mitogen-activated protein kinase 8 interacting protein 2,15,,MAP-kinase scaffold activity,,,ISO,Q13387 ,J:164563 
+MGI:1353598,Mapk8ip3,mitogen-activated protein kinase 8 interacting protein 3,17,,MAP-kinase scaffold activity,,,IDA,,J:64817 
+MGI:1353598,Mapk8ip3,mitogen-activated protein kinase 8 interacting protein 3,17,,MAP-kinase scaffold activity,,,IPI,Q91Y86 ,J:59878 
+MGI:1353598,Mapk8ip3,mitogen-activated protein kinase 8 interacting protein 3,17,,receptor signaling complex scaffold activity,,,IBA,PTN001015989 ,J:161428 
+MGI:2147570,Marveld1,MARVEL (membrane-associating) domain containing 1,19,,structural constituent of myelin sheath,,,IBA,PTN000512260 ,J:161428 
+MGI:106591,Matn1,"matrilin 1, cartilage matrix protein",4,,extracellular matrix structural constituent,,,IEA,IPR030751 ,J:72247 
+MGI:96925,Mbp,myelin basic protein,18,,structural constituent of myelin sheath,,,IBA,PTN000152734 ,J:161428 
+MGI:2137384,Mepe,matrix extracellular phosphoglycoprotein with ASARM motif (bone),5,,extracellular matrix structural constituent,,,IBA,PTN000421142 ,J:161428 
+MGI:1354387,Mfap5,microfibrillar associated protein 5,6,,extracellular matrix constituent conferring elasticity,,,TAS,,J:62831 
+MGI:96976,Mgp,matrix Gla protein,6,,extracellular matrix structural constituent,,,IBA,PTN000011588 ,J:161428 
+MGI:96990,Mip,major intrinsic protein of lens fiber,10,,structural constituent of eye lens,,,IDA,,J:84775 
+MGI:108511,Mobp,myelin-associated oligodendrocytic basic protein,9,,structural constituent of myelin sheath,,,IDA,,J:54152 
+MGI:108511,Mobp,myelin-associated oligodendrocytic basic protein,9,,structural constituent of myelin sheath,,,ISO,RGD:3101 ,J:155856 
+MGI:1922989,Mpp7,"membrane protein, palmitoylated 7 (MAGUK p55 subfamily member 7)",18,,protein-containing complex scaffold activity,,,ISO,Q5T2T1 ,J:164563 
+MGI:2137202,Mrpl1,mitochondrial ribosomal protein L1,5,,structural constituent of ribosome,,,ISO,NP_001095314 ,J:73065 
+MGI:1351622,Mrpl2,mitochondrial ribosomal protein L2,17,,structural constituent of ribosome,,,IBA,PTN000343556 ,J:161428 
+MGI:1351622,Mrpl2,mitochondrial ribosomal protein L2,17,,structural constituent of ribosome,,,ISA,X01563 ,J:58917 
+MGI:2137204,Mrpl3,mitochondrial ribosomal protein L3,9,,structural constituent of ribosome,,,ISO,NP_001073786 ,J:73065 
+MGI:2137210,Mrpl4,mitochondrial ribosomal protein L4,9,,structural constituent of ribosome,,,IBA,PTN000078778 ,J:161428 
+MGI:2137211,Mrpl9,mitochondrial ribosomal protein L9,3,,structural constituent of ribosome,,,IEA,IPR000244 ,J:72247 
+MGI:1333801,Mrpl10,mitochondrial ribosomal protein L10,11,,structural constituent of ribosome,,,IBA,PTN000169209 ,J:161428 
+MGI:1333801,Mrpl10,mitochondrial ribosomal protein L10,11,,structural constituent of ribosome,,,ISS,,J:51617 
+MGI:2137215,Mrpl11,mitochondrial ribosomal protein L11,19,,structural constituent of ribosome,,,IBA,PTN000184007 ,J:161428 
+MGI:2137215,Mrpl11,mitochondrial ribosomal protein L11,19,,structural constituent of ribosome,,,ISO,NP_001014932 ,J:73065 
+MGI:1926273,Mrpl12,mitochondrial ribosomal protein L12,11,,structural constituent of ribosome,,,ISS,,J:64919 
+MGI:2137218,Mrpl13,mitochondrial ribosomal protein L13,15,,structural constituent of ribosome,,,IBA,PTN000166701 ,J:161428 
+MGI:2137218,Mrpl13,mitochondrial ribosomal protein L13,15,,structural constituent of ribosome,,,ISO,NP_001029977 ,J:73065 
+MGI:1333864,Mrpl14,mitochondrial ribosomal protein L14,17,,structural constituent of ribosome,,,IEA,IPR000218 IPR036853 ,J:72247 
+MGI:1351639,Mrpl15,mitochondrial ribosomal protein L15,1,,structural constituent of ribosome,,,IBA,PTN000309575 ,J:161428 
+MGI:1351639,Mrpl15,mitochondrial ribosomal protein L15,1,,structural constituent of ribosome,,,ISA,S78757 ,J:58917 
+MGI:2137219,Mrpl16,mitochondrial ribosomal protein L16,19,,structural constituent of ribosome,,,IBA,PTN000259456 ,J:161428 
+MGI:2137219,Mrpl16,mitochondrial ribosomal protein L16,19,,structural constituent of ribosome,,,ISO,NP_001029813 ,J:73065 
+MGI:1351608,Mrpl17,mitochondrial ribosomal protein L17,7,,structural constituent of ribosome,,,IBA,PTN000373768 ,J:161428 
+MGI:1351608,Mrpl17,mitochondrial ribosomal protein L17,7,,structural constituent of ribosome,,,ISA,S78759 ,J:58917 
+MGI:1914931,Mrpl18,mitochondrial ribosomal protein L18,17,,structural constituent of ribosome,,,IEA,IPR005484 IPR036967 ,J:72247 
+MGI:1926274,Mrpl19,mitochondrial ribosomal protein L19,6,,structural constituent of ribosome,,,IBA,PTN000402783 ,J:161428 
+MGI:1926274,Mrpl19,mitochondrial ribosomal protein L19,6,,structural constituent of ribosome,,,ISS,,J:64919 
+MGI:2137221,Mrpl20,mitochondrial ribosomal protein L20,4,,structural constituent of ribosome,,,IBA,PTN000105838 ,J:161428 
+MGI:2137221,Mrpl20,mitochondrial ribosomal protein L20,4,,structural constituent of ribosome,,,ISO,NP_001033595 ,J:73065 
+MGI:2660674,Mrpl21,mitochondrial ribosomal protein L21,19,,structural constituent of ribosome,,,IBA,PTN000482431 ,J:161428 
+MGI:1333794,Mrpl22,mitochondrial ribosomal protein L22,11,,structural constituent of ribosome,,,IBA,PTN000337444 ,J:161428 
+MGI:1196612,Mrpl23,mitochondrial ribosomal protein L23,7,,structural constituent of ribosome,,,IBA,PTN000248673 ,J:161428 
+MGI:1196612,Mrpl23,mitochondrial ribosomal protein L23,7,,structural constituent of ribosome,,,ISO,XP_001249877 ,J:73065 
+MGI:1914957,Mrpl24,mitochondrial ribosomal protein L24,3,,structural constituent of ribosome,,,IEA,IPR003256 IPR005825 ,J:72247 
+MGI:2137224,Mrpl27,mitochondrial ribosomal protein L27,11,,structural constituent of ribosome,,,IBA,PTN000407638 ,J:161428 
+MGI:2137224,Mrpl27,mitochondrial ribosomal protein L27,11,,structural constituent of ribosome,,,ISO,NP_001032530 ,J:73065 
+MGI:1915861,Mrpl28,mitochondrial ribosomal protein L28,17,,structural constituent of ribosome,,,IBA,PTN001004914 ,J:161428 
+MGI:1333820,Mrpl30,mitochondrial ribosomal protein L30,1,,structural constituent of ribosome,,,IEA,IPR005996 ,J:72247 
+MGI:2137226,Mrpl32,mitochondrial ribosomal protein L32,13,,structural constituent of ribosome,,,IBA,PTN001464364 ,J:161428 
+MGI:2137226,Mrpl32,mitochondrial ribosomal protein L32,13,,structural constituent of ribosome,,,ISO,NP_001033768 ,J:73065 
+MGI:2137225,Mrpl33,mitochondrial ribosomal protein L33,5,,structural constituent of ribosome,,,IEA,IPR001705 ,J:72247 
+MGI:2137227,Mrpl34,mitochondrial ribosomal protein L34,8,,structural constituent of ribosome,,,ISO,NP_001103657 ,J:73065 
+MGI:1913473,Mrpl35,mitochondrial ribosomal protein L35,6,,structural constituent of ribosome,,,IEA,IPR021137 ,J:72247 
+MGI:2137228,Mrpl36,mitochondrial ribosomal protein L36,13,,structural constituent of ribosome,,,ISO,XP_580819 ,J:73065 
+MGI:1926268,Mrpl37,mitochondrial ribosomal protein L37,4,,structural constituent of ribosome,,,IEA,IPR010793 ,J:72247 
+MGI:1351620,Mrpl39,mitochondrial ribosomal protein L39,16,,structural constituent of ribosome,,,ISA,S78756 ,J:58917 
+MGI:1333816,Mrpl41,mitochondrial ribosomal protein L41,2,,structural constituent of ribosome,,,IBA,PTN000481942 ,J:161428 
+MGI:1333816,Mrpl41,mitochondrial ribosomal protein L41,2,,structural constituent of ribosome,,,ISO,Q8IXM3 ,J:164563 
+MGI:2137229,Mrpl43,mitochondrial ribosomal protein L43,19,,structural constituent of ribosome,,,IBA,PTN000483648 ,J:161428 
+MGI:2137229,Mrpl43,mitochondrial ribosomal protein L43,19,,structural constituent of ribosome,,,ISO,NP_776988 ,J:73065 
+MGI:1914558,Mrpl46,mitochondrial ribosomal protein L46,7,,structural constituent of ribosome,,,IBA,PTN000319538 ,J:161428 
+MGI:1921850,Mrpl47,mitochondrial ribosomal protein L47,3,,structural constituent of ribosome,,,IBA,PTN000476023 ,J:161428 
+MGI:108180,Mrpl49,mitochondrial ribosomal protein L49,19,,structural constituent of ribosome,,,IBA,PTN000336627 ,J:161428 
+MGI:1913743,Mrpl51,mitochondrial ribosomal protein L51,6,,structural constituent of ribosome,,,IDA,,J:72140 
+MGI:1916086,Mrpl52,mitochondrial ribosomal protein L52,14,,structural constituent of ribosome,,,IEA,IPR034596 ,J:72247 
+MGI:1914462,Mrpl55,mitochondrial ribosomal protein L55,11,,structural constituent of ribosome,,,IEA,IPR018615 ,J:72247 
+MGI:1915090,Mrpl57,mitochondrial ribosomal protein L57,14,,structural constituent of ribosome,,,IDA,,J:72140 
+MGI:2153089,Mrps2,mitochondrial ribosomal protein S2,2,,structural constituent of ribosome,,,IBA,PTN000283441 ,J:161428 
+MGI:2153089,Mrps2,mitochondrial ribosomal protein S2,2,,structural constituent of ribosome,,,ISS,P82923 ,J:72140 
+MGI:1924971,Mrps5,mitochondrial ribosomal protein S5,2,,structural constituent of ribosome,,,IBA,PTN000346706 ,J:161428 
+MGI:2153111,Mrps6,mitochondrial ribosomal protein S6,16,,structural constituent of ribosome,,,IBA,PTN001077198 ,J:161428 
+MGI:2153111,Mrps6,mitochondrial ribosomal protein S6,16,,structural constituent of ribosome,,,ISS,P82931 ,J:72140 
+MGI:1354367,Mrps7,mitchondrial ribosomal protein S7,11,,structural constituent of ribosome,,,IBA,PTN000128889 ,J:161428 
+MGI:1354367,Mrps7,mitchondrial ribosomal protein S7,11,,structural constituent of ribosome,,,ISA,X76767 ,J:58929 
+MGI:1916777,Mrps9,mitochondrial ribosomal protein S9,1,,structural constituent of ribosome,,,IBA,PTN000490829 ,J:161428 
+MGI:1928139,Mrps10,mitochondrial ribosomal protein S10,17,,structural constituent of ribosome,,,ISS,,J:65190 
+MGI:1915244,Mrps11,mitochondrial ribosomal protein S11,7,,structural constituent of ribosome,,,IBA,PTN000204884 ,J:161428 
+MGI:1915244,Mrps11,mitochondrial ribosomal protein S11,7,,structural constituent of ribosome,,,ISS,P82911 ,J:72140 
+MGI:1346333,Mrps12,mitochondrial ribosomal protein S12,7,,structural constituent of ribosome,,,IBA,PTN000182999 ,J:161428 
+MGI:1346333,Mrps12,mitochondrial ribosomal protein S12,7,,structural constituent of ribosome,,,ISS,Q29RU1 ,J:72140 
+MGI:1928141,Mrps14,mitochondrial ribosomal protein S14,1,,structural constituent of ribosome,,,IBA,PTN000457003 ,J:161428 
+MGI:1928141,Mrps14,mitochondrial ribosomal protein S14,1,,structural constituent of ribosome,,,ISS,,J:65190 
+MGI:1913657,Mrps15,mitochondrial ribosomal protein S15,4,,structural constituent of ribosome,,,ISS,P82913 ,J:72140 
+MGI:1913492,Mrps16,mitochondrial ribosomal protein S16,14,,structural constituent of ribosome,,,IBA,PTN000308744 ,J:161428 
+MGI:1913492,Mrps16,mitochondrial ribosomal protein S16,14,,structural constituent of ribosome,,,ISS,P82915 ,J:72140 
+MGI:1913508,Mrps17,mitochondrial ribosomal protein S17,5,,structural constituent of ribosome,,,IBA,PTN000639784 ,J:161428 
+MGI:1913508,Mrps17,mitochondrial ribosomal protein S17,5,,structural constituent of ribosome,,,ISS,Q9Y2R5 ,J:72140 
+MGI:1915815,Mrps18a,mitochondrial ribosomal protein S18A,17,,structural constituent of ribosome,,,IBA,PTN000336666 ,J:161428 
+MGI:1915815,Mrps18a,mitochondrial ribosomal protein S18A,17,,structural constituent of ribosome,,,ISS,P82919 ,J:72140 
+MGI:1914223,Mrps18b,mitochondrial ribosomal protein S18B,17,,structural constituent of ribosome,,,ISS,P82918 ,J:72140 
+MGI:1915985,Mrps18c,mitochondrial ribosomal protein S18C,5,,structural constituent of ribosome,,,IBA,PTN000336666 ,J:161428 
+MGI:1913542,Mrps21,mitochondrial ribosomal protein S21,3,,structural constituent of ribosome,,,ISS,P82920 ,J:72140 
+MGI:1928137,Mrps22,mitochondrial ribosomal protein S22,9,,structural constituent of ribosome,,,IBA,PTN000991170 ,J:161428 
+MGI:1928137,Mrps22,mitochondrial ribosomal protein S22,9,,structural constituent of ribosome,,,ISO,P82650 ,J:65190 
+MGI:1928138,Mrps23,mitochondrial ribosomal protein S23,11,,structural constituent of ribosome,,,ISS,,J:65190 
+MGI:1928142,Mrps24,mitochondrial ribosomal protein S24,11,,structural constituent of ribosome,,,IBA,PTN000478575 ,J:161428 
+MGI:1928142,Mrps24,mitochondrial ribosomal protein S24,11,,structural constituent of ribosome,,,ISS,,J:65190 
+MGI:1928140,Mrps25,mitochondrial ribosomal protein S25,6,,structural constituent of ribosome,,,IBA,PTN000998538 ,J:161428 
+MGI:1928140,Mrps25,mitochondrial ribosomal protein S25,6,,structural constituent of ribosome,,,ISO,P82669 ,J:65190 
+MGI:1926237,Mrps30,mitochondrial ribosomal protein S30,13,,structural constituent of ribosome,,,IEA,IPR010793 ,J:72247 
+MGI:1913153,Mrps31,mitochondrial ribosomal protein S31,8,,structural constituent of ribosome,,,IEA,IPR026299 ,J:72247 
+MGI:1930188,Mrps34,mitochondrial ribosomal protein S34,17,,structural constituent of ribosome,,,ISO,P82930 ,J:164563 
+MGI:2385255,Mrps35,mitochondrial ribosomal protein S35,6,,structural constituent of ribosome,,,IBA,PTN000337133 ,J:161428 
+MGI:102493,mt-Rnr1,mitochondrially encoded 12S rRNA,MT,,structural constituent of ribosome,,,TAS,,J:22484 
+MGI:102492,mt-Rnr2,mitochondrially encoded 16S rRNA,MT,,structural constituent of ribosome,,,TAS,,J:22484 
+MGI:1336213,Mybpc1,"myosin binding protein C, slow-type",10,,structural constituent of cytoskeleton,,,TAS,,J:32589 
+MGI:1336213,Mybpc1,"myosin binding protein C, slow-type",10,,structural constituent of muscle,,,IBA,PTN001790569 ,J:161428 
+MGI:1336213,Mybpc1,"myosin binding protein C, slow-type",10,,structural molecule activity conferring elasticity,,,IBA,PTN001790569 ,J:161428 
+MGI:1336170,Mybpc2,"myosin binding protein C, fast-type",7,,structural constituent of cytoskeleton,,,TAS,,J:32589 
+MGI:1336170,Mybpc2,"myosin binding protein C, fast-type",7,,structural constituent of muscle,,,IBA,PTN001790569 ,J:161428 
+MGI:1336170,Mybpc2,"myosin binding protein C, fast-type",7,,structural molecule activity conferring elasticity,,,IBA,PTN001790569 ,J:161428 
+MGI:102844,Mybpc3,"myosin binding protein C, cardiac",2,,structural constituent of cytoskeleton,,,TAS,,J:32589 
+MGI:102844,Mybpc3,"myosin binding protein C, cardiac",2,,structural constituent of muscle,,,IBA,PTN001790569 ,J:161428 
+MGI:102844,Mybpc3,"myosin binding protein C, cardiac",2,,structural constituent of muscle,,,ISO,Q14896 ,J:164563 
+MGI:102844,Mybpc3,"myosin binding protein C, cardiac",2,,structural molecule activity conferring elasticity,,,IBA,PTN001790569 ,J:161428 
+MGI:1858196,Mybph,myosin binding protein H,1,,structural constituent of muscle,,,IBA,PTN001790569 ,J:161428 
+MGI:1858196,Mybph,myosin binding protein H,1,,structural molecule activity conferring elasticity,,,IBA,PTN001790569 ,J:161428 
+MGI:1916003,Mybphl,myosin binding protein H-like,3,,structural constituent of muscle,,,IBA,PTN001790569 ,J:161428 
+MGI:1916003,Mybphl,myosin binding protein H-like,3,,structural molecule activity conferring elasticity,,,IBA,PTN001790569 ,J:161428 
+MGI:102643,Myh11,"myosin, heavy polypeptide 11, smooth muscle",16,,structural constituent of muscle,,,ISO,P35749 ,J:164563 
+MGI:109318,Myl6,"myosin, light polypeptide 6, alkali, smooth muscle and non-muscle",10,,structural constituent of muscle,,,ISO,P60660 ,J:164563 
+MGI:109318,Myl6,"myosin, light polypeptide 6, alkali, smooth muscle and non-muscle",10,,structural constituent of muscle,,,TAS,,J:113707 
+MGI:1917789,Myl6b,"myosin, light polypeptide 6B",10,,structural constituent of muscle,,,TAS,,J:113707 
+MGI:97273,Mylpf,"myosin light chain, phosphorylatable, fast skeletal muscle",7,,structural constituent of muscle,,,IMP,,J:131461 
+MGI:1341430,Myom1,myomesin 1,17,,structural constituent of cytoskeleton,,,TAS,,J:32589 
+MGI:1341430,Myom1,myomesin 1,17,,structural constituent of muscle,,,IBA,PTN001790569 ,J:161428 
+MGI:1341430,Myom1,myomesin 1,17,,structural molecule activity conferring elasticity,,,IBA,PTN001790569 ,J:161428 
+MGI:1328358,Myom2,myomesin 2,8,,structural constituent of cytoskeleton,,,TAS,,J:32589 
+MGI:1328358,Myom2,myomesin 2,8,,structural constituent of muscle,,,IBA,PTN001790569 ,J:161428 
+MGI:1328358,Myom2,myomesin 2,8,,structural molecule activity conferring elasticity,,,IBA,PTN001790569 ,J:161428 
+MGI:104694,Ncan,neurocan,8,,extracellular matrix structural constituent,,,IBA,PTN001105676 ,J:161428 
+MGI:2444888,Ncmap,noncompact myelin associated protein,4,,structural constituent of myelin sheath,,,ISO,RGD:1587554 ,J:155856 
+MGI:1920037,Ndc1,NDC1 transmembrane nucleoporin,4,,structural constituent of nuclear pore,,,IBA,PTN000327778 ,J:161428 
+MGI:1920037,Ndc1,NDC1 transmembrane nucleoporin,4,,structural constituent of nuclear pore,,,ISO,Q9BTX1 ,J:164563 
+MGI:1914302,Ndc80,NDC80 kinetochore complex component,17,,structural constituent of cytoskeleton,,,IBA,PTN000837476 ,J:161428 
+MGI:1913666,Ndufa7,NADH:ubiquinone oxidoreductase subunit A7,17,,structural constituent of ribosome,,,ISS,Q05752 ,J:72140 
+MGI:97309,Nefh,"neurofilament, heavy polypeptide",11,,structural constituent of cytoskeleton,,,ISO,RGD:3159 ,J:155856 
+MGI:97309,Nefh,"neurofilament, heavy polypeptide",11,,structural molecule activity,,,ISO,P12036 ,J:164563 
+MGI:97313,Nefl,"neurofilament, light polypeptide",14,,structural constituent of cytoskeleton,,,IDA,,J:206923 
+MGI:97313,Nefl,"neurofilament, light polypeptide",14,,structural constituent of cytoskeleton,,,ISO,P07196 ,J:164563 
+MGI:97313,Nefl,"neurofilament, light polypeptide",14,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:97314,Nefm,"neurofilament, medium polypeptide",14,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:101784,Nes,nestin,3,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1916060,Nexn,nexilin,3,,structural constituent of muscle,,,ISO,Q0ZGT2 ,J:164563 
+MGI:1916732,Nup35,nucleoporin 35,2,,structural constituent of nuclear pore,,,IBA,PTN000488224 ,J:161428 
+MGI:1920460,Nup54,nucleoporin 54,5,,structural constituent of nuclear pore,,,IBA,PTN000313393 ,J:161428 
+MGI:1920460,Nup54,nucleoporin 54,5,,structural constituent of nuclear pore,,,ISO,RGD:619926 ,J:155856 
+MGI:1351500,Nup62,nucleoporin 62,7,,receptor signaling complex scaffold activity,,,ISO,P37198 ,J:164563 
+MGI:1351500,Nup62,nucleoporin 62,7,,structural constituent of nuclear pore,,,IBA,PTN000249931 ,J:161428 
+MGI:1351500,Nup62,nucleoporin 62,7,,structural constituent of nuclear pore,,,ISO,RGD:619938 ,J:155856 
+MGI:2685565,Nup62cl,nucleoporin 62 C-terminal like,X,,structural constituent of nuclear pore,,,IBA,PTN000249931 ,J:161428 
+MGI:3046173,Nup85,nucleoporin 85,11,,structural constituent of nuclear pore,,,IBA,PTN000332517 ,J:161428 
+MGI:104900,Nup88,nucleoporin 88,11,,structural constituent of nuclear pore,,,IEA,IPR037700 ,J:72247 
+MGI:1919055,Nup93,nucleoporin 93,8,,structural constituent of nuclear pore,,,IBA,PTN000131983 ,J:161428 
+MGI:1919055,Nup93,nucleoporin 93,8,,structural constituent of nuclear pore,,,ISO,Q8N1F7 ,J:164563 
+MGI:109404,Nup98,nucleoporin 98,7,,structural constituent of nuclear pore,,,IBA,PTN000574450 ,J:161428 
+MGI:109404,Nup98,nucleoporin 98,7,,structural constituent of nuclear pore,,,ISO,P52948 ,J:164563 
+MGI:2143854,Nup107,nucleoporin 107,10,,structural constituent of nuclear pore,,,IBA,PTN000313483 ,J:161428 
+MGI:2143854,Nup107,nucleoporin 107,10,,structural constituent of nuclear pore,,,ISO,P57740 ,J:164563 
+MGI:2442620,Nup133,nucleoporin 133,8,,structural constituent of nuclear pore,,,IBA,PTN000334066 ,J:161428 
+MGI:2442620,Nup133,nucleoporin 133,8,,structural constituent of nuclear pore,,,ISO,Q8WUM0 ,J:164563 
+MGI:2442620,Nup133,nucleoporin 133,8,,structural constituent of nuclear pore,,,ISS,Q8WUM0 ,J:114791 
+MGI:2385621,Nup153,nucleoporin 153,13,,structural constituent of nuclear pore,,,IBA,PTN000573960 ,J:161428 
+MGI:2385621,Nup153,nucleoporin 153,13,,structural constituent of nuclear pore,,,ISO,P49790 ,J:164563 
+MGI:2181182,Nup155,nucleoporin 155,15,,structural constituent of nuclear pore,,,IBA,PTN000039103 ,J:161428 
+MGI:1926227,Nup160,nucleoporin 160,2,,structural constituent of nuclear pore,,,IDA,,J:114791 
+MGI:1926227,Nup160,nucleoporin 160,2,,structural constituent of nuclear pore,,,ISO,Q12769 ,J:164563 
+MGI:2446190,Nup188,nucleoporin 188,2,,structural constituent of nuclear pore,,,IBA,PTN001265616 ,J:161428 
+MGI:2141625,Nup205,nucleoporin 205,6,,structural constituent of nuclear pore,,,IBA,PTN000772288 ,J:161428 
+MGI:2141625,Nup205,nucleoporin 205,6,,structural constituent of nuclear pore,,,ISO,Q92621 ,J:164563 
+MGI:1095411,Nup214,nucleoporin 214,2,,structural constituent of nuclear pore,,,IBA,PTN000573960 ,J:161428 
+MGI:1095411,Nup214,nucleoporin 214,2,,structural constituent of nuclear pore,happens in epiblast cell,,IMP,MGI:2441651 ,J:36515 
+MGI:1919094,Nupl1,nucleoporin like 1,14,,structural constituent of nuclear pore,,,IBA,PTN001412288 ,J:161428 
+MGI:1919094,Nupl1,nucleoporin like 1,14,,structural constituent of nuclear pore,,,ISO,RGD:631334 ,J:155856 
+MGI:1915301,Nutf2,nuclear transport factor 2,8,,structural constituent of nuclear pore,,,ISO,P61970 ,J:164563 
+MGI:2138628,Obsl1,obscurin-like 1,1,,structural constituent of muscle,,,IBA,PTN001790569 ,J:161428 
+MGI:2138628,Obsl1,obscurin-like 1,1,,structural molecule activity conferring elasticity,,,IBA,PTN001790569 ,J:161428 
+MGI:1313269,Oc90,otoconin 90,15,,structural molecule activity,,,IDA,,J:82639 
+MGI:1313269,Oc90,otoconin 90,15,,structural molecule activity,,,TAS,,J:52192 
+MGI:1098824,Odf2,outer dense fiber of sperm tails 2,2,,structural constituent of cytoskeleton,,,TAS,,J:49572 
+MGI:1202064,Otog,otogelin,7,,structural molecule activity,,,IMP,MGI:2181633 ,J:60193 
+MGI:1098801,Otud4,OTU domain containing 4,8,,protein-containing complex scaffold activity,,,ISO,Q01804 ,J:164563 
+MGI:2442831,Paxx,non-homologous end joining factor,2,,protein-containing complex scaffold activity,,,ISO,Q9BUH6 ,J:164563 
+MGI:102722,Pcnt,pericentrin (kendrin),10,,protein-containing complex scaffold activity,,,IEA,IPR028745 ,J:72247 
+MGI:1891434,Pde4dip,phosphodiesterase 4D interacting protein (myomegalin),3,,protein-containing complex scaffold activity,,,ISO,Q5VU43 ,J:164563 
+MGI:1859274,Pdlim3,PDZ and LIM domain 3,8,,structural constituent of muscle,,,IDA,,J:67358 
+MGI:1859274,Pdlim3,PDZ and LIM domain 3,8,,structural constituent of muscle,,,TAS,,J:67358 
+MGI:1914701,Pkp2,plakophilin 2,16,,protein-containing complex scaffold activity,,,ISO,Q99959 ,J:164563 
+MGI:1277961,Plec,plectin,15,,structural constituent of cytoskeleton,,,ISO,RGD:621649 ,J:155856 
+MGI:1277961,Plec,plectin,15,,structural constituent of muscle,,,ISO,Q15149 ,J:164563 
+MGI:1915051,Pllp,plasma membrane proteolipid,8,,structural constituent of myelin sheath,,,IBA,PTN000512260 ,J:161428 
+MGI:97623,Plp1,proteolipid protein (myelin) 1,X,,structural constituent of myelin sheath,,,ISO,RGD:3354 ,J:155856 
+MGI:97623,Plp1,proteolipid protein (myelin) 1,X,,structural molecule activity,,,ISO,RGD:3354 ,J:155856 
+MGI:2137624,Pom121,nuclear pore membrane protein 121,5,,structural constituent of nuclear pore,,,IBA,PTN000573960 ,J:161428 
+MGI:2137624,Pom121,nuclear pore membrane protein 121,5,,structural constituent of nuclear pore,,,ISO,RGD:620680 ,J:155856 
+MGI:2684870,Pom121l2,POM121 membrane glycoprotein-like 2 (rat),13,,structural constituent of nuclear pore,,,IBA,PTN000573960 ,J:161428 
+MGI:2151110,Prelp,proline arginine-rich end leucine-rich repeat,1,,extracellular matrix structural constituent,,,IEA,IPR027216 ,J:72247 
+MGI:97774,Prph,peripherin,15,,structural molecule activity,,,IEA,IPR001664 IPR002957 ,J:72247 
+MGI:1925680,Prr9,proline rich 9,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1916327,Psmd11,"proteasome (prosome, macropain) 26S subunit, non-ATPase, 11",11,,structural molecule activity,,,IBA,PTN000073599 ,J:161428 
+MGI:1345192,Psmd13,"proteasome (prosome, macropain) 26S subunit, non-ATPase, 13",7,,structural molecule activity,,,IBA,PTN000056911 ,J:161428 
+MGI:1916925,Pxdn,peroxidasin,12,,extracellular matrix structural constituent,,,ISO,Q92626 ,J:164563 
+MGI:108295,Pxn,paxillin,5,,receptor signaling complex scaffold activity,,,TAS,,J:73970 
+MGI:1341850,Rb1cc1,RB1-inducible coiled-coil 1,1,,protein-containing complex scaffold activity,,,IBA,PTN000996416 ,J:161428 
+MGI:1859709,Rgs14,regulator of G-protein signaling 14,13,,receptor signaling complex scaffold activity,,,ISO,RGD:620003 ,J:155856 
+MGI:1351605,Rpl3,ribosomal protein L3,15,,structural constituent of ribosome,,,IBA,PTN000146039 ,J:161428 
+MGI:1913461,Rpl3l,ribosomal protein L3-like,17,,structural constituent of ribosome,,,IBA,PTN000146039 ,J:161428 
+MGI:1915141,Rpl4,ribosomal protein L4,9,,structural constituent of ribosome,,,IBA,PTN000454620 ,J:161428 
+MGI:102854,Rpl5,ribosomal protein L5,5,,structural constituent of ribosome,,,IBA,PTN000601661 ,J:161428 
+MGI:108057,Rpl6,ribosomal protein L6,5,,structural constituent of ribosome,,,IBA,PTN000076315 ,J:161428 
+MGI:3647789,Rpl6l,ribosomal protein L6-like,10,,structural constituent of ribosome,,,IBA,PTN000076315 ,J:161428 
+MGI:98073,Rpl7,ribosomal protein L7,1,,structural constituent of ribosome,,,IBA,PTN000897517 ,J:161428 
+MGI:98073,Rpl7,ribosomal protein L7,1,,structural constituent of ribosome,,,IC,GO:0022625 ,J:9681 
+MGI:1913479,Rpl7l1,ribosomal protein L7-like 1,17,,structural constituent of ribosome,,,IBA,PTN000897517 ,J:161428 
+MGI:1350927,Rpl8,ribosomal protein L8,15,,structural constituent of ribosome,,,IBA,PTN000343556 ,J:161428 
+MGI:1298373,Rpl9,ribosomal protein L9,5,,structural constituent of ribosome,,,IBA,PTN000183645 ,J:161428 
+MGI:1298373,Rpl9,ribosomal protein L9,5,,structural constituent of ribosome,,,IC,GO:0022625 ,J:49488 
+MGI:105943,Rpl10,ribosomal protein L10,X,,structural constituent of ribosome,,,IBA,PTN000197715 ,J:161428 
+MGI:105943,Rpl10,ribosomal protein L10,X,,structural constituent of ribosome,,,ISO,P27635 ,J:73065 
+MGI:1343877,Rpl10a,ribosomal protein L10A,17,,structural constituent of ribosome,,,IEA,IPR002143 ,J:72247 
+MGI:3647985,Rpl10l,ribosomal protein L10-like,12,,structural constituent of ribosome,,,IBA,PTN000197715 ,J:161428 
+MGI:1914275,Rpl11,ribosomal protein L11,4,,structural constituent of ribosome,,,IBA,PTN000242048 ,J:161428 
+MGI:98002,Rpl12,ribosomal protein L12,2,,structural constituent of ribosome,,,IBA,PTN000184007 ,J:161428 
+MGI:105922,Rpl13,ribosomal protein L13,8,,structural constituent of ribosome,,,IBA,PTN000197497 ,J:161428 
+MGI:1351455,Rpl13a,ribosomal protein L13A,7,,structural constituent of ribosome,,,IBA,PTN000166701 ,J:161428 
+MGI:1914365,Rpl14,ribosomal protein L14,9,,structural constituent of ribosome,,,IBA,PTN000874665 ,J:161428 
+MGI:1913730,Rpl15,ribosomal protein L15,14,,structural constituent of ribosome,,,IBA,PTN000217960 ,J:161428 
+MGI:2448270,Rpl17,ribosomal protein L17,18,,structural constituent of ribosome,,,IEA,IPR001063 IPR005721 IPR018260 IPR036394 ,J:72247 
+MGI:98003,Rpl18,ribosomal protein L18,7,,structural constituent of ribosome,,,IBA,PTN000859219 ,J:161428 
+MGI:1924058,Rpl18a,ribosomal protein L18A,8,,structural constituent of ribosome,,,IBA,PTN000006274 ,J:161428 
+MGI:98020,Rpl19,ribosomal protein L19,11,,structural constituent of ribosome,,,IDA,,J:31514 
+MGI:1278340,Rpl21,ribosomal protein L21,5,,structural constituent of ribosome,,,IBA,PTN001463935 ,J:161428 
+MGI:99262,Rpl22,ribosomal protein L22,4,,structural constituent of ribosome,,,IBA,PTN000007073 ,J:161428 
+MGI:1915278,Rpl22l1,ribosomal protein L22 like 1,3,,structural constituent of ribosome,,,IBA,PTN000007073 ,J:161428 
+MGI:1929455,Rpl23,ribosomal protein L23,11,,structural constituent of ribosome,,,IBA,PTN000205184 ,J:161428 
+MGI:1929455,Rpl23,ribosomal protein L23,11,,structural constituent of ribosome,,,ISO,X52839 ,J:66696 
+MGI:3040672,Rpl23a,ribosomal protein L23A,11,,structural constituent of ribosome,,,IBA,PTN000178698 ,J:161428 
+MGI:1915443,Rpl24,ribosomal protein L24,16,,structural constituent of ribosome,,,IBA,PTN000846433 ,J:161428 
+MGI:1915443,Rpl24,ribosomal protein L24,16,,structural constituent of ribosome,,,ISO,P83732 ,J:73065 
+MGI:106022,Rpl26,ribosomal protein L26,11,,structural constituent of ribosome,,,IBA,PTN000124940 ,J:161428 
+MGI:98036,Rpl27,ribosomal protein L27,11,,structural constituent of ribosome,,,IBA,PTN000052145 ,J:161428 
+MGI:1347076,Rpl27a,ribosomal protein L27A,7,,structural constituent of ribosome,,,IGI,RPL29 ,J:137257 
+MGI:101839,Rpl28,ribosomal protein L28,7,,structural constituent of ribosome,,,IBA,PTN000057380 ,J:161428 
+MGI:99687,Rpl29,ribosomal protein L29,9,,structural constituent of ribosome,,,IBA,PTN000306390 ,J:161428 
+MGI:98037,Rpl30,ribosomal protein L30,15,,structural constituent of ribosome,,,IBA,PTN000154874 ,J:161428 
+MGI:2149632,Rpl31,ribosomal protein L31,1,,structural constituent of ribosome,,,IBA,PTN000102776 ,J:161428 
+MGI:98038,Rpl32,ribosomal protein L32,6,,structural constituent of ribosome,,,IC,GO:0022625 ,J:31514 
+MGI:1915686,Rpl34,ribosomal protein L34,3,,structural constituent of ribosome,,,IBA,PTN000844532 ,J:161428 
+MGI:1913739,Rpl35,ribosomal protein L35,2,,structural constituent of ribosome,,,IBA,PTN000356124 ,J:161428 
+MGI:1928894,Rpl35a,ribosomal protein L35A,16,,structural constituent of ribosome,,,IBA,PTN000096770 ,J:161428 
+MGI:1860603,Rpl36,ribosomal protein L36,17,,structural constituent of ribosome,,,IBA,PTN000012121 ,J:161428 
+MGI:1914531,Rpl37,ribosomal protein L37,15,,structural constituent of ribosome,,,IBA,PTN000080456 ,J:161428 
+MGI:98068,Rpl37a,ribosomal protein L37a,1,,structural constituent of ribosome,,,IEA,IPR002674 IPR011331 ,J:72247 
+MGI:3651519,Rpl37rt,"ribosomal protein L37, retrotransposed",5,,structural constituent of ribosome,,,IEA,IPR001569 IPR011331 IPR018267 ,J:72247 
+MGI:1914921,Rpl38,ribosomal protein L38,11,,structural constituent of ribosome,,,IBA,PTN000103359 ,J:161428 
+MGI:1914498,Rpl39,ribosomal protein L39,X,,structural constituent of ribosome,,,IBA,PTN000463054 ,J:161428 
+MGI:1915422,Rpl39l,ribosomal protein L39-like,16,,structural constituent of ribosome,,,IBA,PTN000463054 ,J:161428 
+MGI:1915195,Rpl41,ribosomal protein L41,10,,structural constituent of ribosome,,,IEA,IPR007836 ,J:72247 
+MGI:1927636,Rplp0,"ribosomal protein, large, P0",5,,structural constituent of ribosome,,,ISO,P05388 ,J:164563 
+MGI:1927099,Rplp1,"ribosomal protein, large, P1",9,,structural constituent of ribosome,,,IBA,PTN000474664 ,J:161428 
+MGI:1914436,Rplp2,"ribosomal protein, large P2",7,,structural constituent of ribosome,,,IBA,PTN000474664 ,J:161428 
+MGI:1914436,Rplp2,"ribosomal protein, large P2",7,,structural constituent of ribosome,,,ISO,P05387 ,J:164563 
+MGI:105110,Rps2,ribosomal protein S2,17,,structural constituent of ribosome,,,IBA,PTN000346706 ,J:161428 
+MGI:105110,Rps2,ribosomal protein S2,17,,structural constituent of ribosome,,,ISO,RGD:619887 ,J:155856 
+MGI:1350917,Rps3,ribosomal protein S3,7,,structural constituent of ribosome,,,IBA,PTN000205057 ,J:161428 
+MGI:1202063,Rps3a1,ribosomal protein S3A1,3,,structural constituent of ribosome,,,IBA,PTN000216320 ,J:161428 
+MGI:98158,Rps4x,"ribosomal protein S4, X-linked",X,,structural constituent of ribosome,,,IBA,PTN000171891 ,J:161428 
+MGI:98158,Rps4x,"ribosomal protein S4, X-linked",X,,structural constituent of ribosome,,,ISO,P22090 ,J:164563 
+MGI:1097682,Rps5,ribosomal protein S5,7,,structural constituent of ribosome,,,IBA,PTN000128889 ,J:161428 
+MGI:98159,Rps6,ribosomal protein S6,4,,structural constituent of ribosome,,,ISO,RGD:3602 ,J:155856 
+MGI:1333818,Rps7,ribosomal protein S7,12,,structural constituent of ribosome,,,IEA,IPR000554 ,J:72247 
+MGI:98166,Rps8,ribosomal protein S8,4,,structural constituent of ribosome,,,IBA,PTN000044490 ,J:161428 
+MGI:1924096,Rps9,ribosomal protein S9,7,,structural constituent of ribosome,,,IBA,PTN000216478 ,J:161428 
+MGI:1914347,Rps10,ribosomal protein S10,17,,structural constituent of ribosome,,,IBA,PTN000254423 ,J:161428 
+MGI:1914347,Rps10,ribosomal protein S10,17,,structural constituent of ribosome,,,ISO,RGD:621024 ,J:155856 
+MGI:1351329,Rps11,ribosomal protein S11,7,,structural constituent of ribosome,,,IBA,PTN000078534 ,J:161428 
+MGI:98105,Rps12,ribosomal protein S12,10,,structural constituent of ribosome,,,IBA,PTN000217533 ,J:161428 
+MGI:1915302,Rps13,ribosomal protein S13,7,,structural constituent of ribosome,,,IBA,PTN000223267 ,J:161428 
+MGI:98107,Rps14,ribosomal protein S14,18,,structural constituent of ribosome,,,IBA,PTN000204884 ,J:161428 
+MGI:98107,Rps14,ribosomal protein S14,18,,structural constituent of ribosome,,,ISO,RGD:62025 ,J:155856 
+MGI:98117,Rps15,ribosomal protein S15,10,,structural constituent of ribosome,,,IBA,PTN000222938 ,J:161428 
+MGI:98117,Rps15,ribosomal protein S15,10,,structural constituent of ribosome,,,ISO,RGD:62026 ,J:155856 
+MGI:2389091,Rps15a,ribosomal protein S15A,7,,structural constituent of ribosome,,,IBA,PTN000204723 ,J:161428 
+MGI:98118,Rps16,ribosomal protein S16,7,,structural constituent of ribosome,,,IBA,PTN000490829 ,J:161428 
+MGI:1309526,Rps17,ribosomal protein S17,7,,structural constituent of ribosome,,,ISO,NM_017152 ,J:49833 
+MGI:98146,Rps18,ribosomal protein S18,17,,structural constituent of ribosome,,,IBA,PTN000093238 ,J:161428 
+MGI:1333780,Rps19,ribosomal protein S19,7,,structural constituent of ribosome,,,IBA,PTN000194951 ,J:161428 
+MGI:1333780,Rps19,ribosomal protein S19,7,,structural constituent of ribosome,,,ISO,RGD:68440 ,J:155856 
+MGI:1914677,Rps20,ribosomal protein S20,4,,structural constituent of ribosome,,,IBA,PTN000193512 ,J:161428 
+MGI:1913731,Rps21,ribosomal protein S21,2,,structural constituent of ribosome,,,IBA,PTN000047682 ,J:161428 
+MGI:1913725,Rps23,ribosomal protein S23,13,,structural constituent of ribosome,,,IBA,PTN000182999 ,J:161428 
+MGI:1913725,Rps23,ribosomal protein S23,13,,structural constituent of ribosome,,,ISO,P62266 ,J:164563 
+MGI:98147,Rps24,ribosomal protein S24,14,,structural constituent of ribosome,,,ISO,NM_033022 ,J:1948 
+MGI:1922867,Rps25,ribosomal protein S25,9,,structural constituent of ribosome,,,ISO,RGD:621043 ,J:155856 
+MGI:1351628,Rps26,ribosomal protein S26,10,,structural constituent of ribosome,,,IBA,PTN000283756 ,J:161428 
+MGI:1888676,Rps27,ribosomal protein S27,3,,structural constituent of ribosome,,,IBA,PTN000174285 ,J:161428 
+MGI:1925544,Rps27a,ribosomal protein S27A,11,,structural constituent of ribosome,,,IEA,IPR002906 ,J:72247 
+MGI:1915191,Rps27l,ribosomal protein S27-like,9,,structural constituent of ribosome,,,IBA,PTN000174285 ,J:161428 
+MGI:1859516,Rps28,ribosomal protein S28,17,,structural constituent of ribosome,,,IBA,PTN000080571 ,J:161428 
+MGI:107681,Rps29,ribosomal protein S29,12,,structural constituent of ribosome,,,IBA,PTN000244187 ,J:161428 
+MGI:107681,Rps29,ribosomal protein S29,12,,structural constituent of ribosome,,,ISO,L31610 ,J:35064 
+MGI:105381,Rpsa,ribosomal protein SA,9,,structural constituent of ribosome,,,IBA,PTN000160708 ,J:161428 
+MGI:2681840,Rsl24d1,ribosomal L24 domain containing 1,9,,structural constituent of ribosome,,,IBA,PTN000846433 ,J:161428 
+MGI:1917347,Sash1,SAM and SH3 domain containing 1,10,,protein-containing complex scaffold activity,,,ISO,O94885 ,J:205449 
+MGI:1927144,Sav1,salvador family WW domain containing 1,12,,protein-containing complex scaffold activity,,,IEA,IPR030030 ,J:72247 
+MGI:99832,Sec13,"SEC13 homolog, nuclear pore and COPII coat complex component",6,,structural molecule activity,,,IEA,IPR037363 IPR037596 ,J:72247 
+MGI:1919374,Seh1l,SEH1-like (S. cerevisiae,18,,structural molecule activity,,,IEA,IPR037363 ,J:72247 
+MGI:97298,2-Sep,septin 2,1,,protein-containing complex scaffold activity,,,IDA,,J:105303 
+MGI:3613677,Shank1,SH3 and multiple ankyrin repeat domains 1,7,,GKAP/Homer scaffold activity,,,IMP,,J:132277 
+MGI:3613677,Shank1,SH3 and multiple ankyrin repeat domains 1,7,,GKAP/Homer scaffold activity,,,ISO,RGD:621011 ,J:155856 
+MGI:3613677,Shank1,SH3 and multiple ankyrin repeat domains 1,7,,receptor signaling complex scaffold activity,,,ISO,RGD:621011 ,J:155856 
+MGI:1930016,Shank3,SH3 and multiple ankyrin repeat domains 3,15,,GKAP/Homer scaffold activity,,,ISO,RGD:69264 ,J:155856 
+MGI:1349482,Slc9a3r1,"solute carrier family 9 (sodium/hydrogen exchanger), member 3 regulator 1",11,,protein-containing complex scaffold activity,,,ISO,RGD:708538 ,J:155856 
+MGI:1890662,Slc9a3r2,"solute carrier family 9 (sodium/hydrogen exchanger), member 3 regulator 2",17,,protein-containing complex scaffold activity,,,ISO,RGD:620380 ,J:155856 
+MGI:1933623,Smarcd1,"SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily d, member 1",15,,protein-containing complex scaffold activity,,,ISO,Q96GM5 ,J:164563 
+MGI:101772,Snta1,"syntrophin, acidic 1",2,,structural molecule activity,,,IEA,IPR015482 ,J:72247 
+MGI:101781,Sntb1,"syntrophin, basic 1",15,,structural molecule activity,,,IEA,IPR015482 ,J:72247 
+MGI:101771,Sntb2,"syntrophin, basic 2",8,,structural molecule activity,,,IEA,IPR015482 ,J:72247 
+MGI:1918346,Sntg1,"syntrophin, gamma 1",1,,structural molecule activity,,,IEA,IPR015482 ,J:72247 
+MGI:1919541,Sntg2,"syntrophin, gamma 2",12,,structural molecule activity,,,IEA,IPR015482 ,J:72247 
+MGI:1918084,Spag9,sperm associated antigen 9,11,,MAP-kinase scaffold activity,,,IBA,PTN001015989 ,J:161428 
+MGI:1918084,Spag9,sperm associated antigen 9,11,,receptor signaling complex scaffold activity,,,IBA,PTN001015989 ,J:161428 
+MGI:106660,Sprr1a,small proline-rich protein 1A,3,,structural constituent of epidermis,,,ISO,P35321 ,J:164563 
+MGI:106660,Sprr1a,small proline-rich protein 1A,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:106660,Sprr1a,small proline-rich protein 1A,3,,structural molecule activity,,,ISO,P35321 ,J:164563 
+MGI:106659,Sprr1b,small proline-rich protein 1B,3,,structural constituent of cytoskeleton,,,TAS,,J:51840 
+MGI:1330350,Sprr2a1,small proline-rich protein 2A1,3,,structural constituent of cytoskeleton,,,TAS,,J:52302 
+MGI:3845028,Sprr2a3,small proline-rich protein 2A3,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1330352,Sprr2b,small proline-rich protein 2B,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1330347,Sprr2d,small proline-rich protein 2D,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1330346,Sprr2e,small proline-rich protein 2E,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1330349,Sprr2f,small proline-rich protein 2F,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1330343,Sprr2h,small proline-rich protein 2H,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1330309,Sprr2i,small proline-rich protein 2I,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:1330237,Sprr3,small proline-rich protein 3,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:2654508,Sprr4,small proline-rich protein 4,3,,structural molecule activity,,,IBA,PTN001908662 ,J:161428 
+MGI:98387,Sptb,"spectrin beta, erythrocytic",12,,structural constituent of cytoskeleton,,,IEA,IPR016343 ,J:72247 
+MGI:98388,Sptbn1,"spectrin beta, non-erythrocytic 1",11,,structural constituent of cytoskeleton,,,ISO,Q01082 ,J:164563 
+MGI:1916078,Sync,syncoilin,4,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:2661187,Synm,"synemin, intermediate filament protein",7,,structural constituent of cytoskeleton,,,ISO,O15061 ,J:164563 
+MGI:2661187,Synm,"synemin, intermediate filament protein",7,,structural constituent of muscle,,,ISO,O15061 ,J:164563 
+MGI:2661187,Synm,"synemin, intermediate filament protein",7,,structural molecule activity,,,IEA,IPR001664 ,J:72247 
+MGI:1330233,Tcap,titin-cap,11,,structural constituent of muscle,,,ISO,O15273 ,J:164563 
+MGI:109575,Tecta,tectorin alpha,9,,extracellular matrix structural constituent,,,IDA,,J:39295 
+MGI:109575,Tecta,tectorin alpha,9,,extracellular matrix structural constituent,,,TAS,,J:76334 
+MGI:109574,Tectb,tectorin beta,19,,extracellular matrix structural constituent,,,IDA,,J:39295 
+MGI:109574,Tectb,tectorin beta,19,,extracellular matrix structural constituent,,,TAS,,J:76334 
+MGI:1918968,Telo2,telomere maintenance 2,17,,protein-containing complex scaffold activity,,,IMP,,J:165255 
+MGI:1099832,Tln1,talin 1,4,,structural constituent of cytoskeleton,,,IEA,IPR015224 ,J:72247 
+MGI:1917799,Tln2,talin 2,9,,structural constituent of cytoskeleton,,,IEA,IPR015224 ,J:72247 
+MGI:1915128,Tmem33,transmembrane protein 33,5,,structural constituent of nuclear pore,,,IBA,PTN001398562 ,J:161428 
+MGI:104597,Tnnt2,"troponin T2, cardiac",1,,structural constituent of cytoskeleton,happens in cardiac muscle cell,,IDA,,J:85429 
+MGI:2385292,Tnrc6a,trinucleotide repeat containing 6a,7,,protein-containing complex scaffold activity,,,ISS,NP_055309 ,J:93906 
+MGI:98809,Tpm1,"tropomyosin 1, alpha",9,,structural constituent of cytoskeleton,,,TAS,,J:32589 
+MGI:98809,Tpm1,"tropomyosin 1, alpha",9,,structural constituent of muscle,,,IBA,PTN001059856 ,J:161428 
+MGI:98810,Tpm2,"tropomyosin 2, beta",4,,structural constituent of cytoskeleton,,,TAS,,J:32589 
+MGI:98810,Tpm2,"tropomyosin 2, beta",4,,structural constituent of muscle,,,IBA,PTN001059856 ,J:161428 
+MGI:1890149,Tpm3,"tropomyosin 3, gamma",3,,structural constituent of muscle,,,IBA,PTN001059856 ,J:161428 
+MGI:2449202,Tpm4,tropomyosin 4,8,,structural constituent of muscle,,,IBA,PTN001059856 ,J:161428 
+MGI:1922066,Tpr,"translocated promoter region, nuclear basket protein",1,,structural constituent of nuclear pore,,,IBA,PTN001052033 ,J:161428 
+MGI:1922066,Tpr,"translocated promoter region, nuclear basket protein",1,,structural constituent of nuclear pore,,,ISO,P12270 ,J:164563 
+MGI:2685063,Tsga10,testis specific 10,1,,structural molecule activity,,,ISO,Q9Z220 ,J:88348 
+MGI:98864,Ttn,titin,2,,structural constituent of cytoskeleton,,,TAS,,J:32589 
+MGI:98864,Ttn,titin,2,,structural constituent of muscle,,,IBA,PTN001790569 ,J:161428 
+MGI:98864,Ttn,titin,2,,structural constituent of muscle,,,ISO,Q8WZ42 ,J:164563 
+MGI:98864,Ttn,titin,2,,structural molecule activity conferring elasticity,,,IBA,PTN001790569 ,J:161428 
+MGI:98869,Tuba1a,"tubulin, alpha 1A",15,,structural constituent of cytoskeleton,,,IEA,IPR002452 ,J:72247 
+MGI:107804,Tuba1b,"tubulin, alpha 1B",15,,structural constituent of cytoskeleton,,,IEA,IPR002452 ,J:72247 
+MGI:1095409,Tuba1c,"tubulin, alpha 1C",15,,structural constituent of cytoskeleton,,,IEA,IPR002452 ,J:72247 
+MGI:1095410,Tuba4a,"tubulin, alpha 4A",1,,structural constituent of cytoskeleton,,,IEA,IPR002452 ,J:72247 
+MGI:1858225,Tuba8,"tubulin, alpha 8",6,,structural constituent of cytoskeleton,,,ISA,P05213 ,J:61654 
+MGI:3588215,Tubal3,"tubulin, alpha-like 3",13,,structural constituent of cytoskeleton,,,IEA,IPR002452 ,J:72247 
+MGI:107814,Tubb1,"tubulin, beta 1 class VI",2,,structural constituent of cytoskeleton,,,IDA,,J:92548 
+MGI:107861,Tubb2a,"tubulin, beta 2A class IIA",13,,structural constituent of cytoskeleton,,,IEA,IPR002453 ,J:72247 
+MGI:1920960,Tubb2b,"tubulin, beta 2B class IIB",13,,structural constituent of cytoskeleton,,,IEA,IPR002453 ,J:72247 
+MGI:107813,Tubb3,"tubulin, beta 3 class III",8,,structural constituent of cytoskeleton,,,IEA,IPR002453 ,J:72247 
+MGI:107848,Tubb4a,"tubulin, beta 4A class IVA",17,,structural constituent of cytoskeleton,,,IEA,IPR002453 ,J:72247 
+MGI:1915472,Tubb4b,"tubulin, beta 4B class IVB",2,,structural constituent of cytoskeleton,,,IEA,IPR002453 ,J:72247 
+MGI:107812,Tubb5,"tubulin, beta 5 class I",17,,structural constituent of cytoskeleton,,,IDA,,J:92548 
+MGI:1915201,Tubb6,"tubulin, beta 6 class V",18,,structural constituent of cytoskeleton,,,IEA,IPR002453 ,J:72247 
+MGI:1891826,Tubd1,"tubulin, delta 1",11,,structural constituent of cytoskeleton,,,IEA,IPR002967 ,J:72247 
+MGI:101834,Tubg1,"tubulin, gamma 1",11,,structural constituent of cytoskeleton,,,TAS,,J:114146 
+MGI:1921487,Tubgcp2,"tubulin, gamma complex associated protein 2",7,,structural constituent of cytoskeleton,,,IBA,PTN000447085 ,J:161428 
+MGI:2183752,Tubgcp3,"tubulin, gamma complex associated protein 3",8,,structural constituent of cytoskeleton,,,IBA,PTN000447085 ,J:161428 
+MGI:1196293,Tubgcp4,"tubulin, gamma complex associated protein 4",2,,structural constituent of cytoskeleton,,,IBA,PTN000447085 ,J:161428 
+MGI:2178836,Tubgcp5,"tubulin, gamma complex associated protein 5",7,,structural constituent of cytoskeleton,,,IBA,PTN000447085 ,J:161428 
+MGI:2146071,Tubgcp6,"tubulin, gamma complex associated protein 6",15,,structural constituent of cytoskeleton,,,IBA,PTN000447085 ,J:161428 
+MGI:102889,Vcan,versican,13,,extracellular matrix structural constituent,,,IBA,PTN001105676 ,J:161428 
+MGI:98927,Vcl,vinculin,14,,structural molecule activity,,,IEA,IPR000633 ,J:72247 
+MGI:98932,Vim,vimentin,2,,structural constituent of cytoskeleton,,,ISO,P08670 ,J:164563 
+MGI:98932,Vim,vimentin,2,,structural constituent of eye lens,happens in lens fiber,,IDA,,J:85243 
+MGI:98932,Vim,vimentin,2,,structural molecule activity,,,IMP,MGI:1931877 ,J:78341 
+MGI:106354,Vps25,vacuolar protein sorting 25,11,,structural molecule activity,,,IBA,PTN000322234 ,J:161428 
+MGI:2388637,Wwc1,"WW, C2 and coiled-coil domain containing 1",11,,protein-containing complex scaffold activity,,,ISO,Q8IX03 ,J:164563 
+MGI:1261872,Wwc2,"WW, C2 and coiled-coil domain containing 2",8,,protein-containing complex scaffold activity,,,ISO,Q6AWC2 ,J:164563 
+MGI:99215,Zp3,zona pellucida glycoprotein 3,5,,structural constituent of egg coat,,,IMP,,J:86870 

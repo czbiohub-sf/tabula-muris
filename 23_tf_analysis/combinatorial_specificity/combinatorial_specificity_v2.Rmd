@@ -1,0 +1,344 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+rm(list=ls())
+library(Seurat)
+library(cowplot)
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(parallel)
+library(cba)
+library(doMC)
+library(RColorBrewer)
+
+tabula.dir <- "../../../tabula-muris/"
+```
+
+# Load Seurat object of data
+```{r}
+load(file.path(tabula.dir,"data/All_seurat_tiss.Robj"))
+```
+
+# Load metadata and add to Seurat object
+Loads Seurat object and list of TFs
+Makes "annotation.2" metadata field which is tissue__cell_ontology_class. This is the field used to separate cells into classes for finding markers and doing correlations.
+```{r}
+metadata <- read.csv('../TM_facs_metadata.csv')
+metadata <- metadata %>%  filter(cell_ontology_class!='unknown' & !is.na(tissue) & !is.na(cell_ontology_class))
+metadata$tissue <- make.names(metadata$tissue)
+metadata$cell_ontology_class <- make.names(metadata$cell_ontology_class)
+
+# make "annotation.2"
+metadata  <- metadata %>% mutate(annotation.2 = paste0(tissue, "__", cell_ontology_class))
+
+tissue_colors <- read.csv(file.path(tabula.dir,'00_data_ingest/15_color_palette/tissue_colors.csv'))
+colnames(tissue_colors) <- c('tissue','tiss.color')
+tissue_colors$tissue <- make.names(tissue_colors$tissue)
+
+metadata <- merge(metadata, tissue_colors, by = 'tissue')
+
+rownames(metadata) <- metadata$cell # need this to add to Seurat object
+metadata <- metadata[tiss@cell.names, ]
+
+# Add metadata
+tiss <- AddMetaData(tiss, metadata)
+sum(is.na(tiss@meta.data$annotation.2))
+length(unique(tiss@meta.data$annotation.2))
+tiss <- SetAllIdent(tiss, 'annotation.2')
+
+# Make gene names R compatible
+rownames(tiss@data) <- make.names(rownames(tiss@data))
+rownames(tiss@raw.data) <- make.names(rownames(tiss@raw.data))
+rownames(tiss@scale.data) <- make.names(rownames(tiss@scale.data))
+gc()
+```
+
+# Load TFs 
+```{r}
+# (1140 genes from MGI, filtered by GO Term = "DNA binding transcription factor activity", GO ID ?)
+tfs      <- fread('../GO_term_summary_20171110_222852.csv')
+tf.names <- as.character( tfs %>% distinct(Symbol) %>% pull(Symbol) )
+tf.names <- make.names(tf.names)
+tf.names <- tf.names[tf.names %in% rownames(tiss@data)]
+length(tf.names)
+
+# remove genes with very low expression in data
+x=apply(as.matrix(tiss@data[tf.names, ]) > 0, 1, sum) 
+genes.expr <- names(x[x > 5])
+tf.names <- tf.names[tf.names %in% genes.expr]
+
+# Remove IEGs
+iegs <- as.character(read.csv(file.path(tabula.dir,"00_data_ingest/20_dissociation_genes/genes_affected_by_dissociation_unix.csv"), header = T)[,1])
+tf.names <- tf.names[!tf.names %in% iegs]
+length(tf.names)
+```
+
+# Subsample data
+```{r}
+tiss.subsamp <- SubsetData(tiss, max.cells.per.ident = 60, subset.raw = T)
+head(unique(tiss.subsamp@meta.data$annotation.2))
+```
+
+# Differential expression of TFs (FindAllMarkers)
+Make a list of TFs with cell type specificity to use for correlation analysis.
+```{r}
+res=FindAllMarkers(tiss.subsamp, genes.use = tf.names,
+                   only.pos = T, test.use = "wilcox", min.diff.pct = 0.1, print.bar = F, do.print = T)
+write.csv(res, "TF_markers.csv")
+```
+
+# Best 4 combinatorial markers
+Positive hit only if a cell expresses all 4 markers
+```{r}
+output <- data.frame(cell.type=character(0), 
+                       ppv=numeric(0),
+                       recall=numeric(0),
+                       TF_1 = character(0), 
+                       TF_2 = character(0), 
+                       TF_3 = character(0),
+                      TF_4 = character(0))
+
+# Iterate through cell types, looking for the markers that best distinguish each one
+celltypes <- as.character(unique(tiss.subsamp@ident))
+
+for(target.type in celltypes) {
+  markers <- read.csv('TF_markers.csv') # differential expression by Seurat, with subsampled cells
+  genes.use <- as.character(markers %>% 
+                        filter(cluster==target.type,
+                               gene %in% tf.names, 
+                               p_val < 1e-3, 
+                               avg_logFC > .2,
+                               pct.1-pct.2 > 0.1,
+                               pct.1 > 0.3) %>% 
+                          arrange(desc(avg_logFC)) %>%
+                        pull(gene))[1:30]
+  genes.use <- genes.use[!is.na(genes.use)]
+  
+  if(length(genes.use) > 4){  # Only look for TFs in a cell type if it has at least 4 enriched TFs that pass the above filters
+
+
+    cells.1 = tiss.subsamp@cell.names[tiss.subsamp@ident == target.type]
+    cells.2 = tiss.subsamp@cell.names[tiss.subsamp@ident != target.type]
+    
+    topmarkers.bin <- tiss.subsamp@data[genes.use, ] > 0.35
+    topmarkers.1 <- topmarkers.bin[, cells.1]
+    topmarkers.2 <- topmarkers.bin[, cells.2]
+    
+  
+    # get sensitivity and specificity of genes in these top 50 (binary on/off expression)
+    combo.4 <- combn(genes.use, 4)
+    
+    registerDoMC(detectCores())
+    
+    # greedy-2-1-1 protocol (try every combo of 2 genes, then test adding one gene, then test adding another)
+    # then you can see for each cell type how many genes you really need
+    tp.fp <- foreach(i = 1:ncol(combo.4),.combine=cbind) %dopar% {
+      
+      # positive: detect all 4 genes
+      # negative: detect < 4 genes
+      tp <- sum(Matrix::colSums(topmarkers.1[combo.4[, i], ]) > 3)
+      fp <- sum(Matrix::colSums(topmarkers.2[combo.4[, i], ]) > 3)
+      
+      c(tp, fp)
+    }
+    tp.fp <- t(tp.fp)
+    tp.fp <- as.data.frame(tp.fp)
+    colnames(tp.fp) <- c('tp','fp')
+    tp.fp$ppv <- tp.fp$tp / (tp.fp$tp + tp.fp$fp) # ppv is true pos / true pos + false pos
+    tp.fp$recall <- tp.fp$tp / length(cells.1) # recall is true pos / all in target
+    
+    tp.fp$score <- tp.fp$ppv + 10*tp.fp$recall
+    top.combo.ids <- order(tp.fp$score, decreasing = T)[1:3]
+    combo.4[, top.combo.ids]
+    tp.fp[top.combo.ids, ]
+    
+    output <- rbind(output,data.frame(cell.type=rep(target.type, 3), 
+                         ppv=tp.fp[top.combo.ids, 'ppv'],
+                         recall=tp.fp[top.combo.ids, 'recall'],
+                         TF_1 = combo.4[1, top.combo.ids],
+                         TF_2 = combo.4[2, top.combo.ids],
+                         TF_3 = combo.4[3, top.combo.ids],
+                         TF_4 = combo.4[4, top.combo.ids]))
+    
+  }
+}
+
+
+output$score <- output$ppv + output$recall
+output %>% arrange(desc(score)) %>% group_by(cell.type) %>% slice
+write.csv(output, file = 'best_4_markers.csv', row.names = F, quote=F)
+```
+
+
+
+## Bar plots of precision/recall
+```{r}
+
+
+top4markers <- read.csv('best_4_markers.csv')
+top4markers$score <- top4markers$recall + 2*top4markers$ppv
+top4.summary <- top4markers %>% group_by(cell.type) %>% filter(recall > 0.2) %>% slice(which.max(score)) %>% arrange(desc(score)) 
+
+plotdir <- 'specificity_plots'
+dir.create(plotdir)
+plist=list()
+for(i in 1:20){ # plot the barplots of the top 20 cell types by precision/recall of their best TF combo
+  genecombo <- as.character(t(top4.summary[i, c("TF_1","TF_2","TF_3","TF_4")]))
+  target.type <- as.character(t(top4.summary[i, "cell.type"]))
+  cells.1 = tiss.subsamp@cell.names[tiss.subsamp@ident == target.type]
+  cells.2 = tiss.subsamp@cell.names[tiss.subsamp@ident != target.type]
+  
+  topmarkers.bin <- tiss.subsamp@data[genecombo, ] > 0.35
+  
+  # number of cells expressing all 4 genes per subtype
+  all.expr <- t(as.matrix(Matrix::colSums(topmarkers.bin) > 3))
+  
+  group_sums <- function(mat, groups){
+    group_names = unique(groups)
+    sums = matrix(0, dim(mat)[1], length(group_names))
+    colnames(sums) = group_names
+    rownames(sums) = rownames(mat)
+    for(group in group_names){
+      sums[,group] = sum(mat[,groups == group,drop=FALSE])
+    }
+    sums
+  }
+  df.ppv <- data.frame(t(group_sums(all.expr, tiss.subsamp@ident)))
+  colnames(df.ppv) <- "num.cells"
+  df.ppv$cell.type <- rownames(df.ppv)
+  df.ppv <- df.ppv[df.ppv$num.cells > 0, ]
+  df.ppv$cell.type <- factor(df.ppv$cell.type, levels=df.ppv$cell.type[order(-df.ppv$num.cells)])
+  df.ppv$plt.group <- 'ppv'
+  
+  # calculate recall
+  num.on <- df.ppv$num.cells[df.ppv$cell.type==target.type]
+  num.off <- sum(tiss.subsamp@ident==target.type) - df.ppv$num.cells[df.ppv$cell.type==target.type]
+  df.recall <- data.frame(cell.type = c(target.type, paste0("Neg_",target.type)), 
+                          num.cells = c(num.on, num.off))
+  df.recall$plt.group <- 'recall'
+  
+  
+  df.plot <- rbind(df.ppv, df.recall)
+  n.col <- length(unique(df.plot$cell.type))
+  cols <- c(brewer.pal(9,'Set1')[1:(n.col-1)], 'grey60')
+  p <- ggplot(df.plot, aes(plt.group, num.cells, fill = cell.type)) +
+    geom_bar(stat = 'identity',position = position_stack(reverse = TRUE), width = .7) +
+    scale_fill_manual(values=cols) +
+    theme(axis.title = element_blank(), 
+          axis.text.x = element_text(angle = 45, hjust = 1, size=16),
+          legend.title = element_blank(),
+          legend.position = "bottom",
+          legend.direction='vertical',
+          legend.text = element_text(size=16),
+          axis.text.y = element_text(size=16), 
+          plot.title = element_text(size=20, margin = margin(b=15), hjust = 0.5), 
+          plot.margin = unit(c(0.5,1.3,0,1.3), 'cm')) +
+    ggtitle(paste0(paste(genecombo[1:2], collapse = " / ")," /\n",
+                   paste(genecombo[3:4], collapse = " / ")))
+  
+  
+  legend <- get_legend(p)
+  p3 <- plot_grid(p + theme(legend.position = 'none'), legend, nrow=2,rel_heights = c(.8,.4))
+  
+  
+  save_plot(paste0(plotdir,"/", target.type, '.pdf'),p3, nrow=2, base_height = 3, base_aspect_ratio = 1.5)
+  
+}
+
+
+```
+
+## Number of cell types with a highly specific set of genes
+```{r}
+
+
+top4markers <- read.csv('best_4_markers.csv')
+top4markers$score <- top4markers$recall + 2*top4markers$ppv
+numSpecificTypes <- length(unique( top4markers %>% 
+                                     group_by(cell.type) %>% 
+                                     filter(recall > 0.3, ppv > 0.3) %>% 
+                                     pull(cell.type)))
+
+print(numSpecificTypes)
+
+```
+
+
+# RF method (not used)
+In Aevermann et al  http://dx.doi.org/10.1101/257352, they develop a "necessary and sufficient" set of genes using the following protocol.
+
+1. classification model is constructed from one hundred thousand trees using Information Gain Ratio
+as the splitting criteria, where each decision tree is generated using the default bagging parameters
+- the square root of the number of features and a bootstrap of samples equal to the training set size.
+2.  list of genes can be ranked by their usefulness in distinguishing one cell type
+
+3. In the second step, single decision trees are constructed using the
+first gene from the ranked list, the first two genes, the first three genes, etc. 
+
+4. We restrict each gene to being used in only one branch per tree, and find the
+optimal classification for the target cluster only, rather than the overall classification score. The
+addition of genes from the ranked list is stopped when an optimal classification or stable tree
+topology is achieved. 
+
+5. The minimum number of genes used to produce this optimal result corresponds to the set of necessary and sufficient marker genes required to define the cell type cluster.
+
+
+```{r}
+library(randomForest)
+set.seed(2)
+dir.create("RF_figures")
+
+target.type=as.character(tiss.subsamp@ident[1000])
+target.type="Pancreas__pancreatic.A.cell"
+
+markers <- read.csv('diffexpr_all.csv') # differential expression by Seurat, with subsampled cells
+genes.use <- as.character(markers %>% 
+                      filter(cluster==target.type,
+                             gene %in% tf.names, 
+                             p_val < 1e-3, 
+                             avg_logFC > .2,
+                             pct.1-pct.2 > 0.05,
+                             pct.1 > 0.2) %>% 
+                        arrange(desc(avg_logFC)) %>%
+                      pull(gene))[1:100]
+genes.use <- genes.use[!is.na(genes.use)]
+
+train <- tiss.subsamp
+response <- factor(tiss.subsamp@ident == target.type)
+fit <- randomForest(x=t(as.matrix(tiss.subsamp@data[genes.use, ])),y=response,
+                      importance=TRUE, 
+                      ntree=100,mtry = length(genes.use))
+
+# pdf(paste0("RF_figures/", target.type, "_varImpPlot.pdf"), height = 4, width = 6)
+  varImpPlot(fit, n.var = 12)
+# dev.off()
+fit
+plot(fit, log="y")
+
+# Get top genes by fit
+best.genes <- rownames(fit$importance)[order(fit$importance[,'MeanDecreaseAccuracy'], decreasing = T)][1:10]
+
+require(rpart)
+require(rpart.plot)
+best.df <- data.frame(t(as.matrix(tiss.subsamp@data[best.genes[1:3], ])),y=response)
+fit.n <- rpart(y ~ Arx + Fev, data = best.df, control = rpart.control(maxdepth = 3))
+rpart.plot(fit.n)
+
+# Can use this code to predict the class on another subsample of the dataset, or the whole dataset. 
+# Prediction <- predict(fit, test)
+# submit <- data.frame(PassengerId = test$PassengerId, Survived = Prediction)
+
+require(party)
+fit.1 <- ctree(y ~ Mafb + Arx + Fev, data = best.df,
+           controls = ctree_control(stump = T))
+
+fit.2 <- ctree(y ~ Mafb + Arx + Fev, data = best.df,
+           controls = ctree_control(stump = T))
+
+```
+

@@ -1,0 +1,1660 @@
+MGI Gene/Marker ID,Symbol,Name,Chr,Qualifier,Annotated Term,Context,Proteoform,Evidence,Inferred From,Reference(s)
+MGI:1097689,Ackr1,atypical chemokine receptor 1 (Duffy blood group),1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1891697,Ackr2,atypical chemokine receptor 2,9,,C-C chemokine receptor activity,,,IDA,,J:40322 
+MGI:1891697,Ackr2,atypical chemokine receptor 2,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:1891697,Ackr2,atypical chemokine receptor 2,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1891697,Ackr2,atypical chemokine receptor 2,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109562,Ackr3,atypical chemokine receptor 3,1,,C-X-C chemokine receptor activity,,,ISO,P25106 ,J:164563 
+MGI:109562,Ackr3,atypical chemokine receptor 3,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109562,Ackr3,atypical chemokine receptor 3,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2181676,Ackr4,atypical chemokine receptor 4,9,,chemokine receptor activity,,,ISO,Q9NPB9 ,J:164563 
+MGI:2181676,Ackr4,atypical chemokine receptor 4,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2181676,Ackr4,atypical chemokine receptor 4,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:108449,Adcyap1r1,adenylate cyclase activating polypeptide 1 receptor 1,6,,G-protein coupled receptor activity,,,TAS,,J:49214 
+MGI:108449,Adcyap1r1,adenylate cyclase activating polypeptide 1 receptor 1,6,,vasoactive intestinal polypeptide receptor activity,,,TAS,,J:49214 
+MGI:1277167,Adgra1,adhesion G protein-coupled receptor A1,7,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR017983 ,J:72247 
+MGI:1925810,Adgra2,adhesion G protein-coupled receptor A2,8,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:1925810,Adgra2,adhesion G protein-coupled receptor A2,8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1917943,Adgra3,adhesion G protein-coupled receptor A3,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1917943,Adgra3,adhesion G protein-coupled receptor A3,5,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR036445 ,J:72247 
+MGI:1933736,Adgrb1,adhesion G protein-coupled receptor B1,15,,G-protein coupled receptor activity,,,ISO,O14514 ,J:164563 
+MGI:2451244,Adgrb2,adhesion G protein-coupled receptor B2,4,,G-protein coupled receptor activity,,,ISO,O60241 ,J:164563 
+MGI:2441837,Adgrb3,adhesion G protein-coupled receptor B3,1,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:2441837,Adgrb3,adhesion G protein-coupled receptor B3,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3041203,Adgrd1,adhesion G protein-coupled receptor D1,5,,G-protein coupled receptor activity,,,ISO,Q6QNK2 ,J:164563 
+MGI:106912,Adgre1,adhesion G protein-coupled receptor E1,17,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001740 IPR017983 ,J:72247 
+MGI:106912,Adgre1,adhesion G protein-coupled receptor E1,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1196464,Adgre4,adhesion G protein-coupled receptor E4,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1196464,Adgre4,adhesion G protein-coupled receptor E4,17,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001740 IPR017983 ,J:72247 
+MGI:1347095,Adgre5,adhesion G protein-coupled receptor E5,8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1347095,Adgre5,adhesion G protein-coupled receptor E5,8,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR003056 ,J:72247 
+MGI:1924846,Adgrf1,adhesion G protein-coupled receptor F1,17,,G-protein coupled receptor activity,uses CHEBI:85252,,IDA,,J:240496 
+MGI:2182728,Adgrf2,adhesion G protein-coupled receptor F2,17,,G-protein coupled receptor activity,,,IEA,IPR000832 ,J:72247 
+MGI:2685887,Adgrf3,adhesion G protein-coupled receptor F3,5,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:2685887,Adgrf3,adhesion G protein-coupled receptor F3,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1925499,Adgrf4,adhesion G protein-coupled receptor F4,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1925499,Adgrf4,adhesion G protein-coupled receptor F4,17,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR008078 ,J:72247 
+MGI:2182928,Adgrf5,adhesion G protein-coupled receptor F5,17,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR008078 IPR017983 ,J:72247 
+MGI:1340051,Adgrg1,adhesion G protein-coupled receptor G1,8,,G-protein coupled receptor activity,,,IMP,,J:176019 
+MGI:2446854,Adgrg2,adhesion G protein-coupled receptor G2,X,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR017983 ,J:72247 
+MGI:2446854,Adgrg2,adhesion G protein-coupled receptor G2,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1859670,Adgrg3,adhesion G protein-coupled receptor G3,8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1859670,Adgrg3,adhesion G protein-coupled receptor G3,8,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR003910 ,J:72247 
+MGI:2685213,Adgrg4,adhesion G protein-coupled receptor G4,X,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR017983 ,J:72247 
+MGI:2685213,Adgrg4,adhesion G protein-coupled receptor G4,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685955,Adgrg5,adhesion G protein-coupled receptor G5,8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685955,Adgrg5,adhesion G protein-coupled receptor G5,8,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR003910 ,J:72247 
+MGI:1916151,Adgrg6,adhesion G protein-coupled receptor G6,10,,G-protein coupled receptor activity,,,ISO,Q86SQ4 ,J:164563 
+MGI:2441732,Adgrg7,adhesion G protein-coupled receptor G7,16,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441732,Adgrg7,adhesion G protein-coupled receptor G7,16,,G-protein coupled receptor activity,,,IEA,IPR000832 ,J:72247 
+MGI:1929461,Adgrl1,adhesion G protein-coupled receptor L1,8,,G-protein coupled receptor activity,,,ISO,RGD:620768 ,J:155856 
+MGI:2139714,Adgrl2,adhesion G protein-coupled receptor L2,3,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR003334 IPR003924 IPR017983 IPR031240 IPR036445 ,J:72247 
+MGI:2139714,Adgrl2,adhesion G protein-coupled receptor L2,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441950,Adgrl3,adhesion G protein-coupled receptor L3,5,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR003334 IPR003924 IPR017983 IPR036445 ,J:72247 
+MGI:2441950,Adgrl3,adhesion G protein-coupled receptor L3,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2655562,Adgrl4,adhesion G protein-coupled receptor L4,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2655562,Adgrl4,adhesion G protein-coupled receptor L4,3,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR017983 ,J:72247 
+MGI:1274784,Adgrv1,adhesion G protein-coupled receptor V1,13,,G-protein coupled receptor activity,,,NAS,,J:73638 
+MGI:99401,Adora1,adenosine A1 receptor,1,,G-protein coupled adenosine receptor activity,,,ISO,RGD:2048 ,J:155856 
+MGI:99401,Adora1,adenosine A1 receptor,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99401,Adora1,adenosine A1 receptor,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99402,Adora2a,adenosine A2a receptor,10,,G-protein coupled adenosine receptor activity,,,IDA,,J:33119 J:112280 
+MGI:99402,Adora2a,adenosine A2a receptor,10,,G-protein coupled adenosine receptor activity,happens in corpus striatum,,IDA,,J:63612 J:79146 
+MGI:99402,Adora2a,adenosine A2a receptor,10,,G-protein coupled adenosine receptor activity,happens in immature alpha-beta T cell,,IMP,MGI:2155985 ,J:63086 
+MGI:99402,Adora2a,adenosine A2a receptor,10,,G-protein coupled adenosine receptor activity,happens in corpus striatum,,IMP,MGI:2155985 ,J:67550 
+MGI:99402,Adora2a,adenosine A2a receptor,10,,G-protein coupled adenosine receptor activity,,,ISO,RGD:2049 ,J:155856 
+MGI:99402,Adora2a,adenosine A2a receptor,10,,G-protein coupled adenosine receptor activity,,,ISO,P29274 ,J:164563 
+MGI:99402,Adora2a,adenosine A2a receptor,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99402,Adora2a,adenosine A2a receptor,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99403,Adora2b,adenosine A2b receptor,11,,G-protein coupled adenosine receptor activity,,,ISO,RGD:2050 ,J:155856 
+MGI:99403,Adora2b,adenosine A2b receptor,11,,G-protein coupled receptor activity,happens in fibroblast,,IMP,,J:113120 
+MGI:104847,Adora3,adenosine A3 receptor,3,,G-protein coupled adenosine receptor activity,happens in mast cell,,IDA,,J:84007 
+MGI:104847,Adora3,adenosine A3 receptor,3,,G-protein coupled adenosine receptor activity,,,IMP,MGI:2155986 ,J:60293 
+MGI:104773,Adra1a,"adrenergic receptor, alpha 1a",14,,adrenergic receptor activity,,,IEA,IPR002233 ,J:72247 
+MGI:104773,Adra1a,"adrenergic receptor, alpha 1a",14,,alpha1-adrenergic receptor activity,,,IDA,,J:47838 
+MGI:104773,Adra1a,"adrenergic receptor, alpha 1a",14,,alpha1-adrenergic receptor activity,happens in heart,,IMP,MGI:2387663 ,J:83876 
+MGI:104773,Adra1a,"adrenergic receptor, alpha 1a",14,,alpha1-adrenergic receptor activity,,,ISO,RGD:2055 ,J:155856 
+MGI:104773,Adra1a,"adrenergic receptor, alpha 1a",14,,alpha1-adrenergic receptor activity,,,ISO,L31774 ,J:69078 
+MGI:104773,Adra1a,"adrenergic receptor, alpha 1a",14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104773,Adra1a,"adrenergic receptor, alpha 1a",14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104774,Adra1b,"adrenergic receptor, alpha 1b",11,,adrenergic receptor activity,,,IEA,IPR002233 ,J:72247 
+MGI:104774,Adra1b,"adrenergic receptor, alpha 1b",11,,alpha1-adrenergic receptor activity,happens in liver,,IDA,,J:18949 
+MGI:104774,Adra1b,"adrenergic receptor, alpha 1b",11,,alpha1-adrenergic receptor activity,happens in cortical layer III|happens in thalamus,,IDA,,J:76004 
+MGI:104774,Adra1b,"adrenergic receptor, alpha 1b",11,,alpha1-adrenergic receptor activity,happens in heart,,IGI,MGI:104773 ,J:83876 
+MGI:104774,Adra1b,"adrenergic receptor, alpha 1b",11,,alpha1-adrenergic receptor activity,happens in heart,,IMP,MGI:2148638 ,J:83876 
+MGI:104774,Adra1b,"adrenergic receptor, alpha 1b",11,,alpha1-adrenergic receptor activity,happens in liver|happens in heart|happens in cerebral cortex,,IMP,MGI:2148638 ,J:43591 
+MGI:104774,Adra1b,"adrenergic receptor, alpha 1b",11,,alpha1-adrenergic receptor activity,,,ISO,RGD:2054 ,J:155856 
+MGI:104774,Adra1b,"adrenergic receptor, alpha 1b",11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104774,Adra1b,"adrenergic receptor, alpha 1b",11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:106673,Adra1d,"adrenergic receptor, alpha 1d",2,,adrenergic receptor activity,,,IEA,IPR002233 ,J:72247 
+MGI:106673,Adra1d,"adrenergic receptor, alpha 1d",2,,alpha1-adrenergic receptor activity,happens in heart,,IDA,,J:83036 
+MGI:106673,Adra1d,"adrenergic receptor, alpha 1d",2,,alpha1-adrenergic receptor activity,,,ISO,RGD:62064 ,J:155856 
+MGI:106673,Adra1d,"adrenergic receptor, alpha 1d",2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:106673,Adra1d,"adrenergic receptor, alpha 1d",2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:87934,Adra2a,"adrenergic receptor, alpha 2a",19,,adrenergic receptor activity,,,IMP,,J:105642 
+MGI:87934,Adra2a,"adrenergic receptor, alpha 2a",19,,alpha2-adrenergic receptor activity,,,ISO,RGD:2056 ,J:155856 
+MGI:87934,Adra2a,"adrenergic receptor, alpha 2a",19,,alpha2-adrenergic receptor activity,,,ISO,P08913 ,J:164563 
+MGI:87934,Adra2a,"adrenergic receptor, alpha 2a",19,,alpha2-adrenergic receptor activity,,,TAS,,J:77486 
+MGI:87935,Adra2b,"adrenergic receptor, alpha 2b",2,,adrenergic receptor activity,,,IMP,,J:105642 
+MGI:87935,Adra2b,"adrenergic receptor, alpha 2b",2,,alpha2-adrenergic receptor activity,,,IDA,,J:77486 
+MGI:87935,Adra2b,"adrenergic receptor, alpha 2b",2,,alpha2-adrenergic receptor activity,,,ISO,P18089 ,J:164563 
+MGI:87935,Adra2b,"adrenergic receptor, alpha 2b",2,,alpha2-adrenergic receptor activity,,,ISO,RGD:2057 ,J:155856 
+MGI:87936,Adra2c,"adrenergic receptor, alpha 2c",5,,adrenergic receptor activity,,,IEA,IPR002233 ,J:72247 
+MGI:87936,Adra2c,"adrenergic receptor, alpha 2c",5,,alpha2-adrenergic receptor activity,,,ISO,RGD:2058 ,J:155856 
+MGI:87936,Adra2c,"adrenergic receptor, alpha 2c",5,,alpha2-adrenergic receptor activity,,,ISO,P18825 ,J:164563 
+MGI:87936,Adra2c,"adrenergic receptor, alpha 2c",5,,alpha2-adrenergic receptor activity,,,TAS,,J:77486 
+MGI:87936,Adra2c,"adrenergic receptor, alpha 2c",5,,G-protein coupled receptor activity,,,IDA,,J:88364 
+MGI:87937,Adrb1,"adrenergic receptor, beta 1",19,,adrenergic receptor activity,,,IEA,IPR002233 ,J:72247 
+MGI:87937,Adrb1,"adrenergic receptor, beta 1",19,,beta1-adrenergic receptor activity,happens in brown fat cell,,IDA,,J:25102 
+MGI:87937,Adrb1,"adrenergic receptor, beta 1",19,,beta1-adrenergic receptor activity,,,IDA,,J:43208 
+MGI:87937,Adrb1,"adrenergic receptor, beta 1",19,,beta1-adrenergic receptor activity,happens in heart|happens in lung,,IMP,MGI:1857120 ,J:34659 
+MGI:87937,Adrb1,"adrenergic receptor, beta 1",19,,beta1-adrenergic receptor activity,,,ISO,RGD:2059 ,J:155856 
+MGI:87937,Adrb1,"adrenergic receptor, beta 1",19,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:87937,Adrb1,"adrenergic receptor, beta 1",19,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,adrenergic receptor activity,,,IEA,IPR002233 ,J:72247 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,beta2-adrenergic receptor activity,happens in brown fat cell,,IDA,,J:25102 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,beta2-adrenergic receptor activity,happens in lung|happens in heart,,IDA,,J:34659 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,beta2-adrenergic receptor activity,,,IDA,,J:30115 J:43208 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,beta2-adrenergic receptor activity,"happens in liver,happens in hepatocyte",,IDA,,J:7332 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,beta2-adrenergic receptor activity,happens in lung,,IDA,,J:72097 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,beta2-adrenergic receptor activity,,,ISO,RGD:2060 ,J:155856 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,beta2-adrenergic receptor activity,,,ISO,P07550 ,J:164563 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:87938,Adrb2,"adrenergic receptor, beta 2",18,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:87939,Adrb3,"adrenergic receptor, beta 3",8,,adrenergic receptor activity,,,IEA,IPR002233 ,J:72247 
+MGI:87939,Adrb3,"adrenergic receptor, beta 3",8,,beta-adrenergic receptor activity,,,ISO,P13945 ,J:164563 
+MGI:87939,Adrb3,"adrenergic receptor, beta 3",8,,beta3-adrenergic receptor activity,,,IBA,PTN000664675 ,J:161428 
+MGI:87939,Adrb3,"adrenergic receptor, beta 3",8,,beta3-adrenergic receptor activity,,,ISO,P13945 ,J:164563 
+MGI:87939,Adrb3,"adrenergic receptor, beta 3",8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:87939,Adrb3,"adrenergic receptor, beta 3",8,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:87964,Agtr1a,"angiotensin II receptor, type 1a",13,,angiotensin type I receptor activity,,,IDA,,J:82904 
+MGI:87964,Agtr1a,"angiotensin II receptor, type 1a",13,,angiotensin type I receptor activity,,,ISO,RGD:2070 ,J:155856 
+MGI:87964,Agtr1a,"angiotensin II receptor, type 1a",13,,angiotensin type I receptor activity,,,ISO,P30556 ,J:164563 
+MGI:87964,Agtr1a,"angiotensin II receptor, type 1a",13,,angiotensin type II receptor activity,,,ISO,P30556 ,J:164563 
+MGI:87964,Agtr1a,"angiotensin II receptor, type 1a",13,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:87964,Agtr1a,"angiotensin II receptor, type 1a",13,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:87965,Agtr1b,"angiotensin II receptor, type 1b",3,,angiotensin type I receptor activity,,,ISO,RGD:2071 ,J:155856 
+MGI:87965,Agtr1b,"angiotensin II receptor, type 1b",3,,angiotensin type II receptor activity,,,IEA,IPR000190 ,J:72247 
+MGI:87965,Agtr1b,"angiotensin II receptor, type 1b",3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:87965,Agtr1b,"angiotensin II receptor, type 1b",3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:87966,Agtr2,"angiotensin II receptor, type 2",X,,angiotensin type II receptor activity,happens in pallidum,,IDA,,J:51954 
+MGI:87966,Agtr2,"angiotensin II receptor, type 2",X,,angiotensin type II receptor activity,,,IPI,P11859 ,J:51954 
+MGI:87966,Agtr2,"angiotensin II receptor, type 2",X,,angiotensin type II receptor activity,,,ISO,P50052 ,J:164563 
+MGI:87966,Agtr2,"angiotensin II receptor, type 2",X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:87966,Agtr2,"angiotensin II receptor, type 2",X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1339977,Agtrap,"angiotensin II, type I receptor-associated protein",4,,angiotensin type II receptor activity,,,IMP,,J:56635 
+MGI:1346086,Aplnr,apelin receptor,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1346086,Aplnr,apelin receptor,2,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR003904 ,J:72247 
+MGI:1859216,Avpr1a,arginine vasopressin receptor 1A,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1859216,Avpr1a,arginine vasopressin receptor 1A,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1859216,Avpr1a,arginine vasopressin receptor 1A,10,,vasopressin receptor activity,,,IBA,PTN001202415 ,J:161428 
+MGI:1859216,Avpr1a,arginine vasopressin receptor 1A,10,,vasopressin receptor activity,,,ISO,RGD:2185 ,J:155856 
+MGI:1347010,Avpr1b,arginine vasopressin receptor 1B,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1347010,Avpr1b,arginine vasopressin receptor 1B,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1347010,Avpr1b,arginine vasopressin receptor 1B,1,,vasopressin receptor activity,,,IBA,PTN001202415 ,J:161428 
+MGI:1347010,Avpr1b,arginine vasopressin receptor 1B,1,,vasopressin receptor activity,,,ISO,RGD:61886 ,J:155856 
+MGI:88123,Avpr2,arginine vasopressin receptor 2,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:88123,Avpr2,arginine vasopressin receptor 2,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:88123,Avpr2,arginine vasopressin receptor 2,X,,vasopressin receptor activity,,,IBA,PTN001202415 ,J:161428 
+MGI:88123,Avpr2,arginine vasopressin receptor 2,X,,vasopressin receptor activity,,,ISO,RGD:2186 ,J:155856 
+MGI:88144,Bdkrb1,"bradykinin receptor, beta 1",12,,bradykinin receptor activity,,,ISO,RGD:620401 ,J:155856 
+MGI:88144,Bdkrb1,"bradykinin receptor, beta 1",12,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:88144,Bdkrb1,"bradykinin receptor, beta 1",12,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:102845,Bdkrb2,"bradykinin receptor, beta 2",12,,bradykinin receptor activity,,,ISO,RGD:2201 ,J:155856 
+MGI:102845,Bdkrb2,"bradykinin receptor, beta 2",12,,bradykinin receptor activity,,,ISO,P30411 ,J:164563 
+MGI:102845,Bdkrb2,"bradykinin receptor, beta 2",12,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:102845,Bdkrb2,"bradykinin receptor, beta 2",12,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1100501,Brs3,bombesin-like receptor 3,X,,bombesin receptor activity,,,IEA,IPR001560 ,J:72247 
+MGI:1100501,Brs3,bombesin-like receptor 3,X,,G-protein coupled peptide receptor activity,,,IEA,IPR001556 ,J:72247 
+MGI:1100501,Brs3,bombesin-like receptor 3,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1100501,Brs3,bombesin-like receptor 3,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1097680,C3ar1,complement component 3a receptor 1,6,,G-protein coupled receptor activity,,,IBA,PTN001200752 ,J:161428 
+MGI:1097680,C3ar1,complement component 3a receptor 1,6,,G-protein coupled receptor activity,,,ISO,Q16581 ,J:164563 
+MGI:88232,C5ar1,complement component 5a receptor 1,7,,G-protein coupled receptor activity,,,IBA,PTN001200752 ,J:161428 
+MGI:88232,C5ar1,complement component 5a receptor 1,7,,G-protein coupled receptor activity,,,ISO,P21730 ,J:164563 
+MGI:2442013,C5ar2,complement component 5a receptor 2,7,,G-protein coupled receptor activity,,,IBA,PTN001200752 ,J:161428 
+MGI:2441881,C130060K24Rik,RIKEN cDNA C130060K24 gene,6,,G-protein coupled receptor activity,,,IBA,PTN001202348 ,J:161428 
+MGI:101950,Calcr,calcitonin receptor,6,contributes_to,amylin receptor activity,,,ISO,P30988 ,J:164563 
+MGI:101950,Calcr,calcitonin receptor,6,,amylin receptor activity,,,ISO,P30988 ,J:164563 
+MGI:101950,Calcr,calcitonin receptor,6,,calcitonin gene-related peptide receptor activity,,,ISO,P30988 ,J:164563 
+MGI:101950,Calcr,calcitonin receptor,6,,calcitonin receptor activity,,,IDA,,J:22084 
+MGI:101950,Calcr,calcitonin receptor,6,,calcitonin receptor activity,,,ISO,P30988 ,J:164563 
+MGI:101950,Calcr,calcitonin receptor,6,,calcitonin receptor activity,,,ISO,RGD:621001 ,J:155856 
+MGI:101950,Calcr,calcitonin receptor,6,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:101950,Calcr,calcitonin receptor,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1926944,Calcrl,calcitonin receptor-like,2,,adrenomedullin receptor activity,,,ISO,Q16602 ,J:164563 
+MGI:1926944,Calcrl,calcitonin receptor-like,2,,calcitonin gene-related peptide receptor activity,,,IGI,MGI:2151253 ,J:30368 
+MGI:1926944,Calcrl,calcitonin receptor-like,2,,calcitonin gene-related peptide receptor activity,,,ISO,Q16602 ,J:164563 
+MGI:1926944,Calcrl,calcitonin receptor-like,2,,calcitonin receptor activity,,,IEA,IPR003287 ,J:72247 
+MGI:1926944,Calcrl,calcitonin receptor-like,2,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR003289 IPR017983 IPR036445 ,J:72247 
+MGI:1926944,Calcrl,calcitonin receptor-like,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1351351,Casr,calcium-sensing receptor,16,,G-protein coupled receptor activity,,,ISO,P41180 ,J:164563 
+MGI:1351351,Casr,calcium-sensing receptor,16,,G-protein coupled receptor activity,,,ISO,RGD:2277 ,J:155856 
+MGI:99478,Cckar,cholecystokinin A receptor,5,,cholecystokinin receptor activity,,,IBA,PTN000662355 ,J:161428 
+MGI:99478,Cckar,cholecystokinin A receptor,5,,cholecystokinin receptor activity,,,ISO,RGD:2289 ,J:155856 
+MGI:99478,Cckar,cholecystokinin A receptor,5,,cholecystokinin receptor activity,,,ISO,P32238 ,J:164563 
+MGI:99478,Cckar,cholecystokinin A receptor,5,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99478,Cckar,cholecystokinin A receptor,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99479,Cckbr,cholecystokinin B receptor,7,,cholecystokinin receptor activity,,,ISO,P32239 ,J:164563 
+MGI:99479,Cckbr,cholecystokinin B receptor,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99479,Cckbr,cholecystokinin B receptor,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99479,Cckbr,cholecystokinin B receptor,7,,gastrin receptor activity,,,ISO,RGD:2290 ,J:155856 
+MGI:99479,Cckbr,cholecystokinin B receptor,7,,gastrin receptor activity,,,ISO,P32239 ,J:164563 
+MGI:104618,Ccr1,chemokine (C-C motif) receptor 1,9,,C-C chemokine receptor activity,,,IDA,,J:29873 
+MGI:104618,Ccr1,chemokine (C-C motif) receptor 1,9,,C-C chemokine receptor activity,,,ISO,P32246 ,J:164563 
+MGI:104618,Ccr1,chemokine (C-C motif) receptor 1,9,,chemokine receptor activity,,,ISO,P32246 ,J:164563 
+MGI:104618,Ccr1,chemokine (C-C motif) receptor 1,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104618,Ccr1,chemokine (C-C motif) receptor 1,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104617,Ccr1l1,chemokine (C-C motif) receptor 1-like 1,9,,C-C chemokine receptor activity,,,IEA,IPR002236 ,J:72247 
+MGI:104617,Ccr1l1,chemokine (C-C motif) receptor 1-like 1,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:104617,Ccr1l1,chemokine (C-C motif) receptor 1-like 1,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104617,Ccr1l1,chemokine (C-C motif) receptor 1-like 1,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:106185,Ccr2,chemokine (C-C motif) receptor 2,9,,C-C chemokine receptor activity,,,IDA,,J:32263 J:33019 
+MGI:106185,Ccr2,chemokine (C-C motif) receptor 2,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:106185,Ccr2,chemokine (C-C motif) receptor 2,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:106185,Ccr2,chemokine (C-C motif) receptor 2,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104616,Ccr3,chemokine (C-C motif) receptor 3,9,,C-C chemokine receptor activity,,,IDA,,J:29873 
+MGI:104616,Ccr3,chemokine (C-C motif) receptor 3,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:104616,Ccr3,chemokine (C-C motif) receptor 3,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104616,Ccr3,chemokine (C-C motif) receptor 3,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:107824,Ccr4,chemokine (C-C motif) receptor 4,9,,C-C chemokine receptor activity,,,IMP,MGI:2136258 ,J:70088 
+MGI:107824,Ccr4,chemokine (C-C motif) receptor 4,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:107824,Ccr4,chemokine (C-C motif) receptor 4,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:107824,Ccr4,chemokine (C-C motif) receptor 4,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:107182,Ccr5,chemokine (C-C motif) receptor 5,9,,C-C chemokine receptor activity,,,IDA,,J:32263 
+MGI:107182,Ccr5,chemokine (C-C motif) receptor 5,9,,C-C chemokine receptor activity,,,ISO,P51681 ,J:68942 J:164563 
+MGI:107182,Ccr5,chemokine (C-C motif) receptor 5,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:107182,Ccr5,chemokine (C-C motif) receptor 5,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:107182,Ccr5,chemokine (C-C motif) receptor 5,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1333797,Ccr6,chemokine (C-C motif) receptor 6,17,,C-C chemokine receptor activity,,,IDA,,J:233575 
+MGI:1333797,Ccr6,chemokine (C-C motif) receptor 6,17,,C-C chemokine receptor activity,,,ISO,P51684 ,J:164563 
+MGI:1333797,Ccr6,chemokine (C-C motif) receptor 6,17,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:1333797,Ccr6,chemokine (C-C motif) receptor 6,17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1333797,Ccr6,chemokine (C-C motif) receptor 6,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:103011,Ccr7,chemokine (C-C motif) receptor 7,11,,C-C chemokine receptor activity,,,IMP,MGI:2180679 ,J:57976 
+MGI:103011,Ccr7,chemokine (C-C motif) receptor 7,11,,C-C motif chemokine 19 receptor activity,,,ISO,P32248 ,J:164563 
+MGI:103011,Ccr7,chemokine (C-C motif) receptor 7,11,,C-C motif chemokine 21 receptor activity,,,ISO,P32248 ,J:164563 
+MGI:103011,Ccr7,chemokine (C-C motif) receptor 7,11,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:103011,Ccr7,chemokine (C-C motif) receptor 7,11,,G-protein coupled receptor activity,,,TAS,,J:175178 
+MGI:1201402,Ccr8,chemokine (C-C motif) receptor 8,9,,C-C chemokine receptor activity,,,IDA,,J:48580 
+MGI:1201402,Ccr8,chemokine (C-C motif) receptor 8,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:1201402,Ccr8,chemokine (C-C motif) receptor 8,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1201402,Ccr8,chemokine (C-C motif) receptor 8,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1341902,Ccr9,chemokine (C-C motif) receptor 9,9,,C-C chemokine receptor activity,,,IDA,,J:59297 
+MGI:1341902,Ccr9,chemokine (C-C motif) receptor 9,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:1341902,Ccr9,chemokine (C-C motif) receptor 9,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1341902,Ccr9,chemokine (C-C motif) receptor 9,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1096320,Ccr10,chemokine (C-C motif) receptor 10,11,,C-C chemokine receptor activity,,,IDA,,J:61403 
+MGI:1096320,Ccr10,chemokine (C-C motif) receptor 10,11,,chemokine receptor activity,,,IDA,,J:63604 
+MGI:1096320,Ccr10,chemokine (C-C motif) receptor 10,11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1096320,Ccr10,chemokine (C-C motif) receptor 10,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1920904,Ccrl2,chemokine (C-C motif) receptor-like 2,9,,C-C chemokine receptor activity,,,ISS,,J:47023 
+MGI:1920904,Ccrl2,chemokine (C-C motif) receptor-like 2,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:1920904,Ccrl2,chemokine (C-C motif) receptor-like 2,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1920904,Ccrl2,chemokine (C-C motif) receptor-like 2,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1100883,Celsr1,"cadherin, EGF LAG seven-pass G-type receptor 1",15,,G-protein coupled receptor activity,,,NAS,,J:43499 
+MGI:1858235,Celsr2,"cadherin, EGF LAG seven-pass G-type receptor 2",3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1858235,Celsr2,"cadherin, EGF LAG seven-pass G-type receptor 2",3,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR036445 ,J:72247 
+MGI:1858236,Celsr3,"cadherin, EGF LAG seven-pass G-type receptor 3",9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1858236,Celsr3,"cadherin, EGF LAG seven-pass G-type receptor 3",9,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:88396,Chrm1,"cholinergic receptor, muscarinic 1, CNS",19,,G-protein coupled acetylcholine receptor activity,,,IBA,PTN001207082 ,J:161428 
+MGI:88396,Chrm1,"cholinergic receptor, muscarinic 1, CNS",19,,G-protein coupled acetylcholine receptor activity,,,ISO,RGD:2342 ,J:155856 
+MGI:88396,Chrm1,"cholinergic receptor, muscarinic 1, CNS",19,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:88396,Chrm1,"cholinergic receptor, muscarinic 1, CNS",19,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:88397,Chrm2,"cholinergic receptor, muscarinic 2, cardiac",6,,G-protein coupled acetylcholine receptor activity,,,IMP,MGI:2155543 ,J:53061 
+MGI:88397,Chrm2,"cholinergic receptor, muscarinic 2, cardiac",6,,G-protein coupled acetylcholine receptor activity,,,ISO,P08172 ,J:164563 
+MGI:88397,Chrm2,"cholinergic receptor, muscarinic 2, cardiac",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:88397,Chrm2,"cholinergic receptor, muscarinic 2, cardiac",6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:88398,Chrm3,"cholinergic receptor, muscarinic 3, cardiac",13,,G-protein coupled acetylcholine receptor activity,,,IBA,PTN001207082 ,J:161428 
+MGI:88398,Chrm3,"cholinergic receptor, muscarinic 3, cardiac",13,,G-protein coupled acetylcholine receptor activity,,,ISO,RGD:2343 ,J:155856 
+MGI:88398,Chrm3,"cholinergic receptor, muscarinic 3, cardiac",13,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:88398,Chrm3,"cholinergic receptor, muscarinic 3, cardiac",13,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:88399,Chrm4,"cholinergic receptor, muscarinic 4",2,,G-protein coupled acetylcholine receptor activity,,,IDA,,J:12853 
+MGI:88399,Chrm4,"cholinergic receptor, muscarinic 4",2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:88399,Chrm4,"cholinergic receptor, muscarinic 4",2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109248,Chrm5,"cholinergic receptor, muscarinic 5",2,,G-protein coupled acetylcholine receptor activity,,,IBA,PTN001207082 ,J:161428 
+MGI:109248,Chrm5,"cholinergic receptor, muscarinic 5",2,,G-protein coupled acetylcholine receptor activity,,,ISO,RGD:620027 ,J:155856 
+MGI:109248,Chrm5,"cholinergic receptor, muscarinic 5",2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109248,Chrm5,"cholinergic receptor, muscarinic 5",2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109603,Cmklr1,chemokine-like receptor 1,5,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR002258 ,J:72247 
+MGI:109603,Cmklr1,chemokine-like receptor 1,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104615,Cnr1,cannabinoid receptor 1 (brain),4,,cannabinoid receptor activity,"happens in striated muscle cell,happens in heart,happens in mitochondrion,happens in heart",,IMP,,J:240243 
+MGI:104615,Cnr1,cannabinoid receptor 1 (brain),4,,cannabinoid receptor activity,,,ISO,RGD:2369 ,J:155856 
+MGI:104615,Cnr1,cannabinoid receptor 1 (brain),4,,cannabinoid receptor activity,,,ISO,P21554 ,J:164563 
+MGI:104615,Cnr1,cannabinoid receptor 1 (brain),4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104615,Cnr1,cannabinoid receptor 1 (brain),4,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104650,Cnr2,cannabinoid receptor 2 (macrophage),4,,cannabinoid receptor activity,,,ISO,RGD:619713 ,J:155856 
+MGI:104650,Cnr2,cannabinoid receptor 2 (macrophage),4,,G-protein coupled receptor activity,,,ISO,RGD:619713 ,J:155856 
+MGI:1100818,Crcp,calcitonin gene-related peptide-receptor component protein,5,,calcitonin gene-related peptide receptor activity,,,IDA,,J:43695 
+MGI:88498,Crhr1,corticotropin releasing hormone receptor 1,11,,corticotrophin-releasing factor receptor activity,,,IMP,MGI:2178543 ,J:76358 
+MGI:88498,Crhr1,corticotropin releasing hormone receptor 1,11,,corticotrophin-releasing factor receptor activity,,,IMP,,J:48280 
+MGI:88498,Crhr1,corticotropin releasing hormone receptor 1,11,,corticotrophin-releasing factor receptor activity,,,ISO,P34998 ,J:164563 
+MGI:88498,Crhr1,corticotropin releasing hormone receptor 1,11,,G-protein coupled receptor activity,,,ISO,RGD:61276 ,J:155856 
+MGI:894312,Crhr2,corticotropin releasing hormone receptor 2,6,,corticotrophin-releasing factor receptor activity,,,IDA,,J:76864 J:95540 
+MGI:894312,Crhr2,corticotropin releasing hormone receptor 2,6,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR003051 IPR003053 IPR017983 IPR036445 ,J:72247 
+MGI:894312,Crhr2,corticotropin releasing hormone receptor 2,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1333815,Cx3cr1,chemokine (C-X3-C motif) receptor 1,9,,C-X3-C chemokine receptor activity,,,ISO,RGD:620137 ,J:155856 
+MGI:1333815,Cx3cr1,chemokine (C-X3-C motif) receptor 1,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1333815,Cx3cr1,chemokine (C-X3-C motif) receptor 1,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2448715,Cxcr1,chemokine (C-X-C motif) receptor 1,1,,C-X-C chemokine receptor activity,,,IEA,IPR000174 ,J:72247 
+MGI:2448715,Cxcr1,chemokine (C-X-C motif) receptor 1,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2448715,Cxcr1,chemokine (C-X-C motif) receptor 1,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2448715,Cxcr1,chemokine (C-X-C motif) receptor 1,1,,interleukin-8 receptor activity,,,ISO,P25024 ,J:164563 
+MGI:105303,Cxcr2,chemokine (C-X-C motif) receptor 2,1,,C-X-C chemokine receptor activity,,,ISO,P25025 ,J:164563 
+MGI:105303,Cxcr2,chemokine (C-X-C motif) receptor 2,1,,chemokine receptor activity,,,IDA,,J:108306 
+MGI:105303,Cxcr2,chemokine (C-X-C motif) receptor 2,1,,chemokine receptor activity,,,TAS,,J:80798 
+MGI:105303,Cxcr2,chemokine (C-X-C motif) receptor 2,1,,G-protein coupled receptor activity,,,ISO,P25025 ,J:164563 
+MGI:105303,Cxcr2,chemokine (C-X-C motif) receptor 2,1,,interleukin-8 receptor activity,,,ISO,P25025 ,J:164563 
+MGI:105303,Cxcr2,chemokine (C-X-C motif) receptor 2,1,,interleukin-8 receptor activity,,,TAS,,J:32263 
+MGI:1277207,Cxcr3,chemokine (C-X-C motif) receptor 3,X,,C-X-C chemokine receptor activity,,,ISO,RGD:621528 ,J:155856 
+MGI:1277207,Cxcr3,chemokine (C-X-C motif) receptor 3,X,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:1277207,Cxcr3,chemokine (C-X-C motif) receptor 3,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1277207,Cxcr3,chemokine (C-X-C motif) receptor 3,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109563,Cxcr4,chemokine (C-X-C motif) receptor 4,1,,C-X-C chemokine receptor activity,,,ISO,RGD:620465 ,J:155856 
+MGI:109563,Cxcr4,chemokine (C-X-C motif) receptor 4,1,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:109563,Cxcr4,chemokine (C-X-C motif) receptor 4,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109563,Cxcr4,chemokine (C-X-C motif) receptor 4,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:103567,Cxcr5,chemokine (C-X-C motif) receptor 5,9,,C-X-C chemokine receptor activity,,,IEA,IPR001053 ,J:72247 
+MGI:103567,Cxcr5,chemokine (C-X-C motif) receptor 5,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:103567,Cxcr5,chemokine (C-X-C motif) receptor 5,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1934582,Cxcr6,chemokine (C-X-C motif) receptor 6,9,,C-X-C chemokine receptor activity,,,IDA,,J:65117 
+MGI:1934582,Cxcr6,chemokine (C-X-C motif) receptor 6,9,,chemokine receptor activity,,,IEA,IPR000355 ,J:72247 
+MGI:1934582,Cxcr6,chemokine (C-X-C motif) receptor 6,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1934582,Cxcr6,chemokine (C-X-C motif) receptor 6,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1926218,Cysltr1,cysteinyl leukotriene receptor 1,X,,G-protein coupled peptide receptor activity,,,IBA,PTN000660491 ,J:161428 
+MGI:1926218,Cysltr1,cysteinyl leukotriene receptor 1,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1926218,Cysltr1,cysteinyl leukotriene receptor 1,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1926218,Cysltr1,cysteinyl leukotriene receptor 1,X,,leukotriene receptor activity,,,IDA,,J:67843 
+MGI:1926218,Cysltr1,cysteinyl leukotriene receptor 1,X,,leukotriene receptor activity,,,ISO,RGD:619796 ,J:155856 
+MGI:1917336,Cysltr2,cysteinyl leukotriene receptor 2,14,,cysteinyl leukotriene receptor activity,,,IDA,,J:73264 J:76836 
+MGI:1917336,Cysltr2,cysteinyl leukotriene receptor 2,14,,G-protein coupled peptide receptor activity,,,IBA,PTN000660491 ,J:161428 
+MGI:1917336,Cysltr2,cysteinyl leukotriene receptor 2,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1917336,Cysltr2,cysteinyl leukotriene receptor 2,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1917336,Cysltr2,cysteinyl leukotriene receptor 2,14,,leukotriene receptor activity,,,IEA,IPR004071 ,J:72247 
+MGI:99578,Drd1,dopamine receptor D1,13,,dopamine neurotransmitter receptor activity,,,IDA,,J:140050 
+MGI:99578,Drd1,dopamine receptor D1,13,,dopamine neurotransmitter receptor activity,,,ISO,P21728 ,J:73065 
+MGI:99578,Drd1,dopamine receptor D1,13,,"dopamine neurotransmitter receptor activity, coupled via Gs",happens in corpus striatum,,IDA,,J:29045 J:65770 J:86377 
+MGI:99578,Drd1,dopamine receptor D1,13,,"dopamine neurotransmitter receptor activity, coupled via Gs",happens in amygdala|happens in hippocampus,,IDA,,J:114543 
+MGI:99578,Drd1,dopamine receptor D1,13,,"dopamine neurotransmitter receptor activity, coupled via Gs",,,IDA,,J:16494 J:21603 J:33119 
+MGI:99578,Drd1,dopamine receptor D1,13,,"dopamine neurotransmitter receptor activity, coupled via Gs",happens in frontal cortex,,IDA,,J:109223 
+MGI:99578,Drd1,dopamine receptor D1,13,,"dopamine neurotransmitter receptor activity, coupled via Gs",,,IMP,MGI:1857158 ,J:22076 J:43604 
+MGI:99578,Drd1,dopamine receptor D1,13,,"dopamine neurotransmitter receptor activity, coupled via Gs",,,IMP,MGI:2159306 ,J:100026 
+MGI:99578,Drd1,dopamine receptor D1,13,,"dopamine neurotransmitter receptor activity, coupled via Gs",,,ISO,P21728 ,J:164563 
+MGI:99578,Drd1,dopamine receptor D1,13,,"dopamine neurotransmitter receptor activity, coupled via Gs",,,ISO,RGD:2518 ,J:155856 
+MGI:99578,Drd1,dopamine receptor D1,13,,G-protein coupled receptor activity,,,IDA,,J:88364 
+MGI:99578,Drd1,dopamine receptor D1,13,,G-protein coupled receptor activity,,,ISO,RGD:2518 ,J:155856 
+MGI:94924,Drd2,dopamine receptor D2,9,,dopamine neurotransmitter receptor activity,,,IDA,,J:140050 
+MGI:94924,Drd2,dopamine receptor D2,9,,dopamine neurotransmitter receptor activity,,,ISO,RGD:2520 ,J:155856 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in corpus striatum,PR:P61168-2,IDA,,J:104036 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,PR:P61168-1,IDA,,J:40408 J:41193 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in corpus striatum|happens in olfactory tubercle,,IDA,,J:29045 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,IDA,,J:16494 J:34152 J:65023 J:112986 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in corpus striatum,PR:P61168-1,IDA,,J:65770 J:104036 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,PR:P61168-2,IDA,,J:40408 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in corpus striatum,,IDA,,J:10932 J:86377 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in corpus striatum,,IMP,MGI:1857875 ,J:67550 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in hippocampus CA1|happens in hippocampus CA3|happens in dentate gyrus,,IMP,MGI:2387895 ,J:65767 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in corpus striatum,,IMP,,J:98436 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in pituitary gland,,IMP,MGI:2387895 ,J:41857 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in caudate-putamen|happens in accumbens nucleus|happens in olfactory tubercle,,IMP,MGI:3576789 ,J:97838 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,ISO,P14416 ,J:164563 
+MGI:94924,Drd2,dopamine receptor D2,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,ISO,RGD:2520 ,J:155856 
+MGI:94924,Drd2,dopamine receptor D2,9,,G-protein coupled receptor activity,,,IDA,,J:88364 
+MGI:94925,Drd3,dopamine receptor D3,16,,dopamine neurotransmitter receptor activity,,,ISO,RGD:2521 ,J:155856 
+MGI:94925,Drd3,dopamine receptor D3,16,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,PR:P30728-2,IDA,,J:24208 
+MGI:94925,Drd3,dopamine receptor D3,16,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,IDA,,J:32128 J:34152 
+MGI:94925,Drd3,dopamine receptor D3,16,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",happens in islands of Calleja,,IDA,,J:29045 
+MGI:94925,Drd3,dopamine receptor D3,16,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,ISO,P35462 ,J:164563 
+MGI:94925,Drd3,dopamine receptor D3,16,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,ISO,RGD:2521 ,J:155856 
+MGI:94925,Drd3,dopamine receptor D3,16,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:94925,Drd3,dopamine receptor D3,16,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:94926,Drd4,dopamine receptor D4,7,,dopamine neurotransmitter receptor activity,,,ISO,P21917 ,J:164563 
+MGI:94926,Drd4,dopamine receptor D4,7,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go","happens in frontal cortex,happens in pyramidal neuron",,IMP,MGI:2178631 ,J:69457 
+MGI:94926,Drd4,dopamine receptor D4,7,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,ISO,P21917 ,J:164563 
+MGI:94926,Drd4,dopamine receptor D4,7,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,ISO,RGD:2522 ,J:155856 
+MGI:94926,Drd4,dopamine receptor D4,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:94926,Drd4,dopamine receptor D4,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:94927,Drd5,dopamine receptor D5,5,,dopamine neurotransmitter receptor activity,,,ISO,P21918 ,J:164563 
+MGI:94927,Drd5,dopamine receptor D5,5,,dopamine neurotransmitter receptor activity,,,ISO,RGD:2523 ,J:155856 
+MGI:94927,Drd5,dopamine receptor D5,5,,dopamine neurotransmitter receptor activity,,,ISO,P25115 ,J:73065 
+MGI:94927,Drd5,dopamine receptor D5,5,,"dopamine neurotransmitter receptor activity, coupled via Gs",happens in amygdala|happens in hippocampus,,IDA,,J:114543 
+MGI:94927,Drd5,dopamine receptor D5,5,,"dopamine neurotransmitter receptor activity, coupled via Gs",,,IMP,,J:100026 
+MGI:94927,Drd5,dopamine receptor D5,5,,"dopamine neurotransmitter receptor activity, coupled via Gs",,,ISO,RGD:2523 ,J:155856 
+MGI:94927,Drd5,dopamine receptor D5,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:94927,Drd5,dopamine receptor D5,5,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:105923,Ednra,endothelin receptor type A,8,,endothelin receptor activity,,,IMP,MGI:1857473 ,J:46639 
+MGI:105923,Ednra,endothelin receptor type A,8,,endothelin receptor activity,,,ISO,RGD:2535 ,J:155856 
+MGI:105923,Ednra,endothelin receptor type A,8,,G-protein coupled receptor activity,,,TAS,,J:72781 
+MGI:102720,Ednrb,endothelin receptor type B,14,,endothelin receptor activity,,,IDA,,J:81728 
+MGI:102720,Ednrb,endothelin receptor type B,14,,endothelin receptor activity,happens in renal proximal convoluted tubule,,IMP,MGI:1857161 ,J:70015 
+MGI:102720,Ednrb,endothelin receptor type B,14,,endothelin receptor activity,,,ISO,P24530 ,J:164563 
+MGI:102720,Ednrb,endothelin receptor type B,14,,endothelin receptor activity,,,ISO,RGD:2536 ,J:155856 
+MGI:102720,Ednrb,endothelin receptor type B,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:102720,Ednrb,endothelin receptor type B,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:101802,F2r,coagulation factor II (thrombin) receptor,13,,G-protein coupled receptor activity,,,IMP,,J:175344 
+MGI:101802,F2r,coagulation factor II (thrombin) receptor,13,,thrombin-activated receptor activity,,,IBA,PTN000661113 ,J:161428 
+MGI:101802,F2r,coagulation factor II (thrombin) receptor,13,,thrombin-activated receptor activity,,,ISO,P25116 ,J:164563 
+MGI:101910,F2rl1,coagulation factor II (thrombin) receptor-like 1,13,,G-protein coupled receptor activity,,,IMP,,J:175344 
+MGI:101910,F2rl1,coagulation factor II (thrombin) receptor-like 1,13,,G-protein coupled receptor activity,,,ISO,P55085 ,J:164563 
+MGI:101910,F2rl1,coagulation factor II (thrombin) receptor-like 1,13,,thrombin-activated receptor activity,,,IEA,IPR002281 IPR003912 ,J:72247 
+MGI:1298208,F2rl2,coagulation factor II (thrombin) receptor-like 2,13,,G-protein coupled receptor activity,,,IBA,PTN000660850 ,J:161428 
+MGI:1298208,F2rl2,coagulation factor II (thrombin) receptor-like 2,13,,thrombin-activated receptor activity,,,IEA,IPR003912 IPR003943 ,J:72247 
+MGI:1298207,F2rl3,coagulation factor II (thrombin) receptor-like 3,8,,G-protein coupled receptor activity,,,IBA,PTN000660850 ,J:161428 
+MGI:1298207,F2rl3,coagulation factor II (thrombin) receptor-like 3,8,,thrombin-activated receptor activity,,,IEA,IPR003912 IPR003944 ,J:72247 
+MGI:3614654,Fbxw7as1,F-box and WD-40 domain protein 7 antisense transcript 1,3,,endothelin receptor activity,,,IDA,,J:103174 
+MGI:2684079,Ffar1,free fatty acid receptor 1,7,,bioactive lipid receptor activity,,,IDA,,J:215962 
+MGI:2684079,Ffar1,free fatty acid receptor 1,7,,bioactive lipid receptor activity,,,ISO,O14842 ,J:164563 
+MGI:2684079,Ffar1,free fatty acid receptor 1,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2684079,Ffar1,free fatty acid receptor 1,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441731,Ffar2,free fatty acid receptor 2,7,,G-protein coupled receptor activity,,,IDA,,J:211230 
+MGI:2441731,Ffar2,free fatty acid receptor 2,7,,G-protein coupled receptor activity,,,IMP,,J:211434 
+MGI:2441731,Ffar2,free fatty acid receptor 2,7,,G-protein coupled receptor activity,,,ISO,RGD:1359614 ,J:155856 
+MGI:2441731,Ffar2,free fatty acid receptor 2,7,,G-protein coupled receptor activity,,,ISO,O15552 ,J:164563 
+MGI:2685324,Ffar3,free fatty acid receptor 3,7,,G-protein coupled receptor activity,"is a part of G-protein coupled receptor signaling pathway,happens in membrane",,IDA,,J:147219 
+MGI:2685324,Ffar3,free fatty acid receptor 3,7,,G-protein coupled receptor activity,,,IMP,,J:211434 
+MGI:2685324,Ffar3,free fatty acid receptor 3,7,,G-protein coupled receptor activity,,,ISO,RGD:1311035 ,J:155856 
+MGI:2685324,Ffar3,free fatty acid receptor 3,7,,G-protein coupled receptor activity,,,ISO,O14843 ,J:164563 
+MGI:2147577,Ffar4,free fatty acid receptor 4,19,,G-protein coupled receptor activity,,,IDA,,J:95456 
+MGI:107443,Fpr1,formyl peptide receptor 1,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:107443,Fpr1,formyl peptide receptor 1,17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:107443,Fpr1,formyl peptide receptor 1,17,,N-formyl peptide receptor activity,,,IDA,,J:192967 
+MGI:107443,Fpr1,formyl peptide receptor 1,17,,N-formyl peptide receptor activity,,,ISO,P21462 ,J:73065 J:78957 
+MGI:1278319,Fpr2,formyl peptide receptor 2,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1278319,Fpr2,formyl peptide receptor 2,17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1278319,Fpr2,formyl peptide receptor 2,17,,N-formyl peptide receptor activity,,,IDA,,J:192967 
+MGI:1194495,Fpr3,formyl peptide receptor 3,17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1194495,Fpr3,formyl peptide receptor 3,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1194495,Fpr3,formyl peptide receptor 3,17,,N-formyl peptide receptor activity,,,IBA,PTN000658826 ,J:161428 
+MGI:1278318,Fpr-rs3,"formyl peptide receptor, related sequence 3",17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1278318,Fpr-rs3,"formyl peptide receptor, related sequence 3",17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1278318,Fpr-rs3,"formyl peptide receptor, related sequence 3",17,,N-formyl peptide receptor activity,,,IDA,,J:192967 
+MGI:1278317,Fpr-rs4,"formyl peptide receptor, related sequence 4",17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1278317,Fpr-rs4,"formyl peptide receptor, related sequence 4",17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1278317,Fpr-rs4,"formyl peptide receptor, related sequence 4",17,,N-formyl peptide receptor activity,,,IDA,,J:192967 
+MGI:2448176,Fpr-rs6,"formyl peptide receptor, related sequence 6",17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2448176,Fpr-rs6,"formyl peptide receptor, related sequence 6",17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2448176,Fpr-rs6,"formyl peptide receptor, related sequence 6",17,,N-formyl peptide receptor activity,,,IDA,,J:192967 
+MGI:2448177,Fpr-rs7,"formyl peptide receptor, related sequence 7",17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2448177,Fpr-rs7,"formyl peptide receptor, related sequence 7",17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2448177,Fpr-rs7,"formyl peptide receptor, related sequence 7",17,,N-formyl peptide receptor activity,,,IDA,,J:192967 
+MGI:892032,Frzb,frizzled-related protein,2,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:95583,Fshr,follicle stimulating hormone receptor,17,,G-protein coupled peptide receptor activity,,,IBA,PTN001224574 ,J:161428 
+MGI:95583,Fshr,follicle stimulating hormone receptor,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:95583,Fshr,follicle stimulating hormone receptor,17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1196625,Fzd1,frizzled class receptor 1,5,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:1888513,Fzd2,frizzled class receptor 2,11,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:108476,Fzd3,frizzled class receptor 3,14,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:108520,Fzd4,frizzled class receptor 4,7,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:108571,Fzd5,frizzled class receptor 5,1,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:108474,Fzd6,frizzled class receptor 6,15,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:108570,Fzd7,frizzled class receptor 7,1,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:108460,Fzd8,frizzled class receptor 8,18,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:1313278,Fzd9,frizzled class receptor 9,5,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:2136761,Fzd10,frizzled class receptor 10,5,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:1860139,Gabbr1,"gamma-aminobutyric acid (GABA) B receptor, 1",17,contributes_to,G-protein coupled GABA receptor activity,,,ISO,Q9UBS5 ,J:164563 
+MGI:1860139,Gabbr1,"gamma-aminobutyric acid (GABA) B receptor, 1",17,,G-protein coupled GABA receptor activity,,,ISO,RGD:621537 ,J:155856 
+MGI:1860139,Gabbr1,"gamma-aminobutyric acid (GABA) B receptor, 1",17,,G-protein coupled GABA receptor activity,,,ISO,Q9UBS5 ,J:164563 
+MGI:1860139,Gabbr1,"gamma-aminobutyric acid (GABA) B receptor, 1",17,,G-protein coupled receptor activity,,,IEA,IPR017978 ,J:72247 
+MGI:1860139,Gabbr1,"gamma-aminobutyric acid (GABA) B receptor, 1",17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2386030,Gabbr2,"gamma-aminobutyric acid (GABA) B receptor, 2",4,contributes_to,G-protein coupled GABA receptor activity,,,ISO,O75899 ,J:164563 
+MGI:2386030,Gabbr2,"gamma-aminobutyric acid (GABA) B receptor, 2",4,,G-protein coupled GABA receptor activity,,,ISO,RGD:619864 ,J:155856 
+MGI:2386030,Gabbr2,"gamma-aminobutyric acid (GABA) B receptor, 2",4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2386030,Gabbr2,"gamma-aminobutyric acid (GABA) B receptor, 2",4,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR017978 IPR017979 ,J:72247 
+MGI:95637,Gal,galanin,19,,galanin receptor activity,,,ISO,P22466 ,J:164563 
+MGI:1096364,Galr1,galanin receptor 1,18,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1096364,Galr1,galanin receptor 1,18,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1096364,Galr1,galanin receptor 1,18,,galanin receptor activity,,,ISO,P47211 ,J:164563 
+MGI:1096364,Galr1,galanin receptor 1,18,,galanin receptor activity,,,ISO,RGD:2656 ,J:155856 
+MGI:1096364,Galr1,galanin receptor 1,18,,galanin receptor activity,,,TAS,,J:81743 
+MGI:1337018,Galr2,galanin receptor 2,11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1337018,Galr2,galanin receptor 2,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1337018,Galr2,galanin receptor 2,11,,galanin receptor activity,,,IBA,PTN001954983 ,J:161428 
+MGI:1337018,Galr2,galanin receptor 2,11,,galanin receptor activity,,,ISO,O43603 ,J:164563 
+MGI:1337018,Galr2,galanin receptor 2,11,,galanin receptor activity,,,ISO,RGD:2657 ,J:155856 
+MGI:1329003,Galr3,galanin receptor 3,15,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1329003,Galr3,galanin receptor 3,15,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1329003,Galr3,galanin receptor 3,15,,galanin receptor activity,,,IBA,PTN001954983 ,J:161428 
+MGI:1329003,Galr3,galanin receptor 3,15,,galanin receptor activity,,,ISO,O88626 ,J:73065 
+MGI:1329003,Galr3,galanin receptor 3,15,,galanin receptor activity,,,ISO,RGD:2658 ,J:155856 
+MGI:1329003,Galr3,galanin receptor 3,15,,galanin receptor activity,,,ISO,O60755 ,J:164563 
+MGI:99572,Gcgr,glucagon receptor,11,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:99572,Gcgr,glucagon receptor,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99572,Gcgr,glucagon receptor,11,,glucagon receptor activity,,,IDA,,J:81772 
+MGI:99572,Gcgr,glucagon receptor,11,,glucagon receptor activity,,,ISO,RGD:2669 ,J:155856 
+MGI:99572,Gcgr,glucagon receptor,11,,glucagon receptor activity,,,ISO,P47871 ,J:164563 
+MGI:95710,Ghrhr,growth hormone releasing hormone receptor,6,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR003288 IPR017983 IPR036445 ,J:72247 
+MGI:95710,Ghrhr,growth hormone releasing hormone receptor,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:95710,Ghrhr,growth hormone releasing hormone receptor,6,,growth hormone-releasing hormone receptor activity,,,IGI,MGI:95709 ,J:13404 
+MGI:95710,Ghrhr,growth hormone releasing hormone receptor,6,,growth hormone-releasing hormone receptor activity,,,IMP,MGI:1856425 ,J:58346 
+MGI:95710,Ghrhr,growth hormone releasing hormone receptor,6,,growth hormone-releasing hormone receptor activity,,,ISO,Q02643 ,J:164563 
+MGI:95710,Ghrhr,growth hormone releasing hormone receptor,6,,growth hormone-releasing hormone receptor activity,,,ISO,RGD:2688 ,J:155856 
+MGI:2441906,Ghsr,growth hormone secretagogue receptor,3,,G-protein coupled receptor activity,,,ISO,Q92847 ,J:164563 
+MGI:2441906,Ghsr,growth hormone secretagogue receptor,3,,growth hormone secretagogue receptor activity,,,ISO,RGD:621397 ,J:155856 
+MGI:2441906,Ghsr,growth hormone secretagogue receptor,3,,growth hormone secretagogue receptor activity,,,ISO,Q92847 ,J:164563 
+MGI:2441906,Ghsr,growth hormone secretagogue receptor,3,,growth hormone-releasing hormone receptor activity,,,ISO,Q92847 ,J:164563 
+MGI:1352753,Gipr,gastric inhibitory polypeptide receptor,7,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:1352753,Gipr,gastric inhibitory polypeptide receptor,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1352753,Gipr,gastric inhibitory polypeptide receptor,7,,gastric inhibitory peptide receptor activity,,,ISO,RGD:2689 ,J:155856 
+MGI:99571,Glp1r,glucagon-like peptide 1 receptor,17,,G-protein coupled peptide receptor activity,,,ISO,RGD:2703 ,J:155856 
+MGI:99571,Glp1r,glucagon-like peptide 1 receptor,17,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:99571,Glp1r,glucagon-like peptide 1 receptor,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99571,Glp1r,glucagon-like peptide 1 receptor,17,,glucagon receptor activity,,,IEA,IPR003290 ,J:72247 
+MGI:99571,Glp1r,glucagon-like peptide 1 receptor,17,,glucagon-like peptide 1 receptor activity,,,ISO,P43220 ,J:164563 
+MGI:2136733,Glp2r,glucagon-like peptide 2 receptor,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2136733,Glp2r,glucagon-like peptide 2 receptor,11,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:2136733,Glp2r,glucagon-like peptide 2 receptor,11,,glucagon receptor activity,,,ISO,RGD:620270 ,J:155856 
+MGI:95790,Gnrhr,gonadotropin releasing hormone receptor,5,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:95790,Gnrhr,gonadotropin releasing hormone receptor,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:95790,Gnrhr,gonadotropin releasing hormone receptor,5,,gonadotropin-releasing hormone receptor activity,,,IBA,PTN001202351 ,J:161428 
+MGI:95790,Gnrhr,gonadotropin releasing hormone receptor,5,,growth hormone-releasing hormone receptor activity,,,ISO,RGD:70513 ,J:155856 
+MGI:2653863,Gpbar1,G protein-coupled bile acid receptor 1,1,,G-protein coupled receptor activity,,,ISO,RGD:631400 ,J:155856 
+MGI:2653863,Gpbar1,G protein-coupled bile acid receptor 1,1,,G-protein coupled receptor activity,,,ISO,AB086170 ,J:82364 
+MGI:1924104,Gper1,G protein-coupled estrogen receptor 1,5,,G-protein coupled receptor activity,,,IBA,PTN000658952 ,J:161428 
+MGI:2385324,Gpr1,G protein-coupled receptor 1,1,,G-protein coupled receptor activity,,,IBA,PTN001200938 ,J:161428 
+MGI:101908,Gpr3,G-protein coupled receptor 3,4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:101908,Gpr3,G-protein coupled receptor 3,4,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441992,Gpr4,G protein-coupled receptor 4,7,,G-protein coupled receptor activity,,,IDA,,J:118276 
+MGI:2441992,Gpr4,G protein-coupled receptor 4,7,,G-protein coupled receptor activity,,,IMP,MGI:3700206 ,J:118276 
+MGI:2155249,Gpr6,G protein-coupled receptor 6,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2155249,Gpr6,G protein-coupled receptor 6,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2155249,Gpr6,G protein-coupled receptor 6,10,,sphingosine-1-phosphate receptor activity,,,IDA,,J:86574 
+MGI:101909,Gpr12,G-protein coupled receptor 12,5,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:101909,Gpr12,G-protein coupled receptor 12,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1918473,Gpr15,G protein-coupled receptor 15,16,,G-protein coupled receptor activity,,,IMP,,J:199126 
+MGI:1918473,Gpr15,G protein-coupled receptor 15,16,,G-protein coupled receptor activity,,,ISO,P49685 ,J:164563 
+MGI:3584514,Gpr17,G protein-coupled receptor 17,18,,G-protein coupled receptor activity,,,IBA,PTN000660850 ,J:161428 
+MGI:107859,Gpr18,G protein-coupled receptor 18,14,,G-protein coupled receptor activity,,,IBA,PTN000660850 ,J:161428 
+MGI:892973,Gpr19,G protein-coupled receptor 19,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:892973,Gpr19,G protein-coupled receptor 19,6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441803,Gpr20,G protein-coupled receptor 20,15,,G-protein coupled receptor activity,,,IBA,PTN000660850 ,J:161428 
+MGI:2441803,Gpr20,G protein-coupled receptor 20,15,,G-protein coupled receptor activity,,,ISO,Q99678 ,J:164563 
+MGI:2441890,Gpr21,G protein-coupled receptor 21,2,,"dopamine neurotransmitter receptor activity, coupled via Gs",,,IBA,PTN001205456 ,J:161428 
+MGI:2441890,Gpr21,G protein-coupled receptor 21,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441890,Gpr21,G protein-coupled receptor 21,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1920260,Gpr22,G protein-coupled receptor 22,12,,G-protein coupled receptor activity,,,IBA,PTN001202348 ,J:161428 
+MGI:2686146,Gpr25,G protein-coupled receptor 25,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2686146,Gpr25,G protein-coupled receptor 25,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441758,Gpr26,G protein-coupled receptor 26,7,,G-protein coupled receptor activity,,,IBA,PTN000663901 ,J:161428 
+MGI:2441758,Gpr26,G protein-coupled receptor 26,7,,G-protein coupled receptor activity,,,ISO,Q8NDV2 ,J:164563 
+MGI:1202299,Gpr27,G protein-coupled receptor 27,6,,G-protein coupled receptor activity,,,IBA,PTN000443909 ,J:161428 
+MGI:1354372,Gpr31b,"G protein-coupled receptor 31, D17Leh66b region",17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1354372,Gpr31b,"G protein-coupled receptor 31, D17Leh66b region",17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1277106,Gpr33,G protein-coupled receptor 33,12,,G-protein coupled receptor activity,,,IBA,PTN001200752 ,J:161428 
+MGI:1346334,Gpr34,G protein-coupled receptor 34,X,,G-protein coupled purinergic nucleotide receptor activity,,,IBA,PTN000661229 ,J:161428 
+MGI:1346334,Gpr34,G protein-coupled receptor 34,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1346334,Gpr34,G protein-coupled receptor 34,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1929509,Gpr35,G protein-coupled receptor 35,1,,C-X-C chemokine receptor activity,,,ISO,Q9HC97 ,J:164563 
+MGI:1929509,Gpr35,G protein-coupled receptor 35,1,,chemokine receptor activity,,,ISO,Q9HC97 ,J:73065 
+MGI:1929509,Gpr35,G protein-coupled receptor 35,1,,G-protein coupled receptor activity,,,IBA,PTN000660850 ,J:161428 
+MGI:1929509,Gpr35,G protein-coupled receptor 35,1,,G-protein coupled receptor activity,,,ISO,Q9HC97 ,J:164563 
+MGI:1313297,Gpr37,G protein-coupled receptor 37,6,,G-protein coupled peptide receptor activity,,,ISO,O15354 ,J:164563 
+MGI:1313297,Gpr37,G protein-coupled receptor 37,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1313297,Gpr37,G protein-coupled receptor 37,6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1313297,Gpr37,G protein-coupled receptor 37,6,,prosaposin receptor activity,,,ISO,O15354 ,J:164563 
+MGI:1928503,Gpr37l1,G protein-coupled receptor 37-like 1,1,,G-protein coupled peptide receptor activity,,,ISO,O60883 ,J:164563 
+MGI:1928503,Gpr37l1,G protein-coupled receptor 37-like 1,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1928503,Gpr37l1,G protein-coupled receptor 37-like 1,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1928503,Gpr37l1,G protein-coupled receptor 37-like 1,1,,prosaposin receptor activity,,,ISO,O60883 ,J:164563 
+MGI:1918361,Gpr39,G protein-coupled receptor 39,1,,G-protein coupled receptor activity,,,IMP,,J:228528 
+MGI:2135882,Gpr45,G protein-coupled receptor 45,1,,G-protein coupled receptor activity,,,IBA,PTN000663901 ,J:161428 
+MGI:2135882,Gpr45,G protein-coupled receptor 45,1,,G-protein coupled receptor activity,,,ISS,,J:68328 
+MGI:1333877,Gpr50,G-protein-coupled receptor 50,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1333877,Gpr50,G-protein-coupled receptor 50,X,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR002280 ,J:72247 
+MGI:1333877,Gpr50,G-protein-coupled receptor 50,X,,melatonin receptor activity,,,IEA,IPR000025 ,J:72247 
+MGI:3643278,Gpr52,G protein-coupled receptor 52,1,,"dopamine neurotransmitter receptor activity, coupled via Gs",,,IBA,PTN001205456 ,J:161428 
+MGI:3643278,Gpr52,G protein-coupled receptor 52,1,,G-protein coupled receptor activity,,,ISO,Q9Y2T5 ,J:164563 
+MGI:2685064,Gpr55,G protein-coupled receptor 55,1,,cannabinoid receptor activity,,,IBA,PTN000661089 ,J:161428 
+MGI:2685064,Gpr55,G protein-coupled receptor 55,1,,cannabinoid receptor activity,,,ISO,Q9Y2T6 ,J:164563 
+MGI:2685064,Gpr55,G protein-coupled receptor 55,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685064,Gpr55,G protein-coupled receptor 55,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441719,Gpr61,G protein-coupled receptor 61,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441719,Gpr61,G protein-coupled receptor 61,3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3525078,Gpr62,G protein-coupled receptor 62,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3525078,Gpr62,G protein-coupled receptor 62,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2135884,Gpr63,G protein-coupled receptor 63,4,,G-protein coupled receptor activity,,,IBA,PTN000663901 ,J:161428 
+MGI:2135884,Gpr63,G protein-coupled receptor 63,4,,G-protein coupled receptor activity,,,ISS,,J:68328 
+MGI:108031,Gpr65,G-protein coupled receptor 65,12,,G-protein coupled receptor activity,,,IBA,PTN000660850 ,J:161428 
+MGI:108031,Gpr65,G-protein coupled receptor 65,12,,G-protein coupled receptor activity,,,ISO,Q8IYL9 ,J:164563 
+MGI:2441763,Gpr68,G protein-coupled receptor 68,12,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441763,Gpr68,G protein-coupled receptor 68,12,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441843,Gpr75,G protein-coupled receptor 75,11,,C-C chemokine receptor activity,,,IDA,,J:212807 
+MGI:2441843,Gpr75,G protein-coupled receptor 75,11,,G-protein coupled receptor activity,,,IDA,,J:212807 
+MGI:2441734,Gpr82,G protein-coupled receptor 82,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441734,Gpr82,G protein-coupled receptor 82,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:95712,Gpr83,G protein-coupled receptor 83,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:95712,Gpr83,G protein-coupled receptor 83,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:95712,Gpr83,G protein-coupled receptor 83,9,,neuropeptide Y receptor activity,,,IEA,IPR000611 ,J:72247 
+MGI:1934129,Gpr84,G protein-coupled receptor 84,15,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1934129,Gpr84,G protein-coupled receptor 84,15,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1934129,Gpr84,G protein-coupled receptor 84,15,,galanin receptor activity,,,IBA,PTN001954983 ,J:161428 
+MGI:1927851,Gpr85,G protein-coupled receptor 85,6,,G-protein coupled receptor activity,,,IBA,PTN000443909 ,J:161428 
+MGI:1934133,Gpr87,G protein-coupled receptor 87,3,,G-protein coupled purinergic nucleotide receptor activity,,,IBA,PTN000661229 ,J:161428 
+MGI:1934133,Gpr87,G protein-coupled receptor 87,3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1934133,Gpr87,G protein-coupled receptor 87,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1927653,Gpr88,G-protein coupled receptor 88,3,,G-protein coupled receptor activity,,,ISS,,J:65631 
+MGI:2685211,Gpr101,G protein-coupled receptor 101,X,,adrenergic receptor activity,,,IBA,PTN000664502 ,J:161428 
+MGI:2685211,Gpr101,G protein-coupled receptor 101,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685211,Gpr101,G protein-coupled receptor 101,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2668412,Gpr119,G-protein coupled receptor 119,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2668412,Gpr119,G-protein coupled receptor 119,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1890220,Gpr132,G protein-coupled receptor 132,12,,G-protein coupled receptor activity,,,ISS,,J:64928 
+MGI:2676315,Gpr135,G protein-coupled receptor 135,12,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2676315,Gpr135,G protein-coupled receptor 135,12,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685341,Gpr139,G protein-coupled receptor 139,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685341,Gpr139,G protein-coupled receptor 139,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685341,Gpr139,G protein-coupled receptor 139,7,,neuropeptide receptor activity,,,IDA,,J:106981 
+MGI:2672983,Gpr141,G protein-coupled receptor 141,13,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2672983,Gpr141,G protein-coupled receptor 141,13,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2668437,Gpr142,G protein-coupled receptor 142,11,,G-protein coupled receptor activity,,,ISA,Q80UC8 ,J:106981 
+MGI:107193,Gpr143,G protein-coupled receptor 143,X,,G-protein coupled receptor activity,,,ISO,P51810 ,J:164563 
+MGI:107193,Gpr143,G protein-coupled receptor 143,X,,L-DOPA receptor activity,,,ISO,P51810 ,J:164563 
+MGI:2443628,Gpr149,G protein-coupled receptor 149,3,,G-protein coupled receptor activity,,,IBA,PTN001200938 ,J:161428 
+MGI:2441872,Gpr150,G protein-coupled receptor 150,13,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441872,Gpr150,G protein-coupled receptor 150,13,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441887,Gpr151,G protein-coupled receptor 151,18,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441887,Gpr151,G protein-coupled receptor 151,18,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685519,Gpr152,G protein-coupled receptor 152,19,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:1916157,Gpr153,G protein-coupled receptor 153,4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1916157,Gpr153,G protein-coupled receptor 153,4,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR022335 IPR022347 ,J:72247 
+MGI:2653880,Gpr156,G protein-coupled receptor 156,16,,G-protein coupled GABA receptor activity,,,IEA,IPR002455 ,J:72247 
+MGI:2653880,Gpr156,G protein-coupled receptor 156,16,,G-protein coupled receptor activity,,,IEA,IPR017978 ,J:72247 
+MGI:2653880,Gpr156,G protein-coupled receptor 156,16,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2442046,Gpr157,G protein-coupled receptor 157,4,,G-protein coupled receptor activity,,,IMP,,J:239188 
+MGI:2441697,Gpr158,G protein-coupled receptor 158,2,,G-protein coupled receptor activity,,,IEA,IPR017978 ,J:72247 
+MGI:2441697,Gpr158,G protein-coupled receptor 158,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1919112,Gpr160,G protein-coupled receptor 160,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685054,Gpr161,G protein-coupled receptor 161,1,,G-protein coupled receptor activity,,,IDA,,J:193395 
+MGI:1315214,Gpr162,G protein-coupled receptor 162,6,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR022347 IPR022348 ,J:72247 
+MGI:1315214,Gpr162,G protein-coupled receptor 162,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2442043,Gpr171,G protein-coupled receptor 171,3,,G-protein coupled purinergic nucleotide receptor activity,,,IBA,PTN000661229 ,J:161428 
+MGI:2442043,Gpr171,G protein-coupled receptor 171,3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2442043,Gpr171,G protein-coupled receptor 171,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1918021,Gpr173,G-protein coupled receptor 173,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1918021,Gpr173,G-protein coupled receptor 173,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1918021,Gpr173,G-protein coupled receptor 173,X,,gonadotropin-releasing hormone receptor activity,,,IMP,,J:195887 
+MGI:2685222,Gpr174,G protein-coupled receptor 174,X,,bioactive lipid receptor activity,"uses CHEBI:68497,happens in regulatory T cell",,IMP,,J:222307 
+MGI:2685222,Gpr174,G protein-coupled receptor 174,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685222,Gpr174,G protein-coupled receptor 174,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685858,Gpr176,G protein-coupled receptor 176,2,,G-protein coupled receptor activity,,,IDA,,J:234743 
+MGI:109545,Gpr182,G protein-coupled receptor 182,10,,adrenomedullin receptor activity,,,ISO,RGD:61903 ,J:155856 
+MGI:109545,Gpr182,G protein-coupled receptor 182,10,,G-protein coupled receptor activity,,,IBA,PTN000658952 ,J:161428 
+MGI:2442034,Gpr183,G protein-coupled receptor 183,14,,G-protein coupled receptor activity,,,ISO,P32249 ,J:164563 
+MGI:1891250,Gprc5a,"G protein-coupled receptor, family C, group 5, member A",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1891250,Gprc5a,"G protein-coupled receptor, family C, group 5, member A",6,,G-protein coupled receptor activity,,,IEA,IPR017978 ,J:72247 
+MGI:1927596,Gprc5b,"G protein-coupled receptor, family C, group 5, member B",7,,G-protein coupled receptor activity,,,IEA,IPR017978 ,J:72247 
+MGI:1927596,Gprc5b,"G protein-coupled receptor, family C, group 5, member B",7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1917605,Gprc5c,"G protein-coupled receptor, family C, group 5, member C",11,,G-protein coupled receptor activity,,,IEA,IPR017978 ,J:72247 
+MGI:1917605,Gprc5c,"G protein-coupled receptor, family C, group 5, member C",11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1935037,Gprc5d,"G protein-coupled receptor, family C, group 5, member D",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1935037,Gprc5d,"G protein-coupled receptor, family C, group 5, member D",6,,G-protein coupled receptor activity,,,IEA,IPR017978 ,J:72247 
+MGI:2429498,Gprc6a,"G protein-coupled receptor, family C, group 6, member A",10,,G-protein coupled receptor activity,,PR:Q8K4Z6,IDA,,J:104103 
+MGI:95816,Grik3,"glutamate receptor, ionotropic, kainate 3",4,,adenylate cyclase inhibiting G-protein coupled glutamate receptor activity,,,ISO,Q13003 ,J:164563 
+MGI:1351338,Grm1,"glutamate receptor, metabotropic 1",10,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR011500 IPR017978 IPR017979 ,J:72247 
+MGI:1351338,Grm1,"glutamate receptor, metabotropic 1",10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1351338,Grm1,"glutamate receptor, metabotropic 1",10,,G-protein coupled receptor activity involved in regulation of postsynaptic membrane potential,,,ISO,RGD:2742 ,J:155856 
+MGI:1351338,Grm1,"glutamate receptor, metabotropic 1",10,,PLC activating G-protein coupled glutamate receptor activity,,,TAS,,J:41096 
+MGI:1351339,Grm2,"glutamate receptor, metabotropic 2",9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1351339,Grm2,"glutamate receptor, metabotropic 2",9,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR011500 IPR017978 IPR017979 ,J:72247 
+MGI:1351339,Grm2,"glutamate receptor, metabotropic 2",9,,group II metabotropic glutamate receptor activity,,,IDA,,J:21416 
+MGI:1351339,Grm2,"glutamate receptor, metabotropic 2",9,,group II metabotropic glutamate receptor activity,,,ISO,RGD:2743 ,J:155856 
+MGI:1351340,Grm3,"glutamate receptor, metabotropic 3",5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1351340,Grm3,"glutamate receptor, metabotropic 3",5,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR011500 IPR017978 IPR017979 ,J:72247 
+MGI:1351340,Grm3,"glutamate receptor, metabotropic 3",5,,group II metabotropic glutamate receptor activity,,,IDA,,J:21416 
+MGI:1351340,Grm3,"glutamate receptor, metabotropic 3",5,,group II metabotropic glutamate receptor activity,,,ISO,RGD:2744 ,J:155856 
+MGI:1351341,Grm4,"glutamate receptor, metabotropic 4",17,,G-protein coupled receptor activity,,,ISO,Q14833 ,J:164563 
+MGI:1351341,Grm4,"glutamate receptor, metabotropic 4",17,,group III metabotropic glutamate receptor activity,,,TAS,,J:35793 
+MGI:1351342,Grm5,"glutamate receptor, metabotropic 5",7,,G-protein coupled receptor activity,,,ISO,P41594 ,J:164563 
+MGI:1351342,Grm5,"glutamate receptor, metabotropic 5",7,,G-protein coupled receptor activity involved in regulation of postsynaptic membrane potential,"happens in excitatory synapse,happens in pyramidal neuron,happens in frontal association cortex",,IMP,,J:146136 
+MGI:1351342,Grm5,"glutamate receptor, metabotropic 5",7,,PLC activating G-protein coupled glutamate receptor activity,,,TAS,,J:41096 
+MGI:1351343,Grm6,"glutamate receptor, metabotropic 6",11,,adenylate cyclase inhibiting G-protein coupled glutamate receptor activity,,,ISO,RGD:2747 ,J:155856 
+MGI:1351343,Grm6,"glutamate receptor, metabotropic 6",11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1351343,Grm6,"glutamate receptor, metabotropic 6",11,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR011500 IPR017978 IPR017979 ,J:72247 
+MGI:1351343,Grm6,"glutamate receptor, metabotropic 6",11,,group III metabotropic glutamate receptor activity,,,TAS,,J:48639 
+MGI:1351344,Grm7,"glutamate receptor, metabotropic 7",6,,adenylate cyclase inhibiting G-protein coupled glutamate receptor activity,,,ISO,RGD:619857 ,J:155856 
+MGI:1351344,Grm7,"glutamate receptor, metabotropic 7",6,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR011500 IPR017978 IPR017979 ,J:72247 
+MGI:1351344,Grm7,"glutamate receptor, metabotropic 7",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1351344,Grm7,"glutamate receptor, metabotropic 7",6,,group III metabotropic glutamate receptor activity,,,ISO,RGD:619857 ,J:155856 
+MGI:1351344,Grm7,"glutamate receptor, metabotropic 7",6,,group III metabotropic glutamate receptor activity,,,ISO,Q14831 ,J:164563 
+MGI:1351344,Grm7,"glutamate receptor, metabotropic 7",6,,group III metabotropic glutamate receptor activity,,,TAS,,J:52411 
+MGI:1351345,Grm8,"glutamate receptor, metabotropic 8",6,,G-protein coupled receptor activity,,,ISO,O00222 ,J:164563 
+MGI:1351345,Grm8,"glutamate receptor, metabotropic 8",6,,group III metabotropic glutamate receptor activity,,,IDA,,J:24532 
+MGI:1351345,Grm8,"glutamate receptor, metabotropic 8",6,,group III metabotropic glutamate receptor activity,,,ISO,RGD:619858 ,J:155856 
+MGI:95836,Grpr,gastrin releasing peptide receptor,X,,bombesin receptor activity,,,TAS,,J:76548 
+MGI:95836,Grpr,gastrin releasing peptide receptor,X,,G-protein coupled peptide receptor activity,,,IDA,,J:28606 
+MGI:95836,Grpr,gastrin releasing peptide receptor,X,,G-protein coupled peptide receptor activity,,,ISO,P30550 ,J:164563 
+MGI:95836,Grpr,gastrin releasing peptide receptor,X,,G-protein coupled receptor activity,,,ISO,RGD:2750 ,J:155856 
+MGI:95836,Grpr,gastrin releasing peptide receptor,X,,neuropeptide receptor activity,,,IMP,,J:227985 
+MGI:2441671,Hcar1,hydrocarboxylic acid receptor 1,5,,G-protein coupled receptor activity,"is a part of G-protein coupled receptor signaling pathway,is a part of negative regulation of lipid catabolic process,happens in membrane,uses CHEBI:24996",,IDA,,J:147219 
+MGI:1933383,Hcar2,hydroxycarboxylic acid receptor 2,5,,G-protein coupled receptor activity,"is a part of G-protein coupled receptor signaling pathway,happens in membrane",,IDA,,J:147219 
+MGI:1933383,Hcar2,hydroxycarboxylic acid receptor 2,5,,nicotinic acid receptor activity,,,ISO,RGD:727952 ,J:155856 
+MGI:2385650,Hcrtr1,hypocretin (orexin) receptor 1,4,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2385650,Hcrtr1,hypocretin (orexin) receptor 1,4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2385650,Hcrtr1,hypocretin (orexin) receptor 1,4,,orexin receptor activity,,,IBA,PTN000662461 ,J:161428 
+MGI:2385650,Hcrtr1,hypocretin (orexin) receptor 1,4,,orexin receptor activity,,,ISO,RGD:2787 ,J:155856 
+MGI:2385650,Hcrtr1,hypocretin (orexin) receptor 1,4,,orexin receptor activity,,,ISO,O43613 ,J:164563 
+MGI:2680765,Hcrtr2,hypocretin (orexin) receptor 2,9,,G-protein coupled receptor activity,,,ISO,RGD:2788 ,J:155856 
+MGI:2680765,Hcrtr2,hypocretin (orexin) receptor 2,9,,orexin receptor activity,,,IDA,,J:93583 
+MGI:2680765,Hcrtr2,hypocretin (orexin) receptor 2,9,,orexin receptor activity,,,ISO,RGD:2788 ,J:155856 
+MGI:2680765,Hcrtr2,hypocretin (orexin) receptor 2,9,,orexin receptor activity,,,ISO,O43614 ,J:164563 
+MGI:108085,Hpgd,hydroxyprostaglandin dehydrogenase 15 (NAD),8,,prostaglandin E receptor activity,,,ISO,P15428 ,J:164563 
+MGI:107619,Hrh1,histamine receptor H1,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:107619,Hrh1,histamine receptor H1,6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:107619,Hrh1,histamine receptor H1,6,,histamine receptor activity,,,IEA,IPR000921 ,J:72247 
+MGI:108482,Hrh2,histamine receptor H2,13,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:108482,Hrh2,histamine receptor H2,13,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:108482,Hrh2,histamine receptor H2,13,,histamine receptor activity,,,IBA,PTN000664982 ,J:161428 
+MGI:108482,Hrh2,histamine receptor H2,13,,histamine receptor activity,,,ISO,RGD:2831 ,J:155856 
+MGI:2139279,Hrh3,histamine receptor H3,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2139279,Hrh3,histamine receptor H3,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2139279,Hrh3,histamine receptor H3,2,,histamine receptor activity,,,IBA,PTN001206414 ,J:161428 
+MGI:2139279,Hrh3,histamine receptor H3,2,,histamine receptor activity,,,ISO,RGD:620630 ,J:155856 
+MGI:2429635,Hrh4,histamine receptor H4,18,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2429635,Hrh4,histamine receptor H4,18,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2429635,Hrh4,histamine receptor H4,18,,histamine receptor activity,,,IDA,,J:79370 
+MGI:2429635,Hrh4,histamine receptor H4,18,,histamine receptor activity,,,ISO,RGD:620631 ,J:155856 
+MGI:96273,Htr1a,5-hydroxytryptamine (serotonin) receptor 1A,13,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96273,Htr1a,5-hydroxytryptamine (serotonin) receptor 1A,13,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:96273,Htr1a,5-hydroxytryptamine (serotonin) receptor 1A,13,,G-protein coupled serotonin receptor activity,,,IDA,,J:16036 
+MGI:96273,Htr1a,5-hydroxytryptamine (serotonin) receptor 1A,13,,G-protein coupled serotonin receptor activity,,,IMP,,J:51280 
+MGI:96273,Htr1a,5-hydroxytryptamine (serotonin) receptor 1A,13,,G-protein coupled serotonin receptor activity,,,ISO,RGD:2845 ,J:155856 
+MGI:96273,Htr1a,5-hydroxytryptamine (serotonin) receptor 1A,13,,G-protein coupled serotonin receptor activity,,,ISO,P08908 ,J:164563 
+MGI:96274,Htr1b,5-hydroxytryptamine (serotonin) receptor 1B,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:96274,Htr1b,5-hydroxytryptamine (serotonin) receptor 1B,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96274,Htr1b,5-hydroxytryptamine (serotonin) receptor 1B,9,,G-protein coupled serotonin receptor activity,,,IDA,,J:15978 J:163130 
+MGI:96274,Htr1b,5-hydroxytryptamine (serotonin) receptor 1B,9,,G-protein coupled serotonin receptor activity,,,ISO,RGD:2846 ,J:155856 
+MGI:96274,Htr1b,5-hydroxytryptamine (serotonin) receptor 1B,9,,G-protein coupled serotonin receptor activity,,,ISO,P28222 ,J:164563 
+MGI:96276,Htr1d,5-hydroxytryptamine (serotonin) receptor 1D,4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:96276,Htr1d,5-hydroxytryptamine (serotonin) receptor 1D,4,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96276,Htr1d,5-hydroxytryptamine (serotonin) receptor 1D,4,,G-protein coupled serotonin receptor activity,,,IDA,,J:43 
+MGI:96276,Htr1d,5-hydroxytryptamine (serotonin) receptor 1D,4,,G-protein coupled serotonin receptor activity,,,ISO,P28221 ,J:164563 
+MGI:96279,Htr1e,5-hydroxytryptamine (serotonin) receptor 1E,UN,,G-protein coupled receptor activity,,,IDA,,J:88364 
+MGI:96279,Htr1e,5-hydroxytryptamine (serotonin) receptor 1E,UN,,G-protein coupled serotonin receptor activity,,,IDA,,J:2640 
+MGI:96279,Htr1e,5-hydroxytryptamine (serotonin) receptor 1E,UN,,G-protein coupled serotonin receptor activity,,,ISS,P28566 ,J:15473 
+MGI:99842,Htr1f,5-hydroxytryptamine (serotonin) receptor 1F,16,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99842,Htr1f,5-hydroxytryptamine (serotonin) receptor 1F,16,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99842,Htr1f,5-hydroxytryptamine (serotonin) receptor 1F,16,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:99842,Htr1f,5-hydroxytryptamine (serotonin) receptor 1F,16,,G-protein coupled serotonin receptor activity,,,ISO,P30939 ,J:164563 
+MGI:99842,Htr1f,5-hydroxytryptamine (serotonin) receptor 1F,16,,G-protein coupled serotonin receptor activity,,,ISS,P30939 ,J:20578 
+MGI:109521,Htr2a,5-hydroxytryptamine (serotonin) receptor 2A,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109521,Htr2a,5-hydroxytryptamine (serotonin) receptor 2A,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109521,Htr2a,5-hydroxytryptamine (serotonin) receptor 2A,14,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:109521,Htr2a,5-hydroxytryptamine (serotonin) receptor 2A,14,,G-protein coupled serotonin receptor activity,,,ISO,P28223 ,J:31112 J:164563 
+MGI:109521,Htr2a,5-hydroxytryptamine (serotonin) receptor 2A,14,,G-protein coupled serotonin receptor activity,,,ISO,RGD:61800 ,J:155856 
+MGI:109323,Htr2b,5-hydroxytryptamine (serotonin) receptor 2B,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109323,Htr2b,5-hydroxytryptamine (serotonin) receptor 2B,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109323,Htr2b,5-hydroxytryptamine (serotonin) receptor 2B,1,,G-protein coupled serotonin receptor activity,,,IDA,,J:163130 
+MGI:109323,Htr2b,5-hydroxytryptamine (serotonin) receptor 2B,1,,G-protein coupled serotonin receptor activity,,,ISO,P41595 ,J:31112 J:164563 
+MGI:109323,Htr2b,5-hydroxytryptamine (serotonin) receptor 2B,1,,G-protein coupled serotonin receptor activity,,,TAS,,J:64067 
+MGI:96281,Htr2c,5-hydroxytryptamine (serotonin) receptor 2C,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:96281,Htr2c,5-hydroxytryptamine (serotonin) receptor 2C,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96281,Htr2c,5-hydroxytryptamine (serotonin) receptor 2C,X,,G-protein coupled serotonin receptor activity,,,IMP,,J:174678 
+MGI:96281,Htr2c,5-hydroxytryptamine (serotonin) receptor 2C,X,,G-protein coupled serotonin receptor activity,,,ISO,RGD:2848 ,J:155856 
+MGI:96281,Htr2c,5-hydroxytryptamine (serotonin) receptor 2C,X,,G-protein coupled serotonin receptor activity,,,ISO,P08909 ,J:73065 
+MGI:96281,Htr2c,5-hydroxytryptamine (serotonin) receptor 2C,X,,G-protein coupled serotonin receptor activity,,,ISO,P28335 ,J:31112 
+MGI:96281,Htr2c,5-hydroxytryptamine (serotonin) receptor 2C,X,,Gq/11-coupled serotonin receptor activity,,,ISO,P28335 ,J:164563 
+MGI:109246,Htr4,5 hydroxytryptamine (serotonin) receptor 4,18,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109246,Htr4,5 hydroxytryptamine (serotonin) receptor 4,18,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109246,Htr4,5 hydroxytryptamine (serotonin) receptor 4,18,,G-protein coupled serotonin receptor activity,,,IBA,PTN000665293 ,J:161428 
+MGI:109246,Htr4,5 hydroxytryptamine (serotonin) receptor 4,18,,G-protein coupled serotonin receptor activity,,,ISO,RGD:2850 ,J:155856 
+MGI:109246,Htr4,5 hydroxytryptamine (serotonin) receptor 4,18,,G-protein coupled serotonin receptor activity,,,ISO,Q13639 ,J:73065 
+MGI:96283,Htr5a,5-hydroxytryptamine (serotonin) receptor 5A,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:96283,Htr5a,5-hydroxytryptamine (serotonin) receptor 5A,5,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96283,Htr5a,5-hydroxytryptamine (serotonin) receptor 5A,5,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:96283,Htr5a,5-hydroxytryptamine (serotonin) receptor 5A,5,,G-protein coupled serotonin receptor activity,,,ISO,RGD:2851 ,J:155856 
+MGI:96283,Htr5a,5-hydroxytryptamine (serotonin) receptor 5A,5,,G-protein coupled serotonin receptor activity,,,ISO,P47898 ,J:21931 
+MGI:96284,Htr5b,5-hydroxytryptamine (serotonin) receptor 5B,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:96284,Htr5b,5-hydroxytryptamine (serotonin) receptor 5B,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96284,Htr5b,5-hydroxytryptamine (serotonin) receptor 5B,1,,G-protein coupled serotonin receptor activity,,,IDA,,J:15791 
+MGI:96284,Htr5b,5-hydroxytryptamine (serotonin) receptor 5B,1,,G-protein coupled serotonin receptor activity,,,ISO,RGD:62388 ,J:155856 
+MGI:1196627,Htr6,5-hydroxytryptamine (serotonin) receptor 6,4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1196627,Htr6,5-hydroxytryptamine (serotonin) receptor 6,4,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1196627,Htr6,5-hydroxytryptamine (serotonin) receptor 6,4,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:1196627,Htr6,5-hydroxytryptamine (serotonin) receptor 6,4,,G-protein coupled serotonin receptor activity,,,ISO,RGD:62044 ,J:155856 
+MGI:99841,Htr7,5-hydroxytryptamine (serotonin) receptor 7,19,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99841,Htr7,5-hydroxytryptamine (serotonin) receptor 7,19,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99841,Htr7,5-hydroxytryptamine (serotonin) receptor 7,19,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:99841,Htr7,5-hydroxytryptamine (serotonin) receptor 7,19,,G-protein coupled serotonin receptor activity,,,ISO,RGD:71034 ,J:155856 
+MGI:1194899,Inpp5k,inositol polyphosphate 5-phosphatase K,11,,vasopressin receptor activity,,,IDA,,J:178554 
+MGI:2148793,Kiss1r,KISS1 receptor,10,,G-protein coupled peptide receptor activity,,,IDA,,J:70348 
+MGI:2148793,Kiss1r,KISS1 receptor,10,,G-protein coupled peptide receptor activity,,,ISO,RGD:70930 ,J:155856 
+MGI:2148793,Kiss1r,KISS1 receptor,10,,G-protein coupled receptor activity,,,ISO,AF115516 ,J:70348 
+MGI:2148793,Kiss1r,KISS1 receptor,10,,neuropeptide receptor activity,,,ISO,Q969F8 ,J:164563 
+MGI:1891468,Lgr4,leucine-rich repeat-containing G protein-coupled receptor 4,2,NOT,G-protein coupled receptor activity,,,IDA,,J:198905 
+MGI:1341817,Lgr5,leucine rich repeat containing G protein coupled receptor 5,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1341817,Lgr5,leucine rich repeat containing G protein coupled receptor 5,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441805,Lgr6,leucine-rich repeat-containing G protein-coupled receptor 6,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441805,Lgr6,leucine-rich repeat-containing G protein-coupled receptor 6,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96783,Lhcgr,luteinizing hormone/choriogonadotropin receptor,17,,choriogonadotropin hormone receptor activity,,,IDA,,J:183230 
+MGI:96783,Lhcgr,luteinizing hormone/choriogonadotropin receptor,17,,choriogonadotropin hormone receptor activity,,,IMP,MGI:2181999 ,J:66818 
+MGI:96783,Lhcgr,luteinizing hormone/choriogonadotropin receptor,17,,G-protein coupled peptide receptor activity,,,IBA,PTN001224574 ,J:161428 
+MGI:96783,Lhcgr,luteinizing hormone/choriogonadotropin receptor,17,,G-protein coupled peptide receptor activity,,,ISO,RGD:3007 ,J:155856 
+MGI:96783,Lhcgr,luteinizing hormone/choriogonadotropin receptor,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:96783,Lhcgr,luteinizing hormone/choriogonadotropin receptor,17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96783,Lhcgr,luteinizing hormone/choriogonadotropin receptor,17,,luteinizing hormone receptor activity,,,ISO,P22888 ,J:164563 
+MGI:96783,Lhcgr,luteinizing hormone/choriogonadotropin receptor,17,,luteinizing hormone receptor activity,,,TAS,,J:1862 
+MGI:108429,Lpar1,lysophosphatidic acid receptor 1,4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:108429,Lpar1,lysophosphatidic acid receptor 1,4,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:108429,Lpar1,lysophosphatidic acid receptor 1,4,,lysophosphatidic acid receptor activity,,,IDA,,J:36844 J:222685 J:222688 
+MGI:108429,Lpar1,lysophosphatidic acid receptor 1,4,,lysophosphatidic acid receptor activity,,,ISO,Q92633 ,J:164563 
+MGI:1929469,Lpar3,lysophosphatidic acid receptor 3,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1929469,Lpar3,lysophosphatidic acid receptor 3,3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1929469,Lpar3,lysophosphatidic acid receptor 3,3,,lysophosphatidic acid receptor activity,,,IEA,IPR004065 IPR005385 ,J:72247 
+MGI:1925384,Lpar4,lysophosphatidic acid receptor 4,X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1925384,Lpar4,lysophosphatidic acid receptor 4,X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1925384,Lpar4,lysophosphatidic acid receptor 4,X,,lysophosphatidic acid receptor activity,,,IDA,,J:120922 
+MGI:2685918,Lpar5,lysophosphatidic acid receptor 5,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685918,Lpar5,lysophosphatidic acid receptor 5,6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1914418,Lpar6,lysophosphatidic acid receptor 6,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1914418,Lpar6,lysophosphatidic acid receptor 6,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1914418,Lpar6,lysophosphatidic acid receptor 6,14,,lysophosphatidic acid receptor activity,,,IBA,PTN000660929 ,J:161428 
+MGI:1309472,Ltb4r1,leukotriene B4 receptor 1,14,,G-protein coupled peptide receptor activity,,,IBA,PTN000660491 ,J:161428 
+MGI:1309472,Ltb4r1,leukotriene B4 receptor 1,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1309472,Ltb4r1,leukotriene B4 receptor 1,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1309472,Ltb4r1,leukotriene B4 receptor 1,14,,leukotriene B4 receptor activity,,,IDA,,J:100850 
+MGI:1309472,Ltb4r1,leukotriene B4 receptor 1,14,,leukotriene receptor activity,,,ISO,RGD:620410 ,J:155856 
+MGI:1888501,Ltb4r2,leukotriene B4 receptor 2,14,,G-protein coupled peptide receptor activity,,,IBA,PTN000660491 ,J:161428 
+MGI:1888501,Ltb4r2,leukotriene B4 receptor 2,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1888501,Ltb4r2,leukotriene B4 receptor 2,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1888501,Ltb4r2,leukotriene B4 receptor 2,14,,leukotriene B4 receptor activity,,,IDA,,J:100850 
+MGI:1888501,Ltb4r2,leukotriene B4 receptor 2,14,,leukotriene receptor activity,,,IEA,IPR003981 IPR003982 ,J:72247 
+MGI:96918,Mas1,MAS1 oncogene,17,,angiotensin receptor activity,,,IMP,MGI:2158808 ,J:86881 
+MGI:96918,Mas1,MAS1 oncogene,17,,angiotensin receptor activity,,,ISO,RGD:3049 ,J:155856 
+MGI:96918,Mas1,MAS1 oncogene,17,,G-protein coupled receptor activity,,,ISO,P04201 ,J:164563 
+MGI:99456,Mc1r,melanocortin 1 receptor,8,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99456,Mc1r,melanocortin 1 receptor,8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99456,Mc1r,melanocortin 1 receptor,8,,melanocortin receptor activity,,,IDA,,J:155191 
+MGI:99456,Mc1r,melanocortin 1 receptor,8,,melanocortin receptor activity,,,ISO,RGD:1312046 ,J:155856 
+MGI:99456,Mc1r,melanocortin 1 receptor,8,,melanocyte-stimulating hormone receptor activity,,,IDA,,J:45497 
+MGI:99456,Mc1r,melanocortin 1 receptor,8,,melanocyte-stimulating hormone receptor activity,,,ISO,Q01726 ,J:164563 
+MGI:96928,Mc2r,melanocortin 2 receptor,18,,corticotropin receptor activity,,,IEA,IPR001168 ,J:72247 
+MGI:96928,Mc2r,melanocortin 2 receptor,18,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:96928,Mc2r,melanocortin 2 receptor,18,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96928,Mc2r,melanocortin 2 receptor,18,,melanocortin receptor activity,,,IEA,IPR001671 ,J:72247 
+MGI:96929,Mc3r,melanocortin 3 receptor,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:96929,Mc3r,melanocortin 3 receptor,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:96929,Mc3r,melanocortin 3 receptor,2,,melanocortin receptor activity,,,ISO,RGD:3056 ,J:155856 
+MGI:96929,Mc3r,melanocortin 3 receptor,2,,melanocyte-stimulating hormone receptor activity,,,IDA,,J:45497 
+MGI:96929,Mc3r,melanocortin 3 receptor,2,,melanocyte-stimulating hormone receptor activity,,,ISO,P41968 ,J:164563 
+MGI:99457,Mc4r,melanocortin 4 receptor,18,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99457,Mc4r,melanocortin 4 receptor,18,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99457,Mc4r,melanocortin 4 receptor,18,,melanocortin receptor activity,,,IDA,,J:45497 
+MGI:99457,Mc4r,melanocortin 4 receptor,18,,melanocortin receptor activity,,,ISO,RGD:3057 ,J:155856 
+MGI:99457,Mc4r,melanocortin 4 receptor,18,,melanocyte-stimulating hormone receptor activity,,,IDA,,J:45497 
+MGI:99457,Mc4r,melanocortin 4 receptor,18,,melanocyte-stimulating hormone receptor activity,,,ISO,P32245 ,J:164563 
+MGI:99420,Mc5r,melanocortin 5 receptor,18,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99420,Mc5r,melanocortin 5 receptor,18,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99420,Mc5r,melanocortin 5 receptor,18,,melanocortin receptor activity,,,ISO,RGD:3058 ,J:155856 
+MGI:2180756,Mchr1,melanin-concentrating hormone receptor 1,15,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2180756,Mchr1,melanin-concentrating hormone receptor 1,15,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2180756,Mchr1,melanin-concentrating hormone receptor 1,15,,melanin-concentrating hormone receptor activity,,,IBA,PTN000663245 ,J:161428 
+MGI:2180756,Mchr1,melanin-concentrating hormone receptor 1,15,,melanin-concentrating hormone receptor activity,,,ISO,RGD:619841 ,J:155856 
+MGI:2180756,Mchr1,melanin-concentrating hormone receptor 1,15,,neuropeptide receptor activity,,,IBA,PTN000663245 ,J:161428 
+MGI:3033095,Mrgpra1,"MAS-related GPR, member A1",7,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR026233 IPR026234 ,J:72247 
+MGI:3033095,Mrgpra1,"MAS-related GPR, member A1",7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3033095,Mrgpra1,"MAS-related GPR, member A1",7,,neuropeptide receptor activity,,,IDA,,J:71586 
+MGI:3033098,Mrgpra2b,"MAS-related GPR, member A2B",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:2684085,Mrgpra3,"MAS-related GPR, member A3",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033100,Mrgpra4,"MAS-related GPR, member A4",7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3033100,Mrgpra4,"MAS-related GPR, member A4",7,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR026233 IPR026234 ,J:72247 
+MGI:3033100,Mrgpra4,"MAS-related GPR, member A4",7,,neuropeptide receptor activity,,,IDA,,J:71586 
+MGI:3033102,Mrgpra5,"MAS-related GPR, member A5",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033107,Mrgpra6,"MAS-related GPR, member A6",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033109,Mrgpra7,"MAS-related GPR, member A7",UN,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033111,Mrgpra8,"MAS-related GPR, member A8",UN,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033148,Mrgpra9,"MAS-related GPR, member A9",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033115,Mrgprb1,"MAS-related GPR, member B1",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033115,Mrgprb1,"MAS-related GPR, member B1",7,,G-protein coupled receptor activity,,,ISO,Q96LB1 ,J:164563 
+MGI:2441674,Mrgprb2,"MAS-related GPR, member B2",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033117,Mrgprb3,"MAS-related GPR, member B3",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033119,Mrgprb4,"MAS-related GPR, member B4",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033121,Mrgprb5,"MAS-related GPR, member B5",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033134,Mrgprb8,"MAS-related GPR, member B8",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033142,Mrgprd,"MAS-related GPR, member D",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:2441884,Mrgpre,"MAS-related GPR, member E",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:2384823,Mrgprf,"MAS-related GPR, member F",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3033145,Mrgprg,"MAS-related GPR, member G",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:1934134,Mrgprh,"MAS-related GPR, member H",17,,angiotensin receptor activity,,,IBA,PTN000140809 ,J:161428 
+MGI:1934134,Mrgprh,"MAS-related GPR, member H",17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1934134,Mrgprh,"MAS-related GPR, member H",17,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR026221 IPR026234 ,J:72247 
+MGI:3033139,Mrgprx1,"MAS-related GPR, member X1",7,,G-protein coupled receptor activity,,,IBA,PTN000140598 ,J:161428 
+MGI:3588270,Mrgprx2,"MAS-related GPR, member X2",7,,G-protein coupled receptor activity,,,ISO,Q96LB1 ,J:164563 
+MGI:3588270,Mrgprx2,"MAS-related GPR, member X2",7,,mast cell secretagogue receptor activity,,,IDA,,J:219209 
+MGI:102967,Mtnr1a,melatonin receptor 1A,8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:102967,Mtnr1a,melatonin receptor 1A,8,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:102967,Mtnr1a,melatonin receptor 1A,8,,melatonin receptor activity,,,TAS,,J:76848 
+MGI:2181726,Mtnr1b,melatonin receptor 1B,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2181726,Mtnr1b,melatonin receptor 1B,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2181726,Mtnr1b,melatonin receptor 1B,9,,melatonin receptor activity,,,ISA,Q8TEV7 ,J:76848 
+MGI:2141990,Nlrp6,"NLR family, pyrin domain containing 6",7,,vasopressin receptor activity,,,ISO,RGD:708549 ,J:155856 
+MGI:1100525,Nmbr,neuromedin B receptor,10,,bombesin receptor activity,,,IEA,IPR001642 ,J:72247 
+MGI:1100525,Nmbr,neuromedin B receptor,10,,G-protein coupled peptide receptor activity,,,IEA,IPR001556 ,J:72247 
+MGI:1100525,Nmbr,neuromedin B receptor,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1100525,Nmbr,neuromedin B receptor,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1100525,Nmbr,neuromedin B receptor,10,,neuropeptide receptor activity,,,ISO,RGD:3181 ,J:155856 
+MGI:1341898,Nmur1,neuromedin U receptor 1,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1341898,Nmur1,neuromedin U receptor 1,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1341898,Nmur1,neuromedin U receptor 1,1,,neuromedin U receptor activity,,,ISO,Q9HB89 ,J:164563 
+MGI:1341898,Nmur1,neuromedin U receptor 1,1,,neuropeptide receptor activity,,,IPI,P12760 Q5H8A2 ,J:98692 
+MGI:2441765,Nmur2,neuromedin U receptor 2,11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441765,Nmur2,neuromedin U receptor 2,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441765,Nmur2,neuromedin U receptor 2,11,,neuromedin U receptor activity,,,ISO,Q9GZQ4 ,J:164563 
+MGI:2441765,Nmur2,neuromedin U receptor 2,11,,neuropeptide receptor activity,,,IPI,P12760 Q5H8A2 ,J:98692 
+MGI:2441765,Nmur2,neuromedin U receptor 2,11,,neuropeptide receptor activity,,,ISO,RGD:621155 ,J:155856 
+MGI:891989,Npbwr1,neuropeptides B/W receptor 1,1,,G-protein coupled receptor activity,,,IBA,PTN001200938 ,J:161428 
+MGI:891989,Npbwr1,neuropeptides B/W receptor 1,1,,neuropeptide receptor activity,,,IEA,IPR009150 IPR027348 ,J:72247 
+MGI:2685082,Npffr1,neuropeptide FF receptor 1,10,,G-protein coupled receptor activity,,,IBA,PTN001202348 ,J:161428 
+MGI:1860130,Npffr2,neuropeptide FF receptor 2,5,,G-protein coupled receptor activity,,,IBA,PTN001202348 ,J:161428 
+MGI:1860130,Npffr2,neuropeptide FF receptor 2,5,,neuropeptide receptor activity,,,IEA,IPR005395 IPR005397 ,J:72247 
+MGI:97373,Npr3,natriuretic peptide receptor 3,15,,G-protein coupled peptide receptor activity,,,ISO,RGD:3196 ,J:155856 
+MGI:2441738,Npsr1,neuropeptide S receptor 1,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441738,Npsr1,neuropeptide S receptor 1,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441738,Npsr1,neuropeptide S receptor 1,9,,neuropeptide receptor activity,,,ISO,Q6W5P4 ,J:164563 
+MGI:2441738,Npsr1,neuropeptide S receptor 1,9,,vasopressin receptor activity,,,IEA,IPR001817 ,J:72247 
+MGI:104963,Npy1r,neuropeptide Y receptor Y1,8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104963,Npy1r,neuropeptide Y receptor Y1,8,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104963,Npy1r,neuropeptide Y receptor Y1,8,,neuropeptide Y receptor activity,,,IDA,,J:60632 
+MGI:104963,Npy1r,neuropeptide Y receptor Y1,8,,pancreatic polypeptide receptor activity,,,IDA,,J:60632 
+MGI:104963,Npy1r,neuropeptide Y receptor Y1,8,,peptide YY receptor activity,,,IDA,,J:60632 
+MGI:108418,Npy2r,neuropeptide Y receptor Y2,3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:108418,Npy2r,neuropeptide Y receptor Y2,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:108418,Npy2r,neuropeptide Y receptor Y2,3,,neuropeptide Y receptor activity,,,IDA,,J:60632 
+MGI:108418,Npy2r,neuropeptide Y receptor Y2,3,,neuropeptide Y receptor activity,,,ISO,RGD:620475 ,J:155856 
+MGI:108418,Npy2r,neuropeptide Y receptor Y2,3,,peptide YY receptor activity,,,IDA,,J:60632 
+MGI:108418,Npy2r,neuropeptide Y receptor Y2,3,,peptide YY receptor activity,,,ISO,RGD:620475 ,J:155856 
+MGI:105374,Npy4r,neuropeptide Y receptor Y4,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:105374,Npy4r,neuropeptide Y receptor Y4,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:105374,Npy4r,neuropeptide Y receptor Y4,14,,neuropeptide Y receptor activity,,,IEA,IPR000611 IPR001933 ,J:72247 
+MGI:105374,Npy4r,neuropeptide Y receptor Y4,14,,pancreatic polypeptide receptor activity,,,IDA,,J:31619 J:60632 
+MGI:105374,Npy4r,neuropeptide Y receptor Y4,14,,pancreatic polypeptide receptor activity,,,ISO,RGD:61864 ,J:155856 
+MGI:105374,Npy4r,neuropeptide Y receptor Y4,14,,peptide YY receptor activity,,,IDA,,J:60632 
+MGI:108082,Npy5r,neuropeptide Y receptor Y5,8,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:108082,Npy5r,neuropeptide Y receptor Y5,8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:108082,Npy5r,neuropeptide Y receptor Y5,8,,neuropeptide Y receptor activity,,,IDA,,J:60632 J:65979 
+MGI:108082,Npy5r,neuropeptide Y receptor Y5,8,,neuropeptide Y receptor activity,,,ISO,RGD:3199 ,J:155856 
+MGI:108082,Npy5r,neuropeptide Y receptor Y5,8,,pancreatic polypeptide receptor activity,,,IDA,,J:60632 J:65979 
+MGI:108082,Npy5r,neuropeptide Y receptor Y5,8,,pancreatic polypeptide receptor activity,,,ISO,RGD:3199 ,J:155856 
+MGI:108082,Npy5r,neuropeptide Y receptor Y5,8,,peptide YY receptor activity,,,IDA,,J:60632 J:65979 
+MGI:108082,Npy5r,neuropeptide Y receptor Y5,8,,peptide YY receptor activity,,,ISO,RGD:3199 ,J:155856 
+MGI:1098590,Npy6r,neuropeptide Y receptor Y6,18,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1098590,Npy6r,neuropeptide Y receptor Y6,18,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1098590,Npy6r,neuropeptide Y receptor Y6,18,,neuropeptide Y receptor activity,,,IDA,,J:60632 
+MGI:1098590,Npy6r,neuropeptide Y receptor Y6,18,,pancreatic polypeptide receptor activity,,,IBA,PTN001955576 ,J:161428 
+MGI:1098590,Npy6r,neuropeptide Y receptor Y6,18,,peptide YY receptor activity,,,IDA,,J:60632 
+MGI:97386,Ntsr1,neurotensin receptor 1,2,,G-protein coupled neurotensin receptor activity,,,ISO,P30989 ,J:164563 
+MGI:97386,Ntsr1,neurotensin receptor 1,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:97386,Ntsr1,neurotensin receptor 1,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:97386,Ntsr1,neurotensin receptor 1,2,,neuropeptide receptor activity,,,TAS,,J:18220 
+MGI:108018,Ntsr2,neurotensin receptor 2,12,,G-protein coupled neurotensin receptor activity,,,IDA,,J:35254 
+MGI:108018,Ntsr2,neurotensin receptor 2,12,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:108018,Ntsr2,neurotensin receptor 2,12,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:102698,Olfr1,olfactory receptor 1,11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:102698,Olfr1,olfactory receptor 1,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:102697,Olfr3,olfactory receptor 3,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:102697,Olfr3,olfactory receptor 3,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:106685,Olfr5,olfactory receptor 5,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:106685,Olfr5,olfactory receptor 5,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104713,Olfr6,olfactory receptor 6,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104713,Olfr6,olfactory receptor 6,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:107174,Olfr8,olfactory receptor 8,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:107174,Olfr8,olfactory receptor 8,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:107600,Olfr9,olfactory receptor 9,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:107600,Olfr9,olfactory receptor 9,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:107598,Olfr10,olfactory receptor 10,11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:107598,Olfr10,olfactory receptor 10,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104715,Olfr11,olfactory receptor 11,13,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104715,Olfr11,olfactory receptor 11,13,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:107863,Olfr12,olfactory receptor 12,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:107863,Olfr12,olfactory receptor 12,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104812,Olfr13,olfactory receptor 13,6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104812,Olfr13,olfactory receptor 13,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:106182,Olfr15,olfactory receptor 15,16,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:106182,Olfr15,olfactory receptor 15,16,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:106648,Olfr16,olfactory receptor 16,1,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:109317,Olfr18,olfactory receptor 18,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109317,Olfr18,olfactory receptor 18,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109316,Olfr19,olfactory receptor 19,16,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109316,Olfr19,olfactory receptor 19,16,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109311,Olfr24,olfactory receptor 24,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109311,Olfr24,olfactory receptor 24,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1333764,Olfr49,olfactory receptor 49,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1333764,Olfr49,olfactory receptor 49,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1333746,Olfr50,olfactory receptor 50,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1333746,Olfr50,olfactory receptor 50,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1333751,Olfr55,olfactory receptor 55,17,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:1333785,Olfr56,olfactory receptor 56,11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1333785,Olfr56,olfactory receptor 56,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1335096,Olfr63,olfactory receptor 63,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1335096,Olfr63,olfactory receptor 63,17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1335096,Olfr63,olfactory receptor 63,17,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:2157548,Olfr78,olfactory receptor 78,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2157548,Olfr78,olfactory receptor 78,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2177522,Olfr139,olfactory receptor 139,11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2177522,Olfr139,olfactory receptor 139,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2177523,Olfr140,olfactory receptor 140,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2177523,Olfr140,olfactory receptor 140,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2177525,Olfr142,olfactory receptor 142,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2177525,Olfr142,olfactory receptor 142,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2177528,Olfr145,olfactory receptor 145,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2177528,Olfr145,olfactory receptor 145,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2660711,Olfr146,olfactory receptor 146,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2660711,Olfr146,olfactory receptor 146,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2660712,Olfr147,olfactory receptor 147,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2660712,Olfr147,olfactory receptor 147,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2660713,Olfr148,olfactory receptor 148,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2660713,Olfr148,olfactory receptor 148,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2660716,Olfr149,olfactory receptor 149,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2660716,Olfr149,olfactory receptor 149,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2659178,Olfr150,olfactory receptor 150,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,IBA,PTN001545415 ,J:161428 
+MGI:2659178,Olfr150,olfactory receptor 150,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2659178,Olfr150,olfactory receptor 150,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1351316,Olfr154,olfactory receptor 154,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1351316,Olfr154,olfactory receptor 154,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030015,Olfr181,olfactory receptor 181,16,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030015,Olfr181,olfactory receptor 181,16,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030020,Olfr186,olfactory receptor 186,16,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030020,Olfr186,olfactory receptor 186,16,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030021,Olfr187,olfactory receptor 187,16,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030021,Olfr187,olfactory receptor 187,16,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030073,Olfr239,olfactory receptor 239,17,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030109,Olfr275,olfactory receptor 275,4,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,IBA,PTN001545415 ,J:161428 
+MGI:3030303,Olfr469,olfactory receptor 469,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030303,Olfr469,olfactory receptor 469,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030304,Olfr470,olfactory receptor 470,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030304,Olfr470,olfactory receptor 470,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030306,Olfr472,olfactory receptor 472,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030306,Olfr472,olfactory receptor 472,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030306,Olfr472,olfactory receptor 472,7,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030307,Olfr473,olfactory receptor 473,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030307,Olfr473,olfactory receptor 473,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030307,Olfr473,olfactory receptor 473,7,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030308,Olfr474,olfactory receptor 474,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030308,Olfr474,olfactory receptor 474,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030308,Olfr474,olfactory receptor 474,7,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030310,Olfr476,olfactory receptor 476,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030310,Olfr476,olfactory receptor 476,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030311,Olfr477,olfactory receptor 477,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030311,Olfr477,olfactory receptor 477,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030312,Olfr478,olfactory receptor 478,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030312,Olfr478,olfactory receptor 478,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030313,Olfr479,olfactory receptor 479,7,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030314,Olfr480,olfactory receptor 480,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030314,Olfr480,olfactory receptor 480,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030315,Olfr481,olfactory receptor 481,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030315,Olfr481,olfactory receptor 481,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030316,Olfr482,olfactory receptor 482,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030316,Olfr482,olfactory receptor 482,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030317,Olfr483,olfactory receptor 483,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030317,Olfr483,olfactory receptor 483,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030318,Olfr484,olfactory receptor 484,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030318,Olfr484,olfactory receptor 484,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030320,Olfr486,olfactory receptor 486,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030320,Olfr486,olfactory receptor 486,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030322,Olfr488,olfactory receptor 488,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030322,Olfr488,olfactory receptor 488,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030324,Olfr490,olfactory receptor 490,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030324,Olfr490,olfactory receptor 490,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030325,Olfr491,olfactory receptor 491,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030325,Olfr491,olfactory receptor 491,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030326,Olfr492,olfactory receptor 492,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030326,Olfr492,olfactory receptor 492,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030327,Olfr493,olfactory receptor 493,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030327,Olfr493,olfactory receptor 493,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030328,Olfr494,olfactory receptor 494,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030328,Olfr494,olfactory receptor 494,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030329,Olfr495,olfactory receptor 495,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030329,Olfr495,olfactory receptor 495,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030331,Olfr497,olfactory receptor 497,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030331,Olfr497,olfactory receptor 497,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030332,Olfr498,olfactory receptor 498,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030332,Olfr498,olfactory receptor 498,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030336,Olfr502,olfactory receptor 502,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030336,Olfr502,olfactory receptor 502,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030341,Olfr507,olfactory receptor 507,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030341,Olfr507,olfactory receptor 507,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030342,Olfr508,olfactory receptor 508,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030342,Olfr508,olfactory receptor 508,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030343,Olfr509,olfactory receptor 509,7,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030344,Olfr510,olfactory receptor 510,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030344,Olfr510,olfactory receptor 510,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030517,Olfr683,olfactory receptor 683,7,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,IBA,PTN001545415 ,J:161428 
+MGI:3030518,Olfr684,olfactory receptor 684,7,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,IBA,PTN001545415 ,J:161428 
+MGI:3030522,Olfr688,olfactory receptor 688,7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030522,Olfr688,olfactory receptor 688,7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030580,Olfr746,olfactory receptor 746,14,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030581,Olfr747,olfactory receptor 747,14,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030582,Olfr748,olfactory receptor 748,14,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030583,Olfr749,olfactory receptor 749,14,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030701,Olfr867,olfactory receptor 867,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030701,Olfr867,olfactory receptor 867,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030753,Olfr919,olfactory receptor 919,9,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,IBA,PTN001545415 ,J:161428 
+MGI:3030792,Olfr958,olfactory receptor 958,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030792,Olfr958,olfactory receptor 958,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030832,Olfr998,olfactory receptor 998,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030832,Olfr998,olfactory receptor 998,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030836,Olfr1002,olfactory receptor 1002,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030836,Olfr1002,olfactory receptor 1002,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030843,Olfr1009,olfactory receptor 1009,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030843,Olfr1009,olfactory receptor 1009,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030847,Olfr1013,olfactory receptor 1013,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030847,Olfr1013,olfactory receptor 1013,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030853,Olfr1019,olfactory receptor 1019,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030853,Olfr1019,olfactory receptor 1019,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030854,Olfr1020,olfactory receptor 1020,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030854,Olfr1020,olfactory receptor 1020,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030864,Olfr1030,olfactory receptor 1030,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030864,Olfr1030,olfactory receptor 1030,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030878,Olfr1044,olfactory receptor 1044,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030878,Olfr1044,olfactory receptor 1044,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030886,Olfr1052,olfactory receptor 1052,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030886,Olfr1052,olfactory receptor 1052,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030920,Olfr1086,olfactory receptor 1086,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030920,Olfr1086,olfactory receptor 1086,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030927,Olfr1093,olfactory receptor 1093,2,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030928,Olfr1094,olfactory receptor 1094,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030928,Olfr1094,olfactory receptor 1094,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030928,Olfr1094,olfactory receptor 1094,2,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3030935,Olfr1101,olfactory receptor 1101,2,,"dopamine neurotransmitter receptor activity, coupled via Gi/Go",,,IBA,PTN001545415 ,J:161428 
+MGI:3030936,Olfr1102,olfactory receptor 1102,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3030936,Olfr1102,olfactory receptor 1102,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3030936,Olfr1102,olfactory receptor 1102,2,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:3031274,Olfr1440,olfactory receptor 1440,19,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3031274,Olfr1440,olfactory receptor 1440,19,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3031278,Olfr1444,olfactory receptor 1444,19,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3031278,Olfr1444,olfactory receptor 1444,19,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3031371,Olfr1537,olfactory receptor 1537,9,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3031371,Olfr1537,olfactory receptor 1537,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3782645,Olfr1564,olfactory receptor 1564,17,,G-protein coupled serotonin receptor activity,,,IBA,PTN000664111 ,J:161428 
+MGI:1097692,Opn1mw,"opsin 1 (cone pigments), medium-wave-sensitive (color blindness, deutan)",X,,G-protein coupled photoreceptor activity,,,IBA,PTN001202194 ,J:161428 
+MGI:1097692,Opn1mw,"opsin 1 (cone pigments), medium-wave-sensitive (color blindness, deutan)",X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1097692,Opn1mw,"opsin 1 (cone pigments), medium-wave-sensitive (color blindness, deutan)",X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99438,Opn1sw,"opsin 1 (cone pigments), short-wave-sensitive (color blindness, tritan)",6,,G-protein coupled photoreceptor activity,,,IBA,PTN001202194 ,J:161428 
+MGI:99438,Opn1sw,"opsin 1 (cone pigments), short-wave-sensitive (color blindness, tritan)",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99438,Opn1sw,"opsin 1 (cone pigments), short-wave-sensitive (color blindness, tritan)",6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1338022,Opn3,opsin 3,1,,G-protein coupled photoreceptor activity,,,IBA,PTN001202194 ,J:161428 
+MGI:1338022,Opn3,opsin 3,1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1338022,Opn3,opsin 3,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1353425,Opn4,opsin 4 (melanopsin),14,,G-protein coupled photoreceptor activity,happens in retinal ganglion cell,PR:Q9QXZ9-2,IDA,,J:158237 
+MGI:1353425,Opn4,opsin 4 (melanopsin),14,,G-protein coupled photoreceptor activity,happens in retinal ganglion cell,PR:Q9QXZ9-1,IDA,,J:158237 
+MGI:1353425,Opn4,opsin 4 (melanopsin),14,,G-protein coupled photoreceptor activity,,,IMP,,J:84281 
+MGI:1353425,Opn4,opsin 4 (melanopsin),14,,G-protein coupled photoreceptor activity,,,ISO,Q9UHM6 ,J:164563 
+MGI:1353425,Opn4,opsin 4 (melanopsin),14,,G-protein coupled photoreceptor activity,,,ISO,RGD:621701 ,J:155856 
+MGI:1353425,Opn4,opsin 4 (melanopsin),14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1353425,Opn4,opsin 4 (melanopsin),14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2662912,Opn5,opsin 5,17,,G-protein coupled photoreceptor activity,,,IBA,PTN001202194 ,J:161428 
+MGI:2662912,Opn5,opsin 5,17,,G-protein coupled receptor activity,,,IDA,,J:213020 
+MGI:97438,Oprd1,"opioid receptor, delta 1",4,,enkephalin receptor activity,,,IBA,PTN000659833 ,J:161428 
+MGI:97438,Oprd1,"opioid receptor, delta 1",4,,enkephalin receptor activity,,,ISO,P41143 ,J:164563 
+MGI:97438,Oprd1,"opioid receptor, delta 1",4,,enkephalin receptor activity,,,ISO,RGD:3233 ,J:155856 
+MGI:97438,Oprd1,"opioid receptor, delta 1",4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:97438,Oprd1,"opioid receptor, delta 1",4,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:97438,Oprd1,"opioid receptor, delta 1",4,,opioid receptor activity,,,IDA,,J:13204 J:33119 
+MGI:97438,Oprd1,"opioid receptor, delta 1",4,,opioid receptor activity,,,IMP,MGI:2387013 ,J:78285 
+MGI:97438,Oprd1,"opioid receptor, delta 1",4,,opioid receptor activity,,,ISO,P41143 ,J:164563 
+MGI:97439,Oprk1,"opioid receptor, kappa 1",1,,dynorphin receptor activity,,,IBA,PTN000659951 ,J:161428 
+MGI:97439,Oprk1,"opioid receptor, kappa 1",1,,dynorphin receptor activity,,,ISO,P41145 ,J:164563 
+MGI:97439,Oprk1,"opioid receptor, kappa 1",1,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:97439,Oprk1,"opioid receptor, kappa 1",1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:97439,Oprk1,"opioid receptor, kappa 1",1,,opioid receptor activity,,,IDA,,J:46089 
+MGI:97439,Oprk1,"opioid receptor, kappa 1",1,,opioid receptor activity,,,IMP,,J:237662 
+MGI:97439,Oprk1,"opioid receptor, kappa 1",1,,opioid receptor activity,,,ISO,P41145 ,J:164563 
+MGI:97439,Oprk1,"opioid receptor, kappa 1",1,,opioid receptor activity,,,TAS,,J:18672 
+MGI:97440,Oprl1,opioid receptor-like 1,2,,G-protein coupled receptor activity,,,ISO,P41146 ,J:164563 
+MGI:97440,Oprl1,opioid receptor-like 1,2,,nociceptin receptor activity,,,IMP,,J:102658 
+MGI:97440,Oprl1,opioid receptor-like 1,2,,nociceptin receptor activity,,,ISO,P41146 ,J:164563 
+MGI:97440,Oprl1,opioid receptor-like 1,2,,opioid receptor activity,,,IEA,IPR001418 ,J:72247 
+MGI:97441,Oprm1,"opioid receptor, mu 1",10,,beta-endorphin receptor activity,,,IBA,PTN000659928 ,J:161428 
+MGI:97441,Oprm1,"opioid receptor, mu 1",10,,beta-endorphin receptor activity,,,ISO,P35372 ,J:164563 
+MGI:97441,Oprm1,"opioid receptor, mu 1",10,,G-protein coupled receptor activity,,,ISO,RGD:3234 ,J:155856 
+MGI:97441,Oprm1,"opioid receptor, mu 1",10,,morphine receptor activity,,,IBA,PTN000659928 ,J:161428 
+MGI:97441,Oprm1,"opioid receptor, mu 1",10,,morphine receptor activity,,,ISO,RGD:3234 ,J:155856 
+MGI:97441,Oprm1,"opioid receptor, mu 1",10,,opioid receptor activity,,,IDA,,J:33119 
+MGI:2685145,Oxgr1,oxoglutarate (alpha-ketoglutarate) receptor 1,14,,G-protein coupled adenosine receptor activity,,,ISO,NM_080818 ,J:89847 
+MGI:2685145,Oxgr1,oxoglutarate (alpha-ketoglutarate) receptor 1,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685145,Oxgr1,oxoglutarate (alpha-ketoglutarate) receptor 1,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109147,Oxtr,oxytocin receptor,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109147,Oxtr,oxytocin receptor,6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:109147,Oxtr,oxytocin receptor,6,,oxytocin receptor activity,,,IBA,PTN000662656 ,J:161428 
+MGI:109147,Oxtr,oxytocin receptor,6,,oxytocin receptor activity,,,ISO,RGD:3239 ,J:155856 
+MGI:109147,Oxtr,oxytocin receptor,6,,vasopressin receptor activity,,,IBA,PTN001202415 ,J:161428 
+MGI:105049,P2ry1,"purinergic receptor P2Y, G-protein coupled 1",3,,ADP-activated adenosine receptor activity,,,ISO,RGD:3242 ,J:155856 
+MGI:105049,P2ry1,"purinergic receptor P2Y, G-protein coupled 1",3,,ADP-activated adenosine receptor activity,,,ISO,P47900 ,J:164563 
+MGI:105049,P2ry1,"purinergic receptor P2Y, G-protein coupled 1",3,,ATP-activated adenosine receptor activity,,,ISO,RGD:3242 ,J:155856 
+MGI:105049,P2ry1,"purinergic receptor P2Y, G-protein coupled 1",3,,G-protein coupled purinergic nucleotide receptor activity,,,ISO,RGD:3242 ,J:155856 
+MGI:105049,P2ry1,"purinergic receptor P2Y, G-protein coupled 1",3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:105049,P2ry1,"purinergic receptor P2Y, G-protein coupled 1",3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:105107,P2ry2,"purinergic receptor P2Y, G-protein coupled 2",7,,G-protein coupled purinergic nucleotide receptor activity,,,IEA,IPR000356 ,J:72247 
+MGI:105107,P2ry2,"purinergic receptor P2Y, G-protein coupled 2",7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:105107,P2ry2,"purinergic receptor P2Y, G-protein coupled 2",7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:105107,P2ry2,"purinergic receptor P2Y, G-protein coupled 2",7,,UTP-activated nucleotide receptor activity,,,ISO,RGD:62088 ,J:155856 
+MGI:1926594,P2ry4,"pyrimidinergic receptor P2Y, G-protein coupled, 4",X,,G-protein coupled purinergic nucleotide receptor activity,,,IEA,IPR000018 ,J:72247 
+MGI:1926594,P2ry4,"pyrimidinergic receptor P2Y, G-protein coupled, 4",X,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1926594,P2ry4,"pyrimidinergic receptor P2Y, G-protein coupled, 4",X,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1926594,P2ry4,"pyrimidinergic receptor P2Y, G-protein coupled, 4",X,,UTP-activated nucleotide receptor activity,,,IDA,,J:85117 
+MGI:2673874,P2ry6,"pyrimidinergic receptor P2Y, G-protein coupled, 6",7,,G-protein coupled purinergic nucleotide receptor activity,,,IEA,IPR001973 ,J:72247 
+MGI:2673874,P2ry6,"pyrimidinergic receptor P2Y, G-protein coupled, 6",7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2673874,P2ry6,"pyrimidinergic receptor P2Y, G-protein coupled, 6",7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2673874,P2ry6,"pyrimidinergic receptor P2Y, G-protein coupled, 6",7,,UDP-activated nucleotide receptor activity,,,IDA,,J:85117 
+MGI:1926076,P2ry10,"purinergic receptor P2Y, G-protein coupled 10",X,,G-protein coupled purinergic nucleotide receptor activity,,,IEA,IPR027676 ,J:72247 
+MGI:1926076,P2ry10,"purinergic receptor P2Y, G-protein coupled 10",X,,G-protein coupled receptor activity,,,IBA,PTN000660850 ,J:161428 
+MGI:2441814,P2ry10b,"purinergic receptor P2Y, G-protein coupled 10B",X,,G-protein coupled receptor activity,,,IBA,PTN000660850 ,J:161428 
+MGI:1918089,P2ry12,"purinergic receptor P2Y, G-protein coupled 12",3,,ADP receptor activity,,,IMP,MGI:2445936 ,J:70017 
+MGI:1918089,P2ry12,"purinergic receptor P2Y, G-protein coupled 12",3,,ADP receptor activity,,,ISO,Q9H244 ,J:164563 
+MGI:1918089,P2ry12,"purinergic receptor P2Y, G-protein coupled 12",3,,ADP receptor activity,,,ISO,RGD:621681 ,J:155856 
+MGI:1918089,P2ry12,"purinergic receptor P2Y, G-protein coupled 12",3,,G-protein coupled adenosine receptor activity,,,IMP,MGI:2445936 ,J:70017 
+MGI:1918089,P2ry12,"purinergic receptor P2Y, G-protein coupled 12",3,,G-protein coupled purinergic nucleotide receptor activity,,,IEA,IPR005394 ,J:72247 
+MGI:1918089,P2ry12,"purinergic receptor P2Y, G-protein coupled 12",3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1918089,P2ry12,"purinergic receptor P2Y, G-protein coupled 12",3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1921441,P2ry13,"purinergic receptor P2Y, G-protein coupled 13",3,,G-protein coupled purinergic nucleotide receptor activity,,,IBA,PTN000661229 ,J:161428 
+MGI:1921441,P2ry13,"purinergic receptor P2Y, G-protein coupled 13",3,,G-protein coupled purinergic nucleotide receptor activity,,,ISO,RGD:1302941 ,J:155856 
+MGI:1921441,P2ry13,"purinergic receptor P2Y, G-protein coupled 13",3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1921441,P2ry13,"purinergic receptor P2Y, G-protein coupled 13",3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2155705,P2ry14,"purinergic receptor P2Y, G-protein coupled, 14",3,,G-protein coupled purinergic nucleotide receptor activity,,,IBA,PTN000661229 ,J:161428 
+MGI:2155705,P2ry14,"purinergic receptor P2Y, G-protein coupled, 14",3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2155705,P2ry14,"purinergic receptor P2Y, G-protein coupled, 14",3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:101884,Ppard,peroxisome proliferator activator receptor delta,17,,prostacyclin receptor activity,,,TAS,,J:113889 
+MGI:2135956,Prlhr,prolactin releasing hormone receptor,19,,G-protein coupled receptor activity,,,IDA,,J:90533 
+MGI:2135956,Prlhr,prolactin releasing hormone receptor,19,,G-protein coupled receptor activity,,,ISO,RGD:71037 ,J:155856 
+MGI:2135956,Prlhr,prolactin releasing hormone receptor,19,,neuropeptide Y receptor activity,,,IEA,IPR001402 ,J:72247 
+MGI:1929676,Prokr1,prokineticin receptor 1,6,,G-protein coupled receptor activity,,,ISO,RGD:708443 ,J:155856 
+MGI:1929676,Prokr1,prokineticin receptor 1,6,,G-protein coupled receptor activity,,,TAS,,J:76640 
+MGI:1929676,Prokr1,prokineticin receptor 1,6,,neuropeptide Y receptor activity,,,IEA,IPR000611 ,J:72247 
+MGI:1929676,Prokr1,prokineticin receptor 1,6,,pancreatic polypeptide receptor activity,,,IBA,PTN001955576 ,J:161428 
+MGI:2181363,Prokr2,prokineticin receptor 2,2,,G-protein coupled receptor activity,,,ISO,RGD:708445 ,J:155856 
+MGI:2181363,Prokr2,prokineticin receptor 2,2,,G-protein coupled receptor activity,,,TAS,,J:76640 
+MGI:2181363,Prokr2,prokineticin receptor 2,2,,neuropeptide Y receptor activity,,,IEA,IPR000611 ,J:72247 
+MGI:2181363,Prokr2,prokineticin receptor 2,2,,pancreatic polypeptide receptor activity,,,IBA,PTN001955576 ,J:161428 
+MGI:106066,Ptafr,platelet-activating factor receptor,4,,G-protein coupled purinergic nucleotide receptor activity,,,IBA,PTN000661229 ,J:161428 
+MGI:106066,Ptafr,platelet-activating factor receptor,4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:106066,Ptafr,platelet-activating factor receptor,4,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:106066,Ptafr,platelet-activating factor receptor,4,,platelet activating factor receptor activity,,,ISO,RGD:61897 ,J:155856 
+MGI:106066,Ptafr,platelet-activating factor receptor,4,,platelet activating factor receptor activity,,,ISO,P25105 ,J:164563 
+MGI:102966,Ptgdr,prostaglandin D receptor,14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:102966,Ptgdr,prostaglandin D receptor,14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:102966,Ptgdr,prostaglandin D receptor,14,,prostaglandin D receptor activity,,,IDA,,J:84945 
+MGI:102966,Ptgdr,prostaglandin D receptor,14,,prostaglandin D receptor activity,,,ISO,RGD:619707 ,J:155856 
+MGI:102966,Ptgdr,prostaglandin D receptor,14,,prostaglandin E receptor activity,,,IBA,PTN000221548 ,J:161428 
+MGI:102966,Ptgdr,prostaglandin D receptor,14,,prostaglandin J receptor activity,,,IDA,,J:84945 
+MGI:1330275,Ptgdr2,prostaglandin D2 receptor 2,19,,G-protein coupled receptor activity,,,IDA,,J:84945 
+MGI:1330275,Ptgdr2,prostaglandin D2 receptor 2,19,,G-protein coupled receptor activity,,,ISO,Q9Y5Y4 ,J:164563 
+MGI:1330275,Ptgdr2,prostaglandin D2 receptor 2,19,,G-protein coupled receptor activity,,,ISS,,J:52880 
+MGI:1330275,Ptgdr2,prostaglandin D2 receptor 2,19,,prostaglandin D receptor activity,,,IDA,,J:84945 J:214809 
+MGI:1330275,Ptgdr2,prostaglandin D2 receptor 2,19,,prostaglandin D receptor activity,,,ISO,Q9Y5Y4 ,J:164563 
+MGI:1330275,Ptgdr2,prostaglandin D2 receptor 2,19,,prostaglandin F receptor activity,,,IDA,,J:84945 
+MGI:1330275,Ptgdr2,prostaglandin D2 receptor 2,19,,prostaglandin J receptor activity,,,IDA,,J:84945 
+MGI:97793,Ptger1,prostaglandin E receptor 1 (subtype EP1),8,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:97793,Ptger1,prostaglandin E receptor 1 (subtype EP1),8,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:97793,Ptger1,prostaglandin E receptor 1 (subtype EP1),8,,prostaglandin E receptor activity,,,IBA,PTN000221689 ,J:161428 
+MGI:97793,Ptger1,prostaglandin E receptor 1 (subtype EP1),8,,prostaglandin E receptor activity,,,ISO,RGD:3434 ,J:155856 
+MGI:97793,Ptger1,prostaglandin E receptor 1 (subtype EP1),8,,prostaglandin receptor activity,,,IEA,IPR001244 ,J:72247 
+MGI:97794,Ptger2,prostaglandin E receptor 2 (subtype EP2),14,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:97794,Ptger2,prostaglandin E receptor 2 (subtype EP2),14,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:97794,Ptger2,prostaglandin E receptor 2 (subtype EP2),14,,prostaglandin E receptor activity,,,IBA,PTN000221548 ,J:161428 
+MGI:97794,Ptger2,prostaglandin E receptor 2 (subtype EP2),14,,prostaglandin E receptor activity,,,ISO,RGD:620020 ,J:155856 
+MGI:97795,Ptger3,prostaglandin E receptor 3 (subtype EP3),3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:97795,Ptger3,prostaglandin E receptor 3 (subtype EP3),3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:97795,Ptger3,prostaglandin E receptor 3 (subtype EP3),3,,prostaglandin E receptor activity,,,IDA,,J:15691 J:20413 J:20967 
+MGI:97795,Ptger3,prostaglandin E receptor 3 (subtype EP3),3,,prostaglandin E receptor activity,,PR:P30557-1,IDA,,J:15973 
+MGI:97795,Ptger3,prostaglandin E receptor 3 (subtype EP3),3,,prostaglandin E receptor activity,,,IMP,,J:26652 
+MGI:97795,Ptger3,prostaglandin E receptor 3 (subtype EP3),3,,prostaglandin E receptor activity,,,ISO,RGD:3435 ,J:155856 
+MGI:97795,Ptger3,prostaglandin E receptor 3 (subtype EP3),3,,prostaglandin receptor activity,,,IEA,IPR001244 ,J:72247 
+MGI:104311,Ptger4,prostaglandin E receptor 4 (subtype EP4),15,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:104311,Ptger4,prostaglandin E receptor 4 (subtype EP4),15,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:104311,Ptger4,prostaglandin E receptor 4 (subtype EP4),15,,prostaglandin E receptor activity,,,ISO,P35408 ,J:164563 
+MGI:104311,Ptger4,prostaglandin E receptor 4 (subtype EP4),15,,prostaglandin E receptor activity,,,ISO,RGD:628641 ,J:155856 
+MGI:104311,Ptger4,prostaglandin E receptor 4 (subtype EP4),15,,prostaglandin E receptor activity,,,TAS,,J:63070 
+MGI:104311,Ptger4,prostaglandin E receptor 4 (subtype EP4),15,,prostaglandin receptor activity,,,IEA,IPR001244 ,J:72247 
+MGI:97796,Ptgfr,prostaglandin F receptor,3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:97796,Ptgfr,prostaglandin F receptor,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:97796,Ptgfr,prostaglandin F receptor,3,,prostaglandin F receptor activity,,,IBA,PTN000221641 ,J:161428 
+MGI:97796,Ptgfr,prostaglandin F receptor,3,,prostaglandin F receptor activity,,,ISO,P43088 ,J:164563 
+MGI:97796,Ptgfr,prostaglandin F receptor,3,,prostaglandin receptor activity,,,IEA,IPR001244 ,J:72247 
+MGI:99535,Ptgir,prostaglandin I receptor (IP),7,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:99535,Ptgir,prostaglandin I receptor (IP),7,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:99535,Ptgir,prostaglandin I receptor (IP),7,,prostacyclin receptor activity,,,IBA,PTN000221595 ,J:161428 
+MGI:97801,Pth1r,parathyroid hormone 1 receptor,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:97801,Pth1r,parathyroid hormone 1 receptor,9,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:97801,Pth1r,parathyroid hormone 1 receptor,9,,parathyroid hormone receptor activity,happens in cranium,,IMP,MGI:2154519 ,J:108801 
+MGI:97801,Pth1r,parathyroid hormone 1 receptor,9,,parathyroid hormone receptor activity,,,ISO,RGD:3442 ,J:155856 
+MGI:97801,Pth1r,parathyroid hormone 1 receptor,9,,parathyroid hormone receptor activity,,,ISO,Q03431 ,J:164563 
+MGI:97801,Pth1r,parathyroid hormone 1 receptor,9,,parathyroid hormone receptor activity,,,TAS,,J:72784 
+MGI:2180917,Pth2r,parathyroid hormone 2 receptor,1,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:2180917,Pth2r,parathyroid hormone 2 receptor,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2180917,Pth2r,parathyroid hormone 2 receptor,1,,parathyroid hormone receptor activity,,,ISO,RGD:620612 ,J:155856 
+MGI:2677633,Qrfpr,pyroglutamylated RFamide peptide receptor,3,,G-protein coupled receptor activity,,,IBA,PTN001202348 ,J:161428 
+MGI:2677633,Qrfpr,pyroglutamylated RFamide peptide receptor,3,,G-protein coupled receptor activity,,,ISO,Q96P65 ,J:164563 
+MGI:2677633,Qrfpr,pyroglutamylated RFamide peptide receptor,3,,neuropeptide Y receptor activity,,,IEA,IPR000611 ,J:72247 
+MGI:1858418,Ramp1,receptor (calcitonin) activity modifying protein 1,1,contributes_to,amylin receptor activity,,,ISO,O60894 ,J:164563 
+MGI:1858418,Ramp1,receptor (calcitonin) activity modifying protein 1,1,,amylin receptor activity,,,ISO,O60894 ,J:164563 
+MGI:1858418,Ramp1,receptor (calcitonin) activity modifying protein 1,1,,calcitonin gene-related peptide receptor activity,,,ISO,O60894 ,J:164563 
+MGI:1859650,Ramp2,receptor (calcitonin) activity modifying protein 2,11,,adrenomedullin receptor activity,,,ISO,O60895 ,J:164563 
+MGI:1859650,Ramp2,receptor (calcitonin) activity modifying protein 2,11,contributes_to,amylin receptor activity,,,ISO,O60895 ,J:164563 
+MGI:1860292,Ramp3,receptor (calcitonin) activity modifying protein 3,11,,adrenomedullin receptor activity,,,ISO,O60896 ,J:164563 
+MGI:1860292,Ramp3,receptor (calcitonin) activity modifying protein 3,11,contributes_to,amylin receptor activity,,,ISO,O60896 ,J:164563 
+MGI:1929473,Rgr,retinal G protein coupled receptor,14,,G-protein coupled photoreceptor activity,,,IBA,PTN001202194 ,J:161428 
+MGI:1929473,Rgr,retinal G protein coupled receptor,14,,G-protein coupled receptor activity,,,ISS,,J:53187 
+MGI:97914,Rho,rhodopsin,6,,G-protein coupled photoreceptor activity,,,IBA,PTN001202194 ,J:161428 
+MGI:97914,Rho,rhodopsin,6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:97914,Rho,rhodopsin,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1343464,Rorb,RAR-related orphan receptor beta,19,,melatonin receptor activity,,,ISO,RGD:1306778 ,J:155856 
+MGI:1097709,Rrh,retinal pigment epithelium derived rhodopsin homolog,3,,G-protein coupled photoreceptor activity,,,IBA,PTN001202194 ,J:161428 
+MGI:1097709,Rrh,retinal pigment epithelium derived rhodopsin homolog,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1097709,Rrh,retinal pigment epithelium derived rhodopsin homolog,3,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR032972 ,J:72247 
+MGI:2682211,Rxfp1,relaxin/insulin-like family peptide receptor 1,3,,G-protein coupled receptor activity,,,IBA,PTN001555329 ,J:161428 
+MGI:2682211,Rxfp1,relaxin/insulin-like family peptide receptor 1,3,,G-protein coupled receptor activity,,,ISO,RGD:1302973 ,J:155856 
+MGI:2682211,Rxfp1,relaxin/insulin-like family peptide receptor 1,3,,G-protein coupled receptor activity,,,ISO,Q9HBX9 ,J:74926 
+MGI:2153463,Rxfp2,relaxin/insulin-like family peptide receptor 2,5,,G-protein coupled receptor activity,,,IEA,IPR000276 IPR008112 ,J:72247 
+MGI:2153463,Rxfp2,relaxin/insulin-like family peptide receptor 2,5,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441827,Rxfp3,relaxin family peptide receptor 3,15,,G-protein coupled peptide receptor activity,,,IDA,,J:106981 
+MGI:2441827,Rxfp3,relaxin family peptide receptor 3,15,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2441827,Rxfp3,relaxin family peptide receptor 3,15,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441827,Rxfp3,relaxin family peptide receptor 3,15,,galanin receptor activity,,,IBA,PTN001954983 ,J:161428 
+MGI:2182926,Rxfp4,relaxin family peptide receptor 4,3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2182926,Rxfp4,relaxin family peptide receptor 4,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2182926,Rxfp4,relaxin family peptide receptor 4,3,,galanin receptor activity,,,IBA,PTN001954983 ,J:161428 
+MGI:1096355,S1pr1,sphingosine-1-phosphate receptor 1,3,,G-protein coupled receptor activity,,,ISO,RGD:61958 ,J:155856 
+MGI:1096355,S1pr1,sphingosine-1-phosphate receptor 1,3,,sphingosine-1-phosphate receptor activity,,,IMP,,J:71961 
+MGI:1096355,S1pr1,sphingosine-1-phosphate receptor 1,3,,sphingosine-1-phosphate receptor activity,,,ISO,P21453 ,J:164563 
+MGI:99569,S1pr2,sphingosine-1-phosphate receptor 2,9,,G-protein coupled receptor activity,,,ISO,RGD:68334 ,J:155856 
+MGI:99569,S1pr2,sphingosine-1-phosphate receptor 2,9,,sphingosine-1-phosphate receptor activity,,,ISO,O95136 ,J:164563 
+MGI:1339365,S1pr3,sphingosine-1-phosphate receptor 3,13,,G-protein coupled receptor activity,,,TAS,,J:71372 
+MGI:1339365,S1pr3,sphingosine-1-phosphate receptor 3,13,,sphingosine-1-phosphate receptor activity,,,IEA,IPR004061 IPR004062 ,J:72247 
+MGI:1333809,S1pr4,sphingosine-1-phosphate receptor 4,10,,G-protein coupled receptor activity,,,TAS,,J:71372 
+MGI:1333809,S1pr4,sphingosine-1-phosphate receptor 4,10,,sphingosine-1-phosphate receptor activity,,,IEA,IPR004061 IPR004064 ,J:72247 
+MGI:2150641,S1pr5,sphingosine-1-phosphate receptor 5,9,,G-protein coupled receptor activity,,,ISO,RGD:620566 ,J:155856 
+MGI:2150641,S1pr5,sphingosine-1-phosphate receptor 5,9,,G-protein coupled receptor activity,,,TAS,,J:71372 
+MGI:2150641,S1pr5,sphingosine-1-phosphate receptor 5,9,,sphingosine-1-phosphate receptor activity,,,IEA,IPR004061 IPR005386 ,J:72247 
+MGI:2441720,Sctr,secretin receptor,1,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR002144 IPR017983 IPR036445 ,J:72247 
+MGI:2441720,Sctr,secretin receptor,1,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2441720,Sctr,secretin receptor,1,,secretin receptor activity,,,ISO,P47872 ,J:164563 
+MGI:2441720,Sctr,secretin receptor,1,,secretin receptor activity,,,ISO,RGD:621342 ,J:155856 
+MGI:1913565,Senp7,SUMO1/sentrin specific peptidase 7,16,,G-protein coupled receptor activity,,,IBA,PTN001555329 ,J:161428 
+MGI:892014,Sfrp1,secreted frizzled-related protein 1,8,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:108078,Sfrp2,secreted frizzled-related protein 2,3,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:892010,Sfrp4,secreted frizzled-related protein 4,13,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:1860298,Sfrp5,secreted frizzled-related sequence protein 5,19,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:1195268,Sigmar1,sigma non-opioid intracellular receptor 1,4,,opioid receptor activity,,,ISO,RGD:68364 ,J:155856 
+MGI:2446114,Slc22a22,"solute carrier family 22 (organic cation transporter), member 22",15,,prostaglandin receptor activity,,,IDA,,J:165322 
+MGI:108075,Smo,"smoothened, frizzled class receptor",6,,G-protein coupled receptor activity,,,IBA,PTN000139394 ,J:161428 
+MGI:1316649,Sphk1,sphingosine kinase 1,11,,sphingosine-1-phosphate receptor activity,,,ISO,Q9NYA1 ,J:164563 
+MGI:1861380,Sphk2,sphingosine kinase 2,7,,sphingosine-1-phosphate receptor activity,,,ISO,Q9NRA0 ,J:164563 
+MGI:98327,Sstr1,somatostatin receptor 1,12,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:98327,Sstr1,somatostatin receptor 1,12,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:98327,Sstr1,somatostatin receptor 1,12,,somatostatin receptor activity,,,IDA,,J:20662 
+MGI:98327,Sstr1,somatostatin receptor 1,12,,somatostatin receptor activity,,,IMP,,J:20662 
+MGI:98327,Sstr1,somatostatin receptor 1,12,,somatostatin receptor activity,,,ISO,P30872 ,J:2346 
+MGI:98327,Sstr1,somatostatin receptor 1,12,,somatostatin receptor activity,,,ISO,RGD:3762 ,J:155856 
+MGI:98328,Sstr2,somatostatin receptor 2,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:98328,Sstr2,somatostatin receptor 2,11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:98328,Sstr2,somatostatin receptor 2,11,,somatostatin receptor activity,,,IDA,,J:2346 J:20662 
+MGI:98328,Sstr2,somatostatin receptor 2,11,,somatostatin receptor activity,,,IMP,,J:20662 
+MGI:98328,Sstr2,somatostatin receptor 2,11,,somatostatin receptor activity,,,ISO,RGD:3763 ,J:155856 
+MGI:98329,Sstr3,somatostatin receptor 3,15,,G-protein coupled receptor activity,,,IBA,PTN001200938 ,J:161428 
+MGI:98329,Sstr3,somatostatin receptor 3,15,,somatostatin receptor activity,,,IEA,IPR000586 IPR001856 ,J:72247 
+MGI:105372,Sstr4,somatostatin receptor 4,2,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:105372,Sstr4,somatostatin receptor 4,2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:105372,Sstr4,somatostatin receptor 4,2,,somatostatin receptor activity,,,IBA,PTN000659883 ,J:161428 
+MGI:105372,Sstr4,somatostatin receptor 4,2,,somatostatin receptor activity,,,ISO,RGD:3764 ,J:155856 
+MGI:894282,Sstr5,somatostatin receptor 5,17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:894282,Sstr5,somatostatin receptor 5,17,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:894282,Sstr5,somatostatin receptor 5,17,,somatostatin receptor activity,,,IBA,PTN000660084 ,J:161428 
+MGI:894282,Sstr5,somatostatin receptor 5,17,,somatostatin receptor activity,,,ISO,RGD:3765 ,J:155856 
+MGI:1934135,Sucnr1,succinate receptor 1,3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:1934135,Sucnr1,succinate receptor 1,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148258,Taar1,trace amine-associated receptor 1,10,,G-protein coupled amine receptor activity,,,IDA,,J:95733 
+MGI:2148258,Taar1,trace amine-associated receptor 1,10,,G-protein coupled receptor activity,,,ISO,Q96RJ0 ,J:164563 
+MGI:2148258,Taar1,trace amine-associated receptor 1,10,,trace-amine receptor activity,,,IDA,,J:95733 
+MGI:2148258,Taar1,trace amine-associated receptor 1,10,,trace-amine receptor activity,,,ISO,AF380185 AF380186 ,J:70672 
+MGI:2685071,Taar2,trace amine-associated receptor 2,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:2685071,Taar2,trace amine-associated receptor 2,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685071,Taar2,trace amine-associated receptor 2,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685071,Taar2,trace amine-associated receptor 2,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:3527427,Taar3,trace amine-associated receptor 3,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:3527427,Taar3,trace amine-associated receptor 3,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3527427,Taar3,trace amine-associated receptor 3,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3527427,Taar3,trace amine-associated receptor 3,10,,trace-amine receptor activity,,,IDA,,J:111708 
+MGI:2685072,Taar4,trace amine-associated receptor 4,10,,2-phenylethylamine receptor activity,,,IDA,,J:111708 J:174299 
+MGI:2685072,Taar4,trace amine-associated receptor 4,10,,2-phenylethylamine receptor activity,,,IMP,,J:197678 
+MGI:2685072,Taar4,trace amine-associated receptor 4,10,,G-protein coupled amine receptor activity,,,ISO,Q923Y7 ,J:95733 
+MGI:2685072,Taar4,trace amine-associated receptor 4,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685072,Taar4,trace amine-associated receptor 4,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685072,Taar4,trace amine-associated receptor 4,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:2685072,Taar4,trace amine-associated receptor 4,10,,trace-amine receptor activity,,,ISO,RGD:631382 ,J:155856 
+MGI:2685072,Taar4,trace amine-associated receptor 4,10,,trace-amine receptor activity,,,ISO,Q923Y7 ,J:95733 
+MGI:2685073,Taar5,trace amine-associated receptor 5,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:2685073,Taar5,trace amine-associated receptor 5,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685073,Taar5,trace amine-associated receptor 5,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685073,Taar5,trace amine-associated receptor 5,10,,trace-amine receptor activity,,,IEA,IPR009132 ,J:72247 
+MGI:2685073,Taar5,trace amine-associated receptor 5,10,,trimethylamine receptor activity,,,IDA,,J:111708 J:197486 
+MGI:2685073,Taar5,trace amine-associated receptor 5,10,,trimethylamine receptor activity,,,ISO,O14804 ,J:164563 
+MGI:2685074,Taar6,trace amine-associated receptor 6,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:2685074,Taar6,trace amine-associated receptor 6,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685074,Taar6,trace amine-associated receptor 6,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685074,Taar6,trace amine-associated receptor 6,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:2685075,Taar7a,trace amine-associated receptor 7A,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:2685075,Taar7a,trace amine-associated receptor 7A,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685075,Taar7a,trace amine-associated receptor 7A,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685075,Taar7a,trace amine-associated receptor 7A,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:3527438,Taar7b,trace amine-associated receptor 7B,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:3527438,Taar7b,trace amine-associated receptor 7B,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3527438,Taar7b,trace amine-associated receptor 7B,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3527438,Taar7b,trace amine-associated receptor 7B,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:3527443,Taar7d,trace amine-associated receptor 7D,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:3527443,Taar7d,trace amine-associated receptor 7D,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3527443,Taar7d,trace amine-associated receptor 7D,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3527443,Taar7d,trace amine-associated receptor 7D,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:3527445,Taar7e,trace amine-associated receptor 7E,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:3527445,Taar7e,trace amine-associated receptor 7E,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3527445,Taar7e,trace amine-associated receptor 7E,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3527445,Taar7e,trace amine-associated receptor 7E,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:3527447,Taar7f,trace amine-associated receptor 7F,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:3527447,Taar7f,trace amine-associated receptor 7F,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3527447,Taar7f,trace amine-associated receptor 7F,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3527447,Taar7f,trace amine-associated receptor 7F,10,,trace-amine receptor activity,,,IDA,,J:111708 
+MGI:2685076,Taar8a,trace amine-associated receptor 8A,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:2685076,Taar8a,trace amine-associated receptor 8A,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685076,Taar8a,trace amine-associated receptor 8A,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685076,Taar8a,trace amine-associated receptor 8A,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:2685995,Taar8b,trace amine-associated receptor 8B,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:2685995,Taar8b,trace amine-associated receptor 8B,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2685995,Taar8b,trace amine-associated receptor 8B,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2685995,Taar8b,trace amine-associated receptor 8B,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:3527452,Taar8c,trace amine-associated receptor 8C,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:3527452,Taar8c,trace amine-associated receptor 8C,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3527452,Taar8c,trace amine-associated receptor 8C,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3527452,Taar8c,trace amine-associated receptor 8C,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:3527454,Taar9,trace amine-associated receptor 9,10,,G-protein coupled amine receptor activity,,,RCA,,J:95733 
+MGI:3527454,Taar9,trace amine-associated receptor 9,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:3527454,Taar9,trace amine-associated receptor 9,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3527454,Taar9,trace amine-associated receptor 9,10,,trace-amine receptor activity,,,IBA,PTN000665047 ,J:161428 
+MGI:98475,Tacr1,tachykinin receptor 1,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:98475,Tacr1,tachykinin receptor 1,6,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:98475,Tacr1,tachykinin receptor 1,6,,substance P receptor activity,,,IBA,PTN000662764 ,J:161428 
+MGI:98475,Tacr1,tachykinin receptor 1,6,,substance P receptor activity,,,ISO,P25103 ,J:164563 
+MGI:98475,Tacr1,tachykinin receptor 1,6,,substance P receptor activity,,,ISO,RGD:3811 ,J:155856 
+MGI:98475,Tacr1,tachykinin receptor 1,6,,tachykinin receptor activity,,,IEA,IPR000046 IPR001681 ,J:72247 
+MGI:98477,Tacr2,tachykinin receptor 2,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:98477,Tacr2,tachykinin receptor 2,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:98477,Tacr2,tachykinin receptor 2,10,,substance K receptor activity,,,IBA,PTN000662791 ,J:161428 
+MGI:98477,Tacr2,tachykinin receptor 2,10,,substance K receptor activity,,,ISO,RGD:3812 ,J:155856 
+MGI:98477,Tacr2,tachykinin receptor 2,10,,tachykinin receptor activity,,,IEA,IPR000913 IPR001681 ,J:72247 
+MGI:892968,Tacr3,tachykinin receptor 3,3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:892968,Tacr3,tachykinin receptor 3,3,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:892968,Tacr3,tachykinin receptor 3,3,,tachykinin receptor activity,,,ISO,RGD:3810 ,J:155856 
+MGI:1927505,Tas1r1,"taste receptor, type 1, member 1",4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1927505,Tas1r1,"taste receptor, type 1, member 1",4,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR011500 IPR017978 IPR017979 ,J:72247 
+MGI:1933546,Tas1r2,"taste receptor, type 1, member 2",4,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR011500 IPR017978 IPR017979 ,J:72247 
+MGI:1933546,Tas1r2,"taste receptor, type 1, member 2",4,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1933547,Tas1r3,"taste receptor, type 1, member 3",4,,G-protein coupled receptor activity,,,TAS,,J:72149 
+MGI:1890257,Tas2r103,"taste receptor, type 2, member 103",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1890257,Tas2r103,"taste receptor, type 2, member 103",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681185,Tas2r104,"taste receptor, type 2, member 104",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681185,Tas2r104,"taste receptor, type 2, member 104",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681195,Tas2r105,"taste receptor, type 2, member 105",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681195,Tas2r105,"taste receptor, type 2, member 105",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681203,Tas2r106,"taste receptor, type 2, member 106",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681203,Tas2r106,"taste receptor, type 2, member 106",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681207,Tas2r107,"taste receptor, type 2, member 107",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681207,Tas2r107,"taste receptor, type 2, member 107",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681210,Tas2r108,"taste receptor, type 2, member 108",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681210,Tas2r108,"taste receptor, type 2, member 108",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681214,Tas2r109,"taste receptor, type 2, member 109",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681214,Tas2r109,"taste receptor, type 2, member 109",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681216,Tas2r110,"taste receptor, type 2, member 110",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681216,Tas2r110,"taste receptor, type 2, member 110",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681217,Tas2r113,"taste receptor, type 2, member 113",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681217,Tas2r113,"taste receptor, type 2, member 113",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681218,Tas2r114,"taste receptor, type 2, member 114",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681218,Tas2r114,"taste receptor, type 2, member 114",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1890258,Tas2r116,"taste receptor, type 2, member 116",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1890258,Tas2r116,"taste receptor, type 2, member 116",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681242,Tas2r117,"taste receptor, type 2, member 117",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681242,Tas2r117,"taste receptor, type 2, member 117",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681247,Tas2r118,"taste receptor, type 2, member 118",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681247,Tas2r118,"taste receptor, type 2, member 118",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681253,Tas2r119,"taste receptor, type 2, member 119",15,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681253,Tas2r119,"taste receptor, type 2, member 119",15,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681256,Tas2r120,"taste receptor, type 2, member 120",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681256,Tas2r120,"taste receptor, type 2, member 120",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681259,Tas2r121,"taste receptor, type 2, member 121",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681259,Tas2r121,"taste receptor, type 2, member 121",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681264,Tas2r123,"taste receptor, type 2, member 123",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681264,Tas2r123,"taste receptor, type 2, member 123",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681267,Tas2r124,"taste receptor, type 2, member 124",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681267,Tas2r124,"taste receptor, type 2, member 124",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681269,Tas2r125,"taste receptor, type 2, member 125",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681269,Tas2r125,"taste receptor, type 2, member 125",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681273,Tas2r126,"taste receptor, type 2, member 126",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681273,Tas2r126,"taste receptor, type 2, member 126",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681276,Tas2r129,"taste receptor, type 2, member 129",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681276,Tas2r129,"taste receptor, type 2, member 129",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681278,Tas2r130,"taste receptor, type 2, member 130",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681278,Tas2r130,"taste receptor, type 2, member 130",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681300,Tas2r134,"taste receptor, type 2, member 134",2,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681300,Tas2r134,"taste receptor, type 2, member 134",2,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681302,Tas2r135,"taste receptor, type 2, member 135",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681302,Tas2r135,"taste receptor, type 2, member 135",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681304,Tas2r136,"taste receptor, type 2, member 136",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681304,Tas2r136,"taste receptor, type 2, member 136",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3606604,Tas2r137,"taste receptor, type 2, member 137",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3606604,Tas2r137,"taste receptor, type 2, member 137",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681306,Tas2r138,"taste receptor, type 2, member 138",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681306,Tas2r138,"taste receptor, type 2, member 138",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681308,Tas2r139,"taste receptor, type 2, member 139",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681308,Tas2r139,"taste receptor, type 2, member 139",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681298,Tas2r140,"taste receptor, type 2, member 140",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681298,Tas2r140,"taste receptor, type 2, member 140",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681310,Tas2r143,"taste receptor, type 2, member 143",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681310,Tas2r143,"taste receptor, type 2, member 143",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2681312,Tas2r144,"taste receptor, type 2, member 144",6,,G-protein coupled receptor activity,,,IEA,IPR007960 ,J:72247 
+MGI:2681312,Tas2r144,"taste receptor, type 2, member 144",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:98496,Tbxa2r,thromboxane A2 receptor,10,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:98496,Tbxa2r,thromboxane A2 receptor,10,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:98496,Tbxa2r,thromboxane A2 receptor,10,,thromboxane A2 receptor activity,,,IBA,PTN000221616 ,J:161428 
+MGI:98496,Tbxa2r,thromboxane A2 receptor,10,,thromboxane receptor activity,,,IDA,,J:864 
+MGI:98496,Tbxa2r,thromboxane A2 receptor,10,,thromboxane receptor activity,,,ISO,RGD:3825 ,J:155856 
+MGI:2137022,Tm2d1,TM2 domain containing 1,4,,G-protein coupled receptor activity,,,IDA,,J:69767 
+MGI:98824,Trhr,thyrotropin releasing hormone receptor,15,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:98824,Trhr,thyrotropin releasing hormone receptor,15,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:98824,Trhr,thyrotropin releasing hormone receptor,15,,thyrotropin-releasing hormone receptor activity,,,ISO,RGD:3904 ,J:155856 
+MGI:2177284,Trhr2,thyrotropin releasing hormone receptor 2,8,,thyrotropin-releasing hormone receptor activity,,,ISO,RGD:621262 ,J:155856 
+MGI:98849,Tshr,thyroid stimulating hormone receptor,12,,G-protein coupled peptide receptor activity,,,IBA,PTN001224574 ,J:161428 
+MGI:98849,Tshr,thyroid stimulating hormone receptor,12,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:98849,Tshr,thyroid stimulating hormone receptor,12,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:98849,Tshr,thyroid stimulating hormone receptor,12,,thyroid-stimulating hormone receptor activity,,,IDA,,J:26725 J:70498 
+MGI:98849,Tshr,thyroid stimulating hormone receptor,12,,thyroid-stimulating hormone receptor activity,,,ISO,P16473 ,J:164563 
+MGI:98849,Tshr,thyroid stimulating hormone receptor,12,,thyroid-stimulating hormone receptor activity,,,ISO,RGD:3911 ,J:155856 
+MGI:2443855,Tsku,"tsukushi, small leucine rich proteoglycan",7,,G-protein coupled receptor activity,,,IBA,PTN001555329 ,J:161428 
+MGI:2183450,Uts2r,urotensin 2 receptor,11,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2183450,Uts2r,urotensin 2 receptor,11,,G-protein coupled receptor activity,,,IEA,IPR000276 ,J:72247 
+MGI:2183450,Uts2r,urotensin 2 receptor,11,,urotensin II receptor activity,,,IBA,PTN001201163 ,J:161428 
+MGI:2183450,Uts2r,urotensin 2 receptor,11,,urotensin II receptor activity,,,ISO,RGD:621884 ,J:155856 
+MGI:2148513,V1ra8,"vomeronasal 1 receptor, A8",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148513,V1ra8,"vomeronasal 1 receptor, A8",6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2159654,V1rg10,"vomeronasal 1 receptor, G10",5,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:109272,Vipr1,vasoactive intestinal peptide receptor 1,9,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:109272,Vipr1,vasoactive intestinal peptide receptor 1,9,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:109272,Vipr1,vasoactive intestinal peptide receptor 1,9,,vasoactive intestinal polypeptide receptor activity,,,ISO,P32241 ,J:164563 
+MGI:109272,Vipr1,vasoactive intestinal peptide receptor 1,9,,vasoactive intestinal polypeptide receptor activity,,,ISO,RGD:3961 ,J:155856 
+MGI:107166,Vipr2,vasoactive intestinal peptide receptor 2,12,,G-protein coupled receptor activity,,,IEA,IPR000832 IPR001879 IPR017983 IPR036445 ,J:72247 
+MGI:107166,Vipr2,vasoactive intestinal peptide receptor 2,12,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:107166,Vipr2,vasoactive intestinal peptide receptor 2,12,,vasoactive intestinal polypeptide receptor activity,,,ISO,RGD:3962 ,J:155856 
+MGI:2159457,Vmn1r4,vomeronasal 1 receptor 4,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159455,Vmn1r5,vomeronasal 1 receptor 5,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159456,Vmn1r6,vomeronasal 1 receptor 6,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159467,Vmn1r7,vomeronasal 1 receptor 7,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159469,Vmn1r8,vomeronasal 1 receptor 8,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159466,Vmn1r9,vomeronasal 1 receptor 9,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159465,Vmn1r16,vomeronasal 1 receptor 16,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159452,Vmn1r17,vomeronasal 1 receptor 17,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159462,Vmn1r18,vomeronasal 1 receptor 18,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159463,Vmn1r19,vomeronasal 1 receptor 19,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159464,Vmn1r21,vomeronasal 1 receptor 21,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159459,Vmn1r22,vomeronasal 1 receptor 22,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159460,Vmn1r23,vomeronasal 1 receptor 23,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159454,Vmn1r24,vomeronasal 1 receptor 24,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159453,Vmn1r26,vomeronasal 1 receptor 26,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159470,Vmn1r27,vomeronasal 1 receptor 27,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159461,Vmn1r28,vomeronasal 1 receptor 28,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159458,Vmn1r30,vomeronasal 1 receptor 30,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159451,Vmn1r32,vomeronasal 1 receptor 32,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159450,Vmn1r33,vomeronasal 1 receptor 33,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159444,Vmn1r35,vomeronasal 1 receptor 35,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159443,Vmn1r36,vomeronasal 1 receptor 36,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159442,Vmn1r37,vomeronasal 1 receptor 37,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159445,Vmn1r38,vomeronasal 1 receptor 38,6,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2148518,Vmn1r40,vomeronasal 1 receptor 40,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148518,Vmn1r40,vomeronasal 1 receptor 40,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148520,Vmn1r41,vomeronasal 1 receptor 41,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148520,Vmn1r41,vomeronasal 1 receptor 41,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148511,Vmn1r42,vomeronasal 1 receptor 42,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148511,Vmn1r42,vomeronasal 1 receptor 42,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148510,Vmn1r43,vomeronasal 1 receptor 43,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148510,Vmn1r43,vomeronasal 1 receptor 43,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148517,Vmn1r44,vomeronasal 1 receptor 44,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148517,Vmn1r44,vomeronasal 1 receptor 44,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:1333762,Vmn1r45,vomeronasal 1 receptor 45,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1333762,Vmn1r45,vomeronasal 1 receptor 45,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148519,Vmn1r46,vomeronasal 1 receptor 46,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148519,Vmn1r46,vomeronasal 1 receptor 46,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148509,Vmn1r47,vomeronasal 1 receptor 47,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148509,Vmn1r47,vomeronasal 1 receptor 47,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148508,Vmn1r48,vomeronasal 1 receptor 48,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148508,Vmn1r48,vomeronasal 1 receptor 48,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:1344384,Vmn1r49,"vomeronasal 1, receptor 49",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1344384,Vmn1r49,"vomeronasal 1, receptor 49",6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148515,Vmn1r50,vomeronasal 1 receptor 50,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148515,Vmn1r50,vomeronasal 1 receptor 50,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:1333759,Vmn1r51,vomeronasal 1 receptor 51,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:1333759,Vmn1r51,vomeronasal 1 receptor 51,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148512,Vmn1r52,vomeronasal 1 receptor 52,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148512,Vmn1r52,vomeronasal 1 receptor 52,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148516,Vmn1r53,vomeronasal 1 receptor 53,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148516,Vmn1r53,vomeronasal 1 receptor 53,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2148514,Vmn1r54,vomeronasal 1 receptor 54,6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2148514,Vmn1r54,vomeronasal 1 receptor 54,6,,pheromone receptor activity,,,IEA,IPR004072 ,J:72247 
+MGI:2159633,Vmn1r66,vomeronasal 1 receptor 66,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159632,Vmn1r67,vomeronasal 1 receptor 67,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159699,Vmn1r70,vomeronasal 1 receptor 70,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159641,Vmn1r73,vomeronasal 1 receptor 73,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159644,Vmn1r74,vomeronasal 1 receptor 74,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159645,Vmn1r75,vomeronasal 1 receptor 75,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159643,Vmn1r76,vomeronasal 1 receptor 76,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159646,Vmn1r78,vomeronasal 1 receptor 78,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159642,Vmn1r80,vomeronasal 1 receptor 80,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159648,Vmn1r81,vomeronasal 1 receptor 81,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159656,Vmn1r82,vomeronasal 1 receptor 82,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159647,Vmn1r83,vomeronasal 1 receptor 83,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159655,Vmn1r84,vomeronasal 1 receptor 84,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159698,Vmn1r87,vomeronasal 1 receptor 87,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159697,Vmn1r89,vomeronasal 1 receptor 89,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159634,Vmn1r185,vomeronasal 1 receptor 185,7,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2182259,Vmn1r188,vomeronasal 1 receptor 188,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2182257,Vmn1r189,vomeronasal 1 receptor 189,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2182261,Vmn1r190-ps,"vomeronasal 1 receptor 190, pseudogene",13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2182258,Vmn1r191,vomeronasal 1 receptor 191,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2182260,Vmn1r192,vomeronasal 1 receptor 192,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159695,Vmn1r193,vomeronasal 1 receptor 193,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159692,Vmn1r195,vomeronasal 1 receptor 195,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:4438447,Vmn1r196,vomeronasal 1 receptor 196,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159686,Vmn1r197,vomeronasal 1 receptor 197,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159689,Vmn1r198,vomeronasal 1 receptor 198,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159662,Vmn1r199,vomeronasal 1 receptor 199,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159660,Vmn1r200,vomeronasal 1 receptor 200,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159690,Vmn1r201,vomeronasal 1 receptor 201,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159693,Vmn1r202,vomeronasal 1 receptor 202,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159674,Vmn1r203,vomeronasal 1 receptor 203,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159667,Vmn1r205,vomeronasal 1 receptor 205,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159665,Vmn1r206,vomeronasal 1 receptor 206,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159668,Vmn1r208,vomeronasal 1 receptor 208,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159673,Vmn1r210,vomeronasal 1 receptor 210,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159685,Vmn1r211,vomeronasal 1 receptor 211,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159683,Vmn1r212,vomeronasal 1 receptor 212,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159664,Vmn1r213,vomeronasal 1 receptor 213,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159663,Vmn1r214,vomeronasal 1 receptor 214,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159687,Vmn1r215,vomeronasal 1 receptor 215,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159696,Vmn1r216,vomeronasal 1 receptor 216,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159677,Vmn1r217,vomeronasal 1 receptor 217,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159691,Vmn1r218,vomeronasal 1 receptor 218,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159676,Vmn1r219,vomeronasal 1 receptor 219,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159675,Vmn1r220,vomeronasal 1 receptor 220,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159679,Vmn1r222,vomeronasal 1 receptor 222,13,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159626,Vmn1r225,vomeronasal 1 receptor 225,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159616,Vmn1r226,vomeronasal 1 receptor 226,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159627,Vmn1r227,vomeronasal 1 receptor 227,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159624,Vmn1r228,vomeronasal 1 receptor 228,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159615,Vmn1r229,vomeronasal 1 receptor 229,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159629,Vmn1r230,vomeronasal 1 receptor 230,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159628,Vmn1r231,vomeronasal 1 receptor 231,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159625,Vmn1r232,vomeronasal 1 receptor 232,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159639,Vmn1r233,vomeronasal 1 receptor 233,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159635,Vmn1r234,vomeronasal 1 receptor 234,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159636,Vmn1r235,vomeronasal 1 receptor 235,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159638,Vmn1r236,vomeronasal 1 receptor 236,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:2159637,Vmn1r237,vomeronasal 1 receptor 237,17,,pheromone receptor activity,,,ISS,,J:74518 
+MGI:3645892,Vmn2r1,"vomeronasal 2, receptor 1",3,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR011500 IPR017978 ,J:72247 
+MGI:3645892,Vmn2r1,"vomeronasal 2, receptor 1",3,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2678394,Vmn2r26,"vomeronasal 2, receptor 26",6,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:2678394,Vmn2r26,"vomeronasal 2, receptor 26",6,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR004073 IPR011500 IPR017978 IPR017979 ,J:72247 
+MGI:3646674,Vmn2r116,"vomeronasal 2, receptor 116",17,,G-protein coupled receptor activity,,,IEA,IPR000337 IPR004073 IPR011500 IPR017978 IPR017979 ,J:72247 
+MGI:3646674,Vmn2r116,"vomeronasal 2, receptor 116",17,,G-protein coupled receptor activity,,,IEA,KW-0297 ,J:60000 
+MGI:3646674,Vmn2r116,"vomeronasal 2, receptor 116",17,,pheromone receptor activity,,,IGI,MGI:3645915 ,J:162636 

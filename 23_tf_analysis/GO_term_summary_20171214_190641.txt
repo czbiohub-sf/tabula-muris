@@ -1,0 +1,712 @@
+MGI Gene/Marker ID	Symbol	Name	Chr	Qualifier	Annotated Term	Context	Proteoform	Evidence	Inferred From	Reference(s)
+MGI:1923919	1700128F08Rik	RIKEN cDNA 1700128F08 gene	9		mRNA splicing, via spliceosome			IBA	PTN000359236 	J:161428 	
+MGI:1921450	2810403A07Rik	RIKEN cDNA 2810403A07 gene	3		mRNA splice site selection			ISO	Q7Z7F0 	J:164563 	
+MGI:1921450	2810403A07Rik	RIKEN cDNA 2810403A07 gene	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1915545	Aar2	AAR2 splicing factor homolog	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1915545	Aar2	AAR2 splicing factor homolog	2		spliceosomal tri-snRNP complex assembly			IBA	PTN000294070 	J:161428 	
+MGI:1891824	Acin1	apoptotic chromatin condensation inducer 1	14		negative regulation of mRNA splicing, via spliceosome			ISO	Q9UKV3 	J:164563 	
+MGI:1891824	Acin1	apoptotic chromatin condensation inducer 1	14		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1202294	Aff2	AF4/FMR2 family, member 2	X		regulation of RNA splicing			IDA		J:157426 	
+MGI:1202294	Aff2	AF4/FMR2 family, member 2	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1316648	Ahnak	AHNAK nucleoprotein (desmoyokin)	19		regulation of RNA splicing	regulates UniProtKB:E9Q616		IDA		J:205645 	
+MGI:2443758	Akap17b	A kinase (PRKA) anchor protein 17B	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1933427	Akr1c6	aldo-keto reductase family 1, member C6	13		negative regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:104874	Akt2	thymoma viral proto-oncogene 2	7		negative regulation of RNA splicing			ISO	RGD:2082 	J:155856 	
+MGI:1341044	Alyref	Aly/REF export factor	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913144	Alyref2	Aly/REF export factor 2	1		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1276102	Aqr	aquarius	2		mRNA splicing, via spliceosome			IEA	IPR026300 	J:72247 	
+MGI:1276102	Aqr	aquarius	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1929500	Arl6ip4	ADP-ribosylation factor-like 6 interacting protein 4	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1915433	Bcas2	breast carcinoma amplified sequence 2	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1891374	Brdt	bromodomain, testis-specific	5		regulation of RNA splicing			IMP		J:190257 	
+MGI:1891374	Brdt	bromodomain, testis-specific	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2141291	Bud31	BUD31 homolog	5		mRNA splicing, via spliceosome			IBA	PTN000454176 	J:161428 	
+MGI:1194505	C1qbp	complement component 1, q subcomponent binding protein	11		negative regulation of mRNA splicing, via spliceosome			ISO	Q07021 	J:164563 	
+MGI:1194505	C1qbp	complement component 1, q subcomponent binding protein	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1917562	Cactin	cactin, spliceosome C complex subunit	10		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2179723	Casc3	cancer susceptibility candidate 3	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2444228	Ccar2	cell cycle activator and apoptosis regulator 2	14		RNA splicing			ISO	Q8N163 	J:164563 	
+MGI:1917483	Cd2bp2	CD2 antigen (cytoplasmic tail) binding protein 2	7		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1918952	Cdc5l	cell division cycle 5-like (S. pombe)	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1918963	Cdc40	cell division cycle 40	10		mRNA splicing, via spliceosome			IEA	IPR032847 	J:72247 	
+MGI:1918963	Cdc40	cell division cycle 40	10		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1098802	Cdk12	cyclin-dependent kinase 12	11		regulation of RNA splicing			ISO	RGD:621111 	J:155856 	
+MGI:1098802	Cdk12	cyclin-dependent kinase 12	11		RNA splicing			ISO	RGD:621111 	J:155856 	
+MGI:1916812	Cdk13	cyclin-dependent kinase 13	13		alternative mRNA splicing, via spliceosome			IDA		J:118326 	
+MGI:1916812	Cdk13	cyclin-dependent kinase 13	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1342295	Celf1	CUGBP, Elav-like family member 1	2		mRNA splice site selection			IDA		J:67386 	
+MGI:1342295	Celf1	CUGBP, Elav-like family member 1	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1338822	Celf2	CUGBP, Elav-like family member 2	2		mRNA splice site selection			IDA		J:67386 	
+MGI:1338822	Celf2	CUGBP, Elav-like family member 2	2		mRNA splice site selection			ISO	O95319 	J:164563 	
+MGI:1926034	Celf3	CUGBP, Elav-like family member 3	3		positive regulation of mRNA splicing, via spliceosome			ISO	Q5SZQ8 	J:164563 	
+MGI:1926034	Celf3	CUGBP, Elav-like family member 3	3		regulation of alternative mRNA splicing, via spliceosome			ISO	Q5SZQ8 	J:164563 	
+MGI:1926034	Celf3	CUGBP, Elav-like family member 3	3		RNA splicing			ISO	Q5SZQ8 	J:164563 	
+MGI:1932407	Celf4	CUGBP, Elav-like family member 4	18		mRNA splice site selection			IDA		J:67386 	
+MGI:1932407	Celf4	CUGBP, Elav-like family member 4	18		negative regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:1932407	Celf4	CUGBP, Elav-like family member 4	18		positive regulation of mRNA splicing, via spliceosome			ISO	Q9BZC1 	J:164563 	
+MGI:1932407	Celf4	CUGBP, Elav-like family member 4	18		regulation of alternative mRNA splicing, via spliceosome			ISO	Q9BZC1 	J:73065 	
+MGI:1932407	Celf4	CUGBP, Elav-like family member 4	18		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2442333	Celf5	CUGBP, Elav-like family member 5	10		regulation of alternative mRNA splicing, via spliceosome			ISO	Q8N6W0 	J:164563 	
+MGI:1914185	Cir1	corepressor interacting with RBPJ, 1	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1855695	Clasrp	CLK4-associating serine/arginine rich protein	7		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:107403	Clk1	CDC-like kinase 1	1		regulation of RNA splicing			ISO	P49759 	J:164563 	
+MGI:1098669	Clk2	CDC-like kinase 2	3		regulation of RNA splicing			ISO	P49760 	J:164563 	
+MGI:1098670	Clk3	CDC-like kinase 3	9		regulation of RNA splicing			ISO	P49761 	J:164563 	
+MGI:1098551	Clk4	CDC like kinase 4	11		regulation of RNA splicing			ISO	Q9HAZ1 	J:164563 	
+MGI:109638	Clns1a	chloride channel, nucleotide-sensitive, 1A	7		spliceosomal snRNP assembly			ISO	P54105 	J:164563 	
+MGI:2138968	Clp1	CLP1, cleavage and polyadenylation factor I subunit	2		tRNA splicing, via endonucleolytic cleavage and ligation			IBA	PTN000298076 	J:161428 	
+MGI:2138968	Clp1	CLP1, cleavage and polyadenylation factor I subunit	2		tRNA splicing, via endonucleolytic cleavage and ligation			ISO	Q92989 	J:164563 	
+MGI:1914127	Crnkl1	crooked neck pre-mRNA splicing factor 1	2		mRNA splicing, via spliceosome			ISO	AF318303 	J:77759 	
+MGI:1914127	Crnkl1	crooked neck pre-mRNA splicing factor 1	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914127	Crnkl1	crooked neck pre-mRNA splicing factor 1	2		spliceosomal complex assembly			IBA	PTN000133724 	J:161428 	
+MGI:1914127	Crnkl1	crooked neck pre-mRNA splicing factor 1	2		spliceosomal complex assembly			ISO	Q9BZJ0 	J:164563 	
+MGI:1913320	Cwc15	CWC15 spliceosome-associated protein	9		mRNA splicing, via spliceosome			IEA	IPR006973 	J:72247 	
+MGI:1913320	Cwc15	CWC15 spliceosome-associated protein	9		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2136773	Cwc22	CWC22 spliceosome-associated protein	2		mRNA splicing, via spliceosome			IBA	PTN000427686 	J:161428 	
+MGI:2136773	Cwc22	CWC22 spliceosome-associated protein	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1917498	Dazap1	DAZ associated protein 1	10		positive regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:1931520	Dbr1	debranching RNA lariats 1	9		mRNA splicing, via spliceosome			IDA		J:64827 	
+MGI:1931520	Dbr1	debranching RNA lariats 1	9		RNA splicing, via transesterification reactions			ISO	Q9UK59 	J:164563 	
+MGI:1921078	Dcaf4	DDB1 and CUL4 associated factor 4	12		RNA splicing			IBA	PTN001108918 	J:161428 	
+MGI:1916555	Dcps	decapping enzyme, scavenger	9		mRNA cis splicing, via spliceosome			ISO	Q96C86 	J:164563 	
+MGI:1916555	Dcps	decapping enzyme, scavenger	9		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2144727	Ddx1	DEAD (Asp-Glu-Ala-Asp) box polypeptide 1	12		tRNA splicing, via endonucleolytic cleavage and ligation			ISO	Q92499 	J:164563 	
+MGI:105037	Ddx5	DEAD (Asp-Glu-Ala-Asp) box polypeptide 5	11		alternative mRNA splicing, via spliceosome			IMP		J:240379 	
+MGI:105037	Ddx5	DEAD (Asp-Glu-Ala-Asp) box polypeptide 5	11		alternative mRNA splicing, via spliceosome			ISO	P17844 	J:164563 	
+MGI:105037	Ddx5	DEAD (Asp-Glu-Ala-Asp) box polypeptide 5	11		regulation of alternative mRNA splicing, via spliceosome			IDA		J:238450 	
+MGI:105037	Ddx5	DEAD (Asp-Glu-Ala-Asp) box polypeptide 5	11		regulation of alternative mRNA splicing, via spliceosome			ISO	P17844 	J:164563 	
+MGI:105037	Ddx5	DEAD (Asp-Glu-Ala-Asp) box polypeptide 5	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914290	Ddx17	DEAD (Asp-Glu-Ala-Asp) box polypeptide 17	15		alternative mRNA splicing, via spliceosome			IMP		J:240379 	
+MGI:1914290	Ddx17	DEAD (Asp-Glu-Ala-Asp) box polypeptide 17	15		alternative mRNA splicing, via spliceosome			ISO	Q92841 	J:164563 	
+MGI:1914290	Ddx17	DEAD (Asp-Glu-Ala-Asp) box polypeptide 17	15		regulation of alternative mRNA splicing, via spliceosome			IDA		J:238450 	
+MGI:1914290	Ddx17	DEAD (Asp-Glu-Ala-Asp) box polypeptide 17	15		regulation of alternative mRNA splicing, via spliceosome			ISO	Q92841 	J:164563 	
+MGI:1914290	Ddx17	DEAD (Asp-Glu-Ala-Asp) box polypeptide 17	15		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:99526	Ddx19a	DEAD (Asp-Glu-Ala-Asp) box polypeptide 19a	8		RNA splicing			IBA	PTN000619776 	J:161428 	
+MGI:2148251	Ddx19b	DEAD (Asp-Glu-Ala-Asp) box polypeptide 19b	8		RNA splicing			IBA	PTN000619776 	J:161428 	
+MGI:1858415	Ddx20	DEAD (Asp-Glu-Ala-Asp) box polypeptide 20	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1858415	Ddx20	DEAD (Asp-Glu-Ala-Asp) box polypeptide 20	3		spliceosomal snRNP assembly			ISO	Q9UHI6 	J:164563 	
+MGI:1921601	Ddx23	DEAD (Asp-Glu-Ala-Asp) box polypeptide 23	15		RNA splicing, via transesterification reactions			IBA	PTN000619358 	J:161428 	
+MGI:1353582	Ddx25	DEAD (Asp-Glu-Ala-Asp) box polypeptide 25	9		RNA splicing			IBA	PTN000619776 	J:161428 	
+MGI:1915528	Ddx39	DEAD (Asp-Glu-Ala-Asp) box polypeptide 39	8		mRNA splicing, via spliceosome			IBA	PTN000620148 	J:161428 	
+MGI:1915528	Ddx39	DEAD (Asp-Glu-Ala-Asp) box polypeptide 39	8		mRNA splicing, via spliceosome			ISO	O00148 	J:164563 	
+MGI:1915528	Ddx39	DEAD (Asp-Glu-Ala-Asp) box polypeptide 39	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:99240	Ddx39b	DEAD (Asp-Glu-Ala-Asp) box polypeptide 39B	17		mRNA splicing, via spliceosome			IBA	PTN000620148 	J:161428 	
+MGI:99240	Ddx39b	DEAD (Asp-Glu-Ala-Asp) box polypeptide 39B	17		mRNA splicing, via spliceosome			ISO	Q13838 	J:164563 	
+MGI:99240	Ddx39b	DEAD (Asp-Glu-Ala-Asp) box polypeptide 39B	17		RNA splicing			ISO	Q13838 	J:164563 	
+MGI:99240	Ddx39b	DEAD (Asp-Glu-Ala-Asp) box polypeptide 39B	17		spliceosomal complex assembly			ISO	Q13838 	J:164563 	
+MGI:1920185	Ddx41	DEAD (Asp-Glu-Ala-Asp) box polypeptide 41	13		mRNA splicing, via spliceosome			ISO	Q9UJV9 	J:164563 	
+MGI:1920185	Ddx41	DEAD (Asp-Glu-Ala-Asp) box polypeptide 41	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1920895	Ddx46	DEAD (Asp-Glu-Ala-Asp) box polypeptide 46	13		mRNA splicing, via spliceosome			IBA	PTN000618950 	J:161428 	
+MGI:1920895	Ddx46	DEAD (Asp-Glu-Ala-Asp) box polypeptide 46	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1915005	Ddx47	DEAD (Asp-Glu-Ala-Asp) box polypeptide 47	6		RNA splicing			ISO	Q9H0S4 	J:164563 	
+MGI:107854	Dgcr14	DiGeorge syndrome critical region gene 14	16		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1306823	Dhx8	DEAH (Asp-Glu-Ala-His) box polypeptide 8	11		mRNA splicing, via spliceosome			IBA	PTN000433761 	J:161428 	
+MGI:1306823	Dhx8	DEAH (Asp-Glu-Ala-His) box polypeptide 8	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:108177	Dhx9	DEAH (Asp-Glu-Ala-His) box polypeptide 9	1		alternative mRNA splicing, via spliceosome			ISO	Q08211 	J:164563 	
+MGI:108177	Dhx9	DEAH (Asp-Glu-Ala-His) box polypeptide 9	1		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1099786	Dhx15	DEAH (Asp-Glu-Ala-His) box polypeptide 15	5		mRNA splicing, via spliceosome			IBA	PTN000434138 	J:161428 	
+MGI:1099786	Dhx15	DEAH (Asp-Glu-Ala-His) box polypeptide 15	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1916442	Dhx16	DEAH (Asp-Glu-Ala-His) box polypeptide 16	17		mRNA splicing, via spliceosome			IBA	PTN000434013 	J:161428 	
+MGI:2141813	Dhx32	DEAH (Asp-Glu-Ala-His) box polypeptide 32	7		mRNA splicing, via spliceosome			IBA	PTN000434138 	J:161428 	
+MGI:1927617	Dhx38	DEAH (Asp-Glu-Ala-His) box polypeptide 38	8		mRNA splicing, via spliceosome			IBA	PTN000433947 	J:161428 	
+MGI:1927617	Dhx38	DEAH (Asp-Glu-Ala-His) box polypeptide 38	8		mRNA splicing, via spliceosome			ISO	Q92620 	J:164563 	
+MGI:1914737	Dhx40	DEAH (Asp-Glu-Ala-His) box polypeptide 40	11		mRNA splicing, via spliceosome			IBA	PTN000433761 	J:161428 	
+MGI:2136388	Dqx1	DEAQ RNA-dependent ATPase	6		mRNA splicing, via spliceosome			IBA	PTN000434138 	J:161428 	
+MGI:1330299	Dyrk1a	dual-specificity tyrosine-(Y)-phosphorylation regulated kinase 1a	16		negative regulation of mRNA splicing, via spliceosome			IMP		J:182960 	
+MGI:1330299	Dyrk1a	dual-specificity tyrosine-(Y)-phosphorylation regulated kinase 1a	16		regulation of alternative mRNA splicing, via spliceosome			ISO	RGD:2528 	J:155856 	
+MGI:1917851	Ecd	ecdysoneless cell cycle regulator	14		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1336880	Eftud2	elongation factor Tu GTP binding domain containing 2	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1923731	Eif4a3	eukaryotic translation initiation factor 4A3	11		positive regulation of mRNA splicing, via spliceosome			IMP		J:140901 	
+MGI:1930134	Ern1	endoplasmic reticulum (ER) to nucleus signalling 1	11		mRNA endonucleolytic cleavage involved in unfolded protein response			ISO	O75460 	J:164563 	
+MGI:1930134	Ern1	endoplasmic reticulum (ER) to nucleus signalling 1	11		mRNA splicing, via endonucleolytic cleavage and ligation			ISO	O75460 	J:164563 	
+MGI:1930134	Ern1	endoplasmic reticulum (ER) to nucleus signalling 1	11		positive regulation of RNA splicing			ISO	O75460 	J:164563 	
+MGI:1917326	Esrp1	epithelial splicing regulatory protein 1	4		alternative mRNA splicing, via spliceosome	uses Fgfr1|uses Fgfr2|uses Fgfr3|uses Arhgef11		IGI	MGI:1924661 	J:226997 	
+MGI:1917326	Esrp1	epithelial splicing regulatory protein 1	4		regulation of RNA splicing			ISO	Q6NXG1 	J:164563 	
+MGI:1917326	Esrp1	epithelial splicing regulatory protein 1	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1924661	Esrp2	epithelial splicing regulatory protein 2	8		alternative mRNA splicing, via spliceosome	uses Fgfr1|uses Fgfr2|uses Fgfr3|uses Arhgef11|uses Enah		IGI	MGI:1917326 	J:226997 	
+MGI:1924661	Esrp2	epithelial splicing regulatory protein 2	8		regulation of RNA splicing			ISO	Q9H6T0 	J:164563 	
+MGI:1924661	Esrp2	epithelial splicing regulatory protein 2	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913837	Fastk	Fas-activated serine/threonine kinase	5		regulation of RNA splicing			ISO	Q14296 	J:164563 	
+MGI:95564	Fmr1	fragile X mental retardation syndrome 1	X		regulation of alternative mRNA splicing, via spliceosome			IDA		J:173059 	
+MGI:95564	Fmr1	fragile X mental retardation syndrome 1	X		regulation of alternative mRNA splicing, via spliceosome			ISO	Q06787 	J:164563 	
+MGI:95564	Fmr1	fragile X mental retardation syndrome 1	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:893597	Frg1	FSHD region gene 1	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2141656	Gcfc2	GC-rich sequence DNA binding factor 2	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2141656	Gcfc2	GC-rich sequence DNA binding factor 2	6		spliceosomal complex assembly			ISO	P16383 	J:164563 	
+MGI:1913853	Gemin2	gem nuclear organelle associated protein 2	12		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913853	Gemin2	gem nuclear organelle associated protein 2	12		spliceosomal complex assembly			IEA	IPR017364 	J:72247 	
+MGI:1913853	Gemin2	gem nuclear organelle associated protein 2	12		spliceosomal snRNP assembly			ISO	O14893 	J:164563 	
+MGI:2449313	Gemin4	gem nuclear organelle associated protein 4	11		spliceosomal snRNP assembly			IBA	PTN001036936 	J:161428 	
+MGI:2449313	Gemin4	gem nuclear organelle associated protein 4	11		spliceosomal snRNP assembly			ISO	P57678 	J:164563 	
+MGI:2449311	Gemin5	gem nuclear organelle associated protein 5	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2449311	Gemin5	gem nuclear organelle associated protein 5	11		spliceosomal snRNP assembly			ISO	Q8TEQ6 	J:164563 	
+MGI:1914492	Gemin6	gem nuclear organelle associated protein 6	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914492	Gemin6	gem nuclear organelle associated protein 6	17		spliceosomal complex assembly			IEA	IPR009422 	J:72247 	
+MGI:1914492	Gemin6	gem nuclear organelle associated protein 6	17		spliceosomal snRNP assembly			ISO	Q8WXD5 	J:164563 	
+MGI:1916981	Gemin7	gem nuclear organelle associated protein 7	7		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1916981	Gemin7	gem nuclear organelle associated protein 7	7		spliceosomal snRNP assembly			ISO	Q9H840 	J:164563 	
+MGI:2384300	Gemin8	gem nuclear organelle associated protein 8	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2384300	Gemin8	gem nuclear organelle associated protein 8	X		spliceosomal snRNP assembly			ISO	Q9NWZ8 	J:164563 	
+MGI:3644226	Gm8994	predicted gene 8994	6		RNA splicing			IBA	PTN000619776 	J:161428 	
+MGI:3702053	Gm13691	predicted gene 13691	2		mRNA splicing, via spliceosome			IBA	PTN000427686 	J:161428 	
+MGI:3702055	Gm13693	predicted gene 13693	2		mRNA splicing, via spliceosome			IBA	PTN000427686 	J:161428 	
+MGI:3702064	Gm13694	predicted gene 13694	2		mRNA splicing, via spliceosome			IBA	PTN000427686 	J:161428 	
+MGI:3702066	Gm13695	predicted gene 13695	2		mRNA splicing, via spliceosome			IBA	PTN000427686 	J:161428 	
+MGI:3702068	Gm13696	predicted gene 13696	2		mRNA splicing, via spliceosome			IBA	PTN000427686 	J:161428 	
+MGI:3702070	Gm13697	predicted gene 13697	2		mRNA splicing, via spliceosome			IBA	PTN000427686 	J:161428 	
+MGI:3702072	Gm13698	predicted gene 13698	2		mRNA splicing, via spliceosome			IBA	PTN000427686 	J:161428 	
+MGI:3648256	Gm16381	predicted gene 16381	12		mRNA splicing, via spliceosome			IBA	PTN000315756 	J:161428 	
+MGI:1891713	Habp4	hyaluronic acid binding protein 4	13		positive regulation of RNA splicing			ISO	Q5JVS0 	J:164563 	
+MGI:1891713	Habp4	hyaluronic acid binding protein 4	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:107159	Hmx2	H6 homeobox 2	7		positive regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:104820	Hnrnpa1	heterogeneous nuclear ribonucleoprotein A1	15		alternative mRNA splicing, via spliceosome			IDA		J:97604 	
+MGI:104820	Hnrnpa1	heterogeneous nuclear ribonucleoprotein A1	15		RNA splicing			IDA		J:97604 	
+MGI:104819	Hnrnpa2b1	heterogeneous nuclear ribonucleoprotein A2/B1	6		mRNA splicing, via spliceosome			ISO	P22626 	J:164563 	
+MGI:104819	Hnrnpa2b1	heterogeneous nuclear ribonucleoprotein A2/B1	6		negative regulation of mRNA splicing, via spliceosome			IDA		J:140901 	
+MGI:104819	Hnrnpa2b1	heterogeneous nuclear ribonucleoprotein A2/B1	6		negative regulation of mRNA splicing, via spliceosome			IMP		J:140901 	
+MGI:104819	Hnrnpa2b1	heterogeneous nuclear ribonucleoprotein A2/B1	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1917171	Hnrnpa3	heterogeneous nuclear ribonucleoprotein A3	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:107795	Hnrnpc	heterogeneous nuclear ribonucleoprotein C	14		mRNA splicing, via spliceosome			ISO	P07910 	J:164563 	
+MGI:107795	Hnrnpc	heterogeneous nuclear ribonucleoprotein C	14		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2138741	Hnrnpf	heterogeneous nuclear ribonucleoprotein F	6		regulation of RNA splicing			ISO	P52597 	J:164563 	
+MGI:2138741	Hnrnpf	heterogeneous nuclear ribonucleoprotein F	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1891925	Hnrnph1	heterogeneous nuclear ribonucleoprotein H1	11		regulation of RNA splicing			ISO	P31943 	J:164563 	
+MGI:1891925	Hnrnph1	heterogeneous nuclear ribonucleoprotein H1	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:99894	Hnrnpk	heterogeneous nuclear ribonucleoprotein K	13		negative regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:99894	Hnrnpk	heterogeneous nuclear ribonucleoprotein K	13		positive regulation of RNA splicing			ISO	RGD:71058 	J:155856 	
+MGI:99894	Hnrnpk	heterogeneous nuclear ribonucleoprotein K	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:104816	Hnrnpl	heterogeneous nuclear ribonucleoprotein L	7		negative regulation of mRNA splicing, via spliceosome			ISO	RGD:71059 	J:155856 	
+MGI:104816	Hnrnpl	heterogeneous nuclear ribonucleoprotein L	7		regulation of alternative mRNA splicing, via spliceosome			IMP		J:188749 	
+MGI:104816	Hnrnpl	heterogeneous nuclear ribonucleoprotein L	7		regulation of alternative mRNA splicing, via spliceosome			ISO	P14866 	J:164563 	
+MGI:1919942	Hnrnpll	heterogeneous nuclear ribonucleoprotein L-like	17		positive regulation of RNA splicing			ISO	Q8WVV9 	J:164563 	
+MGI:1926465	Hnrnpm	heterogeneous nuclear ribonucleoprotein M	17		alternative mRNA splicing, via spliceosome			ISO	P52272 	J:164563 	
+MGI:1926465	Hnrnpm	heterogeneous nuclear ribonucleoprotein M	17		mRNA splicing, via spliceosome			IEA	IPR024667 	J:72247 	
+MGI:1926465	Hnrnpm	heterogeneous nuclear ribonucleoprotein M	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1858195	Hnrnpu	heterogeneous nuclear ribonucleoprotein U	1		regulation of alternative mRNA splicing, via spliceosome			ISO	Q00839 	J:164563 	
+MGI:1858195	Hnrnpu	heterogeneous nuclear ribonucleoprotein U	1		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:105384	Hspa8	heat shock protein 8	9		positive regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:105384	Hspa8	heat shock protein 8	9		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1919709	Htatsf1	HIV TAT specific factor 1	X		mRNA splicing, via spliceosome			IBA	PTN000401295 	J:161428 	
+MGI:1345142	Ik	IK cytokine	18		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1923310	Isy1	ISY1 splicing factor homolog	6		generation of catalytic spliceosome for second transesterification step			IBA	PTN000314659 	J:161428 	
+MGI:1923310	Isy1	ISY1 splicing factor homolog	6		mRNA 3'-splice site recognition			IBA	PTN000314659 	J:161428 	
+MGI:1923310	Isy1	ISY1 splicing factor homolog	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1920723	Iws1	IWS1, SUPT6 interacting protein	18		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1858910	Jmjd6	jumonji domain containing 6	11		regulation of mRNA splicing, via spliceosome			IMP		J:169297 	
+MGI:1858910	Jmjd6	jumonji domain containing 6	11		regulation of mRNA splicing, via spliceosome			ISO	Q6NYC1 	J:164563 	
+MGI:1858910	Jmjd6	jumonji domain containing 6	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:893579	Khdrbs1	KH domain containing, RNA binding, signal transduction associated 1	4		regulation of mRNA splicing, via spliceosome			IDA		J:179373 	
+MGI:2159649	Khdrbs2	KH domain containing, RNA binding, signal transduction associated 2	1		regulation of mRNA splicing, via spliceosome			IDA		J:179373 	
+MGI:1313312	Khdrbs3	KH domain containing, RNA binding, signal transduction associated 3	15		positive regulation of RNA splicing			ISO	RGD:620921 	J:155856 	
+MGI:1313312	Khdrbs3	KH domain containing, RNA binding, signal transduction associated 3	15		regulation of mRNA splicing, via spliceosome			IDA		J:179373 	
+MGI:1336214	Khsrp	KH-type splicing regulatory protein	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:96778	Lgals3	lectin, galactose binding, soluble 3	14		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1919949	Lime1	Lck interacting transmembrane adaptor 1	2		spliceosomal complex disassembly			IBA	PTN000596045 	J:161428 	
+MGI:1919250	Lmntd2	lamin tail domain containing 2	7		positive regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:1914457	Lsm1	LSM1 homolog, mRNA degradation associated	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:90676	Lsm2	LSM2 homolog, U6 small nuclear RNA and mRNA degradation associated	17		mRNA splicing, via spliceosome			IBA	PTN000352619 	J:161428 	
+MGI:90676	Lsm2	LSM2 homolog, U6 small nuclear RNA and mRNA degradation associated	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:90676	Lsm2	LSM2 homolog, U6 small nuclear RNA and mRNA degradation associated	17		spliceosomal tri-snRNP complex assembly			ISO	AF182288 	J:73065 	
+MGI:1914928	Lsm3	LSM3 homolog, U6 small nuclear RNA and mRNA degradation associated	6		mRNA splicing, via spliceosome			IBA	PTN000318821 	J:161428 	
+MGI:1914928	Lsm3	LSM3 homolog, U6 small nuclear RNA and mRNA degradation associated	6		mRNA splicing, via spliceosome			ISO	AF182289 	J:73065 	
+MGI:1914928	Lsm3	LSM3 homolog, U6 small nuclear RNA and mRNA degradation associated	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1354692	Lsm4	LSM4 homolog, U6 small nuclear RNA and mRNA degradation associated	8		mRNA splicing, via spliceosome			IEA	IPR034101 	J:72247 	
+MGI:1354692	Lsm4	LSM4 homolog, U6 small nuclear RNA and mRNA degradation associated	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1354692	Lsm4	LSM4 homolog, U6 small nuclear RNA and mRNA degradation associated	8		spliceosomal complex assembly			IBA	PTN000596745 	J:161428 	
+MGI:1354692	Lsm4	LSM4 homolog, U6 small nuclear RNA and mRNA degradation associated	8		spliceosomal snRNP assembly			IBA	PTN000596745 	J:161428 	
+MGI:1913623	Lsm5	LSM5 homolog, U6 small nuclear RNA and mRNA degradation associated	6		mRNA splicing, via spliceosome			IBA	PTN000469347 	J:161428 	
+MGI:1913623	Lsm5	LSM5 homolog, U6 small nuclear RNA and mRNA degradation associated	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1925901	Lsm6	LSM6 homolog, U6 small nuclear RNA and mRNA degradation associated	8		mRNA splicing, via spliceosome			IBA	PTN000111530 	J:161428 	
+MGI:1925901	Lsm6	LSM6 homolog, U6 small nuclear RNA and mRNA degradation associated	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913344	Lsm7	LSM7 homolog, U6 small nuclear RNA and mRNA degradation associated	10		mRNA splicing, via spliceosome			IEA	IPR017132 	J:72247 	
+MGI:1913344	Lsm7	LSM7 homolog, U6 small nuclear RNA and mRNA degradation associated	10		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1923772	Lsm8	LSM8 homolog, U6 small nuclear RNA associated	6		mRNA splicing, via spliceosome			IBA	PTN000400465 	J:161428 	
+MGI:1923772	Lsm8	LSM8 homolog, U6 small nuclear RNA associated	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2151045	Lsm10	U7 snRNP-specific Sm-like protein LSM10	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914228	Luc7l	Luc7-like	17		mRNA splice site selection			IBA	PTN000271979 	J:161428 	
+MGI:2183260	Luc7l2	LUC7-like 2 (S. cerevisiae)	6		mRNA splice site selection			IBA	PTN000271979 	J:161428 	
+MGI:1914934	Luc7l3	LUC7-like 3 (S. cerevisiae)	11		mRNA splice site selection			IBA	PTN000271979 	J:161428 	
+MGI:1914934	Luc7l3	LUC7-like 3 (S. cerevisiae)	11		RNA splicing			ISO	O95232 	J:164563 	
+MGI:1330312	Magoh	mago homolog, exon junction complex core component	4		regulation of alternative mRNA splicing, via spliceosome			ISO	P61326 	J:164563 	
+MGI:1330312	Magoh	mago homolog, exon junction complex core component	4		RNA splicing			IBA	PTN000290902 	J:161428 	
+MGI:1913691	Magohb	mago homolog B, exon junction complex core component	6		RNA splicing			IBA	PTN000290902 	J:161428 	
+MGI:1919539	Malat1	metastasis associated lung adenocarcinoma transcript 1 (non-coding RNA)	19		regulation of alternative mRNA splicing, via spliceosome			IMP		J:165271 	
+MGI:1347004	Mapkbp1	mitogen-activated protein kinase binding protein 1	2		RNA splicing			IBA	PTN001108918 	J:161428 	
+MGI:1928482	Mbnl1	muscleblind like splicing factor 1	3		alternative mRNA splicing, via spliceosome			IMP		J:173018 	
+MGI:1928482	Mbnl1	muscleblind like splicing factor 1	3		alternative mRNA splicing, via spliceosome			ISO	Q9BZC1 	J:73065 	
+MGI:1928482	Mbnl1	muscleblind like splicing factor 1	3		mRNA splice site selection	happens in skeletal musculature,has the participant Atp2a1|happens in skeletal musculature,has the participant Ldb3|happens in skeletal musculature,has the participant Ttn|happens in skeletal musculature,has the participant Nrap|happens in skeletal musculature,has the participant Capn3|happens in skeletal musculature,has the participant Fhod1|happens in skeletal musculature,has the participant Gfpt1|happens in skeletal musculature,has the participant Mbnl1|happens in skeletal musculature,has the participant Mbnl2|happens in skeletal musculature,has the participant Pdlim3		IMP	MGI:3052922 	J:112061 	
+MGI:1928482	Mbnl1	muscleblind like splicing factor 1	3		mRNA splice site selection			IMP	MGI:3052922 	J:86903 	
+MGI:1928482	Mbnl1	muscleblind like splicing factor 1	3		regulation of alternative mRNA splicing, via spliceosome	regulates a function/process that happens in heart		IMP	MGI:3052922 	J:142671 	
+MGI:1928482	Mbnl1	muscleblind like splicing factor 1	3		regulation of RNA splicing			ISO	Q9NR56 	J:164563 	
+MGI:1928482	Mbnl1	muscleblind like splicing factor 1	3		RNA splicing			ISO	Q9NR56 	J:164563 	
+MGI:2145597	Mbnl2	muscleblind like splicing factor 2	14		regulation of alternative mRNA splicing, via spliceosome			IMP		J:173018 	
+MGI:2145597	Mbnl2	muscleblind like splicing factor 2	14		regulation of alternative mRNA splicing, via spliceosome			ISO	Q9BZC1 	J:73065 	
+MGI:2145597	Mbnl2	muscleblind like splicing factor 2	14		regulation of RNA splicing			ISO	Q5VZF2 	J:164563 	
+MGI:2145597	Mbnl2	muscleblind like splicing factor 2	14		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2444912	Mbnl3	muscleblind like splicing factor 3	X		regulation of RNA splicing			ISO	Q9NUK0 	J:164563 	
+MGI:2444912	Mbnl3	muscleblind like splicing factor 3	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1927165	Mettl3	methyltransferase like 3	14		mRNA splicing, via spliceosome			IMP		J:219587 	
+MGI:2442926	Mettl14	methyltransferase like 14	3		mRNA splicing, via spliceosome			ISO	Q9HCE5 	J:164563 	
+MGI:1914743	Mettl16	methyltransferase like 16	11		regulation of mRNA splicing, via spliceosome			ISO	Q86W50 	J:164563 	
+MGI:1914743	Mettl16	methyltransferase like 16	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913660	Mterf3	mitochondrial transcription termination factor 3	13		RNA splicing			IBA	PTN000317011 	J:161428 	
+MGI:1918355	Mterf4	mitochondrial transcription termination factor 4	1		RNA splicing			IBA	PTN000317011 	J:161428 	
+MGI:97275	Myod1	myogenic differentiation 1	7		regulation of alternative mRNA splicing, via spliceosome	regulates a function/process that happens in fibroblast		IDA		J:46849 	
+MGI:97275	Myod1	myogenic differentiation 1	7		regulation of alternative mRNA splicing, via spliceosome			IMP		J:46849 	
+MGI:97275	Myod1	myogenic differentiation 1	7		regulation of RNA splicing			ISO	P15172 	J:164563 	
+MGI:1891840	Ncbp1	nuclear cap binding protein subunit 1	4		mRNA cis splicing, via spliceosome			IEA	IPR027159 	J:72247 	
+MGI:1891840	Ncbp1	nuclear cap binding protein subunit 1	4		mRNA splicing, via spliceosome			IBA	PTN000275634 	J:161428 	
+MGI:1891840	Ncbp1	nuclear cap binding protein subunit 1	4		positive regulation of mRNA splicing, via spliceosome			ISO	Q09161 	J:164563 	
+MGI:1891840	Ncbp1	nuclear cap binding protein subunit 1	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1891840	Ncbp1	nuclear cap binding protein subunit 1	4		spliceosomal complex assembly			ISO	Q09161 	J:164563 	
+MGI:1915342	Ncbp2	nuclear cap binding protein subunit 2	16		mRNA cis splicing, via spliceosome			ISO	P52298 	J:164563 	
+MGI:1915342	Ncbp2	nuclear cap binding protein subunit 2	16		mRNA splicing, via spliceosome			IBA	PTN000428749 	J:161428 	
+MGI:1915342	Ncbp2	nuclear cap binding protein subunit 2	16		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1925938	Nol3	nucleolar protein 3 (apoptosis repressor with CARD domain)	8		mRNA splice site selection			ISO	O60936 	J:164563 	
+MGI:1855692	Nono	non-POU-domain-containing, octamer binding protein	X		mRNA splicing, via spliceosome			IBA	PTN000573351 	J:161428 	
+MGI:1855692	Nono	non-POU-domain-containing, octamer binding protein	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:104297	Nova1	neuro-oncological ventral antigen 1	12		mRNA splicing, via spliceosome			IDA		J:60771 	
+MGI:104297	Nova1	neuro-oncological ventral antigen 1	12		mRNA splicing, via spliceosome			IMP	MGI:2386947 	J:60771 	
+MGI:106184	Npm1	nucleophosmin 1	11		negative regulation of mRNA splicing, via spliceosome			IDA		J:105455 	
+MGI:2144305	Nsrp1	nuclear speckle regulatory protein 1	11		regulation of alternative mRNA splicing, via spliceosome			ISO	Q9H0G5 	J:164563 	
+MGI:2144305	Nsrp1	nuclear speckle regulatory protein 1	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:109404	Nup98	nucleoporin 98	7		positive regulation of mRNA splicing, via spliceosome			ISO	P52948 	J:164563 	
+MGI:2442268	Nwd1	NACHT and WD repeat domain containing 1	8		RNA splicing			IBA	PTN001108918 	J:161428 	
+MGI:1349722	Pabpc1	poly(A) binding protein, cytoplasmic 1	15		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1890471	Pcbp4	poly(rC) binding protein 4	9		negative regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:2156864	Phf5a	PHD finger protein 5A	15		mRNA splicing, via spliceosome			IBA	PTN000319347 	J:161428 	
+MGI:2156864	Phf5a	PHD finger protein 5A	15		mRNA splicing, via spliceosome			ISO	Q7RTV0 	J:164563 	
+MGI:2156864	Phf5a	PHD finger protein 5A	15		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:97583	Pik3r1	phosphoinositide-3-kinase regulatory subunit 1	13		positive regulation of RNA splicing			ISO	P27986 	J:164563 	
+MGI:1858197	Plrg1	pleiotropic regulator 1	3		mRNA splicing, via spliceosome			IBA	PTN000460428 	J:161428 	
+MGI:1858197	Plrg1	pleiotropic regulator 1	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1100514	Pnn	pinin	12		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98086	Polr2a	polymerase (RNA) II (DNA directed) polypeptide A	11		positive regulation of RNA splicing			ISO	P24928 	J:164563 	
+MGI:1917118	Ppie	peptidylprolyl isomerase E (cyclophilin E)	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1916066	Ppil1	peptidylprolyl isomerase (cyclophilin)-like 1	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1917475	Ppil3	peptidylprolyl isomerase (cyclophilin)-like 3	1		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2140494	Ppp1r8	protein phosphatase 1, regulatory (inhibitor) subunit 8	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:3027896	Ppp4r2	protein phosphatase 4, regulatory subunit 2	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2443069	Ppwd1	peptidylprolyl isomerase domain and WD repeat containing 1	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1859638	Pqbp1	polyglutamine binding protein 1	X		alternative mRNA splicing, via spliceosome			IMP		J:195288 	
+MGI:1859638	Pqbp1	polyglutamine binding protein 1	X		alternative mRNA splicing, via spliceosome			ISO	O60828 	J:164563 	
+MGI:1859638	Pqbp1	polyglutamine binding protein 1	X		regulation of RNA splicing			ISO	O60828 	J:73065 	
+MGI:1859638	Pqbp1	polyglutamine binding protein 1	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:894320	Prdx6	peroxiredoxin 6	1		positive regulation of mRNA splicing, via spliceosome			ISO	P30041 	J:164563 	
+MGI:1351645	Prmt5	protein arginine N-methyltransferase 5	14		spliceosomal snRNP assembly			ISO	O14744 	J:164563 	
+MGI:2384879	Prmt7	protein arginine N-methyltransferase 7	8		spliceosomal snRNP assembly			ISO	Q9NVM4 	J:164563 	
+MGI:1918017	Prpf3	pre-mRNA processing factor 3	3		mRNA splicing, via spliceosome			IBA	PTN000368237 	J:161428 	
+MGI:1918017	Prpf3	pre-mRNA processing factor 3	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1918017	Prpf3	pre-mRNA processing factor 3	3		spliceosomal tri-snRNP complex assembly			ISO	O43395 	J:164563 	
+MGI:1917302	Prpf4	pre-mRNA processing factor 4	4		mRNA splicing, via spliceosome			IBA	PTN000457233 	J:161428 	
+MGI:1917302	Prpf4	pre-mRNA processing factor 4	4		mRNA splicing, via spliceosome			ISO	AF001687 	J:73065 	
+MGI:1917302	Prpf4	pre-mRNA processing factor 4	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:109584	Prpf4b	pre-mRNA processing factor 4B	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1922946	Prpf6	pre-mRNA splicing factor 6	2		mRNA splicing, via spliceosome			IEA	IPR010491 IPR027108 	J:72247 	
+MGI:1922946	Prpf6	pre-mRNA splicing factor 6	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1922946	Prpf6	pre-mRNA splicing factor 6	2		spliceosomal tri-snRNP complex assembly			IBA	PTN000133809 	J:161428 	
+MGI:1922946	Prpf6	pre-mRNA splicing factor 6	2		spliceosomal tri-snRNP complex assembly			ISO	O94906 	J:164563 	
+MGI:2179381	Prpf8	pre-mRNA processing factor 8	11		mRNA splicing, via spliceosome			ISO	AF092565 	J:73065 	
+MGI:2179381	Prpf8	pre-mRNA processing factor 8	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2179381	Prpf8	pre-mRNA processing factor 8	11		spliceosomal tri-snRNP complex assembly			IBA	PTN000124558 	J:161428 	
+MGI:2179381	Prpf8	pre-mRNA processing factor 8	11		spliceosomal tri-snRNP complex assembly			ISO	Q6P2Q9 	J:164563 	
+MGI:1914479	Prpf18	pre-mRNA processing factor 18	2		generation of catalytic spliceosome for second transesterification step			IBA	PTN000313715 	J:161428 	
+MGI:1914479	Prpf18	pre-mRNA processing factor 18	2		RNA splicing			IEA	IPR004098 	J:72247 	
+MGI:1914479	Prpf18	pre-mRNA processing factor 18	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:106247	Prpf19	pre-mRNA processing factor 19	19		generation of catalytic spliceosome for first transesterification step			IBA	PTN000356711 	J:161428 	
+MGI:106247	Prpf19	pre-mRNA processing factor 19	19		mRNA splicing, via spliceosome			ISO	Q9UMS4 	J:164563 	
+MGI:106247	Prpf19	pre-mRNA processing factor 19	19		positive regulation of mRNA splicing, via spliceosome			IMP		J:140901 	
+MGI:106247	Prpf19	pre-mRNA processing factor 19	19		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:106247	Prpf19	pre-mRNA processing factor 19	19		spliceosomal complex assembly			ISO	Q9UMS4 	J:164563 	
+MGI:106247	Prpf19	pre-mRNA processing factor 19	19		spliceosomal tri-snRNP complex assembly			ISO	Q9UMS4 	J:164563 	
+MGI:1916238	Prpf31	pre-mRNA processing factor 31	7		mRNA splicing, via spliceosome			IBA	PTN000357441 	J:161428 	
+MGI:1916238	Prpf31	pre-mRNA processing factor 31	7		mRNA splicing, via spliceosome			ISO	Q8WWY3 	J:92573 	
+MGI:1916238	Prpf31	pre-mRNA processing factor 31	7		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1916238	Prpf31	pre-mRNA processing factor 31	7		spliceosomal tri-snRNP complex assembly			ISO	Q8WWY3 	J:92573 J:164563 	
+MGI:1916962	Prpf38a	PRP38 pre-mRNA processing factor 38 (yeast) domain containing A	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914171	Prpf38b	PRP38 pre-mRNA processing factor 38 (yeast) domain containing B	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:104602	Prpf39	pre-mRNA processing factor 39	12		mRNA 5'-splice site recognition			IBA	PTN000425278 	J:161428 	
+MGI:104602	Prpf39	pre-mRNA processing factor 39	12		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1860512	Prpf40a	pre-mRNA processing factor 40A	2		mRNA splicing, via spliceosome			IBA	PTN000221451 	J:161428 	
+MGI:1860512	Prpf40a	pre-mRNA processing factor 40A	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1925583	Prpf40b	pre-mRNA processing factor 40B	15		mRNA splicing, via spliceosome			IBA	PTN000221451 	J:161428 	
+MGI:1925583	Prpf40b	pre-mRNA processing factor 40B	15		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:108176	Prx	periaxin	7		regulation of RNA splicing	regulates UniProtKB:E9Q616		IDA		J:205645 	
+MGI:2142116	Psip1	PC4 and SFRS1 interacting protein 1	4		mRNA 5'-splice site recognition			ISO	O75475 	J:164563 	
+MGI:1913895	Pspc1	paraspeckle protein 1	14		mRNA splicing, via spliceosome			IBA	PTN000573351 	J:161428 	
+MGI:97791	Ptbp1	polypyrimidine tract binding protein 1	10		negative regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:97791	Ptbp1	polypyrimidine tract binding protein 1	10		negative regulation of mRNA splicing, via spliceosome			ISO	P26599 	J:164563 	
+MGI:97791	Ptbp1	polypyrimidine tract binding protein 1	10		negative regulation of RNA splicing			ISO	P26599 	J:164563 	
+MGI:97791	Ptbp1	polypyrimidine tract binding protein 1	10		regulation of alternative mRNA splicing, via spliceosome			ISO	P26599 	J:164563 	
+MGI:97791	Ptbp1	polypyrimidine tract binding protein 1	10		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1860489	Ptbp2	polypyrimidine tract binding protein 2	3		mRNA splice site selection			IDA		J:62658 	
+MGI:1860489	Ptbp2	polypyrimidine tract binding protein 2	3		mRNA splice site selection	happens in cerebral cortex		IMP	MGI:4124189 	J:185949 	
+MGI:1860489	Ptbp2	polypyrimidine tract binding protein 2	3		negative regulation of RNA splicing			ISO	Q9UKA9 	J:164563 	
+MGI:1860489	Ptbp2	polypyrimidine tract binding protein 2	3		negative regulation of RNA splicing			ISO	RGD:1359267 	J:155856 	
+MGI:1860489	Ptbp2	polypyrimidine tract binding protein 2	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1923334	Ptbp3	polypyrimidine tract binding protein 3	4		negative regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:1923334	Ptbp3	polypyrimidine tract binding protein 3	4		negative regulation of RNA splicing			ISO	O95758 	J:164563 	
+MGI:1923334	Ptbp3	polypyrimidine tract binding protein 3	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1915209	Puf60	poly-U binding splicing factor 60	15		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:97837	Qk	quaking	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:97850	Raly	hnRNP-associated with lethal yellow	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1919016	Raver1	ribonucleoprotein, PTB-binding 1	9		mRNA splicing, via spliceosome			IBA	PTN000573351 	J:161428 	
+MGI:2443623	Raver2	ribonucleoprotein, PTB-binding 2	4		mRNA splicing, via spliceosome			IBA	PTN000573351 	J:161428 	
+MGI:1926224	Rbfox1	RNA binding protein, fox-1 homolog (C. elegans) 1	16		regulation of alternative mRNA splicing, via spliceosome			IMP		J:195085 	
+MGI:1926224	Rbfox1	RNA binding protein, fox-1 homolog (C. elegans) 1	16		regulation of RNA splicing			IEA	IPR017325 	J:72247 	
+MGI:1926224	Rbfox1	RNA binding protein, fox-1 homolog (C. elegans) 1	16		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1933973	Rbfox2	RNA binding protein, fox-1 homolog (C. elegans) 2	15		regulation of alternative mRNA splicing, via spliceosome	regulates a function/process that happens in cerebellum,regulates Scn8a		IGI	MGI:1926224 	J:181631 	
+MGI:1933973	Rbfox2	RNA binding protein, fox-1 homolog (C. elegans) 2	15		regulation of alternative mRNA splicing, via spliceosome	regulates a function/process that happens in cerebellum		IMP	MGI:4838182 	J:181631 	
+MGI:1933973	Rbfox2	RNA binding protein, fox-1 homolog (C. elegans) 2	15		regulation of alternative mRNA splicing, via spliceosome			IMP		J:129953 J:175176 	
+MGI:1933973	Rbfox2	RNA binding protein, fox-1 homolog (C. elegans) 2	15		regulation of RNA splicing			IEA	IPR017325 	J:72247 	
+MGI:1933973	Rbfox2	RNA binding protein, fox-1 homolog (C. elegans) 2	15		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:106368	Rbfox3	RNA binding protein, fox-1 homolog (C. elegans) 3	11		regulation of alternative mRNA splicing, via spliceosome		PR:Q8BIF2-1	IDA		J:174690 	
+MGI:106368	Rbfox3	RNA binding protein, fox-1 homolog (C. elegans) 3	11		regulation of alternative mRNA splicing, via spliceosome		PR:Q8BIF2-5	IDA		J:174690 	
+MGI:106368	Rbfox3	RNA binding protein, fox-1 homolog (C. elegans) 3	11		regulation of alternative mRNA splicing, via spliceosome		PR:Q8BIF2-4	IDA		J:174690 	
+MGI:106368	Rbfox3	RNA binding protein, fox-1 homolog (C. elegans) 3	11		regulation of RNA splicing			IEA	IPR017325 	J:72247 	
+MGI:106368	Rbfox3	RNA binding protein, fox-1 homolog (C. elegans) 3	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1100865	Rbm4	RNA binding motif protein 4	19		regulation of alternative mRNA splicing, via spliceosome			IMP	MGI:5467987 MGI:5467988 	J:192831 	
+MGI:1100865	Rbm4	RNA binding motif protein 4	19		regulation of alternative mRNA splicing, via spliceosome			ISO	Q9BWF3 	J:164563 	
+MGI:1100865	Rbm4	RNA binding motif protein 4	19		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913954	Rbm4b	RNA binding motif protein 4B	19		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1933204	Rbm5	RNA binding motif protein 5	9		regulation of alternative mRNA splicing, via spliceosome			ISO	P52756 	J:164563 	
+MGI:1933204	Rbm5	RNA binding motif protein 5	9		RNA splicing			IEA	IPR033094 	J:72247 	
+MGI:1933204	Rbm5	RNA binding motif protein 5	9		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1933204	Rbm5	RNA binding motif protein 5	9		spliceosomal complex assembly			ISO	P52756 	J:164563 	
+MGI:1914260	Rbm7	RNA binding motif protein 7	9		regulation of alternative mRNA splicing, via spliceosome			IBA	PTN001012985 	J:161428 	
+MGI:1913129	Rbm8a	RNA binding motif protein 8a	3		regulation of alternative mRNA splicing, via spliceosome			IBA	PTN000566947 	J:161428 	
+MGI:1913129	Rbm8a	RNA binding motif protein 8a	3		regulation of alternative mRNA splicing, via spliceosome			ISO	Q9Y5S9 	J:164563 	
+MGI:2384310	Rbm10	RNA binding motif protein 10	X		negative regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:2384310	Rbm10	RNA binding motif protein 10	X		regulation of alternative mRNA splicing, via spliceosome			IEA	IPR033095 	J:72247 	
+MGI:2384310	Rbm10	RNA binding motif protein 10	X		RNA splicing			IEA	IPR033095 	J:72247 	
+MGI:2447622	Rbm11	RNA binding motif protein 11	16		regulation of alternative mRNA splicing, via spliceosome			IBA	PTN001012985 	J:161428 	
+MGI:2447622	Rbm11	RNA binding motif protein 11	16		regulation of alternative mRNA splicing, via spliceosome			ISO	P57052 	J:197742 	
+MGI:2447622	Rbm11	RNA binding motif protein 11	16		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2443205	Rbm15	RNA binding motif protein 15	3		mRNA splicing, via spliceosome			IBA	PTN000573351 	J:161428 	
+MGI:1923598	Rbm15b	RNA binding motif protein 15B	9		mRNA splicing, via spliceosome			IBA	PTN000573351 	J:161428 	
+MGI:1923598	Rbm15b	RNA binding motif protein 15B	9		regulation of alternative mRNA splicing, via spliceosome			IBA	PTN000573547 	J:161428 	
+MGI:1923598	Rbm15b	RNA binding motif protein 15B	9		regulation of alternative mRNA splicing, via spliceosome			ISO	Q8NDT2 	J:164563 	
+MGI:1923598	Rbm15b	RNA binding motif protein 15B	9		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1924188	Rbm17	RNA binding motif protein 17	2		alternative mRNA splicing, via spliceosome			ISO	Q96I25 	J:164563 	
+MGI:1924188	Rbm17	RNA binding motif protein 17	2		regulation of RNA splicing			IEA	IPR016967 	J:72247 	
+MGI:1924188	Rbm17	RNA binding motif protein 17	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1924188	Rbm17	RNA binding motif protein 17	2		RNA splicing, via transesterification reactions			TAS		J:48892 	
+MGI:1920963	Rbm20	RNA binding motif protein 20	19		positive regulation of RNA splicing			IMP		J:188888 	
+MGI:1920963	Rbm20	RNA binding motif protein 20	19		positive regulation of RNA splicing			ISO	Q5T481 	J:164563 	
+MGI:1920963	Rbm20	RNA binding motif protein 20	19		positive regulation of RNA splicing			ISO	RGD:1307427 	J:155856 	
+MGI:1920963	Rbm20	RNA binding motif protein 20	19		regulation of RNA splicing			IEA	IPR034791 	J:72247 	
+MGI:1920963	Rbm20	RNA binding motif protein 20	19		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914060	Rbm22	RNA binding motif protein 22	18		mRNA cis splicing, via spliceosome			ISO	Q9NW64 	J:164563 	
+MGI:1914060	Rbm22	RNA binding motif protein 22	18		positive regulation of RNA splicing			ISO	Q9NW64 	J:164563 	
+MGI:1914060	Rbm22	RNA binding motif protein 22	18		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914060	Rbm22	RNA binding motif protein 22	18		spliceosomal snRNP assembly			IBA	PTN000363272 	J:161428 	
+MGI:1914289	Rbm25	RNA binding motif protein 25	12		regulation of alternative mRNA splicing, via spliceosome			IBA	PTN000428218 	J:161428 	
+MGI:1914289	Rbm25	RNA binding motif protein 25	12		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2655711	Rbm28	RNA binding motif protein 28	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1889294	Rbm38	RNA binding motif protein 38	2		regulation of RNA splicing			ISO	Q9H0Z9 	J:164563 	
+MGI:1889294	Rbm38	RNA binding motif protein 38	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2157953	Rbm39	RNA binding motif protein 39	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2444923	Rbm41	RNA binding motif protein 41	X		mRNA splicing, via spliceosome			IBA	PTN000413238 	J:161428 	
+MGI:1915285	Rbm42	RNA binding motif protein 42	7		negative regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:1343044	Rbmx	RNA binding motif protein, X chromosome	X		mRNA splice site selection			ISO	RGD:1565256 	J:155856 	
+MGI:1343044	Rbmx	RNA binding motif protein, X chromosome	X		regulation of alternative mRNA splicing, via spliceosome			ISO	P38159 	J:164563 	
+MGI:1343044	Rbmx	RNA binding motif protein, X chromosome	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1919414	Rbmx2	RNA binding motif protein, X-linked 2	X		mRNA splicing, via spliceosome			IBA	PTN000567094 	J:161428 	
+MGI:1343045	Rbmxl1	RNA binding motif protein, X-linked like-1	8		mRNA splice site selection			ISO	RGD:1306751 	J:155856 	
+MGI:1343045	Rbmxl1	RNA binding motif protein, X-linked like-1	8		negative regulation of mRNA splicing, via spliceosome			ISO	RGD:1306751 	J:155856 	
+MGI:1343045	Rbmxl1	RNA binding motif protein, X-linked like-1	8		positive regulation of mRNA splicing, via spliceosome			ISO	RGD:1306751 	J:155856 	
+MGI:1343045	Rbmxl1	RNA binding motif protein, X-linked like-1	8		regulation of alternative mRNA splicing, via spliceosome			ISO	RGD:1306751 	J:155856 	
+MGI:1343045	Rbmxl1	RNA binding motif protein, X-linked like-1	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1334446	Rbpms	RNA binding protein gene with multiple splicing	8		mRNA splicing, via spliceosome			IBA	PTN000827569 	J:161428 	
+MGI:1917192	Rnf113a1	ring finger protein 113A1	X		mRNA cis splicing, via spliceosome			IBA	PTN000309255 	J:161428 	
+MGI:1917192	Rnf113a1	ring finger protein 113A1	X		snoRNA splicing			IBA	PTN000309255 	J:161428 	
+MGI:1913631	Rnf113a2	ring finger protein 113A2	12		mRNA cis splicing, via spliceosome			IBA	PTN000309255 	J:161428 	
+MGI:1913631	Rnf113a2	ring finger protein 113A2	12		snoRNA splicing			IBA	PTN000309255 	J:161428 	
+MGI:1919736	Rnf219	ring finger protein 219	14		positive regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:1914475	Rnpc3	RNA-binding region (RNP1, RRM) containing 3	3		mRNA splicing, via spliceosome			IBA	PTN000413238 	J:161428 	
+MGI:97960	Rnps1	ribonucleic acid binding protein S1	17		negative regulation of mRNA splicing, via spliceosome			ISO	Q15287 	J:164563 	
+MGI:97960	Rnps1	ribonucleic acid binding protein S1	17		regulation of alternative mRNA splicing, via spliceosome			ISO	Q15287 	J:164563 	
+MGI:97960	Rnps1	ribonucleic acid binding protein S1	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:5305946	Rnu2-8	U2 small nuclear RNA 8	11		RNA splicing			IMP	MGI:3054730 	J:179357 	
+MGI:3799640	Rnu4atac	RNA, U4atac small nuclear (U12-dependent splicing)	UN		mRNA splicing, via spliceosome			IDA		J:137509 	
+MGI:3799640	Rnu4atac	RNA, U4atac small nuclear (U12-dependent splicing)	UN		RNA splicing, via transesterification reactions			IDA		J:137509 	
+MGI:3799637	Rnu6atac	RNA, U6atac small nuclear (U12-dependent splicing)	UN		mRNA splicing, via spliceosome			IDA		J:137509 	
+MGI:3799637	Rnu6atac	RNA, U6atac small nuclear (U12-dependent splicing)	UN		RNA splicing, via transesterification reactions			IDA		J:137509 	
+MGI:2157166	Rp9	retinitis pigmentosa 9 (human)	9		RNA splicing			IEA	IPR034585 	J:72247 	
+MGI:1915302	Rps13	ribosomal protein S13	7		negative regulation of RNA splicing			ISO	P62277 	J:164563 	
+MGI:1351628	Rps26	ribosomal protein S26	10		negative regulation of RNA splicing			ISO	P62854 	J:164563 	
+MGI:1919712	Rrp1b	ribosomal RNA processing 1 homolog B (S. cerevisiae)	17		regulation of RNA splicing			IMP		J:245383 	
+MGI:1914130	Rsrc1	arginine/serine-rich coiled-coil 1	3		alternative mRNA splicing, via spliceosome			IDA		J:97604 	
+MGI:1914130	Rsrc1	arginine/serine-rich coiled-coil 1	3		mRNA splicing, via spliceosome			ISO	Q96IZ7 	J:164563 	
+MGI:1914130	Rsrc1	arginine/serine-rich coiled-coil 1	3		RNA splicing			ISO	Q96IZ7 	J:97604 	
+MGI:106379	Rtcb	RNA 2',3'-cyclic phosphate and 5'-OH ligase	10		tRNA splicing, via endonucleolytic cleavage and ligation			ISO	Q9Y3I0 	J:164563 	
+MGI:1915295	Rtraf	RNA transcription, translation and transport factor	14		tRNA splicing, via endonucleolytic cleavage and ligation			ISO	Q9Y224 	J:164563 	
+MGI:1309453	Sart1	squamous cell carcinoma antigen recognized by T cells 1	19		mRNA cis splicing, via spliceosome			IBA	PTN000365724 	J:161428 	
+MGI:1309453	Sart1	squamous cell carcinoma antigen recognized by T cells 1	19		mRNA splicing, via spliceosome			IEA	IPR005011 	J:72247 	
+MGI:1309453	Sart1	squamous cell carcinoma antigen recognized by T cells 1	19		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1309453	Sart1	squamous cell carcinoma antigen recognized by T cells 1	19		spliceosomal snRNP assembly			IBA	PTN000365724 	J:161428 	
+MGI:1858230	Sart3	squamous cell carcinoma antigen recognized by T cells 3	5		mRNA splicing, via spliceosome			ISO	Q15020 	J:164563 	
+MGI:1858230	Sart3	squamous cell carcinoma antigen recognized by T cells 3	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1858230	Sart3	squamous cell carcinoma antigen recognized by T cells 3	5		spliceosomal snRNP assembly			ISO	Q15020 	J:164563 	
+MGI:1858230	Sart3	squamous cell carcinoma antigen recognized by T cells 3	5		spliceosomal tri-snRNP complex assembly			ISO	Q15020 	J:164563 	
+MGI:2141980	Scaf1	SR-related CTD-associated factor 1	7		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1925212	Scaf8	SR-related CTD-associated factor 8	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1919443	Scaf11	SR-related CTD-associated factor 11	15		RNA splicing			ISO	Q99590 	J:164563 	
+MGI:1919443	Scaf11	SR-related CTD-associated factor 11	15		RNA splicing, via transesterification reactions			ISO	Q99590 	J:164563 	
+MGI:1919443	Scaf11	SR-related CTD-associated factor 11	15		spliceosomal complex assembly			ISO	Q99590 	J:164563 	
+MGI:1341284	Scnm1	sodium channel modifier 1	3		RNA splicing			IMP	MGI:2674104 	J:84898 	
+MGI:2443480	Setx	senataxin	2		mRNA splice site selection			ISO	Q7Z333 	J:164563 	
+MGI:2443480	Setx	senataxin	2		positive regulation of RNA splicing			ISO	Q7Z333 	J:164563 	
+MGI:1095403	Sf1	splicing factor 1	19		mRNA splicing, via spliceosome			IEA	IPR031150 	J:72247 	
+MGI:1095403	Sf1	splicing factor 1	19		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914715	Sf3a1	splicing factor 3a, subunit 1	11		mRNA 3'-splice site recognition			IBA	PTN000393333 	J:161428 	
+MGI:1914715	Sf3a1	splicing factor 3a, subunit 1	11		mRNA splicing, via spliceosome			ISO	Q15459 	J:164563 	
+MGI:1914715	Sf3a1	splicing factor 3a, subunit 1	11		regulation of alternative mRNA splicing, via spliceosome			IBA	PTN000393333 	J:161428 	
+MGI:1914715	Sf3a1	splicing factor 3a, subunit 1	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:104912	Sf3a2	splicing factor 3a, subunit 2	10		mRNA splicing, via spliceosome			TAS		J:72541 	
+MGI:104912	Sf3a2	splicing factor 3a, subunit 2	10		RNA splicing, via transesterification reactions			TAS		J:72541 	
+MGI:104912	Sf3a2	splicing factor 3a, subunit 2	10		spliceosomal complex assembly			IBA	PTN000574843 	J:161428 	
+MGI:1922312	Sf3a3	splicing factor 3a, subunit 3	4		mRNA splicing, via spliceosome			IBA	PTN000300247 	J:161428 	
+MGI:1922312	Sf3a3	splicing factor 3a, subunit 3	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1932339	Sf3b1	splicing factor 3b, subunit 1	1		mRNA splicing, via spliceosome			IMP		J:215371 	
+MGI:1932339	Sf3b1	splicing factor 3b, subunit 1	1		mRNA splicing, via spliceosome			ISO	O75533 	J:65061 	
+MGI:1932339	Sf3b1	splicing factor 3b, subunit 1	1		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1932339	Sf3b1	splicing factor 3b, subunit 1	1		spliceosomal complex assembly			IBA	PTN000250426 	J:161428 	
+MGI:2441856	Sf3b2	splicing factor 3b, subunit 2	19		mRNA splicing, via spliceosome			IBA	PTN001765154 	J:161428 	
+MGI:1289341	Sf3b3	splicing factor 3b, subunit 3	8		mRNA splicing, via spliceosome			IBA	PTN000068443 	J:161428 	
+MGI:1289341	Sf3b3	splicing factor 3b, subunit 3	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:109580	Sf3b4	splicing factor 3b, subunit 4	3		positive regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:109580	Sf3b4	splicing factor 3b, subunit 4	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913375	Sf3b5	splicing factor 3b, subunit 5	10		mRNA splicing, via spliceosome			IBA	PTN000469546 	J:161428 	
+MGI:1913375	Sf3b5	splicing factor 3b, subunit 5	10		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913305	Sf3b6	splicing factor 3B, subunit 6	12		mRNA splicing, via spliceosome			IMP		J:215371 	
+MGI:1913305	Sf3b6	splicing factor 3B, subunit 6	12		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1918764	Sfpq	splicing factor proline/glutamine rich (polypyrimidine tract binding protein associated)	4		alternative mRNA splicing, via spliceosome			IBA	PTN000573447 	J:161428 	
+MGI:1918764	Sfpq	splicing factor proline/glutamine rich (polypyrimidine tract binding protein associated)	4		alternative mRNA splicing, via spliceosome			ISO	P23246 	J:164563 	
+MGI:1918764	Sfpq	splicing factor proline/glutamine rich (polypyrimidine tract binding protein associated)	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:101760	Sfswap	splicing factor SWAP	5		alternative mRNA splicing, via spliceosome			IDA		J:37157 	
+MGI:101760	Sfswap	splicing factor SWAP	5		mRNA 5'-splice site recognition			IDA		J:37157 	
+MGI:101760	Sfswap	splicing factor SWAP	5		negative regulation of mRNA splicing, via spliceosome			ISO	RGD:1305004 	J:155856 	
+MGI:101760	Sfswap	splicing factor SWAP	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1919448	Skiv2l2	superkiller viralicidic activity 2-like 2 (S. cerevisiae)	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1919336	Slc39a5	solute carrier family 39 (metal ion transporter), member 5	10		positive regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:2385598	Slu7	SLU7 splicing factor homolog (S. cerevisiae)	11		alternative mRNA splicing, via spliceosome			ISO	O95391 	J:164563 	
+MGI:2385598	Slu7	SLU7 splicing factor homolog (S. cerevisiae)	11		mRNA 3'-splice site recognition			ISO	O95391 	J:164563 	
+MGI:2385598	Slu7	SLU7 splicing factor homolog (S. cerevisiae)	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2385598	Slu7	SLU7 splicing factor homolog (S. cerevisiae)	11		RNA splicing, via transesterification reactions			ISO	O95391 	J:164563 	
+MGI:109257	Smn1	survival motor neuron 1	13		positive regulation of RNA splicing			IMP		J:183557 	
+MGI:109257	Smn1	survival motor neuron 1	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1923729	Smndc1	survival motor neuron domain containing 1	19		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1915546	Smu1	smu-1 suppressor of mec-8 and unc-52 homolog (C. elegans)	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1925622	Snrnp25	small nuclear ribonucleoprotein 25 (U11/U12)	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913868	Snrnp27	small nuclear ribonucleoprotein 27 (U4/U6.U5)	6		RNA splicing			IEA	IPR013957 	J:72247 	
+MGI:1913868	Snrnp27	small nuclear ribonucleoprotein 27 (U4/U6.U5)	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1923417	Snrnp35	small nuclear ribonucleoprotein 35 (U11/U12)	5		mRNA splicing, via spliceosome			IBA	PTN000359236 	J:161428 	
+MGI:1923417	Snrnp35	small nuclear ribonucleoprotein 35 (U11/U12)	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913835	Snrnp40	small nuclear ribonucleoprotein 40 (U5)	4		RNA splicing			IBA	PTN001108918 	J:161428 	
+MGI:1915047	Snrnp48	small nuclear ribonucleoprotein 48 (U11/U12)	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98341	Snrnp70	small nuclear ribonucleoprotein 70 (U1)	7		mRNA splicing, via spliceosome			ISO	P08621 	J:164563 	
+MGI:98341	Snrnp70	small nuclear ribonucleoprotein 70 (U1)	7		positive regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:98341	Snrnp70	small nuclear ribonucleoprotein 70 (U1)	7		regulation of RNA splicing			ISO	P08621 	J:164563 	
+MGI:2444401	Snrnp200	small nuclear ribonucleoprotein 200 (U5)	2		mRNA splicing, via spliceosome			ISO	O75643 	J:164563 	
+MGI:2444401	Snrnp200	small nuclear ribonucleoprotein 200 (U5)	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1855690	Snrpa	small nuclear ribonucleoprotein polypeptide A	7		mRNA splicing, via spliceosome			IBA	PTN000827569 	J:161428 	
+MGI:1855690	Snrpa	small nuclear ribonucleoprotein polypeptide A	7		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1916231	Snrpa1	small nuclear ribonucleoprotein polypeptide A'	7		mRNA splicing, via spliceosome			IBA	PTN000058203 	J:161428 	
+MGI:1916231	Snrpa1	small nuclear ribonucleoprotein polypeptide A'	7		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98342	Snrpb	small nuclear ribonucleoprotein B	2		mRNA splicing, via spliceosome			IBA	PTN000075760 	J:161428 	
+MGI:98342	Snrpb	small nuclear ribonucleoprotein B	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98342	Snrpb	small nuclear ribonucleoprotein B	2		spliceosomal snRNP assembly			ISO	P14678 	J:164563 	
+MGI:104805	Snrpb2	U2 small nuclear ribonucleoprotein B	2		mRNA splicing, via spliceosome			IBA	PTN000827569 	J:161428 	
+MGI:104805	Snrpb2	U2 small nuclear ribonucleoprotein B	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:109489	Snrpc	U1 small nuclear ribonucleoprotein C	17		mRNA 5'-splice site recognition			IBA	PTN001259483 	J:161428 	
+MGI:109489	Snrpc	U1 small nuclear ribonucleoprotein C	17		mRNA splicing, via spliceosome			IEA	IPR017340 	J:72247 	
+MGI:109489	Snrpc	U1 small nuclear ribonucleoprotein C	17		spliceosomal snRNP assembly			IEA	IPR017340 	J:72247 	
+MGI:98344	Snrpd1	small nuclear ribonucleoprotein D1	18		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98344	Snrpd1	small nuclear ribonucleoprotein D1	18		spliceosomal complex assembly			IBA	PTN000596745 	J:161428 	
+MGI:98344	Snrpd1	small nuclear ribonucleoprotein D1	18		spliceosomal snRNP assembly			IBA	PTN000596745 	J:161428 	
+MGI:98344	Snrpd1	small nuclear ribonucleoprotein D1	18		spliceosomal snRNP assembly			ISO	P62314 	J:164563 	
+MGI:98345	Snrpd2	small nuclear ribonucleoprotein D2	7		RNA splicing			IEA	IPR027248 	J:72247 	
+MGI:98345	Snrpd2	small nuclear ribonucleoprotein D2	7		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98345	Snrpd2	small nuclear ribonucleoprotein D2	7		spliceosomal snRNP assembly			IBA	PTN000299609 	J:161428 	
+MGI:98345	Snrpd2	small nuclear ribonucleoprotein D2	7		spliceosomal snRNP assembly			ISO	P62316 	J:164563 	
+MGI:1914582	Snrpd3	small nuclear ribonucleoprotein D3	10		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914582	Snrpd3	small nuclear ribonucleoprotein D3	10		spliceosomal complex assembly			IBA	PTN000596745 	J:161428 	
+MGI:1914582	Snrpd3	small nuclear ribonucleoprotein D3	10		spliceosomal snRNP assembly			IBA	PTN000596745 	J:161428 	
+MGI:1914582	Snrpd3	small nuclear ribonucleoprotein D3	10		spliceosomal snRNP assembly			ISO	P62318 	J:164563 	
+MGI:98346	Snrpe	small nuclear ribonucleoprotein E	1		mRNA splicing, via spliceosome			IEA	IPR027078 	J:72247 	
+MGI:98346	Snrpe	small nuclear ribonucleoprotein E	1		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98346	Snrpe	small nuclear ribonucleoprotein E	1		spliceosomal snRNP assembly			IBA	PTN000127555 	J:161428 	
+MGI:1917128	Snrpf	small nuclear ribonucleoprotein polypeptide F	10		mRNA splicing, via spliceosome			IBA	PTN000111530 	J:161428 	
+MGI:1917128	Snrpf	small nuclear ribonucleoprotein polypeptide F	10		RNA splicing			ISO	P62306 	J:164563 	
+MGI:1917128	Snrpf	small nuclear ribonucleoprotein polypeptide F	10		spliceosomal snRNP assembly			ISO	P62306 	J:164563 	
+MGI:1915261	Snrpg	small nuclear ribonucleoprotein polypeptide G	6		mRNA splicing, via spliceosome			IBA	PTN000058285 	J:161428 	
+MGI:98347	Snrpn	small nuclear ribonucleoprotein N	7		mRNA splicing, via spliceosome			IBA	PTN000075760 	J:161428 	
+MGI:893586	Snu13	SNU13 homolog, small nuclear ribonucleoprotein (U4/U6.U5)	15		mRNA splicing, via spliceosome			IBA	PTN000560317 	J:161428 	
+MGI:893586	Snu13	SNU13 homolog, small nuclear ribonucleoprotein (U4/U6.U5)	15		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913604	Snw1	SNW domain containing 1	12		generation of catalytic spliceosome for second transesterification step			IBA	PTN002281016 	J:161428 	
+MGI:1913604	Snw1	SNW domain containing 1	12		mRNA splicing, via spliceosome			ISO	Q13573 	J:164563 	
+MGI:1913604	Snw1	SNW domain containing 1	12		positive regulation of mRNA splicing, via spliceosome			ISO	Q13573 	J:164563 	
+MGI:1913604	Snw1	SNW domain containing 1	12		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98353	Son	Son DNA binding protein	16		regulation of mRNA splicing, via spliceosome			ISO	P18583 	J:164563 	
+MGI:98353	Son	Son DNA binding protein	16		regulation of RNA splicing			ISO	P18583 	J:164563 	
+MGI:98353	Son	Son DNA binding protein	16		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1891706	Spen	spen family transcription repressor	4		mRNA splicing, via spliceosome			IBA	PTN000573351 	J:161428 	
+MGI:2145245	Srek1	splicing regulatory glutamine/lysine-rich protein 1	13		regulation of alternative mRNA splicing, via spliceosome			IEA	IPR033568 	J:72247 	
+MGI:2145245	Srek1	splicing regulatory glutamine/lysine-rich protein 1	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914538	Srek1ip1	splicing regulatory glutamine/lysine-rich protein 1interacting protein 1	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:106908	Srpk1	serine/arginine-rich protein specific kinase 1	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:106908	Srpk1	serine/arginine-rich protein specific kinase 1	17		spliceosomal complex assembly			IBA	PTN000622883 	J:161428 	
+MGI:1201408	Srpk2	serine/arginine-rich protein specific kinase 2	5		RNA splicing			IDA		J:45458 	
+MGI:1201408	Srpk2	serine/arginine-rich protein specific kinase 2	5		RNA splicing			ISO	P78362 	J:164563 	
+MGI:1201408	Srpk2	serine/arginine-rich protein specific kinase 2	5		spliceosomal complex assembly			IDA		J:45458 	
+MGI:1201408	Srpk2	serine/arginine-rich protein specific kinase 2	5		spliceosomal complex assembly			ISO	P78362 	J:164563 	
+MGI:1891338	Srpk3	serine/arginine-rich protein specific kinase 3	X		spliceosomal complex assembly			IBA	PTN000622883 	J:161428 	
+MGI:1858303	Srrm1	serine/arginine repetitive matrix 1	4		mRNA splicing, via spliceosome			ISO	AF048977 	J:70954 	
+MGI:1858303	Srrm1	serine/arginine repetitive matrix 1	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1858303	Srrm1	serine/arginine repetitive matrix 1	4		RNA splicing, via transesterification reactions			ISO	AF048977 	J:70954 	
+MGI:1923206	Srrm2	serine/arginine repetitive matrix 2	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1916205	Srrm4	serine/arginine repetitive matrix 4	5		regulation of alternative mRNA splicing, via spliceosome	regulates a function/process that happens in inner ear		IMP	MGI:1856676 	J:193641 	
+MGI:1916205	Srrm4	serine/arginine repetitive matrix 4	5		regulation of RNA splicing			IDA		J:155499 	
+MGI:1916205	Srrm4	serine/arginine repetitive matrix 4	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98283	Srsf1	serine/arginine-rich splicing factor 1	11		alternative mRNA splicing, via spliceosome			ISO	RGD:1587490 	J:155856 	
+MGI:98283	Srsf1	serine/arginine-rich splicing factor 1	11		alternative mRNA splicing, via spliceosome			ISO	Q07955 	J:164563 	
+MGI:98283	Srsf1	serine/arginine-rich splicing factor 1	11		mRNA 5'-splice site recognition			ISO	Q07955 	J:164563 	
+MGI:98283	Srsf1	serine/arginine-rich splicing factor 1	11		positive regulation of RNA splicing			ISO	RGD:1587490 	J:155856 	
+MGI:98283	Srsf1	serine/arginine-rich splicing factor 1	11		RNA splicing			IDA		J:97604 	
+MGI:98283	Srsf1	serine/arginine-rich splicing factor 1	11		RNA splicing			IGI	MGI:97272 MGI:98283 	J:96039 	
+MGI:98284	Srsf2	serine/arginine-rich splicing factor 2	11		regulation of alternative mRNA splicing, via spliceosome			IDA		J:182960 	
+MGI:98284	Srsf2	serine/arginine-rich splicing factor 2	11		regulation of RNA splicing			IEA	IPR034893 	J:72247 	
+MGI:98284	Srsf2	serine/arginine-rich splicing factor 2	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98285	Srsf3	serine/arginine-rich splicing factor 3	17		regulation of mRNA splicing, via spliceosome			ISO	P84103 	J:164563 	
+MGI:98285	Srsf3	serine/arginine-rich splicing factor 3	17		RNA splicing			TAS		J:169984 	
+MGI:1890577	Srsf4	serine/arginine-rich splicing factor 4	4		negative regulation of mRNA splicing, via spliceosome			ISO	Q08170 	J:164563 	
+MGI:1890577	Srsf4	serine/arginine-rich splicing factor 4	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98287	Srsf5	serine/arginine-rich splicing factor 5	12		positive regulation of RNA splicing			ISO	RGD:3664 	J:155856 	
+MGI:98287	Srsf5	serine/arginine-rich splicing factor 5	12		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1915246	Srsf6	serine/arginine-rich splicing factor 6	2		alternative mRNA splicing, via spliceosome			ISO	Q13247 	J:164563 	
+MGI:1915246	Srsf6	serine/arginine-rich splicing factor 6	2		mRNA splice site selection			ISO	Q13247 	J:164563 	
+MGI:1915246	Srsf6	serine/arginine-rich splicing factor 6	2		negative regulation of mRNA splicing, via spliceosome			ISO	Q13247 	J:164563 	
+MGI:1915246	Srsf6	serine/arginine-rich splicing factor 6	2		regulation of alternative mRNA splicing, via spliceosome			ISO	Q13247 	J:164563 J:193148 	
+MGI:1915246	Srsf6	serine/arginine-rich splicing factor 6	2		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1926232	Srsf7	serine/arginine-rich splicing factor 7	17		negative regulation of mRNA splicing, via spliceosome			ISO	Q16629 	J:164563 	
+MGI:1926232	Srsf7	serine/arginine-rich splicing factor 7	17		RNA splicing			ISO	Q16629 	J:164563 	
+MGI:104896	Srsf9	serine/arginine-rich splicing factor 9	5		negative regulation of mRNA splicing, via spliceosome			ISO	Q13242 	J:164563 	
+MGI:104896	Srsf9	serine/arginine-rich splicing factor 9	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		mRNA splice site selection			IC	GO:0000375 	J:51309 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		mRNA splice site selection			ISO	O75494 	J:164563 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		mRNA splicing, via spliceosome			ISO	O75494 	J:164563 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		negative regulation of mRNA splicing, via spliceosome			IDA		J:114005 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		negative regulation of mRNA splicing, via spliceosome			ISO	O75494 	J:164563 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		regulation of mRNA splicing, via spliceosome			ISO	O75494 	J:164563 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		regulation of RNA splicing			IEA	IPR034476 	J:72247 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		RNA splicing, via transesterification reactions			IDA		J:51309 	
+MGI:1333805	Srsf10	serine/arginine-rich splicing factor 10	4		RNA splicing, via transesterification reactions			ISO	O75494 	J:164563 	
+MGI:2661424	Srsf12	serine/arginine-rich splicing factor 12	4		regulation of alternative mRNA splicing, via spliceosome			IEA	IPR034477 	J:72247 	
+MGI:2661424	Srsf12	serine/arginine-rich splicing factor 12	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1329037	Strap	serine/threonine kinase receptor associated protein	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1329037	Strap	serine/threonine kinase receptor associated protein	6		spliceosomal snRNP assembly			ISO	Q9Y3F4 	J:164563 	
+MGI:1917866	Sugp1	SURP and G patch domain containing 1	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2678085	Sugp2	SURP and G patch domain containing 2	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:107726	Supt6	suppressor of Ty 6	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1915842	Syf2	SYF2 homolog, RNA splicing factor (S. cerevisiae)	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1891690	Syncrip	synaptotagmin binding, cytoplasmic RNA interacting protein	9		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2387629	Tardbp	TAR DNA binding protein	4		RNA splicing			ISO	Q13148 	J:164563 	
+MGI:109573	Tep1	telomerase associated protein 1	14		RNA splicing			IBA	PTN001108918 	J:161428 	
+MGI:1890545	Tex16	testis expressed gene 16	X		spliceosomal snRNP assembly			IBA	PTN000363272 	J:161428 	
+MGI:1930075	Tfip11	tuftelin interacting protein 11	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1930075	Tfip11	tuftelin interacting protein 11	5		spliceosomal complex disassembly			IMP		J:205672 	
+MGI:1930075	Tfip11	tuftelin interacting protein 11	5		spliceosomal complex disassembly			ISO	Q9UBB9 	J:164563 	
+MGI:1919668	Thoc1	THO complex 1	18		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2442413	Thoc2	THO complex 2	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1920916	Thoc3	THO complex 3	13		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1351333	Thoc5	THO complex 5	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2677480	Thoc6	THO complex 6	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913481	Thoc7	THO complex 7	14		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2442637	Thrap3	thyroid hormone receptor associated protein 3	4		positive regulation of mRNA splicing, via spliceosome			ISO	Q9Y2W1 	J:164563 	
+MGI:2442637	Thrap3	thyroid hormone receptor associated protein 3	4		regulation of alternative mRNA splicing, via spliceosome			ISO	Q9Y2W1 	J:164563 	
+MGI:2442637	Thrap3	thyroid hormone receptor associated protein 3	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2442637	Thrap3	thyroid hormone receptor associated protein 3	4		RNA splicing			IEA	IPR026667 	J:72247 	
+MGI:107914	Tia1	cytotoxic granule-associated RNA binding protein 1	6		regulation of mRNA splicing, via spliceosome			ISO	P31483 	J:164563 	
+MGI:99682	Tmbim6	transmembrane BAX inhibitor motif containing 6	15		negative regulation of mRNA endonucleolytic cleavage involved in unfolded protein response	regulates UniProtKB:O35426		IMP		J:147348 	
+MGI:99682	Tmbim6	transmembrane BAX inhibitor motif containing 6	15		negative regulation of mRNA endonucleolytic cleavage involved in unfolded protein response			ISO	P55061 	J:164563 	
+MGI:1933972	Tra2a	transformer 2 alpha	6		mRNA splicing, via spliceosome			ISO	Q13595 	J:164563 	
+MGI:1933972	Tra2a	transformer 2 alpha	6		positive regulation of mRNA splicing, via spliceosome	uses Tra2a		IDA		J:179807 	
+MGI:1933972	Tra2a	transformer 2 alpha	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:106016	Tra2b	transformer 2 beta	16		mRNA splicing, via spliceosome			ISO	P62995 	J:164563 	
+MGI:106016	Tra2b	transformer 2 beta	16		negative regulation of mRNA splicing, via spliceosome	uses Tra2a,uses Nasp	PR:F8WJG3	IDA		J:179807 	
+MGI:106016	Tra2b	transformer 2 beta	16		positive regulation of mRNA splicing, via spliceosome	uses Tra2a,uses Nasp	PR:P62996-1	IDA		J:179807 	
+MGI:106016	Tra2b	transformer 2 beta	16		positive regulation of mRNA splicing, via spliceosome	happens in brain,uses Tra2a,uses Nasp		IMP	MGI:2176173 MGI:4450919 	J:179807 	
+MGI:106016	Tra2b	transformer 2 beta	16		positive regulation of mRNA splicing, via spliceosome			ISO	P62995 	J:164563 	
+MGI:106016	Tra2b	transformer 2 beta	16		regulation of alternative mRNA splicing, via spliceosome			ISO	P62995 	J:164563 	
+MGI:106016	Tra2b	transformer 2 beta	16		regulation of RNA splicing			ISO	P62995 	J:164563 	
+MGI:106016	Tra2b	transformer 2 beta	16		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1333115	Trpt1	tRNA phosphotransferase 1	19		tRNA splicing, via endonucleolytic cleavage and ligation			IDA		J:51223 	
+MGI:2141599	Tsen2	tRNA splicing endonuclease subunit 2	6		tRNA splicing, via endonucleolytic cleavage and ligation			ISO	Q8NCE0 	J:164563 	
+MGI:2141599	Tsen2	tRNA splicing endonuclease subunit 2	6		tRNA-type intron splice site recognition and cleavage			IBA	PTN000477043 	J:161428 	
+MGI:1913887	Tsen15	tRNA splicing endonuclease subunit 15	1		tRNA splicing, via endonucleolytic cleavage and ligation			IEA	IPR036167 	J:72247 	
+MGI:1913328	Tsen34	tRNA splicing endonuclease subunit 34	7		tRNA splicing, via endonucleolytic cleavage and ligation			IEA	IPR006676 IPR006677 IPR036167 	J:72247 	
+MGI:1913328	Tsen34	tRNA splicing endonuclease subunit 34	7		tRNA-type intron splice site recognition and cleavage			IBA	PTN000317188 	J:161428 	
+MGI:1923515	Tsen54	tRNA splicing endonuclease subunit 54	11		tRNA splicing, via endonucleolytic cleavage and ligation			ISO	Q7Z6J9 	J:164563 	
+MGI:1923515	Tsen54	tRNA splicing endonuclease subunit 54	11		tRNA-type intron splice site recognition and cleavage			IBA	PTN001077630 	J:161428 	
+MGI:1921294	Ttf2	transcription termination factor, RNA polymerase II	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1351613	Txnl4a	thioredoxin-like 4A	18		spliceosomal complex assembly			IBA	PTN000248409 	J:161428 	
+MGI:2443724	Txnl4b	thioredoxin-like 4B	8		mRNA splicing, via spliceosome			ISO	NP_060323 	J:91753 	
+MGI:2443724	Txnl4b	thioredoxin-like 4B	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2443724	Txnl4b	thioredoxin-like 4B	8		spliceosomal complex assembly			IBA	PTN000248409 	J:161428 	
+MGI:98884	U2af1	U2 small nuclear ribonucleoprotein auxiliary factor (U2AF) 1	17		mRNA splicing, via spliceosome			IBA	PTN000289700 	J:161428 	
+MGI:98884	U2af1	U2 small nuclear ribonucleoprotein auxiliary factor (U2AF) 1	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2678374	U2af1l4	U2 small nuclear RNA auxiliary factor 1-like 4	7		mRNA splicing, via spliceosome			IBA	PTN000289700 	J:161428 	
+MGI:2678374	U2af1l4	U2 small nuclear RNA auxiliary factor 1-like 4	7		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98886	U2af2	U2 small nuclear ribonucleoprotein auxiliary factor (U2AF) 2	7		mRNA splicing, via spliceosome			ISO	P26368 	J:164563 	
+MGI:98886	U2af2	U2 small nuclear ribonucleoprotein auxiliary factor (U2AF) 2	7		negative regulation of mRNA splicing, via spliceosome			ISO	P26368 	J:164563 	
+MGI:98886	U2af2	U2 small nuclear ribonucleoprotein auxiliary factor (U2AF) 2	7		positive regulation of RNA splicing			ISO	P26368 	J:164563 	
+MGI:98886	U2af2	U2 small nuclear ribonucleoprotein auxiliary factor (U2AF) 2	7		RNA splicing			IDA		J:156080 	
+MGI:1913427	Ubl5	ubiquitin-like 5	9		mRNA splicing, via spliceosome			IBA	PTN000315756 	J:161428 	
+MGI:2142454	Usb1	U6 snRNA biogenesis 1	8		RNA splicing			ISO	Q9BQ65 	J:164563 	
+MGI:98905	Usp4	ubiquitin specific peptidase 4 (proto-oncogene)	9		spliceosomal tri-snRNP complex assembly			ISO	Q13107 	J:164563 	
+MGI:107622	Usp39	ubiquitin specific peptidase 39	6		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:107622	Usp39	ubiquitin specific peptidase 39	6		spliceosomal complex assembly			IEA	IPR033809 	J:72247 	
+MGI:2685391	Usp49	ubiquitin specific peptidase 49	17		mRNA splicing, via spliceosome			ISO	Q70CQ1 	J:164563 	
+MGI:2685391	Usp49	ubiquitin specific peptidase 49	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1913435	Virma	vir like m6A methyltransferase associated	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:109568	Wbp4	WW domain binding protein 4	14		mRNA cis splicing, via spliceosome			ISO	O75554 	J:164563 	
+MGI:109568	Wbp4	WW domain binding protein 4	14		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1891823	Wbp11	WW domain binding protein 11	6		mRNA cis splicing, via spliceosome			IBA	PTN000331938 	J:161428 	
+MGI:1891823	Wbp11	WW domain binding protein 11	6		RNA splicing			IDA		J:88011 	
+MGI:1923696	Wdr62	WD repeat domain 62	7		RNA splicing			IBA	PTN001108918 	J:161428 	
+MGI:1915086	Wdr83	WD repeat domain containing 83	8		mRNA splicing, via spliceosome			ISO	Q9BRX9 	J:164563 	
+MGI:1915086	Wdr83	WD repeat domain containing 83	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1915086	Wdr83	WD repeat domain containing 83	8		RNA splicing, via transesterification reactions			ISO	Q9BRX9 	J:164563 	
+MGI:98968	Wt1	Wilms tumor 1 homolog	2		RNA splicing			IDA		J:156080 	
+MGI:1926395	Wtap	Wilms tumour 1-associating protein	17		regulation of alternative mRNA splicing, via spliceosome			IBA	PTN000390848 	J:161428 	
+MGI:1926395	Wtap	Wilms tumour 1-associating protein	17		regulation of alternative mRNA splicing, via spliceosome			ISO	Q15007 	J:164563 	
+MGI:1926395	Wtap	Wilms tumour 1-associating protein	17		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914689	Xab2	XPA binding protein 2	8		generation of catalytic spliceosome for first transesterification step			IBA	PTN000133873 	J:161428 	
+MGI:1914689	Xab2	XPA binding protein 2	8		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:99146	Ybx1	Y box protein 1	4		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:2443713	Ythdc1	YTH domain containing 1	5		mRNA splice site selection			ISO	Q96MU7 	J:164563 	
+MGI:2443713	Ythdc1	YTH domain containing 1	5		mRNA splicing, via spliceosome			ISO	RGD:621706 	J:155856 	
+MGI:2443713	Ythdc1	YTH domain containing 1	5		regulation of mRNA splicing, via spliceosome			ISO	Q96MU7 	J:164563 	
+MGI:2443713	Ythdc1	YTH domain containing 1	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914356	Zbtb8os	zinc finger and BTB domain containing 8 opposite strand	4		tRNA splicing, via endonucleolytic cleavage and ligation			IBA	PTN000293690 	J:161428 	
+MGI:1914356	Zbtb8os	zinc finger and BTB domain containing 8 opposite strand	4		tRNA splicing, via endonucleolytic cleavage and ligation			ISO	Q8IWT0 	J:164563 	
+MGI:1917900	Zcchc8	zinc finger, CCHC domain containing 8	5		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1914447	Zcrb1	zinc finger CCHC-type and RNA binding motif 1	15		mRNA splicing, via spliceosome			IBA	PTN000755691 	J:161428 	
+MGI:1914447	Zcrb1	zinc finger CCHC-type and RNA binding motif 1	15		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:107342	Zfp64	zinc finger protein 64	2		positive regulation of mRNA splicing, via spliceosome			IMP		J:204486 	
+MGI:1927246	Zfp326	zinc finger protein 326	5		regulation of RNA splicing			ISO	Q5BKZ1 	J:164563 	
+MGI:1927246	Zfp326	zinc finger protein 326	5		RNA splicing			IBA	PTN000257221 	J:161428 	
+MGI:1203484	Zfp638	zinc finger protein 638	6		RNA splicing			IEA	IPR033096 	J:72247 	
+MGI:1913742	Zmat2	zinc finger, matrin type 2	18		mRNA splicing, via spliceosome			IBA	PTN001128911 	J:161428 	
+MGI:1914428	Zmat5	zinc finger, matrin type 5	11		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1330262	Zpr1	ZPR1 zinc finger	9		positive regulation of RNA splicing			ISO	O75312 	J:164563 	
+MGI:1330262	Zpr1	ZPR1 zinc finger	9		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:1858211	Zranb2	zinc finger, RAN-binding domain containing 2	3		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:98885	Zrsr1	zinc finger (CCCH type), RNA binding motif and serine/arginine rich 1	11		mRNA splicing, via spliceosome			IBA	PTN000289700 	J:161428 	
+MGI:103287	Zrsr2	zinc finger (CCCH type), RNA binding motif and serine/arginine rich 2	X		mRNA splicing, via spliceosome			IBA	PTN000289700 	J:161428 	
+MGI:103287	Zrsr2	zinc finger (CCCH type), RNA binding motif and serine/arginine rich 2	X		mRNA splicing, via spliceosome			ISO	Q15696 	J:164563 	
+MGI:103287	Zrsr2	zinc finger (CCCH type), RNA binding motif and serine/arginine rich 2	X		RNA splicing			IEA	KW-0508 	J:60000 	
+MGI:103287	Zrsr2	zinc finger (CCCH type), RNA binding motif and serine/arginine rich 2	X		spliceosomal complex assembly			ISO	Q15696 	J:164563 	
+

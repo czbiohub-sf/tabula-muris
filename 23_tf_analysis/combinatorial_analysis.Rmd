@@ -1,0 +1,428 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+library(varSelRF)
+
+tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
+tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,match(tm.facs.metadata$cell[!is.na(tm.facs.metadata$cell_ontology_class)],colnames(tm.facs.matrix))]
+
+rownames(tm.facs.metadata) = tm.facs.metadata$cell
+tm.facs.metadata.tfs <- tm.facs.metadata
+tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
+tissFACStfs <- SubsetData(tissFACStfs, max.cells.per.ident = 5000, subset.raw = T)
+
+tm.facs.matrix.tfsRF <- t(as.matrix(tissFACStfs@data))
+auxRF_factors <- tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)]
+RF_factors <- as.factor(tissFACStfs@meta.data$cell_ontology_class[!is.na(tissFACStfs@meta.data$cell_ontology_class)])
+levels(RF_factors) <- 1:length(levels(RF_factors))
+cell <- as.numeric(RF_factors)
+
+dim(tm.facs.matrix.tfsRF)
+
+length(RF_factors)
+
+rf <- randomForest(x = tm.facs.matrix.tfsRF, y = RF_factors,ntree=10000)
+# Make variable importance plot
+varImpPlot(rf, n.var=25, main='ALL Subset Results')
+
+# Get names of most important genes
+imp.temp <- importance(rf)
+t <- order(imp.temp,decreasing=TRUE)
+gn.imp <- rownames(imp.temp)[t]
+  # these are in order most...least important
+
+# Get expression values for 25 most important genes
+gn.25 <- gn.imp[1:25] # vector of top 25 genes, in order
+t <- is.element(colnames(tm.facs.matrix.tfsRF),gn.25)
+sig.eset <- tm.facs.matrix.tfsRF[,t] 
+  # matrix of expression values, 
+  # not necessarily in order of importance
+
+# Make a heatmap, with group differences obvious on plot
+# (similar to Notes 2.3)
+library(RColorBrewer)
+hmcol <- colorRampPalette(brewer.pal(9,"Reds"))(256)
+rownames(sig.eset) <- RF_factors
+  # This will label the heatmap columns
+csc <- rep(hmcol[50],30)
+csc[RF_factors=='T'] <- hmcol[200] 
+  # column side color will be dark for T and light for B
+heatmap(sig.eset,scale="col", col=hmcol, labRow = auxRF_factors )#,ColSideColors=csc)
+
+varselRF.tissFACS <- varSelRF(tm.facs.matrix.tfsRF, RF_factors, c.sd = 1, mtryFactor = 1, ntree = 5000,
+         ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2,
+         whole.range = TRUE, recompute.var.imp = FALSE, verbose = FALSE,
+         returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+varselRF.tissFACS
+summary(varselRF.tissFACS)
+plot(varselRF.tissFACS)
+plot(varselRF.tissFACS, nvar = NULL, which = c(1, 2))
+
+rf.vs1 <- varSelRF(tm.facs.matrix.tfsRF, RF_factors, ntree = 200, ntreeIterat = 100,
+                   vars.drop.frac = 0.2)
+rf.vsb <- varSelRFBoot(tm.facs.matrix.tfsRF, RF_factors[!is_empty(RF_factors)],
+                       bootnumber = 10,
+                       usingCluster = FALSE,
+                       srf = rf.vs1)
+rf.vsb
+summary(rf.vsb)
+
+plot(varselRF.tissFACS, oobProb = TRUE,
+     oobProbBoxPlot = FALSE,
+     ErrorNum = TRUE,
+     subject.names = NULL,
+     class.to.plot = NULL)
+
+rfsel <- varselRF.tissFACS
+# Make variable importance plot
+varImpPlot(rfsel$firstForest, n.var=25, main='ALL Subset Results')
+rf.sig.gn <- rfsel$selected.vars
+
+# Visualize these two genes
+exp.gn.1 <- tm.facs.matrix.tfsRF[,colnames(tm.facs.matrix.tfsRF)==rf.sig.gn[1]]
+exp.gn.2 <- tm.facs.matrix.tfsRF[,colnames(tm.facs.matrix.tfsRF)==rf.sig.gn[2]]
+use.pch <- RF_factors#c(rep(1,15),rep(16,15)) # Define plotting chars.
+use.col <- c(rep(1,15),rep(2,15)) # Define plotting colors
+plot(exp.gn.1,exp.gn.2,col=hmcol,main='subset results',
+  cex.main=1.5, cex.lab=1.5, xlab=rf.sig.gn[1],
+  ylab=rf.sig.gn[2])#, pch=use.pch,cex=2)
+legend('bottomright',as.list(RF_factors),pch=c(1,16),col=c(1,2),cex=1.5)
+
+
+rf.gn <- varselRF.tissFACS$selected.vars
+
+# make scatterplot matrix, with points colored by cell type
+t.rf <- is.element(colnames(tm.facs.matrix.tfsRF),rf.gn)
+rf.eset <- t(tm.facs.matrix.tfsRF[,t.rf])
+ # this rf.eset has rows for obs and columns for 3 genes
+use.pch <- c(rep(1,95),rep(16,33))
+use.col <- cell+1
+
+pairs(rf.eset,col=use.col,pch=use.pch,cex=1.)
+ # pairs function makes scatterplot matrix of rf.eset cols.
+
+# Scatterplot Matrices from the lattice Package 
+library(lattice)
+splom(rf.eset, groups=rf.gn)#, data= tm.facs.matrix.tfsRF)#, panel=panel.superpose)#, 
+   # key=list(title="Three Cylinder Options",
+   # columns=23,
+   # points=list(pch=super.sym$pch[1:3],
+   # col=super.sym$col[1:3]),
+   # text=list(c("4 Cylinder","6 Cylinder","8 Cylinder"))))
+
+library(GGally)
+ggpairs(as.data.frame(rf.eset))#,lower=list(continuous='smooth'), diag=list(continuous='density'), axisLabels = 'show')
+
+# Now - make a profile plot (parallel coordinates plot)
+library(MASS)
+parcoord(rf.eset, col=cell+1, lty=cell+1, 
+  lwd=3, var.label=TRUE)
+legend(1.2,.15,RF_factors,lty=c(1,2),
+       lwd=3,col=c(1,2),bty='n')
+
+```
+
+```{r}
+
+#####
+##### Slide 13
+#####
+
+### First prepare objects for RF
+### (similar to slide 13 of Notes 3.3)
+
+# load data
+library(affy); library(ALL); data(ALL)
+
+# obtain subset of data; similar to slide 11 of Notes 3.2
+# (here, filter genes on raw scale, then return to log scale)
+# also, keep 30 arrays here JUST for computational 
+# convenience (in-class)
+library(genefilter); e.mat <- 2^(exprs(ALL)[,c(81:110)])
+ffun <- filterfun(pOverA(0.20,100))
+t.fil <- genefilter(e.mat,ffun)
+small.eset <- log2(e.mat[t.fil,])
+dim(small.eset) # 4400 genes, 30 arrays (15 B and 15 T)
+
+group <- c(rep('B',15),rep('T',15)) 
+ # group classification, in order
+
+
+#####
+##### Slide 14
+#####
+
+# One RF
+library(randomForest)
+set.seed(1234)
+print(date())
+rf <- randomForest(x=t(small.eset),y=as.factor(group),
+      ntree=10000)
+print(date()) # about 20 seconds
+
+
+# Make variable importance plot
+varImpPlot(rf, n.var=25, main='ALL Subset Results')
+
+# Get names of most important genes
+imp.temp <- importance(rf)
+t <- order(imp.temp,decreasing=TRUE)
+gn.imp <- rownames(imp.temp)[t]
+  # these are in order most...least important
+
+#####
+##### Slide 15
+#####
+
+# Get expression values for 25 most important genes
+gn.25 <- gn.imp[1:25] # vector of top 25 genes, in order
+t <- is.element(rownames(small.eset),gn.25)
+sig.eset <- small.eset[t,] 
+  # matrix of expression values, 
+  # not necessarily in order of importance
+
+# Make a heatmap, with group differences obvious on plot
+# (similar to Notes 2.3)
+library(RColorBrewer)
+hmcol <- colorRampPalette(brewer.pal(9,"Reds"))(256)
+colnames(sig.eset) <- group 
+  # This will label the heatmap columns
+csc <- rep(hmcol[50],30)
+csc[group=='T'] <- hmcol[200] 
+  # column side color will be dark for T and light for B
+heatmap(sig.eset,scale="row", col=hmcol,ColSideColors=csc)
+
+
+#####
+##### Slide 18 
+#####
+
+# Look at variable selection
+library(varSelRF)
+set.seed(1234)
+print(date())
+rfsel <- varSelRF(t(small.eset),as.factor(group),
+ ntree=10000, ntreeIterat=2000, vars.drop.frac=0.2) 
+print(date()) # 40 seconds
+# rfsel$firstForest is the same as the slide 14 rf object
+rf.sig.gn <- rfsel$selected.vars # "38147_at" "38319_at" 
+# set.seed(123) above gives genes: "2059_s_at" "38319_at"
+
+# Visualize these two genes
+exp.gn.1 <- small.eset[rownames(small.eset)==rf.sig.gn[1],]
+exp.gn.2 <- small.eset[rownames(small.eset)==rf.sig.gn[2],]
+use.pch <- c(rep(1,15),rep(16,15)) # Define plotting chars.
+use.col <- c(rep(1,15),rep(2,15)) # Define plotting colors
+plot(exp.gn.1,exp.gn.2,col=use.col,main='30 subset arrays',
+  cex.main=1.5, cex.lab=1.5, xlab=rf.sig.gn[1],
+  ylab=rf.sig.gn[2], pch=use.pch,cex=2)
+legend('bottomright',
+       c('B-cell','T-cell'),pch=c(1,16),col=c(1,2),cex=1.5)
+
+
+#####
+##### Slide 19 
+#####
+
+# Did this overfit these 30 arrays?
+
+# Look at JUST the other 98 
+# (first 80 are B-cell, last 18 are T-cell)
+
+eset.2 <- exprs(ALL)[,c(1:80,111:128)]
+group.2 <- c(rep(0,80),rep(1,18))
+exp.gn.1 <- eset.2[rownames(eset.2)==rf.sig.gn[1],]
+exp.gn.2 <- eset.2[rownames(eset.2)==rf.sig.gn[2],]
+use.pch.2 <- c(rep(1,80),rep(16,18))
+use.col.2 <- c(rep(1,80),rep(2,18))
+plot(exp.gn.1,exp.gn.2,col=use.col.2, 
+  main='non-subset arrays', cex.main=1.5,cex=2, cex.lab=1.5,
+  xlab=rf.sig.gn[1], ylab=rf.sig.gn[2], pch=use.pch.2)
+legend('bottomright',
+       c('B-cell','T-cell'),pch=c(1,16),col=c(1,2),cex=1.5)
+
+
+#####
+##### Slide 21
+#####
+
+# RF variable selection with full data set
+
+# set seed and define initial objects
+set.seed(123)
+eset <- exprs(ALL) # 12625 genes, 128 arrays
+cell <- c(rep(0,95),rep(1,33))  
+  # first 95 are B-cell; last 33 are T-cell
+
+print(date())
+rf.big <- varSelRF(t(eset),as.factor(cell),
+  ntree=10000, ntreeIterat=2000, vars.drop.frac=0.2) 
+print(date())  # about 9 minutes
+
+rf.gn <- rf.big$selected.vars 
+  #   "33039_at" "35016_at" "38319_at"
+
+
+#####
+##### Slide 22
+#####
+
+# make scatterplot matrix, with points colored by cell type
+t.rf <- is.element(rownames(eset),rf.gn)
+rf.eset <- t(eset[t.rf,])
+ # this rf.eset has rows for obs and columns for 3 genes
+use.pch <- c(rep(1,95),rep(16,33))
+use.col <- cell+1
+pairs(rf.eset,col=use.col,pch=use.pch,cex=1.5)
+ # pairs function makes scatterplot matrix of rf.eset cols.
+
+# Now - make a profile plot (parallel coordinates plot)
+library(MASS)
+parcoord(rf.eset, col=cell+1, lty=cell+1, 
+  lwd=3, var.label=TRUE)
+legend(1.2,.15,c('B-cell','T-cell'),lty=c(1,2),
+       lwd=3,col=c(1,2),bty='n')
+
+```
+
+```{r varselRF all}
+tm.facs.matrix.tfs <- tm.facs.matrix[rownames(tm.facs.matrix) %in% tf.names,]
+tm.facs.matrix.tfs <- tm.facs.matrix.tfs[,match(tm.facs.metadata$cell[!is.na(tm.facs.metadata$cell_ontology_class)],colnames(tm.facs.matrix))]
+
+rownames(tm.facs.metadata) = tm.facs.metadata$cell
+tm.facs.metadata.tfs <- tm.facs.metadata
+
+tm.facs.metadata.tfs$factors <- paste(tm.facs.metadata$cell_ontology_class, tm.facs.metadata$tissue, sep="__")
+
+# cell.type.tissue <- unique(tm.facs.metadata.tfs$factors[!is.na(tm.facs.metadata.tfs$cell_ontology_class)])
+# 
+# for (varselrf.id in 1:length(cell.type.tissue)){
+#   
+#   print(varselrf.id)
+  # tm.facs.metadata.tfs$varSelRF <- tm.facs.metadata.tfs$factors
+  # 
+  # tm.facs.metadata.tfs$varSelRF[tm.facs.metadata.tfs$varSelRF != cell.type.tissue[varselrf.id]] <- "A"
+  # tm.facs.metadata.tfs$varSelRF[tm.facs.metadata.tfs$varSelRF == cell.type.tissue[varselrf.id]] <- "B"
+
+tissFACStfs <- CreateSeuratObject(raw.data = tm.facs.matrix.tfs, meta.data = tm.facs.metadata.tfs)
+tissFACStfs <- SetAllIdent(object = tissFACStfs, id = "factors")
+tissFACStfs <- SubsetData(tissFACStfs, max.cells.per.ident = 20, subset.raw = T)
+
+tm.facs.matrix.tfsRF <- as.matrix(tissFACStfs@data)
+
+RF_factors <- tissFACStfs@meta.data$factors
+
+dim(tm.facs.matrix.tfsRF)
+length(unique(RF_factors))
+
+
+varselRF.tissFACS.all.wr <- varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = TRUE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+
+varselRF.tissFACS.all <- varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = FALSE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+
+# cell.type.tissue.name <- paste("varselRF.tissFACS",cell.type.tissue[varselrf.id], sep = ".")
+# cell.type.tissue.name.wr <- paste("varselRF.tissFACS.wr",cell.type.tissue[varselrf.id], sep = ".")
+# assign(cell.type.tissue.name, varselRF.tissFACS)
+# assign(cell.type.tissue.name.wr, varselRF.tissFACS.wr)
+#   
+  #varselRF.tissFACS
+  #summary(varselRF.tissFACS)
+  #plot(varselRF.tissFACS, nvar = NULL, which = c(1, 2))
+  #varImpPlot(varselRF.tissFACS$firstForest, n.var=25, main='ALL Subset Results')
+#}
+
+```
+
+
+
+
+
+```{r varselRF plots and outputs}
+varselRF.tissFACS.all.wr # result of varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = TRUE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+
+varselRF.tissFACS.all # result of varSelRF(t(tm.facs.matrix.tfsRF), as.factor(RF_factors), c.sd = 1, mtryFactor = 1, ntree = 5000, ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.2, whole.range = FALSE, recompute.var.imp = FALSE, verbose = TRUE, returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = TRUE)
+
+varselRF.tissFACS.all
+summary(varselRF.tissFACS.all)
+plot(varselRF.tissFACS.all, nvar = NULL, which = c(1, 2))
+varImpPlot(varselRF.tissFACS.all$firstForest, n.var=25, main='first forest')
+
+pdf("new.varselRF.tissFACS.all.pdf", width=4, height=5.5)
+varImpPlot(varselRF.tissFACS.all$rf.model, n.var=20, main='Random forest model')
+dev.off()
+write.csv(as.data.frame(apply(varselRF.tissFACS.all$rf.model$importance,decreasing = TRUE,2,sort)), file = "rf.model.all.csv")
+
+varselRF.tissFACS.all.wr
+summary(varselRF.tissFACS.all.wr)
+plot(varselRF.tissFACS.all.wr, nvar = NULL, which = c(1, 2))
+varImpPlot(varselRF.tissFACS.all.wr$firstForest, n.var=, main='first forest')
+
+
+# plot tree
+gn.25 <- row.names(varselRF.tissFACS.all$rf.model$importance)[1:50] # vector of top genes, in order
+t <- is.element(rownames(tm.facs.matrix.tfsRF),gn.25)
+sig.eset <- tm.facs.matrix.tfsRF[t,] 
+  # matrix of expression values, 
+  # not necessarily in order of importance
+
+# Make a heatmap, with group differences obvious on plot
+# (similar to Notes 2.3)
+library(RColorBrewer)
+hmcol <- colorRampPalette(brewer.pal(9,"Reds"))(256)
+colnames(sig.eset) <- RF_factors 
+  # This will label the heatmap columns
+csc <- rep(hmcol[50],30)
+csc[RF_factors=='T'] <- hmcol[200] 
+  # column side color will be dark for T and light for B
+heatmap(sig.eset,scale="col", col=hmcol)#,ColSideColors=csc)
+heatmap(as.data.frame(as.numeric(varselRF.tissFACS.all$rf.model$importance)))#,scale="row")#, col=hmcol,ColSideColors=csc)
+plot(varselRF.tissFACS.all, oobProb = TRUE,
+     oobProbBoxPlot = FALSE,
+     ErrorNum = TRUE,
+     subject.names = NULL,
+     class.to.plot = NULL)
+
+# write csv
+library(openxlsx)
+library(stringr)
+wb <- createWorkbook("rf.model.all")
+sheetname <- "rf.model"
+addWorksheet(wb,sheetname)
+writeData(wb, sheet = sheetname, as.data.frame(apply(varselRF.tissFACS.all$rf.model$importance,decreasing = TRUE,2,sort)),rowNames = TRUE)
+sheetname <- "factors.cell.type.organ"
+addWorksheet(wb,sheetname)
+writeData(wb, sheet = sheetname, unique(varselRF.tissFACS.all$rf.model$predicted),rowNames = TRUE)
+sheetname <- "confusion.matrix"
+addWorksheet(wb,sheetname)
+writeData(wb, sheet = sheetname, varselRF.tissFACS.all$rf.model$confusion,rowNames = TRUE)
+saveWorkbook(wb,"new.rf.model.all.xlsx",overwrite = TRUE)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
