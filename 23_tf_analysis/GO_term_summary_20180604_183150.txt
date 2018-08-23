@@ -1,0 +1,1591 @@
+MGI Gene/Marker ID	Symbol	Name	Chr	Qualifier	Annotated Term	Context	Proteoform	Evidence	Inferred From	Reference(s)
+MGI:1914288	2010109I03Rik	RIKEN cDNA 2010109I03 gene	15		cell surface			IBA	PTN001048184 	J:161428 	
+MGI:2443685	5830411N06Rik	RIKEN cDNA 5830411N06 gene	7		external side of plasma membrane	is a part of gamma-delta T cell		IDA		J:137854 	
+MGI:107809	Aamp	angio-associated migratory protein	1		cell surface			ISO	Q13685 	J:164563 	
+MGI:99607	Abca1	ATP-binding cassette, sub-family A (ABC1), member 1	4		cell surface			ISO	RGD:631344 	J:155856 	
+MGI:99607	Abca1	ATP-binding cassette, sub-family A (ABC1), member 1	4		external side of plasma membrane			IDA		J:200990 	
+MGI:1351646	Abca7	ATP-binding cassette, sub-family A (ABC1), member 7	10		cell surface			IDA		J:206915 J:207821 	
+MGI:97570	Abcb1a	ATP-binding cassette, sub-family B (MDR/TAP), member 1A	5		cell surface			ISO	P08183 	J:164563 	
+MGI:1352447	Abcc2	ATP-binding cassette, sub-family C (CFTR/MRP), member 2	19		cell surface			ISO	Q92887 	J:164563 	
+MGI:107704	Abcg1	ATP binding cassette subfamily G member 1	17		external side of plasma membrane			IDA		J:150920 	
+MGI:107704	Abcg1	ATP binding cassette subfamily G member 1	17		external side of plasma membrane			ISO	P45844 	J:164563 	
+MGI:87874	Ace	angiotensin I converting enzyme (peptidyl-dipeptidase A) 1	11		external side of plasma membrane			ISO	P12821 	J:164563 	
+MGI:1917258	Ace2	angiotensin I converting enzyme (peptidyl-dipeptidase A) 2	X		cell surface			ISO	Q9BYF1 	J:164563 	
+MGI:87876	Ache	acetylcholinesterase	5		cell surface			IDA		J:111571 	
+MGI:87876	Ache	acetylcholinesterase	5		cell surface			ISO	RGD:69313 	J:155856 	
+MGI:109562	Ackr3	atypical chemokine receptor 3	1		cell surface			ISO	P25106 	J:164563 	
+MGI:1338944	Acvr1b	activin A receptor, type 1B	15		cell surface			ISO	P36896 	J:164563 	
+MGI:2661081	Acvr1c	activin A receptor, type IC	2		cell surface			ISO	RGD:621789 	J:155856 	
+MGI:2661081	Acvr1c	activin A receptor, type IC	2		cell surface			ISO	U69702 	J:73065 	
+MGI:102806	Acvr2a	activin receptor IIA	2		cell surface			IDA		J:108339 	
+MGI:1338946	Acvrl1	activin A receptor, type II-like 1	15		cell surface			ISO	P37023 	J:73065 	
+MGI:1338946	Acvrl1	activin A receptor, type II-like 1	15		cell surface			ISO	RGD:2029 	J:155856 	
+MGI:87916	Ada	adenosine deaminase	2		cell surface			ISO	P00813 	J:164563 	
+MGI:87916	Ada	adenosine deaminase	2		external side of plasma membrane			IBA	PTN000150944 	J:161428 	
+MGI:87916	Ada	adenosine deaminase	2		external side of plasma membrane			ISO	P00813 	J:164563 	
+MGI:1340894	Adam2	a disintegrin and metallopeptidase domain 2	14		cell surface	is a part of sperm		IDA		J:180946 	
+MGI:102518	Adam3	a disintegrin and metallopeptidase domain 3 (cyritestin)	8		cell surface			IDA		J:92271 	
+MGI:102518	Adam3	a disintegrin and metallopeptidase domain 3 (cyritestin)	8		cell surface	is a part of sperm		IDA		J:171133 J:182133 J:210341 	
+MGI:104731	Adam4	a disintegrin and metallopeptidase domain 4	12		external side of plasma membrane			IDA		J:149644 	
+MGI:2676316	Adam6a	a disintegrin and metallopeptidase domain 6A	12		cell surface	is a part of sperm		IDA		J:171133 	
+MGI:2676316	Adam6a	a disintegrin and metallopeptidase domain 6A	12		external side of plasma membrane			IDA		J:149644 	
+MGI:107825	Adam8	a disintegrin and metallopeptidase domain 8	7		cell surface			ISO	P78325 	J:164563 	
+MGI:105376	Adam9	a disintegrin and metallopeptidase domain 9 (meltrin gamma)	8		cell surface			IDA		J:31451 	
+MGI:105376	Adam9	a disintegrin and metallopeptidase domain 9 (meltrin gamma)	8		cell surface			ISO	RGD:621473 	J:155856 	
+MGI:105376	Adam9	a disintegrin and metallopeptidase domain 9 (meltrin gamma)	8		intrinsic component of external side of plasma membrane			IDA		J:143698 	
+MGI:109548	Adam10	a disintegrin and metallopeptidase domain 10	9		cell surface			ISO	RGD:2032 	J:155856 	
+MGI:109548	Adam10	a disintegrin and metallopeptidase domain 10	9		cell surface			ISO	O14672 	J:164563 	
+MGI:1333882	Adam15	a disintegrin and metallopeptidase domain 15 (metargidin)	3		cell surface			ISO	Q13444 	J:164563 	
+MGI:1096335	Adam17	a disintegrin and metallopeptidase domain 17	12		cell surface			ISO	RGD:620404 	J:155856 	
+MGI:1096335	Adam17	a disintegrin and metallopeptidase domain 17	12		cell surface			ISO	P78536 	J:164563 	
+MGI:105377	Adam19	a disintegrin and metallopeptidase domain 19 (meltrin beta)	11	NOT	external side of plasma membrane	happens in fibroblast		IDA		J:109116 	
+MGI:105984	Adam24	a disintegrin and metallopeptidase domain 24 (testase 1)	8		external side of plasma membrane			IDA		J:149644 	
+MGI:105985	Adam26a	a disintegrin and metallopeptidase domain 26A (testase 3)	8		external side of plasma membrane			IDA		J:149644 	
+MGI:2676326	Adam29	a disintegrin and metallopeptidase domain 29	8		external side of plasma membrane			IDA		J:149644 	
+MGI:1918328	Adam30	a disintegrin and metallopeptidase domain 30	3		external side of plasma membrane			IDA		J:149644 	
+MGI:1347346	Adamts7	a disintegrin-like and metallopeptidase (reprolysin type) with thrombospondin type 1 motif, 7	9		cell surface			IDA		J:92553 	
+MGI:1916320	Adamts9	a disintegrin-like and metallopeptidase (reprolysin type) with thrombospondin type 1 motif, 9	6		cell surface			IDA		J:207187 	
+MGI:2449569	Adamts15	a disintegrin-like and metallopeptidase (reprolysin type) with thrombospondin type 1 motif, 15	9		cell surface			IDA		J:207187 	
+MGI:108449	Adcyap1r1	adenylate cyclase activating polypeptide 1 receptor 1	6		cell surface			ISO	RGD:2038 	J:155856 	
+MGI:1925810	Adgra2	adhesion G protein-coupled receptor A2	8		cell surface	is a part of blood vessel endothelial cell		IDA		J:171226 	
+MGI:1917943	Adgra3	adhesion G protein-coupled receptor A3	5		external side of plasma membrane	is a part of testis,is a part of stromal cell		IDA		J:126330 	
+MGI:106912	Adgre1	adhesion G protein-coupled receptor E1	17		external side of plasma membrane	is a part of macrophage		IDA		J:89997 	
+MGI:106912	Adgre1	adhesion G protein-coupled receptor E1	17		external side of plasma membrane			IDA		J:83995 J:86281 	
+MGI:106912	Adgre1	adhesion G protein-coupled receptor E1	17		external side of plasma membrane	is a part of blood,is a part of blood cell		IDA		J:63425 	
+MGI:1196464	Adgre4	adhesion G protein-coupled receptor E4	17		cell surface			IDA		J:78278 	
+MGI:2182928	Adgrf5	adhesion G protein-coupled receptor F5	17		cell surface			ISO	Q8IZF2 	J:73065 	
+MGI:1916151	Adgrg6	adhesion G protein-coupled receptor G6	10		cell surface			ISO	AF216967 	J:73065 	
+MGI:1274784	Adgrv1	adhesion G protein-coupled receptor V1	13		cell surface			ISO	Q8WXG9 	J:164563 	
+MGI:106675	Adipoq	adiponectin, C1Q and collagen domain containing	16		cell surface			ISO	Q15848 	J:164563 	
+MGI:99403	Adora2b	adenosine A2b receptor	11		cell surface			ISO	RGD:2050 	J:155856 	
+MGI:1924596	Adtrp	androgen dependent TFPI regulating protein	13		cell surface			ISO	Q96IZ2 	J:164563 	
+MGI:893592	Ager	advanced glycosylation end product-specific receptor	17		cell surface			ISO	RGD:69258 	J:155856 	
+MGI:893592	Ager	advanced glycosylation end product-specific receptor	17		external side of plasma membrane		PR:Q62151-1	ISO	Q15109-1 	J:73065 	
+MGI:893592	Ager	advanced glycosylation end product-specific receptor	17		external side of plasma membrane		PR:Q62151-10	ISO	Q15109-10 	J:73065 	
+MGI:87961	Agrn	agrin	4		cell surface		EMBL:AAG02119	IDA		J:64996 	
+MGI:87961	Agrn	agrin	4		cell surface	is a part of UBERON:0018649|is a part of cardiac muscle cell		IDA		J:151007 	
+MGI:102774	Aimp1	aminoacyl tRNA synthetase complex-interacting multifunctional protein 1	3		cell surface			ISO	Q12904 	J:164563 	
+MGI:2685419	Ajap1	adherens junction associated protein 1	4		cell surface			ISO	Q9UKB5 	J:164563 	
+MGI:87984	Akp3	alkaline phosphatase 3, intestine, not Mn requiring	1		external side of plasma membrane			ISO	RGD:621650 	J:155856 	
+MGI:1313266	Alcam	activated leukocyte cell adhesion molecule	16		external side of plasma membrane	is a part of spleen,is a part of B cell|is a part of spleen,is a part of CD8-positive, alpha-beta T cell|is a part of spleen,is a part of CD4-positive, alpha-beta T cell		IDA		J:40942 	
+MGI:1924018	Alpi	alkaline phosphatase, intestinal	1		cell surface			ISO	P05187 	J:164563 	
+MGI:1924018	Alpi	alkaline phosphatase, intestinal	1		external side of plasma membrane			ISO	RGD:2099 	J:155856 	
+MGI:88002	Ambp	alpha 1 microglobulin/bikunin	4		cell surface			ISO	RGD:2102 	J:155856 	
+MGI:88005	Amelx	amelogenin, X-linked	X		cell surface			IMP		J:143680 	
+MGI:108440	Amot	angiomotin	X		cell surface			ISO	Q4VCS5 	J:164563 	
+MGI:108440	Amot	angiomotin	X		external side of plasma membrane			ISO	Q4VCS5 	J:73065 	
+MGI:1353627	Angptl3	angiopoietin-like 3	4		cell surface			IDA		J:203527 	
+MGI:1353627	Angptl3	angiopoietin-like 3	4		cell surface			ISO	Q9Y5C1 	J:164563 	
+MGI:88026	Ank3	ankyrin 3, epithelial	10		cell surface			ISO	RGD:620157 	J:155856 	
+MGI:2142149	Ano1	anoctamin 1, calcium activated chloride channel	7		external side of plasma membrane			IDA		J:196141 	
+MGI:5000466	Anpep	alanyl (membrane) aminopeptidase	7		external side of plasma membrane			IDA		J:174203 	
+MGI:1916788	Antxr1	anthrax toxin receptor 1	6		cell surface			ISO	Q9H6X2 	J:170235 	
+MGI:1916788	Antxr1	anthrax toxin receptor 1	6		external side of plasma membrane			ISO	Q9H6X2 	J:170235 	
+MGI:1919164	Antxr2	anthrax toxin receptor 2	5		cell surface			IDA		J:197389 	
+MGI:1919164	Antxr2	anthrax toxin receptor 2	5		external side of plasma membrane			IDA		J:197389 	
+MGI:96819	Anxa1	annexin A1	19		cell surface			ISO	P04083 	J:164563 	
+MGI:96819	Anxa1	annexin A1	19		extrinsic component of external side of plasma membrane			ISO	P04083 	J:164563 	
+MGI:88246	Anxa2	annexin A2	9		cell surface			ISO	P07355 	J:164563 	
+MGI:88030	Anxa4	annexin A4	6		cell surface			ISO	P09525 	J:164563 	
+MGI:106008	Anxa5	annexin A5	3		external side of plasma membrane			IDA		J:140498 J:155686 J:174697 	
+MGI:106008	Anxa5	annexin A5	3		external side of plasma membrane	is a part of lens fiber		IDA		J:151537 	
+MGI:1923711	Anxa9	annexin A9	3		cell surface			ISO	O76027 	J:164563 	
+MGI:1306797	Aoc3	amine oxidase, copper containing 3	11		cell surface			ISO	Q16853 	J:164563 	
+MGI:1919131	Apmap	adipocyte plasma membrane associated protein	2		cell surface			ISO	Q9HDC9 	J:164563 	
+MGI:88049	Apoa1	apolipoprotein A-I	9		cell surface			ISO	RGD:2130 	J:155856 	
+MGI:88051	Apoa4	apolipoprotein A-IV	9	colocalizes_with	cell surface			ISO	P06727 	J:164563 	
+MGI:88057	Apoe	apolipoprotein E	7		cell surface			ISO	RGD:2138 	J:155856 	
+MGI:88057	Apoe	apolipoprotein E	7		extrinsic component of external side of plasma membrane			ISO	RGD:2138 	J:155856 	
+MGI:88058	Apoh	apolipoprotein H	11		cell surface			ISO	RGD:1310625 	J:155856 	
+MGI:88058	Apoh	apolipoprotein H	11		cell surface			ISO	P02749 	J:164563 	
+MGI:88059	App	amyloid beta (A4) precursor protein	16		cell surface			ISO	P05067 	J:164563 	
+MGI:88059	App	amyloid beta (A4) precursor protein	16		cell surface			ISO	RGD:2139 	J:155856 	
+MGI:107387	Aqp4	aquaporin 4	18		external side of plasma membrane			ISO	P55087 	J:164563 	
+MGI:1913583	Aqp11	aquaporin 11	7		cell surface			ISO	RGD:628763 	J:155856 	
+MGI:1913583	Aqp11	aquaporin 11	7		cell surface			ISO	Q8NBQ7 	J:164563 	
+MGI:88068	Areg	amphiregulin	5		cell surface			ISO	P15514 	J:164563 	
+MGI:1923959	Arpc2	actin related protein 2/3 complex, subunit 2	1		cell surface			ISO	RGD:1305848 	J:155856 	
+MGI:1923959	Arpc2	actin related protein 2/3 complex, subunit 2	1		ventral surface of cell			ISO	RGD:1305848 	J:155856 	
+MGI:88077	Arsa	arylsulfatase A	15		extrinsic component of external side of plasma membrane			ISO	RGD:1310381 	J:155856 	
+MGI:88075	Arsb	arylsulfatase B	13		cell surface			IDA		J:215968 	
+MGI:88075	Arsb	arylsulfatase B	13		cell surface			ISO	RGD:2158 	J:155856 	
+MGI:107511	Art1	ADP-ribosyltransferase 1	7		cell surface			IDA		J:38778 	
+MGI:107511	Art1	ADP-ribosyltransferase 1	7		cell surface		PR:Q60935	IDA		J:34530 	
+MGI:107545	Art2b	ADP-ribosyltransferase 2b	7		anchored component of external side of plasma membrane			IDA		J:42560 	
+MGI:1194915	Asic1	acid-sensing (proton-gated) ion channel 1	15		cell surface			ISO	RGD:71062 	J:155856 	
+MGI:1098567	Astn1	astrotactin 1	1		external side of plasma membrane			IDA		J:161514 	
+MGI:107801	Atp5b	ATP synthase, H+ transporting mitochondrial F1 complex, beta subunit	10		cell surface			ISO	P06576 	J:164563 	
+MGI:1917745	Atp6ap2	ATPase, H+ transporting, lysosomal accessory protein 2	X		external side of plasma membrane			ISO	O75787 	J:164563 	
+MGI:1196457	Atpif1	ATPase inhibitory factor 1	4		cell surface			ISO	Q9UII2 	J:164563 	
+MGI:1347244	Axl	AXL receptor tyrosine kinase	7		cell surface			ISO	P30530 	J:164563 	
+MGI:88127	B2m	beta-2 microglobulin	2		external side of plasma membrane	is a part of T cell		IDA		J:1767 	
+MGI:95705	B4galt1	UDP-Gal:betaGlcNAc beta 1,4- galactosyltransferase, polypeptide 1	4		cell surface	is a part of sperm		IDA		J:43773 	
+MGI:95705	B4galt1	UDP-Gal:betaGlcNAc beta 1,4- galactosyltransferase, polypeptide 1	4		cell surface	is a part of sperm	PR:P15535-1	IDA		J:20319 	
+MGI:95705	B4galt1	UDP-Gal:betaGlcNAc beta 1,4- galactosyltransferase, polypeptide 1	4		cell surface		PR:P15535-1	IDA		J:17178 J:28214 	
+MGI:95705	B4galt1	UDP-Gal:betaGlcNAc beta 1,4- galactosyltransferase, polypeptide 1	4		cell surface	is a part of mammary gland epithelium,is a part of glandular epithelial cell	PR:P15535-1	IMP	MGI:2388614 	J:36784 	
+MGI:95705	B4galt1	UDP-Gal:betaGlcNAc beta 1,4- galactosyltransferase, polypeptide 1	4		external side of plasma membrane			ISO	P15291 	J:164563 	
+MGI:1929940	Bcam	basal cell adhesion molecule	7		cell surface	is a part of epithelial cell		IDA		J:71478 	
+MGI:88158	Bgn	biglycan	X		cell surface			ISS	P21810 	J:14605 	
+MGI:88177	Bmp2	bone morphogenetic protein 2	2		cell surface			ISO	P12643 	J:164563 	
+MGI:1338820	Bmp10	bone morphogenetic protein 10	6		cell surface			ISO	O95393 	J:164563 	
+MGI:1338938	Bmpr1a	bone morphogenetic protein receptor, type 1A	14		external side of plasma membrane			ISO	P36894 	J:164563 	
+MGI:1095407	Bmpr2	bone morphogenetic protein receptor, type II (serine/threonine kinase)	1		cell surface			IDA		J:77444 	
+MGI:2151153	Boc	biregional cell adhesion molecule-related/down-regulated by oncogenes (Cdon) binding protein	16		cell surface			TAS		J:94846 	
+MGI:1277955	Bsn	bassoon	9		cell surface			IDA		J:177124 	
+MGI:2685613	Bsph1	binder of sperm protein homolog 1	7		cell surface			IDA		J:192441 	
+MGI:1924934	Bsph2	binder of sperm protein homolog 2	7		cell surface			IBA	PTN001116154 	J:161428 	
+MGI:1916800	Bst2	bone marrow stromal cell antigen 2	8		cell surface			IDA		J:187543 J:190272 	
+MGI:1916800	Bst2	bone marrow stromal cell antigen 2	8		cell surface			ISO	RGD:727849 	J:155856 	
+MGI:2658978	Btla	B and T lymphocyte associated	16		external side of plasma membrane	is a part of lymphocyte		IDA		J:94873 	
+MGI:3606486	Btn2a2	butyrophilin, subfamily 2, member A2	13		cell surface	is a part of mature B cell|is a part of dendritic cell|is a part of peritoneal macrophage		IDA		J:202549 	
+MGI:1932027	Btnl1	butyrophilin-like 1	17		cell surface	is a part of small intestine,is a part of enterocyte		IDA		J:170826 	
+MGI:1194505	C1qbp	complement component 1, q subcomponent binding protein	11		cell surface			ISO	Q07021 	J:164563 	
+MGI:88232	C5ar1	complement component 5a receptor 1	7		cell surface			ISO	RGD:70553 	J:155856 	
+MGI:1316660	Cacng2	calcium channel, voltage-dependent, gamma subunit 2	15		cell surface			ISO	RGD:71095 	J:155856 	
+MGI:1859167	Cacng4	calcium channel, voltage-dependent, gamma subunit 4	11		cell surface			ISO	RGD:628804 	J:155856 	
+MGI:88252	Calr	calreticulin	8		cell surface			ISO	RGD:620288 	J:155856 	
+MGI:88252	Calr	calreticulin	8		external side of plasma membrane	is a part of egg cell		IDA		J:92195 	
+MGI:1100859	Capn5	calpain 5	7		cell surface			ISO	O15484 	J:164563 	
+MGI:1096574	Car4	carbonic anhydrase 4	11		anchored component of external side of plasma membrane			ISO	P22748 	J:164563 	
+MGI:1096574	Car4	carbonic anhydrase 4	11		cell surface			ISO	P22748 	J:164563 	
+MGI:1351351	Casr	calcium-sensing receptor	16		cell surface			ISO	RGD:2277 	J:155856 	
+MGI:102709	Cav1	caveolin 1, caveolae protein	6		cell surface			ISO	RGD:2280 	J:155856 	
+MGI:107571	Cav2	caveolin 2	6		cell surface			ISO	RGD:620348 	J:155856 	
+MGI:107570	Cav3	caveolin 3	6		cell surface			ISO	RGD:2281 	J:155856 	
+MGI:1346316	Ccl19	chemokine (C-C motif) ligand 19	4		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:1349182	Ccl21b	chemokine (C-C motif) ligand 21B (leucine)	4		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:104618	Ccr1	chemokine (C-C motif) receptor 1	9		external side of plasma membrane			ISO	RGD:708446 	J:155856 	
+MGI:104618	Ccr1	chemokine (C-C motif) receptor 1	9		external side of plasma membrane			ISO	P32246 	J:164563 	
+MGI:106185	Ccr2	chemokine (C-C motif) receptor 2	9		external side of plasma membrane			IDA		J:197348 	
+MGI:107824	Ccr4	chemokine (C-C motif) receptor 4	9		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		cell surface			IDA		J:200103 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		cell surface			ISO	RGD:620596 	J:155856 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		cell surface			ISO	P51681 	J:164563 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		external side of plasma membrane			IDA		J:197348 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:118845 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		external side of plasma membrane			ISO	P51681 	J:68942 J:164563 	
+MGI:1333797	Ccr6	chemokine (C-C motif) receptor 6	17		cell surface			IDA		J:200103 	
+MGI:1333797	Ccr6	chemokine (C-C motif) receptor 6	17		cell surface			ISO	P51684 	J:164563 	
+MGI:1333797	Ccr6	chemokine (C-C motif) receptor 6	17		external side of plasma membrane			IDA		J:190936 	
+MGI:103011	Ccr7	chemokine (C-C motif) receptor 7	11		cell surface			IDA		J:200103 	
+MGI:103011	Ccr7	chemokine (C-C motif) receptor 7	11		cell surface			ISO	P32248 	J:164563 	
+MGI:103011	Ccr7	chemokine (C-C motif) receptor 7	11		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:1341902	Ccr9	chemokine (C-C motif) receptor 9	9		cell surface			ISO	P51686 	J:164563 	
+MGI:1096320	Ccr10	chemokine (C-C motif) receptor 10	11		cell surface			ISO	P46092 	J:164563 	
+MGI:107674	Cd1d1	CD1d1 antigen	3		cell surface			ISO	P15813 	J:164563 	
+MGI:107674	Cd1d1	CD1d1 antigen	3		external side of plasma membrane	is a part of fibroblast		IDA		J:89707 	
+MGI:107674	Cd1d1	CD1d1 antigen	3		external side of plasma membrane			IDA		J:39748 J:76976 J:86243 J:140498 	
+MGI:107675	Cd1d2	CD1d2 antigen	3		external side of plasma membrane			IDA		J:76976 	
+MGI:88320	Cd2	CD2 antigen	3		cell surface			ISO	P06729 	J:164563 	
+MGI:88320	Cd2	CD2 antigen	3		cell surface			ISO	RGD:2297 	J:155856 	
+MGI:88320	Cd2	CD2 antigen	3		external side of plasma membrane	is a part of T cell		IDA		J:142709 	
+MGI:88320	Cd2	CD2 antigen	3		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:17350 	
+MGI:88320	Cd2	CD2 antigen	3		external side of plasma membrane			ISO	P06729 	J:172134 	
+MGI:88332	Cd3e	CD3 antigen, epsilon polypeptide	9		external side of plasma membrane	is a part of T cell		IDA		J:33466 J:53400 J:92334 J:98326 	
+MGI:88332	Cd3e	CD3 antigen, epsilon polypeptide	9		external side of plasma membrane			IDA		J:34311 J:143981 J:157744 J:189787 	
+MGI:88332	Cd3e	CD3 antigen, epsilon polypeptide	9		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:17350 	
+MGI:88332	Cd3e	CD3 antigen, epsilon polypeptide	9		external side of plasma membrane	is a part of blood cell		IDA		J:163607 	
+MGI:88332	Cd3e	CD3 antigen, epsilon polypeptide	9		external side of plasma membrane	is a part of leukocyte		IDA		J:163829 	
+MGI:88332	Cd3e	CD3 antigen, epsilon polypeptide	9		external side of plasma membrane	is a part of thymus,is a part of T cell		IDA		J:27768 	
+MGI:88332	Cd3e	CD3 antigen, epsilon polypeptide	9		external side of plasma membrane			ISO	P07766 	J:73065 J:145327 	
+MGI:88335	Cd4	CD4 antigen	6		cell surface			IDA		J:129700 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of leukocyte		IDA		J:163829 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of thymus,is a part of T cell|is a part of spleen,is a part of T cell		IDA		J:27768 J:31364 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of T cell		IDA		J:14194 J:39981 J:41170 J:53400 J:80063 J:92334 J:97996 J:152384 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of thymus,is a part of CD8-positive, alpha-beta T cell|is a part of thymus,is a part of CD4-positive, alpha-beta T cell		IDA		J:92721 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of thymus,is a part of T cell		IDA		J:29796 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of neutrophil		IDA		J:149909 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of blood,is a part of blood cell		IDA		J:63425 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of gamma-delta T cell		IDA		J:137854 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane			IDA		J:30163 J:34311 J:35057 J:39748 J:60915 J:86758 J:96628 J:98417 J:103896 J:120804 J:132871 J:140498 J:141145 J:141392 J:155686 J:157744 J:160369 J:165738 J:172134 J:174697 J:177992 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:113553 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of thymocyte		IDA		J:141431 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane	is a part of spleen,is a part of T cell|is a part of thymus,is a part of T cell		IDA		J:29797 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane			ISO	RGD:2306 	J:155856 	
+MGI:88335	Cd4	CD4 antigen	6		external side of plasma membrane			ISO	P01730 	J:145327 	
+MGI:88340	Cd5	CD5 antigen	19		external side of plasma membrane			IDA		J:25159 J:87927 J:120804 J:127719 J:189787 	
+MGI:88340	Cd5	CD5 antigen	19		external side of plasma membrane	is a part of peritoneal cavity,is a part of B cell		IDA		J:29797 	
+MGI:88340	Cd5	CD5 antigen	19		external side of plasma membrane	is a part of T cell		IDA		J:7488 J:41170 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		cell surface			IDA		J:86195 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane			IDA		J:34311 J:60915 J:86758 J:96628 J:98417 J:103896 J:120804 J:132871 J:140498 J:141145 J:143981 J:146983 J:155686 J:157744 J:172134 J:174697 J:177992 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane	is a part of blood,is a part of blood cell		IDA		J:63425 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane	is a part of thymus,is a part of CD8-positive, alpha-beta T cell|is a part of thymus,is a part of CD4-positive, alpha-beta T cell		IDA		J:92721 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane	is a part of myeloid dendritic cell		IDA		J:91939 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane	is a part of thymus,is a part of T cell|is a part of spleen,is a part of T cell		IDA		J:31364 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane	is a part of thymocyte		IDA		J:141431 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane	is a part of leukocyte		IDA		J:163829 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane	is a part of plasmacytoid dendritic cell		IDA		J:59927 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane	is a part of neutrophil		IDA		J:149909 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane	is a part of T cell		IDA		J:7488 J:39981 J:41170 J:53400 J:68956 J:92679 J:97996 J:113553 J:127083 J:152384 	
+MGI:88346	Cd8a	CD8 antigen, alpha chain	6		external side of plasma membrane			ISO	P01732 	J:145327 	
+MGI:88347	Cd8b1	CD8 antigen, beta chain 1	6		cell surface			IDA		J:86195 	
+MGI:88347	Cd8b1	CD8 antigen, beta chain 1	6		external side of plasma membrane	is a part of T cell		IDA		J:39981 J:68956 J:92679 	
+MGI:88347	Cd8b1	CD8 antigen, beta chain 1	6		external side of plasma membrane			IDA		J:60915 	
+MGI:88348	Cd9	CD9 antigen	6		cell surface			ISO	RGD:2318 	J:155856 	
+MGI:88348	Cd9	CD9 antigen	6		external side of plasma membrane			IDA		J:91605 	
+MGI:88318	Cd14	CD14 antigen	18		anchored component of external side of plasma membrane			ISO	P08571 	J:164563 	
+MGI:88318	Cd14	CD14 antigen	18		cell surface			ISO	RGD:620588 	J:155856 	
+MGI:88318	Cd14	CD14 antigen	18		external side of plasma membrane			IDA		J:32729 	
+MGI:88319	Cd19	CD19 antigen	7		external side of plasma membrane	is a part of leukocyte		IDA		J:163829 	
+MGI:88319	Cd19	CD19 antigen	7		external side of plasma membrane			IDA		J:84929 J:87927 J:89706 J:125784 J:140498 	
+MGI:88319	Cd19	CD19 antigen	7		external side of plasma membrane	is a part of T cell		IDA		J:92334 	
+MGI:88319	Cd19	CD19 antigen	7		external side of plasma membrane	is a part of femur,is a part of B cell		IDA		J:99189 	
+MGI:88319	Cd19	CD19 antigen	7		external side of plasma membrane			ISO	P15391 	J:145327 J:163607 	
+MGI:88322	Cd22	CD22 antigen	7		external side of plasma membrane			IDA		J:64281 	
+MGI:88323	Cd24a	CD24a antigen	10		anchored component of external side of plasma membrane	is a part of T cell		IDA		J:87358 	
+MGI:88323	Cd24a	CD24a antigen	10		anchored component of external side of plasma membrane	is a part of Langerhans cell		IDA		J:125143 	
+MGI:88323	Cd24a	CD24a antigen	10		anchored component of external side of plasma membrane			IDA		J:10697 	
+MGI:88323	Cd24a	CD24a antigen	10		anchored component of external side of plasma membrane	is a part of B cell		IDA		J:125147 	
+MGI:88323	Cd24a	CD24a antigen	10		anchored component of external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:17350 	
+MGI:88323	Cd24a	CD24a antigen	10		anchored component of external side of plasma membrane			ISO	Q07490 	J:73065 	
+MGI:88323	Cd24a	CD24a antigen	10		cell surface			IDA		J:43157 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of erythrocyte		IDA		J:89319 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of monocyte		IDA		J:125138 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of DN3 thymocyte|is a part of DN4 thymocyte|is a part of double-positive, alpha-beta thymocyte|is a part of CD4-positive, alpha-beta thymocyte|is a part of CD8-positive, alpha-beta thymocyte		IDA		J:87358 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of precursor B cell		IDA		J:125142 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of B cell		IDA		J:27374 J:30539 J:125147 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of blood,is a part of blood cell		IDA		J:63425 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of immature gamma-delta T cell		IDA		J:22470 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of islets of Langerhans,is a part of pancreatic D cell		IDA		J:55511 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of thymus|is a part of spleen		IDA		J:2873 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of dendritic cell|is a part of B cell		IDA		J:125145 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of microglial cell|is a part of astrocyte		IDA		J:93933 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of T cell		IDA		J:93953 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of Langerhans cell		IDA		J:125143 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of thymocyte		IDA		J:144049 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of granule cell|is a part of neuroblast		IDA		J:26606 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of pro-B cell|is a part of precursor B cell		IDA		J:125136 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of B cell|is a part of T cell		IDA		J:76695 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of thymus,is a part of T cell		IDA		J:29796 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane			IDA		J:10697 J:25743 J:84929 J:89706 J:125141 J:141145 J:158532 J:163218 J:189787 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of B cell		IDA		J:17350 	
+MGI:88323	Cd24a	CD24a antigen	10		external side of plasma membrane			ISO	Q07490 	J:73065 	
+MGI:88326	Cd27	CD27 antigen	6		cell surface			IDA		J:155218 	
+MGI:88326	Cd27	CD27 antigen	6		external side of plasma membrane			IDA		J:174553 J:174697 	
+MGI:88327	Cd28	CD28 antigen	1		cell surface			ISO	P10747 	J:164563 	
+MGI:88327	Cd28	CD28 antigen	1		external side of plasma membrane	is a part of T cell		IDA		J:142709 	
+MGI:88327	Cd28	CD28 antigen	1		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:17350 	
+MGI:88327	Cd28	CD28 antigen	1		external side of plasma membrane			IDA		J:26220 J:205441 	
+MGI:88327	Cd28	CD28 antigen	1		external side of plasma membrane			IMP	MGI:1857150 	J:14194 	
+MGI:88327	Cd28	CD28 antigen	1		external side of plasma membrane			ISO	P10747 	J:73065 	
+MGI:99440	Cd33	CD33 antigen	7		external side of plasma membrane			ISO	P20138 	J:163607 	
+MGI:88329	Cd34	CD34 antigen	1		cell surface			IDA		J:43157 J:154864 	
+MGI:88329	Cd34	CD34 antigen	1		external side of plasma membrane	is a part of testis,is a part of stromal cell		IDA		J:126330 	
+MGI:88329	Cd34	CD34 antigen	1		external side of plasma membrane	is a part of blood,is a part of blood cell|is a part of liver,is a part of blood cell		IDA		J:63425 	
+MGI:88329	Cd34	CD34 antigen	1		external side of plasma membrane			IDA		J:84599 J:84890 J:148788 J:174203 	
+MGI:88329	Cd34	CD34 antigen	1		external side of plasma membrane			ISO	P28906 	J:164563 	
+MGI:107899	Cd36	CD36 molecule	5		cell surface			ISO	RGD:2301 	J:155856 	
+MGI:107899	Cd36	CD36 molecule	5		cell surface			ISO	P16671 	J:164563 	
+MGI:107899	Cd36	CD36 molecule	5		cell surface			ISS	P16671 	J:145844 	
+MGI:107899	Cd36	CD36 molecule	5		external side of plasma membrane			IDA		J:100140 	
+MGI:107899	Cd36	CD36 molecule	5		external side of plasma membrane	is a part of macrophage		IDA		J:96018 	
+MGI:107474	Cd38	CD38 antigen	5		cell surface			IDA		J:43157 	
+MGI:107474	Cd38	CD38 antigen	5		cell surface	is a part of B cell		IDA		J:125784 	
+MGI:88336	Cd40	CD40 antigen	2		cell surface			IDA		J:166799 	
+MGI:88336	Cd40	CD40 antigen	2		cell surface			ISO	RGD:619830 	J:155856 	
+MGI:88336	Cd40	CD40 antigen	2		external side of plasma membrane	is a part of B cell		IDA		J:30239 J:64603 	
+MGI:88336	Cd40	CD40 antigen	2		external side of plasma membrane			IDA		J:91939 J:140121 J:143981 	
+MGI:88336	Cd40	CD40 antigen	2		external side of plasma membrane	is a part of myeloid dendritic cell		IDA		J:86264 	
+MGI:88337	Cd40lg	CD40 ligand	X		cell surface			ISO	P29965 	J:164563 	
+MGI:88337	Cd40lg	CD40 ligand	X		cell surface			ISO	RGD:708418 	J:155856 	
+MGI:88337	Cd40lg	CD40 ligand	X		external side of plasma membrane			IDA		J:140498 	
+MGI:88338	Cd44	CD44 antigen	2		cell surface		PR:P15379-6	IDA		J:41342 	
+MGI:88338	Cd44	CD44 antigen	2		cell surface			IDA		J:43157 J:126749 	
+MGI:88338	Cd44	CD44 antigen	2		cell surface		PR:P15379-5	IDA		J:41342 	
+MGI:88338	Cd44	CD44 antigen	2		cell surface		PR:P15379-4	IDA		J:41342 	
+MGI:88338	Cd44	CD44 antigen	2		cell surface	is a part of T cell		IDA		J:224716 	
+MGI:88338	Cd44	CD44 antigen	2		cell surface		PR:P15379-3	IDA		J:41342 	
+MGI:88338	Cd44	CD44 antigen	2		cell surface			ISO	P16070 	J:164563 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of lymph node,is a part of T cell		IDA		J:64279 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane			IDA		J:25159 J:35057 J:39748 J:60915 J:86758 J:89320 J:96628 J:98417 J:118947 J:140498 J:155686 J:163754 J:172134 J:174203 J:174697 J:177992 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of natural killer cell		IDA		J:88001 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:118845 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of T cell		IDA		J:92679 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:93953 J:113553 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of T cell		IDA		J:53400 J:102496 J:152384 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of myeloid lineage restricted progenitor cell		IDA		J:19636 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of liver,is a part of blood cell		IDA		J:63425 	
+MGI:88338	Cd44	CD44 antigen	2		external side of plasma membrane	is a part of thymocyte		IDA		J:144049 	
+MGI:1203290	Cd46	CD46 antigen, complement regulatory protein	1		cell surface			ISO	P15529 	J:164563 	
+MGI:1203290	Cd46	CD46 antigen, complement regulatory protein	1		cell surface			ISO	RGD:3061 	J:155856 	
+MGI:88339	Cd48	CD48 antigen	1		external side of plasma membrane	is a part of stem cell		IDA		J:145577 	
+MGI:88339	Cd48	CD48 antigen	1		external side of plasma membrane	is a part of thymus|is a part of spleen		IDA		J:2873 	
+MGI:88339	Cd48	CD48 antigen	1		external side of plasma membrane	is a part of hematopoietic stem cell		IDA		J:163607 	
+MGI:88341	Cd53	CD53 antigen	3		cell surface			ISO	RGD:2310 	J:155856 	
+MGI:104850	Cd55	CD55 molecule, decay accelerating factor for complement	1		cell surface			ISO	P08174 	J:164563 	
+MGI:104850	Cd55	CD55 molecule, decay accelerating factor for complement	1		external side of plasma membrane	is a part of erythrocyte		IDA		J:145047 	
+MGI:104849	Cd55b	CD55 molecule, decay accelerating factor for complement B	1		cell surface			ISO	P08174 	J:164563 	
+MGI:109177	Cd59a	CD59a antigen	2		external side of plasma membrane	is a part of erythrocyte		IDA		J:145047 	
+MGI:1888996	Cd59b	CD59b antigen	2		anchored component of external side of plasma membrane			ISO	P13987 	J:73065 	
+MGI:1888996	Cd59b	CD59b antigen	2		cell surface			IDA		J:64057 	
+MGI:1888996	Cd59b	CD59b antigen	2		cell surface			ISO	P13987 	J:164563 	
+MGI:99529	Cd63	CD63 antigen	10		cell surface			ISO	P08962 	J:73065 	
+MGI:88343	Cd69	CD69 antigen	6		cell surface			IDA		J:113761 	
+MGI:88343	Cd69	CD69 antigen	6		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:113553 	
+MGI:88343	Cd69	CD69 antigen	6		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:88343	Cd69	CD69 antigen	6		external side of plasma membrane	is a part of T cell		IDA		J:39981 J:91914 J:116616 J:152384 	
+MGI:88343	Cd69	CD69 antigen	6		external side of plasma membrane	is a part of neutrophil		IDA		J:149909 	
+MGI:88343	Cd69	CD69 antigen	6		external side of plasma membrane			IDA		J:140498 J:141145 J:141227 J:141377 J:170688 J:172134 	
+MGI:88343	Cd69	CD69 antigen	6		external side of plasma membrane	is a part of thymocyte		IDA		J:141431 	
+MGI:88343	Cd69	CD69 antigen	6		external side of plasma membrane	is a part of lymph node,is a part of T cell		IDA		J:27768 	
+MGI:88343	Cd69	CD69 antigen	6		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:112602 J:118845 	
+MGI:96534	Cd74	CD74 antigen (invariant polypeptide of major histocompatibility complex, class II antigen-associated)	18		cell surface			ISO	P04233 	J:164563 	
+MGI:96534	Cd74	CD74 antigen (invariant polypeptide of major histocompatibility complex, class II antigen-associated)	18		external side of plasma membrane			IDA		J:4119 	
+MGI:96534	Cd74	CD74 antigen (invariant polypeptide of major histocompatibility complex, class II antigen-associated)	18		external side of plasma membrane	is a part of blood,is a part of CD4-positive, alpha-beta T cell		IDA		J:92721 	
+MGI:96534	Cd74	CD74 antigen (invariant polypeptide of major histocompatibility complex, class II antigen-associated)	18		external side of plasma membrane	is a part of T cell		IDA		J:152384 	
+MGI:101774	Cd79a	CD79A antigen (immunoglobulin-associated alpha)	7		external side of plasma membrane			IDA		J:94881 	
+MGI:96431	Cd79b	CD79B antigen	11		external side of plasma membrane			IDA		J:94881 	
+MGI:101775	Cd80	CD80 antigen	16		cell surface			ISO	RGD:2314 	J:155856 	
+MGI:101775	Cd80	CD80 antigen	16		external side of plasma membrane	is a part of B cell		IDA		J:30239 	
+MGI:101775	Cd80	CD80 antigen	16		external side of plasma membrane	is a part of microglial cell|is a part of astrocyte		IDA		J:93933 	
+MGI:101775	Cd80	CD80 antigen	16		external side of plasma membrane			IDA		J:94873 J:125145 J:140121 	
+MGI:101775	Cd80	CD80 antigen	16		external side of plasma membrane	is a part of myeloid dendritic cell		IDA		J:86264 J:91939 	
+MGI:1328316	Cd83	CD83 antigen	13		external side of plasma membrane	is a part of blood,is a part of CD4-positive, alpha-beta T cell		IDA		J:92721 	
+MGI:101773	Cd86	CD86 antigen	16		cell surface			ISO	RGD:628714 	J:155856 	
+MGI:101773	Cd86	CD86 antigen	16		external side of plasma membrane	is a part of myeloid dendritic cell		IDA		J:86264 J:91939 	
+MGI:101773	Cd86	CD86 antigen	16		external side of plasma membrane	is a part of microglial cell|is a part of astrocyte		IDA		J:93933 	
+MGI:101773	Cd86	CD86 antigen	16		external side of plasma membrane			IDA		J:87421 J:143981 	
+MGI:101773	Cd86	CD86 antigen	16		external side of plasma membrane	is a part of dendritic cell		IDA		J:87420 	
+MGI:106664	Cd93	CD93 antigen	2		cell surface			IDA		J:43157 	
+MGI:1913728	Cd99	CD99 antigen	4		cell surface	is a part of endothelial cell|is a part of leukocyte|is a part of neutrophil		IDA		J:145418 	
+MGI:2177151	Cd99l2	CD99 antigen-like 2	X		cell surface	is a part of endothelial cell|is a part of leukocyte|is a part of neutrophil		IDA		J:145418 	
+MGI:1096360	Cd151	CD151 antigen	7		cell surface			ISO	P48509 	J:126749 	
+MGI:2135946	Cd163	CD163 antigen	6		external side of plasma membrane			ISO	Q86VB7 	J:164563 	
+MGI:1889024	Cd200r1	CD200 receptor 1	16		external side of plasma membrane	is a part of blood,is a part of lymphocyte|is a part of thymus|is a part of bone marrow|is a part of spleen		IDA		J:92106 	
+MGI:3042847	Cd200r2	Cd200 receptor 2	16		external side of plasma membrane	is a part of blood,is a part of lymphocyte|is a part of spleen|is a part of bone marrow|is a part of thymus		IDA		J:92106 	
+MGI:1921853	Cd200r3	CD200 receptor 3	16		external side of plasma membrane	is a part of blood,is a part of lymphocyte|is a part of thymus|is a part of bone marrow|is a part of spleen		IDA		J:92106 	
+MGI:3036289	Cd200r4	CD200 receptor 4	16		external side of plasma membrane	is a part of blood,is a part of lymphocyte|is a part of spleen|is a part of bone marrow|is a part of thymus		IDA		J:92106 	
+MGI:2157942	Cd209a	CD209a antigen	8		cell surface	is a part of dendritic cell		IDA		J:108544 	
+MGI:1916415	Cd209b	CD209b antigen	8		external side of plasma membrane	is a part of macrophage		IDA		J:87632 	
+MGI:2157948	Cd209e	CD209e antigen	8		external side of plasma membrane			ISO	Q9NNX6 	J:164563 	
+MGI:3039602	Cd226	CD226 antigen	18		cell surface			ISO	Q15762 	J:164563 	
+MGI:3039602	Cd226	CD226 antigen	18		external side of plasma membrane	is a part of natural killer cell		IDA		J:151768 	
+MGI:109294	Cd244	CD244 natural killer cell receptor 2B4	1		external side of plasma membrane	is a part of natural killer cell		IDA		J:53400 	
+MGI:109294	Cd244	CD244 natural killer cell receptor 2B4	1		external side of plasma membrane			ISO	Q9BZW8 	J:145327 	
+MGI:1926446	Cd274	CD274 antigen	19		cell surface			ISO	RGD:1566211 	J:155856 	
+MGI:1926446	Cd274	CD274 antigen	19		external side of plasma membrane			IDA		J:94873 	
+MGI:2183926	Cd276	CD276 antigen	9		external side of plasma membrane	is a part of osteoblast		IDA		J:92445 	
+MGI:2183926	Cd276	CD276 antigen	9		external side of plasma membrane	is a part of fibroblast|is a part of B cell|is a part of dendritic cell|is a part of macrophage		IDA		J:84973 	
+MGI:88354	Cdh1	cadherin 1	8		cell surface	is a part of urinary system,is a part of epithelial cell		IDA		J:71108 	
+MGI:88355	Cdh2	cadherin 2	18		cell surface			IDA		J:216499 	
+MGI:105057	Cdh5	cadherin 5	8		cell surface			ISO	P33151 	J:164563 	
+MGI:105057	Cdh5	cadherin 5	8		external side of plasma membrane			IDA		J:199353 	
+MGI:99551	Cdh13	cadherin 13	8		external side of plasma membrane			IDA		J:92987 	
+MGI:1095414	Cdh17	cadherin 17	4		cell surface	is a part of precursor B cell		IDA		J:96738 	
+MGI:1926387	Cdon	cell adhesion molecule-related/down-regulated by oncogenes	9		cell surface			ISO	RGD:708433 	J:155856 	
+MGI:1926387	Cdon	cell adhesion molecule-related/down-regulated by oncogenes	9		cell surface			ISO	O35158 	J:73065 	
+MGI:1926387	Cdon	cell adhesion molecule-related/down-regulated by oncogenes	9		cell surface			TAS		J:94846 	
+MGI:1347245	Ceacam1	carcinoembryonic antigen-related cell adhesion molecule 1	7		cell surface			IDA		J:145563 	
+MGI:1347245	Ceacam1	carcinoembryonic antigen-related cell adhesion molecule 1	7		cell surface			ISO	P13688 	J:164563 	
+MGI:1347245	Ceacam1	carcinoembryonic antigen-related cell adhesion molecule 1	7		external side of plasma membrane	happens in B cell	PR:P31809	IDA		J:84339 	
+MGI:1347245	Ceacam1	carcinoembryonic antigen-related cell adhesion molecule 1	7		external side of plasma membrane	happens in T cell,happens in spleen|happens in T cell,happens in mesenteric lymph node|happens in T cell,happens in Peyer's patch|happens in T cell,happens in colon lamina propria		IDA		J:190980 	
+MGI:1347245	Ceacam1	carcinoembryonic antigen-related cell adhesion molecule 1	7		external side of plasma membrane		PR:000044465	IDA		J:33703 J:216276 	
+MGI:1347245	Ceacam1	carcinoembryonic antigen-related cell adhesion molecule 1	7		external side of plasma membrane		PR:Q3LFS8	IDA		J:33703 J:199631 	
+MGI:1347245	Ceacam1	carcinoembryonic antigen-related cell adhesion molecule 1	7		external side of plasma membrane	happens in T cell,happens in thymus	PR:000044463	IDA		J:116136 	
+MGI:1347246	Ceacam2	carcinoembryonic antigen-related cell adhesion molecule 2	7		cell surface			IDA		J:18755 	
+MGI:1347246	Ceacam2	carcinoembryonic antigen-related cell adhesion molecule 2	7		cell surface	is a part of spermatid	PR:Q925P2-2	IDA		J:190991 	
+MGI:1347246	Ceacam2	carcinoembryonic antigen-related cell adhesion molecule 2	7		cell surface			ISO	P13688 	J:164563 	
+MGI:1347246	Ceacam2	carcinoembryonic antigen-related cell adhesion molecule 2	7		external side of plasma membrane		PR:Q925P2-3	IDA		J:199631 	
+MGI:88388	Cftr	cystic fibrosis transmembrane conductance regulator	6		cell surface			ISO	P13569 	J:164563 	
+MGI:87885	Chrna1	cholinergic receptor, nicotinic, alpha polypeptide 1 (muscle)	2		cell surface			IDA		J:169417 	
+MGI:87885	Chrna1	cholinergic receptor, nicotinic, alpha polypeptide 1 (muscle)	2		cell surface			ISO	P02708 	J:164563 	
+MGI:87888	Chrna4	cholinergic receptor, nicotinic, alpha polypeptide 4	2		external side of plasma membrane	is a part of spleen,is a part of B cell		IDA		J:103908 	
+MGI:99779	Chrna7	cholinergic receptor, nicotinic, alpha polypeptide 7	7		external side of plasma membrane	is a part of spleen,is a part of B cell		IDA		J:103908 	
+MGI:87891	Chrnb2	cholinergic receptor, nicotinic, beta polypeptide 2 (neuronal)	3		external side of plasma membrane	is a part of spleen,is a part of B cell		IDA		J:103908 	
+MGI:108445	Ciita	class II transactivator	16		cell surface			ISO	RGD:619813 	J:155856 	
+MGI:2444926	Ckap4	cytoskeleton-associated protein 4	10		cell surface			ISO	NM_006825 	J:73065 	
+MGI:103555	Clcn3	chloride channel, voltage-sensitive 3	8		external side of plasma membrane			ISO	P51790 	J:164563 	
+MGI:2135589	Clec2d	C-type lectin domain family 2, member d	6		external side of plasma membrane			IDA		J:86948 J:89706 	
+MGI:2136650	Clec2i	C-type lectin domain family 2, member i	6		cell surface			IDA		J:100657 	
+MGI:2136650	Clec2i	C-type lectin domain family 2, member i	6		external side of plasma membrane			IDA		J:86948 	
+MGI:3588267	Clec4b2	C-type lectin domain family 4, member b2	6		external side of plasma membrane	is a part of dendritic cell		IDA		J:153802 	
+MGI:1345151	Clec5a	C-type lectin domain family 5, member a	6		cell surface			IDA		J:172961 	
+MGI:1861431	Clec7a	C-type lectin domain family 7, member a	6		external side of plasma membrane	is a part of macrophage		IDA		J:87632 J:89006 	
+MGI:1861431	Clec7a	C-type lectin domain family 7, member a	6		external side of plasma membrane	is a part of macrophage|is a part of monocyte|is a part of mature neutrophil|is a part of dendritic cell		IDA		J:89997 	
+MGI:1861431	Clec7a	C-type lectin domain family 7, member a	6		external side of plasma membrane			IDA		J:89998 	
+MGI:2444608	Clec9a	C-type lectin domain family 9, member a	6		cell surface			IDA		J:172970 	
+MGI:2444608	Clec9a	C-type lectin domain family 9, member a	6		cell surface			ISO	Q6UXN8 	J:164563 	
+MGI:3040968	Clec12a	C-type lectin domain family 12, member a	6		cell surface			ISO	AY498550 	J:89520 	
+MGI:1918433	Clec12b	C-type lectin domain family 12, member B	6		external side of plasma membrane			ISO	Q2HXU8 	J:164563 	
+MGI:1914114	Clec14a	C-type lectin domain family 14, member a	12		external side of plasma membrane			ISO	Q86T13 	J:232756 	
+MGI:1352754	Clic4	chloride intracellular channel 4 (mitochondrial)	4		cell surface			ISO	Q9Y696 	J:164563 	
+MGI:1927155	Clptm1	cleft lip and palate associated transmembrane protein 1	7		external side of plasma membrane			IDA		J:135028 	
+MGI:1929895	Clstn1	calsyntenin 1	4		cell surface			IDA		J:211830 	
+MGI:1929897	Clstn2	calsyntenin 2	9		cell surface			IDA		J:211830 	
+MGI:2178323	Clstn3	calsyntenin 3	6		cell surface			IDA		J:211830 	
+MGI:88423	Clu	clusterin	14		cell surface			ISO	P10909 	J:164563 	
+MGI:104518	Cntn2	contactin 2	1		cell surface	is a part of future spinal cord,is a part of motor neuron|is a part of spinal cord,is a part of motor neuron|is a part of cranial ganglion,is a part of CNS neuron (sensu Vertebrata)|is a part of cranial nerve,is a part of CNS neuron (sensu Vertebrata)|is a part of trigeminal nerve,is a part of CNS neuron (sensu Vertebrata)|is a part of future hindbrain,is a part of CNS neuron (sensu Vertebrata)|is a part of cerebellum primordium,is a part of CNS neuron (sensu Vertebrata)|is a part of cerebellum,is a part of CNS neuron (sensu Vertebrata)|is a part of metencephalon basal plate,is a part of CNS neuron (sensu Vertebrata)|is a part of cerebral cortex,is a part of CNS neuron (sensu Vertebrata)|is a part of olfactory nerve,is a part of CNS neuron (sensu Vertebrata)|is a part of medulla oblongata,is a part of CNS neuron (sensu Vertebrata)|is a part of retina nerve fiber layer,is a part of CNS neuron (sensu Vertebrata)|is a part of optic nerve,is a part of CNS neuron (sensu Vertebrata)|is a part of cerebral cortex mantle layer,is a part of CNS neuron (sensu Vertebrata)|is a part of telencephalon,is a part of CNS neuron (sensu Vertebrata)|is a part of inferior colliculus,is a part of CNS neuron (sensu Vertebrata)|is a part of superior colliculus,is a part of CNS neuron (sensu Vertebrata)|is a part of medial habenular nucleus,is a part of CNS neuron (sensu Vertebrata)|is a part of cerebral internal capsule,is a part of CNS neuron (sensu Vertebrata)|is a part of hippocampus,is a part of CNS neuron (sensu Vertebrata)|is a part of optic nerve,is a part of CNS neuron (sensu Vertebrata)|is a part of dorsal root ganglion,is a part of neuron|is a part of spinal nerve,is a part of neuron|is a part of spinal cord,is a part of neuron|is a part of tail segmental spinal nerve,is a part of neuron|is a part of auricular nerve,is a part of neuron|is a part of nasal pit,is a part of neuron|is a part of olfactory epithelium,is a part of neuron|is a part of retina,is a part of neuron		IDA		J:18717 	
+MGI:104518	Cntn2	contactin 2	1		cell surface	is a part of commissural neuron		IDA		J:115577 	
+MGI:1914047	Cntnap2	contactin associated protein-like 2	6		cell surface			ISO	Q9UHC6 	J:164563 	
+MGI:2653243	Col23a1	collagen, type XXIII, alpha 1	11		cell surface			ISO	RGD:727898 	J:155856 	
+MGI:1349451	Corin	corin	5		cell surface			IDA		J:124270 	
+MGI:1917824	Cpm	carboxypeptidase M	10		cell surface			IBA	PTN000164185 	J:161428 	
+MGI:88513	Cr1l	complement component (3b/4b) receptor 1-like	1		external side of plasma membrane	is a part of erythrocyte		IDA		J:145047 	
+MGI:88489	Cr2	complement receptor 2	1		external side of plasma membrane	is a part of spleen,is a part of B cell		IDA		J:99189 	
+MGI:88489	Cr2	complement receptor 2	1		external side of plasma membrane	is a part of marginal zone B cell|is a part of follicular B cell		IDA		J:110739 	
+MGI:88489	Cr2	complement receptor 2	1		external side of plasma membrane			IDA		J:87927 J:148242 	
+MGI:88489	Cr2	complement receptor 2	1		external side of plasma membrane	is a part of B cell		IDA		J:19437 	
+MGI:894312	Crhr2	corticotropin releasing hormone receptor 2	6		cell surface		PR:Q60748-2	IDA		J:150535 	
+MGI:894312	Crhr2	corticotropin releasing hormone receptor 2	6	NOT	cell surface		PR:C0K3M3	IDA		J:150535 	
+MGI:1889506	Crlf2	cytokine receptor-like factor 2	5		external side of plasma membrane			IDA		J:93059 	
+MGI:88516	Cryab	crystallin, alpha B	9		cell surface			ISO	RGD:2414 	J:155856 	
+MGI:1339758	Csf1r	colony stimulating factor 1 receptor	18		cell surface			IDA		J:177179 	
+MGI:107161	Cst8	cystatin 8 (cystatin-related epididymal spermatogenic)	2		cell surface	is a part of caput epididymis		IDA		J:24921 	
+MGI:88556	Ctla4	cytotoxic T-lymphocyte-associated protein 4	1		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:112602 	
+MGI:88556	Ctla4	cytotoxic T-lymphocyte-associated protein 4	1		external side of plasma membrane			ISO	P16410 	J:164563 	
+MGI:88561	Ctsb	cathepsin B	14		cell surface			ISO	RGD:621509 	J:155856 	
+MGI:88561	Ctsb	cathepsin B	14		external side of plasma membrane			ISO	RGD:621509 	J:155856 	
+MGI:88564	Ctsl	cathepsin L	13		external side of plasma membrane			ISO	RGD:2448 	J:155856 	
+MGI:107341	Ctss	cathepsin S	3		cell surface			ISO	RGD:621513 	J:155856 	
+MGI:1891190	Ctsz	cathepsin Z	2		cell surface			ISO	RGD:708479 	J:155856 	
+MGI:1097153	Cx3cl1	chemokine (C-X3-C motif) ligand 1	8		cell surface		PR:O35188	IDA		J:40832 	
+MGI:1097153	Cx3cl1	chemokine (C-X3-C motif) ligand 1	8		cell surface			ISO	P78423 	J:164563 	
+MGI:1352449	Cxcl9	chemokine (C-X-C motif) ligand 9	5		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:1352450	Cxcl10	chemokine (C-X-C motif) ligand 10	5		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:103556	Cxcl12	chemokine (C-X-C motif) ligand 12	6		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:105303	Cxcr2	chemokine (C-X-C motif) receptor 2	1		cell surface			ISO	P25025 	J:164563 	
+MGI:1277207	Cxcr3	chemokine (C-X-C motif) receptor 3	X		cell surface			IDA		J:200103 	
+MGI:1277207	Cxcr3	chemokine (C-X-C motif) receptor 3	X		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:1277207	Cxcr3	chemokine (C-X-C motif) receptor 3	X		external side of plasma membrane			ISO	RGD:621528 	J:155856 	
+MGI:109563	Cxcr4	chemokine (C-X-C motif) receptor 4	1		cell surface			IDA		J:190263 	
+MGI:109563	Cxcr4	chemokine (C-X-C motif) receptor 4	1		cell surface			ISO	P61073 	J:164563 J:200103 	
+MGI:109563	Cxcr4	chemokine (C-X-C motif) receptor 4	1		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:103567	Cxcr5	chemokine (C-X-C motif) receptor 5	9		external side of plasma membrane	happens in T cell		IDA		J:196136 	
+MGI:3616076	Cyp2w1	cytochrome P450, family 2, subfamily w, polypeptide 1	5		cell surface			ISO	Q8TAV3 	J:164563 	
+MGI:101864	Dag1	dystroglycan 1	9		external side of plasma membrane			IDA		J:83782 	
+MGI:1920629	Dcbld2	discoidin, CUB and LCCL domain containing 2	16		cell surface			ISO	Q96PD2 	J:164563 	
+MGI:1923016	Dcstamp	dendrocyte expressed seven transmembrane protein	15		cell surface			IDA		J:93945 	
+MGI:1923016	Dcstamp	dendrocyte expressed seven transmembrane protein	15		cell surface			ISO	Q9H295 	J:164563 	
+MGI:1924924	Defb12	defensin beta 12	8		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:2179203	Defb13	defensin beta 13	8		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:2179202	Defb15	defensin beta 15	8		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:2385955	Defb19	defensin beta 19	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:2442320	Defb20	defensin beta 20	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:2684967	Defb21	defensin beta 21	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:3045368	Defb22	defensin beta 22	2		cell surface	is a part of sperm		IDA		J:145640 	
+MGI:3644405	Defb23	defensin beta 23	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:3651158	Defb25	defensin beta 25	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:3643488	Defb26	defensin beta 26	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:3650536	Defb28	defensin beta 28	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:1922650	Defb29	defensin beta 29	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:1920920	Defb30	defensin beta 30	14		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:2672979	Defb34	defensin beta 34	8		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:2179204	Defb35	defensin beta 35	8		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:2385956	Defb36	defensin beta 36	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:1924923	Defb41	defensin beta 41	1		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:3647180	Defb43	defensin beta 43	14		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:3650541	Defb45	defensin beta 45	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:2385920	Dip2a	disco interacting protein 2 homolog A	10		cell surface			ISO	Q14689 	J:164563 	
+MGI:94900	Dlk1	delta like non-canonical Notch ligand 1	12		external side of plasma membrane	is a part of liver,is a part of hematopoietic cell|is a part of liver,is a part of hepatocyte		IDA		J:141412 	
+MGI:94909	Dmd	dystrophin, muscular dystrophy	X		cell surface			ISO	P11532 	J:164563 	
+MGI:2685574	Dnaic2	dynein, axonemal, intermediate chain 2	11		external side of plasma membrane	is a part of secondary oocyte		IDA		J:219770 	
+MGI:94919	Dpp4	dipeptidylpeptidase 4	2		cell surface			ISO	RGD:2515 	J:155856 	
+MGI:94919	Dpp4	dipeptidylpeptidase 4	2		cell surface			ISO	P27487 	J:164563 	
+MGI:94921	Dpp6	dipeptidylpeptidase 6	5		cell surface			ISO	RGD:68402 	J:155856 	
+MGI:2150309	Dscaml1	DS cell adhesion molecule like 1	9		cell surface			ISO	Q8TD84 	J:164563 	
+MGI:1101357	Ece1	endothelin converting enzyme 1	4		cell surface			ISS		J:40232 	
+MGI:1101357	Ece1	endothelin converting enzyme 1	4		external side of plasma membrane			ISO	RGD:620293 	J:155856 	
+MGI:1101357	Ece1	endothelin converting enzyme 1	4		external side of plasma membrane			ISO	P42892 	J:164563 	
+MGI:107444	Efna5	ephrin A5	17		anchored component of external side of plasma membrane			ISO	P52803 	J:164563 	
+MGI:2146149	Egflam	EGF-like, fibronectin type III and laminin G domains	15		cell surface			ISO	Q63HQ2 	J:164563 	
+MGI:95294	Egfr	epidermal growth factor receptor	11		cell surface			IDA		J:203527 	
+MGI:95294	Egfr	epidermal growth factor receptor	11		cell surface			ISO	RGD:2543 	J:155856 	
+MGI:95294	Egfr	epidermal growth factor receptor	11		cell surface			ISO	P00533 	J:164563 	
+MGI:2679229	Elane	elastase, neutrophil expressed	10		cell surface			ISO	P08246 	J:164563 	
+MGI:1098726	Emp2	epithelial membrane protein 2	16		cell surface			IDA		J:109419 	
+MGI:95392	Eng	endoglin	2		cell surface			ISO	RGD:1593188 	J:155856 	
+MGI:95392	Eng	endoglin	2		cell surface			ISO	P17813 	J:164563 	
+MGI:95392	Eng	endoglin	2		external side of plasma membrane			ISO	P17813 	J:164563 	
+MGI:95393	Eno1	enolase 1, alpha non-neuron	4		cell surface			ISO	P06733 	J:164563 	
+MGI:95393	Eno1	enolase 1, alpha non-neuron	4		cell surface			ISO	RGD:2553 	J:155856 	
+MGI:3648653	Eno1b	enolase 1B, retrotransposed	18		cell surface			ISO	RGD:2553 	J:155856 	
+MGI:3648653	Eno1b	enolase 1B, retrotransposed	18		cell surface			ISO	P06733 	J:164563 	
+MGI:95394	Eno2	enolase 2, gamma neuronal	6		cell surface			ISO	RGD:6491529 	J:155856 	
+MGI:95394	Eno2	enolase 2, gamma neuronal	6		cell surface			ISO	RGD:2554 	J:155856 	
+MGI:2384799	Enox2	ecto-NOX disulfide-thiol exchanger 2	X		external side of plasma membrane			ISO	Q16206 	J:164563 	
+MGI:106645	Enpep	glutamyl aminopeptidase	3		external side of plasma membrane	is a part of B cell		IDA		J:27374 	
+MGI:97370	Enpp1	ectonucleotide pyrophosphatase/phosphodiesterase 1	10		cell surface			IDA		J:133038 	
+MGI:97370	Enpp1	ectonucleotide pyrophosphatase/phosphodiesterase 1	10		cell surface			ISO	P22413 	J:164563 	
+MGI:2143702	Enpp3	ectonucleotide pyrophosphatase/phosphodiesterase 3	10		external side of plasma membrane			IDA		J:223825 	
+MGI:2143702	Enpp3	ectonucleotide pyrophosphatase/phosphodiesterase 3	10		external side of plasma membrane			ISO	O14638 	J:164563 	
+MGI:102805	Entpd1	ectonucleoside triphosphate diphosphohydrolase 1	19		cell surface			ISO	RGD:69265 	J:155856 	
+MGI:1096863	Entpd2	ectonucleoside triphosphate diphosphohydrolase 2	2		cell surface			ISO	RGD:69266 	J:155856 	
+MGI:1202295	Entpd6	ectonucleoside triphosphate diphosphohydrolase 6	2		cell surface			ISO	RGD:619725 	J:155856 	
+MGI:106653	Epcam	epithelial cell adhesion molecule	17		cell surface			IDA		J:124288 	
+MGI:95278	Epha2	Eph receptor A2	4		cell surface			IDA		J:238221 	
+MGI:95278	Epha2	Eph receptor A2	4		cell surface			ISO	P29317 	J:164563 	
+MGI:98277	Epha4	Eph receptor A4	1		cell surface			ISO	RGD:1560587 	J:155856 	
+MGI:99654	Epha5	Eph receptor A5	5		external side of plasma membrane			ISO	P54756 	J:164563 	
+MGI:1096338	Ephb6	Eph receptor B6	6		cell surface	is a part of thymocyte		IDA		J:94701 	
+MGI:95407	Epo	erythropoietin	5		cell surface			ISO	P01588 	J:164563 	
+MGI:95408	Epor	erythropoietin receptor	9		external side of plasma membrane			ISO	RGD:2560 	J:155856 	
+MGI:1914647	Erp29	endoplasmic reticulum protein 29	5		cell surface	is a part of platelet		IDA		J:182119 	
+MGI:1914647	Erp29	endoplasmic reticulum protein 29	5		cell surface			ISO	P30040 	J:73065 	
+MGI:1923549	Erp44	endoplasmic reticulum protein 44	4		cell surface	is a part of platelet		IDA		J:182119 	
+MGI:1923549	Erp44	endoplasmic reticulum protein 44	4		cell surface			ISO	Q9BS26 	J:73065 	
+MGI:88380	F2	coagulation factor II	2	colocalizes_with	external side of plasma membrane			ISO	P00734 	J:164563 	
+MGI:101802	F2r	coagulation factor II (thrombin) receptor	13		cell surface			ISO	P25116 	J:164563 	
+MGI:88381	F3	coagulation factor III	3		cell surface			ISO	RGD:2587 	J:155856 	
+MGI:88381	F3	coagulation factor III	3		cell surface			ISO	P13726 	J:164563 	
+MGI:2442797	F630003A18Rik	RIKEN cDNA F630003A18 gene	16		external side of plasma membrane			IBA	PTN001087295 	J:161428 	
+MGI:2146854	Fam234a	family with sequence similarity 234, member A	17		cell surface			ISO	Q9H0X4 	J:164563 	
+MGI:109608	Fap	fibroblast activation protein	2		cell surface			IDA		J:91461 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		cell surface			IDA		J:29455 J:97777 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		cell surface			ISO	RGD:619831 	J:155856 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		cell surface			ISO	P25445 	J:164563 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		external side of plasma membrane	is a part of T cell|is a part of B cell		IDA		J:31364 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		external side of plasma membrane			IDA		J:97777 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		external side of plasma membrane	happens in B cell		IDA		J:196136 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		external side of plasma membrane	is a part of fibroblast		IDA		J:104536 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		external side of plasma membrane	is a part of dendritic cell		IDA		J:87420 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		external side of plasma membrane	is a part of lymphocyte		IDA		J:125784 	
+MGI:99255	Fasl	Fas ligand (TNF superfamily, member 6)	1		cell surface	is a part of cardiac muscle cell,exists during cellular response to hypoxia		IDA		J:224737 	
+MGI:99255	Fasl	Fas ligand (TNF superfamily, member 6)	1		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:113553 	
+MGI:95494	Fcer1a	Fc receptor, IgE, high affinity I, alpha polypeptide	1		cell surface			ISO	P12319 	J:164563 	
+MGI:95494	Fcer1a	Fc receptor, IgE, high affinity I, alpha polypeptide	1		external side of plasma membrane			IDA		J:31359 	
+MGI:95494	Fcer1a	Fc receptor, IgE, high affinity I, alpha polypeptide	1		external side of plasma membrane	is a part of mast cell		IDA		J:37676 	
+MGI:95496	Fcer1g	Fc receptor, IgE, high affinity I, gamma polypeptide	1		cell surface			IDA		J:113761 	
+MGI:95496	Fcer1g	Fc receptor, IgE, high affinity I, gamma polypeptide	1		cell surface			ISO	P30273 	J:164563 	
+MGI:95496	Fcer1g	Fc receptor, IgE, high affinity I, gamma polypeptide	1		external side of plasma membrane	is a part of mast cell		IDA		J:88051 	
+MGI:95496	Fcer1g	Fc receptor, IgE, high affinity I, gamma polypeptide	1		external side of plasma membrane			IDA		J:31359 	
+MGI:95497	Fcer2a	Fc receptor, IgE, low affinity II, alpha polypeptide	8		external side of plasma membrane			IDA		J:64281 J:84929 J:87927 J:148242 	
+MGI:95497	Fcer2a	Fc receptor, IgE, low affinity II, alpha polypeptide	8		external side of plasma membrane	is a part of spleen,is a part of B cell		IDA		J:99189 	
+MGI:95497	Fcer2a	Fc receptor, IgE, low affinity II, alpha polypeptide	8		external side of plasma membrane	is a part of follicular B cell		IDA		J:110739 	
+MGI:95497	Fcer2a	Fc receptor, IgE, low affinity II, alpha polypeptide	8		external side of plasma membrane	is a part of B cell		IDA		J:19437 J:30239 	
+MGI:95498	Fcgr1	Fc receptor, IgG, high affinity I	3		external side of plasma membrane			IDA		J:86281 	
+MGI:95499	Fcgr2b	Fc receptor, IgG, low affinity IIb	1		cell surface			ISO	RGD:631331 	J:155856 	
+MGI:95499	Fcgr2b	Fc receptor, IgG, low affinity IIb	1		external side of plasma membrane			IDA		J:31133 J:35057 	
+MGI:95500	Fcgr3	Fc receptor, IgG, low affinity III	1		cell surface			IDA		J:123354 	
+MGI:95500	Fcgr3	Fc receptor, IgG, low affinity III	1		cell surface			ISO	RGD:71069 	J:155856 	
+MGI:95500	Fcgr3	Fc receptor, IgG, low affinity III	1		external side of plasma membrane			IDA		J:148788 	
+MGI:2179523	Fcgr4	Fc receptor, IgG, low affinity IV	1		cell surface			IDA		J:123354 	
+MGI:2179523	Fcgr4	Fc receptor, IgG, low affinity IV	1		cell surface			ISO	RGD:1303067 	J:155856 	
+MGI:2179523	Fcgr4	Fc receptor, IgG, low affinity IV	1		external side of plasma membrane			ISO	P08637 	J:164563 	
+MGI:1916419	Fcmr	Fc fragment of IgM receptor	1		cell surface			IDA		J:97777 	
+MGI:1916419	Fcmr	Fc fragment of IgM receptor	1		external side of plasma membrane			IDA		J:97777 	
+MGI:1341158	Fcnb	ficolin B	2		extrinsic component of external side of plasma membrane			ISO	O00602 	J:164563 	
+MGI:2442862	Fcrl1	Fc receptor-like 1	3		cell surface			ISO	Q96LA6 	J:164563 	
+MGI:3053558	Fcrl5	Fc receptor-like 5	3		cell surface			ISO	Q96RD9 	J:164563 	
+MGI:3618339	Fcrl6	Fc receptor-like 6	1		external side of plasma membrane			IDA		J:145327 	
+MGI:3618339	Fcrl6	Fc receptor-like 6	1		external side of plasma membrane			ISO	Q6DN72 	J:145327 	
+MGI:1316726	Fga	fibrinogen alpha chain	3		cell surface			ISO	P02671 	J:164563 	
+MGI:1316726	Fga	fibrinogen alpha chain	3		external side of plasma membrane			ISO	P02671 	J:164563 	
+MGI:99501	Fgb	fibrinogen beta chain	3		cell surface			ISO	P02675 	J:164563 	
+MGI:99501	Fgb	fibrinogen beta chain	3		external side of plasma membrane			ISO	P02675 	J:164563 	
+MGI:99604	Fgf8	fibroblast growth factor 8	19		external side of plasma membrane			ISO	RGD:70891 	J:155856 	
+MGI:1099809	Fgf10	fibroblast growth factor 10	13		cell surface			ISO	O15520 	J:164563 	
+MGI:1914362	Fgf22	fibroblast growth factor 22	10		cell surface			IDA		J:84622 	
+MGI:1096350	Fgfbp1	fibroblast growth factor binding protein 1	5		cell surface	is a part of keratinocyte		IDA		J:100761 	
+MGI:95523	Fgfr2	fibroblast growth factor receptor 2	7		cell surface			ISO	RGD:2611 	J:155856 	
+MGI:95523	Fgfr2	fibroblast growth factor receptor 2	7		cell surface			ISO	P21802 	J:164563 	
+MGI:95524	Fgfr3	fibroblast growth factor receptor 3	5		cell surface			ISO	RGD:620714 	J:155856 	
+MGI:95526	Fgg	fibrinogen gamma chain	3		cell surface			ISO	P02679 	J:164563 	
+MGI:95526	Fgg	fibrinogen gamma chain	3		external side of plasma membrane			ISO	P02679 	J:164563 	
+MGI:95559	Flt3	FMS-like tyrosine kinase 3	5		cell surface	is a part of bone marrow,is a part of pro-B cell		IDA		J:47896 	
+MGI:95559	Flt3	FMS-like tyrosine kinase 3	5		cell surface	is a part of precursor B cell		IDA		J:27743 	
+MGI:95559	Flt3	FMS-like tyrosine kinase 3	5		external side of plasma membrane			IDA		J:203580 	
+MGI:95560	Flt3l	FMS-like tyrosine kinase 3 ligand	7		cell surface	is a part of T cell|is a part of mast cell		IDA		J:27743 	
+MGI:95560	Flt3l	FMS-like tyrosine kinase 3 ligand	7		intrinsic component of external side of plasma membrane		PR:P49772-2	IDA		J:36245 	
+MGI:95560	Flt3l	FMS-like tyrosine kinase 3 ligand	7		intrinsic component of external side of plasma membrane			IDA		J:16458 	
+MGI:95560	Flt3l	FMS-like tyrosine kinase 3 ligand	7		intrinsic component of external side of plasma membrane		PR:P49772-1	IDA		J:36245 	
+MGI:95568	Folr1	folate receptor 1 (adult)	7		anchored component of external side of plasma membrane			ISO	P15328 	J:164563 	
+MGI:95569	Folr2	folate receptor 2 (fetal)	7		anchored component of external side of plasma membrane			ISO	P14207 	J:164563 	
+MGI:95569	Folr2	folate receptor 2 (fetal)	7		cell surface			ISO	P14207 	J:164563 	
+MGI:95583	Fshr	follicle stimulating hormone receptor	17		cell surface	is a part of osteoclast		IDA		J:115870 	
+MGI:95583	Fshr	follicle stimulating hormone receptor	17		cell surface			ISO	RGD:2632 	J:155856 	
+MGI:97513	Furin	furin (paired basic amino acid cleaving enzyme)	7		cell surface			ISO	P09958 	J:164563 	
+MGI:95594	Fut4	fucosyltransferase 4	9		cell surface	is a part of primordial germ cell of gonad,is a part of germ cell		IDA		J:92186 	
+MGI:1196625	Fzd1	frizzled class receptor 1	5		cell surface			ISO	Q9UP38 	J:164563 	
+MGI:108520	Fzd4	frizzled class receptor 4	7		cell surface			ISO	Q9ULV1 	J:164563 	
+MGI:108571	Fzd5	frizzled class receptor 5	1		cell surface			ISO	Q13467 	J:164563 	
+MGI:1313278	Fzd9	frizzled class receptor 9	5		cell surface			ISO	O00144 	J:164563 	
+MGI:2136761	Fzd10	frizzled class receptor 10	5		cell surface			ISO	Q9ULW2 	J:164563 	
+MGI:1100842	Gfra1	glial cell line derived neurotrophic factor family receptor alpha 1	19		external side of plasma membrane			ISO	RGD:2681 	J:155856 	
+MGI:1201403	Gfra3	glial cell line derived neurotrophic factor family receptor alpha 3	18		external side of plasma membrane			IDA		J:45720 	
+MGI:3607786	Gfral	GDNF family receptor alpha like	9		external side of plasma membrane			ISO	Q6UXV0 	J:164563 	
+MGI:95708	Ghr	growth hormone receptor	15		cell surface			ISO	P10912 	J:164563 	
+MGI:95710	Ghrhr	growth hormone releasing hormone receptor	6		cell surface			ISO	RGD:2688 	J:155856 	
+MGI:95710	Ghrhr	growth hormone releasing hormone receptor	6		cell surface			ISO	Q02643 	J:164563 	
+MGI:2441906	Ghsr	growth hormone secretagogue receptor	3		cell surface			ISO	Q92847 	J:164563 	
+MGI:2384150	Gjd3	gap junction protein, delta 3	11		cell surface			ISO	Q8N144 	J:164563 	
+MGI:2384150	Gjd3	gap junction protein, delta 3	11		cell surface			ISS	Q8N144 	J:131479 	
+MGI:95747	Glra1	glycine receptor, alpha 1 subunit	11		external side of plasma membrane			IDA		J:120269 	
+MGI:95751	Glrb	glycine receptor, beta subunit	3		external side of plasma membrane			ISA	P07727 	J:120269 	
+MGI:4937050	Gm17416	predicted gene, 17416	2		cell surface			IBA	PTN001430319 	J:161428 	
+MGI:95792	Got2	glutamatic-oxaloacetic transaminase 2, mitochondrial	8		cell surface			ISO	RGD:2722 	J:155856 	
+MGI:1333744	Gp1ba	glycoprotein 1b, alpha polypeptide	11	colocalizes_with	anchored component of external side of plasma membrane	is a part of platelet|is a part of megakaryocyte		IDA		J:148918 	
+MGI:1333744	Gp1ba	glycoprotein 1b, alpha polypeptide	11	colocalizes_with	anchored component of external side of plasma membrane			ISO	P07359 	J:164563 	
+MGI:1096363	Gp5	glycoprotein 5 (platelet)	16		cell surface			ISO	O08770 	J:73065 	
+MGI:104902	Gpc4	glypican 4	X		external side of plasma membrane			ISO	O75487 	J:59258 	
+MGI:1915703	Gpihbp1	GPI-anchored HDL-binding protein 1	15		cell surface			IDA		J:82140 	
+MGI:1915703	Gpihbp1	GPI-anchored HDL-binding protein 1	15		external side of plasma membrane			IDA		J:129764 J:162997 	
+MGI:1927596	Gprc5b	G protein-coupled receptor, family C, group 5, member B	7		cell surface	is a part of brain ventricular layer,is a part of UBERON:0001950,exists during embryo development|is a part of brain ventricle,exists during post-embryonic development		IDA		J:204990 	
+MGI:2429498	Gprc6a	G protein-coupled receptor, family C, group 6, member A	10		cell surface		PR:Q8K4Z6	IDA		J:104103 	
+MGI:1344337	Grem1	gremlin 1, DAN family BMP antagonist	2	colocalizes_with	cell surface			IDA		J:145361 	
+MGI:1344337	Grem1	gremlin 1, DAN family BMP antagonist	2		cell surface			ISO	RGD:2359 	J:155856 	
+MGI:95808	Gria1	glutamate receptor, ionotropic, AMPA1 (alpha 1)	11		cell surface			IDA		J:128028 J:197846 	
+MGI:95808	Gria1	glutamate receptor, ionotropic, AMPA1 (alpha 1)	11		cell surface			IMP		J:128028 	
+MGI:95808	Gria1	glutamate receptor, ionotropic, AMPA1 (alpha 1)	11		cell surface			ISO	RGD:621531 	J:155856 	
+MGI:95809	Gria2	glutamate receptor, ionotropic, AMPA2 (alpha 2)	3		cell surface			ISO	RGD:61862 	J:155856 	
+MGI:95819	Grin1	glutamate receptor, ionotropic, NMDA1 (zeta 1)	2		cell surface			IDA		J:128028 	
+MGI:95819	Grin1	glutamate receptor, ionotropic, NMDA1 (zeta 1)	2		cell surface			IMP		J:128028 	
+MGI:95819	Grin1	glutamate receptor, ionotropic, NMDA1 (zeta 1)	2		cell surface			ISO	RGD:2736 	J:155856 	
+MGI:95820	Grin2a	glutamate receptor, ionotropic, NMDA2A (epsilon 1)	16		cell surface			IDA		J:128028 	
+MGI:95820	Grin2a	glutamate receptor, ionotropic, NMDA2A (epsilon 1)	16		cell surface	is a part of hippocampal neuron,is a part of synapse		IDA		J:227842 	
+MGI:95820	Grin2a	glutamate receptor, ionotropic, NMDA2A (epsilon 1)	16		cell surface			IMP		J:128028 	
+MGI:95821	Grin2b	glutamate receptor, ionotropic, NMDA2B (epsilon 2)	6		cell surface			IDA		J:128028 	
+MGI:95821	Grin2b	glutamate receptor, ionotropic, NMDA2B (epsilon 2)	6		cell surface	is a part of pyramidal neuron,is a part of brain		IDA		J:176220 	
+MGI:95821	Grin2b	glutamate receptor, ionotropic, NMDA2B (epsilon 2)	6		cell surface	is a part of hippocampal neuron,is a part of synapse		IDA		J:227842 	
+MGI:95821	Grin2b	glutamate receptor, ionotropic, NMDA2B (epsilon 2)	6		cell surface			IMP		J:128028 	
+MGI:95821	Grin2b	glutamate receptor, ionotropic, NMDA2B (epsilon 2)	6		cell surface			ISO	RGD:2738 	J:155856 	
+MGI:1351344	Grm7	glutamate receptor, metabotropic 7	6		cell surface			ISO	RGD:619857 	J:155856 	
+MGI:95804	Gsr	glutathione reductase	8		external side of plasma membrane			IDA		J:202604 	
+MGI:106025	Gucy2g	guanylate cyclase 2g	19		external side of plasma membrane			IDA		J:88941 	
+MGI:95880	Gypa	glycophorin A	8		external side of plasma membrane			IDA		J:89320 	
+MGI:95895	H2-Aa	histocompatibility 2, class II antigen A, alpha	17		external side of plasma membrane	is a part of lymph node		IDA		J:85084 	
+MGI:95895	H2-Aa	histocompatibility 2, class II antigen A, alpha	17		external side of plasma membrane			IDA		J:4119 J:31625 J:31786 J:68798 	
+MGI:95895	H2-Aa	histocompatibility 2, class II antigen A, alpha	17		external side of plasma membrane	is a part of B cell		IDA		J:31624 	
+MGI:95895	H2-Aa	histocompatibility 2, class II antigen A, alpha	17		external side of plasma membrane	is a part of spleen		IDA		J:88532 	
+MGI:103070	H2-Ab1	histocompatibility 2, class II antigen A, beta 1	17		cell surface			ISO	RGD:3469 	J:155856 	
+MGI:103070	H2-Ab1	histocompatibility 2, class II antigen A, beta 1	17		external side of plasma membrane	is a part of dendritic cell		IDA		J:87420 J:87421 	
+MGI:103070	H2-Ab1	histocompatibility 2, class II antigen A, beta 1	17		external side of plasma membrane	is a part of B cell		IDA		J:4119 J:31624 	
+MGI:103070	H2-Ab1	histocompatibility 2, class II antigen A, beta 1	17		external side of plasma membrane	is a part of lymph node		IDA		J:85084 	
+MGI:103070	H2-Ab1	histocompatibility 2, class II antigen A, beta 1	17		external side of plasma membrane			IDA		J:31625 J:31786 J:68798 J:88532 	
+MGI:892004	H2-Bl	histocompatibility 2, blastocyst	17		cell surface			IDA		J:84807 	
+MGI:95896	H2-D1	histocompatibility 2, D region locus 1	17		cell surface			ISO	P01891 	J:164563 	
+MGI:95896	H2-D1	histocompatibility 2, D region locus 1	17		external side of plasma membrane	is a part of T cell		IDA		J:1767 	
+MGI:95896	H2-D1	histocompatibility 2, D region locus 1	17		external side of plasma membrane			IDA		J:84807 	
+MGI:95921	H2-DMa	histocompatibility 2, class II, locus DMa	17		cell surface			ISO	P28067 	J:164563 	
+MGI:95900	H2-Ea-ps	histocompatibility 2, class II antigen E alpha, pseudogene	17		external side of plasma membrane	is a part of B cell		IDA		J:4119 	
+MGI:95904	H2-K1	histocompatibility 2, K1, K region	17		cell surface			ISO	P01891 	J:164563 	
+MGI:95904	H2-K1	histocompatibility 2, K1, K region	17		external side of plasma membrane	is a part of microglial cell|is a part of astrocyte		IDA		J:93933 	
+MGI:95904	H2-K1	histocompatibility 2, K1, K region	17		external side of plasma membrane	is a part of fibroblast		IDA		J:89707 	
+MGI:95904	H2-K1	histocompatibility 2, K1, K region	17		external side of plasma membrane	is a part of T cell		IDA		J:1767 	
+MGI:95904	H2-K1	histocompatibility 2, K1, K region	17		external side of plasma membrane			IDA		J:39748 J:84807 J:89706 	
+MGI:95914	H2-M2	histocompatibility 2, M region locus 2	17		cell surface			IDA		J:89343 	
+MGI:95915	H2-M3	histocompatibility 2, M region locus 3	17		external side of plasma membrane			IDA		J:4408 	
+MGI:95915	H2-M3	histocompatibility 2, M region locus 3	17		external side of plasma membrane	is a part of lymphocyte		IDA		J:118960 	
+MGI:95928	H2-Q1	histocompatibility 2, Q region locus 1	17		cell surface			ISO	P01891 	J:164563 	
+MGI:95931	H2-Q2	histocompatibility 2, Q region locus 2	17		cell surface			ISO	P01891 	J:164563 	
+MGI:95933	H2-Q4	histocompatibility 2, Q region locus 4	17		cell surface			ISO	P01891 	J:164563 	
+MGI:95935	H2-Q6	histocompatibility 2, Q region locus 6	17		cell surface			ISO	P01891 	J:164563 	
+MGI:95936	H2-Q7	histocompatibility 2, Q region locus 7	17		cell surface			ISO	P01891 	J:164563 	
+MGI:95938	H2-Q9	histocompatibility 2, Q region locus 9	17		cell surface			IDA		J:54440 	
+MGI:95938	H2-Q9	histocompatibility 2, Q region locus 9	17		external side of plasma membrane			IDA		J:137349 	
+MGI:95929	H2-Q10	histocompatibility 2, Q region locus 10	17		cell surface			ISO	P01891 	J:164563 	
+MGI:95957	H2-T23	histocompatibility 2, T region locus 23	17		cell surface			ISO	P13747 	J:164563 	
+MGI:95886	H13	histocompatibility 13	2		cell surface			IDA		J:114602 	
+MGI:1306817	H60a	histocompatibility 60a	10		external side of plasma membrane	is a part of T cell		IDA		J:82077 	
+MGI:2159680	Havcr1	hepatitis A virus cellular receptor 1	11		cell surface			IDA		J:130820 	
+MGI:2159682	Havcr2	hepatitis A virus cellular receptor 2	11		cell surface	is a part of T cell		IDA		J:224716 	
+MGI:2159682	Havcr2	hepatitis A virus cellular receptor 2	11		cell surface			ISO	RGD:1305233 	J:155856 	
+MGI:2159682	Havcr2	hepatitis A virus cellular receptor 2	11		cell surface			ISO	Q8TDQ0 	J:164563 	
+MGI:96070	Hbegf	heparin-binding EGF-like growth factor	18		cell surface			ISO	Q99075 	J:164563 	
+MGI:1096392	Hcn1	hyperpolarization-activated, cyclic nucleotide-gated K+ 1	13		cell surface			ISO	RGD:620688 	J:155856 	
+MGI:1344360	Hcst	hematopoietic cell signal transducer	7		cell surface			ISO	Q9UBK5 	J:164563 	
+MGI:1924696	Heg1	heart development protein with EGF-like domains 1	16		cell surface			IDA		J:146528 	
+MGI:1924696	Heg1	heart development protein with EGF-like domains 1	16		external side of plasma membrane			IDA		J:146528 	
+MGI:109191	Hfe	hemochromatosis	13		external side of plasma membrane			ISO	Q30201 	J:164563 	
+MGI:1916835	Hfe2	hemochromatosis type 2 (juvenile)	3		cell surface			IDA		J:87768 	
+MGI:1341847	Hhip	Hedgehog-interacting protein	8		cell surface			IDA		J:94269 	
+MGI:1916823	Hilpda	hypoxia inducible lipid droplet associated	6		cell surface			ISO	Q9Y5L2 	J:164563 	
+MGI:1931523	Hist1h1a	histone cluster 1, H1a	13		cell surface	is a part of macrophage,is a part of liver		IDA		J:240309 	
+MGI:1926465	Hnrnpm	heterogeneous nuclear ribonucleoprotein M	17		cell surface			ISO	RGD:620369 	J:155856 	
+MGI:1858195	Hnrnpu	heterogeneous nuclear ribonucleoprotein U	1		cell surface			ISO	Q00839 	J:164563 	
+MGI:1196620	Hpn	hepsin	7		cell surface			ISO	P05981 	J:164563 	
+MGI:96250	Hsp90aa1	heat shock protein 90, alpha (cytosolic), class A member 1	12		cell surface			ISO	RGD:631409 	J:155856 	
+MGI:96247	Hsp90ab1	heat shock protein 90 alpha (cytosolic), class B member 1	17		cell surface			ISO	RGD:1303075 	J:155856 	
+MGI:96243	Hspa2	heat shock protein 2	12		cell surface			IDA		J:43533 	
+MGI:95835	Hspa5	heat shock protein 5	2		cell surface			IDA		J:130239 	
+MGI:105384	Hspa8	heat shock protein 8	9		cell surface			ISO	RGD:621725 	J:155856 	
+MGI:96242	Hspd1	heat shock protein 1 (chaperonin)	1		cell surface			ISO	P10809 	J:164563 	
+MGI:96242	Hspd1	heat shock protein 1 (chaperonin)	1		cell surface			ISO	RGD:621314 	J:155856 	
+MGI:96281	Htr2c	5-hydroxytryptamine (serotonin) receptor 2C	X		cell surface			ISO	RGD:2848 	J:155856 	
+MGI:96281	Htr2c	5-hydroxytryptamine (serotonin) receptor 2C	X		external side of plasma membrane			ISO	P08909 	J:73065 	
+MGI:1861899	Htr3b	5-hydroxytryptamine (serotonin) receptor 3B	9		cell surface			ISO	O95264 	J:164563 	
+MGI:1196334	Hyal2	hyaluronoglucosaminidase 2	9	colocalizes_with	anchored component of external side of plasma membrane	is a part of platelet|is a part of megakaryocyte		IDA		J:148918 	
+MGI:1196334	Hyal2	hyaluronoglucosaminidase 2	9	NOT	anchored component of external side of plasma membrane			IDA		J:182393 	
+MGI:1196334	Hyal2	hyaluronoglucosaminidase 2	9		cell surface			IDA		J:150686 	
+MGI:1196334	Hyal2	hyaluronoglucosaminidase 2	9		cell surface			ISO	Q12891 	J:164563 	
+MGI:1924292	Hyal4	hyaluronoglucosaminidase 4	6		cell surface	is a part of spermatid		IDA		J:197118 	
+MGI:1921718	Hyal5	hyaluronoglucosaminidase 5	6		external side of plasma membrane			IDA		J:117970 	
+MGI:96392	Icam1	intercellular adhesion molecule 1	9		cell surface			ISO	RGD:2857 	J:155856 	
+MGI:96392	Icam1	intercellular adhesion molecule 1	9		external side of plasma membrane			IDA		J:140121 	
+MGI:96392	Icam1	intercellular adhesion molecule 1	9		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:113553 	
+MGI:1858745	Icos	inducible T cell co-stimulator	1		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:1858745	Icos	inducible T cell co-stimulator	1		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:112602 	
+MGI:1858745	Icos	inducible T cell co-stimulator	1		external side of plasma membrane	happens in T cell		IDA		J:196136 	
+MGI:1858745	Icos	inducible T cell co-stimulator	1		external side of plasma membrane	is a part of T cell		IDA		J:61649 	
+MGI:1354701	Icosl	icos ligand	10		external side of plasma membrane	is a part of precursor B cell		IDA		J:61649 	
+MGI:1354701	Icosl	icos ligand	10		external side of plasma membrane			IDA		J:60318 	
+MGI:96412	Ide	insulin degrading enzyme	19		cell surface			ISO	RGD:2861 	J:155856 	
+MGI:96412	Ide	insulin degrading enzyme	19		cell surface			ISO	P14735 	J:164563 	
+MGI:1913391	Ifitm3	interferon induced transmembrane protein 3	7		cell surface	is a part of mouse,is a part of endothelial cell|is a part of mouse,is a part of blood cell		IDA		J:198561 	
+MGI:107656	Ifng	interferon gamma	10		external side of plasma membrane			IDA		J:118947 J:123631 J:157744 J:160369 J:165919 J:168252 J:173331 J:174389 J:175944 	
+MGI:96435	Igf2r	insulin-like growth factor 2 receptor	17		cell surface			ISO	P11717 	J:164563 	
+MGI:96444	Igha	immunoglobulin heavy constant alpha	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:96447	Ighd	immunoglobulin heavy constant delta	12		external side of plasma membrane	is a part of splenocyte		IDA		J:88708 	
+MGI:96447	Ighd	immunoglobulin heavy constant delta	12		external side of plasma membrane			IDA		J:64281 J:87927 J:98417 J:155898 	
+MGI:96447	Ighd	immunoglobulin heavy constant delta	12		external side of plasma membrane	is a part of spleen,is a part of B cell|is a part of lymph node,is a part of B cell|is a part of peritoneal cavity,is a part of B cell		IDA		J:29796 	
+MGI:96447	Ighd	immunoglobulin heavy constant delta	12		external side of plasma membrane	is a part of spleen		IDA		J:99189 	
+MGI:96447	Ighd	immunoglobulin heavy constant delta	12		external side of plasma membrane	is a part of B cell		IDA		J:19437 J:30239 J:33466 J:42368 J:53400 J:60916 	
+MGI:2685746	Ighe	Immunoglobulin heavy constant epsilon	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:2144967	Ighg	Immunoglobulin heavy chain (gamma polypeptide)	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:96446	Ighg1	immunoglobulin heavy constant gamma 1 (G1m marker)	12		external side of plasma membrane			IDA		J:141184 	
+MGI:96443	Ighg2a	immunoglobulin heavy constant gamma 2A	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:96445	Ighg2b	immunoglobulin heavy constant gamma 2B	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:2686979	Ighg2c	immunoglobulin heavy constant gamma 2C	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:2144790	Ighg3	Immunoglobulin heavy constant gamma 3	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:96448	Ighm	immunoglobulin heavy constant mu	12		cell surface			IDA		J:49405 	
+MGI:96448	Ighm	immunoglobulin heavy constant mu	12		external side of plasma membrane			IDA		J:31951 J:64281 J:84929 J:87927 J:88708 J:94881 J:98417 J:127719 J:155898 	
+MGI:96448	Ighm	immunoglobulin heavy constant mu	12		external side of plasma membrane	is a part of spleen,is a part of B cell|is a part of lymph node,is a part of B cell|is a part of peritoneal cavity,is a part of B cell		IDA		J:29796 	
+MGI:96448	Ighm	immunoglobulin heavy constant mu	12		external side of plasma membrane	is a part of spleen,is a part of B cell		IDA		J:99189 	
+MGI:96448	Ighm	immunoglobulin heavy constant mu	12		external side of plasma membrane	is a part of B cell		IDA		J:19437 J:30239 J:33466 J:42368 J:53400 J:60916 J:64603 	
+MGI:96448	Ighm	immunoglobulin heavy constant mu	12		external side of plasma membrane	is a part of bone marrow,is a part of B cell|is a part of spleen,is a part of B cell|is a part of peritoneal cavity,is a part of B cell		IDA		J:29797 	
+MGI:4439618	Ighv1-4	immunoglobulin heavy variable 1-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3704121	Ighv1-5	immunoglobulin heavy variable V1-5	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3704122	Ighv1-7	immunoglobulin heavy variable V1-7	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439621	Ighv1-9	immunoglobulin heavy variable V1-9	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:5009835	Ighv1-11	immunoglobulin heavy variable V1-11	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3646284	Ighv1-12	immunoglobulin heavy variable V1-12	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439782	Ighv1-15	immunoglobulin heavy variable 1-15	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3647704	Ighv1-16	immunoglobulin heavy variable 1-16	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439780	Ighv1-18	immunoglobulin heavy variable V1-18	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439779	Ighv1-19	immunoglobulin heavy variable V1-19	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3644607	Ighv1-20	immunoglobulin heavy variable V1-20	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439784	Ighv1-22	immunoglobulin heavy variable 1-22	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3815050	Ighv1-23	immunoglobulin heavy variable V1-23	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3815052	Ighv1-24	immunoglobulin heavy variable V1-24	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439641	Ighv1-26	immunoglobulin heavy variable 1-26	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439889	Ighv1-31	immunoglobulin heavy variable 1-31	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439659	Ighv1-34	immunoglobulin heavy variable 1-34	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439639	Ighv1-36	immunoglobulin heavy variable 1-36	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439640	Ighv1-37	immunoglobulin heavy variable 1-37	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439888	Ighv1-39	immunoglobulin heavy variable 1-39	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3704123	Ighv1-42	immunoglobulin heavy variable V1-42	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3704124	Ighv1-43	immunoglobulin heavy variable V1-43	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439890	Ighv1-47	immunoglobulin heavy variable 1-47	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439754	Ighv1-49	immunoglobulin heavy variable 1-49	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439753	Ighv1-50	immunoglobulin heavy variable 1-50	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439752	Ighv1-52	immunoglobulin heavy variable 1-52	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3576502	Ighv1-53	immunoglobulin heavy variable 1-53	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3647133	Ighv1-54	immunoglobulin heavy variable V1-54	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439716	Ighv1-55	immunoglobulin heavy variable 1-55	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439715	Ighv1-56	immunoglobulin heavy variable 1-56	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439557	Ighv1-58	immunoglobulin heavy variable 1-58	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3644474	Ighv1-59	immunoglobulin heavy variable V1-59	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439824	Ighv1-61	immunoglobulin heavy variable 1-61	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3704125	Ighv1-62-1	immunoglobulin heavy variable 1-62-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3644968	Ighv1-62-2	immunoglobulin heavy variable 1-62-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3648544	Ighv1-62-3	immunoglobulin heavy variable 1-62-3	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3642755	Ighv1-63	immunoglobulin heavy variable V1-63	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439789	Ighv1-64	immunoglobulin heavy variable 1-64	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439825	Ighv1-66	immunoglobulin heavy variable 1-66	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3645228	Ighv1-67	immunoglobulin heavy variable V1-67	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439632	Ighv1-69	immunoglobulin heavy variable 1-69	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439633	Ighv1-72	immunoglobulin heavy variable 1-72	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3645131	Ighv1-73	immunoglobulin heavy variable 1-73	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439634	Ighv1-74	immunoglobulin heavy variable V1-74	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439735	Ighv1-75	immunoglobulin heavy variable 1-75	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439737	Ighv1-76	immunoglobulin heavy variable 1-76	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439670	Ighv1-77	immunoglobulin heavy variable 1-77	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439736	Ighv1-78	immunoglobulin heavy variable 1-78	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439738	Ighv1-80	immunoglobulin heavy variable 1-80	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439635	Ighv1-81	immunoglobulin heavy variable 1-81	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439671	Ighv1-82	immunoglobulin heavy variable 1-82	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3648939	Ighv1-83	immunoglobulin heavy variable 1-83	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3644235	Ighv1-84	immunoglobulin heavy variable 1-84	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3645723	Ighv1-85	immunoglobulin heavy variable 1-85	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439894	Ighv2-2	immunoglobulin heavy variable 2-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439872	Ighv2-3	immunoglobulin heavy variable 2-3	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3643263	Ighv2-4	immunoglobulin heavy variable V2-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439517	Ighv2-5	immunoglobulin heavy variable 2-5	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439518	Ighv2-6	immunoglobulin heavy variable 2-6	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439811	Ighv2-6-8	immunoglobulin heavy variable 2-6-8	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439521	Ighv2-7	immunoglobulin heavy variable 2-7	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439624	Ighv2-9	immunoglobulin heavy variable 2-9	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439519	Ighv2-9-1	immunoglobulin heavy variable 2-9-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439534	Ighv3-1	immunoglobulin heavy variable 3-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3643949	Ighv3-3	immunoglobulin heavy variable V3-3	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3644034	Ighv3-4	immunoglobulin heavy variable V3-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3648045	Ighv3-5	immunoglobulin heavy variable 3-5	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439856	Ighv3-6	immunoglobulin heavy variable 3-6	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3645298	Ighv3-8	immunoglobulin heavy variable V3-8	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439536	Ighv4-1	immunoglobulin heavy variable 4-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439893	Ighv5-2	immunoglobulin heavy variable 5-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439895	Ighv5-4	immunoglobulin heavy variable 5-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439815	Ighv5-6	immunoglobulin heavy variable 5-6	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439873	Ighv5-9	immunoglobulin heavy variable 5-9	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439810	Ighv5-9-1	immunoglobulin heavy variable 5-9-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439516	Ighv5-12	immunoglobulin heavy variable 5-12	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3645977	Ighv5-12-4	immunoglobulin heavy variable 5-12-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439812	Ighv5-15	immunoglobulin heavy variable 5-15	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439556	Ighv5-16	immunoglobulin heavy variable 5-16	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439533	Ighv5-17	immunoglobulin heavy variable 5-17	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439854	Ighv6-3	immunoglobulin heavy variable 6-3	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3704120	Ighv6-4	immunoglobulin heavy variable V6-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3647134	Ighv6-5	immunoglobulin heavy variable V6-5	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439619	Ighv6-6	immunoglobulin heavy variable 6-6	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3644477	Ighv6-7	immunoglobulin heavy variable V6-7	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439623	Ighv7-2	immunoglobulin heavy variable 7-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439763	Ighv7-4	immunoglobulin heavy variable 7-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3647474	Ighv8-2	immunoglobulin heavy variable V8-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3646040	Ighv8-4	immunoglobulin heavy variable V8-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3645478	Ighv8-5	immunoglobulin heavy variable V8-5	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3645823	Ighv8-6	immunoglobulin heavy variable V8-6	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3815333	Ighv8-8	immunoglobulin heavy variable 8-8	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3644475	Ighv8-9	immunoglobulin heavy variable V8-9	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3644925	Ighv8-11	immunoglobulin heavy variable V8-11	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3642873	Ighv8-12	immunoglobulin heavy variable V8-12	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439734	Ighv8-13	immunoglobulin heavy variable 8-13	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439911	Ighv9-1	immunoglobulin heavy variable 9-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3643816	Ighv9-2	immunoglobulin heavy variable V9-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3642720	Ighv9-3	immunoglobulin heavy variable V9-3	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3646379	Ighv9-4	immunoglobulin heavy variable 9-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439620	Ighv10-1	immunoglobulin heavy variable 10-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3648785	Ighv10-3	immunoglobulin heavy variable V10-3	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439535	Ighv11-1	immunoglobulin heavy variable 11-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4947968	Ighv11-2	immunoglobulin heavy variable V11-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3646760	Ighv12-3	immunoglobulin heavy variable V12-3	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439855	Ighv13-1	immunoglobulin heavy variable 13-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3705861	Ighv13-2	immunoglobulin heavy variable 13-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439920	Ighv14-1	immunoglobulin heavy variable 14-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439607	Ighv14-2	immunoglobulin heavy variable 14-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439764	Ighv14-3	immunoglobulin heavy variable V14-3	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4439765	Ighv14-4	immunoglobulin heavy variable 14-4	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4947963	Ighv15-2	immunoglobulin heavy variable V15-2	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:3643819	Ighv16-1	immunoglobulin heavy variable 16-1	12		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:96495	Igkc	immunoglobulin kappa constant	6		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:99546	Iglc1	immunoglobulin lambda constant 1	16		external side of plasma membrane			IDA		J:94881 	
+MGI:99547	Iglc2	immunoglobulin lambda constant 2	16		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:99886	Iglc3	immunoglobulin lambda constant 3	16		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:96529	Igll1	immunoglobulin lambda-like polypeptide 1	16		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:1919308	Igsf5	immunoglobulin superfamily, member 5	16		cell surface			IDA		J:84762 	
+MGI:2681842	Igsf21	immunoglobulin superfamily, member 21	4		anchored component of external side of plasma membrane			IDA		J:249826 	
+MGI:96542	Il1a	interleukin 1 alpha	2		cell surface			ISO	RGD:2890 	J:155856 	
+MGI:96545	Il1r1	interleukin 1 receptor, type I	1		cell surface			IDA		J:154864 	
+MGI:96545	Il1r1	interleukin 1 receptor, type I	1		cell surface			ISO	RGD:2892 	J:155856 	
+MGI:96545	Il1r1	interleukin 1 receptor, type I	1		external side of plasma membrane			IDA		J:190936 	
+MGI:2687319	Il1rapl1	interleukin 1 receptor accessory protein-like 1	X		cell surface			IDA		J:177124 	
+MGI:98427	Il1rl1	interleukin 1 receptor-like 1	1		cell surface			ISO	RGD:2894 	J:155856 	
+MGI:98427	Il1rl1	interleukin 1 receptor-like 1	1		external side of plasma membrane			IDA		J:151963 	
+MGI:98427	Il1rl1	interleukin 1 receptor-like 1	1		external side of plasma membrane	happens in macrophage	PR:P14719-1	IDA		J:17250 	
+MGI:98427	Il1rl1	interleukin 1 receptor-like 1	1		external side of plasma membrane	is a part of mast cell		IDA		J:84889 	
+MGI:98427	Il1rl1	interleukin 1 receptor-like 1	1		external side of plasma membrane			ISO	Q62611 	J:73065 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		cell surface			ISO	RGD:2895 	J:155856 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		external side of plasma membrane	is a part of bone marrow,is a part of B cell		IDA		J:29796 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		external side of plasma membrane	is a part of gamma-delta T cell		IDA		J:137854 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		external side of plasma membrane	is a part of T cell		IDA		J:14194 J:53400 J:61649 J:64279 J:91939 J:92334 J:92679 J:113553 J:152384 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		external side of plasma membrane			IDA		J:34311 J:35057 J:89706 J:96628 J:98417 J:139262 J:140498 J:141227 J:155686 J:172134 J:174697 J:177992 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		external side of plasma membrane	is a part of femur,is a part of B cell		IDA		J:99189 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		external side of plasma membrane	is a part of thymocyte		IDA		J:144049 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:17350 J:89322 J:112602 J:118845 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		external side of plasma membrane	is a part of fibroblast		IDA		J:16175 	
+MGI:96550	Il2rb	interleukin 2 receptor, beta chain	15		cell surface			IDA		J:164687 	
+MGI:96550	Il2rb	interleukin 2 receptor, beta chain	15		cell surface			ISO	RGD:2896 	J:155856 	
+MGI:96550	Il2rb	interleukin 2 receptor, beta chain	15		external side of plasma membrane			IDA		J:16175 J:91304 J:140498 J:190936 	
+MGI:96550	Il2rb	interleukin 2 receptor, beta chain	15		external side of plasma membrane	is a part of natural killer cell		IDA		J:112035 	
+MGI:96550	Il2rb	interleukin 2 receptor, beta chain	15		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:112602 	
+MGI:96550	Il2rb	interleukin 2 receptor, beta chain	15		external side of plasma membrane	is a part of T cell		IDA		J:152384 	
+MGI:96551	Il2rg	interleukin 2 receptor, gamma chain	X		external side of plasma membrane	is a part of fibroblast		IDA		J:16175 	
+MGI:96556	Il4	interleukin 4	11		external side of plasma membrane			IDA		J:151963 J:160369 J:165919 J:168252 J:175944 	
+MGI:96559	Il6	interleukin 6	5		external side of plasma membrane	is a part of submandibular gland primordium		IDA		J:68367 	
+MGI:105304	Il6ra	interleukin 6 receptor, alpha	3		cell surface		PR:P22272-1	IDA		J:1806 	
+MGI:96560	Il6st	interleukin 6 signal transducer	13		external side of plasma membrane	is a part of submandibular gland primordium		IDA		J:68367 	
+MGI:96562	Il7r	interleukin 7 receptor	15		external side of plasma membrane	is a part of thymocyte		IDA		J:144049 	
+MGI:96562	Il7r	interleukin 7 receptor	15		external side of plasma membrane	is a part of femur,is a part of B cell		IDA		J:99189 	
+MGI:96562	Il7r	interleukin 7 receptor	15		external side of plasma membrane			IDA		J:84890 J:155686 	
+MGI:96562	Il7r	interleukin 7 receptor	15		external side of plasma membrane	is a part of T cell		IDA		J:92679 	
+MGI:96539	Il12a	interleukin 12a	3		cell surface			IDA		J:164687 	
+MGI:96540	Il12b	interleukin 12b	11		cell surface			IDA		J:164687 	
+MGI:104579	Il12rb1	interleukin 12 receptor, beta 1	8		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:91804 	
+MGI:1270861	Il12rb2	interleukin 12 receptor, beta 2	6		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:91804 	
+MGI:96541	Il13	interleukin 13	11		external side of plasma membrane			IDA		J:141227 J:151963 	
+MGI:103014	Il15	interleukin 15	8		cell surface			ISO	RGD:2887 	J:155856 	
+MGI:107364	Il17a	interleukin 17A	1		external side of plasma membrane			IDA		J:141227 J:157744 J:165738 J:190936 	
+MGI:1355292	Il17rb	interleukin 17 receptor B	14		cell surface			IDA		J:62084 	
+MGI:2159336	Il17rc	interleukin 17 receptor C	6		cell surface			IDA		J:161934 	
+MGI:2180511	Il31ra	interleukin 31 receptor A	13		external side of plasma membrane			IDA		J:172699 	
+MGI:96575	Insr	insulin receptor	8		external side of plasma membrane			ISO	RGD:2917 	J:155856 	
+MGI:2449975	Iqgap2	IQ motif containing GTPase activating protein 2	13		cell surface			ISO	Q13576 	J:164563 	
+MGI:2444277	Islr2	immunoglobulin superfamily containing leucine-rich repeat 2	9		cell surface			IDA		J:154926 	
+MGI:96599	Itga1	integrin alpha 1	13		cell surface	is a part of fibroblast		IDA		J:193934 	
+MGI:96599	Itga1	integrin alpha 1	13		cell surface			ISO	P56199 	J:164563 	
+MGI:96599	Itga1	integrin alpha 1	13		external side of plasma membrane	is a part of fibroblast		IDA		J:47279 	
+MGI:96599	Itga1	integrin alpha 1	13		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:113553 	
+MGI:96599	Itga1	integrin alpha 1	13		external side of plasma membrane			ISO	RGD:2923 	J:155856 	
+MGI:96600	Itga2	integrin alpha 2	13		cell surface			IDA		J:164687 	
+MGI:96600	Itga2	integrin alpha 2	13		cell surface	is a part of fibroblast		IDA		J:193934 	
+MGI:96600	Itga2	integrin alpha 2	13		cell surface			ISO	RGD:621632 	J:155856 	
+MGI:96600	Itga2	integrin alpha 2	13		cell surface			ISO	P17301 	J:164563 	
+MGI:96600	Itga2	integrin alpha 2	13		external side of plasma membrane	is a part of lymphocyte		IDA		J:87433 	
+MGI:96600	Itga2	integrin alpha 2	13		external side of plasma membrane	is a part of natural killer cell		IDA		J:151768 	
+MGI:96600	Itga2	integrin alpha 2	13		external side of plasma membrane	is a part of T cell		IDA		J:113553 	
+MGI:96601	Itga2b	integrin alpha 2b	11		cell surface			IDA		J:90544 	
+MGI:96601	Itga2b	integrin alpha 2b	11		cell surface			ISO	RGD:1596428 	J:155856 	
+MGI:96601	Itga2b	integrin alpha 2b	11		external side of plasma membrane	is a part of stem cell		IDA		J:145577 	
+MGI:96601	Itga2b	integrin alpha 2b	11		external side of plasma membrane			IDA		J:84599 J:148788 J:160232 	
+MGI:96602	Itga3	integrin alpha 3	11		cell surface			ISO	P26006 	J:164563 	
+MGI:96602	Itga3	integrin alpha 3	11		cell surface			ISO	RGD:1310333 	J:155856 	
+MGI:96602	Itga3	integrin alpha 3	11		external side of plasma membrane	is a part of fibroblast		IDA		J:47279 	
+MGI:96603	Itga4	integrin alpha 4	2		cell surface			ISO	P13612 	J:164563 	
+MGI:96603	Itga4	integrin alpha 4	2		cell surface			ISO	RGD:1593249 	J:155856 	
+MGI:96603	Itga4	integrin alpha 4	2		cell surface			TAS		J:169941 	
+MGI:96603	Itga4	integrin alpha 4	2		external side of plasma membrane	is a part of monocyte		IDA		J:125138 	
+MGI:96603	Itga4	integrin alpha 4	2		external side of plasma membrane			IDA		J:23140 	
+MGI:96604	Itga5	integrin alpha 5 (fibronectin receptor alpha)	15		cell surface	is a part of 2-cell stage embryo		IDA		J:16243 	
+MGI:96604	Itga5	integrin alpha 5 (fibronectin receptor alpha)	15		cell surface	is a part of fibroblast		IDA		J:193934 	
+MGI:96604	Itga5	integrin alpha 5 (fibronectin receptor alpha)	15		cell surface			ISO	P08648 	J:164563 	
+MGI:96604	Itga5	integrin alpha 5 (fibronectin receptor alpha)	15		external side of plasma membrane	is a part of monocyte		IDA		J:125138 	
+MGI:96604	Itga5	integrin alpha 5 (fibronectin receptor alpha)	15		external side of plasma membrane	is a part of fibroblast		IDA		J:47279 	
+MGI:96605	Itga6	integrin alpha 6	2		cell surface		PR:Q61739-2	IDA		J:28224 	
+MGI:96605	Itga6	integrin alpha 6	2		cell surface	is a part of 2-cell stage embryo		IDA		J:16243 	
+MGI:96605	Itga6	integrin alpha 6	2		cell surface			ISO	P23229 	J:164563 	
+MGI:96605	Itga6	integrin alpha 6	2		external side of plasma membrane			IDA		J:148710 J:158532 	
+MGI:96605	Itga6	integrin alpha 6	2		external side of plasma membrane	is a part of fibroblast		IDA		J:47279 	
+MGI:96605	Itga6	integrin alpha 6	2		external side of plasma membrane	is a part of monocyte		IDA		J:125138 	
+MGI:102700	Itga7	integrin alpha 7	10		cell surface			ISO	RGD:71022 	J:155856 	
+MGI:109442	Itga8	integrin alpha 8	2		cell surface			ISO	P53708 	J:164563 	
+MGI:1298377	Itgae	integrin alpha E, epithelial-associated	11		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:1298377	Itgae	integrin alpha E, epithelial-associated	11		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:112602 	
+MGI:1298377	Itgae	integrin alpha E, epithelial-associated	11		external side of plasma membrane			IDA		J:190936 	
+MGI:1298377	Itgae	integrin alpha E, epithelial-associated	11		external side of plasma membrane	is a part of T cell		IDA		J:116306 	
+MGI:96606	Itgal	integrin alpha L	7		cell surface			ISO	P20701 	J:164563 	
+MGI:96606	Itgal	integrin alpha L	7		cell surface			ISO	RGD:631424 	J:155856 	
+MGI:96606	Itgal	integrin alpha L	7		external side of plasma membrane	is a part of monocyte		IDA		J:125138 	
+MGI:96606	Itgal	integrin alpha L	7		external side of plasma membrane	is a part of myeloid lineage restricted progenitor cell		IDA		J:19636 	
+MGI:96607	Itgam	integrin alpha M	7		cell surface			IDA		J:43157 	
+MGI:96607	Itgam	integrin alpha M	7		cell surface			ISO	P11215 	J:164563 	
+MGI:96607	Itgam	integrin alpha M	7		external side of plasma membrane	is a part of macrophage		IDA		J:89997 	
+MGI:96607	Itgam	integrin alpha M	7		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:113553 	
+MGI:96607	Itgam	integrin alpha M	7		external side of plasma membrane	is a part of myeloid lineage restricted progenitor cell		IDA		J:19636 	
+MGI:96607	Itgam	integrin alpha M	7		external side of plasma membrane	is a part of myeloid cell		IDA		J:163607 	
+MGI:96607	Itgam	integrin alpha M	7		external side of plasma membrane	is a part of bone marrow cell		IDA		J:89320 J:97945 	
+MGI:96607	Itgam	integrin alpha M	7		external side of plasma membrane	is a part of bone marrow,is a part of myeloid cell		IDA		J:97996 	
+MGI:96607	Itgam	integrin alpha M	7		external side of plasma membrane	is a part of T cell		IDA		J:152384 	
+MGI:96607	Itgam	integrin alpha M	7		external side of plasma membrane			IDA		J:31133 J:31364 J:35057 J:86758 J:141377 J:160232 J:202604 	
+MGI:96607	Itgam	integrin alpha M	7		external side of plasma membrane	is a part of monocyte		IDA		J:125138 	
+MGI:96608	Itgav	integrin alpha V	2		cell surface			ISO	P06756 	J:164563 	
+MGI:96608	Itgav	integrin alpha V	2		external side of plasma membrane	is a part of fibroblast		IDA		J:47279 	
+MGI:96608	Itgav	integrin alpha V	2		external side of plasma membrane	is a part of monocyte		IDA		J:125138 	
+MGI:96609	Itgax	integrin alpha X	7		cell surface			ISO	P20702 	J:164563 	
+MGI:96609	Itgax	integrin alpha X	7		external side of plasma membrane			IDA		J:86758 J:89706 J:143981 J:146983 	
+MGI:96609	Itgax	integrin alpha X	7		external side of plasma membrane	is a part of dendritic cell		IDA		J:87420 J:87421 J:125145 	
+MGI:96609	Itgax	integrin alpha X	7		external side of plasma membrane	is a part of myeloid dendritic cell		IDA		J:59927 	
+MGI:96609	Itgax	integrin alpha X	7		external side of plasma membrane	is a part of T cell		IDA		J:152384 	
+MGI:96610	Itgb1	integrin beta 1 (fibronectin receptor beta)	8		cell surface	is a part of fibroblast		IDA		J:193934 	
+MGI:96610	Itgb1	integrin beta 1 (fibronectin receptor beta)	8		cell surface	is a part of 2-cell stage embryo		IDA		J:16243 	
+MGI:96610	Itgb1	integrin beta 1 (fibronectin receptor beta)	8		cell surface			ISO	RGD:2927 	J:155856 	
+MGI:96610	Itgb1	integrin beta 1 (fibronectin receptor beta)	8		cell surface			ISO	P05556 	J:164563 J:200103 	
+MGI:96610	Itgb1	integrin beta 1 (fibronectin receptor beta)	8		external side of plasma membrane			IDA		J:158532 J:163218 	
+MGI:96610	Itgb1	integrin beta 1 (fibronectin receptor beta)	8		external side of plasma membrane	is a part of fibroblast		IDA		J:47279 	
+MGI:96611	Itgb2	integrin beta 2	10		cell surface	is a part of neutrophil		IDA		J:113020 	
+MGI:96611	Itgb2	integrin beta 2	10		cell surface			ISO	RGD:1305581 	J:155856 	
+MGI:96611	Itgb2	integrin beta 2	10		cell surface			ISO	P05107 	J:164563 J:200103 	
+MGI:96612	Itgb3	integrin beta 3	11		cell surface	is a part of T-helper 2 cell		IDA		J:173540 	
+MGI:96612	Itgb3	integrin beta 3	11		cell surface			ISO	P05106 	J:164563 	
+MGI:96612	Itgb3	integrin beta 3	11		cell surface			ISO	RGD:628868 	J:155856 	
+MGI:96612	Itgb3	integrin beta 3	11		external side of plasma membrane	is a part of fibroblast		IDA		J:47279 	
+MGI:96612	Itgb3	integrin beta 3	11		external side of plasma membrane			IDA		J:84599 J:202604 	
+MGI:96613	Itgb4	integrin beta 4	11		cell surface			ISO	P16144 	J:164563 	
+MGI:96614	Itgb5	integrin beta 5	16		cell surface			ISO	P18084 	J:164563 	
+MGI:96615	Itgb6	integrin beta 6	2		external side of plasma membrane	is a part of fibroblast		IDA		J:47279 	
+MGI:96616	Itgb7	integrin beta 7	15		cell surface			ISO	P26010 	J:164563 	
+MGI:1338035	Itgb8	integrin beta 8	12		cell surface			ISO	P26012 	J:164563 	
+MGI:1933825	Jam3	junction adhesion molecule 3	9		cell surface			ISO	AF448478 	J:78942 	
+MGI:96654	Kcna1	potassium voltage-gated channel, shaker-related subfamily, member 1	6		cell surface			IDA		J:201521 	
+MGI:96654	Kcna1	potassium voltage-gated channel, shaker-related subfamily, member 1	6		cell surface			ISO	RGD:2949 	J:155856 	
+MGI:96661	Kcna4	potassium voltage-gated channel, shaker-related subfamily, member 4	2		cell surface			ISO	RGD:2952 	J:155856 	
+MGI:96662	Kcna5	potassium voltage-gated channel, shaker-related subfamily, member 5	6		cell surface			ISO	P22460 	J:164563 	
+MGI:96666	Kcnb1	potassium voltage gated channel, Shab-related subfamily, member 1	2		cell surface			ISO	RGD:2954 	J:155856 	
+MGI:96667	Kcnc1	potassium voltage gated channel, Shaw-related subfamily, member 1	7		cell surface			ISO	RGD:2955 	J:155856 	
+MGI:96670	Kcnc4	potassium voltage gated channel, Shaw-related subfamily, member 4	3		cell surface			ISO	RGD:1589169 	J:155856 	
+MGI:1891123	Kcne2	potassium voltage-gated channel, Isk-related subfamily, gene 2	16		cell surface			ISO	Q9Y6J6 	J:164563 	
+MGI:1891123	Kcne2	potassium voltage-gated channel, Isk-related subfamily, gene 2	16		cell surface			ISO	RGD:621383 	J:155856 	
+MGI:1341721	Kcnh1	potassium voltage-gated channel, subfamily H (eag-related), member 1	1		cell surface			ISO	RGD:68398 	J:155856 	
+MGI:1341722	Kcnh2	potassium voltage-gated channel, subfamily H (eag-related), member 2	5		cell surface			ISO	Q12809 	J:164563 	
+MGI:3584508	Kcnh5	potassium voltage-gated channel, subfamily H (eag-related), member 5	12		cell surface			ISO	Q8NCM2 	J:186629 	
+MGI:104742	Kcnj3	potassium inwardly-rectifying channel, subfamily J, member 3	2		cell surface			ISO	RGD:2958 	J:155856 	
+MGI:104742	Kcnj3	potassium inwardly-rectifying channel, subfamily J, member 3	2		external side of plasma membrane			ISO	RGD:2958 	J:155856 	
+MGI:104755	Kcnj5	potassium inwardly-rectifying channel, subfamily J, member 5	9		external side of plasma membrane			ISO	RGD:61971 	J:155856 	
+MGI:104781	Kcnj6	potassium inwardly-rectifying channel, subfamily J, member 6	16		cell surface			ISO	RGD:2959 	J:155856 	
+MGI:109366	Kcnk2	potassium channel, subfamily K, member 2	1		cell surface			ISO	RGD:621448 	J:155856 	
+MGI:99923	Kcnma1	potassium large conductance calcium-activated channel, subfamily M, alpha member 1	14		external side of plasma membrane			IDA		J:118875 	
+MGI:99923	Kcnma1	potassium large conductance calcium-activated channel, subfamily M, alpha member 1	14		external side of plasma membrane			ISO	RGD:620715 	J:155856 	
+MGI:1309503	Kcnq2	potassium voltage-gated channel, subfamily Q, member 2	2		cell surface			IDA		J:79145 	
+MGI:1336181	Kcnq3	potassium voltage-gated channel, subfamily Q, member 3	15		cell surface			IDA		J:79145 	
+MGI:1336181	Kcnq3	potassium voltage-gated channel, subfamily Q, member 3	15		cell surface			ISO	RGD:69222 	J:155856 	
+MGI:96683	Kdr	kinase insert domain protein receptor	5		cell surface			IDA		J:190263 	
+MGI:96683	Kdr	kinase insert domain protein receptor	5		external side of plasma membrane			IDA		J:132871 J:155850 J:160232 	
+MGI:2148793	Kiss1r	KISS1 receptor	10		cell surface			IDA		J:83519 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		cell surface			IDA		J:41397 J:43157 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		external side of plasma membrane	is a part of liver		IDA		J:63425 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		external side of plasma membrane	is a part of femur,is a part of B cell		IDA		J:99189 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		external side of plasma membrane	is a part of stem cell		IDA		J:145577 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		external side of plasma membrane			IDA		J:84599 J:84890 J:89706 J:103896 J:132871 J:155686 J:174203 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		external side of plasma membrane	is a part of mast cell		IDA		J:84889 J:101855 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		external side of plasma membrane	is a part of thymocyte		IDA		J:144049 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		external side of plasma membrane			ISO	RGD:620568 	J:155856 	
+MGI:101907	Klra1	killer cell lectin-like receptor, subfamily A, member 1	6		external side of plasma membrane	is a part of natural killer cell		IDA		J:86948 J:87433 J:119213 	
+MGI:101907	Klra1	killer cell lectin-like receptor, subfamily A, member 1	6		external side of plasma membrane			IDA		J:197348 	
+MGI:101904	Klra4	killer cell lectin-like receptor, subfamily A, member 4	6		external side of plasma membrane			IDA		J:197348 	
+MGI:101904	Klra4	killer cell lectin-like receptor, subfamily A, member 4	6		external side of plasma membrane	is a part of natural killer cell		IDA		J:87433 J:119213 	
+MGI:101901	Klra7	killer cell lectin-like receptor, subfamily A, member 7	6		external side of plasma membrane	is a part of natural killer cell		IDA		J:119213 	
+MGI:107539	Klrb1b	killer cell lectin-like receptor subfamily B member 1B	6		external side of plasma membrane			IDA		J:54974 J:54975 	
+MGI:107539	Klrb1b	killer cell lectin-like receptor subfamily B member 1B	6		external side of plasma membrane	is a part of natural killer cell		IDA		J:86948 	
+MGI:107538	Klrb1c	killer cell lectin-like receptor subfamily B member 1C	6		cell surface			IDA		J:164687 	
+MGI:107538	Klrb1c	killer cell lectin-like receptor subfamily B member 1C	6		external side of plasma membrane	is a part of natural killer cell		IDA		J:87433 J:88001 J:119213 	
+MGI:107538	Klrb1c	killer cell lectin-like receptor subfamily B member 1C	6		external side of plasma membrane			IDA		J:2388 J:39748 J:54974 J:54975 J:60915 J:86758 J:89706 J:132871 J:140498 J:155686 J:174553 J:190936 	
+MGI:107538	Klrb1c	killer cell lectin-like receptor subfamily B member 1C	6		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:113553 	
+MGI:2442965	Klrb1f	killer cell lectin-like receptor subfamily B member 1F	6		cell surface			IDA		J:100657 	
+MGI:1336161	Klrc1	killer cell lectin-like receptor subfamily C, member 1	6		external side of plasma membrane			IDA		J:87433 J:197348 	
+MGI:1336162	Klrc2	killer cell lectin-like receptor subfamily C, member 2	6		external side of plasma membrane			IDA		J:87433 	
+MGI:1929720	Klrc3	killer cell lectin-like receptor subfamily C, member 3	6		external side of plasma membrane			IDA		J:87433 	
+MGI:1196275	Klrd1	killer cell lectin-like receptor, subfamily D, member 1	6		external side of plasma membrane	is a part of natural killer cell		IDA		J:87433 	
+MGI:1196275	Klrd1	killer cell lectin-like receptor, subfamily D, member 1	6		external side of plasma membrane	is a part of T cell		IDA		J:113553 	
+MGI:2662547	Klre1	killer cell lectin-like receptor family E member 1	6		cell surface			ISO	RGD:727903 	J:155856 	
+MGI:2662547	Klre1	killer cell lectin-like receptor family E member 1	6		external side of plasma membrane	is a part of natural killer cell		IDA		J:87433 	
+MGI:1196250	Klrk1	killer cell lectin-like receptor subfamily K, member 1	6		cell surface		PR:O54709-1	IDA		J:219772 	
+MGI:1196250	Klrk1	killer cell lectin-like receptor subfamily K, member 1	6		cell surface		PR:O54709-2	IDA		J:219772 	
+MGI:1196250	Klrk1	killer cell lectin-like receptor subfamily K, member 1	6		cell surface			IDA		J:92687 	
+MGI:1196250	Klrk1	killer cell lectin-like receptor subfamily K, member 1	6		cell surface	is a part of T cell		IDA		J:88981 	
+MGI:1196250	Klrk1	killer cell lectin-like receptor subfamily K, member 1	6		cell surface			ISO	RGD:3180 	J:155856 	
+MGI:1196250	Klrk1	killer cell lectin-like receptor subfamily K, member 1	6		external side of plasma membrane	is a part of T cell		IDA		J:113553 	
+MGI:1196250	Klrk1	killer cell lectin-like receptor subfamily K, member 1	6		external side of plasma membrane			IDA		J:82077 J:87433 J:197348 	
+MGI:1196250	Klrk1	killer cell lectin-like receptor subfamily K, member 1	6		external side of plasma membrane	is a part of macrophage		IDA		J:88001 	
+MGI:96701	Krt4	keratin 4	15		cell surface			ISO	P19013 	J:164563 	
+MGI:96721	L1cam	L1 cell adhesion molecule	X		cell surface			IDA		J:88274 	
+MGI:96721	L1cam	L1 cell adhesion molecule	X		cell surface			ISO	RGD:619777 	J:155856 	
+MGI:96721	L1cam	L1 cell adhesion molecule	X		cell surface			ISO	P32004 	J:164563 	
+MGI:96721	L1cam	L1 cell adhesion molecule	X		external side of plasma membrane	is a part of granule cell|is a part of neuroblast		IDA		J:26606 	
+MGI:96721	L1cam	L1 cell adhesion molecule	X		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:17350 	
+MGI:106588	Lag3	lymphocyte-activation gene 3	6		external side of plasma membrane	is a part of T cell		IDA		J:80063 	
+MGI:106588	Lag3	lymphocyte-activation gene 3	6		external side of plasma membrane	is a part of natural killer cell		IDA		J:32509 	
+MGI:96745	Lamp1	lysosomal-associated membrane protein 1	8		cell surface			IDA		J:143680 	
+MGI:96745	Lamp1	lysosomal-associated membrane protein 1	8		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:113553 	
+MGI:1098776	Lbp	lipopolysaccharide binding protein	2		cell surface			IDA		J:139341 	
+MGI:1098776	Lbp	lipopolysaccharide binding protein	2		cell surface			ISO	P18428 	J:164563 	
+MGI:96765	Ldlr	low density lipoprotein receptor	9		cell surface	is a part of adrenal cortex		IDA		J:189694 	
+MGI:96765	Ldlr	low density lipoprotein receptor	9		cell surface			IDA		J:236595 	
+MGI:96765	Ldlr	low density lipoprotein receptor	9		cell surface			ISO	P01130 	J:164563 	
+MGI:96765	Ldlr	low density lipoprotein receptor	9		external side of plasma membrane			ISO	P01130 	J:164563 	
+MGI:96777	Lgals1	lectin, galactose binding, soluble 1	15		cell surface			ISO	RGD:69355 	J:155856 	
+MGI:96778	Lgals3	lectin, galactose binding, soluble 3	14		cell surface			IDA		J:219172 	
+MGI:96778	Lgals3	lectin, galactose binding, soluble 3	14		cell surface			ISO	RGD:69356 	J:155856 	
+MGI:96778	Lgals3	lectin, galactose binding, soluble 3	14		external side of plasma membrane			IDA		J:194920 	
+MGI:96783	Lhcgr	luteinizing hormone/choriogonadotropin receptor	17		intrinsic component of external side of plasma membrane			ISO	RGD:3007 	J:155856 	
+MGI:96216	Lipc	lipase, hepatic	9		cell surface			ISO	RGD:3009 	J:155856 	
+MGI:1341803	Lipg	lipase, endothelial	18		cell surface			ISO	Q9Y5X9 	J:203527 	
+MGI:1914140	Lman2	lectin, mannose-binding 2	13		cell surface			ISO	Q12907 	J:164563 	
+MGI:1353586	Lmo7	LIM domain only 7	14		cell surface			ISO	Q8WWI1 	J:164563 	
+MGI:108429	Lpar1	lysophosphatidic acid receptor 1	4		cell surface			ISO	Q92633 	J:164563 	
+MGI:1858422	Lpar2	lysophosphatidic acid receptor 2	8		cell surface			ISO	Q9HBW0 	J:164563 	
+MGI:96820	Lpl	lipoprotein lipase	8		cell surface			IDA		J:162997 	
+MGI:2136810	Lrfn1	leucine rich repeat and fibronectin type III domain containing 1	7		cell surface			IDA		J:112964 	
+MGI:1917780	Lrfn2	leucine rich repeat and fibronectin type III domain containing 2	17		cell surface			IDA		J:112964 	
+MGI:2442512	Lrfn3	leucine rich repeat and fibronectin type III domain containing 3	7		cell surface			IDA		J:112964 	
+MGI:2385612	Lrfn4	leucine rich repeat and fibronectin type III domain containing 4	19		cell surface			IDA		J:112964 	
+MGI:2144814	Lrfn5	leucine rich repeat and fibronectin type III domain containing 5	12		cell surface			IDA		J:112964 	
+MGI:95794	Lrp2	low density lipoprotein receptor-related protein 2	2		cell surface			ISO	RGD:68407 	J:155856 	
+MGI:95794	Lrp2	low density lipoprotein receptor-related protein 2	2		external side of plasma membrane			IDA		J:115189 J:243398 	
+MGI:2442252	Lrp4	low density lipoprotein receptor-related protein 4	2		cell surface			ISO	O75096 	J:164563 	
+MGI:2442252	Lrp4	low density lipoprotein receptor-related protein 4	2		cell surface			ISO	RGD:619731 	J:155856 	
+MGI:1298218	Lrp6	low density lipoprotein receptor-related protein 6	6		cell surface			IBA	PTN000056284 	J:161428 	
+MGI:1298218	Lrp6	low density lipoprotein receptor-related protein 6	6		cell surface			ISO	O75581 	J:164563 	
+MGI:2652847	Lrrc8a	leucine rich repeat containing 8A	2		cell surface			ISO	Q8IWT6 	J:73065 	
+MGI:96837	Ltf	lactotransferrin	9		cell surface			ISO	P02788 	J:164563 	
+MGI:107527	Ly6a	lymphocyte antigen 6 complex, locus A	15		external side of plasma membrane	is a part of stem cell		IDA		J:145577 	
+MGI:107527	Ly6a	lymphocyte antigen 6 complex, locus A	15		external side of plasma membrane			IDA		J:84890 J:132871 J:158532 J:174203 J:174697 	
+MGI:107527	Ly6a	lymphocyte antigen 6 complex, locus A	15		external side of plasma membrane	is a part of hematopoietic stem cell		IDA		J:129497 J:163607 	
+MGI:96882	Ly6c1	lymphocyte antigen 6 complex, locus C1	15		cell surface			IDA		J:191745 	
+MGI:96882	Ly6c1	lymphocyte antigen 6 complex, locus C1	15		external side of plasma membrane			IDA		J:86758 	
+MGI:3712069	Ly6c2	lymphocyte antigen 6 complex, locus C2	15		cell surface			IDA		J:191745 	
+MGI:96881	Ly6d	lymphocyte antigen 6 complex, locus D	15		cell surface			IDA		J:154864 	
+MGI:109440	Ly6g	lymphocyte antigen 6 complex, locus G	15		external side of plasma membrane			IDA		J:31364 J:86758 J:89320 J:97945 J:103896 J:141377 J:148788 	
+MGI:109440	Ly6g	lymphocyte antigen 6 complex, locus G	15		external side of plasma membrane	is a part of blood,is a part of blood cell		IDA		J:63425 	
+MGI:109440	Ly6g	lymphocyte antigen 6 complex, locus G	15		external side of plasma membrane	is a part of granulocyte		IDA		J:53400 	
+MGI:109440	Ly6g	lymphocyte antigen 6 complex, locus G	15		external side of plasma membrane	is a part of myeloid cell		IDA		J:163607 	
+MGI:2385809	Ly6g5b	lymphocyte antigen 6 complex, locus G5B	17	colocalizes_with	external side of plasma membrane			IDA		J:242473 	
+MGI:2385809	Ly6g5b	lymphocyte antigen 6 complex, locus G5B	17	colocalizes_with	external side of plasma membrane			ISO	Q8NDX9 	J:164563 	
+MGI:2148974	Ly6g5c	lymphocyte antigen 6 complex, locus G5C	17	colocalizes_with	external side of plasma membrane			IDA		J:242473 	
+MGI:2148974	Ly6g5c	lymphocyte antigen 6 complex, locus G5C	17	colocalizes_with	external side of plasma membrane			ISO	Q5SRR4 	J:164563 	
+MGI:2148930	Ly6g6c	lymphocyte antigen 6 complex, locus G6C	17	colocalizes_with	external side of plasma membrane			IDA		J:242473 	
+MGI:2148930	Ly6g6c	lymphocyte antigen 6 complex, locus G6C	17	colocalizes_with	external side of plasma membrane			ISO	O95867 	J:164563 	
+MGI:2148931	Ly6g6d	lymphocyte antigen 6 complex, locus G6D	17	colocalizes_with	external side of plasma membrane			IDA		J:242473 	
+MGI:2148931	Ly6g6d	lymphocyte antigen 6 complex, locus G6D	17	colocalizes_with	external side of plasma membrane			ISO	O95868 	J:164563 	
+MGI:1923736	Ly6k	lymphocyte antigen 6 complex, locus K	15		cell surface	is a part of male germ cell		IDA		J:208748 	
+MGI:1923736	Ly6k	lymphocyte antigen 6 complex, locus K	15		cell surface	is a part of plasma cell		IDA		J:134505 	
+MGI:96885	Ly9	lymphocyte antigen 9	1		cell surface			IDA		J:2074 	
+MGI:106662	Ly75	lymphocyte antigen 75	2		external side of plasma membrane	is a part of leukocyte		IDA		J:163829 	
+MGI:106662	Ly75	lymphocyte antigen 75	2		external side of plasma membrane	is a part of plasmacytoid dendritic cell		IDA		J:59927 	
+MGI:106910	Ly76	lymphocyte antigen 76	UN		cell surface			IDA		J:43157 	
+MGI:106910	Ly76	lymphocyte antigen 76	UN		external side of plasma membrane	is a part of liver,is a part of blood cell|is a part of blood,is a part of blood cell		IDA		J:63425 	
+MGI:106910	Ly76	lymphocyte antigen 76	UN		external side of plasma membrane	is a part of erythrocyte		IDA		J:53400 J:89319 J:89320 	
+MGI:106910	Ly76	lymphocyte antigen 76	UN		external side of plasma membrane			IDA		J:31364 J:84890 J:97945 J:103896 J:132871 J:160232 J:163754 J:202604 	
+MGI:1346876	Map3k5	mitogen-activated protein kinase kinase kinase 5	10		external side of plasma membrane			ISO	RGD:1306565 	J:155856 	
+MGI:96918	Mas1	MAS1 oncogene	17		cell surface			ISO	RGD:3049 	J:155856 	
+MGI:1933966	Mcam	melanoma cell adhesion molecule	9		external side of plasma membrane			ISO	P43121 	J:164563 	
+MGI:1353421	Meltf	melanotransferrin	16		cell surface			ISO	P08582 	J:164563 	
+MGI:102768	Mfge8	milk fat globule-EGF factor 8 protein	7		external side of plasma membrane			IDA		J:86691 	
+MGI:96982	Mif	macrophage migration inhibitory factor (glycosylation-inhibiting factor)	10		cell surface			ISO	P14174 	J:164563 	
+MGI:2179988	Mill1	MHC I like leukocyte 1	7		anchored component of external side of plasma membrane			IDA		J:139545 	
+MGI:2179989	Mill2	MHC I like leukocyte 2	7		anchored component of external side of plasma membrane			IDA		J:139545 	
+MGI:103189	Mmp7	matrix metallopeptidase 7	9		cell surface			ISO	RGD:3100 	J:155856 	
+MGI:2443938	Mmp25	matrix metallopeptidase 25	17		cell surface			ISO	AJ239053 	J:73065 	
+MGI:97435	Mog	myelin oligodendrocyte glycoprotein	17		cell surface			ISO	RGD:3102 	J:155856 	
+MGI:97076	Mpl	myeloproliferative leukemia virus oncogene	4		cell surface			ISO	RGD:1311069 	J:155856 	
+MGI:97076	Mpl	myeloproliferative leukemia virus oncogene	4		cell surface			ISO	P40238 	J:164563 	
+MGI:97142	Mrc1	mannose receptor, C type 1	2		cell surface			IDA		J:3309 	
+MGI:107818	Mrc2	mannose receptor, C type 2	11		cell surface			ISO	AF107292 	J:60177 	
+MGI:88321	Ms4a1	membrane-spanning 4-domains, subfamily A, member 1	19		external side of plasma membrane	is a part of T cell		IDA		J:152384 	
+MGI:95495	Ms4a2	membrane-spanning 4-domains, subfamily A, member 2	19		external side of plasma membrane	is a part of mast cell		IDA		J:88051 	
+MGI:95495	Ms4a2	membrane-spanning 4-domains, subfamily A, member 2	19		external side of plasma membrane			IDA		J:31359 	
+MGI:1888992	Msln	mesothelin	17		cell surface			IBA	PTN001517636 	J:161428 	
+MGI:1888992	Msln	mesothelin	17		cell surface			ISO	RGD:69333 	J:155856 	
+MGI:3607710	Mslnl	mesothelin-like	17		cell surface			IBA	PTN001517636 	J:161428 	
+MGI:97167	Msn	moesin	X		cell surface			ISO	RGD:621260 	J:155856 	
+MGI:97167	Msn	moesin	X		cell surface			ISO	P26038 	J:164563 	
+MGI:97231	Muc1	mucin 1, transmembrane	3		cell surface	is a part of mammary gland epithelium		IDA		J:1888 	
+MGI:1920982	Muc16	mucin 16	9		external side of plasma membrane	is a part of ovary,is a part of epithelial cell		IDA		J:141839 	
+MGI:103581	Musk	muscle, skeletal, receptor tyrosine kinase	4		external side of plasma membrane			ISO	RGD:3211 	J:155856 	
+MGI:1922011	Mxra8	matrix-remodelling associated 8	4		cell surface	is a part of astrocyte end-foot		IDA		J:207078 	
+MGI:97281	Ncam1	neural cell adhesion molecule 1	9		cell surface			ISO	P13591 	J:164563 	
+MGI:97281	Ncam1	neural cell adhesion molecule 1	9		external side of plasma membrane			IDA		J:145327 J:174203 	
+MGI:97281	Ncam1	neural cell adhesion molecule 1	9		external side of plasma membrane	is a part of granule cell|is a part of neuroblast		IDA		J:26606 	
+MGI:97281	Ncam1	neural cell adhesion molecule 1	9		external side of plasma membrane			ISO	P13591 	J:145327 	
+MGI:97286	Ncl	nucleolin	1		cell surface			ISO	RGD:3153 	J:155856 	
+MGI:1336212	Ncr1	natural cytotoxicity triggering receptor 1	7		cell surface			IDA		J:164687 	
+MGI:102570	Ndp	Norrie disease (pseudoglioma) (human)	X		cell surface			ISO	Q00604 	J:164563 	
+MGI:97822	Nectin2	nectin cell adhesion molecule 2	7		cell surface			ISO	Q92692 	J:164563 	
+MGI:1097159	Neo1	neogenin	9		cell surface			IDA		J:227692 	
+MGI:97305	Neu1	neuraminidase 1	17		cell surface			ISO	RGD:3163 	J:155856 	
+MGI:1921289	Nfam1	Nfat activating molecule with ITAM motif 1	15		cell surface			IDA		J:90684 	
+MGI:97323	Ngfr	nerve growth factor receptor (TNFR superfamily, member 16)	11		cell surface			IDA		J:52794 	
+MGI:97323	Ngfr	nerve growth factor receptor (TNFR superfamily, member 16)	11		external side of plasma membrane			ISO	RGD:3177 	J:155856 	
+MGI:1298229	Nid2	nidogen 2	14		cell surface			ISO	RGD:1311685 	J:155856 	
+MGI:2179435	Nlgn1	neuroligin 1	3		cell surface			IDA		J:201692 J:243525 	
+MGI:2179435	Nlgn1	neuroligin 1	3		cell surface			ISO	RGD:621117 	J:155856 	
+MGI:2179435	Nlgn1	neuroligin 1	3		external side of plasma membrane			IDA		J:161514 	
+MGI:2681835	Nlgn2	neuroligin 2	11		cell surface			IBA	PTN000168538 	J:161428 	
+MGI:2681835	Nlgn2	neuroligin 2	11		cell surface			ISO	RGD:621118 	J:155856 	
+MGI:2444609	Nlgn3	neuroligin 3	X		cell surface			IBA	PTN000168538 	J:161428 	
+MGI:2444609	Nlgn3	neuroligin 3	X		cell surface			ISO	RGD:621119 	J:155856 	
+MGI:2444609	Nlgn3	neuroligin 3	X		cell surface			ISO	Q9NZ94 	J:164563 	
+MGI:3775191	Nlgn4l	neuroligin 4-like	UN		cell surface			IBA	PTN000168538 	J:161428 	
+MGI:2429397	Nod2	nucleotide-binding oligomerization domain containing 2	8		cell surface			ISO	Q9HC29 	J:164563 	
+MGI:97363	Notch1	notch 1	2		cell surface			IDA		J:97329 	
+MGI:97364	Notch2	notch 2	3		cell surface			ISO	Q04721 	J:164563 	
+MGI:107471	Notch4	notch 4	17		cell surface			ISO	Q99466 	J:164563 	
+MGI:96083	Nrg1	neuregulin 1	8		external side of plasma membrane	is a part of muscle cell	PR:Q6DR98	IDA		J:109116 	
+MGI:106206	Nrp1	neuropilin 1	8		cell surface			ISO	RGD:621588 	J:155856 	
+MGI:1096391	Nrxn1	neurexin I	17		cell surface			IDA		J:175147 J:175310 	
+MGI:1096391	Nrxn1	neurexin I	17		cell surface			ISO	RGD:628659 	J:155856 	
+MGI:1096391	Nrxn1	neurexin I	17		cell surface			ISO	Q9ULB1 	J:164563 	
+MGI:99782	Nt5e	5' nucleotidase, ecto	9		cell surface			ISO	RGD:61956 	J:155856 	
+MGI:2446259	Ntm	neurotrimin	9		cell surface			ISO	RGD:620958 	J:155856 	
+MGI:97383	Ntrk1	neurotrophic tyrosine kinase, receptor, type 1	3		cell surface			IDA		J:210609 	
+MGI:97383	Ntrk1	neurotrophic tyrosine kinase, receptor, type 1	3		cell surface			ISO	P35739 	J:145554 	
+MGI:97383	Ntrk1	neurotrophic tyrosine kinase, receptor, type 1	3		cell surface			ISO	RGD:620144 	J:155856 	
+MGI:97384	Ntrk2	neurotrophic tyrosine kinase, receptor, type 2	13		cell surface			ISO	RGD:3213 	J:155856 	
+MGI:97386	Ntsr1	neurotensin receptor 1	2		cell surface			ISO	RGD:1306076 	J:155856 	
+MGI:108018	Ntsr2	neurotensin receptor 2	12		cell surface			ISO	RGD:70962 	J:155856 	
+MGI:106183	Ocln	occludin	13		cell surface			ISO	Q28269 	J:81857 	
+MGI:99880	Ofa	oncofetal antigen	UN		cell surface			IDA		J:18679 	
+MGI:2179720	Oscar	osteoclast associated receptor	7		cell surface			IDA		J:113761 	
+MGI:2179720	Oscar	osteoclast associated receptor	7		cell surface	is a part of osteoclast		IDA		J:76221 	
+MGI:1330819	Osmr	oncostatin M receptor	15		external side of plasma membrane			IDA		J:172699 	
+MGI:2149209	Otoa	otoancorin	7		cell surface			IBA	PTN001517636 	J:161428 	
+MGI:1098235	P2rx1	purinergic receptor P2X, ligand-gated ion channel, 1	11		external side of plasma membrane	is a part of bladder,is a part of smooth muscle cell		IDA		J:102580 	
+MGI:2665170	P2rx2	purinergic receptor P2X, ligand-gated ion channel, 2	5		cell surface			ISO	RGD:620251 	J:155856 	
+MGI:1339957	P2rx7	purinergic receptor P2X, ligand-gated ion channel, 7	5		external side of plasma membrane	is a part of T cell		IDA		J:118682 	
+MGI:1918089	P2ry12	purinergic receptor P2Y, G-protein coupled 12	3		external side of plasma membrane			ISO	RGD:621681 	J:155856 	
+MGI:97464	P4hb	prolyl 4-hydroxylase, beta polypeptide	11		external side of plasma membrane	is a part of T-helper 2 cell		IDA		J:173540 	
+MGI:97464	P4hb	prolyl 4-hydroxylase, beta polypeptide	11		external side of plasma membrane			ISO	P07237 	J:164563 	
+MGI:97475	Pam	peptidylglycine alpha-amidating monooxygenase	1		cell surface			ISO	RGD:3252 	J:155856 	
+MGI:102897	Pcsk6	proprotein convertase subtilisin/kexin type 6	7		cell surface			ISO	P29122 	J:164563 	
+MGI:2140260	Pcsk9	proprotein convertase subtilisin/kexin type 9	4		cell surface			ISO	Q8NBP7 	J:164563 	
+MGI:104879	Pdcd1	programmed cell death 1	1		external side of plasma membrane	happens in T cell		IDA		J:196136 	
+MGI:104879	Pdcd1	programmed cell death 1	1		external side of plasma membrane			IDA		J:94873 	
+MGI:97527	Pdgfa	platelet derived growth factor, alpha	5		cell surface			ISO	P04085 	J:164563 	
+MGI:97528	Pdgfb	platelet derived growth factor, B polypeptide	15		cell surface			ISO	P01127 	J:164563 	
+MGI:1859631	Pdgfc	platelet-derived growth factor, C polypeptide	3		cell surface			ISO	Q9NRA1 	J:164563 	
+MGI:97530	Pdgfra	platelet derived growth factor receptor, alpha polypeptide	5		cell surface			IDA		J:190263 	
+MGI:97530	Pdgfra	platelet derived growth factor receptor, alpha polypeptide	5		external side of plasma membrane			IDA		J:185712 	
+MGI:97531	Pdgfrb	platelet derived growth factor receptor, beta polypeptide	18		cell surface			IDA		J:202604 	
+MGI:97531	Pdgfrb	platelet derived growth factor receptor, beta polypeptide	18		cell surface			ISO	RGD:3285 	J:155856 	
+MGI:95834	Pdia3	protein disulfide isomerase associated 3	2		cell surface	is a part of platelet		IDA		J:182119 	
+MGI:95834	Pdia3	protein disulfide isomerase associated 3	2		cell surface			ISO	RGD:68430 	J:155856 	
+MGI:95834	Pdia3	protein disulfide isomerase associated 3	2		cell surface			ISO	P30101 	J:73065 	
+MGI:104864	Pdia4	protein disulfide isomerase associated 4	6		cell surface			IDA		J:182119 	
+MGI:104864	Pdia4	protein disulfide isomerase associated 4	6		cell surface			ISO	P13667 	J:73065 	
+MGI:103098	Pdpn	podoplanin	4		external side of plasma membrane	is a part of lymph node		IDA		J:196984 	
+MGI:1344408	Pebp1	phosphatidylethanolamine binding protein 1	5		cell surface	is a part of sperm		IDA		J:101321 	
+MGI:1344408	Pebp1	phosphatidylethanolamine binding protein 1	5		cell surface			ISO	RGD:62017 	J:155856 	
+MGI:97537	Pecam1	platelet/endothelial cell adhesion molecule 1	11		cell surface			ISO	RGD:61927 	J:155856 	
+MGI:97537	Pecam1	platelet/endothelial cell adhesion molecule 1	11		external side of plasma membrane			IDA		J:132871 J:162997 J:174203 J:206413 	
+MGI:97572	Phb	prohibitin	11		cell surface	is a part of spleen,is a part of CD8-positive, alpha-beta T cell|is a part of spleen,is a part of CD4-positive, alpha-beta T cell		IDA		J:219621 	
+MGI:97572	Phb	prohibitin	11		cell surface			ISO	P35232 	J:164563 	
+MGI:102520	Phb2	prohibitin 2	6		cell surface	is a part of spleen,is a part of CD8-positive, alpha-beta T cell|is a part of spleen,is a part of CD4-positive, alpha-beta T cell		IDA		J:219621 	
+MGI:102520	Phb2	prohibitin 2	6		cell surface			ISO	Q99623 	J:164563 	
+MGI:104521	Phxr5	per-hexamer repeat gene 5	7		cell surface			IBA	PTN001171321 	J:161428 	
+MGI:2385902	Picalm	phosphatidylinositol binding clathrin assembly protein	7		cell surface			ISO	Q13492 	J:164563 	
+MGI:97603	Pkd1	polycystin 1, transient receptor poteintial channel interacting	17		cell surface			IDA		J:214729 	
+MGI:2664670	Pkd1l3	polycystic kidney disease 1 like 3	8	colocalizes_with	cell surface			IDA		J:182388 	
+MGI:1352448	Pkd2l1	polycystic kidney disease 2-like 1	19	colocalizes_with	cell surface			IDA		J:182388 	
+MGI:101842	Pla2g1b	phospholipase A2, group IB, pancreas	5		cell surface			ISO	P04054 	J:164563 	
+MGI:101842	Pla2g1b	phospholipase A2, group IB, pancreas	5		cell surface			ISO	RGD:61949 	J:155856 	
+MGI:101899	Pla2g5	phospholipase A2, group V	4		cell surface			IDA		J:37112 	
+MGI:102468	Pla2r1	phospholipase A2 receptor 1	2		cell surface			ISO	Q13018 	J:164563 	
+MGI:97610	Plat	plasminogen activator, tissue	8		cell surface			ISO	P00750 	J:164563 	
+MGI:97611	Plau	plasminogen activator, urokinase	14		cell surface			ISO	P00749 	J:164563 	
+MGI:97612	Plaur	plasminogen activator, urokinase receptor	7		cell surface			ISO	Q03405 	J:164563 	
+MGI:1923759	Plet1	placenta expressed transcript 1	9		external side of plasma membrane			IDA		J:177992 	
+MGI:97620	Plg	plasminogen	17		cell surface			ISO	P00747 	J:164563 	
+MGI:97620	Plg	plasminogen	17		extrinsic component of external side of plasma membrane			ISO	P00747 	J:164563 	
+MGI:106530	Plppr4	phospholipid phosphatase related 4	3		external side of plasma membrane			ISO	RGD:727806 	J:155856 	
+MGI:1890497	Plvap	plasmalemma vesicle associated protein	8		cell surface			ISO	Q9BX97 	J:164563 	
+MGI:2154240	Plxnb3	plexin B3	X		cell surface			ISO	Q9ULL4 	J:164563 	
+MGI:97763	Prlr	prolactin receptor	15		cell surface			ISO	P16471 	J:164563 	
+MGI:97767	Prn	prion protein readthrough transcript	2		anchored component of external side of plasma membrane			ISO	Q9UKY0 	J:164563 	
+MGI:1346999	Prnd	prion like protein doppel	2		anchored component of external side of plasma membrane			IDA		J:64416 	
+MGI:1346999	Prnd	prion like protein doppel	2		anchored component of external side of plasma membrane			ISO	Q9UKY0 	J:164563 	
+MGI:97769	Prnp	prion protein	2		cell surface			IDA		J:102391 	
+MGI:97769	Prnp	prion protein	2		cell surface			ISO	P04156 	J:164563 	
+MGI:1100886	Prom1	prominin 1	5		cell surface		UniProtKB:Q8BH12	IDA		J:92183 	
+MGI:1100886	Prom1	prominin 1	5		cell surface			ISO	O43490 	J:164563 	
+MGI:2138997	Prom2	prominin 2	2		cell surface	is a part of apical plasma membrane,is a part of epithelial cell|is a part of basolateral plasma membrane,is a part of epithelial cell		IDA		J:168820 	
+MGI:2138997	Prom2	prominin 2	2		cell surface			ISO	RGD:621435 	J:155856 	
+MGI:1202717	Psen1	presenilin 1	12		cell surface			IBA	PTN000024431 	J:161428 	
+MGI:1202717	Psen1	presenilin 1	12		cell surface			ISO	RGD:3425 	J:155856 	
+MGI:109284	Psen2	presenilin 2	1		cell surface			IBA	PTN000024431 	J:161428 	
+MGI:1347249	Psg16	pregnancy specific glycoprotein 16	7		cell surface			IDA		J:30292 	
+MGI:97795	Ptger3	prostaglandin E receptor 3 (subtype EP3)	3		cell surface			ISO	RGD:3435 	J:155856 	
+MGI:97804	Ptn	pleiotrophin	6		cell surface			ISO	RGD:3444 	J:155856 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		cell surface	is a part of thymocyte		IDA		J:94701 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		cell surface			ISO	P08575 	J:164563 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		cell surface			ISO	RGD:3451 	J:155856 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of myeloid lineage restricted progenitor cell		IDA		J:19636 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of bone marrow		IDA		J:97945 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of hematopoietic stem cell		IDA		J:163607 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of spleen,is a part of B cell		IDA		J:27768 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of leukocyte		IDA		J:163829 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of femur		IDA		J:99189 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of bone marrow,is a part of B cell|is a part of spleen,is a part of B cell|is a part of peritoneal cavity,is a part of B cell		IDA		J:29797 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of T cell		IDA		J:25537 J:39981 J:41170 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of T cell		IDA		J:5707 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of B cell|is a part of myeloid dendritic cell	PR:P06800-1	IDA		J:30241 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of B cell		IDA		J:7488 J:19437 J:91914 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of liver,is a part of B cell		IDA		J:31364 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of bone marrow,is a part of myeloid cell		IDA		J:97996 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of myeloid cell		IDA		J:163607 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of bone marrow,is a part of B cell		IDA		J:29796 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of blood,is a part of blood cell		IDA		J:63425 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane			IDA		J:14194 J:31133 J:70681 J:84599 J:84890 J:86758 J:89320 J:89706 J:98417 J:103896 J:127719 J:132871 J:139262 J:141184 J:141377 J:143981 J:155686 J:155898 J:157744 J:172134 J:173338 J:202604 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane	is a part of lymphocyte		IDA		J:33466 J:125784 	
+MGI:97810	Ptprc	protein tyrosine phosphatase, receptor type, C	1		external side of plasma membrane			ISO	P08575 	J:145327 	
+MGI:104574	Ptprj	protein tyrosine phosphatase, receptor type, J	2		cell surface			ISO	Q12913 	J:164563 	
+MGI:103310	Ptprk	protein tyrosine phosphatase, receptor type, K	10		cell surface			ISO	Q15262 	J:164563 	
+MGI:1321152	Ptprt	protein tyrosine phosphatase, receptor type, T	2		cell surface			ISO	O14522 	J:164563 	
+MGI:107741	Pvr	poliovirus receptor	7		cell surface			IDA		J:238221 	
+MGI:109432	Raet1b	retinoic acid early transcript beta	10		anchored component of external side of plasma membrane	is a part of T cell		IDA		J:82077 	
+MGI:109432	Raet1b	retinoic acid early transcript beta	10		external side of plasma membrane			IDA		J:165941 	
+MGI:109431	Raet1c	retinoic acid early transcript gamma	10		external side of plasma membrane			IDA		J:165941 	
+MGI:1861032	Raet1d	retinoic acid early transcript delta	10		external side of plasma membrane			IDA		J:165941 	
+MGI:1927243	Rala	v-ral simian leukemia viral oncogene A (ras related)	13		cell surface			ISO	P11233 	J:164563 	
+MGI:1858418	Ramp1	receptor (calcitonin) activity modifying protein 1	1		cell surface			ISO	O60894 	J:164563 	
+MGI:1859650	Ramp2	receptor (calcitonin) activity modifying protein 2	11		cell surface			ISO	O60895 	J:164563 	
+MGI:1860292	Ramp3	receptor (calcitonin) activity modifying protein 3	11		cell surface			ISO	O60896 	J:164563 	
+MGI:2442789	Rc3h2	ring finger and CCCH-type zinc finger domains 2	2		cell surface			ISO	Q9HBD1 	J:164563 	
+MGI:1915080	Rer1	retention in endoplasmic reticulum sorting receptor 1	4		cell surface			IDA		J:169417 	
+MGI:2679262	Rgma	repulsive guidance molecule family member A	7		cell surface			IDA		J:87768 	
+MGI:2384902	Rnpep	arginyl aminopeptidase (aminopeptidase B)	1		external side of plasma membrane			ISO	RGD:621137 	J:155856 	
+MGI:1274781	Robo1	roundabout guidance receptor 1	16		cell surface			ISO	Q9Y6N7 	J:164563 	
+MGI:1890110	Robo2	roundabout guidance receptor 2	16		cell surface			ISO	Q9HCK4 	J:164563 	
+MGI:1921394	Robo4	roundabout guidance receptor 4	9		external side of plasma membrane			IDA		J:85367 	
+MGI:1347520	Ror1	receptor tyrosine kinase-like orphan receptor 1	4		cell surface			ISO	RGD:1559469 	J:155856 	
+MGI:1347521	Ror2	receptor tyrosine kinase-like orphan receptor 2	13		cell surface			ISO	RGD:1305275 	J:155856 	
+MGI:104856	Rorc	RAR-related orphan receptor gamma	3		external side of plasma membrane			IDA		J:190936 	
+MGI:97999	Ros1	Ros1 proto-oncogene	10		cell surface			IDA		J:21839 	
+MGI:1270849	Rps6kb1	ribosomal protein S6 kinase, polypeptide 1	11		cell surface			ISO	RGD:620683 	J:155856 	
+MGI:1922667	Rspo2	R-spondin 2	15		cell surface			IDA		J:131960 	
+MGI:2136886	Rtn4r	reticulon 4 receptor	16		anchored component of external side of plasma membrane			ISO	Q9BZR6 	J:164563 	
+MGI:2136886	Rtn4r	reticulon 4 receptor	16		cell surface			IDA		J:182292 	
+MGI:2136886	Rtn4r	reticulon 4 receptor	16		cell surface			ISO	Q9BZR6 	J:164563 	
+MGI:2136886	Rtn4r	reticulon 4 receptor	16		cell surface			ISO	RGD:620810 	J:155856 	
+MGI:2661375	Rtn4rl1	reticulon 4 receptor-like 1	11		cell surface			ISO	Q86UN2 	J:164563 	
+MGI:2661375	Rtn4rl1	reticulon 4 receptor-like 1	11		cell surface			ISO	RGD:727812 	J:155856 	
+MGI:2661375	Rtn4rl1	reticulon 4 receptor-like 1	11		external side of plasma membrane			ISO	RGD:727812 	J:155856 	
+MGI:2669796	Rtn4rl2	reticulon 4 receptor-like 2	2		cell surface			ISO	Q86UN3 	J:164563 	
+MGI:2669796	Rtn4rl2	reticulon 4 receptor-like 2	2		cell surface			ISO	RGD:727797 	J:155856 	
+MGI:2669796	Rtn4rl2	reticulon 4 receptor-like 2	2		external side of plasma membrane			ISO	RGD:727797 	J:155856 	
+MGI:2685450	Rtp1	receptor transporter protein 1	16		cell surface			IBA	PTN000373591 	J:161428 	
+MGI:2685450	Rtp1	receptor transporter protein 1	16		cell surface			ISO	P59025 	J:164563 	
+MGI:2685451	Rtp2	receptor transporter protein 2	16		cell surface			IBA	PTN000373591 	J:161428 	
+MGI:2685451	Rtp2	receptor transporter protein 2	16		cell surface			ISO	Q5QGT7 	J:164563 	
+MGI:2446841	Rtp3	receptor transporter protein 3	9		cell surface			IBA	PTN000373591 	J:161428 	
+MGI:1915025	Rtp4	receptor transporter protein 4	16		cell surface			IBA	PTN000373591 	J:161428 	
+MGI:1096355	S1pr1	sphingosine-1-phosphate receptor 1	3		external side of plasma membrane	is a part of thymocyte		IMP	MGI:3818509 	J:141431 	
+MGI:1918395	Scara5	scavenger receptor class A, member 5	14		cell surface			IDA		J:144982 	
+MGI:893578	Scarb1	scavenger receptor class B, member 1	5		cell surface	is a part of bone marrow macrophage		IDA		J:220507 	
+MGI:893578	Scarb1	scavenger receptor class B, member 1	5		cell surface			ISO	RGD:2302 	J:155856 	
+MGI:98251	Scn5a	sodium channel, voltage-gated, type V, alpha	9		cell surface			IDA		J:127606 	
+MGI:98251	Scn5a	sodium channel, voltage-gated, type V, alpha	9		cell surface			ISO	Q14524 	J:164563 	
+MGI:101782	Scnn1a	sodium channel, nonvoltage-gated 1 alpha	6		external side of plasma membrane			IDA		J:126754 	
+MGI:104696	Scnn1b	sodium channel, nonvoltage-gated 1 beta	7		cell surface			ISO	RGD:3640 	J:155856 	
+MGI:104696	Scnn1b	sodium channel, nonvoltage-gated 1 beta	7		external side of plasma membrane			IDA		J:126754 	
+MGI:104695	Scnn1g	sodium channel, nonvoltage-gated 1 gamma	7		cell surface			ISO	RGD:3641 	J:155856 	
+MGI:104695	Scnn1g	sodium channel, nonvoltage-gated 1 gamma	7		external side of plasma membrane			IDA		J:126754 	
+MGI:1890616	Scube1	signal peptide, CUB domain, EGF-like 1	15		cell surface			IBA	PTN001171321 	J:161428 	
+MGI:1890616	Scube1	signal peptide, CUB domain, EGF-like 1	15		cell surface			ISO	Q8IWY4 	J:164563 	
+MGI:1890616	Scube1	signal peptide, CUB domain, EGF-like 1	15		external side of plasma membrane			ISO	Q8IWY4 	J:164563 	
+MGI:1928765	Scube2	signal peptide, CUB domain, EGF-like 2	7		cell surface			IBA	PTN001171321 	J:161428 	
+MGI:3045253	Scube3	signal peptide, CUB domain, EGF-like 3	17		cell surface			IBA	PTN001171321 	J:161428 	
+MGI:3045253	Scube3	signal peptide, CUB domain, EGF-like 3	17		cell surface			ISO	Q8IX30 	J:164563 	
+MGI:1349162	Sdc1	syndecan 1	12		cell surface			IDA		J:95191 	
+MGI:1349162	Sdc1	syndecan 1	12		cell surface			ISO	P18827 	J:164563 	
+MGI:1349162	Sdc1	syndecan 1	12		external side of plasma membrane			IDA		J:141184 	
+MGI:1349165	Sdc2	syndecan 2	15		cell surface			IBA	PTN000099415 	J:161428 	
+MGI:1349163	Sdc3	syndecan 3	4		cell surface			IBA	PTN000099415 	J:161428 	
+MGI:1349164	Sdc4	syndecan 4	2		cell surface			IDA		J:95191 	
+MGI:1349164	Sdc4	syndecan 4	2		cell surface			ISO	RGD:3650 	J:155856 	
+MGI:98279	Sell	selectin, lymphocyte	1		cell surface			IDA		J:200103 	
+MGI:98279	Sell	selectin, lymphocyte	1		cell surface			ISO	RGD:3655 	J:155856 	
+MGI:98279	Sell	selectin, lymphocyte	1		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:112602 	
+MGI:98279	Sell	selectin, lymphocyte	1		external side of plasma membrane	is a part of T cell		IDA		J:39981 J:53400 J:102496 J:116306 	
+MGI:98279	Sell	selectin, lymphocyte	1		external side of plasma membrane			IDA		J:86758 J:139262 	
+MGI:98279	Sell	selectin, lymphocyte	1		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:93953 J:113553 	
+MGI:98279	Sell	selectin, lymphocyte	1		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:118862 J:141392 	
+MGI:98279	Sell	selectin, lymphocyte	1		external side of plasma membrane	is a part of myeloid lineage restricted progenitor cell		IDA		J:19636 	
+MGI:98279	Sell	selectin, lymphocyte	1		external side of plasma membrane	is a part of thymocyte		IDA		J:141431 	
+MGI:98280	Selp	selectin, platelet	1		external side of plasma membrane	is a part of peritoneal cavity|is a part of heart|is a part of lung|is a part of spleen|is a part of brain		IDA		J:140680 	
+MGI:98280	Selp	selectin, platelet	1		external side of plasma membrane	happens in T cell		IDA		J:196136 	
+MGI:98280	Selp	selectin, platelet	1		external side of plasma membrane	is a part of neutrophil		IDA		J:149909 	
+MGI:98280	Selp	selectin, platelet	1		external side of plasma membrane	is a part of platelet		IDA		J:125139 	
+MGI:98280	Selp	selectin, platelet	1		external side of plasma membrane			ISO	P16109 	J:164563 	
+MGI:98280	Selp	selectin, platelet	1		external side of plasma membrane			ISO	RGD:3656 	J:155856 	
+MGI:1338032	Sema6c	sema domain, transmembrane domain (TM), and cytoplasmic domain, (semaphorin) 6C	3		cell surface			ISO	Q9H3T2 	J:164563 	
+MGI:2387661	Sema6d	sema domain, transmembrane domain (TM), and cytoplasmic domain, (semaphorin) 6D	2		cell surface			ISO	Q8NFY4 	J:164563 	
+MGI:1306826	Sema7a	sema domain, immunoglobulin domain (Ig), and GPI membrane anchor, (semaphorin) 7A	9		external side of plasma membrane			IDA		J:121431 	
+MGI:97298	Sept2	septin 2	1		cell surface	is a part of Bergmann glial cell		IDA		J:89770 	
+MGI:107817	Serpina5	serine (or cysteine) peptidase inhibitor, clade A, member 5	12		external side of plasma membrane			ISO	P05154 	J:164563 	
+MGI:101780	Serpine2	serine (or cysteine) peptidase inhibitor, clade E, member 2	1		extrinsic component of external side of plasma membrane			ISO	P07093 	J:164563 	
+MGI:107173	Serpinf2	serine (or cysteine) peptidase inhibitor, clade F, member 2	11		cell surface			ISO	P08697 	J:164563 	
+MGI:892014	Sfrp1	secreted frizzled-related protein 1	8		cell surface			ISO	Q8N474 	J:164563 	
+MGI:892010	Sfrp4	secreted frizzled-related protein 4	13		cell surface			ISO	Q6FHJ7 	J:164563 	
+MGI:98297	Shh	sonic hedgehog	5		cell surface			IDA		J:94269 	
+MGI:1932475	Siglece	sialic acid binding Ig-like lectin E	7		external side of plasma membrane	is a part of microglial cell		IDA		J:204167 	
+MGI:2443256	Siglech	sialic acid binding Ig-like lectin H	7		cell surface	is a part of plasmacytoid dendritic cell		IDA		J:132557 	
+MGI:1351314	Slamf1	signaling lymphocytic activation molecule family member 1	1		cell surface			IDA		J:232381 	
+MGI:1351314	Slamf1	signaling lymphocytic activation molecule family member 1	1		external side of plasma membrane	is a part of stem cell		IDA		J:145577 	
+MGI:1351314	Slamf1	signaling lymphocytic activation molecule family member 1	1		external side of plasma membrane	is a part of hematopoietic stem cell		IDA		J:163607 	
+MGI:1351314	Slamf1	signaling lymphocytic activation molecule family member 1	1		external side of plasma membrane			IDA		J:203580 J:224867 	
+MGI:1922595	Slamf7	SLAM family member 7	1		external side of plasma membrane			IDA		J:151768 	
+MGI:101931	Slc1a2	solute carrier family 1 (glial high affinity glutamate transporter), member 2	2		cell surface			ISO	P43004 	J:164563 	
+MGI:99917	Slc1a3	solute carrier family 1 (glial high affinity glutamate transporter), member 3	15		cell surface	is a part of Bergmann glial cell		IDA		J:89770 	
+MGI:95758	Slc2a4	solute carrier family 2 (facilitated glucose transporter), member 4	11		cell surface			ISO	RGD:2711 	J:155856 	
+MGI:95758	Slc2a4	solute carrier family 2 (facilitated glucose transporter), member 4	11		external side of plasma membrane			ISO	P14672 	J:73065 	
+MGI:96955	Slc3a2	solute carrier family 3 (activators of dibasic and neutral amino acid transport), member 2	19		cell surface			ISO	P08195 	J:164563 	
+MGI:109393	Slc4a1	solute carrier family 4 (anion exchanger), member 1	11		cell surface			ISO	RGD:3710 	J:155856 	
+MGI:95627	Slc6a1	solute carrier family 6 (neurotransmitter transporter, GABA), member 1	6		cell surface			ISO	RGD:620533 	J:155856 	
+MGI:1270850	Slc6a2	solute carrier family 6 (neurotransmitter transporter, noradrenalin), member 2	8		cell surface			ISO	RGD:621822 	J:155856 	
+MGI:94862	Slc6a3	solute carrier family 6 (neurotransmitter transporter, dopamine), member 3	13		cell surface			IDA		J:220508 	
+MGI:94862	Slc6a3	solute carrier family 6 (neurotransmitter transporter, dopamine), member 3	13		cell surface			ISO	Q01959 	J:164563 	
+MGI:1347355	Slc7a11	solute carrier family 7 (cationic amino acid transporter, y+ system), member 11	3		cell surface			ISO	Q9UPY5 	J:164563 	
+MGI:102462	Slc9a1	solute carrier family 9 (sodium/hydrogen exchanger), member 1	4		cell surface			ISO	RGD:3718 	J:155856 	
+MGI:1345275	Slc11a1	solute carrier family 11 (proton-coupled divalent metal ion transporters), member 1	1	NOT	cell surface		PR:P41251	IDA		J:117117 	
+MGI:1345279	Slc11a2	solute carrier family 11 (proton-coupled divalent metal ion transporters), member 2	15		cell surface		PR:P49282-1	IDA		J:117117 	
+MGI:1345279	Slc11a2	solute carrier family 11 (proton-coupled divalent metal ion transporters), member 2	15		cell surface			ISO	P49281 	J:164563 	
+MGI:103150	Slc12a1	solute carrier family 12, member 1	2		cell surface			ISO	RGD:3685 	J:155856 	
+MGI:2444594	Slc26a9	solute carrier family 26, member 9	1		cell surface			ISO	Q7LBE3 	J:164563 	
+MGI:1345284	Slc34a1	solute carrier family 34 (sodium phosphate), member 1	13		cell surface			ISO	RGD:3708 	J:155856 	
+MGI:1353616	Slc46a2	solute carrier family 46, member 2	4		cell surface			IDA		J:60551 	
+MGI:1351867	Slco3a1	solute carrier organic anion transporter family, member 3a1	7		cell surface		PR:Q8R3L5-1	ISO	AB031050 BC000585 	J:73065 	
+MGI:2443198	Slitrk6	SLIT and NTRK-like family, member 6	14		cell surface			ISO	Q9H5Y7 	J:201352 	
+MGI:1338015	Sort1	sortilin 1	3		cell surface			ISO	Q99523 	J:164563 	
+MGI:1333778	Spa17	sperm autoantigenic protein 17	9		external side of plasma membrane	is a part of sperm		IDA		J:29014 	
+MGI:109335	Spam1	sperm adhesion molecule 1	6		external side of plasma membrane			IDA		J:117970 	
+MGI:98373	Sparc	secreted acidic cysteine rich glycoprotein	11		cell surface			ISO	P09486 	J:164563 	
+MGI:98384	Spn	sialophorin	7		cell surface			ISO	P16150 	J:164563 	
+MGI:98384	Spn	sialophorin	7		cell surface			ISO	RGD:3750 	J:155856 	
+MGI:98384	Spn	sialophorin	7		external side of plasma membrane			IDA		J:18035 J:26220 J:29272 J:98417 	
+MGI:98384	Spn	sialophorin	7		external side of plasma membrane	is a part of B cell		IDA		J:27374 	
+MGI:98384	Spn	sialophorin	7		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:90603 	
+MGI:98384	Spn	sialophorin	7		external side of plasma membrane	is a part of T cell		IDA		J:88252 J:94032 J:94033 	
+MGI:98384	Spn	sialophorin	7		external side of plasma membrane	is a part of lymphocyte		IDA		J:88251 	
+MGI:98384	Spn	sialophorin	7		external side of plasma membrane	is a part of pro-B cell|is a part of precursor B cell		IDA		J:125136 	
+MGI:98384	Spn	sialophorin	7		external side of plasma membrane	is a part of blood,is a part of blood cell		IDA		J:63425 	
+MGI:98384	Spn	sialophorin	7		external side of plasma membrane	is a part of bone marrow,is a part of B cell		IDA		J:29797 	
+MGI:98387	Sptb	spectrin beta, erythrocytic	12		cell surface			ISO	P11277 	J:164563 	
+MGI:1916042	Srpx2	sushi-repeat-containing protein, X-linked 2	X		cell surface			ISO	RGD:1562444 	J:155856 	
+MGI:2178743	Stab2	stabilin 2	10		external side of plasma membrane			ISO	RGD:628822 	J:155856 	
+MGI:2153816	Strc	stereocilin	2		cell surface			IBA	PTN001517636 	J:161428 	
+MGI:108059	Stx2	syntaxin 2	5		cell surface	is a part of metanephros		IDA		J:74196 	
+MGI:893577	Stx4a	syntaxin 4A (placental)	7		cell surface			IDA		J:209479 	
+MGI:893577	Stx4a	syntaxin 4A (placental)	7		cell surface			ISO	Q12846 	J:164563 	
+MGI:1934135	Sucnr1	succinate receptor 1	3		cell surface			TAS		J:236624 	
+MGI:2138563	Sulf1	sulfatase 1	1		cell surface			ISO	RGD:708554 	J:155856 	
+MGI:2138563	Sulf1	sulfatase 1	1		cell surface			ISO	Q8IWU6 	J:164563 	
+MGI:1919293	Sulf2	sulfatase 2	2		cell surface			ISO	Q8IWU5 	J:164563 	
+MGI:1344347	Synj2bp	synaptojanin 2 binding protein	12		cell surface			IDA		J:108339 	
+MGI:98475	Tacr1	tachykinin receptor 1	6		cell surface			ISO	RGD:3811 	J:155856 	
+MGI:2681247	Tas2r118	taste receptor, type 2, member 118	6		external side of plasma membrane			ISO	Q9NYV7 	J:164563 	
+MGI:98553	Tcra	T cell receptor alpha chain	14		cell surface			IDA		J:129700 	
+MGI:98553	Tcra	T cell receptor alpha chain	14		external side of plasma membrane	is a part of thymus,is a part of T cell|is a part of spleen,is a part of T cell		IDA		J:31364 	
+MGI:98563	Tcra-V2	T cell receptor alpha, variable 2	14		external side of plasma membrane			IDA		J:129700 	
+MGI:99743	Tcra-V3.1	T cell receptor alpha, variable 3.1	14		external side of plasma membrane	is a part of T cell		IDA		J:127083 	
+MGI:98578	Tcrb	T cell receptor beta chain	6		external side of plasma membrane	is a part of T cell		IDA		J:41170 J:92679 J:113553 	
+MGI:98578	Tcrb	T cell receptor beta chain	6		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:118845 	
+MGI:98578	Tcrb	T cell receptor beta chain	6		external side of plasma membrane			IDA		J:60915 J:98417 J:140498 J:141145 J:172134 J:190936 	
+MGI:98578	Tcrb	T cell receptor beta chain	6		external side of plasma membrane	is a part of thymus,is a part of T cell|is a part of spleen,is a part of T cell		IDA		J:31364 	
+MGI:98579	Tcrb-C	T cell receptor beta, constant region	6		external side of plasma membrane	is a part of intestine,is a part of T cell		IDA		J:36147 	
+MGI:98611	Tcrd	T cell receptor delta chain	14		external side of plasma membrane	is a part of thymus,is a part of T cell|is a part of spleen,is a part of T cell		IDA		J:31364 	
+MGI:98611	Tcrd	T cell receptor delta chain	14		external side of plasma membrane			IDA		J:155686 	
+MGI:98623	Tcrg	T cell receptor gamma chain	13		external side of plasma membrane	is a part of thymus,is a part of T cell|is a part of spleen,is a part of T cell		IDA		J:31364 	
+MGI:98623	Tcrg	T cell receptor gamma chain	13		external side of plasma membrane	is a part of T cell		IDA		J:92679 	
+MGI:98623	Tcrg	T cell receptor gamma chain	13		external side of plasma membrane			IDA		J:155686 	
+MGI:98633	Tcrg-V3	T cell receptor gamma, variable 3	13		external side of plasma membrane	is a part of thymus,is a part of T cell		IDA		J:29796 	
+MGI:98635	Tcrg-V5	T cell receptor gamma, variable 5	13		external side of plasma membrane			IDA		J:207537 	
+MGI:98658	Tdgf1	teratocarcinoma-derived growth factor 1	9		cell surface			IDA		J:130239 	
+MGI:98658	Tdgf1	teratocarcinoma-derived growth factor 1	9		cell surface			ISO	P13385 	J:164563 	
+MGI:98664	Tek	TEK receptor tyrosine kinase	4		cell surface			ISO	Q02763 	J:164563 	
+MGI:1095418	Tfpi	tissue factor pathway inhibitor	2		cell surface			ISO	P10646 	J:164563 	
+MGI:1354956	Tfr2	transferrin receptor 2	5		external side of plasma membrane			ISO	Q9UP52 	J:164563 	
+MGI:98822	Tfrc	transferrin receptor	16		cell surface			IDA		J:126749 J:198162 	
+MGI:98822	Tfrc	transferrin receptor	16		cell surface			ISO	P02786 	J:164563 	
+MGI:98822	Tfrc	transferrin receptor	16		cell surface			ISO	Q99376 	J:154554 	
+MGI:98822	Tfrc	transferrin receptor	16		cell surface			ISO	RGD:70488 	J:155856 	
+MGI:98822	Tfrc	transferrin receptor	16		external side of plasma membrane			IDA		J:161968 J:163754 	
+MGI:98822	Tfrc	transferrin receptor	16		external side of plasma membrane			ISO	P02786 	J:164563 	
+MGI:98724	Tgfa	transforming growth factor alpha	6		cell surface			ISO	P01135 	J:164563 	
+MGI:98725	Tgfb1	transforming growth factor, beta 1	7		cell surface			ISO	P01137 	J:164563 	
+MGI:98725	Tgfb1	transforming growth factor, beta 1	7		cell surface			ISO	RGD:69051 	J:155856 	
+MGI:98726	Tgfb2	transforming growth factor, beta 2	1		cell surface			ISO	RGD:70491 	J:155856 	
+MGI:98727	Tgfb3	transforming growth factor, beta 3	12		cell surface			ISO	RGD:3851 	J:155856 	
+MGI:98728	Tgfbr1	transforming growth factor, beta receptor I	4		cell surface			ISO	P36897 	J:164563 	
+MGI:98729	Tgfbr2	transforming growth factor, beta receptor II	9		cell surface			ISO	RGD:69651 	J:155856 	
+MGI:98729	Tgfbr2	transforming growth factor, beta receptor II	9		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell		IDA		J:113553 	
+MGI:98729	Tgfbr2	transforming growth factor, beta receptor II	9		external side of plasma membrane			ISO	P37173 	J:164563 	
+MGI:104637	Tgfbr3	transforming growth factor, beta receptor III	5		cell surface			IDA		J:139342 	
+MGI:104637	Tgfbr3	transforming growth factor, beta receptor III	5		external side of plasma membrane			ISO	Q03167 	J:164563 	
+MGI:98736	Thbd	thrombomodulin	2		cell surface			ISO	P07204 	J:164563 	
+MGI:98737	Thbs1	thrombospondin 1	2		cell surface			ISO	P07996 	J:164563 	
+MGI:98737	Thbs1	thrombospondin 1	2		external side of plasma membrane			ISO	P07996 	J:164563 	
+MGI:1929096	Thsd1	thrombospondin, type I, domain 1	8		cell surface			IDA		J:132871 	
+MGI:98747	Thy1	thymus cell antigen 1, theta	9		anchored component of external side of plasma membrane	is a part of T cell		IDA		J:87358 	
+MGI:98747	Thy1	thymus cell antigen 1, theta	9		anchored component of external side of plasma membrane			IDA		J:58593 	
+MGI:98747	Thy1	thymus cell antigen 1, theta	9		cell surface			ISO	P04216 	J:164563 	
+MGI:98747	Thy1	thymus cell antigen 1, theta	9		cell surface			ISO	RGD:3860 	J:155856 	
+MGI:98747	Thy1	thymus cell antigen 1, theta	9		external side of plasma membrane			IDA		J:19488 J:132871 J:140498 J:202604 	
+MGI:3642260	Tigit	T cell immunoreceptor with Ig and ITIM domains	16		cell surface			ISO	Q495A1 	J:73065 	
+MGI:3642260	Tigit	T cell immunoreceptor with Ig and ITIM domains	16		cell surface			ISS	Q495A1 	J:150317 	
+MGI:2159681	Timd2	T cell immunoglobulin and mucin domain containing 2	11		cell surface			IDA		J:176157 	
+MGI:98753	Timp2	tissue inhibitor of metalloproteinase 2	11		cell surface			IDA		J:98527 	
+MGI:98753	Timp2	tissue inhibitor of metalloproteinase 2	11		cell surface			ISO	RGD:61312 	J:155856 	
+MGI:98759	Tjp1	tight junction protein 1	7		cell surface			ISO	O97758 	J:81857 	
+MGI:1341872	Tjp2	tight junction protein 2	19		cell surface			ISO	Q95168 	J:73065 	
+MGI:1351650	Tjp3	tight junction protein 3	10		cell surface			ISO	O62683 	J:73065 	
+MGI:1346060	Tlr2	toll-like receptor 2	3		cell surface			ISO	RGD:735138 	J:155856 	
+MGI:1346060	Tlr2	toll-like receptor 2	3		cell surface			ISO	O60603 	J:164563 	
+MGI:1346060	Tlr2	toll-like receptor 2	3		external side of plasma membrane	is a part of macrophage		IDA		J:91804 	
+MGI:2156367	Tlr3	toll-like receptor 3	8		cell surface			ISO	RGD:735171 	J:155856 	
+MGI:96824	Tlr4	toll-like receptor 4	4		cell surface			ISO	RGD:3870 	J:155856 	
+MGI:96824	Tlr4	toll-like receptor 4	4		cell surface			ISO	O00206 	J:164563 	
+MGI:96824	Tlr4	toll-like receptor 4	4		external side of plasma membrane			ISO	O00206 	J:164563 	
+MGI:2176887	Tlr8	toll-like receptor 8	X		external side of plasma membrane			ISO	Q9NR97 	J:164563 	
+MGI:2151016	Tmc1	transmembrane channel-like gene family 1	19		external side of plasma membrane			IDA		J:132871 	
+MGI:2441680	Tmem8b	transmembrane protein 8B	4		cell surface			ISO	A6NDV4 	J:164563 	
+MGI:1921591	Tmem102	transmembrane protein 102	11		cell surface			ISO	Q8N9M5 	J:164563 	
+MGI:1919179	Tmem123	transmembrane protein 123	9		external side of plasma membrane			ISO	Q8N131 	J:164563 	
+MGI:1914200	Tmem206	transmembrane protein 206	1		cell surface			IBA	PTN000412674 	J:161428 	
+MGI:2385221	Tmprss11d	transmembrane protease, serine 11d	5		cell surface			ISO	RGD:620654 	J:155856 	
+MGI:2442418	Tmx3	thioredoxin-related transmembrane protein 3	18		cell surface	is a part of platelet		IDA		J:182119 	
+MGI:2442418	Tmx3	thioredoxin-related transmembrane protein 3	18		cell surface			ISO	Q96JJ7 	J:73065 	
+MGI:104798	Tnf	tumor necrosis factor	17		cell surface			ISO	P01375 	J:164563 	
+MGI:104798	Tnf	tumor necrosis factor	17		external side of plasma membrane			IDA		J:103845 J:173331 	
+MGI:1314884	Tnfrsf1a	tumor necrosis factor receptor superfamily, member 1a	6		cell surface			IDA		J:180537 	
+MGI:1314884	Tnfrsf1a	tumor necrosis factor receptor superfamily, member 1a	6		cell surface			ISO	RGD:621237 	J:155856 	
+MGI:104512	Tnfrsf4	tumor necrosis factor receptor superfamily, member 4	4		cell surface			ISO	RGD:3920 	J:155856 	
+MGI:104512	Tnfrsf4	tumor necrosis factor receptor superfamily, member 4	4		external side of plasma membrane	is a part of spleen,is a part of T cell		IDA		J:141392 	
+MGI:104512	Tnfrsf4	tumor necrosis factor receptor superfamily, member 4	4		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:118845 	
+MGI:1101059	Tnfrsf9	tumor necrosis factor receptor superfamily, member 9	4		external side of plasma membrane	is a part of spleen,is a part of T cell	PR:P20334-1	IDA		J:141392 	
+MGI:1101059	Tnfrsf9	tumor necrosis factor receptor superfamily, member 9	4		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell|is a part of CD8-positive, alpha-beta T cell	PR:P20334-1	IDA		J:139036 	
+MGI:1341090	Tnfrsf10b	tumor necrosis factor receptor superfamily, member 10b	14		cell surface			ISO	O00220 	J:164563 	
+MGI:1314891	Tnfrsf11a	tumor necrosis factor receptor superfamily, member 11a, NFKB activator	1		cell surface	is a part of osteoclast		IDA		J:177783 	
+MGI:1314891	Tnfrsf11a	tumor necrosis factor receptor superfamily, member 11a, NFKB activator	1		external side of plasma membrane			ISO	Q9Y6Q6 	J:164563 	
+MGI:1351484	Tnfrsf12a	tumor necrosis factor receptor superfamily, member 12a	17		cell surface			IDA		J:84304 	
+MGI:1889411	Tnfrsf13b	tumor necrosis factor receptor superfamily, member 13b	11		external side of plasma membrane	is a part of B cell		IDA		J:91914 	
+MGI:1919299	Tnfrsf13c	tumor necrosis factor receptor superfamily, member 13c	15		external side of plasma membrane	is a part of T cell		IDA		J:91914 J:92334 	
+MGI:2675303	Tnfrsf14	tumor necrosis factor receptor superfamily, member 14 (herpesvirus entry mediator)	4		external side of plasma membrane	is a part of B cell		IDA		J:94873 	
+MGI:894675	Tnfrsf18	tumor necrosis factor receptor superfamily, member 18	4		external side of plasma membrane	is a part of CD4-positive, alpha-beta T cell		IDA		J:112602 	
+MGI:894675	Tnfrsf18	tumor necrosis factor receptor superfamily, member 18	4		external side of plasma membrane	is a part of T cell		IDA		J:116306 	
+MGI:1930270	Tnfrsf22	tumor necrosis factor receptor superfamily, member 22	7		external side of plasma membrane			IDA		J:81898 	
+MGI:1930269	Tnfrsf23	tumor necrosis factor receptor superfamily, member 23	7		anchored component of external side of plasma membrane			IDA		J:81898 	
+MGI:104511	Tnfsf4	tumor necrosis factor (ligand) superfamily, member 4	1		cell surface			ISO	RGD:619816 	J:155856 	
+MGI:104511	Tnfsf4	tumor necrosis factor (ligand) superfamily, member 4	1		cell surface			ISO	P23510 	J:164563 	
+MGI:1916833	Tnfsf13	tumor necrosis factor (ligand) superfamily, member 13	11		external side of plasma membrane			IDA		J:87680 	
+MGI:2673064	Tnfsf18	tumor necrosis factor (ligand) superfamily, member 18	1		cell surface			IDA		J:180483 	
+MGI:2665790	Tnn	tenascin N	1		cell surface			IDA		J:83982 	
+MGI:99516	Tnr	tenascin R	1		cell surface			IDA		J:77241 	
+MGI:98813	Tpo	thyroid peroxidase	12		cell surface			ISO	RGD:3900 	J:155856 	
+MGI:4439726	Trbc1	T cell receptor beta, constant region 1	6		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:4835227	Trbc2	T cell receptor beta, constant 2	6		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:98612	Trdc	T cell receptor delta, constant region	14		external side of plasma membrane	is a part of intestine,is a part of T cell		IDA		J:36147 	
+MGI:4887419	Trdv4	T cell receptor delta variable 4	14		external side of plasma membrane			IBA	PTN001510949 	J:161428 	
+MGI:1918576	Treml1	triggering receptor expressed on myeloid cells-like 1	17		cell surface			IDA		J:92645 	
+MGI:1918576	Treml1	triggering receptor expressed on myeloid cells-like 1	17		cell surface			ISO	Q86YW5 	J:164563 	
+MGI:2147038	Treml2	triggering receptor expressed on myeloid cells-like 2	17		cell surface			ISO	Q5T2D2 	J:164563 	
+MGI:98821	Trf	transferrin	9		cell surface			ISO	P02787 	J:164563 	
+MGI:98821	Trf	transferrin	9		extrinsic component of external side of plasma membrane			ISO	P02787 	J:164563 	
+MGI:98824	Trhr	thyrotropin releasing hormone receptor	15		cell surface			ISO	RGD:3904 	J:155856 	
+MGI:109525	Trpc4	transient receptor potential cation channel, subfamily C, member 4	3		cell surface			ISO	Q9UBN4 	J:164563 	
+MGI:2181435	Trpm8	transient receptor potential cation channel, subfamily M, member 8	1		external side of plasma membrane			IDA		J:117484 	
+MGI:1341787	Trpv1	transient receptor potential cation channel, subfamily V, member 1	11		external side of plasma membrane			ISO	RGD:628841 	J:155856 	
+MGI:1341836	Trpv2	transient receptor potential cation channel, subfamily V, member 2	11		cell surface			IDA		J:159386 	
+MGI:1926945	Trpv4	transient receptor potential cation channel, subfamily V, member 4	5		cell surface			ISO	RGD:69337 	J:155856 	
+MGI:2384918	Tspan8	tetraspanin 8	10		cell surface			IDA		J:238221 	
+MGI:1196325	Tspan14	tetraspanin 14	14		cell surface			IDA		J:209476 	
+MGI:1917673	Tspan15	tetraspanin 15	10		cell surface			IDA		J:209476 	
+MGI:1350360	Tspan32	tetraspanin 32	7		cell surface	is a part of platelet		IDA		J:138062 	
+MGI:1919012	Tspan33	tetraspanin 33	6		cell surface			IDA		J:209476 	
+MGI:2671932	Tspear	thrombospondin type laminin G domain and EAR repeats	10		cell surface			IDA		J:185976 	
+MGI:104294	Tyro3	TYRO3 protein tyrosine kinase 3	2		cell surface			ISO	Q06418 	J:164563 	
+MGI:1277211	Tyrobp	TYRO protein tyrosine kinase binding protein	7		cell surface			ISO	O43914 	J:164563 	
+MGI:1925027	Ulbp1	UL16 binding protein 1	10		external side of plasma membrane	is a part of T cell		IDA		J:82077 	
+MGI:1929785	Umodl1	uromodulin-like 1	17		external side of plasma membrane			IDA		J:101065 	
+MGI:2389364	Unc5d	unc-5 netrin receptor D	8		cell surface	is a part of multipolar neuron		IDA		J:141783 	
+MGI:98911	Upk1a	uroplakin 1A	7		cell surface			ISO	O00322 	J:164563 	
+MGI:1928898	Usp14	ubiquitin specific peptidase 14	18		cell surface			ISO	P54578 	J:164563 	
+MGI:1313276	Vamp1	vesicle-associated membrane protein 1	6		cell surface			IDA		J:209479 	
+MGI:1321389	Vamp3	vesicle-associated membrane protein 3	4		cell surface			IDA		J:209479 	
+MGI:1858730	Vamp4	vesicle-associated membrane protein 4	1		cell surface			ISO	O75379 	J:164563 	
+MGI:1858622	Vamp5	vesicle-associated membrane protein 5	6		cell surface			ISO	O95183 	J:164563 	
+MGI:1096399	Vamp7	vesicle-associated membrane protein 7	X		cell surface			IDA		J:209479 	
+MGI:1336882	Vamp8	vesicle-associated membrane protein 8	6		cell surface			IDA		J:209479 	
+MGI:2177651	Vasn	vasorin	16		cell surface			ISO	Q6EMK4 	J:164563 	
+MGI:98926	Vcam1	vascular cell adhesion molecule 1	3		cell surface			ISO	RGD:3952 	J:155856 	
+MGI:98926	Vcam1	vascular cell adhesion molecule 1	3		cell surface			ISO	P19320 	J:164563 	
+MGI:98926	Vcam1	vascular cell adhesion molecule 1	3		external side of plasma membrane			ISO	P19320 	J:164563 	
+MGI:102889	Vcan	versican	13		cell surface			ISO	RGD:619940 	J:155856 	
+MGI:103178	Vegfa	vascular endothelial growth factor A	17		cell surface			ISO	P15692 	J:164563 	
+MGI:98935	Vldlr	very low density lipoprotein receptor	19		cell surface			ISO	RGD:3963 	J:155856 	
+MGI:98936	Vpreb1	pre-B lymphocyte gene 1	16		external side of plasma membrane	is a part of femur		IDA		J:99189 	
+MGI:1921298	Vsir	V-set immunoregulatory receptor	10		external side of plasma membrane	is a part of T cell|is a part of neutrophil|is a part of dendritic cell|is a part of F4/80-positive adipose macrophage		IDA		J:179154 	
+MGI:1921298	Vsir	V-set immunoregulatory receptor	10		external side of plasma membrane	is a part of lymphatic system,is a part of naive thymus-derived CD4-positive, alpha-beta T cell|is a part of lymphatic system,is a part of CD4-positive, alpha-beta memory T cell		IDA		J:176836 	
+MGI:1921298	Vsir	V-set immunoregulatory receptor	10		external side of plasma membrane	is a part of stem cell		IDA		J:193667 	
+MGI:3039619	Vtcn1	V-set domain containing T cell activation inhibitor 1	3		external side of plasma membrane			IDA		J:136480 	
+MGI:3039619	Vtcn1	V-set domain containing T cell activation inhibitor 1	3		external side of plasma membrane			ISO	Q7Z7D3 	J:164563 	
+MGI:98941	Vwf	Von Willebrand factor	6		external side of plasma membrane	is a part of platelet		IDA		J:125139 	
+MGI:2684968	Wfdc6a	WAP four-disulfide core domain 6A	2		cell surface			ISO	O95925 	J:164563 	
+MGI:1328326	Wisp2	WNT1 inducible signaling pathway protein 2	2		cell surface			ISO	RGD:621867 	J:155856 	
+MGI:98953	Wnt1	wingless-type MMTV integration site family, member 1	15		cell surface			IDA		J:34493 	
+MGI:98956	Wnt3a	wingless-type MMTV integration site family, member 3A	11		cell surface			IDA		J:21428 	
+MGI:98957	Wnt4	wingless-type MMTV integration site family, member 4	4		cell surface			IDA		J:21428 	
+MGI:98958	Wnt5a	wingless-type MMTV integration site family, member 5A	14		cell surface			IDA		J:21428 	
+MGI:98959	Wnt5b	wingless-type MMTV integration site family, member 5B	6		cell surface			IDA		J:21428 	
+MGI:98960	Wnt6	wingless-type MMTV integration site family, member 6	1		cell surface			IDA		J:21428 	
+MGI:98961	Wnt7a	wingless-type MMTV integration site family, member 7A	6		cell surface			IDA		J:21428 	
+MGI:98962	Wnt7b	wingless-type MMTV integration site family, member 7B	15		cell surface			IDA		J:21428 	
+

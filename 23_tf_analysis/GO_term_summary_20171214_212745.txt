@@ -1,0 +1,900 @@
+MGI Gene/Marker ID	Symbol	Name	Chr	Qualifier	Annotated Term	Context	Proteoform	Evidence	Inferred From	Reference(s)
+MGI:2449119	A2m	alpha-2-macroglobulin	6		negative regulation of complement activation, lectin pathway			ISO	P01023 	J:164563 	
+MGI:107771	Abr	active BCR-related gene	11		negative regulation of inflammatory response			IMP	MGI:2388713 	J:153997 	
+MGI:87874	Ace	angiotensin I converting enzyme (peptidyl-dipeptidase A) 1	11		positive regulation of inflammatory response			ISO	RGD:2493 	J:155856 	
+MGI:1097689	Ackr1	atypical chemokine receptor 1 (Duffy blood group)	1		inflammatory response			IMP	MGI:1888977 	J:64222 	
+MGI:1891697	Ackr2	atypical chemokine receptor 2	9		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1891697	Ackr2	atypical chemokine receptor 2	9		inflammatory response			IEA	IPR033037 	J:72247 	
+MGI:103206	Acod1	aconitate decarboxylase 1	14		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:103206	Acod1	aconitate decarboxylase 1	14		negative regulation of inflammatory response			IDA		J:196955 	
+MGI:87883	Acp5	acid phosphatase 5, tartrate resistant	9		negative regulation of inflammatory response	regulates a function/process that has the participant peritoneal macrophage		IMP	MGI:2180086 	J:67213 	
+MGI:87916	Ada	adenosine deaminase	2		negative regulation of inflammatory response	regulates a function/process that has the participant lung		IGI	MGI:104847 	J:91943 	
+MGI:87916	Ada	adenosine deaminase	2		negative regulation of inflammatory response	regulates a function/process that has the participant lung		IGI	MGI:99402 	J:128038 	
+MGI:87916	Ada	adenosine deaminase	2		negative regulation of inflammatory response	regulates a function/process that has the participant lung		IGI	MGI:99401 	J:95142 	
+MGI:87916	Ada	adenosine deaminase	2		negative regulation of inflammatory response	regulates a function/process that has the participant lung		IMP	MGI:1857117 MGI:2683027 	J:63493 J:91943 J:95142 J:128038 	
+MGI:87916	Ada	adenosine deaminase	2		negative regulation of inflammatory response	regulates a function/process that has the participant lung		IMP	MGI:1857117 MGI:2681791 	J:72057 	
+MGI:107825	Adam8	a disintegrin and metallopeptidase domain 8	7		inflammatory response			ISO	P78325 	J:164563 	
+MGI:107825	Adam8	a disintegrin and metallopeptidase domain 8	7		leukocyte migration involved in inflammatory response			IMP		J:172944 	
+MGI:107825	Adam8	a disintegrin and metallopeptidase domain 8	7		positive regulation of acute inflammatory response			IMP		J:173132 	
+MGI:107825	Adam8	a disintegrin and metallopeptidase domain 8	7		positive regulation of inflammatory response			IDA		J:172958 	
+MGI:1096335	Adam17	a disintegrin and metallopeptidase domain 17	12		production of molecular mediator involved in inflammatory response			IDA		J:219083 	
+MGI:2146046	Adamts12	a disintegrin-like and metallopeptidase (reprolysin type) with thrombospondin type 1 motif, 12	15		regulation of inflammatory response			ISO	P58397 	J:164563 	
+MGI:105094	Adcyap1	adenylate cyclase activating polypeptide 1	17		negative regulation of acute inflammatory response to antigenic stimulus			ISO	RGD:2037 	J:155856 	
+MGI:105094	Adcyap1	adenylate cyclase activating polypeptide 1	17		negative regulation of acute inflammatory response to non-antigenic stimulus			ISO	RGD:2037 	J:155856 	
+MGI:106675	Adipoq	adiponectin, C1Q and collagen domain containing	16		negative regulation of inflammatory response			IDA		J:142895 	
+MGI:99401	Adora1	adenosine A1 receptor	1		negative regulation of acute inflammatory response			ISO	RGD:2048 	J:155856 	
+MGI:99401	Adora1	adenosine A1 receptor	1		negative regulation of inflammatory response	regulates a function/process that has the participant lung		IGI	MGI:87916 	J:95142 	
+MGI:99402	Adora2a	adenosine A2a receptor	10		negative regulation of inflammatory response	regulates a function/process that has the participant lung		IGI	MGI:87916 	J:128038 	
+MGI:99403	Adora2b	adenosine A2b receptor	11		positive regulation of chronic inflammatory response to non-antigenic stimulus	regulates a function/process that has the participant lung		IMP		J:113120 	
+MGI:104847	Adora3	adenosine A3 receptor	3		histamine secretion by mast cell	happens in mast cell		IDA		J:84007 	
+MGI:104847	Adora3	adenosine A3 receptor	3		histamine secretion by mast cell	happens in mast cell		IMP	MGI:2155986 	J:84007 	
+MGI:104847	Adora3	adenosine A3 receptor	3		positive regulation of inflammatory response	regulates a function/process that has the participant lung		IGI	MGI:87916 	J:91943 	
+MGI:104847	Adora3	adenosine A3 receptor	3		positive regulation of inflammatory response	regulates a function/process that has the participant lung		IMP	MGI:2155986 	J:91943 	
+MGI:87934	Adra2a	adrenergic receptor, alpha 2a	19		acute inflammatory response			ISO	RGD:2056 	J:155856 	
+MGI:87938	Adrb2	adrenergic receptor, beta 2	18		negative regulation of inflammatory response			ISO	RGD:2060 	J:155856 	
+MGI:2147658	Afap1l2	actin filament associated protein 1-like 2	19		inflammatory response			ISO	Q8N4X5 	J:164563 	
+MGI:893592	Ager	advanced glycosylation end product-specific receptor	17		inflammatory response			IGI	MGI:104798 MGI:2687194 	J:168000 	
+MGI:893592	Ager	advanced glycosylation end product-specific receptor	17		negative regulation of connective tissue replacement involved in inflammatory response wound healing	happens in lung	PR:Q62151	IMP	MGI:2451038 	J:131859 	
+MGI:893592	Ager	advanced glycosylation end product-specific receptor	17		positive regulation of inflammatory response			ISO	RGD:69258 	J:155856 	
+MGI:893592	Ager	advanced glycosylation end product-specific receptor	17		regulation of inflammatory response			IDA		J:55874 	
+MGI:87963	Agt	angiotensinogen (serpin peptidase inhibitor, clade A, member 8)	8		regulation of inflammatory response	regulates a function/process that has the participant metanephros		IDA		J:148250 	
+MGI:87963	Agt	angiotensinogen (serpin peptidase inhibitor, clade A, member 8)	8		regulation of inflammatory response			IGI	MGI:98259 	J:148250 	
+MGI:87964	Agtr1a	angiotensin II receptor, type 1a	13		inflammatory response	has the participant metanephros		IGI	MGI:2157020 MGI:2178475 	J:148250 	
+MGI:87965	Agtr1b	angiotensin II receptor, type 1b	3		inflammatory response	has the participant metanephros		IGI	MGI:87964 MGI:87966 	J:148250 	
+MGI:87966	Agtr2	angiotensin II receptor, type 2	X		inflammatory response	has the participant metanephros		IGI	MGI:87964 MGI:87965 	J:148250 	
+MGI:87966	Agtr2	angiotensin II receptor, type 2	X		inflammatory response			ISO	RGD:2072 	J:155856 	
+MGI:87968	Ahcy	S-adenosylhomocysteine hydrolase	2		chronic inflammatory response to antigenic stimulus			ISO	RGD:69260 	J:155856 	
+MGI:107189	Ahsg	alpha-2-HS-glycoprotein	16		acute-phase response			ISO	P02765 	J:164563 	
+MGI:107189	Ahsg	alpha-2-HS-glycoprotein	16		regulation of inflammatory response			ISO	P02765 	J:164563 	
+MGI:2686159	Aim2	absent in melanoma 2	1		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:102774	Aimp1	aminoacyl tRNA synthetase complex-interacting multifunctional protein 1	3		inflammatory response			IBA	PTN000236355 	J:161428 	
+MGI:1926051	Ak7	adenylate kinase 7	12		inflammatory response to antigenic stimulus	has the participant respiratory system		IMP	MGI:5431002 	J:186062 	
+MGI:87986	Akt1	thymoma viral proto-oncogene 1	12		inflammatory response			IDA		J:87871 	
+MGI:87999	Alox5	arachidonate 5-lipoxygenase	6		acute inflammatory response			ISO	RGD:2096 	J:155856 	
+MGI:87999	Alox5	arachidonate 5-lipoxygenase	6		inflammatory response			IMP	MGI:1857125 	J:75371 	
+MGI:87999	Alox5	arachidonate 5-lipoxygenase	6		leukotriene production involved in inflammatory response			IMP	MGI:1933120 	J:39229 	
+MGI:107505	Alox5ap	arachidonate 5-lipoxygenase activating protein	5		leukotriene production involved in inflammatory response			IMP	MGI:2156546 	J:39229 J:124522 	
+MGI:107505	Alox5ap	arachidonate 5-lipoxygenase activating protein	5		positive regulation of acute inflammatory response			ISO	RGD:2097 	J:155856 	
+MGI:1921095	Ankrd42	ankyrin repeat domain 42	7		positive regulation of cytokine production involved in inflammatory response			IMP		J:161367 	
+MGI:2145890	Ano6	anoctamin 6	15		activation of blood coagulation via clotting cascade			ISO	Q4KMQ2 	J:164563 	
+MGI:96819	Anxa1	annexin A1	19		inflammatory response			IMP		J:142735 	
+MGI:96819	Anxa1	annexin A1	19		regulation of inflammatory response			IMP		J:81498 	
+MGI:1350928	Aoah	acyloxyacyl hydrolase	13		negative regulation of inflammatory response			IDA		J:90249 	
+MGI:1306797	Aoc3	amine oxidase, copper containing 3	11		leukocyte migration involved in inflammatory response			ISO	RGD:62058 	J:155856 	
+MGI:1306797	Aoc3	amine oxidase, copper containing 3	11		positive regulation of acute inflammatory response			ISO	RGD:62058 	J:155856 	
+MGI:88049	Apoa1	apolipoprotein A-I	9		negative regulation of inflammatory response			ISO	P02647 	J:164563 	
+MGI:88056	Apod	apolipoprotein D	16		negative regulation of cytokine production involved in inflammatory response			ISO	P05090 	J:164563 	
+MGI:88057	Apoe	apolipoprotein E	7		negative regulation of inflammatory response			IGI	P22893 	J:179147 	
+MGI:2183158	Ash1l	ASH1 like histone lysine methyltransferase	3		negative regulation of acute inflammatory response			IMP	MGI:5563008 	J:208213 	
+MGI:2183158	Ash1l	ASH1 like histone lysine methyltransferase	3		negative regulation of inflammatory response	regulates a function/process that happens in macrophage		IGI	MGI:2156367 MGI:96824 	J:208213 	
+MGI:1341628	Atrn	attractin	2		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1347244	Axl	AXL receptor tyrosine kinase	7		inflammatory response	has the participant carotid artery		IMP	MGI:2387750 	J:122626 	
+MGI:95705	B4galt1	UDP-Gal:betaGlcNAc beta 1,4- galactosyltransferase, polypeptide 1	4		acute inflammatory response	has the participant skin		IMP	MGI:2450889 	J:106669 	
+MGI:1206586	Bap1	Brca1 associated protein 1	14		regulation of cytokine production involved in inflammatory response			IMP	MGI:5439653 	J:234216 	
+MGI:1206586	Bap1	Brca1 associated protein 1	14		regulation of inflammatory response			IMP	MGI:5439653 	J:234216 	
+MGI:107187	Bcl6	B cell leukemia/lymphoma 6	16		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:107187	Bcl6	B cell leukemia/lymphoma 6	16		regulation of inflammatory response	regulates a function/process that has the participant heart|regulates a function/process that has the participant lung		IMP	MGI:2158439 	J:39815 	
+MGI:1278332	Bcl6b	B cell CLL/lymphoma 6, member B	11		regulation of inflammatory response			IBA	PTN000578060 	J:161428 	
+MGI:88141	Bcr	breakpoint cluster region	10		negative regulation of inflammatory response			IMP	MGI:2154396 	J:153997 	
+MGI:88144	Bdkrb1	bradykinin receptor, beta 1	12		inflammatory response			ISO	RGD:620401 	J:155856 	
+MGI:102845	Bdkrb2	bradykinin receptor, beta 2	12		acute inflammatory response to antigenic stimulus			ISO	RGD:2201 	J:155856 	
+MGI:105370	Bst1	bone marrow stromal cell antigen 1	5		regulation of inflammatory response			ISO	Q10588 	J:164563 	
+MGI:88216	Btk	Bruton agammaglobulinemia tyrosine kinase	X		histamine secretion by mast cell			ISO	RGD:1359683 	J:155856 	
+MGI:88216	Btk	Bruton agammaglobulinemia tyrosine kinase	X		positive regulation of type I hypersensitivity			ISO	RGD:1359683 	J:155856 	
+MGI:88216	Btk	Bruton agammaglobulinemia tyrosine kinase	X		positive regulation of type III hypersensitivity			ISO	RGD:1359683 	J:155856 	
+MGI:1194505	C1qbp	complement component 1, q subcomponent binding protein	11		regulation of complement activation			ISO	Q07021 	J:164563 	
+MGI:1932136	C1qtnf3	C1q and tumor necrosis factor related protein 3	15		negative regulation of inflammatory response			ISO	Q9BXJ4 	J:164563 	
+MGI:1914639	C1qtnf12	C1q and tumor necrosis factor related 12	4		negative regulation of inflammatory response	regulates a function/process that has the participant adipose tissue		IDA		J:177588 	
+MGI:88227	C3	complement component 3	17		inflammatory response			IEA	IPR001840 	J:72247 	
+MGI:88227	C3	complement component 3	17		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:88227	C3	complement component 3	17		positive regulation of activation of membrane attack complex			IMP		J:157443 	
+MGI:88227	C3	complement component 3	17		positive regulation of type IIa hypersensitivity			IMP	MGI:1861799 	J:75709 	
+MGI:1097680	C3ar1	complement component 3a receptor 1	6		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:88232	C5ar1	complement component 5a receptor 1	7		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:2442013	C5ar2	complement component 5a receptor 2	7		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:88233	C6	complement component 6	15		positive regulation of activation of membrane attack complex			IMP		J:157443 	
+MGI:88233	C6	complement component 6	15		positive regulation of complement activation			IMP		J:157443 	
+MGI:2151253	Calca	calcitonin/calcitonin-related polypeptide, alpha	7		inflammatory response			IDA		J:21870 	
+MGI:1926944	Calcrl	calcitonin receptor-like	2		negative regulation of inflammatory response			ISO	RGD:2255 	J:155856 	
+MGI:2442190	Camk1d	calcium/calmodulin-dependent protein kinase ID	2		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:88258	Camk4	calcium/calmodulin-dependent protein kinase IV	18		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96544	Casp1	caspase 1	9		regulation of inflammatory response	regulates a function/process that has the participant liver		IMP	MGI:2158744 	J:181354 	
+MGI:107700	Casp4	caspase 4, apoptosis-related cysteine peptidase	9		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:107700	Casp4	caspase 4, apoptosis-related cysteine peptidase	9		regulation of inflammatory response			IBA	PTN000048050 	J:161428 	
+MGI:1312921	Casp6	caspase 6	3		acute inflammatory response to non-antigenic stimulus			ISO	RGD:70967 	J:155856 	
+MGI:98258	Ccl1	chemokine (C-C motif) ligand 1	11		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:98259	Ccl2	chemokine (C-C motif) ligand 2	11		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:98259	Ccl2	chemokine (C-C motif) ligand 2	11		leukocyte migration involved in inflammatory response			ISO	RGD:3645 	J:155856 	
+MGI:98260	Ccl3	chemokine (C-C motif) ligand 3	11		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:98260	Ccl3	chemokine (C-C motif) ligand 3	11		positive regulation of inflammatory response			IGI	P22893 	J:179147 	
+MGI:98261	Ccl4	chemokine (C-C motif) ligand 4	11		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:98261	Ccl4	chemokine (C-C motif) ligand 4	11		inflammatory response			ISO	RGD:620441 	J:155856 	
+MGI:98262	Ccl5	chemokine (C-C motif) ligand 5	11		inflammatory response	has the participant colon		IMP	MGI:2180195 	J:197406 	
+MGI:98262	Ccl5	chemokine (C-C motif) ligand 5	11		inflammatory response			ISO	P13501 	J:164563 	
+MGI:98262	Ccl5	chemokine (C-C motif) ligand 5	11		positive regulation of fever generation			ISO	RGD:69069 	J:155856 	
+MGI:98263	Ccl6	chemokine (C-C motif) ligand 6	11		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:99512	Ccl7	chemokine (C-C motif) ligand 7	11		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:101878	Ccl8	chemokine (C-C motif) ligand 8	11		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:104533	Ccl9	chemokine (C-C motif) ligand 9	11		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:103576	Ccl11	chemokine (C-C motif) ligand 11	11		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:108224	Ccl12	chemokine (C-C motif) ligand 12	11		inflammatory response			IDA		J:37573 	
+MGI:108224	Ccl12	chemokine (C-C motif) ligand 12	11		inflammatory response			ISO	P13500 	J:164563 	
+MGI:1329039	Ccl17	chemokine (C-C motif) ligand 17	8		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:1346316	Ccl19	chemokine (C-C motif) ligand 19	4		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:1329031	Ccl20	chemokine (C-C motif) ligand 20	1		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:1349183	Ccl21a	chemokine (C-C motif) ligand 21A (serine)	4		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:1349182	Ccl21b	chemokine (C-C motif) ligand 21B (leucine)	4		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:1891386	Ccl21c	chemokine (C-C motif) ligand 21C (leucine)	4		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:1306779	Ccl22	chemokine (C-C motif) ligand 22	8		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:1928953	Ccl24	chemokine (C-C motif) ligand 24	5		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1928953	Ccl24	chemokine (C-C motif) ligand 24	5		positive regulation of inflammatory response			IMP		J:157197 	
+MGI:1099448	Ccl25	chemokine (C-C motif) ligand 25	8		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:3589281	Ccl26	chemokine (C-C motif) ligand 26	5		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:104618	Ccr1	chemokine (C-C motif) receptor 1	9		inflammatory response			IMP	MGI:1931850 	J:41324 	
+MGI:104617	Ccr1l1	chemokine (C-C motif) receptor 1-like 1	9		inflammatory response			IEA	IPR002236 	J:72247 	
+MGI:106185	Ccr2	chemokine (C-C motif) receptor 2	9		inflammatory response			IMP	MGI:2158213 	J:64054 	
+MGI:106185	Ccr2	chemokine (C-C motif) receptor 2	9		positive regulation of inflammatory response			IDA		J:159685 	
+MGI:106185	Ccr2	chemokine (C-C motif) receptor 2	9		wound healing involved in inflammatory response			NAS		J:159685 	
+MGI:104616	Ccr3	chemokine (C-C motif) receptor 3	9		inflammatory response			IEA	IPR002238 	J:72247 	
+MGI:107824	Ccr4	chemokine (C-C motif) receptor 4	9		inflammatory response			IMP	MGI:2136258 	J:70088 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		inflammatory response			IEA	IPR002240 	J:72247 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		positive regulation of fever generation			ISO	RGD:620596 	J:155856 	
+MGI:107182	Ccr5	chemokine (C-C motif) receptor 5	9		positive regulation of inflammatory response			ISO	RGD:620596 	J:155856 	
+MGI:1333797	Ccr6	chemokine (C-C motif) receptor 6	17		leukocyte migration involved in inflammatory response			IMP		J:142071 	
+MGI:103011	Ccr7	chemokine (C-C motif) receptor 7	11		inflammatory response			NAS		J:175336 	
+MGI:103011	Ccr7	chemokine (C-C motif) receptor 7	11		inflammatory response			TAS		J:175178 	
+MGI:103011	Ccr7	chemokine (C-C motif) receptor 7	11		positive regulation of hypersensitivity			IMP		J:57976 	
+MGI:1920904	Ccrl2	chemokine (C-C motif) receptor-like 2	9		inflammatory response			IDA		J:140110 	
+MGI:1334419	Cd5l	CD5 antigen-like	3		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:103566	Cd6	CD6 antigen	19		acute inflammatory response to antigenic stimulus			ISO	P30203 	J:164563 	
+MGI:103566	Cd6	CD6 antigen	19		positive regulation of cytokine production involved in inflammatory response			ISO	P30203 	J:164563 	
+MGI:88318	Cd14	CD14 antigen	18		inflammatory response			ISO	RGD:620588 	J:155856 	
+MGI:88323	Cd24a	CD24a antigen	10		leukocyte migration involved in inflammatory response	happens in brain		IMP	MGI:2179996 	J:93933 	
+MGI:88323	Cd24a	CD24a antigen	10		positive regulation of inflammatory response to antigenic stimulus			IMP	MGI:2179996 	J:93933 	
+MGI:88323	Cd24a	CD24a antigen	10		positive regulation of inflammatory response to antigenic stimulus	regulates a function/process that has the participant spinal cord		IMP	MGI:2179996 	J:120498 	
+MGI:88326	Cd27	CD27 antigen	6		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:88327	Cd28	CD28 antigen	1		positive regulation of inflammatory response to antigenic stimulus	regulates a function/process that has the participant spinal cord		IMP	MGI:1857150 	J:120498 	
+MGI:88336	Cd40	CD40 antigen	2		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:88336	Cd40	CD40 antigen	2		inflammatory response			ISO	RGD:619830 	J:155856 	
+MGI:88337	Cd40lg	CD40 ligand	X		inflammatory response			ISO	P29965 	J:164563 	
+MGI:88338	Cd44	CD44 antigen	2		negative regulation of inflammatory response	happens in induced T-regulatory cell		IMP		J:224716 	
+MGI:88338	Cd44	CD44 antigen	2		wound healing involved in inflammatory response	has the participant lung		IMP	MGI:2181292 	J:111216 	
+MGI:1203290	Cd46	CD46 antigen, complement regulatory protein	1		negative regulation of complement activation			ISO	RGD:3061 	J:155856 	
+MGI:96617	Cd47	CD47 antigen (Rh-related antigen, integrin-associated signal transducer)	16		positive regulation of inflammatory response	regulates a function/process that has the participant limb joint		IMP	MGI:1861955 	J:62428 	
+MGI:104850	Cd55	CD55 molecule, decay accelerating factor for complement	1		regulation of complement activation, classical pathway			IMP	MGI:2387405 	J:52968 	
+MGI:109177	Cd59a	CD59a antigen	2		negative regulation of activation of membrane attack complex			IMP		J:143638 	
+MGI:109177	Cd59a	CD59a antigen	2		negative regulation of complement activation			IDA		J:143638 	
+MGI:1888996	Cd59b	CD59b antigen	2		negative regulation of activation of membrane attack complex			IDA		J:64057 	
+MGI:1888996	Cd59b	CD59b antigen	2		negative regulation of activation of membrane attack complex			ISO	RGD:2311 	J:155856 	
+MGI:1888996	Cd59b	CD59b antigen	2		negative regulation of complement activation			IDA		J:64057 	
+MGI:1934368	Cd96	CD96 antigen	16		cytokine production involved in inflammatory response	happens in natural killer cell		IMP	MGI:5617136 	J:209990 	
+MGI:2135946	Cd163	CD163 antigen	6		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:2135946	Cd163	CD163 antigen	6		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1194924	Cd180	CD180 antigen	13		inflammatory response			IBA	PTN000687652 	J:161428 	
+MGI:2183926	Cd276	CD276 antigen	9		negative regulation of inflammatory response	regulates a function/process that has the participant lung		IMP	MGI:3033707 	J:84973 	
+MGI:2443411	Cd300a	CD300A molecule	11		serotonin secretion by mast cell	happens in mast cell		IDA		J:124243 	
+MGI:1925584	Cdk19	cyclin-dependent kinase 19	10		positive regulation of inflammatory response			ISO	RGD:1305435 	J:155856 	
+MGI:88373	Cebpb	CCAAT/enhancer binding protein (C/EBP), beta	2		granuloma formation			IMP		J:153025 	
+MGI:95314	Cela1	chymotrypsin-like elastase family, member 1	15		inflammatory response	has the participant pancreas		IMP	MGI:2148594 	J:119908 	
+MGI:88385	Cfh	complement component factor h	1		regulation of complement activation			IMP	MGI:2384179 	J:145047 	
+MGI:88385	Cfh	complement component factor h	1		regulation of complement activation			ISO	RGD:620428 	J:155856 	
+MGI:1932052	Chia1	chitinase, acidic 1	3		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1932052	Chia1	chitinase, acidic 1	3		production of molecular mediator involved in inflammatory response			ISO	Q9BZP6 	J:164563 	
+MGI:1915288	Chid1	chitinase domain containing 1	7		inflammatory response			IBA	PTN000126443 	J:161428 	
+MGI:1915288	Chid1	chitinase domain containing 1	7		negative regulation of cytokine production involved in inflammatory response			ISO	Q9BWS9 	J:164563 	
+MGI:1340899	Chil1	chitinase-like 1	1		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1330860	Chil3	chitinase-like 3	3		inflammatory response			TAS		J:74593 	
+MGI:1341098	Chil4	chitinase-like 4	3		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:99779	Chrna7	cholinergic receptor, nicotinic, alpha polypeptide 7	7		negative regulation of inflammatory response			IMP	MGI:1888407 	J:124406 	
+MGI:99779	Chrna7	cholinergic receptor, nicotinic, alpha polypeptide 7	7		regulation of inflammatory response			IMP	MGI:1888407 	J:89610 	
+MGI:1924219	Chst1	carbohydrate (keratan sulfate Gal-6) sulfotransferase 1	2		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1891160	Chst2	carbohydrate sulfotransferase 2	9		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1349479	Chst4	carbohydrate (chondroitin 6/keratan) sulfotransferase 4	8		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:99484	Chuk	conserved helix-loop-helix ubiquitous kinase	19		inflammatory response			IBA	PTN000540281 	J:161428 	
+MGI:1930088	Clcf1	cardiotrophin-like cytokine factor 1	19		regulation of inflammatory response			NAS		J:57927 	
+MGI:96975	Clec10a	C-type lectin domain family 10, member A	11		connective tissue replacement involved in inflammatory response wound healing			IMP		J:107475 	
+MGI:96975	Clec10a	C-type lectin domain family 10, member A	11		connective tissue replacement involved in inflammatory response wound healing			IMP	MGI:2183546 	J:107475 	
+MGI:99698	Clock	circadian locomotor output cycles kaput	5		positive regulation of inflammatory response			IMP		J:211236 	
+MGI:104615	Cnr1	cannabinoid receptor 1 (brain)	4		positive regulation of acute inflammatory response to antigenic stimulus			ISO	RGD:2369 	J:155856 	
+MGI:104615	Cnr1	cannabinoid receptor 1 (brain)	4		positive regulation of fever generation			ISO	RGD:2369 	J:155856 	
+MGI:104650	Cnr2	cannabinoid receptor 2 (macrophage)	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:104650	Cnr2	cannabinoid receptor 2 (macrophage)	4		negative regulation of inflammatory response			ISO	RGD:619713 	J:155856 	
+MGI:88513	Cr1l	complement component (3b/4b) receptor 1-like	1		negative regulation of complement activation			IMP	MGI:2158683 	J:59432 	
+MGI:88513	Cr1l	complement component (3b/4b) receptor 1-like	1		negative regulation of complement activation			ISO	RGD:2399 	J:155856 	
+MGI:88513	Cr1l	complement component (3b/4b) receptor 1-like	1		regulation of complement activation			IMP	MGI:2158683 	J:145047 	
+MGI:88513	Cr1l	complement component (3b/4b) receptor 1-like	1		regulation of complement activation			TAS		J:72683 	
+MGI:88496	Crh	corticotropin releasing hormone	3		inflammatory response			IMP	MGI:1857392 	J:90690 	
+MGI:88496	Crh	corticotropin releasing hormone	3		inflammatory response			ISO	P06850 	J:164563 	
+MGI:88497	Crhbp	corticotropin releasing hormone binding protein	13		inflammatory response			ISO	P24387 	J:164563 	
+MGI:1889506	Crlf2	cytokine receptor-like factor 2	5		inflammatory response	is a part of lung		IMP	MGI:3039288 	J:110190 	
+MGI:88512	Crp	C-reactive protein, pentraxin-related	1		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:1339753	Csf1	colony stimulating factor 1 (macrophage)	3		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1339758	Csf1r	colony stimulating factor 1 receptor	18		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2153093	Cspg4	chondroitin sulfate proteoglycan 4	9		inflammatory response			ISO	RGD:619942 	J:155856 	
+MGI:88554	Ctla2a	cytotoxic T lymphocyte-associated protein 2 alpha	13		negative regulation of inflammatory response	regulates a function/process that has the participant pigmented retinal epithelium		IDA		J:153812 	
+MGI:1915756	Ctnnbip1	catenin beta interacting protein 1	4		regulation of vascular permeability involved in acute inflammatory response			ISO	Q9NSA3 	J:164563 	
+MGI:107341	Ctss	cathepsin S	3		positive regulation of inflammatory response	regulates a function/process that has the participant submandibular gland		IGI	MGI:2676278 	J:78331 	
+MGI:1914366	Cuedc2	CUE domain containing 2	19		negative regulation of cytokine production involved in inflammatory response	regulates a function/process caused by the action of inflammatory macrophage		IMP	MGI:5635142 	J:211782 	
+MGI:1914366	Cuedc2	CUE domain containing 2	19		negative regulation of cytokine production involved in inflammatory response			ISO	Q9H467 	J:73065 	
+MGI:1097153	Cx3cl1	chemokine (C-X3-C motif) ligand 1	8		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:1097153	Cx3cl1	chemokine (C-X3-C motif) ligand 1	8		leukocyte migration involved in inflammatory response			ISO	P78423 	J:164563 	
+MGI:1333815	Cx3cr1	chemokine (C-X3-C motif) receptor 1	9		negative regulation of chronic inflammatory response to non-antigenic stimulus			ISO	RGD:620137 	J:155856 	
+MGI:108068	Cxcl1	chemokine (C-X-C motif) ligand 1	5		acute inflammatory response			ISO	RGD:619869 	J:155856 	
+MGI:108068	Cxcl1	chemokine (C-X-C motif) ligand 1	5		inflammatory response			IBA	PTN000021269 	J:161428 	
+MGI:1340094	Cxcl2	chemokine (C-X-C motif) ligand 2	5		inflammatory response			IBA	PTN000021269 	J:161428 	
+MGI:3037818	Cxcl3	chemokine (C-X-C motif) ligand 3	5		inflammatory response			IBA	PTN000021269 	J:161428 	
+MGI:3037818	Cxcl3	chemokine (C-X-C motif) ligand 3	5		inflammatory response			ISO	RGD:621812 	J:155856 	
+MGI:1096868	Cxcl5	chemokine (C-X-C motif) ligand 5	5		inflammatory response			IBA	PTN000021269 	J:161428 	
+MGI:1096868	Cxcl5	chemokine (C-X-C motif) ligand 5	5		inflammatory response			ISO	RGD:708540 	J:155856 	
+MGI:1352449	Cxcl9	chemokine (C-X-C motif) ligand 9	5		inflammatory response			IBA	PTN000021269 	J:161428 	
+MGI:1352450	Cxcl10	chemokine (C-X-C motif) ligand 10	5		inflammatory response			IBA	PTN000021269 	J:161428 	
+MGI:1888499	Cxcl13	chemokine (C-X-C motif) ligand 13	5		inflammatory response			IBA	PTN000021269 	J:161428 	
+MGI:1339941	Cxcl15	chemokine (C-X-C motif) ligand 15	5		inflammatory response			IDA		J:54701 	
+MGI:2387642	Cxcl17	chemokine (C-X-C motif) ligand 17	7		negative regulation of inflammatory response			ISO	Q6UXB2 	J:164563 	
+MGI:105303	Cxcr2	chemokine (C-X-C motif) receptor 2	1		acute inflammatory response to antigenic stimulus			ISO	RGD:2906 	J:155856 	
+MGI:1277207	Cxcr3	chemokine (C-X-C motif) receptor 3	X		inflammatory response			IEA	IPR004070 	J:72247 	
+MGI:1934582	Cxcr6	chemokine (C-X-C motif) receptor 6	9		inflammatory response			IEA	IPR002235 	J:72247 	
+MGI:1316658	Cyba	cytochrome b-245, alpha polypeptide	8		inflammatory response			ISO	P13498 	J:164563 	
+MGI:88574	Cybb	cytochrome b-245, beta polypeptide	X		inflammatory response			IMP		J:209569 	
+MGI:88587	Cyp19a1	cytochrome P450, family 19, subfamily a, polypeptide 1	9		negative regulation of chronic inflammatory response			IMP	MGI:1857043 	J:216958 	
+MGI:2176159	Cyp26b1	cytochrome P450, family 26, subfamily b, polypeptide 1	6		inflammatory response			IMP	MGI:3764691 	J:205957 	
+MGI:1926218	Cysltr1	cysteinyl leukotriene receptor 1	X		inflammatory response			ISO	RGD:619796 	J:155856 	
+MGI:1926218	Cysltr1	cysteinyl leukotriene receptor 1	X		inflammatory response to antigenic stimulus			IMP	MGI:2182326 	J:162477 	
+MGI:1277184	D1Ertd622e	DNA segment, Chr 1, ERATO Doi 622, expressed	1		negative regulation of cytokine production involved in inflammatory response	regulates a function/process that happens in synovial joint		IMP		J:226795 	
+MGI:1916851	Dab2ip	disabled 2 interacting protein	2		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1298381	Ddt	D-dopachrome tautomerase	10		positive regulation of inflammatory response	is a part of cellular response to lipopolysaccharide		IMP		J:175599 	
+MGI:108177	Dhx9	DEAH (Asp-Glu-Ala-His) box polypeptide 9	1		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:108177	Dhx9	DEAH (Asp-Glu-Ala-His) box polypeptide 9	1		positive regulation of inflammatory response			IMP		J:243487 	
+MGI:2177178	Dicer1	dicer 1, ribonuclease type III	12		regulation of inflammatory response			IMP		J:138683 	
+MGI:1261425	Drosha	drosha, ribonuclease type III	15		regulation of inflammatory response			IMP		J:138683 	
+MGI:2384861	Duoxa1	dual oxidase maturation factor 1	2		regulation of inflammatory response	regulates a function/process that happens in lung		IGI	MGI:1914061 	J:205165 	
+MGI:1914061	Duoxa2	dual oxidase maturation factor 2	2		regulation of inflammatory response	regulates a function/process that happens in lung		IGI	MGI:2384861 	J:205165 	
+MGI:1927070	Dusp10	dual specificity phosphatase 10	1		negative regulation of respiratory burst involved in inflammatory response	regulates a function/process that has the participant blood vessel,regulates a function/process that has the participant neutrophil		IMP	MGI:3052343 	J:153759 	
+MGI:103060	Ecm1	extracellular matrix protein 1	3		inflammatory response			IMP	MGI:4940879 	J:168252 	
+MGI:105923	Ednra	endothelin receptor type A	8		positive regulation of inflammatory response			ISO	RGD:2535 	J:155856 	
+MGI:102720	Ednrb	endothelin receptor type B	14		regulation of fever generation			ISO	RGD:2536 	J:155856 	
+MGI:95294	Egfr	epidermal growth factor receptor	11		positive regulation of inflammatory response			ISO	RGD:2543 	J:155856 	
+MGI:1353448	Eif2ak1	eukaryotic translation initiation factor 2 alpha kinase 1	5		acute inflammatory response	happens in macrophage		IMP	MGI:2679454 	J:127433 	
+MGI:2679229	Elane	elastase, neutrophil expressed	10		acute inflammatory response to antigenic stimulus			IDA		J:152360 	
+MGI:2679229	Elane	elastase, neutrophil expressed	10		leukocyte migration involved in inflammatory response			ISO	RGD:1307968 	J:155856 	
+MGI:1101781	Elf3	E74-like factor 3	1		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1101781	Elf3	E74-like factor 3	1		inflammatory response			IEA	IPR033074 	J:72247 	
+MGI:95278	Epha2	Eph receptor A2	4		inflammatory response			IMP	MGI:3040415 	J:148922 	
+MGI:1096338	Ephb6	Eph receptor B6	6		type IV hypersensitivity			IMP	MGI:3522020 	J:94701 	
+MGI:99500	Ephx2	epoxide hydrolase 2, cytoplasmic	14		inflammatory response			ISO	RGD:620732 	J:155856 	
+MGI:99500	Ephx2	epoxide hydrolase 2, cytoplasmic	14		prostaglandin production involved in inflammatory response			ISO	RGD:620732 	J:155856 	
+MGI:1352467	Esr1	estrogen receptor 1 (alpha)	10		regulation of inflammatory response			IMP	MGI:2150897 	J:184829 	
+MGI:95455	Ets1	E26 avian leukemia oncogene 1, 5' domain	9		negative regulation of inflammatory response			IMP		J:219068 	
+MGI:95455	Ets1	E26 avian leukemia oncogene 1, 5' domain	9		positive regulation of inflammatory response			ISO	P14921 	J:164563 	
+MGI:88380	F2	coagulation factor II	2		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:88380	F2	coagulation factor II	2		negative regulation of cytokine production involved in inflammatory response			ISO	P00734 	J:164563 	
+MGI:101802	F2r	coagulation factor II (thrombin) receptor	13		connective tissue replacement involved in inflammatory response wound healing			ISO	P25116 	J:164563 	
+MGI:101802	F2r	coagulation factor II (thrombin) receptor	13		inflammatory response			IMP	MGI:3038377 	J:133917 	
+MGI:101910	F2rl1	coagulation factor II (thrombin) receptor-like 1	13		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:88381	F3	coagulation factor III	3		activation of plasma proteins involved in acute inflammatory response			ISO	P13726 	J:164563 	
+MGI:88383	F8	coagulation factor VIII	X		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:1891012	F12	coagulation factor XII (Hageman factor)	13		Factor XII activation			ISO	P00748 	J:164563 	
+MGI:1891012	F12	coagulation factor XII (Hageman factor)	13		plasma kallikrein-kinin cascade			ISO	P00748 	J:164563 	
+MGI:88038	Fabp4	fatty acid binding protein 4, adipocyte	3		positive regulation of inflammatory response			IMP	MGI:2148887 	J:98564 	
+MGI:88038	Fabp4	fatty acid binding protein 4, adipocyte	3		regulation of inflammatory response			IEA	IPR033073 	J:72247 	
+MGI:1341823	Fanca	Fanconi anemia, complementation group A	8		regulation of inflammatory response			IMP	MGI:2674094 	J:210175 	
+MGI:2448480	Fancd2	Fanconi anemia, complementation group D2	6		regulation of inflammatory response			IMP	MGI:2673422 	J:210175 	
+MGI:95484	Fas	Fas (TNF receptor superfamily member 6)	19		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:95494	Fcer1a	Fc receptor, IgE, high affinity I, alpha polypeptide	1		positive regulation of type I hypersensitivity			IMP	MGI:2383982 	J:39250 	
+MGI:95496	Fcer1g	Fc receptor, IgE, high affinity I, gamma polypeptide	1		positive regulation of type I hypersensitivity			IMP	MGI:2384004 	J:88051 	
+MGI:95496	Fcer1g	Fc receptor, IgE, high affinity I, gamma polypeptide	1		positive regulation of type IIa hypersensitivity			IMP	MGI:2384004 	J:75709 J:83995 	
+MGI:95496	Fcer1g	Fc receptor, IgE, high affinity I, gamma polypeptide	1		positive regulation of type IIa hypersensitivity			IMP	MGI:1857165 	J:78296 	
+MGI:95496	Fcer1g	Fc receptor, IgE, high affinity I, gamma polypeptide	1		positive regulation of type III hypersensitivity			IMP	MGI:1857165 	J:78296 	
+MGI:95496	Fcer1g	Fc receptor, IgE, high affinity I, gamma polypeptide	1		serotonin secretion by platelet			IMP		J:40327 	
+MGI:95498	Fcgr1	Fc receptor, IgG, high affinity I	3		antibody-dependent cellular cytotoxicity			IMP	MGI:2679238 	J:86281 	
+MGI:95498	Fcgr1	Fc receptor, IgG, high affinity I	3		antibody-dependent cellular cytotoxicity			IMP	MGI:2664927 	J:83995 	
+MGI:95498	Fcgr1	Fc receptor, IgG, high affinity I	3		positive regulation of type IIa hypersensitivity			IMP	MGI:2664927 	J:83995 	
+MGI:95498	Fcgr1	Fc receptor, IgG, high affinity I	3		positive regulation of type III hypersensitivity			IMP	MGI:2679238 	J:86281 	
+MGI:95499	Fcgr2b	Fc receptor, IgG, low affinity IIb	1		negative regulation of acute inflammatory response to antigenic stimulus	regulates a function/process that has the participant joint		IMP	MGI:1857166 	J:102982 	
+MGI:95499	Fcgr2b	Fc receptor, IgG, low affinity IIb	1		negative regulation of inflammatory response to antigenic stimulus	regulates a function/process that has the participant skin		IMP	MGI:1857166 	J:107174 	
+MGI:95499	Fcgr2b	Fc receptor, IgG, low affinity IIb	1		negative regulation of type I hypersensitivity			IMP	MGI:1857166 	J:31133 	
+MGI:95500	Fcgr3	Fc receptor, IgG, low affinity III	1		antibody-dependent cellular cytotoxicity			IMP	MGI:1861924 	J:35057 J:87128 	
+MGI:95500	Fcgr3	Fc receptor, IgG, low affinity III	1		positive regulation of type I hypersensitivity			IDA		J:31133 	
+MGI:95500	Fcgr3	Fc receptor, IgG, low affinity III	1		positive regulation of type I hypersensitivity			IMP	MGI:1861924 	J:35057 J:87128 	
+MGI:95500	Fcgr3	Fc receptor, IgG, low affinity III	1		positive regulation of type IIa hypersensitivity			IMP	MGI:1861924 	J:83995 J:87127 	
+MGI:95500	Fcgr3	Fc receptor, IgG, low affinity III	1		positive regulation of type III hypersensitivity			IMP	MGI:1861924 	J:35057 	
+MGI:1335089	Fem1a	feminization 1 homolog a (C. elegans)	17		negative regulation of inflammatory response	regulates a function/process that has the participant bone marrow macrophage		IGI	MGI:104311 	J:135247 	
+MGI:1335089	Fem1a	feminization 1 homolog a (C. elegans)	17		negative regulation of inflammatory response			ISO	Q9BSK4 	J:164563 	
+MGI:2441731	Ffar2	free fatty acid receptor 2	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2441731	Ffar2	free fatty acid receptor 2	7		leukocyte chemotaxis involved in inflammatory response			IMP		J:153951 	
+MGI:2441731	Ffar2	free fatty acid receptor 2	7		positive regulation of acute inflammatory response to non-antigenic stimulus			IMP		J:211434 	
+MGI:2441731	Ffar2	free fatty acid receptor 2	7		regulation of acute inflammatory response			IMP		J:153951 	
+MGI:2685324	Ffar3	free fatty acid receptor 3	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2685324	Ffar3	free fatty acid receptor 3	7		positive regulation of acute inflammatory response to non-antigenic stimulus			IMP		J:211434 	
+MGI:2147577	Ffar4	free fatty acid receptor 4	19		negative regulation of inflammatory response			IDA		J:166091 	
+MGI:95566	Fn1	fibronectin 1	1		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:1917195	Fndc4	fibronectin type III domain containing 4	5		negative regulation of inflammatory response			IDA		J:236896 	
+MGI:1347470	Foxf1	forkhead box F1	8		negative regulation of inflammatory response			IMP	MGI:2179135 	J:154288 	
+MGI:1891436	Foxp3	forkhead box P3	X		negative regulation of chronic inflammatory response			IDA		J:116306 	
+MGI:1891436	Foxp3	forkhead box P3	X		negative regulation of chronic inflammatory response			IMP	MGI:3696705 	J:117165 	
+MGI:1891436	Foxp3	forkhead box P3	X		negative regulation of inflammatory response	regulates a function/process that has the participant lung|regulates a function/process that has the participant liver		IMP	MGI:1857034 	J:102496 	
+MGI:107443	Fpr1	formyl peptide receptor 1	17		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:1278319	Fpr2	formyl peptide receptor 2	17		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:1194495	Fpr3	formyl peptide receptor 3	17		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:1278318	Fpr-rs3	formyl peptide receptor, related sequence 3	17		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:1278317	Fpr-rs4	formyl peptide receptor, related sequence 4	17		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:2448176	Fpr-rs6	formyl peptide receptor, related sequence 6	17		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:2448177	Fpr-rs7	formyl peptide receptor, related sequence 7	17		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:95637	Gal	galanin	19		inflammatory response			ISO	RGD:61954 	J:155856 	
+MGI:95663	Gata3	GATA binding protein 3	2		negative regulation of inflammatory response			ISO	P23771 	J:164563 	
+MGI:2429943	Gbp5	guanylate binding protein 5	3		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2429943	Gbp5	guanylate binding protein 5	3		positive regulation of cytokine production involved in inflammatory response			IMP		J:183942 	
+MGI:95706	Ggt1	gamma-glutamyltransferase 1	10		regulation of inflammatory response			IMP		J:177168 	
+MGI:1346063	Ggt5	gamma-glutamyltransferase 5	10		inflammatory response			IMP	MGI:2182354 	J:78478 	
+MGI:1930008	Ghrl	ghrelin	6		negative regulation of inflammatory response			IBA	PTN000364583 	J:161428 	
+MGI:1930008	Ghrl	ghrelin	6		negative regulation of inflammatory response			ISO	Q9UBU3 	J:164563 	
+MGI:2441906	Ghsr	growth hormone secretagogue receptor	3		negative regulation of inflammatory response			ISO	Q92847 	J:164563 	
+MGI:95713	Gja1	gap junction protein, alpha 1	10		chronic inflammatory response			ISO	RGD:2690 	J:155856 	
+MGI:3780156	Gm1987	predicted gene 1987	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:3708691	Gm2564	predicted gene 2564	4		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:1924104	Gper1	G protein-coupled estrogen receptor 1	5		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1924104	Gper1	G protein-coupled estrogen receptor 1	5		negative regulation of inflammatory response			ISO	Q99527 	J:164563 	
+MGI:3584514	Gpr17	G protein-coupled receptor 17	18		negative regulation of inflammatory response to antigenic stimulus	regulates Cysltr1		IGI	MGI:1926218 	J:162477 	
+MGI:3584514	Gpr17	G protein-coupled receptor 17	18		negative regulation of inflammatory response to antigenic stimulus			IMP	MGI:4819569 	J:162477 	
+MGI:1277106	Gpr33	G protein-coupled receptor 33	12		inflammatory response			IBA	PTN001200752 	J:161428 	
+MGI:1927596	Gprc5b	G protein-coupled receptor, family C, group 5, member B	7		positive regulation of inflammatory response	happens in white fat		IMP		J:205618 	
+MGI:2146785	Gpsm3	G-protein signalling modulator 3 (AGS3-like, C. elegans)	17		positive regulation of cytokine production involved in inflammatory response			IMP	MGI:4075252 	J:193270 	
+MGI:2146785	Gpsm3	G-protein signalling modulator 3 (AGS3-like, C. elegans)	17		positive regulation of inflammatory response			IMP	MGI:4075252 	J:193270 	
+MGI:104887	Gpx1	glutathione peroxidase 1	9		negative regulation of inflammatory response to antigenic stimulus	regulates a function/process that has the participant large intestine		IGI	MGI:104887 MGI:106609 	J:103116 	
+MGI:106609	Gpx2	glutathione peroxidase 2	12		negative regulation of inflammatory response to antigenic stimulus	regulates a function/process that has the participant large intestine		IGI	MGI:104887 MGI:106609 	J:103116 	
+MGI:104767	Gpx4	glutathione peroxidase 4	10		regulation of inflammatory response			ISO	RGD:69226 	J:155856 	
+MGI:1916396	Gsdmd	gasdermin D	15		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:95865	Gstp1	glutathione S-transferase, pi 1	19		negative regulation of acute inflammatory response			NAS		J:172963 	
+MGI:1933533	Hamp	hepcidin antimicrobial peptide	7		negative regulation of inflammatory response	regulates a function/process that happens in macrophage		IGI	MGI:1201791 	J:163717 	
+MGI:2159682	Havcr2	hepatitis A virus cellular receptor 2	11		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96031	Hc	hemolytic complement	2		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96052	Hck	hemopoietic cell kinase	2		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1333784	Hdac5	histone deacetylase 5	11		inflammatory response			TAS		J:113927 	
+MGI:1891835	Hdac7	histone deacetylase 7	15		inflammatory response			TAS		J:113927 	
+MGI:1931221	Hdac9	histone deacetylase 9	12		inflammatory response			TAS		J:113927 	
+MGI:96079	Hgf	hepatocyte growth factor	5		negative regulation of inflammatory response			IDA		J:166840 	
+MGI:106918	Hif1a	hypoxia inducible factor 1, alpha subunit	12		connective tissue replacement involved in inflammatory response wound healing			IMP		J:130751 	
+MGI:2448375	Hist1h2ba	histone cluster 1, H2ba	13		inflammatory response			IMP		J:149113 	
+MGI:96113	Hmgb1	high mobility group box 1	5		inflammatory response			TAS		J:175331 	
+MGI:96157	Hmgb2	high mobility group box 2	8		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96157	Hmgb2	high mobility group box 2	8		inflammatory response to antigenic stimulus	happens in microglial cell		IMP		J:221515 	
+MGI:96163	Hmox1	heme oxygenase 1	8		wound healing involved in inflammatory response			ISO	P09601 	J:164563 	
+MGI:1924384	Hnrnpa0	heterogeneous nuclear ribonucleoprotein A0	13		inflammatory response			IDA		J:180488 	
+MGI:96211	Hp	haptoglobin	8		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:107619	Hrh1	histamine receptor H1	6		inflammatory response			IBA	PTN001545719 	J:161428 	
+MGI:2429635	Hrh4	histamine receptor H4	18		inflammatory response			ISO	RGD:620631 	J:155856 	
+MGI:2429635	Hrh4	histamine receptor H4	18		inflammatory response			TAS		J:79370 	
+MGI:96242	Hspd1	heat shock protein 1 (chaperonin)	1		positive regulation of inflammatory response			ISO	RGD:621314 	J:155856 	
+MGI:96298	Hyal1	hyaluronoglucosaminidase 1	9		inflammatory response			ISO	Q12794 	J:164563 	
+MGI:1196334	Hyal2	hyaluronoglucosaminidase 2	9		positive regulation of inflammatory response			ISO	Q12891 	J:164563 	
+MGI:1196334	Hyal2	hyaluronoglucosaminidase 2	9		positive regulation of inflammatory response			ISS	Q12891 	J:148918 	
+MGI:1330288	Hyal3	hyaluronoglucosaminidase 3	9		inflammatory response			ISO	O43820 	J:164563 	
+MGI:96392	Icam1	intercellular adhesion molecule 1	9		acute inflammatory response to antigenic stimulus			ISO	RGD:2857 	J:155856 	
+MGI:96416	Ido1	indoleamine 2,3-dioxygenase 1	8		cytokine production involved in inflammatory response			IMP	MGI:3505776 	J:146236 	
+MGI:96416	Ido1	indoleamine 2,3-dioxygenase 1	8		inflammatory response	has the participant metanephros		IMP	MGI:3505776 	J:148645 	
+MGI:96416	Ido1	indoleamine 2,3-dioxygenase 1	8		positive regulation of chronic inflammatory response	regulates a function/process that has the participant trachea		IMP	MGI:3505776 	J:134645 	
+MGI:104814	Ier3	immediate early response 3	17		negative regulation of inflammatory response			IMP	MGI:4941879 	J:157504 	
+MGI:96449	Igh-7	immunoglobulin heavy chain 7 (heavy chain of IgE)	12		histamine secretion by mast cell	happens in mast cell		IDA		J:84007 	
+MGI:96449	Igh-7	immunoglobulin heavy chain 7 (heavy chain of IgE)	12		positive regulation of type I hypersensitivity			IDA		J:19552 J:35057 J:39250 J:87227 	
+MGI:96450	Igh-8	immunoglobulin heavy chain 8 (heavy chain of IgG3)	12		positive regulation of type IIa hypersensitivity			IDA		J:75709 	
+MGI:96446	Ighg1	immunoglobulin heavy constant gamma 1 (G1m marker)	12		antibody-dependent cellular cytotoxicity			IDA		J:87128 	
+MGI:96446	Ighg1	immunoglobulin heavy constant gamma 1 (G1m marker)	12		positive regulation of type I hypersensitivity			IDA		J:31133 J:87128 J:87227 	
+MGI:96446	Ighg1	immunoglobulin heavy constant gamma 1 (G1m marker)	12		positive regulation of type IIa hypersensitivity			IDA		J:75709 J:87127 	
+MGI:96443	Ighg2a	immunoglobulin heavy constant gamma 2A	12		antibody-dependent cellular cytotoxicity			IDA		J:83995 J:87128 	
+MGI:96443	Ighg2a	immunoglobulin heavy constant gamma 2A	12		positive regulation of type I hypersensitivity			IDA		J:83995 J:87227 	
+MGI:96443	Ighg2a	immunoglobulin heavy constant gamma 2A	12		positive regulation of type IIa hypersensitivity			IDA		J:75709 J:83995 J:87127 	
+MGI:96445	Ighg2b	immunoglobulin heavy constant gamma 2B	12		positive regulation of type I hypersensitivity			IDA		J:87128 J:87227 	
+MGI:96445	Ighg2b	immunoglobulin heavy constant gamma 2B	12		positive regulation of type IIa hypersensitivity			IDA		J:75709 	
+MGI:1338071	Ikbkb	inhibitor of kappaB kinase beta	8		inflammatory response			IBA	PTN000540281 	J:161428 	
+MGI:96542	Il1a	interleukin 1 alpha	2		connective tissue replacement involved in inflammatory response wound healing			IMP		J:107475 	
+MGI:96542	Il1a	interleukin 1 alpha	2		fever generation			IEA	KW-0666 	J:60000 	
+MGI:96542	Il1a	interleukin 1 alpha	2		inflammatory response		PR:000045524	IDA		J:193599 	
+MGI:96543	Il1b	interleukin 1 beta	2		fever generation			IEA	KW-0666 	J:60000 	
+MGI:96543	Il1b	interleukin 1 beta	2		inflammatory response			ISO	P01584 	J:164563 	
+MGI:96543	Il1b	interleukin 1 beta	2		positive regulation of fever generation			IDA		J:155398 	
+MGI:1859325	Il1f5	interleukin 1 family, member 5 (delta)	2		inflammatory response			IEA	IPR000975 	J:72247 	
+MGI:1859324	Il1f6	interleukin 1 family, member 6	2		inflammatory response			TAS		J:61590 	
+MGI:1916927	Il1f8	interleukin 1 family, member 8	2		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1916927	Il1f8	interleukin 1 family, member 8	2		inflammatory response			IEA	IPR000975 IPR027172 	J:72247 	
+MGI:2449929	Il1f9	interleukin 1 family, member 9	2		inflammatory response			IEA	IPR000975 	J:72247 	
+MGI:2449929	Il1f9	interleukin 1 family, member 9	2		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2652548	Il1f10	interleukin 1 family, member 10	2		inflammatory response			IEA	IPR000975 	J:72247 	
+MGI:96545	Il1r1	interleukin 1 receptor, type I	1		regulation of inflammatory response	regulates a function/process that has the participant liver		IMP	MGI:1861112 	J:181354 	
+MGI:96546	Il1r2	interleukin 1 receptor, type II	1		negative regulation of cytokine production involved in inflammatory response			IMP		J:193599 	
+MGI:104975	Il1rap	interleukin 1 receptor accessory protein	16		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:98427	Il1rl1	interleukin 1 receptor-like 1	1		positive regulation of inflammatory response			IMP		J:157197 	
+MGI:1913107	Il1rl2	interleukin 1 receptor-like 2	1		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1913107	Il1rl2	interleukin 1 receptor-like 2	1		regulation of inflammatory response			IMP	MGI:3762029 	J:193548 	
+MGI:96547	Il1rn	interleukin 1 receptor antagonist	2		acute-phase response			ISO	P18510 	J:164563 	
+MGI:96547	Il1rn	interleukin 1 receptor antagonist	2		fever generation			IBA	PTN000008646 	J:161428 	
+MGI:96547	Il1rn	interleukin 1 receptor antagonist	2		fever generation			ISO	RGD:621159 	J:155856 	
+MGI:96547	Il1rn	interleukin 1 receptor antagonist	2		inflammatory response			IEA	IPR000975 	J:72247 	
+MGI:96548	Il2	interleukin 2	3		negative regulation of inflammatory response	regulates a function/process that has the participant colon		IMP	MGI:1857191 	J:15223 J:39981 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		inflammatory response to antigenic stimulus			ISO	RGD:2895 	J:155856 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		negative regulation of inflammatory response			IMP	MGI:1857192 	J:84826 	
+MGI:96549	Il2ra	interleukin 2 receptor, alpha chain	2		negative regulation of inflammatory response	regulates a function/process that has the participant colon		IMP	MGI:1857192 	J:64279 	
+MGI:96552	Il3	interleukin 3	11		fever generation			IBA	PTN000008646 	J:161428 	
+MGI:96556	Il4	interleukin 4	11		negative regulation of acute inflammatory response			ISO	RGD:2898 	J:155856 	
+MGI:96556	Il4	interleukin 4	11		negative regulation of chronic inflammatory response			ISO	RGD:2898 	J:155856 	
+MGI:96556	Il4	interleukin 4	11		regulation of inflammatory response			ISO	RGD:2898 	J:155856 	
+MGI:105367	Il4ra	interleukin 4 receptor, alpha	7		production of molecular mediator involved in inflammatory response			IEA	IPR015319 	J:72247 	
+MGI:96558	Il5ra	interleukin 5 receptor, alpha	6		inflammatory response to antigenic stimulus			IMP	MGI:2180501 	J:103271 	
+MGI:96559	Il6	interleukin 6	5		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:96559	Il6	interleukin 6	5		inflammatory response			ISO	P05231 	J:164563 	
+MGI:96559	Il6	interleukin 6	5		positive regulation of acute inflammatory response			ISO	P05231 	J:164563 	
+MGI:96537	Il10	interleukin 10	1		inflammatory response			ISO	P22301 	J:164563 	
+MGI:96537	Il10	interleukin 10	1		negative regulation of chronic inflammatory response to antigenic stimulus	regulates a function/process that happens in joint		IMP	MGI:1857199 	J:131892 	
+MGI:96537	Il10	interleukin 10	1		negative regulation of inflammatory response	regulates a function/process that has the participant bone marrow macrophage		IMP		J:135247 	
+MGI:96537	Il10	interleukin 10	1		negative regulation of inflammatory response			ISO	RGD:2886 	J:155856 	
+MGI:96540	Il12b	interleukin 12b	11		negative regulation of inflammatory response to antigenic stimulus	regulates a function/process that has the participant colon		IMP		J:113450 	
+MGI:96541	Il13	interleukin 13	11		inflammatory response			IMP	MGI:1931804 	J:98708 	
+MGI:107364	Il17a	interleukin 17A	1		inflammatory response			IEA	IPR020440 	J:72247 	
+MGI:107364	Il17a	interleukin 17A	1		positive regulation of cytokine production involved in inflammatory response			IDA		J:153850 	
+MGI:107364	Il17a	interleukin 17A	1		positive regulation of cytokine production involved in inflammatory response			IGI	MGI:107399 MGI:2159336 	J:134412 	
+MGI:1928397	Il17b	interleukin 17B	18		inflammatory response			IEA	IPR020440 	J:72247 	
+MGI:1928397	Il17b	interleukin 17B	18		positive regulation of cytokine production involved in inflammatory response			IDA		J:153850 	
+MGI:2446486	Il17c	interleukin 17C	8		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2446486	Il17c	interleukin 17C	8		inflammatory response			IEA	IPR020440 	J:72247 	
+MGI:2446486	Il17c	interleukin 17C	8		positive regulation of cytokine production involved in inflammatory response			IDA		J:153850 	
+MGI:2446510	Il17d	interleukin 17D	14		inflammatory response			ISO	Q8TAD2 	J:164563 	
+MGI:2446510	Il17d	interleukin 17D	14		positive regulation of cytokine production involved in inflammatory response			ISO	Q8TAD2 	J:164563 	
+MGI:2676631	Il17f	interleukin 17F	1		inflammatory response			IEA	IPR020440 	J:72247 	
+MGI:2676631	Il17f	interleukin 17F	1		positive regulation of cytokine production involved in inflammatory response			IDA		J:134412 J:153850 	
+MGI:2676631	Il17f	interleukin 17F	1		positive regulation of cytokine production involved in inflammatory response			IGI	MGI:107399 	J:134412 	
+MGI:107399	Il17ra	interleukin 17 receptor A	6		positive regulation of cytokine production involved in inflammatory response			IGI	MGI:107364 MGI:2676631 	J:134412 	
+MGI:107399	Il17ra	interleukin 17 receptor A	6		positive regulation of inflammatory response			IMP	MGI:2450882 	J:139080 	
+MGI:1355292	Il17rb	interleukin 17 receptor B	14		positive regulation of inflammatory response			IMP	MGI:3809835 	J:139080 	
+MGI:2159336	Il17rc	interleukin 17 receptor C	6		positive regulation of cytokine production involved in inflammatory response			IGI	MGI:107364 	J:134412 	
+MGI:1889371	Il17re	interleukin 17 receptor E	6		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:107936	Il18	interleukin 18	9		inflammatory response	has the participant skin		IGI	MGI:96698 	J:200244 	
+MGI:107936	Il18	interleukin 18	9		inflammatory response			ISO	Q14116 	J:164563 	
+MGI:2143266	Il20rb	interleukin 20 receptor beta	9		inflammatory response to antigenic stimulus	has the participant T cell		IMP	MGI:3830304 	J:143497 	
+MGI:2143266	Il20rb	interleukin 20 receptor beta	9		negative regulation of type IV hypersensitivity	regulates a function/process that has the participant T cell		IMP	MGI:3830304 	J:143497 	
+MGI:1355307	Il22	interleukin 22	10		negative regulation of inflammatory response	regulates a function/process that has the participant colon		IMP	MGI:3761615 	J:189217 	
+MGI:2665114	Il22ra2	interleukin 22 receptor, alpha 2	10		negative regulation of inflammatory response			IMP	MGI:5446694 	J:189217 	
+MGI:1932410	Il23a	interleukin 23, alpha subunit p19	10		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2181693	Il23r	interleukin 23 receptor	6		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2155888	Il25	interleukin 25	14		inflammatory response			IDA		J:79437 J:139080 	
+MGI:2155888	Il25	interleukin 25	14		inflammatory response			IMP		J:72821 	
+MGI:2155888	Il25	interleukin 25	14		inflammatory response			ISO	RGD:1561632 	J:155856 	
+MGI:2155888	Il25	interleukin 25	14		inflammatory response to antigenic stimulus			ISO	RGD:1561632 	J:155856 	
+MGI:2384409	Il27	interleukin 27	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2180511	Il31ra	interleukin 31 receptor A	13		acute inflammatory response to antigenic stimulus	happens in intestine		IMP	MGI:3717594 	J:148242 	
+MGI:1924375	Il33	interleukin 33	19		positive regulation of inflammatory response			IDA		J:157197 	
+MGI:1923777	Il34	interleukin 34	8		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96573	Ins2	insulin II	7		acute-phase response			ISO	P01308 	J:164563 	
+MGI:96573	Ins2	insulin II	7		negative regulation of acute inflammatory response			ISO	P01308 	J:164563 	
+MGI:96573	Ins2	insulin II	7		negative regulation of respiratory burst involved in inflammatory response			ISO	P01308 	J:164563 	
+MGI:2429603	Irak2	interleukin-1 receptor-associated kinase 2	6		inflammatory response			IEA	IPR033611 	J:72247 	
+MGI:101791	Isl1	ISL1 transcription factor, LIM/homeodomain	13		negative regulation of inflammatory response			IMP		J:187645 	
+MGI:96600	Itga2	integrin alpha 2	13		positive regulation of inflammatory response			ISO	RGD:621632 	J:155856 	
+MGI:96607	Itgam	integrin alpha M	7		leukocyte migration involved in inflammatory response			IMP	MGI:1931533 	J:198197 	
+MGI:96608	Itgav	integrin alpha V	2		inflammatory response			TAS		J:175331 	
+MGI:96611	Itgb2	integrin beta 2	10		leukocyte migration involved in inflammatory response			ISO	RGD:1305581 	J:155856 	
+MGI:1277979	Itgb2l	integrin beta 2-like	16		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96615	Itgb6	integrin beta 6	2		inflammatory response			IMP	MGI:1926484 	J:100142 	
+MGI:109536	Itih4	inter alpha-trypsin inhibitor, heavy chain 4	14		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:96629	Jak2	Janus kinase 2	19		inflammatory response			IBA	PTN000700624 	J:161428 	
+MGI:96629	Jak2	Janus kinase 2	19		positive regulation of inflammatory response			ISO	RGD:2939 	J:155856 	
+MGI:96629	Jak2	Janus kinase 2	19		regulation of inflammatory response			ISO	O60674 	J:164563 	
+MGI:99928	Jak3	Janus kinase 3	8		inflammatory response			IBA	PTN000700624 	J:161428 	
+MGI:1933825	Jam3	junction adhesion molecule 3	9		leukocyte migration involved in inflammatory response	happens in lung alveolus,results in the movement of leukocyte		IMP		J:99020 	
+MGI:1934754	Kars	lysyl-tRNA synthetase	8		positive regulation of cytokine production involved in inflammatory response			ISO	Q15046 	J:164563 	
+MGI:2448492	Kdm6b	KDM1 lysine (K)-specific demethylase 6B	11		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		inflammatory response			IMP		J:136704 	
+MGI:1101771	Kl	klotho	5		acute inflammatory response			ISO	RGD:620396 	J:155856 	
+MGI:892019	Klk1b1	kallikrein 1-related peptidase b1	7		tissue kallikrein-kinin cascade			IMP	MGI:3513115 	J:67868 J:115590 	
+MGI:102849	Klkb1	kallikrein B, plasma 1	8		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1097705	Kng1	kininogen 1	16		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96698	Krt1	keratin 1	15		negative regulation of inflammatory response	regulates a function/process that has the participant skin		IGI	MGI:107936 	J:200244 	
+MGI:96698	Krt1	keratin 1	15		negative regulation of inflammatory response	regulates a function/process that has the participant skin		IMP	MGI:5495252 	J:200244 	
+MGI:96690	Krt16	keratin 16	11		inflammatory response			IMP		J:202957 	
+MGI:1342293	Lat	linker for activation of T cells	7		inflammatory response	has the participant T cell		IMP		J:100686 	
+MGI:1098776	Lbp	lipopolysaccharide binding protein	2		acute-phase response			IMP		J:139341 	
+MGI:1098776	Lbp	lipopolysaccharide binding protein	2		leukocyte chemotaxis involved in inflammatory response	happens in peritoneal cavity		IMP	MGI:1857975 	J:123792 	
+MGI:1098776	Lbp	lipopolysaccharide binding protein	2		positive regulation of respiratory burst involved in inflammatory response			IMP		J:43514 	
+MGI:96765	Ldlr	low density lipoprotein receptor	9		positive regulation of inflammatory response	happens in aortic endothelial cell		IGI	URS0000329B12_10090 	J:223623 	
+MGI:104663	Lep	leptin	6		regulation of cytokine production involved in inflammatory response			ISO	P41159 	J:164563 	
+MGI:109496	Lgals9	lectin, galactose binding, soluble 9	11		negative regulation of inflammatory response	happens in colon		IMP		J:224716 	
+MGI:1934604	Lias	lipoic acid synthetase	5		inflammatory response			IMP	MGI:3604218 	J:143405 	
+MGI:96789	Lipa	lysosomal acid lipase A	19		inflammatory response	has the participant lung		IMP	MGI:2451080 	J:101217 	
+MGI:1337004	Loxl3	lysyl oxidase-like 3	6		inflammatory response			IMP		J:239159 	
+MGI:104797	Lta	lymphotoxin A	17		inflammatory response			TAS		J:4753 J:17976 J:39746 J:47428 J:56996 	
+MGI:104797	Lta	lymphotoxin A	17		positive regulation of chronic inflammatory response to antigenic stimulus	regulates a function/process that has the participant limb		IGI	MGI:104798 	J:115034 	
+MGI:104875	Ltbr	lymphotoxin B receptor	6		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:107633	Lxn	latexin	3		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1321404	Ly86	lymphocyte antigen 86	13		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1341909	Ly96	lymphocyte antigen 96	1		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96892	Lyn	LYN proto-oncogene, Src family tyrosine kinase	4		histamine secretion by mast cell			ISO	RGD:621017 	J:155856 	
+MGI:96892	Lyn	LYN proto-oncogene, Src family tyrosine kinase	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96892	Lyn	LYN proto-oncogene, Src family tyrosine kinase	4		regulation of inflammatory response			IMP		J:107272 	
+MGI:1346868	Map2k3	mitogen-activated protein kinase kinase 3	11		inflammatory response			IMP	MGI:1857752 	J:54078 J:54309 	
+MGI:1346861	Mapk8	mitogen-activated protein kinase 8	14		inflammatory response			ISO	RGD:621506 	J:155856 	
+MGI:1346865	Mapk14	mitogen-activated protein kinase 14	17		regulation of cytokine production involved in inflammatory response			ISO	Q16539 	J:164563 	
+MGI:109298	Mapkapk2	MAP kinase-activated protein kinase 2	1		inflammatory response			IMP		J:59678 	
+MGI:96918	Mas1	MAS1 oncogene	17		regulation of inflammatory response			IGI	MGI:96559 	J:148250 	
+MGI:96918	Mas1	MAS1 oncogene	17		regulation of inflammatory response	regulates a function/process that has the participant metanephros		IMP	MGI:2158808 	J:148250 	
+MGI:2443308	Mcph1	microcephaly, primary autosomal recessive 1	8		regulation of inflammatory response	regulates a function/process that has the participant middle ear		IMP	MGI:4431685 	J:199385 	
+MGI:95457	Mecom	MDS1 and EVI1 complex locus	3		inflammatory response	has the participant middle ear		IMP	MGI:2158381 	J:113445 	
+MGI:1859396	Mefv	Mediterranean fever	16		inflammatory response			ISO	O15553 	J:164563 	
+MGI:1859396	Mefv	Mediterranean fever	16		negative regulation of cytokine production involved in inflammatory response			ISO	O15553 	J:164563 	
+MGI:1859396	Mefv	Mediterranean fever	16		negative regulation of inflammatory response			ISO	O15553 	J:164563 	
+MGI:96964	Mep1b	meprin 1 beta	18		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2384806	Metrnl	meteorin, glial cell differentiation regulator-like	11		negative regulation of inflammatory response			IDA		J:211329 	
+MGI:1346042	Mgll	monoglyceride lipase	6		regulation of inflammatory response			IMP		J:166013 	
+MGI:96982	Mif	macrophage migration inhibitory factor (glycosylation-inhibiting factor)	10		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96982	Mif	macrophage migration inhibitory factor (glycosylation-inhibiting factor)	10		positive regulation of acute inflammatory response			ISO	RGD:621163 	J:155856 	
+MGI:2676885	Mir21a	microRNA 21a	11		inflammatory response to antigenic stimulus			IDA		J:184679 	
+MGI:2676832	Mir147	microRNA 147	2		negative regulation of inflammatory response	regulates a function/process that has the participant peritoneal cavity,regulates a function/process that has the participant macrophage		IDA		J:153065 	
+MGI:2676840	Mir155	microRNA 155	16		inflammatory response to antigenic stimulus			IDA		J:184679 	
+MGI:3619324	Mir301	microRNA 301	11		inflammatory response to antigenic stimulus			IDA		J:184679 	
+MGI:3619335	Mir324	microRNA 324	11		positive regulation of cytokine production involved in inflammatory response	regulates a function/process caused by the action of inflammatory macrophage		IDA		J:211782 	
+MGI:5490891	Mir7578	microRNA 7578	2		negative regulation of inflammatory response	regulates a function/process that happens in macrophage		IDA		J:195583 	
+MGI:2443938	Mmp25	matrix metallopeptidase 25	17		inflammatory response			IEA	IPR028733 	J:72247 	
+MGI:2684085	Mrgpra3	MAS-related GPR, member A3	7		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:95495	Ms4a2	membrane-spanning 4-domains, subfamily A, member 2	19		inflammatory response			ISO	RGD:2598 	J:155856 	
+MGI:2676278	Muc19	mucin 19	15		negative regulation of inflammatory response	regulates a function/process that has the participant submandibular gland		IGI	MGI:107341 	J:78331 	
+MGI:2676278	Muc19	mucin 19	15		negative regulation of inflammatory response	regulates a function/process that has the participant salivary gland		IMP	MGI:1857043 	J:39799 	
+MGI:2676278	Muc19	mucin 19	15		negative regulation of inflammatory response			IMP	MGI:1857043 	J:34813 	
+MGI:2676278	Muc19	mucin 19	15		negative regulation of inflammatory response	regulates a function/process that has the participant salivary gland|regulates a function/process that has the participant lacrimal gland		IMP	MGI:1857043 	J:20364 	
+MGI:2676278	Muc19	mucin 19	15		negative regulation of inflammatory response	regulates a function/process that has the participant lacrimal gland|regulates a function/process that has the participant salivary gland		IMP	MGI:1857043 	J:56075 J:62145 	
+MGI:107624	Mvk	mevalonate kinase	5		negative regulation of inflammatory response			ISO	Q03426 	J:164563 	
+MGI:108005	Myd88	myeloid differentiation primary response gene 88	9		inflammatory response			IMP	MGI:4421295 	J:221015 	
+MGI:108005	Myd88	myeloid differentiation primary response gene 88	9		positive regulation of cytokine production involved in inflammatory response	regulates a function/process that happens in macrophage		IMP		J:158401 	
+MGI:108005	Myd88	myeloid differentiation primary response gene 88	9		regulation of inflammatory response			IMP		J:131398 	
+MGI:2443063	Mylk3	myosin light chain kinase 3	8		regulation of vascular permeability involved in acute inflammatory response			ISO	Q32MK0 	J:164563 	
+MGI:1298226	Naip2	NLR family, apoptosis inhibitory protein 2	13		inflammatory response			IMP		J:176197 	
+MGI:1298220	Naip5	NLR family, apoptosis inhibitory protein 5	13		inflammatory response			IMP		J:176197 	
+MGI:1298222	Naip6	NLR family, apoptosis inhibitory protein 6	13		inflammatory response			IMP		J:176197 	
+MGI:97283	Ncf1	neutrophil cytosolic factor 1	5		inflammatory response			IMP	MGI:1934143 	J:75371 	
+MGI:1929601	Ndfip1	Nedd4 family interacting protein 1	18		negative regulation of inflammatory response	regulates a function/process that has the participant ear		IMP	MGI:3695433 	J:116617 	
+MGI:104719	Ndst1	N-deacetylase/N-sulfotransferase (heparan glucosaminyl) 1	18		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:108420	Nfe2l2	nuclear factor, erythroid derived 2, like 2	2		inflammatory response			IMP	MGI:2385925 	J:219149 	
+MGI:97312	Nfkb1	nuclear factor of kappa light polypeptide gene enhancer in B cells 1, p105	3		negative regulation of inflammatory response	regulates a function/process that has the participant bone marrow macrophage		IMP	MGI:97312 	J:135247 	
+MGI:1099800	Nfkb2	nuclear factor of kappa light polypeptide gene enhancer in B cells 2, p49/p100	19		inflammatory response			IBA	PTN001193216 	J:161428 	
+MGI:104741	Nfkbia	nuclear factor of kappa light polypeptide gene enhancer in B cells inhibitor, alpha	12		positive regulation of inflammatory response			ISO	P25963 	J:164563 	
+MGI:3041243	Nfkbid	nuclear factor of kappa light polypeptide gene enhancer in B cells inhibitor, delta	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1931595	Nfkbiz	nuclear factor of kappa light polypeptide gene enhancer in B cells inhibitor, zeta	16		inflammatory response			IDA		J:65974 	
+MGI:97323	Ngfr	nerve growth factor receptor (TNFR superfamily, member 16)	11		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:2444070	Nlrc3	NLR family, CARD domain containing 3	16		negative regulation of cytokine production involved in inflammatory response			IMP		J:209896 	
+MGI:2444070	Nlrc3	NLR family, CARD domain containing 3	16		negative regulation of inflammatory response			IMP		J:209896 	
+MGI:2444070	Nlrc3	NLR family, CARD domain containing 3	16		negative regulation of inflammatory response			ISO	Q7RTR2 	J:164563 	
+MGI:3036243	Nlrc4	NLR family, CARD domain containing 4	17		inflammatory response			IMP		J:112670 J:112671 J:176197 J:185371 J:189256 	
+MGI:3036243	Nlrc4	NLR family, CARD domain containing 4	17		inflammatory response			IMP	MGI:3046934 	J:91292 	
+MGI:2684861	Nlrp1a	NLR family, pyrin domain containing 1A	11		inflammatory response			IEA	IPR033516 	J:72247 	
+MGI:3582959	Nlrp1b	NLR family, pyrin domain containing 1B	11		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:3582959	Nlrp1b	NLR family, pyrin domain containing 1B	11		inflammatory response			IEA	IPR033516 	J:72247 	
+MGI:2653833	Nlrp3	NLR family, pyrin domain containing 3	11		inflammatory response			ISO	Q96P20 	J:164563 	
+MGI:2653833	Nlrp3	NLR family, pyrin domain containing 3	11		negative regulation of acute inflammatory response			ISO	Q96P20 	J:164563 	
+MGI:2653833	Nlrp3	NLR family, pyrin domain containing 3	11		negative regulation of inflammatory response			ISO	Q96P20 	J:164563 	
+MGI:2653833	Nlrp3	NLR family, pyrin domain containing 3	11		regulation of inflammatory response	regulates a function/process that has the participant liver		IMP	MGI:3686871 	J:181354 	
+MGI:2443697	Nlrp4a	NLR family, pyrin domain containing 4A	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:3056570	Nlrp4b	NLR family, pyrin domain containing 4B	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1890518	Nlrp4c	NLR family, pyrin domain containing 4C	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:3056600	Nlrp4e	NLR family, pyrin domain containing 4E	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2145528	Nlrp4f	NLR family, pyrin domain containing 4F	13		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2141990	Nlrp6	NLR family, pyrin domain containing 6	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2141990	Nlrp6	NLR family, pyrin domain containing 6	7		negative regulation of inflammatory response to antigenic stimulus			IMP		J:186698 	
+MGI:2141990	Nlrp6	NLR family, pyrin domain containing 6	7		regulation of inflammatory response			IMP		J:175503 	
+MGI:2141990	Nlrp6	NLR family, pyrin domain containing 6	7		regulation of inflammatory response	regulates a function/process that has the participant colon		IMP	MGI:5085850 	J:197406 	
+MGI:2675292	Nlrp9a	NLR family, pyrin domain containing 9A	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2675377	Nlrp9b	NLR family, pyrin domain containing 9B	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:3028627	Nlrp9c	NLR family, pyrin domain containing 9C	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2444084	Nlrp10	NLR family, pyrin domain containing 10	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2444084	Nlrp10	NLR family, pyrin domain containing 10	7		positive regulation of inflammatory response			IMP		J:245258 	
+MGI:2676630	Nlrp12	NLR family, pyrin domain containing 12	7		negative regulation of inflammatory response			ISO	P59046 	J:164563 	
+MGI:2429611	Nlrx1	NLR family member X1	9		negative regulation of inflammatory response			IMP	MGI:5141085 	J:173995 	
+MGI:2429397	Nod2	nucleotide-binding oligomerization domain containing 2	8		inflammatory response			TAS		J:114723 	
+MGI:2429397	Nod2	nucleotide-binding oligomerization domain containing 2	8		negative regulation of inflammatory response to antigenic stimulus	regulates a function/process that has the participant colon		IMP	MGI:2680581 	J:113450 	
+MGI:2429397	Nod2	nucleotide-binding oligomerization domain containing 2	8		positive regulation of cytokine production involved in inflammatory response			ISO	Q9HC29 	J:164563 	
+MGI:2429397	Nod2	nucleotide-binding oligomerization domain containing 2	8		regulation of inflammatory response			IMP	MGI:3529594 	J:178054 	
+MGI:97361	Nos2	nitric oxide synthase 2, inducible	11		inflammatory response			TAS		J:113936 	
+MGI:97361	Nos2	nitric oxide synthase 2, inducible	11		regulation of cytokine production involved in inflammatory response			ISO	P35228 	J:164563 	
+MGI:97363	Notch1	notch 1	2		inflammatory response to antigenic stimulus			IGI	MGI:97364 	J:123631 	
+MGI:97364	Notch2	notch 2	3		inflammatory response to antigenic stimulus			IGI	MGI:97363 	J:123631 	
+MGI:109185	Nov	nephroblastoma overexpressed gene	15		negative regulation of inflammatory response			IMP		J:215090 	
+MGI:108082	Npy5r	neuropeptide Y receptor Y5	8		negative regulation of acute inflammatory response to antigenic stimulus			ISO	RGD:3199 	J:155856 	
+MGI:108082	Npy5r	neuropeptide Y receptor Y5	8		positive regulation of acute inflammatory response			ISO	RGD:3199 	J:155856 	
+MGI:2449205	Nr1d2	nuclear receptor subfamily 1, group D, member 2	14		regulation of inflammatory response			IMP		J:203407 	
+MGI:1352462	Nr1h3	nuclear receptor subfamily 1, group H, member 3	2		negative regulation of inflammatory response			IDA		J:173138 	
+MGI:1352464	Nr1h4	nuclear receptor subfamily 1, group H, member 4	10		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1352464	Nr1h4	nuclear receptor subfamily 1, group H, member 4	10		negative regulation of inflammatory response			IMP		J:228561 	
+MGI:1914419	Nradd	neurotrophin receptor associated death domain	9		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:2445095	Nrros	negative regulator of reactive oxygen species	16		inflammatory response			IMP		J:209569 	
+MGI:99782	Nt5e	5' nucleotidase, ecto	9		negative regulation of inflammatory response	regulates a function/process that has the participant lung		IMP	MGI:3522017 	J:129862 	
+MGI:1891834	Nupr1	nuclear protein transcription regulator 1	7		acute inflammatory response	has the participant pancreas		IMP	MGI:3784016 	J:88958 	
+MGI:1916842	Odam	odontogenic, ameloblast asssociated	5		inflammatory response			ISO	A1E959 	J:164563 	
+MGI:1261434	Olr1	oxidized low density lipoprotein (lectin-like) receptor 1	6		inflammatory response			ISO	RGD:620515 	J:155856 	
+MGI:97443	Orm1	orosomucoid 1	4		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:97444	Orm2	orosomucoid 2	4		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:2158505	Otud7a	OTU domain containing 7A	7		regulation of inflammatory response			IBA	PTN001001092 	J:161428 	
+MGI:3577015	Otulin	OTU deubiquitinase with linear linkage specificity	15		negative regulation of inflammatory response			IMP		J:236075 	
+MGI:3577015	Otulin	OTU deubiquitinase with linear linkage specificity	15		negative regulation of inflammatory response			ISO	Q96BN8 	J:164563 	
+MGI:1098235	P2rx1	purinergic receptor P2X, ligand-gated ion channel, 1	11		serotonin secretion by platelet	happens in platelet		IMP	MGI:2181608 	J:85102 	
+MGI:1339957	P2rx7	purinergic receptor P2X, ligand-gated ion channel, 7	5		inflammatory response	has the participant metanephros		IMP	MGI:2386080 	J:136485 	
+MGI:1339957	P2rx7	purinergic receptor P2X, ligand-gated ion channel, 7	5		inflammatory response	has the participant peritoneal macrophage		IMP	MGI:2386080 	J:111397 	
+MGI:2135637	Park7	Parkinson disease (autosomal recessive, early onset) 7	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2135637	Park7	Parkinson disease (autosomal recessive, early onset) 7	4		positive regulation of acute inflammatory response to antigenic stimulus			IMP		J:239193 	
+MGI:2135637	Park7	Parkinson disease (autosomal recessive, early onset) 7	4		regulation of inflammatory response			IMP		J:169981 	
+MGI:2685589	Parp4	poly (ADP-ribose) polymerase family, member 4	14		inflammatory response			ISO	Q9UKK3 	J:164563 	
+MGI:1289156	Pbk	PDZ binding kinase	14		negative regulation of inflammatory response	regulates a function/process that has the participant fibroblast		IMP	MGI:5293435 	J:176985 	
+MGI:107490	Pdcd4	programmed cell death 4	19		negative regulation of cytokine production involved in inflammatory response	is a part of cellular response to lipopolysaccharide,regulates UniProtKB:P18893		IMP		J:158464 	
+MGI:107490	Pdcd4	programmed cell death 4	19		negative regulation of cytokine production involved in inflammatory response	regulates UniProtKB:P07750,happens in splenocyte|regulates UniProtKB:P18893,happens in splenocyte|regulates UniProtKB:P01580,happens in splenocyte		IMP		J:120583 	
+MGI:107490	Pdcd4	programmed cell death 4	19		positive regulation of inflammatory response			IMP		J:120583 	
+MGI:107490	Pdcd4	programmed cell death 4	19		positive regulation of inflammatory response	is a part of cellular response to lipopolysaccharide		IMP		J:158464 	
+MGI:2446107	Pde2a	phosphodiesterase 2A, cGMP-stimulated	7		positive regulation of inflammatory response			IMP		J:177228 	
+MGI:2651499	Pde5a	phosphodiesterase 5A, cGMP-specific	3		positive regulation of chronic inflammatory response			ISO	RGD:620995 	J:155856 	
+MGI:1098283	Per1	period circadian clock 1	11		regulation of cytokine production involved in inflammatory response			ISO	RGD:727863 	J:155856 	
+MGI:1888711	Pf4	platelet factor 4	5		inflammatory response			IBA	PTN000021269 	J:161428 	
+MGI:1345092	Pglyrp1	peptidoglycan recognition protein 1	7		negative regulation of inflammatory response			IMP	MGI:2670590 	J:178054 	
+MGI:1928099	Pglyrp2	peptidoglycan recognition protein 2	17		regulation of inflammatory response			IMP	MGI:5297105 	J:178054 J:179696 	
+MGI:97572	Phb	prohibitin	11		positive regulation of complement activation			ISO	P35232 	J:164563 	
+MGI:1933177	Pik3ap1	phosphoinositide-3-kinase adaptor protein 1	19		regulation of inflammatory response			IMP		J:180126 	
+MGI:1206581	Pik3ca	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha	3		inflammatory response			IBA	PTN000799655 	J:161428 	
+MGI:1922019	Pik3cb	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit beta	9		inflammatory response			IBA	PTN000799655 	J:161428 	
+MGI:1098211	Pik3cd	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit delta	4		inflammatory response			IBA	PTN000799655 	J:161428 	
+MGI:1353576	Pik3cg	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit gamma	12		inflammatory response			IBA	PTN000799655 	J:161428 	
+MGI:1353576	Pik3cg	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit gamma	12		positive regulation of acute inflammatory response			ISO	RGD:1306468 	J:155856 	
+MGI:1195256	Pla2g4a	phospholipase A2, group IVA (cytosolic, calcium-dependent)	1		positive regulation of inflammatory response			ISO	RGD:67366 	J:155856 	
+MGI:101899	Pla2g5	phospholipase A2, group V	4		negative regulation of inflammatory response			IMP	MGI:3042209 	J:215319 	
+MGI:1351327	Pla2g7	phospholipase A2, group VII (platelet-activating factor acetylhydrolase, plasma)	17		inflammatory response			TAS		J:29539 	
+MGI:104810	Plaa	phospholipase A2, activating protein	4		inflammatory response			IDA		J:28587 	
+MGI:1915009	Plgrkt	plasminogen receptor, C-terminal lysine transmembrane protein	19		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:97623	Plp1	proteolipid protein (myelin) 1	X		inflammatory response			IGI	MGI:1917997 	J:201143 	
+MGI:2180564	Pnma1	paraneoplastic antigen MA1	12		inflammatory response to antigenic stimulus			ISO	RGD:621230 	J:155856 	
+MGI:97740	Polb	polymerase (DNA directed), beta	8		inflammatory response			IMP	MGI:5427084 	J:206872 	
+MGI:104740	Ppara	peroxisome proliferator activated receptor alpha	15		negative regulation of inflammatory response			ISO	Q07869 	J:164563 	
+MGI:101884	Ppard	peroxisome proliferator activator receptor delta	17		negative regulation of inflammatory response			ISO	RGD:3370 	J:155856 	
+MGI:97747	Pparg	peroxisome proliferator activated receptor gamma	6		inflammatory response			TAS		J:78315 	
+MGI:97747	Pparg	peroxisome proliferator activated receptor gamma	6		negative regulation of acute inflammatory response			ISO	RGD:3371 	J:155856 	
+MGI:1888712	Ppbp	pro-platelet basic protein	5		leukocyte migration involved in inflammatory response			IMP	MGI:3797508 	J:198197 	
+MGI:1919711	Prcp	prolylcarboxypeptidase (angiotensinase C)	7		plasma kallikrein-kinin cascade			IMP	MGI:4123993 	J:172848 	
+MGI:109486	Prdx2	peroxiredoxin 2	8		respiratory burst involved in inflammatory response			IMP	MGI:2668456 	J:125361 	
+MGI:97595	Prkca	protein kinase C, alpha	11		positive regulation of inflammatory response			IMP	MGI:3029711 	J:85082 	
+MGI:97601	Prkcq	protein kinase C, theta	2		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:97602	Prkcz	protein kinase C, zeta	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:99879	Prkd1	protein kinase D1	12		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:97771	Proc	protein C	18		negative regulation of inflammatory response			ISO	P04070 	J:164563 	
+MGI:1347005	Psma1	proteasome (prosome, macropain) subunit, alpha type 1	7		negative regulation of inflammatory response to antigenic stimulus			IMP		J:156236 	
+MGI:1347005	Psma1	proteasome (prosome, macropain) subunit, alpha type 1	7		negative regulation of inflammatory response to antigenic stimulus			TAS		J:155590 	
+MGI:1098257	Psmb4	proteasome (prosome, macropain) subunit, beta type 4	3		negative regulation of inflammatory response to antigenic stimulus			IMP		J:156236 	
+MGI:1321396	Pstpip1	proline-serine-threonine phosphatase-interacting protein 1	9		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:106066	Ptafr	platelet-activating factor receptor	4		inflammatory response			IMP	MGI:3036770 	J:87866 	
+MGI:102966	Ptgdr	prostaglandin D receptor	14		inflammatory response			IMP	MGI:2386956 	J:98317 	
+MGI:97795	Ptger3	prostaglandin E receptor 3 (subtype EP3)	3		fever generation			IDA		J:70534 	
+MGI:97795	Ptger3	prostaglandin E receptor 3 (subtype EP3)	3		fever generation			IMP	MGI:2137759 	J:70534 	
+MGI:97795	Ptger3	prostaglandin E receptor 3 (subtype EP3)	3		positive regulation of fever generation			IMP		J:155398 	
+MGI:104311	Ptger4	prostaglandin E receptor 4 (subtype EP4)	15		negative regulation of inflammatory response	regulates a function/process that has the participant bone marrow macrophage		IGI	MGI:1335089 	J:135247 	
+MGI:104311	Ptger4	prostaglandin E receptor 4 (subtype EP4)	15		negative regulation of inflammatory response	regulates a function/process that has the participant bone marrow macrophage		IMP	MGI:2137850 	J:135247 	
+MGI:104311	Ptger4	prostaglandin E receptor 4 (subtype EP4)	15		negative regulation of inflammatory response			ISO	P35408 	J:164563 	
+MGI:104311	Ptger4	prostaglandin E receptor 4 (subtype EP4)	15		positive regulation of inflammatory response			IDA		J:151236 	
+MGI:1097156	Ptgis	prostaglandin I2 (prostacyclin) synthase	2		negative regulation of inflammatory response			ISO	Q16647 	J:164563 	
+MGI:97797	Ptgs1	prostaglandin-endoperoxide synthase 1	2		inflammatory response			IEA	IPR029580 	J:72247 	
+MGI:97798	Ptgs2	prostaglandin-endoperoxide synthase 2	1		inflammatory response			ISO	RGD:620349 	J:155856 	
+MGI:97798	Ptgs2	prostaglandin-endoperoxide synthase 2	1		positive regulation of fever generation			IDA		J:155398 	
+MGI:97798	Ptgs2	prostaglandin-endoperoxide synthase 2	1		positive regulation of fever generation			ISO	RGD:620349 	J:155856 	
+MGI:97806	Ptpn2	protein tyrosine phosphatase, non-receptor type 2	18		negative regulation of inflammatory response			IMP		J:90541 	
+MGI:1289230	Pxk	PX domain containing serine/threonine kinase	14		inflammatory response			ISO	Q7Z7A4 	J:164563 	
+MGI:1931465	Pycard	PYD and CARD domain containing	7		inflammatory response			IMP	MGI:3046932 	J:91292 	
+MGI:1931465	Pycard	PYD and CARD domain containing	7		regulation of inflammatory response	regulates a function/process that has the participant liver		IMP	MGI:3686870 	J:181354 	
+MGI:1931465	Pycard	PYD and CARD domain containing	7		regulation of inflammatory response	regulates a function/process that has the participant colon		IMP	MGI:3686870 	J:193522 	
+MGI:1929459	Rabgef1	RAB guanine nucleotide exchange factor (GEF) 1	5		negative regulation of inflammatory response	regulates a function/process that has the participant skin		IMP	MGI:3051384 	J:91790 	
+MGI:1918910	Rarres2	retinoic acid receptor responder (tazarotene induced) 2	6		inflammatory response			IEA	IPR029562 	J:72247 	
+MGI:1918910	Rarres2	retinoic acid receptor responder (tazarotene induced) 2	6		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1314635	Rasgrp1	RAS guanyl releasing protein 1	2		inflammatory response to antigenic stimulus			IMP	MGI:2386261 	J:125310 	
+MGI:96522	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	5		inflammatory response to antigenic stimulus			IMP	MGI:1857411 	J:123631 	
+MGI:109408	Reg3a	regenerating islet-derived 3 alpha	6		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:109408	Reg3a	regenerating islet-derived 3 alpha	6		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:97478	Reg3b	regenerating islet-derived 3 beta	6		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:97478	Reg3b	regenerating islet-derived 3 beta	6		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:109406	Reg3g	regenerating islet-derived 3 gamma	6		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:109406	Reg3g	regenerating islet-derived 3 gamma	6		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:97897	Rel	reticuloendotheliosis oncogene	11		inflammatory response			IBA	PTN001193216 	J:161428 	
+MGI:103290	Rela	v-rel reticuloendotheliosis viral oncogene homolog A (avian)	19		inflammatory response			ISO	Q04206 	J:164563 	
+MGI:103290	Rela	v-rel reticuloendotheliosis viral oncogene homolog A (avian)	19		regulation of inflammatory response			IDA		J:170429 	
+MGI:103290	Rela	v-rel reticuloendotheliosis viral oncogene homolog A (avian)	19		regulation of inflammatory response			IMP	MGI:3775205 	J:210175 	
+MGI:103289	Relb	avian reticuloendotheliosis viral (v-rel) oncogene related B	7		inflammatory response			IBA	PTN001193216 	J:161428 	
+MGI:2443373	Relt	RELT tumor necrosis factor receptor	7		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:2444684	Rhbdd3	rhomboid domain containing 3	11		regulation of acute inflammatory response			IMP	MGI:5516031 	J:197348 	
+MGI:1926007	Rictor	RPTOR independent companion of MTOR, complex 2	15		regulation of inflammatory response			IMP	MGI:3703321 	J:215205 	
+MGI:1891456	Ripk2	receptor (TNFRSF)-interacting serine-threonine kinase 2	4		inflammatory response			IBA	PTN000584805 	J:161428 	
+MGI:104661	Rora	RAR-related orphan receptor alpha	9		negative regulation of inflammatory response			ISO	P35398 	J:164563 	
+MGI:1930076	Rps6ka4	ribosomal protein S6 kinase, polypeptide 4	19		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1920336	Rps6ka5	ribosomal protein S6 kinase, polypeptide 5	12		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1333780	Rps19	ribosomal protein S19	7		negative regulation of respiratory burst involved in inflammatory response			ISO	P39019 	J:164563 	
+MGI:1333780	Rps19	ribosomal protein S19	7		positive regulation of respiratory burst involved in inflammatory response			ISO	P39019 	J:164563 	
+MGI:1339365	S1pr3	sphingosine-1-phosphate receptor 3	13		inflammatory response			IMP	MGI:2182637 	J:133917 	
+MGI:2687194	S100a7a	S100 calcium binding protein A7A	3		inflammatory response	has the participant keratinocyte		IDA		J:168000 	
+MGI:2687194	S100a7a	S100 calcium binding protein A7A	3		inflammatory response			IGI	MGI:104798 MGI:893592 	J:168000 	
+MGI:88244	S100a8	S100 calcium binding protein A8 (calgranulin A)	3		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:88244	S100a8	S100 calcium binding protein A8 (calgranulin A)	3		leukocyte migration involved in inflammatory response			ISO	P05109 	J:164563 	
+MGI:88244	S100a8	S100 calcium binding protein A8 (calgranulin A)	3		positive regulation of inflammatory response			ISO	P05109 	J:164563 	
+MGI:88244	S100a8	S100 calcium binding protein A8 (calgranulin A)	3		regulation of inflammatory response			IEA	IPR028474 	J:72247 	
+MGI:1338947	S100a9	S100 calcium binding protein A9 (calgranulin B)	3		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1338947	S100a9	S100 calcium binding protein A9 (calgranulin B)	3		leukocyte migration involved in inflammatory response			ISO	P06702 	J:164563 	
+MGI:1338947	S100a9	S100 calcium binding protein A9 (calgranulin B)	3		positive regulation of inflammatory response			ISO	P06702 	J:164563 	
+MGI:1338947	S100a9	S100 calcium binding protein A9 (calgranulin B)	3		regulation of inflammatory response			IEA	IPR028475 	J:72247 	
+MGI:98221	Saa1	serum amyloid A 1	7		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:98222	Saa2	serum amyloid A 2	7		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:98223	Saa3	serum amyloid A 3	7		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:98224	Saa4	serum amyloid A 4	7		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:2448490	Sbno2	strawberry notch 2	10		regulation of inflammatory response			IMP		J:133009 	
+MGI:2448490	Sbno2	strawberry notch 2	10		regulation of inflammatory response			ISO	Q9Y2G9 	J:164563 	
+MGI:98919	Scgb1a1	secretoglobin, family 1A, member 1 (uteroglobin)	19		regulation of inflammatory response	regulates a function/process that has the participant T cell		IDA		J:105523 	
+MGI:107636	Scn9a	sodium channel, voltage-gated, type IX, alpha	2		inflammatory response			IMP	MGI:3053098 	J:92442 	
+MGI:1349162	Sdc1	syndecan 1	12		inflammatory response			ISO	RGD:3648 	J:155856 	
+MGI:1919374	Seh1l	SEH1-like (S. cerevisiae	18		cytokine production involved in inflammatory response			IMP		J:163990 	
+MGI:98278	Sele	selectin, endothelial cell	1		inflammatory response			ISO	RGD:3654 	J:155856 	
+MGI:95994	Selenos	selenoprotein S	7		negative regulation of acute inflammatory response to antigenic stimulus			ISO	Q9BQE4 	J:164563 	
+MGI:95994	Selenos	selenoprotein S	7		negative regulation of inflammatory response			IC	GO:0032720 	J:131465 	
+MGI:98280	Selp	selectin, platelet	1		inflammatory response			IMP	MGI:1857245 	J:77329 	
+MGI:1306826	Sema7a	sema domain, immunoglobulin domain (Ig), and GPI membrane anchor, (semaphorin) 7A	9		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1306826	Sema7a	sema domain, immunoglobulin domain (Ig), and GPI membrane anchor, (semaphorin) 7A	9		regulation of inflammatory response			IDA		J:121431 	
+MGI:891970	Serpina1b	serine (or cysteine) preptidase inhibitor, clade A, member 1B	12		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:105045	Serpina3n	serine (or cysteine) peptidase inhibitor, clade A, member 3N	12		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:106603	Serpinb9	serine (or cysteine) peptidase inhibitor, clade B, member 9	13		acute inflammatory response to antigenic stimulus			IMP	MGI:3687210 	J:152360 	
+MGI:97608	Serpine1	serine (or cysteine) peptidase inhibitor, clade E, member 1	5		positive regulation of inflammatory response			ISO	P05121 	J:164563 	
+MGI:97608	Serpine1	serine (or cysteine) peptidase inhibitor, clade E, member 1	5		positive regulation of leukotriene production involved in inflammatory response			ISO	P05121 	J:164563 	
+MGI:108080	Serpinf1	serine (or cysteine) peptidase inhibitor, clade F, member 1	11		negative regulation of inflammatory response			ISO	RGD:631369 	J:155856 	
+MGI:107173	Serpinf2	serine (or cysteine) peptidase inhibitor, clade F, member 2	11		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:894696	Serping1	serine (or cysteine) peptidase inhibitor, clade G, member 1	2		negative regulation of complement activation			IEA	IPR015553 	J:72247 	
+MGI:894696	Serping1	serine (or cysteine) peptidase inhibitor, clade G, member 1	2		negative regulation of complement activation, lectin pathway			ISO	P05155 	J:164563 	
+MGI:1913333	Setd6	SET domain containing 6	8		regulation of inflammatory response			IBA	PTN000998305 	J:161428 	
+MGI:1913333	Setd6	SET domain containing 6	8		regulation of inflammatory response			ISO	Q8TBK2 	J:164563 	
+MGI:2444110	Sgms1	sphingomyelin synthase 1	19		inflammatory response			ISO	RGD:727912 	J:155856 	
+MGI:1913331	Sharpin	SHANK-associated RH domain interacting protein	15		negative regulation of inflammatory response			IMP		J:170809 J:170810 	
+MGI:1921887	Shpk	sedoheptulokinase	11		regulation of inflammatory response			IDA		J:185274 	
+MGI:1344402	Sigirr	single immunoglobulin and toll-interleukin 1 receptor (TIR) domain	7		acute-phase response			IMP		J:85151 	
+MGI:1932475	Siglece	sialic acid binding Ig-like lectin E	7		negative regulation of inflammatory response	regulates a function/process that happens in oligodendrocyte		IMP		J:204167 	
+MGI:1351314	Slamf1	signaling lymphocytic activation molecule family member 1	1		leukocyte chemotaxis involved in inflammatory response			IMP	MGI:3044919 	J:229624 	
+MGI:1921998	Slamf8	SLAM family member 8	1		leukocyte chemotaxis involved in inflammatory response			IMP	MGI:5442794 	J:229624 	
+MGI:1921998	Slamf8	SLAM family member 8	1		negative regulation of respiratory burst involved in inflammatory response			IMP	MGI:5442794 	J:229624 	
+MGI:99828	Slc7a2	solute carrier family 7 (cationic amino acid transporter, y+ system), member 2	8		nitric oxide production involved in inflammatory response	has the participant lung alveolus,regulates a function/process caused by the action of macrophage		IMP	MGI:2150359 	J:114692 	
+MGI:99828	Slc7a2	solute carrier family 7 (cationic amino acid transporter, y+ system), member 2	8		nitric oxide production involved in inflammatory response	regulates a function/process caused by the action of macrophage		IMP	MGI:2150359 	J:69414 	
+MGI:99828	Slc7a2	solute carrier family 7 (cationic amino acid transporter, y+ system), member 2	8		regulation of inflammatory response	regulates a function/process that has the participant lung		IMP	MGI:2150359 	J:114692 	
+MGI:1345275	Slc11a1	solute carrier family 11 (proton-coupled divalent metal ion transporters), member 1	1		inflammatory response			IMP	MGI:1857755 	J:146917 	
+MGI:1315205	Slit2	slit guidance ligand 2	5		negative regulation of inflammatory response			ISO	RGD:69310 	J:155856 	
+MGI:1201674	Smad3	SMAD family member 3	9		negative regulation of inflammatory response			IMP		J:59673 	
+MGI:1916022	Smpdl3b	sphingomyelin phosphodiesterase, acid-like 3B	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1916022	Smpdl3b	sphingomyelin phosphodiesterase, acid-like 3B	4		negative regulation of inflammatory response			IMP		J:224870 	
+MGI:109356	Snap23	synaptosomal-associated protein 23	2		histamine secretion by mast cell			ISO	O00161 	J:164563 	
+MGI:1277151	Snca	synuclein, alpha	6		positive regulation of inflammatory response			ISO	P37840 	J:164563 	
+MGI:1916400	Snx4	sorting nexin 4	16		positive regulation of histamine secretion by mast cell			ISO	O95219 	J:164563 	
+MGI:1201791	Socs3	suppressor of cytokine signaling 3	11		negative regulation of inflammatory response			IGI	MGI:1933533 	J:163717 	
+MGI:2385459	Socs5	suppressor of cytokine signaling 5	17		negative regulation of inflammatory response	is a part of vascular endothelial cell response to fluid shear stress,is a part of cellular response to low-density lipoprotein particle stimulus,happens in blood vessel endothelial cell		IMP		J:223623 	
+MGI:1316649	Sphk1	sphingosine kinase 1	11		inflammatory response			IMP	MGI:3526071 	J:133917 	
+MGI:98384	Spn	sialophorin	7		negative regulation of type IV hypersensitivity			IMP	MGI:1857246 	J:88252 	
+MGI:2178742	Stab1	stabilin 1	14		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:103038	Stat3	signal transducer and activator of transcription 3	11		acute-phase response			IEA	KW-0011 	J:60000 	
+MGI:103038	Stat3	signal transducer and activator of transcription 3	11		inflammatory response			IMP		J:239159 	
+MGI:103036	Stat5a	signal transducer and activator of transcription 5A	11		positive regulation of inflammatory response			IGI	MGI:103035 	J:98325 	
+MGI:103035	Stat5b	signal transducer and activator of transcription 5B	11		acute-phase response			ISO	RGD:3774 	J:155856 	
+MGI:103035	Stat5b	signal transducer and activator of transcription 5B	11		positive regulation of inflammatory response			IGI	MGI:103036 	J:98325 	
+MGI:1858416	Stk39	serine/threonine kinase 39	2		regulation of inflammatory response			IDA		J:179189 	
+MGI:2138351	Susd4	sushi domain containing 4	1		negative regulation of complement activation, alternative pathway			ISO	Q5VX71 	J:164563 	
+MGI:2138351	Susd4	sushi domain containing 4	1		negative regulation of complement activation, classical pathway			ISO	Q5VX71 	J:164563 	
+MGI:2138351	Susd4	sushi domain containing 4	1		regulation of complement activation			ISO	Q5VX71 	J:164563 	
+MGI:99515	Syk	spleen tyrosine kinase	13		serotonin secretion by platelet			IMP		J:40327 	
+MGI:98474	Tac1	tachykinin 1	6		inflammatory response			IDA		J:90690 	
+MGI:98474	Tac1	tachykinin 1	6		positive regulation of acute inflammatory response			ISO	RGD:3807 	J:155856 	
+MGI:1931130	Tac4	tachykinin 4	11		inflammatory response			IBA	PTN000134167 	J:161428 	
+MGI:2442280	Tarm1	T cell-interacting, activating receptor on myeloid cells 1	7		positive regulation of cytokine production involved in inflammatory response			IDA		J:243472 	
+MGI:1914831	Tbc1d23	TBC1 domain family, member 23	16		regulation of inflammatory response			IMP	MGI:3857844 	J:181861 	
+MGI:98496	Tbxa2r	thromboxane A2 receptor	10		inflammatory response			IMP	MGI:2667333 	J:98317 	
+MGI:1306805	Tff2	trefoil factor 2 (spasmolytic protein 1)	17		negative regulation of inflammatory response	regulates a function/process that has the participant stomach		IMP	MGI:2179101 	J:116628 	
+MGI:1306805	Tff2	trefoil factor 2 (spasmolytic protein 1)	17		negative regulation of inflammatory response	regulates a function/process that has the participant pyloric antrum		IMP	MGI:2179101 	J:127260 	
+MGI:98725	Tgfb1	transforming growth factor, beta 1	7		inflammatory response			IMP	MGI:1857671 	J:50848 	
+MGI:98725	Tgfb1	transforming growth factor, beta 1	7		inflammatory response			IMP	MGI:1857258 	J:2892 	
+MGI:98725	Tgfb1	transforming growth factor, beta 1	7		inflammatory response			ISO	P01137 	J:164563 	
+MGI:98731	Tgm2	transglutaminase 2, C polypeptide	2		positive regulation of inflammatory response			ISO	RGD:621081 	J:155856 	
+MGI:98737	Thbs1	thrombospondin 1	2		inflammatory response			IMP	MGI:2154534 	J:100142 	
+MGI:98737	Thbs1	thrombospondin 1	2		inflammatory response			ISO	P07996 	J:164563 	
+MGI:2446213	Themis2	thymocyte selection associated family member 2	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2147032	Ticam1	toll-like receptor adaptor molecule 1	17		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2147032	Ticam1	toll-like receptor adaptor molecule 1	17		positive regulation of cytokine production involved in inflammatory response	regulates a function/process that happens in macrophage		IMP		J:158401 	
+MGI:3040056	Ticam2	toll-like receptor adaptor molecule 2	18		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2152213	Tirap	toll-interleukin 1 receptor (TIR) domain-containing adaptor protein	9		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1341295	Tlr1	toll-like receptor 1	5		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1341295	Tlr1	toll-like receptor 1	5		inflammatory response			IEA	IPR027190 	J:72247 	
+MGI:1346060	Tlr2	toll-like receptor 2	3		inflammatory response			ISO	RGD:735138 	J:155856 	
+MGI:1346060	Tlr2	toll-like receptor 2	3		positive regulation of inflammatory response	regulates a function/process that happens in mononuclear phagocyte,is a part of cellular response to amyloid-beta		IGI	EBI-14348029 	J:180762 	
+MGI:2156367	Tlr3	toll-like receptor 3	8		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2156367	Tlr3	toll-like receptor 3	8		positive regulation of inflammatory response			IEA	IPR027173 	J:72247 	
+MGI:96824	Tlr4	toll-like receptor 4	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96824	Tlr4	toll-like receptor 4	4		nitric oxide production involved in inflammatory response	has the participant bone marrow,regulates a function/process caused by the action of macrophage		IMP	MGI:1857718 	J:59296 	
+MGI:96824	Tlr4	toll-like receptor 4	4		positive regulation of cytokine production involved in inflammatory response	regulates a function/process that happens in macrophage		IGI	Q9Y2C9 	J:158401 	
+MGI:96824	Tlr4	toll-like receptor 4	4		positive regulation of inflammatory response	happens in macrophage		IGI	O00206 	J:158401 	
+MGI:96824	Tlr4	toll-like receptor 4	4		positive regulation of inflammatory response			ISO	RGD:3870 	J:155856 	
+MGI:96824	Tlr4	toll-like receptor 4	4		regulation of inflammatory response			IMP		J:131398 	
+MGI:1858171	Tlr5	toll-like receptor 5	1		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1341296	Tlr6	toll-like receptor 6	5		inflammatory response			ISO	RGD:1303030 	J:155856 	
+MGI:1341296	Tlr6	toll-like receptor 6	5		positive regulation of cytokine production involved in inflammatory response	regulates a function/process that happens in macrophage		IGI	O00206 	J:158401 	
+MGI:1341296	Tlr6	toll-like receptor 6	5		positive regulation of inflammatory response	happens in macrophage		IGI	O00206 	J:158401 	
+MGI:2176882	Tlr7	toll-like receptor 7	X		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2176887	Tlr8	toll-like receptor 8	X		inflammatory response			IBA	PTN000687652 	J:161428 	
+MGI:1932389	Tlr9	toll-like receptor 9	9		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1932389	Tlr9	toll-like receptor 9	9		positive regulation of inflammatory response			IEA	IPR027181 	J:72247 	
+MGI:1932389	Tlr9	toll-like receptor 9	9		regulation of inflammatory response			IMP		J:131398 	
+MGI:3045226	Tlr11	toll-like receptor 11	14		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:3045221	Tlr12	toll-like receptor 12	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:3045213	Tlr13	toll-like receptor 13	X		inflammatory response			IBA	PTN000687652 	J:161428 	
+MGI:104798	Tnf	tumor necrosis factor	17		chronic inflammatory response to antigenic stimulus			ISO	P01375 	J:164563 	
+MGI:104798	Tnf	tumor necrosis factor	17		inflammatory response			IGI	MGI:2687194 MGI:893592 	J:168000 	
+MGI:104798	Tnf	tumor necrosis factor	17		inflammatory response			ISO	P01375 	J:164563 	
+MGI:104798	Tnf	tumor necrosis factor	17		inflammatory response			TAS		J:4753 J:17976 	
+MGI:104798	Tnf	tumor necrosis factor	17		positive regulation of chronic inflammatory response to antigenic stimulus	regulates a function/process that has the participant limb		IGI	MGI:104797 	J:115034 	
+MGI:104798	Tnf	tumor necrosis factor	17		positive regulation of fever generation			IDA		J:155398 	
+MGI:104798	Tnf	tumor necrosis factor	17		positive regulation of inflammatory response			ISO	RGD:3876 	J:155856 	
+MGI:104798	Tnf	tumor necrosis factor	17		regulation of inflammatory response			IDA		J:211147 	
+MGI:1196377	Tnfaip3	tumor necrosis factor, alpha-induced protein 3	10		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1196377	Tnfaip3	tumor necrosis factor, alpha-induced protein 3	10		negative regulation of chronic inflammatory response			IMP		J:127624 	
+MGI:1196377	Tnfaip3	tumor necrosis factor, alpha-induced protein 3	10		negative regulation of granuloma formation			NAS		J:127624 	
+MGI:1196377	Tnfaip3	tumor necrosis factor, alpha-induced protein 3	10		negative regulation of inflammatory response			IDA		J:196955 	
+MGI:1196377	Tnfaip3	tumor necrosis factor, alpha-induced protein 3	10		negative regulation of inflammatory response			IMP		J:170265 	
+MGI:1195266	Tnfaip6	tumor necrosis factor alpha induced protein 6	2		negative regulation of inflammatory response			ISO	P98066 	J:164563 	
+MGI:1917019	Tnfaip8l2	tumor necrosis factor, alpha-induced protein 8-like 2	3		negative regulation of inflammatory response			IMP	MGI:3810526 	J:172407 	
+MGI:1314884	Tnfrsf1a	tumor necrosis factor receptor superfamily, member 1a	6		inflammatory response			IMP	MGI:1857468 	J:45147 J:52096 	
+MGI:1314884	Tnfrsf1a	tumor necrosis factor receptor superfamily, member 1a	6		negative regulation of inflammatory response			ISO	P19438 	J:164563 	
+MGI:1314884	Tnfrsf1a	tumor necrosis factor receptor superfamily, member 1a	6		positive regulation of inflammatory response	regulates a function/process that has the participant radio-carpal joint		IMP	MGI:1861040 	J:72219 	
+MGI:1314884	Tnfrsf1a	tumor necrosis factor receptor superfamily, member 1a	6		positive regulation of inflammatory response	happens in keratinocyte		IMP	MGI:1857261 MGI:2652655 	J:208995 	
+MGI:1314883	Tnfrsf1b	tumor necrosis factor receptor superfamily, member 1b	4		inflammatory response			IMP	MGI:1860087 	J:45147 	
+MGI:1314883	Tnfrsf1b	tumor necrosis factor receptor superfamily, member 1b	4		negative regulation of inflammatory response	regulates a function/process that has the participant radio-carpal joint		IMP	MGI:1857262 	J:72219 	
+MGI:104512	Tnfrsf4	tumor necrosis factor receptor superfamily, member 4	4		inflammatory response			IMP	MGI:1859871 	J:87871 	
+MGI:104512	Tnfrsf4	tumor necrosis factor receptor superfamily, member 4	4		inflammatory response			IPI	P43488 	J:87166 	
+MGI:99908	Tnfrsf8	tumor necrosis factor receptor superfamily, member 8	4		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:1101059	Tnfrsf9	tumor necrosis factor receptor superfamily, member 9	4		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:1341090	Tnfrsf10b	tumor necrosis factor receptor superfamily, member 10b	14		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:1314891	Tnfrsf11a	tumor necrosis factor receptor superfamily, member 11a, NFKB activator	1		positive regulation of fever generation by positive regulation of prostaglandin secretion			IMP		J:155398 	
+MGI:109587	Tnfrsf11b	tumor necrosis factor receptor superfamily, member 11b (osteoprotegerin)	15		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:2675303	Tnfrsf14	tumor necrosis factor receptor superfamily, member 14 (herpesvirus entry mediator)	4		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:894675	Tnfrsf18	tumor necrosis factor receptor superfamily, member 18	4		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:2151075	Tnfrsf21	tumor necrosis factor receptor superfamily, member 21	17		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:1930270	Tnfrsf22	tumor necrosis factor receptor superfamily, member 22	7		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:1930269	Tnfrsf23	tumor necrosis factor receptor superfamily, member 23	7		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:1934667	Tnfrsf25	tumor necrosis factor receptor superfamily, member 25	4		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:2651928	Tnfrsf26	tumor necrosis factor receptor superfamily, member 26	7		inflammatory response			IBA	PTN000753849 	J:161428 	
+MGI:104511	Tnfsf4	tumor necrosis factor (ligand) superfamily, member 4	1		acute inflammatory response			IMP		J:164885 	
+MGI:104511	Tnfsf4	tumor necrosis factor (ligand) superfamily, member 4	1		inflammatory response			IPI	P47741 	J:87166 	
+MGI:104511	Tnfsf4	tumor necrosis factor (ligand) superfamily, member 4	1		positive regulation of inflammatory response			ISO	P23510 	J:164563 	
+MGI:104511	Tnfsf4	tumor necrosis factor (ligand) superfamily, member 4	1		regulation of inflammatory response			IDA		J:169800 	
+MGI:1100089	Tnfsf11	tumor necrosis factor (ligand) superfamily, member 11	14		positive regulation of fever generation by positive regulation of prostaglandin secretion			IDA		J:155398 	
+MGI:2673064	Tnfsf18	tumor necrosis factor (ligand) superfamily, member 18	1		positive regulation of inflammatory response	happens in colon		IMP		J:206613 	
+MGI:1926194	Tnip1	TNFAIP3 interacting protein 1	11		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1926194	Tnip1	TNFAIP3 interacting protein 1	11		positive regulation of inflammatory response			IMP		J:180054 	
+MGI:1926194	Tnip1	TNFAIP3 interacting protein 1	11		regulation of inflammatory response			IEA	IPR033372 	J:72247 	
+MGI:2386643	Tnip2	TNFAIP3 interacting protein 2	5		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1891808	Tollip	toll interacting protein	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:96942	Tpsb2	tryptase beta 2	17		inflammatory response			TAS		J:72596 	
+MGI:1914123	Tril	TLR4 interactor with leucine-rich repeats	6		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:1336991	Trp73	transformation related protein 73	4		inflammatory response			IMP	MGI:1859911 	J:60896 	
+MGI:1341787	Trpv1	transient receptor potential cation channel, subfamily V, member 1	11		fever generation			IMP	MGI:1934023 	J:104828 	
+MGI:1926945	Trpv4	transient receptor potential cation channel, subfamily V, member 4	5		positive regulation of inflammatory response	happens in adipose tissue,is upstream of positive regulation of macrophage chemotaxis		IMP		J:188264 	
+MGI:1855696	Tslp	thymic stromal lymphopoietin	18		positive regulation of inflammatory response			ISO	Q969D9 	J:164563 	
+MGI:1917997	Tspan2	tetraspanin 2	3		inflammatory response			IGI	MGI:97623 	J:201143 	
+MGI:1931086	Tusc2	tumor suppressor candidate 2	9		inflammatory response			IMP	MGI:3706236 	J:187022 	
+MGI:104294	Tyro3	TYRO3 protein tyrosine kinase 3	2		negative regulation of inflammatory response			IGI	Q00993 Q60805 	J:131447 	
+MGI:1919815	Uaca	uveal autoantigen with coiled-coil domains and ankyrin repeats	9		negative regulation of inflammatory response	regulates a function/process that has the participant preputial gland of male		IMP	MGI:3043446 	J:89918 	
+MGI:1917700	Unc13d	unc-13 homolog D (C. elegans)	11		granuloma formation	has the participant liver|has the participant spleen		IMP	MGI:3628822 	J:119974 	
+MGI:1344364	Usp18	ubiquitin specific peptidase 18	6		regulation of inflammatory response			ISO	Q9UMW8 	J:164563 	
+MGI:1096399	Vamp7	vesicle-associated membrane protein 7	X		positive regulation of histamine secretion by mast cell			ISO	P51809 	J:164563 	
+MGI:1336882	Vamp8	vesicle-associated membrane protein 8	6		positive regulation of histamine secretion by mast cell			ISO	Q9BV40 	J:164563 	
+MGI:108395	Vnn1	vanin 1	10		acute inflammatory response			IDA		J:88161 	
+MGI:108395	Vnn1	vanin 1	10		chronic inflammatory response			IDA		J:88161 	
+MGI:108395	Vnn1	vanin 1	10		inflammatory response			IMP		J:92268 	
+MGI:1890467	Vps35	VPS35 retromer complex component	8		negative regulation of inflammatory response			ISO	Q96QK1 	J:164563 	
+MGI:1915116	Wfdc1	WAP four-disulfide core domain 1	8		negative regulation of inflammatory response			IMP	MGI:5609943 	J:216357 	
+MGI:98958	Wnt5a	wingless-type MMTV integration site family, member 5A	14		positive regulation of inflammatory response			ISO	P41221 	J:164563 	
+MGI:104593	Xcl1	chemokine (C motif) ligand 1	1		inflammatory response			IBA	PTN000245709 	J:161428 	
+MGI:104593	Xcl1	chemokine (C motif) ligand 1	1		regulation of inflammatory response			IC	GO:0090023 	J:172902 	
+MGI:104593	Xcl1	chemokine (C motif) ligand 1	1		regulation of inflammatory response			ISO	P47992 	J:164563 	
+MGI:109484	Ywhaz	tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, zeta polypeptide	15		histamine secretion by mast cell			ISO	RGD:3980 	J:155856 	
+MGI:2385891	Zc3h12a	zinc finger CCCH type containing 12A	4		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:2385891	Zc3h12a	zinc finger CCCH type containing 12A	4		negative regulation of cytokine production involved in inflammatory response			IDA		J:174994 	
+MGI:99179	Zfp35	zinc finger protein 35	18		inflammatory response to antigenic stimulus			IMP	MGI:4398896 	J:153828 	
+MGI:99180	Zfp36	zinc finger protein 36	7		negative regulation of inflammatory response			IMP	MGI:2652418 	J:33986 	
+MGI:99180	Zfp36	zinc finger protein 36	7		negative regulation of inflammatory response			IMP		J:179147 	
+MGI:99180	Zfp36	zinc finger protein 36	7		negative regulation of inflammatory response	regulates a function/process that has the participant radio-carpal joint		IMP	MGI:2652418 	J:72219 	
+MGI:1916242	Zfp580	zinc finger protein 580	7		inflammatory response			IEA	KW-0395 	J:60000 	
+MGI:99215	Zp3	zona pellucida glycoprotein 3	5		positive regulation of inflammatory response			IDA		J:169876 	
+MGI:99215	Zp3	zona pellucida glycoprotein 3	5		positive regulation of type IV hypersensitivity			IDA		J:169908 	
+
