@@ -1,0 +1,481 @@
+- A proposal for a tutorial on how to use the data that you would publish when we launch.
+
+# Unsupervised methods for combining independent single-cell RNA sequencing experiments (part 1)
+
+## Pre-required installation
+We start by installing the packages we need to build the cell classifiers from bioconductor:
+```{r}
+source("https://bioconductor.org/biocLite.R")
+biocLite("Seurat")
+biocLite("scmap")
+```
+
+and then load the required libraries
+
+```{r}
+library(here)
+library(tidyverse)
+library(stringr)
+
+library(Seurat)
+library(viridis)
+library(caret)
+library(mlbench)
+library(e1071)
+
+library(SingleCellExperiment)
+library(scmap)
+
+library(openxlsx)
+library(stringr)
+
+```
+
+As we briefly mentioned in the [previous post](https://github.com/czbiohub/tabula-muris-vignettes/blob/master/vignettes/methods_comparison/methods_comparison.Rmd), instead of manually and arbitrarily deciding which cell ontologies we should be comparing and computing the overlaps at the level of differentially expressed genes, we want to have a method to map on the fly new coming experimental data to existing reference datasets.
+
+Given the broad collection of organs in Tabula muris it is natural to think of it as a possible reference dataset. Here we will exemplify how we can build the reference classifier using the recently published [scmap](https://www-nature-com.ucsf.idm.oclc.org/articles/nmeth.4644) method.
+
+** ----- needs updating to aws s3 location ----- **
+
+We can get the Tabula muris data from [here](https://github.com/czbiohub/tabula-muris-vignettes/tree/experiment-comparisons/data):
+```{r}
+tm.droplet.matrix = readRDS(here("data-tabula-muris", "TM_droplet_mat.rds"))
+tm.droplet.metadata = read_csv(here("data-tabula-muris", "TM_droplet_metadata.csv"))
+
+tm.facs.matrix = readRDS(here("data-tabula-muris", "TM_facs_mat.rds"))
+tm.facs.metadata = read_csv(here("data-tabula-muris", "TM_facs_metadata.csv"))
+```
+** ----- end of critical update section ----- **
+
+For speed reasons we will be demonstrating the methods for a single organ. We can choose from the list of tissues available:
+```{r}
+tiss.name.tm.droplet = unique(tm.droplet.metadata$tissue)
+tiss.name.tm.facs = unique(tm.facs.metadata$tissue)
+
+print("Tissues available for Tabula muris 10x")
+tiss.name.tm.droplet
+print("Tissues available for Tabula muris FACS")
+tiss.name.tm.facs
+```
+
+Let us use ```Bladder`` as the organ of interest:
+```{r}
+droplet.tiss.interest = "Bladder"
+facs.tiss.interest = "Bladder"
+```
+
+
+## scmap
+It is well-known that cells exist in a continuum of states and ideally we want to have a method that captures this by either classifying the cell in question as an established cell type or instead providing us the information that such cell cannot be classified using the current reference but informing us of the closest possible classifications.
+[scmap](https://www-nature-com.ucsf.idm.oclc.org/articles/nmeth.4644) can map individual cells from a query sample to cell types in the reference (scmap-cluster) or to individual cells in a reference (scmap-cell).
+
+### scmap input
+If you already have a SingleCellExperiment object, skip this but if you have a matrix or a data frame containing expression data like what we're using then you first need to create an `SingleCellExperiment` object containing your data.
+
+```{r tm.droplet.sce}
+if (droplet.tiss.interest %in% tiss.name.tm.droplet){
+  tm.droplet.tiss <- tm.droplet.matrix[,tm.droplet.metadata$tissue==droplet.tiss.interest]
+}
+
+tm.droplet.metadata.tiss <- tm.droplet.metadata[tm.droplet.metadata$tissue == droplet.tiss.interest,]
+tm.droplet.tiss.ann <- as.data.frame(tm.droplet.metadata.tiss$free_annotation, row.names = tm.droplet.metadata.tiss$cell)
+colnames(tm.droplet.tiss.ann) <- "cell_type1"
+
+sce.tm_droplet <- SingleCellExperiment(assays = list(normcounts = as.matrix(tm.droplet.tiss)), colData = tm.droplet.tiss.ann)
+counts(sce.tm_droplet) <- normcounts(sce.tm_droplet)
+logcounts(sce.tm_droplet) <- log2(normcounts(sce.tm_droplet) + 1)
+
+# use gene names as feature symbols
+rowData(sce.tm_droplet)$feature_symbol <- rownames(sce.tm_droplet)
+isSpike(sce.tm_droplet, "ERCC") <- grepl("^ERCC-", rownames(sce.tm_droplet))
+
+# remove features with duplicated names
+sce.tm_droplet <- sce.tm_droplet[!duplicated(rownames(sce.tm_droplet)), ]
+
+sce.tm_droplet
+```
+
+
+```{r tm.facs.sce}
+if(facs.tiss.interest %in% tiss.name.tm.facs){
+  tm.facs.tiss <- tm.facs.matrix[,tm.facs.metadata$tissue==facs.tiss.interest]
+}
+
+tm.facs.metadata.tiss <- tm.facs.metadata[tm.facs.metadata$tissue == facs.tiss.interest,]
+tm.facs.tiss.ann <- as.data.frame(tm.facs.metadata.tiss$free_annotation, row.names = tm.facs.metadata.tiss$cell)
+colnames(tm.facs.tiss.ann) <- "cell_type1"
+
+sce.tm_facs <- SingleCellExperiment(assays = list(normcounts = as.matrix(tm.facs.tiss)), colData = tm.facs.tiss.ann)
+counts(sce.tm_facs) <- normcounts(sce.tm_facs)
+logcounts(sce.tm_facs) <- log2(normcounts(sce.tm_facs) + 1)
+
+# use gene names as feature symbols
+rowData(sce.tm_facs)$feature_symbol <- rownames(sce.tm_facs)
+isSpike(sce.tm_facs, "ERCC") <- grepl("^ERCC-", rownames(sce.tm_facs))
+
+# remove features with duplicated names
+sce.tm_facs <- sce.tm_facs[!duplicated(rownames(sce.tm_facs)), ]
+
+sce.tm_facs
+```
+
+
+### Feature selection
+
+Once we have a SingleCellExperiment object we can run scmap. Firstly, we need to select the most informative features (genes) from our input dataset:
+
+```{r tm.droplet}
+sce.tm_droplet <- selectFeatures(sce.tm_droplet, suppress_plot = FALSE, n_features = 250)
+table(rowData(sce.tm_droplet)$scmap_features)
+```
+
+```{r tm.facs}
+sce.tm_facs <- selectFeatures(sce.tm_facs, suppress_plot = FALSE, n_features = 250)
+table(rowData(sce.tm_facs)$scmap_features)
+```
+
+We will use 250 features instead of the default 500 because we have found that selecting a smaller number of features improves the classification of FACS/smartseq data. We suggest you to fine tune this parameter when looking at your own data.
+
+## scmap-cluster
+### Index
+The scmap-cluster index of a reference dataset is created by finding the median gene expression for each cluster. By default **scmap** uses the ```cell_type1``` column of the colData slot in the reference to identify clusters (other columns can be manually selected by adjusting ```cluster_col``` parameter).
+
+```{r tm.droplet.indexCluster}
+sce.tm_droplet <- indexCluster(sce.tm_droplet)
+head(metadata(sce.tm_droplet)$scmap_cluster_index)
+heatmap(as.matrix(metadata(sce.tm_droplet)$scmap_cluster_index),margins=c(9,1),cexCol=0.75, labRow = "")
+```
+
+```{r tm.facs.indexCluster}
+sce.tm_facs <- indexCluster(sce.tm_facs)
+head(metadata(sce.tm_facs)$scmap_cluster_index)
+heatmap(as.matrix(metadata(sce.tm_facs)$scmap_cluster_index),margins=c(9,1),cexCol=0.75, labRow = "")
+```
+
+
+The function indexCluster automatically writes the ```scmap_cluster_index``` item of the metadata slot of the reference dataset.
+
+
+### Projection
+Once the scmap-cluster index has been generated we can use it to project our dataset to itself (just for illustrative purposes). This can be done with one index at a time, but scmap also allows for simultaneous projection to multiple indexes if they are provided as a list.
+
+#### Tabula muris 10x data self-projection
+
+```{r tm.droplet.self-projection}
+scmapCluster_results.tm_droplet <- scmapCluster(
+  projection = sce.tm_droplet,
+  index_list = list(
+    tm_droplet = metadata(sce.tm_droplet)$scmap_cluster_index
+  ),
+  threshold = .5
+)
+
+# scmap-cluster projects the query dataset to all projections defined in the index_list. The results of cell label assignements are merged into one matrix:
+head(scmapCluster_results.tm_droplet$scmap_cluster_labs)
+
+# Corresponding similarities are stored in the scmap_cluster_siml item:
+head(scmapCluster_results.tm_droplet$scmap_cluster_siml)
+
+# scmap also provides combined results of all reference dataset (choose labels corresponding to the largest similarity across reference datasets):
+head(scmapCluster_results.tm_droplet$combined_labs)
+
+# Visualisation
+plot(
+  getSankey(
+    colData(sce.tm_droplet)$cell_type1,
+    scmapCluster_results.tm_droplet$scmap_cluster_labs[,'tm_droplet'],
+    plot_height = 400,
+    colors = c('#009ACD', '#9ACD32', '#FF8247','#D02090', '#636363','#000080','#CD853F','#8B0000','#FF6347',
+               '#000000','#CD1076','#BFEFFF','#698B22','#CD6889','#FFFF00','#CDBA96','#D02090','#CD4F39',
+               '#EEDD82','#BFEFFF','#D2691E','#008B8B')
+  )
+)
+```
+
+#### Tabula muris FACS self-projection
+```{r tm.facs.self-projection}
+scmapCluster_results.tm_facs <- scmapCluster(
+  projection = sce.tm_facs,
+  index_list = list(
+    tm_facs = metadata(sce.tm_facs)$scmap_cluster_index
+  ),
+  threshold = .25
+)
+
+# scmap-cluster projects the query dataset to all projections defined in the index_list. The results of cell label assignements are merged into one matrix:
+head(scmapCluster_results.tm_facs$scmap_cluster_labs)
+
+# Corresponding similarities are stored in the scmap_cluster_siml item:
+head(scmapCluster_results.tm_facs$scmap_cluster_siml)
+
+# scmap also provides combined results of all reference dataset (choose labels corresponding to the largest similarity across reference datasets):
+head(scmapCluster_results.tm_facs$combined_labs)
+
+# Visualisation
+plot(
+  getSankey(
+    colData(sce.tm_facs)$cell_type1,
+    scmapCluster_results.tm_facs$scmap_cluster_labs[,'tm_facs'],
+    plot_height = 400,
+    colors = c('#009ACD', '#9ACD32', '#FF8247','#D02090', '#636363','#000080','#CD853F','#8B0000','#FF6347',
+               '#000000','#CD1076','#BFEFFF','#698B22','#CD6889','#FFFF00','#CDBA96','#D02090','#CD4F39',
+               '#EEDD82','#BFEFFF','#D2691E','#008B8B')
+  )
+)
+```
+
+#### Tabula muris FACS data projected into Tabula muris 10x
+```{r tm.facs-droplet.projection}
+scmapCluster_results.tm_facs <- scmapCluster(
+  projection = sce.tm_facs,
+  index_list = list(
+    tm_facs = metadata(sce.tm_droplet)$scmap_cluster_index
+  )
+)
+
+# scmap-cluster projects the query dataset to all projections defined in the index_list. The results of cell label assignements are merged into one matrix:
+head(scmapCluster_results.tm_facs$scmap_cluster_labs)
+
+# Corresponding similarities are stored in the scmap_cluster_siml item:
+head(scmapCluster_results.tm_facs$scmap_cluster_siml)
+
+# scmap also provides combined results of all reference dataset (choose labels corresponding to the largest similarity across reference datasets):
+head(scmapCluster_results.tm_facs$combined_labs)
+
+# Visualisation
+plot(
+  getSankey(
+    colData(sce.tm_facs)$cell_type1,
+    scmapCluster_results.tm_facs$scmap_cluster_labs[,'tm_facs'],
+    plot_height = 400,
+    colors = c('#009ACD', '#9ACD32', '#FF8247','#D02090', '#636363','#000080','#CD853F','#8B0000','#FF6347',
+               '#000000','#CD1076','#BFEFFF','#698B22','#CD6889','#FFFF00','#CDBA96','#D02090','#CD4F39',
+               '#EEDD82','#BFEFFF','#D2691E','#008B8B')
+  )
+)
+```
+
+#### Tabula muris 10x data projected into Tabula muris FACS
+```{r tm.droplet-facs.projection}
+scmapCluster_results.tm_droplet <- scmapCluster(
+  projection = sce.tm_droplet,
+  index_list = list(
+    tm_droplet = metadata(sce.tm_facs)$scmap_cluster_index
+  )
+)
+
+# scmap-cluster projects the query dataset to all projections defined in the index_list. The results of cell label assignements are merged into one matrix:
+head(scmapCluster_results.tm_facs$scmap_cluster_labs)
+
+# Corresponding similarities are stored in the scmap_cluster_siml item:
+head(scmapCluster_results.tm_facs$scmap_cluster_siml)
+
+# scmap also provides combined results of all reference dataset (choose labels corresponding to the largest similarity across reference datasets):
+head(scmapCluster_results.tm_facs$combined_labs)
+
+# Visualisation
+plot(
+  getSankey(
+    colData(sce.tm_droplet)$cell_type1,
+    scmapCluster_results.tm_droplet$scmap_cluster_labs[,'tm_droplet'],
+    plot_height = 400,
+    colors = c('#009ACD', '#9ACD32', '#FF8247','#D02090', '#636363','#000080','#CD853F','#8B0000','#FF6347',
+               '#000000','#CD1076','#BFEFFF','#698B22','#CD6889','#FFFF00','#CDBA96','#D02090','#CD4F39',
+               '#EEDD82','#BFEFFF','#D2691E','#008B8B')
+  )
+)
+```
+
+
+## scmap-cell
+In contrast to scmap-cluster, scmap-cell projects cells of the input dataset to the individual cells of the reference and not to the cell clusters.
+
+Of note, scmap-cell contains k-means step which makes it stochastic, i.e. running it multiple times will provide slightly different results and because of that we set a seed.
+
+```{r}
+# Fix a random seed to exactly reproduce results:
+set.seed(1)
+```
+
+### Index
+In the scmap-cell index is created by a product quantiser algorithm in a way that every cell in the reference is identified with a set of sub-centroids found via k-means clustering based on a subset of the features.
+
+```{r indexCell}
+sce.tm_droplet_cell <- indexCell(sce.tm_droplet)
+sce.tm_facs_cell <- indexCell(sce.tm_facs)
+```
+
+Unlike scmap-cluster index, scmap-cell index contains information about each cell and therefore cannot be easily visualised. scmap-cell index consists of two items:
+
+```{r}
+names(metadata(sce.tm_droplet_cell)$scmap_cell_index)
+names(metadata(sce.tm_facs_cell)$scmap_cell_index)
+```
+
+
+### Sub-centroids
+subcentroids contains coordinates of subcentroids of low dimensional subspaces defined by selected features, k and M parameters of the product quantiser algorithm (see ?indexCell).
+
+```{r tm.droplet.subcentroids}
+length(metadata(sce.tm_droplet_cell)$scmap_cell_index$subcentroids)
+dim(metadata(sce.tm_droplet_cell)$scmap_cell_index$subcentroids[[1]])
+metadata(sce.tm_droplet_cell)$scmap_cell_index$subcentroids[[1]][,1:5]
+```
+
+```{r tm.facs.subcentroids}
+length(metadata(sce.tm_facs_cell)$scmap_cell_index$subcentroids)
+dim(metadata(sce.tm_facs_cell)$scmap_cell_index$subcentroids[[1]])
+metadata(sce.tm_facs_cell)$scmap_cell_index$subcentroids[[1]][,1:5]
+```
+
+
+### Sub-clusters
+subclusters contains for every low dimensial subspace indexies of subcentroids which a given cell belongs to:
+
+```{r tm.droplet.subclusters}
+dim(metadata(sce.tm_droplet_cell)$scmap_cell_index$subclusters)
+metadata(sce.tm_droplet_cell)$scmap_cell_index$subclusters[1:5,1:5]
+```
+
+```{r tm.facs.subclusters}
+dim(metadata(sce.tm_facs_cell)$scmap_cell_index$subclusters)
+metadata(sce.tm_facs_cell)$scmap_cell_index$subclusters[1:5,1:5]
+```
+
+
+### Projection
+Once the scmap-cell indexes have been generated we can use them to project the baron dataset. This can be done with one index at a time, but scmap allows for simultaneous projection to multiple indexes if they are provided as a list:
+
+
+```{r}
+scmapCell_results.tm_droplet <- scmapCell(
+  sce.tm_droplet_cell,
+  list(
+    tm_droplet = metadata(sce.tm_droplet_cell)$scmap_cell_index
+  )
+)
+
+scmapCell_results.tm_facs <- scmapCell(
+  sce.tm_facs_cell,
+  list(
+    tm_facs = metadata(sce.tm_facs_cell)$scmap_cell_index
+  )
+)
+```
+
+
+### Results
+scmapCell_results contains results of projection for each reference dataset in a list:
+
+```{r}
+names(scmapCell_results.tm_droplet)
+scmapCell_results.tm_droplet$tm_droplet$cells[,1:3]
+scmapCell_results.tm_droplet$tm_droplet$similarities[,1:3]
+```
+
+
+```{r}
+names(scmapCell_results.tm_facs)
+scmapCell_results.tm_facs$tm_facs$cells[,1:3]
+scmapCell_results.tm_facs$tm_facs$similarities[,1:3]
+```
+
+For each dataset there are two matricies. Cells matrix contains the top 10 (scmap default) cell IDs of the cells of the reference dataset that a given cell of the projection dataset is closest to and Similarities matrix contains corresponding cosine similarities.
+
+
+### Cluster annotation
+If cell cluster annotation is available for the reference datasets, in addition to finding top 10 nearest neighbours scmap-cell also allows to annotate cells of the projection dataset using labels of the reference. It does so by looking at the top 3 nearest neighbours (scmap default) and if they all belong to the same cluster in the reference and their maximum similarity is higher than a threshold (0.5 is the scmap default) a projection cell is assigned to a corresponding reference cluster:
+
+```{r}
+scmapCell_clusters.tm_droplet <- scmapCell2Cluster(
+  scmapCell_results.tm_droplet,
+  list(
+    as.character(colData(sce.tm_droplet)$cell_type1)
+  )
+)
+
+scmapCell_clusters.tm_facs <- scmapCell2Cluster(
+  scmapCell_results.tm_facs,
+  list(
+    as.character(colData(sce.tm_facs)$cell_type1)
+  )
+)
+```
+
+
+scmap-cell results are in the same format as the ones provided by scmap-cluster (see above):
+
+```{r}
+head(scmapCell_clusters.tm_droplet$scmap_cluster_labs)
+head(scmapCell_clusters.tm_facs$scmap_cluster_labs)
+```
+
+Corresponding similarities are stored in the scmap_cluster_siml item:
+
+
+```{r}
+head(scmapCell_clusters.tm_droplet$scmap_cluster_siml)
+head(scmapCell_clusters.tm_droplet$combined_labs)
+
+head(scmapCell_clusters.tm_facs$scmap_cluster_siml)
+head(scmapCell_clusters.tm_facs$combined_labs)
+```
+
+
+### Visualisation
+#### Tabula muris 10x data self-projection using scmap-cell
+```{r}
+plot(
+  getSankey(
+    colData(sce.tm_droplet_cell)$cell_type1,
+    scmapCell_clusters.tm_droplet$scmap_cluster_labs[,"tm_droplet"],
+    plot_height = 400,
+    colors = c('#009ACD', '#9ACD32', '#FF8247','#D02090', '#636363','#000080','#CD853F','#8B0000','#FF6347',
+               '#000000','#CD1076','#BFEFFF','#698B22','#CD6889','#FFFF00','#CDBA96','#D02090','#CD4F39',
+               '#EEDD82','#BFEFFF','#D2691E','#008B8B')
+  )
+)
+```
+
+#### Tabula muris 10x data projected into Tabula muris FACS using scmap-cell
+```{r}
+plot(
+  getSankey(
+    colData(sce.tm_droplet_cell)$cell_type1,
+    scmapCell_clusters.tm_facs$scmap_cluster_labs[,"tm_facs"],
+    plot_height = 400,
+    colors = c('#009ACD', '#9ACD32', '#FF8247','#D02090', '#636363','#000080','#CD853F','#8B0000','#FF6347',
+               '#000000','#CD1076','#BFEFFF','#698B22','#CD6889','#FFFF00','#CDBA96','#D02090','#CD4F39',
+               '#EEDD82','#BFEFFF','#D2691E','#008B8B')
+  )
+)
+```
+
+#### Tabula muris FACS data self-projection using scmap-cell
+```{r}
+plot(
+  getSankey(
+    colData(sce.tm_facs_cell)$cell_type1,
+    scmapCell_clusters.tm_facs$scmap_cluster_labs[,"tm_facs"],
+    plot_height = 400,
+    colors = c('#009ACD', '#9ACD32', '#FF8247','#D02090', '#636363','#000080','#CD853F','#8B0000','#FF6347',
+               '#000000','#CD1076','#BFEFFF','#698B22','#CD6889','#FFFF00','#CDBA96','#D02090','#CD4F39',
+               '#EEDD82','#BFEFFF','#D2691E','#008B8B')
+  )
+)
+
+```
+
+#### Tabula muris FACS data projected into Tabula muris 10x using scmap-cell
+```{r}
+plot(
+  getSankey(
+    colData(sce.tm_facs_cell)$cell_type1,
+    scmapCell_clusters.tm_droplet$scmap_cluster_labs[,"tm_droplet"],
+    plot_height = 400,
+    colors = c('#009ACD', '#9ACD32', '#FF8247','#D02090', '#636363','#000080','#CD853F','#8B0000','#FF6347',
+               '#000000','#CD1076','#BFEFFF','#698B22','#CD6889','#FFFF00','#CDBA96','#D02090','#CD4F39',
+               '#EEDD82','#BFEFFF','#D2691E','#008B8B')
+  )
+)
+```
