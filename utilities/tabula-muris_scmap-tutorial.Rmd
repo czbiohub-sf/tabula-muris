@@ -1,6 +1,6 @@
 - A proposal for a tutorial on how to use the data that you would publish when we launch.
 
-# Unsupervised methods for combining independent single-cell RNA sequencing experiments (part 1)
+# scmap: an unsupervised methods for combining independent single-cell RNA sequencing experiments done using different technologies
 
 ## Pre-required installation
 We start by installing the packages we need to build the cell classifiers from bioconductor:
