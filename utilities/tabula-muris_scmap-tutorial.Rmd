@@ -31,7 +31,7 @@ library(stringr)
 
 ```
 
-As we briefly mentioned in the [previous post](https://github.com/czbiohub/tabula-muris-vignettes/blob/master/vignettes/methods_comparison/methods_comparison.Rmd), instead of manually and arbitrarily deciding which cell ontologies we should be comparing and computing the overlaps at the level of differentially expressed genes, we want to have a method to map on the fly new coming experimental data to existing reference datasets.
+Instead of manually and arbitrarily deciding which cell ontologies we should be comparing and computing the overlaps at the level of differentially expressed genes, we want to have a method to map on the fly new coming experimental data to existing reference datasets.
 
 Given the broad collection of organs in Tabula muris it is natural to think of it as a possible reference dataset. Here we will exemplify how we can build the reference classifier using the recently published [scmap](https://www-nature-com.ucsf.idm.oclc.org/articles/nmeth.4644) method.
 
