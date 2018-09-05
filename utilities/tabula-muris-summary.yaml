@@ -1,0 +1,29 @@
+- A .yaml file that contains metadata describing your dataset at a high level. Instructions on how to create this file are at https://github.com/awslabs/open-data-registry/blob/master/README.md. At this point, don't worry about the “Resources” or “DataAtWork" sections of the file; we will fill that in when you get ready to launch.
+
+```yaml
+Name: Tabula muris
+Description: |
+  Tabula muris is a compendium of single cell transcriptomic data from the model organism *Mus musculus* comprising more than 100,000 cells from 20 organs and tissues. These data represent a new resource for cell biology, reveal gene expression in poorly characterized cell populations, and allow for direct and controlled comparison of gene expression in cell types shared between tissues, such as T-lymphocytes and endothelial cells from different anatomical locations. Two distinct technical approaches were used for most organs: one approach, microfluidic droplet-based 3’-end counting, enabled the survey of thousands of cells at relatively low coverage, while the other, FACS-based full length transcript analysis, enabled characterization of cell types with high sensitivity and coverage. The cumulative data provide the foundation for an atlas of transcriptomic cell biology.
+Documentation: https://github.com/czbiohub/tabula-muris
+Contact: If you have questions about the data, you can create an Issue at the project repo on [GitHub](https://github.com/czbiohub/tabula-muris).
+UpdateFrequency: **Never? Or should we link this with MACA and make it yearly?**
+Tags: |
+  - biology
+  - encyclopedic
+  - genomic
+  - health
+  - life sciences
+  - machine learning
+  - medicine
+License: https://github.com/czbiohub/tabula-muris/blob/master/LICENSE
+Resources:
+  - Description:
+    ARN:
+    Region:
+    Type:
+DataAtWork:
+  - Title:
+    URL:
+    AuthorName:
+    AuthorURL:
+```
