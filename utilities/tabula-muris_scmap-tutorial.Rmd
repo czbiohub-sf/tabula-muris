@@ -1,5 +1,3 @@
-- A proposal for a tutorial on how to use the data that you would publish when we launch.
-
 # scmap: an unsupervised methods for combining independent single-cell RNA sequencing experiments done using different technologies
 
 ## Pre-required installation
