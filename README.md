@@ -11,6 +11,8 @@ This rich collection of annotated cells will be a useful resource for:
 * Validating findings in future targeted single-cell studies.
 * Developing of methods for integrating datasets (eg between the FACS and droplet experiments), characterizing batch effects, and quantifying the variation of gene expression in many cell types between organs and animals.
 
+Since late 2017, Tabula muris data have been made available to all users free of charge. [AWS has made the data freely available on Amazon S3]() so that anyone can download the resource to perform analysis and advance medical discovery without needing to worry about the cost of storing Tabula muris data or the time required to download it.
+
 Learn more about how Tabula muris data is used in the [project vignettes repo](https://github.com/czbiohub/tabula-muris-vignettes).
 
 ## Installation - Python
