@@ -24,7 +24,7 @@ czbiohub-tabula-muris
 ├── 10x_bam_files: BAM files for 10x droplet data
 │   ├── *.bam
 │   └── *.bam.bai
-├── tabula_muris_bam_files : BAM files for FACS smartseq2 data
+├── facs_bam_files : BAM files for FACS smartseq2 data
 │   ├── *.bam
 │   └── *.bam.bai
 ├── TM_droplet_mat.csv.gz
@@ -37,7 +37,7 @@ czbiohub-tabula-muris
 └── TM_facs_metadata.csv
 ```
 
-The unprocessed data files are stored in two different folders, `10x_bam_files` and `tabula_muris_bam_files`, according to the respective method used when preparing the samples, `10x` or `FACS`. *Is this correct? If yes, then I suggest changing the the folder name to facs_bam_files.*
+The unprocessed data files are stored in two different folders, `10x_bam_files` and `tabula_muris_bam_files`, according to the respective method used when preparing the samples, `10x` or `FACS`.
 
 The processed data is provide in three different formats for each of the two methods:
 * `.h5ad` files to load in Python using [anndata](https://anndata.readthedocs.io/)
