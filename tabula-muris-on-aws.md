@@ -70,6 +70,10 @@ tm_facs_metadata = pd.read_csv('data/TM_facs_metadata.csv')
 tm_facs_data = scanpy.anndata.read_h5ad('data/TM_facs_mat.h5ad')
 ```
 
+## Recover fastq file from bam
+You will need to download the BAM files and then:
+* if working with the 10X dataset download the [10X's bam2fastq tool](https://support.10xgenomics.com/docs/bamtofastq) or
+* if working with the facs/smartseq-2 dataset use `bamtofastq` from [bedtools](https://bedtools.readthedocs.io/en/latest/content/tools/bamtofastq.html)
 
 # How to cite this dataset
 
