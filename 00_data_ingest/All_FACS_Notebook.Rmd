@@ -154,7 +154,8 @@ tiss@meta.data['cell'] <- rownames(tiss@meta.data)
 ```
 
 ```{r}
-anno = read_csv(here("00_data_ingest", "18_global_annotation_csv", "annotations_FACS.csv"))
+anno = read_csv(here("00_data_ingest", "18_global_annotation_csv", "annotations_facs.csv"), col_types = cols(.default = col_character())) %>%
+type_convert()
 anno %>% group_by(tissue, cell_ontology_class) %>% summarize(count = n())
 ```
 
