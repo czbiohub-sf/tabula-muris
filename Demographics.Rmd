@@ -3,7 +3,7 @@ title: "Demographics"
 output: html_notebook
 ---
 
-This notebook computes demographic information about the dataset and analysis. These are the numbers that go in the text of the paper.
+This notebook computes demographic information about the dataset and analysis. These are the numbers that go in the text of the paper [**which figure?**].
 
 ## Sample Text
 
